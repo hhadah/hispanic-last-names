@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex FinalDraft"] 1674225562 "FinalDraft.aux" "FinalDraft.bbl" "FinalDraft" 1674225691
+["bibtex FinalDraft"] 1674225562 "FinalDraft.aux" "FinalDraft.bbl" "FinalDraft" 1674226397
   "./chicago-bib.bst" 1616018038 37366 45205f43c7252fc042dda3578dbe7344 ""
-  "FinalDraft.aux" 1674225691 13996 f123988b158d922706c836491970e52a "pdflatex"
+  "FinalDraft.aux" 1674226396 13996 f123988b158d922706c836491970e52a "pdflatex"
   "HispanicDiscriminationMarriageMarket.bib" 1663709266 300403 6b7cd259117b627f4548e4fcfab9688a ""
   (generated)
   "FinalDraft.bbl"
   "FinalDraft.blg"
-["pdflatex"] 1674225689 "FinalDraft.tex" "FinalDraft.pdf" "FinalDraft" 1674225691
+["pdflatex"] 1674226394 "FinalDraft.tex" "FinalDraft.pdf" "FinalDraft" 1674226397
   "/Users/hhadah/Library/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1643922251 2796795 9b37e65f83922863af74fc947fc5804c ""
   "/Users/hhadah/Library/texmf/tex/latex/multicol.sty" 1084240224 25928 526edd03c609ff2cdc4805a41441008e ""
   "/Users/hhadah/Library/texmf/tex/latex/setspace.sty" 1130857036 22518 969fcbccb9feb6c080f52825bb5fe1e1 ""
@@ -263,10 +263,10 @@
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1621028613 40042 fe981136cbb5f3715ab1b0e46e3d3892 ""
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1643922253 4379201 718a59215bccc89d4f89ee72c554b0e8 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "FinalDraft.aux" 1674225691 13996 f123988b158d922706c836491970e52a "pdflatex"
+  "FinalDraft.aux" 1674226396 13996 f123988b158d922706c836491970e52a "pdflatex"
   "FinalDraft.bbl" 1674225562 12953 b0d9ccbc285e9ab4194bb4e14311236b "bibtex FinalDraft"
-  "FinalDraft.out" 1674225691 2685 d85efb2c36e0aa71f414961e22562563 "pdflatex"
-  "FinalDraft.tex" 1674225688 60448 d88d4d235ce516890c14b0279317b1ef ""
+  "FinalDraft.out" 1674226396 2685 d85efb2c36e0aa71f414961e22562563 "pdflatex"
+  "FinalDraft.tex" 1674226393 60443 be3507a3e41a058dfe1db6160592d78b ""
   "GraphNonWhites.png" 1617744734 55443 82ea786e3374d9aff51af2115960eecf ""
   "HispanicUSA.png" 1617744753 51621 f6be69e4108eec1091b7789a191a0b89 ""
   "PirChart2.png" 1620750998 279447 ccf8e10bc6197fb02bd40302f00e218e ""

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  20 JAN 2023 08:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  20 JAN 2023 08:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1597,7 +1597,7 @@ mf-dist/fonts/type1/urw/ncntrsbk/uncbi8a.pfb></usr/local/texlive/2021/texmf-dis
 t/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/ncntrsbk/uncri8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb>
-Output written on FinalDraft.pdf (31 pages, 485582 bytes).
+Output written on FinalDraft.pdf (31 pages, 485560 bytes).
 PDF statistics:
  511 PDF objects out of 1000 (max. 8388607)
  449 compressed objects within 5 object streams
