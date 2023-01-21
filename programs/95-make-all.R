@@ -11,11 +11,14 @@ datasets <- paste0(mdir,"/data/datasets")
 raw <- paste0(mdir,"/data/raw")
 
 mdir_git     <- "~/Documents/GiT/hispanic-last-names"
-tables_wd    <- paste0(mdir_git,"/output/tables")
-figures_wd   <- paste0(mdir_git,"/output/figures")
-programs     <- paste0(mdir_git,"/programs")
-thesis_tabs  <- paste0(mdir_git,"/my_paper/tables")
-thesis_plots <- paste0(mdir_git,"/my_paper/figure")
+datasets_git <- paste0(mdir_git,"/data/datasets") 
+raw_git      <- paste0(mdir_git,"/data/raw") 
+tables_wd    <- paste0(mdir_git,"/output/tables") 
+figures_wd   <- paste0(mdir_git,"/output/figures") 
+programs     <- paste0(mdir_git,"/programs") 
+thesis_tabs  <- paste0(mdir_git,"/my_paper/tables") 
+thesis_plots <- paste0(mdir_git,"/my_paper/figure") 
+add_health_data_dir <- "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/Identification_Paper/Data/Datasets"
 # pres_tabs <- paste0(mdir,"/presentations/jmp-presentation/tables")
 # pres_plots <- paste0(mdir,"/presentations/jmp-presentation/figures")
 
