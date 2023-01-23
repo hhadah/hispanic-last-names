@@ -409,7 +409,58 @@ AddHealth <- AddHealth %>%
     HighSchl_diplona_w5 = ifelse(HighestGrade_w5 == 3, 1, 0),
     Some_college_w5 = ifelse(HighestGrade_w5 <= 6 & HighestGrade_w5 >= 4, 1, 0),
     College_w5 = ifelse(HighestGrade_w5 == 7, 1, 0),
-    GraduateSchl_w5 = ifelse(HighestGrade_w5 <= 13 & HighestGrade_w5 >= 8, 1, 0))
+    GraduateSchl_w5 = ifelse(HighestGrade_w5 <= 13 & HighestGrade_w5 >= 8, 1, 0),
+    DadHealth = case_when(
+                          PA_Sex == 1 & PA_HealthStatus_w1 == 1 ~ "Excellent",
+                          PA_Sex == 1 & PA_HealthStatus_w1 == 2 ~ "Very good",
+                          PA_Sex == 1 & PA_HealthStatus_w1 == 3 ~ "Good",
+                          PA_Sex == 1 & PA_HealthStatus_w1 == 4 ~ "Fair",
+                          PA_Sex == 1 & PA_HealthStatus_w1 == 5 ~ "Poor",
+                          SP_Sex == 1 & SP_HealthStatus_w1 == 1 ~ "Excellent",
+                          SP_Sex == 1 & SP_HealthStatus_w1 == 2 ~ "Very good",
+                          SP_Sex == 1 & SP_HealthStatus_w1 == 3 ~ "Good",
+                          SP_Sex == 1 & SP_HealthStatus_w1 == 4 ~ "Fair",
+                          SP_Sex == 1 & SP_HealthStatus_w1 == 5 ~ "Poor",
+                          PA_Sex == 1 & PA_HealthStatus_w1 == 6 ~ "Poor",
+                          SP_Sex == 1 & SP_HealthStatus_w1 == 6 ~ "Poor"),
+    MomHealth = case_when(
+                          PA_Sex == 2 & PA_HealthStatus_w1 == 1 ~ "Excellent",
+                          PA_Sex == 2 & PA_HealthStatus_w1 == 2 ~ "Very good",
+                          PA_Sex == 2 & PA_HealthStatus_w1 == 3 ~ "Good",
+                          PA_Sex == 2 & PA_HealthStatus_w1 == 4 ~ "Fair",
+                          PA_Sex == 2 & PA_HealthStatus_w1 == 5 ~ "Poor",
+                          SP_Sex == 2 & SP_HealthStatus_w1 == 1 ~ "Excellent",
+                          SP_Sex == 2 & SP_HealthStatus_w1 == 2 ~ "Very good",
+                          SP_Sex == 2 & SP_HealthStatus_w1 == 3 ~ "Good",
+                          SP_Sex == 2 & SP_HealthStatus_w1 == 4 ~ "Fair",
+                          SP_Sex == 2 & SP_HealthStatus_w1 == 5 ~ "Poor",
+                          PA_Sex == 2 & PA_HealthStatus_w1 == 6 ~ "Poor",
+                          SP_Sex == 2 & SP_HealthStatus_w1 == 6 ~ "Poor"),
+    Health_w1 = case_when(
+                          HealthStatus_w1 == 1 ~ "Excellent",
+                          HealthStatus_w1 == 2 ~ "Very good",
+                          HealthStatus_w1 == 3 ~ "Good",
+                          HealthStatus_w1 == 4 ~ "Fair",
+                          HealthStatus_w1 == 5 ~ "Poor"),
+    Health_w5 = case_when(
+                          HealthStatus_w5 == 1 ~ "Excellent",
+                          HealthStatus_w5 == 2 ~ "Very good",
+                          HealthStatus_w5 == 3 ~ "Good",
+                          HealthStatus_w5 == 4 ~ "Fair",
+                          HealthStatus_w5 == 5 ~ "Poor"))
+# Impute missing values
+# for GPA, parents health
+# education, and family income
+# using the mean
+
+AddHealth <- AddHealth |>  
+  group_by(ParentType, state_w1_2010) |> 
+  mutate(GPA = ifelse(is.na(GPA) & !is.na(ParentType), mean(GPA, na.rm = T), GPA),
+         TotalEducation_Parents = ifelse(is.na(TotalEducation_Parents) & !is.na(ParentType), mean(TotalEducation_Parents, na.rm = T), TotalEducation_Parents),
+         PA_FamilyIncome = ifelse(is.na(PA_FamilyIncome) & !is.na(ParentType), mean(PA_FamilyIncome, na.rm = T), PA_FamilyIncome),
+         DadHealth = ifelse(is.na(DadHealth) & !is.na(ParentType), round(mean(DadHealth, na.rm = T), digits = 0), DadHealth),
+         MomHealth = ifelse(is.na(MomHealth) & !is.na(ParentType), round(mean(MomHealth, na.rm = T), digits = 0), MomHealth))
+  
 
 
 write_csv(AddHealth, file.path(datasets_git,"AddHealth_Cleaned.csv"))

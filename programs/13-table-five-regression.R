@@ -1,5 +1,3 @@
-# summary stats
-
 # table Five
 # Regression
 

@@ -6,44 +6,6 @@
 # to table outputs
 
 AddHealth <- read_csv(file.path(datasets_git,"AddHealth_Cleaned.csv"))|> 
-                            mutate(DadHealth = case_when(
-                              PA_Sex == 1 & PA_HealthStatus_w1 == 1 ~ "Excellent",
-                              PA_Sex == 1 & PA_HealthStatus_w1 == 2 ~ "Very good",
-                              PA_Sex == 1 & PA_HealthStatus_w1 == 3 ~ "Good",
-                              PA_Sex == 1 & PA_HealthStatus_w1 == 4 ~ "Fair",
-                              PA_Sex == 1 & PA_HealthStatus_w1 == 5 ~ "Poor",
-                              SP_Sex == 1 & SP_HealthStatus_w1 == 1 ~ "Excellent",
-                              SP_Sex == 1 & SP_HealthStatus_w1 == 2 ~ "Very good",
-                              SP_Sex == 1 & SP_HealthStatus_w1 == 3 ~ "Good",
-                              SP_Sex == 1 & SP_HealthStatus_w1 == 4 ~ "Fair",
-                              SP_Sex == 1 & SP_HealthStatus_w1 == 5 ~ "Poor",
-                              PA_Sex == 1 & PA_HealthStatus_w1 == 6 ~ "Poor",
-                              SP_Sex == 1 & SP_HealthStatus_w1 == 6 ~ "Poor"),
-                              MomHealth = case_when(
-                                PA_Sex == 2 & PA_HealthStatus_w1 == 1 ~ "Excellent",
-                                PA_Sex == 2 & PA_HealthStatus_w1 == 2 ~ "Very good",
-                                PA_Sex == 2 & PA_HealthStatus_w1 == 3 ~ "Good",
-                                PA_Sex == 2 & PA_HealthStatus_w1 == 4 ~ "Fair",
-                                PA_Sex == 2 & PA_HealthStatus_w1 == 5 ~ "Poor",
-                                SP_Sex == 2 & SP_HealthStatus_w1 == 1 ~ "Excellent",
-                                SP_Sex == 2 & SP_HealthStatus_w1 == 2 ~ "Very good",
-                                SP_Sex == 2 & SP_HealthStatus_w1 == 3 ~ "Good",
-                                SP_Sex == 2 & SP_HealthStatus_w1 == 4 ~ "Fair",
-                                SP_Sex == 2 & SP_HealthStatus_w1 == 5 ~ "Poor",
-                                PA_Sex == 2 & PA_HealthStatus_w1 == 6 ~ "Poor",
-                                SP_Sex == 2 & SP_HealthStatus_w1 == 6 ~ "Poor"),
-                              Health_w1 = case_when(
-                                HealthStatus_w1 == 1 ~ "Excellent",
-                                HealthStatus_w1 == 2 ~ "Very good",
-                                HealthStatus_w1 == 3 ~ "Good",
-                                HealthStatus_w1 == 4 ~ "Fair",
-                                HealthStatus_w1 == 5 ~ "Poor"),
-                              Health_w5 = case_when(
-                                HealthStatus_w5 == 1 ~ "Excellent",
-                                HealthStatus_w5 == 2 ~ "Very good",
-                                HealthStatus_w5 == 3 ~ "Good",
-                                HealthStatus_w5 == 4 ~ "Fair",
-                                HealthStatus_w5 == 5 ~ "Poor")) |> 
                                 select(Male, White_w1,Black_w1, Hispanic_w1,
                                 Employed_w3, Employed_w4,FullTime_w3, 
                                 FullTime_w4,HoursWorkedPerWeek_w3,
@@ -54,10 +16,12 @@ AddHealth <- read_csv(file.path(datasets_git,"AddHealth_Cleaned.csv"))|>
                                 PA_FamilyIncome,DadHealth,MomHealth, ParentType)
 # summary stat tables by
 # generation type
+
+
 sumstat1 <-   tbl_summary(data =  AddHealth |> filter(ParentType == "Hispanic-White" | ParentType == "White-Hispanic"),
                           by = "ParentType",
                           include = c(Male, White_w1,
-                                      Black_w1, Hispanic_w1,
+                                      Hispanic_w1,
                                       Employed_w3, Employed_w4,
                                       FullTime_w3, FullTime_w4,
                                       HoursWorkedPerWeek_w3,
@@ -83,7 +47,6 @@ sumstat1 <-   tbl_summary(data =  AddHealth |> filter(ParentType == "Hispanic-Wh
                           label = list(
                             Male~ "Male", 
                             White_w1 ~ "White",
-                            Black_w1 ~ "Black",
                             Hispanic_w1 ~ "Hispanic",
                             Employed_w3 ~ "Employed (w3)", 
                             Employed_w4 ~ "Employed (w4)",
@@ -107,7 +70,7 @@ sumstat1 <-   tbl_summary(data =  AddHealth |> filter(ParentType == "Hispanic-Wh
                           
                           missing = "no") %>%
   modify_footnote(update = everything() ~ NA) |>
-  add_difference() |>                      
+  add_difference(include ) |>                      
   bold_labels()
 
 # summary stat tables of 
