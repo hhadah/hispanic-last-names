@@ -110,3 +110,19 @@ knitr::kable(Table_cols, "latex", align = "lcccc",
   add_header_above(c(" " = 1, "Perent\'s Type" = 4)) |> 
   save_kable(file.path(tables_wd,"tab01-observations-by-parents.tex")) %>% 
   save_kable(file.path(thesis_tabs,"tab01-observations-by-parents.tex"))
+
+# presentation table
+knitr::kable(Table_cols, "latex", align = "lcccc",
+             booktabs = T,
+             escape = F,
+             caption = "Number of Children from the Different Types of Parents \\label{tab:mat1}") %>%
+  column_spec(1, bold = T) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")) |> 
+  footnote(number = c("The data is restricted to people interviewed between 1994 and 2019, also White, married, and between the ages of 18 and 65. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if both her parents were born in a Spanish-speaking country. A parent is White if born parents were born in the United States."),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  ) |> 
+  add_header_above(c(" " = 1, "Perent\'s Type" = 4)) |> 
+  save_kable(file.path(dissertation_wd,"tables/tab01-observations-by-parents.tex"))

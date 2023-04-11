@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  20 JAN 2023 09:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  10 APR 2023 22:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1583,7 +1583,7 @@ Package rerunfilecheck Info: File `Hadah-last-names.out' has not changed.
 Here is how much of TeX's memory you used:
  35270 strings out of 478287
  706535 string characters out of 5846751
- 976282 words of memory out of 5000000
+ 977282 words of memory out of 5000000
  52674 multiletter control sequences out of 15000+600000
  559133 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1597,7 +1597,7 @@ mf-dist/fonts/type1/urw/ncntrsbk/uncbi8a.pfb></usr/local/texlive/2021/texmf-dis
 t/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/ncntrsbk/uncri8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb>
-Output written on Hadah-last-names.pdf (31 pages, 485870 bytes).
+Output written on Hadah-last-names.pdf (31 pages, 485978 bytes).
 PDF statistics:
  512 PDF objects out of 1000 (max. 8388607)
  450 compressed objects within 5 object streams

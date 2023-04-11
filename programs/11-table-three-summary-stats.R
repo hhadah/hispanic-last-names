@@ -404,17 +404,17 @@ row10 <- c(
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f",round(differences1[[1]], digits = 2)), 
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -467,17 +467,17 @@ row11 <- c(
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f",round(differences1[[1]], digits = 2)), 
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -842,3 +842,49 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   add_indent(c(16:17)) %>%
   save_kable(file.path(tables_wd,"tab03-summary-stats.tex")) %>% 
   save_kable(file.path(thesis_tabs,"tab03-summary-stats.tex"))
+
+# presentation panel A and B
+
+Table_rows <- rbind(row1,  row2,   row3,  row4, 
+                    row5,  row6,   row7,  row8)
+
+Table_rows <-  Table_rows |> 
+  row_to_names(row_number = 1)
+
+knitr::kable(Table_rows, "latex", align = "lcccccc",
+             booktabs = T,
+             escape = F,
+             caption = "Children's outcome using parent's place of birth") %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")) |> 
+  add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
+                     "Differences" = 2)) |> 
+  row_spec(c(1,5), bold = T) |> 
+  add_indent(c(2:4)) %>%
+  add_indent(c(6:7)) %>%
+  save_kable(file.path(dissertation_wd,"tables/tab03ab-summary-stats.tex"))
+
+  # presentation panel C
+
+Table_rows <- rbind(row1, row9,  
+                    row10,  row11, row12, row13, 
+                    row14,  row15, row16, row17, 
+                    row18)
+
+Table_rows <-  Table_rows |> 
+  row_to_names(row_number = 1)
+
+knitr::kable(Table_rows, "latex", align = "lcccccc",
+             booktabs = T,
+             escape = F,
+             caption = "Children's outcome using parent's place of birth") %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")) |> 
+  add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
+                     "Differences" = 2)) |> 
+  row_spec(c(1, 8), bold = T)  |> 
+  add_indent(c(2:7)) |>
+  add_indent(c(9:10)) |>
+  save_kable(file.path(dissertation_wd,"tables/tab03c-summary-stats.tex"))

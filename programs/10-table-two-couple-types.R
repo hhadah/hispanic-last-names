@@ -111,3 +111,16 @@ knitr::kable(Table_cols, "latex", align = "lcccc",
   add_header_above(c(" " = 1, "Couples\' Type" = 4)) |> 
   save_kable(file.path(tables_wd,"tab02-observations-by-couple.tex")) %>% 
   save_kable(file.path(thesis_tabs,"tab02-observations-by-couple.tex"))
+
+# presentation table
+
+knitr::kable(Table_cols, "latex", align = "lcccc",
+             booktabs = T,
+             escape = F,
+             caption = "Couples' Type \\label{tab:mat2}") %>%
+  column_spec(1, bold = T) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")) |>  
+  add_header_above(c(" " = 1, "Couples\' Type" = 4)) |> 
+  save_kable(file.path(dissertation_wd,"tables/tab02-observations-by-couple.tex"))

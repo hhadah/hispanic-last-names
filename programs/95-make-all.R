@@ -22,7 +22,7 @@ add_health_data_dir <- "/Users/hhadah/Dropbox/Research/My Research Data and Idea
 # pres_tabs <- paste0(mdir,"/presentations/jmp-presentation/tables")
 # pres_plots <- paste0(mdir,"/presentations/jmp-presentation/figures")
 
-
+dissertation_wd <- paste0("/Users/hhadah/Documents/GiT/my_thesis/presentation/dissertation")
 ### run do files and scripts
 
 # main scripts
