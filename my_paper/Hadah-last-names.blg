@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Hadah-last-names.aux
+The style file: chicago-bib.bst
+Database file #1: HispanicDiscriminationMarriageMarket.bib
+Repeated entry---line 2571 of file HispanicDiscriminationMarriageMarket.bib
+ : @article{averettBetterWorseRelationship2008
+ :                                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2589 of file HispanicDiscriminationMarriageMarket.bib
+ : @article{averettEconomicRealityBeauty1996
+ :                                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2617 of file HispanicDiscriminationMarriageMarket.bib
+ : @article{beckerTheoryMarriagePart1973
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2634 of file HispanicDiscriminationMarriageMarket.bib
+ : @article{beckerTheoryMarriagePart1974
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2650 of file HispanicDiscriminationMarriageMarket.bib
+ : @book{beckerTreatiseFamily1993
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2713 of file HispanicDiscriminationMarriageMarket.bib
+ : @article{browningCollectiveUnitaryModels2006
+ :                                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2833 of file HispanicDiscriminationMarriageMarket.bib
+ : @article{chiapporiFatterAttractionAnthropometric2012
+ :                                                     ,
+I'm skipping whatever remains of this entry
+Warning--page numbers missing in antmanEthnicAttritionObserved2016a
+Warning--no number and no volume in antman2020ethnic
+Warning--no number and no volume in duncan2006hispanics
+You've used 40 entries,
+            2845 wiz_defined-function locations,
+            876 strings with 13512 characters,
+and the built_in function-call counts, 28753 in all, are:
+= -- 2433
+> -- 2292
+< -- 0
++ -- 716
+- -- 768
+* -- 2732
+:= -- 5263
+add.period$ -- 118
+call.type$ -- 40
+change.case$ -- 306
+chr.to.int$ -- 36
+cite$ -- 43
+duplicate$ -- 664
+empty$ -- 1583
+format.name$ -- 904
+if$ -- 5284
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 37
+newline$ -- 201
+num.names$ -- 392
+pop$ -- 201
+preamble$ -- 1
+purify$ -- 539
+quote$ -- 0
+skip$ -- 740
+stack$ -- 0
+substring$ -- 1598
+swap$ -- 195
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 764
+warning$ -- 3
+while$ -- 375
+width$ -- 0
+write$ -- 520
+(There were 7 error messages)

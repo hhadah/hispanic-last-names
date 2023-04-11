@@ -159,7 +159,7 @@ TotalEducation <- ParentData |>
   summarise(HHducation   = weighted.mean(Tot_ed, na.rm = T, hhwt),
             HHducationSD = weighted.sd(Tot_ed, na.rm = T, hhwt))
 
-model <- lm(WifeEducation ~ 0 + WW + WM + MW + MM, 
+model <- lm(Tot_ed ~ 0 + WW + WM + MW + MM, 
             data = ParentData, 
             weights = hhwt)
 test1 <- tidy(glht(model, linfct = c("MM - WW = 0")))
@@ -406,17 +406,17 @@ row10 <- c(
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f",round(differences1[[1]], digits = 2)), 
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -469,17 +469,17 @@ row11 <- c(
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f",round(differences1[[1]], digits = 2)), 
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f",round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -760,7 +760,7 @@ Table_rows <-  Table_rows |>
 knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
-             caption = "Children's outcome using parent's place of birth Only for those that Identify as Hispanic \\label{tab:c&p2}") %>%
+             caption = "Summary statistics of outcomes using parent's place of birth only for those that self-identify as Hispanic \\label{tab:c&p2}") %>%
   kable_classic(full_width = F) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "hold_position")) |> 
