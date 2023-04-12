@@ -2,6 +2,8 @@
 
 # table three
 
+library(Hmisc)
+
 # date: January 19th, 2023
 
 IndividualData <- read_dta(file.path(datasets,"BySexAnalysisData.dta")) |> 
@@ -72,6 +74,7 @@ row3 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -79,6 +82,7 @@ row3 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -136,6 +140,7 @@ row4 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -143,6 +148,7 @@ row4 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -200,6 +206,7 @@ row5 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -207,6 +214,7 @@ row5 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -269,6 +277,7 @@ row7 <- c(
   ),
   paste0("\\specialcell{", 
          sprintf("%.2f", round(differences1, 2)), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -276,6 +285,7 @@ row7 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -332,6 +342,7 @@ row8 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -339,6 +350,7 @@ row8 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -405,6 +417,7 @@ row10 <- c(
   ),
   paste0("\\specialcell{", 
          sprintf("%.2f",round(differences1[[1]], digits = 2)), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          sprintf("%.2f",round(pvalues1[[1]], digits = 2)),
@@ -412,6 +425,7 @@ row10 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          sprintf("%.2f",round(pvalues2[[1]], digits = 2)),
@@ -468,6 +482,7 @@ row11 <- c(
   ),
   paste0("\\specialcell{", 
          sprintf("%.2f",round(differences1[[1]], digits = 2)), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          sprintf("%.2f",round(pvalues1[[1]], digits = 2)),
@@ -475,6 +490,7 @@ row11 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          sprintf("%.2f",round(pvalues2[[1]], digits = 2)),
@@ -533,6 +549,7 @@ row12 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -540,6 +557,7 @@ row12 <- c(
   ),
   paste0("\\specialcell{", 
          sprintf("%.2f", round(differences2, 2)), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -596,6 +614,7 @@ row13 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -603,6 +622,7 @@ row13 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -664,6 +684,7 @@ row14 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -671,6 +692,7 @@ row14 <- c(
   ),
   paste0("\\specialcell{", 
          sprintf("%.2f", round(differences2, 2)), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -727,6 +749,7 @@ row15 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences1[[1]], digits = 2), 
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues1[[1]], digits = 2),
@@ -734,6 +757,7 @@ row15 <- c(
   ),
   paste0("\\specialcell{", 
          round(differences2[[1]], digits = 2), 
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
          round(pvalues2[[1]], digits = 2),
@@ -823,8 +847,8 @@ Table_rows <-  Table_rows |>
 knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
-             caption = "Summary statistics of outcomes using parent's place of birth \\label{tab:c&p1}") %>%
-  kable_classic(full_width = F) %>%
+             caption = "Summary statistics of outcomes using parent's place of birth \\label{tab:c&p1}") |>
+  kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "hold_position")) |> 
   footnote(number = c("The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States.",
@@ -836,11 +860,11 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
   row_spec(c(1,5,8,15), bold = T) |> 
-  add_indent(c(2:4)) %>%
-  add_indent(c(6:7)) %>%
-  add_indent(c(9:14)) %>%
-  add_indent(c(16:17)) %>%
-  save_kable(file.path(tables_wd,"tab03-summary-stats.tex")) %>% 
+  add_indent(c(2:4)) |>
+  add_indent(c(6:7)) |>
+  add_indent(c(9:14)) |>
+  add_indent(c(16:17)) |>
+  save_kable(file.path(tables_wd,"tab03-summary-stats.tex")) |> 
   save_kable(file.path(thesis_tabs,"tab03-summary-stats.tex"))
 
 # presentation panel A and B
@@ -853,15 +877,17 @@ Table_rows <-  Table_rows |>
 
 knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
-             escape = F) %>%
-  kable_classic(full_width = F) %>%
+             escape = F) |>
+  kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "hold_position")) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
+  column_spec(6, bold = T, background = "#0004ff") |> 
+  column_spec(7, bold = T, background = "#ffff30") |> 
   row_spec(c(1,5), bold = T) |> 
-  add_indent(c(2:4)) %>%
-  add_indent(c(6:7)) %>%
+  add_indent(c(2:4)) |>
+  add_indent(c(6:7)) |>
   save_kable(file.path(dissertation_wd,"tables/tab03ab-summary-stats.tex"))
 
   # presentation panel C
@@ -876,12 +902,14 @@ Table_rows <-  Table_rows |>
 
 knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
-             escape = F) %>%
-  kable_classic(full_width = F) %>%
+             escape = F) |>
+  kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "hold_position")) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
+  column_spec(6, bold = T, background = "#0004ff") |> 
+  column_spec(7, bold = T, background = "#ffff30") |> 
   row_spec(c(1, 8), bold = T)  |> 
   add_indent(c(2:7)) |>
   add_indent(c(9:10)) |>

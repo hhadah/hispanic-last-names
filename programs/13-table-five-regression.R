@@ -148,3 +148,41 @@ regression_tab <- modelsummary(reg1, fmt = 2,
 
 regression_tab %>%
   save_kable(file.path(dissertation_wd,"tables/tab05-regression.tex"))
+
+# hilight column 1
+regression_tab <- modelsummary(reg1, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) |> 
+  row_spec(8, hline_after = T) |> 
+  column_spec(2, background = "#ffff30")
+
+
+regression_tab %>%
+  save_kable(file.path(dissertation_wd,"tables/tab05a-regression.tex"))
+
+# hilight column 2
+regression_tab <- modelsummary(reg1, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) |> 
+  row_spec(8, hline_after = T) |> 
+  column_spec(3, background = "#ffff30")
+
+
+regression_tab %>%
+  save_kable(file.path(dissertation_wd,"tables/tab05b-regression.tex"))

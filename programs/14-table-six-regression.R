@@ -54,7 +54,7 @@ row_diff <- rbind(differences_row, pvalue_row)
 colnames(row_diff)<-LETTERS[1:3]
 
 row_diff <- as.data.frame(row_diff)
-attr(row_diff, 'position') <- c(13:14)
+attr(row_diff, 'position') <- c(7:8)
 
 controling_for <-  c("\\textit{Controlling for:}", " ", "")
 dim(controling_for) <- c(1,3)
@@ -66,14 +66,14 @@ controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
 
 all_row <- rbind(differences_row, pvalue_row, controling_for, hoursworked)
-attr(all_row, 'position') <- c(13:14, 16:17)
+attr(all_row, 'position') <- c(7:8, 10:11)
 
 cm <- c("WH:Hispanic_ID" = "$WH_{i} \\times Hispanic_{i}$",
         "Hispanic_ID:HW" = "$HW_{i} \\times Hispanic_{i}$",
-        "Hispanic_ID:HH" = "$HH_{i} \\times Hispanic_{i}$",
-        "WH" = "$WH_{i}$",
-        "HW" = "$HW_{i}$",
-        "HH" = "$HH_{i}$"
+        "Hispanic_ID:HH" = "$HH_{i} \\times Hispanic_{i}$"#,
+        # "WH" = "$WH_{i}$",
+        # "HW" = "$HW_{i}$",
+        # "HH" = "$HH_{i}$"
 ) 
 gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
@@ -125,7 +125,7 @@ regression_tab <- modelsummary(reg1, fmt = 2,
   footnote_as_chunk = F, title_format = c("italic"),
   escape = F, threeparttable = T
   ) |> 
-  row_spec(14, hline_after = T)
+  row_spec(8, hline_after = T)
 
 
 regression_tab %>%
@@ -146,9 +146,48 @@ regression_tab <- modelsummary(reg1, fmt = 2,
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "hold_position")
   ) |> 
-  row_spec(14, hline_after = T)
+  row_spec(8, hline_after = T)
 
 
 regression_tab %>%
   save_kable(file.path(dissertation_wd,"tables/tab06-regression.tex"))
+
+# highlight collumn 2
+regression_tab <- modelsummary(reg1, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) |> 
+  column_spec(2, background = "#ffff30") |>
+  row_spec(8, hline_after = T)
+
+
+regression_tab %>%
+  save_kable(file.path(dissertation_wd,"tables/tab06a-regression.tex"))
+
+# highlight collumn 3
+regression_tab <- modelsummary(reg1, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) |> 
+  column_spec(3, background = "#ffff30") |>
+  row_spec(8, hline_after = T)
+
+
+regression_tab %>%
+  save_kable(file.path(dissertation_wd,"tables/tab06b-regression.tex"))
+
 

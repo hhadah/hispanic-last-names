@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  11 APR 2023 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  12 APR 2023 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1514,80 +1514,80 @@ LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
 (Font)              scaled to size 16.07027pt on input line 106.
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
 (Font)              scaled to size 16.07027pt on input line 106.
+LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
+(Font)              scaled to size 8.36993pt on input line 110.
+LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
+(Font)              scaled to size 6.50995pt on input line 110.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 110.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 110.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 110.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 110.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 110.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 110.
  [2] [3] [4]
 [5]
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
-(Font)              scaled to size 13.39188pt on input line 138.
+(Font)              scaled to size 13.39188pt on input line 134.
 LaTeX Font Info:    Font shape `T1/fnc/b/it' will be
-(Font)              scaled to size 11.15991pt on input line 138.
-LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 8.36993pt on input line 139.
-LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 6.50995pt on input line 139.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 139.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 139.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 139.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 139.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 139.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.43999pt on input line 139.
+(Font)              scaled to size 11.15991pt on input line 134.
  [6] [7] [8] [9] [10]
 LaTeX Font Info:    Font shape `T1/fnc/m/it' will be
-(Font)              scaled to size 11.15991pt on input line 191.
- [11] [12] [13] [14] [15] [16] (./Hadah-last-names.bbl
+(Font)              scaled to size 11.15991pt on input line 190.
+ [11] [12] [13] [14] [15] [16] [17]
+(./Hadah-last-names.bbl
 LaTeX Font Info:    Font shape `T1/fnc/m/it' will be
 (Font)              scaled to size 10.18341pt on input line 7.
-
-[17] [18]) [19]
+ [18] [19]) [20]
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
 (Font)              scaled to size 9.29993pt on input line 266.
 LaTeX Font Info:    Font shape `T1/fnc/b/sc' will be
 (Font)              scaled to size 9.29993pt on input line 266.
-<GraphNonWhites.png, id=375, 867.24pt x 578.16pt>
+<GraphNonWhites.png, id=387, 867.24pt x 578.16pt>
 File: GraphNonWhites.png Graphic file (type png)
 <use GraphNonWhites.png>
 Package pdftex.def Info: GraphNonWhites.png  used on input line 267.
 (pdftex.def)             Requested size: 469.75502pt x 313.17216pt.
- [20 <./GraphNonWhites.png>]
-<HispanicUSA.png, id=382, 867.24pt x 578.16pt>
+ [21 <./GraphNonWhites.png>]
+<HispanicUSA.png, id=394, 867.24pt x 578.16pt>
 File: HispanicUSA.png Graphic file (type png)
 <use HispanicUSA.png>
 Package pdftex.def Info: HispanicUSA.png  used on input line 278.
 (pdftex.def)             Requested size: 469.75502pt x 313.17216pt.
- [21 <./HispanicUSA.png>]
-<interracialovertime.png, id=388, 1330.9725pt x 887.315pt>
+ [22 <./HispanicUSA.png>]
+<interracialovertime.png, id=400, 1330.9725pt x 887.315pt>
 File: interracialovertime.png Graphic file (type png)
 <use interracialovertime.png>
 Package pdftex.def Info: interracialovertime.png  used on input line 288.
 (pdftex.def)             Requested size: 469.75502pt x 313.16444pt.
- [22 <./interracialovertime.png>]
-<PirChart2.png, id=395, 1437.87187pt x 958.58125pt>
+ [23 <./interracialovertime.png>]
+<PirChart2.png, id=407, 1437.87187pt x 958.58125pt>
 File: PirChart2.png Graphic file (type png)
 <use PirChart2.png>
 Package pdftex.def Info: PirChart2.png  used on input line 298.
 (pdftex.def)             Requested size: 469.75502pt x 313.17342pt.
- [23 <./PirChart2.png>] [24]
-(./tables/tab01-observations-by-parents.tex) [25]
-(./tables/tab02-observations-by-couple.tex) [26]
-(./tables/tab03-summary-stats.tex) [27] (./tables/tab04-summary-stats.tex)
-[28] (./tables/tab05-regression.tex) [29] (./tables/tab06-regression.tex)
-[30] (./tables/tab07-regression.tex) [31] (./Hadah-last-names.aux)
+ [24 <./PirChart2.png>] [25]
+(./tables/tab01-observations-by-parents.tex) [26]
+(./tables/tab02-observations-by-couple.tex) [27]
+(./tables/tab03-summary-stats.tex) [28] (./tables/tab04-summary-stats.tex)
+[29] (./tables/tab05-regression.tex) [30] (./tables/tab06-regression.tex)
+[31] (./tables/tab07-regression.tex) [32] (./Hadah-last-names.aux)
 Package rerunfilecheck Info: File `Hadah-last-names.out' has not changed.
-(rerunfilecheck)             Checksum: D85EFB2C36E0AA71F414961E22562563;2685.
+(rerunfilecheck)             Checksum: 390558CC1D11E0E75134250F78B594AE;2657.
  ) 
 Here is how much of TeX's memory you used:
- 35270 strings out of 478287
- 706535 string characters out of 5846751
- 976311 words of memory out of 5000000
+ 35275 strings out of 478287
+ 706566 string characters out of 5846751
+ 976313 words of memory out of 5000000
  52674 multiletter control sequences out of 15000+600000
  559133 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,17n,93p,1274b,1079s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,17n,93p,1586b,1079s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/
 texlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/t
@@ -1597,10 +1597,10 @@ mf-dist/fonts/type1/urw/ncntrsbk/uncbi8a.pfb></usr/local/texlive/2021/texmf-dis
 t/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/ncntrsbk/uncri8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb>
-Output written on Hadah-last-names.pdf (31 pages, 486044 bytes).
+Output written on Hadah-last-names.pdf (32 pages, 487540 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 450 compressed objects within 5 object streams
- 117 named destinations out of 1000 (max. 500000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 462 compressed objects within 5 object streams
+ 122 named destinations out of 1000 (max. 500000)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
