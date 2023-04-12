@@ -8,21 +8,22 @@
 \toprule
   & \specialcell{(1) \\ Log annual earnings} & \specialcell{(2) \\  Log annual earnings}\\
 \midrule
-$WH_{i} \times Hispanic_{i}$ & \num{-0.13}** & \num{-0.06}\\
- & (\num{0.05}) & \vphantom{1} (\num{0.05})\\
-$HW_{i} \times Hispanic_{i}$ & \num{-0.16}*** & \num{-0.11}**\\
+$WH_{i} \times Hispanic_{i}$ & \num{-0.14}*** & \num{-0.08}\\
  & (\num{0.05}) & (\num{0.05})\\
-$HH_{i} \times Hispanic_{i}$ & \num{-0.11}** & \num{-0.06}\\
- & (\num{0.05}) & (\num{0.04})\\
+$HW_{i} \times Hispanic_{i}$ & \num{-0.18}*** & \num{-0.12}*\\
+ & (\num{0.07}) & (\num{0.06})\\
+$HH_{i} \times Hispanic_{i}$ & \num{-0.10}* & \num{-0.06}\\
+ & (\num{0.06}) & (\num{0.05})\\
 \midrule
 $HW_{i} \times Hispanic_{i} - WH_{i} \times Hispanic_{i}$ & -0.03 & -0.04\\
- & (0.07) & (0.07)\\
+ & (0.07) & (0.06)\\
 \midrule
 Observations & \num{129359} & \num{129359}\\
+State FE & X & X\\
+Year FE & X & X\\
 \textit{Controlling for:} &  & \\
 Hours Worked & X & X\\
 Age & X & X\\
-Year FE & X & X\\
 Education &  & X\\
 \bottomrule
 \multicolumn{3}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
@@ -32,6 +33,7 @@ Education &  & X\\
 \item[2] \footnotesize{The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH). $Hispanic_{i}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.}
 \item[3] \footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}
 \item[4] \footnotesize{Column one has the regression results when controlling for hours worked, age, and years of fixed effects. Column two has the results after controlling for education.}
+\item[5] \footnotesize{Standard errors are clustered on the state level.}
 \end{tablenotes}
 \end{threeparttable}}
 \end{table}

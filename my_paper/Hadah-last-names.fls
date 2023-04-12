@@ -2,7 +2,7 @@ PWD /Users/hhadah/Documents/GiT/hispanic-last-names/my_paper
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /Users/hhadah/Library/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Hadah-last-names.tex
+INPUT /Users/hhadah/Documents/GiT/hispanic-last-names/my_paper/Hadah-last-names.tex
 OUTPUT Hadah-last-names.log
 INPUT ./wptemp.cls
 INPUT ./wptemp.cls

@@ -117,7 +117,7 @@ This study utilizes a method developed by \citet{rubinstein2014pride} in this re
 
 Using the Current Population Survey (CPS) from 1994 to 2019 and the 1970-1990 US censuses, I will estimate the effect of having a Hispanic last name on the labor market outcomes. In other words, I will approximate the variation in labor market perception of ethnic signals, in this case having a Hispanic last name, on annual log earnings. I also study the effect of identifying as Hispanic on labor market outcomes. 
 
-To retrieve the effect of having a Hispanic last name, I compare the children of inter-ethnic marriages between Whites and Hispanics. I find that while men born to White father-Hispanic mothers earn less than men born to Hispanic father-White mothers, this gap is entirely explained by educational differences. Thus, I do not find a significant effect of having a Hispanic last name. Finally, I find that men identifying as Hispanic earn significantly less than those who do not, even when I control ancestry and education. 
+To retrieve the effect of having a Hispanic last name, I compare the children of inter-ethnic marriages between Whites and Hispanics. I find that while men born to White father-Hispanic mothers earn less than men born to Hispanic father-White mothers, this gap is entirely explained by educational differences. Thus, I do not find a significant effect of having a Hispanic last name. Finally, I find that men identifying as Hispanic earn significantly less than those who do not, even when I control ancestry and education. Inter-ethnic children with a White father, and thus having a non-Hispanic last name, earn 14\% less than children of endogamous White parents. Inter-ethnic children with a Hispanic father, and thus having a Hispanic last name, earn 20\% less than children of endogamous White parents. Endogamous children with Hispanic parents earn 24\% less than children of endogamous White parents. A big part of the gaps could be explained by education. Inter-ethnic children with a White father and identify as Hispanic, and thus having a non-Hispanic last name, earn 14\% less than children of endogamous White parents. Inter-ethnic children with a Hispanic father and identify as Hispanic, and thus having a Hispanic last name, earn 18\% less than children of endogamous White parents. Endogamous children with Hispanic parents and identify as Hispanic earn 10\% less than children of endogamous White parents.
 
 A long list of economic papers investigated taste-based discrimination, statistical discrimination, and Black-White and gender earnings gaps that date back to the seminal work of \citet{becker2010economics}. \citet{bayer2018divergent} investigated the Black-White wage gap's narrowing and then divergence. \citet{card1992school} argued that the Black-White wage gap narrowed from 1960 to 1980 due to improvement in the quality of Black schools, and \citet{juhn1991accounting} showed that skills play a big part in the Black-White wage gap. Moreover,  \citet{charles2008prejudice} provided evidence that 25\% of the Black-White wage gap is due to prejudice. \citet{black1995discrimination} introduced a search model showing that with a taste for discrimination, minorities earn less than the majority group even when hired by an unprejudiced firm. In comparison, \citet{altonji2001employer} found that firms do not statistically discriminate based on race and ethnicity. Little has been done, however, about discrimination against Hispanics, which offers an opportunity to exploit the observable racial similarities between Hispanics and Whites.
 
@@ -152,7 +152,7 @@ WH children have an average of 13.366 and 13.741 years of education for men and 
 
 In panel D of table \ref{tab:c&p1}, I present the rates at which members of each group self-identify as Hispanic \footnote{Hispanic self-identification is observed when an individual notes that they are Hispanic on the CPS questionnaire}. The vast majority of HH children, 97\%, identify as Hispanic. There is considerable attrition in Hispanic identification of inter-ethnic children. Among WH children, 82.1\% of men and 85.0\% of women identified as Hispanic. Among HW children, 87.9\% of men and 85.9\% of women identified as Hispanic. These results align with the findings of a substantial body of literature that noted this attrition among children of immigrants, especially those coming from inter-ethnic marriages \citep{duncan2017complexity, duncan2018identifying, duncan2020new, antman2020ethnic}. Finally, a small portion of WW children, 6\%, identified as Hispanic. These 6\% of WW children are most likely third generation--- or more--- immigrants. For my analysis, I dropped the WW observations identified as Hispanic to compare with non-Hispanic Whites.
 
-In columns (v) and (vi), I calculate the differences in means between HH-WW (column v) and HW-WH (column vi). Overall, HH children do worse than WW children. HH has one less year of education compared to WW, 2.1 percentage points less likely to be employed, HH men earn 16.4\% less than WW men, and HH women make 12.3\% less than WW women. Therefore, these two groups, HH and WW, are different in many observable.
+In columns (v) and (vi), I calculate the differences in means between HH-WW (column v) and HW-WH (column vi). Overall, HH children do worse than WW children. HH has one less year of education compared to WW, 2.1 percentage points less likely to be employed, HH men earn 18\% less than WW men, and HH women make 12.3\% less than WW women. Therefore, these two groups, HH and WW, are different in many observable.
 
 The differentials between WH and HW are not as severe as the ones between HH and WW. HW children are still worse off than WH but are way better than HH. HW men attain 0.294 fewer years of education than WH men. HW women achieve 0.471 fewer years of schooling than WH women. HW children are 1.8-1.9 percentage points less likely to be employed. HW men earn the same annual earnings as WH men, and HW women earn 10.3\% less. These differences show that HW and WH children are different from children of homogeneous marriages and, thus, are more comparable.
 
@@ -182,9 +182,9 @@ The difference in means between Hispanics and non-Hispanic Whites could result f
 
 \section{Estimating the effect of having a Hispanic last name}
 
-Let $Y_{it}$ be the annual log earnings of person $i$ at time $t$. $WH_{i}$, $HW_{i}$ and $HH_{i}$ are indicator variables for the type of parents person $i$ has. $X_{it}$ is a vector of controls, $\gamma_{t}$ are year fixed effects and $\phi_{it}$ represents the error term. The equation for this strategy is written as follows:
+Let $Y_{ist}$ be the annual log earnings of person $i$ at time $t$. $WH_{ist}$, $HW_{ist}$ and $HH_{ist}$ are indicator variables for the type of parents person $i$ has. $X_{ist}$ is a vector of controls, $\gamma_{t}$ are year fixed effects, $\lambda_{s}$ are state fixed effects, and $\phi_{ist}$ represents the error term. The equation for this strategy is written as follows:
 \begin{equation} \label{eq:1a}
-Y_{it} = \beta_{1} WH_{i} +\beta_{2} HW_{i} + \beta_{3} HH_{i} + X_{it} \pi + \gamma_{t}+\phi_{it}
+Y_{ist} = \beta_{1} WH_{ist} +\beta_{2} HW_{ist} + \beta_{3} HH_{ist} + X_{ist} \pi + \gamma_{t} + \lambda_s + \phi_{ist}
 \end{equation}
 
 $\beta_{1}, \beta_{2}$ and $\beta_{3}$ are the coefficients of interest in this specification. They estimate the earnings gaps between the three groups and children of White-White parents. The difference between $\beta_{1}$ and $\beta_{2}$ captures the effect of having a Hispanic last name. This comes from the fact that the WH and HW children are similar. On the one hand, WH children will have a White father and carry his White last name. On the other hand, HW children will have a Hispanic father and carry his Hispanic last name. Therefore, \textit{ceteris paribus}, the difference will capture the effect of having a Hispanic last name.
@@ -193,52 +193,52 @@ $\beta_{1}, \beta_{2}$ and $\beta_{3}$ are the coefficients of interest in this 
 
 In this section, I will present an estimation strategy that would allow me to capture the effect of identifying as a Hispanic. The empiricism in the section follows the theoretical identity model developed by \citet{akerlof2000economics}. 
 
-Let $Y_{it}$ be the annual log earnings of person $i$ at time $t$. $WH_{i}$, $HW_{i}$ and $WW_{i}$ are indicator variables for the type of parents person $i$ has. $X_{it}$ is a vector of controls, $\gamma_{t}$ are year fixed effects and $\phi_{it}$ represents the error term. The addition to the previous model is the $Hispanic_{i}$ indicator variable. $Hispanic_{i}$ is equal to one if a person identifies as Hispanic and zero otherwise. I interact this term with the $WH_{i}$, $HW_{i}$ and $HH_{i}$.  The regression is presented in the following equation.
+Let $Y_{ist}$ be the annual log earnings of person $i$ in state $s$ at time $t$. $WH_{ist}$, $HW_{ist}$ and $WW_{ist}$ are indicator variables for the type of parents person $i$ has. $X_{ist}$ is a vector of controls, $\gamma_{t}$ are year fixed effects, $\lambda_s$ are state fixed effects, and $\phi_{ist}$ represents the error term. The addition to the previous model is the $Hispanic_{ist}$ indicator variable. $Hispanic_{ist}$ is equal to one if a person identifies as Hispanic and zero otherwise. I interact this term with the $WH_{ist}$, $HW_{ist}$ and $HH_{ist}$.  The regression is presented in the following equation.
 
 \begin{align} \label{eq:iden}
-Y_{it} &= \beta_{1} HW_{i} +  \beta_{2} WH_{i} + \beta_{3} HH_{i} +\\
-& \beta_{4} WH_{i} \cdot Hispanic_{i} + \beta_{5} HW_{i}\cdot Hispanic_{i} +  \beta_{6} HH_{i} \cdot Hispanic_{i}+ \nonumber \\
-&X_{it} \pi + \gamma_{t}+\phi_{it} \nonumber
+Y_{ist} &= \beta_{1} HW_{ist} +  \beta_{2} WH_{ist} + \beta_{3} HH_{ist} +\\
+& \beta_{4} WH_{ist} \cdot Hispanic_{ist} + \beta_{5} HW_{ist}\cdot Hispanic_{ist} +  \beta_{6} HH_{ist} \cdot Hispanic_{ist}+ \nonumber \\
+&X_{ist} \pi + \gamma_{t} + \lambda_s + \phi_{ist} \nonumber
 \end{align}
 
-The coefficients of interest from equation \ref{eq:iden} are $\beta_{4}$, $\beta_{5}$ and $\beta_{6}$. The interaction terms capture the earnings gaps between members of $WH_{i}$, $HW_{i}$, and $WW_{i}$ that identify as Hispanic and White WW children. 
+The coefficients of interest from equation \ref{eq:iden} are $\beta_{4}$, $\beta_{5}$ and $\beta_{6}$. The interaction terms capture the earnings gaps between members of $WH_{ist}$, $HW_{ist}$, and $WW_{ist}$ that identify as Hispanic and White WW children. 
 
 \section{Results and Discussion}\label{sec:results}
 
 In this section, I present the results from estimating the two specifications in equations \ref{eq:1a} and \ref{eq:iden}. The results are shown in tables \ref{tab:lastnamereg} and \ref{tab:identreg}. All estimations are done on a sample of White, native-born men between the ages of 25 and 40 employed for full-time full-year (FTFY) and are waged and salaried workers.
 
-I find that the earnings gaps between WH and WW are 8.8\%, 14.1\% between HW and WW, and 16.1\% between HH and WW. Moreover, the difference in earnings between HW and WH children, that captures the effect of having a Hispanic last name, equals a statistically significant 5.3 percentage points. Meaning by comparing inter-ethnic children, a person with a Hispanic last name earns 5.3 percentage points less than someone with a White last name. However, more than half of the earnings gaps could be explained by educational differences between WW children and WH, HW, and HH. When I control for education, the gap between the three groups and WW is cut between by 50\% to 64.0\%. Furthermore, the last name effect decreases to a statistically insignificant 1.6 percentage points earnings gap.
+I find that the earnings gaps between WH and WW are 14\%, 18\% between HW and WW, and 24\% between HH and WW. Moreover, the difference in earnings between HW and WH children, that captures the effect of having a Hispanic last name, equals a statistically significant 6 percentage points. Meaning by comparing inter-ethnic children, a person with a Hispanic last name earns 6 percentage points less than someone with a White last name. However, more than half of the earnings gaps could be explained by educational differences between WW children and WH, HW, and HH. When I control for education, the gap between the three groups and WW is cut between by 50\% to 64.0\%. Furthermore, the last name effect decreases to a statistically insignificant 2 percentage points earnings gap.
 
-I also find a significant earnings gap between those that identify as Hispanic and WW children. The gaps between WH, HW, and HH that identify as Hispanic and WW are, respectively, 13.4\%, 16.4\%, and 10.6\%. The difference between WH and HW that identify as Hispanic---captures the last name effect of those that identify as Hispanic--- is equal to 3 percentage points and is statistically insignificant. Controlling for education explains a big part of the gap. The gaps between WH, HW, and HH that identify as Hispanic and WW after controlling for education are 6.4\%, 10.8\%, and 6.2\%. The WH--WW and HH--WW gaps for those identifying as Hispanic become statistically insignificant after controlling for education. Finally, the difference between WH and HW that identify as Hispanic that identifies as Hispanic remains statistically insignificant but increases to 4.3 percentage points.
+I also find a significant earnings gap between those that identify as Hispanic and WW children. The gaps between WH, HW, and HH that identify as Hispanic and WW are, respectively, 14\%, 18\%, and 10\%. The difference between WH and HW that identify as Hispanic---captures the last name effect of those that identify as Hispanic--- is equal to 3 percentage points and is statistically insignificant. Controlling for education explains a big part of the gap. The gaps between WH, HW, and HH that identify as Hispanic and WW after controlling for education are 8\%, 12\%, and 6\%. The WH--WW and HH--WW gaps for those identifying as Hispanic become statistically insignificant after controlling for education. Finally, the difference between WH and HW that identify as Hispanic that identifies as Hispanic remains statistically insignificant but increases to 4 percentage points.
 
 \subsection{The effect of having a Hispanic last name on labor market outcomes}
 
-I provide the results to the estimation of equation \ref{eq:1a} in table \ref{tab:lastnamereg}. The sample in this analysis includes full-time, full-year, and waged and salaried men, and I control for hours worked and age and include year fixed effects (FE). Column one in table \ref{tab:lastnamereg} is the results without controlling for education. Overall, there is big Hispanic--White earnings gaps. Children of White father-Hispanic mothers (WH) earn 8.8\% less than children of White fathers-White mothers (WW) families. The gap between children of Hispanic father-White mothers (HW) and WW children is 14.1\%. The gap between children of Hispanic father-Hispanic mothers (HH) and WW children is 16.1\%. Therefore, Hispanic children, inter-ethnic or children of homogeneous HH marriages, face a substantial earnings gap.
+I provide the results to the estimation of equation \ref{eq:1a} in table \ref{tab:lastnamereg}. The sample in this analysis includes full-time, full-year, and waged and salaried men, and I control for hours worked and age and include year fixed effects (FE). Column one in table \ref{tab:lastnamereg} is the results without controlling for education. Overall, there is big Hispanic--White earnings gaps. Children of White father-Hispanic mothers (WH) earn 14\% less than children of White fathers-White mothers (WW) families. The gap between children of Hispanic father-White mothers (HW) and WW children is 20\%. The gap between children of Hispanic father-Hispanic mothers (HH) and WW children is 24\%. Therefore, Hispanic children, inter-ethnic or children of homogeneous HH marriages, face a substantial earnings gap.
 
-The difference between the estimates of WH and HW would capture the effect of having a Hispanic last name. A WH child will have a White last name since their father is White, while an HW child will have a Hispanic last name like their Hispanic father. When I take the difference between HW and WH, I find a statistically significant gap of 5.3 percentage points, which means that an inter-ethnic person with a Hispanic last name earns 5.3 percentage points less than a similar inter-ethnic person but with a White last name.
+The difference between the estimates of WH and HW would capture the effect of having a Hispanic last name. A WH child will have a White last name since their father is White, while an HW child will have a Hispanic last name like their Hispanic father. When I take the difference between HW and WH, I find a statistically significant gap of 6 percentage points, which means that an inter-ethnic person with a Hispanic last name earns 6 percentage points less than a similar inter-ethnic person but with a White last name.
 
-The literature on the earnings gaps shows that educational differences could explain a big part of these gaps \citep{duncan2006hispanics, duncan2017complexity, duncan2018identifying, duncan2020new}. Therefore, I run the equation \ref{eq:1a}, but this time I control for education. The regression results are in column two of table \ref{tab:lastnamereg}. The sample includes full-time, full-year, and waged and salaried men, and I control for hours worked and age and include year fixed effects (FE). The gap between WH and WW is 4.4\%, a reduction of 50\% from the baseline after controlling for education. The earning gaps between HW and HH, and WW were respectively reduced by 58\% and 64\%. After controlling for education, an HW man earns 5.9\% less than a WW man, and an HH man earns 5.8\% less. The effect of having a Hispanic last name on earnings decreased from 5.3 to 1.6 percentage points and became statistically insignificant after controlling for education.
+The literature on the earnings gaps shows that educational differences could explain a big part of these gaps \citep{duncan2006hispanics, duncan2017complexity, duncan2018identifying, duncan2020new}. Therefore, I run the equation \ref{eq:1a}, but this time I control for education. The regression results are in column two of table \ref{tab:lastnamereg}. The sample includes full-time, full-year, and waged and salaried men, and I control for hours worked and age and include year fixed effects (FE). The gap between WH and WW is 9\%, a reduction of 35\% from the baseline after controlling for education. The earning gaps between HW and HH, and WW were respectively reduced by 45\% and 50\%. After controlling for education, an HW man earns 11\% less than a WW man, and an HH man earns 12\% less. The effect of having a Hispanic last name on earnings decreased from 6 to 2 percentage points and became statistically insignificant after controlling for education.
 
-Therefore, Hispanics face big earnings gaps compared to non-Hispanic Whites. By comparing the children of inter-ethnic marriages, I could study the impact of having a Hispanic last name on earnings. Having a Hispanic last name carries a cost in the labor market. A person with a Hispanic last name earns 5.3 percentage points less than someone with a White name. However, educational differences between Hispanics and Whites could explain more than 50\% of the earning gaps and all of the Hispanic last name costs.
+Therefore, Hispanics face big earnings gaps compared to non-Hispanic Whites. By comparing the children of inter-ethnic marriages, I could study the impact of having a Hispanic last name on earnings. Having a Hispanic last name carries a cost in the labor market. A person with a Hispanic last name earns 6 percentage points less than someone with a White name. However, educational differences between Hispanics and Whites could explain more than 50\% of the earning gaps and all of the Hispanic last name costs.
 
 \subsection{The effect of identifying as Hispanic on labor market outcomes}
 
 In this section, I present the results of equation \ref{eq:iden} that estimates the effect of identifying as Hispanic on annual log earnings. I show the results in table \ref{tab:identreg}. The sample is restricted to full-time full-year (FTFY) salaried and waged men. I control for age and hours worked and include year fixed effects.
 
-I run the estimating equation without controlling for education in table \ref{tab:identreg} column 1. I find that those that identify as Hispanic face a big earnings gap compared to those that do not. A WH man that identifies as Hispanic earns 13.4\% less than a WW man. An HW man who identifies as Hispanic makes 16.4\% less than a WW man, and an HH man who is determined as Hispanic earns 10.6\% less than a WW man. Comparing the coefficients of the interaction terms to those of the $WH_{i}$, $HW_{i}$, and $HH_{i}$ shows that members of the three groups that do not identify as Hispanic earn about the same as WW.
-Moreover, the difference between $HW_{i} \cdot Hispanic_{i}$  and $WH_{i} \cdot Hispanic_{i}$ captures the effect of having a Hispanic last name and identifying as Hispanic compared to individuals who identify as Hispanic but have a White last name. A person with a Hispanic last name that identifies as Hispanic earns 3 percentage points less than a person that identifies as Hispanic but has a White last name. The difference between the two interaction terms is statistically insignificant.
+I run the estimating equation without controlling for education in table \ref{tab:identreg} column 1. I find that those that identify as Hispanic face a big earnings gap compared to those that do not. A WH man that identifies as Hispanic earns 14\% less than a WW man. An HW man who identifies as Hispanic makes 18\% less than a WW man, and an HH man who is determined as Hispanic earns 10\% less than a WW man. Comparing the coefficients of the interaction terms to those of the $WH_{ist}$, $HW_{ist}$, and $HH_{ist}$ shows that members of the three groups that do not identify as Hispanic earn about the same as WW.
+Moreover, the difference between $HW_{ist} \cdot Hispanic_{ist}$  and $WH_{ist} \cdot Hispanic_{ist}$ captures the effect of having a Hispanic last name and identifying as Hispanic compared to individuals who identify as Hispanic but have a White last name. A person with a Hispanic last name that identifies as Hispanic earns 3 percentage points less than a person that identifies as Hispanic but has a White last name. The difference between the two interaction terms is statistically insignificant.
 
-In table  \ref{tab:identreg} column 2, I show the results of equation \ref{eq:iden} while controlling for education. Education explains all the identity costs for members of WH and HH. Also, controlling for education decreases the earnings gap for identifying as Hispanic and being a member of HW by 34.1\%. An HW member that identifies as Hispanic earns 10.8\% less than a WW man. Furthermore, the difference between $HW_{i} \cdot Hispanic_{i}$  and $WH_{i} \cdot Hispanic_{i}$ increases to 4.3 percentage points but remains statistically insignificant.
+In table  \ref{tab:identreg} column 2, I show the results of equation \ref{eq:iden} while controlling for education. Education explains all the identity costs for members of WH and HH. Also, controlling for education decreases the earnings gap for identifying as Hispanic and being a member of HW by 33\%. An HW member that identifies as Hispanic earns 12\% less than a WW man. Furthermore, the difference between $HW_{ist} \cdot Hispanic_{ist}$  and $WH_{ist} \cdot Hispanic_{ist}$ increases to 4 percentage points but remains statistically insignificant.
 
 \section{Discussion}
  
  The results presented in tables \ref{tab:lastnamereg} and \ref{tab:identreg} have an implication that affects how Hispanic-White earnings gaps should be calculated. First, A big portion of the earnings gaps could be explained by education. However, more unobservable characteristics, like innate ability, could affect earnings outcomes. Therefore, comparing Hispanics to Whites could yield inflated gaps since the two groups are different. The reduced form regression of this approach could be written as:
  
  \begin{equation} \label{eq:naive}
- Y_{it} = \beta_{1} Hispanic_{i} + X_{it}^{\prime} + \gamma_{t}+\phi_{it}
+ Y_{ist} = \beta_{1} Hispanic_{ist} + X_{ist}^{\prime} + \gamma_{t} + \lambda_s + \phi_{ist}
  \end{equation}
  
-Where $Y_{it}$ in equation \ref{eq:naive} is the annual log earnings of person $i$ at time $t$. $Hispanic_{i}$ is a dummy variable equal to one if person $i$ is Hispanic and zero otherwise. $X_{it}$ is a vector of controls, $\gamma_{t}$ is time fixed effects and $\phi_{it}$ is the error term.
+Where $Y_{ist}$ in equation \ref{eq:naive} is the annual log earnings of person $i$ at time $t$. $Hispanic_{ist}$ is a dummy variable equal to one if person $i$ is Hispanic and zero otherwise. $X_{ist}$ is a vector of controls, $\gamma_{t}$ is time fixed effects and $\phi_{ist}$ is the error term.
  
 From equation \ref{eq:naive}, $\beta_{1}$ estimates the earnings gap between Hispanics and Whites. When calculating the equation, before controlling for education, I find an earnings gap that is equal to 15.6\%. This gap is close to the gap between HH and WW. After controlling for education, the gap decreases by more than half and becomes 6\%, which is also similar to the gap between HH and WW after controlling for education. Since the differences between Whites and Hispanics, both observable and unobservable, are large, estimating the gap HW-WH could provide us with a bound on how much of the discrimination against Hispanics is taste-based. 
  
@@ -248,9 +248,9 @@ The point estimate of the difference between HW and WH from equation \ref{eq:1a}
 
 As the Hispanic population keeps growing in the United States, studying discrimination against this group is also important. In this paper, I examine discrimination against Hispanics in the labor market. More specifically, I examine the impact of Hispanic last names and Hispanic identification on annual log earnings. 
 
-I compare the children of inter-ethnic marriages to study the labor market impact of having a Hispanic last name. The earning gap between WH and WW is 8.8\%, 14.1\% between HW and WW, and 16.1\% between HH and WW. When I compare the earnings of HW and WH children, which captures the effect of having a Hispanic last name, HW children earn 5.3\% less than WH children. Thus, by comparing inter-ethnic children, a person with a Hispanic last name makes 5.3\% less than someone with a White last name. Controlling for education, however, explains more than half of the earnings gaps between WW children and WH, HW, and HH. When I control for education, the gap between the three groups and WW is cut between 50-64.0\%. Furthermore, the last name effect decreases to a statistically insignificant 1.6\% earnings gap.
+I compare the children of inter-ethnic marriages to study the labor market impact of having a Hispanic last name. The earning gap between WH and WW is 14\%, 20\% between HW and WW, and 24\% between HH and WW. When I compare the earnings of HW and WH children, which captures the effect of having a Hispanic last name, HW children earn  6\% less than WH children. Thus, by comparing inter-ethnic children, a person with a Hispanic last name makes 6\% less than someone with a White last name. Controlling for education, however, explains more than half of the earnings gaps between WW children and WH, HW, and HH. When I control for education, the gap between the three groups and WW is cut between 50-64.0\%. Furthermore, the last name effect decreases to a statistically insignificant 2\% earnings gap.
 
-I also find that men who identify as Hispanic earn significantly less than those who do not, even when I control ancestry and education. The gaps between WH, HW, and HH that identify as Hispanic and WW are, respectively, 13.4\%, 16.4\%, and 10.6\%. Controlling for education explains a big part of the gap. The gaps between WH, HW, and HH that identify as Hispanic and WW after controlling for education are 6.4\%, 10.8\%, and 6.2\%. 
+I also find that men who identify as Hispanic earn significantly less than those who do not, even when I control ancestry and education. The gaps between WH, HW, and HH that identify as Hispanic and WW are, respectively, 14\%, 18\%, and 10\%. Controlling for education explains a big part of the gap. The gaps between WH, HW, and HH that identify as Hispanic and WW after controlling for education are 8\%, 12\%, and 6\%. 
 
 % \nocite{*}
 \pagebreak
@@ -528,17 +528,17 @@ and when we observe them.}
 % Variables &  & Log annual earnings &  & Log annual earnings & \tabularnewline
 % \midrule
 
-% $WH_{i}$ &  & -0.088{*}{*}{*} &  & -0.044{*}{*}{*} & \tabularnewline
+% $WH_{ist}$ &  & -0.088{*}{*}{*} &  & -0.044{*}{*}{*} & \tabularnewline
 %  &  & (0.018) &  & (0.017) & \tabularnewline
 %  &  &  &  &  & \tabularnewline
-% $HW_{i}$ &  & -0.141{*}{*}{*} &  & -0.059{*}{*}{*} & \tabularnewline
+% $HW_{ist}$ &  & -0.141{*}{*}{*} &  & -0.059{*}{*}{*} & \tabularnewline
 %  &  & (0.015) &  & (0.014) & \tabularnewline
 %  &  &  &  &  & \tabularnewline
-% $HH_{i}$ &  & -0.161{*}{*}{*} &  & -0.058{*}{*}{*} & \tabularnewline
+% $HH_{ist}$ &  & -0.161{*}{*}{*} &  & -0.058{*}{*}{*} & \tabularnewline
 %  &  & (0.008) &  & (0.007) & \tabularnewline
 %  &  &  &  &  & \tabularnewline
 % \midrule
-% $HW_{i}$ - $WH_{i}$ &  & -0.053{*}{*} &  & -0.016 & \tabularnewline
+% $HW_{ist}$ - $WH_{ist}$ &  & -0.053{*}{*} &  & -0.016 & \tabularnewline
 %  &  & (0.024) &  & (0.022) & \tabularnewline
 %  &  &  &  &  & \tabularnewline
 % \midrule
@@ -579,20 +579,20 @@ and when we observe them.}
 % Variables &  &  &  &  & \tabularnewline
 % \hline 
 %  &  &  &  &  & \tabularnewline
-% $WH_{i}\times Hispanic_{i}$ &  & -0.134{*}{*} &  & -0.064 & \tabularnewline
+% $WH_{ist}\times Hispanic_{ist}$ &  & -0.134{*}{*} &  & -0.064 & \tabularnewline
 %  &  & (0.053) &  & (0.049) & \tabularnewline
-% $HW_{i}\times Hispanic_{i}$ &  & -0.164{*}{*}{*} &  & -0.108{*}{*} & \tabularnewline
+% $HW_{ist}\times Hispanic_{ist}$ &  & -0.164{*}{*}{*} &  & -0.108{*}{*} & \tabularnewline
 %  &  & (0.052) &  & (0.048) & \tabularnewline
-% $HH_{i}\times Hispanic_{i}$ &  & -0.106{*}{*} &  & -0.062 & \tabularnewline
+% $HH_{ist}\times Hispanic_{ist}$ &  & -0.106{*}{*} &  & -0.062 & \tabularnewline
 %  &  & (0.049) &  & (0.045) & \tabularnewline
-% $WH_{i}$ &  & 0.027 &  & 0.011 & \tabularnewline
+% $WH_{ist}$ &  & 0.027 &  & 0.011 & \tabularnewline
 %  &  & (0.048) &  & (0.045) & \tabularnewline
-% $HW_{i}$ &  & 0.007 &  & 0.038 & \tabularnewline
+% $HW_{ist}$ &  & 0.007 &  & 0.038 & \tabularnewline
 %  &  & (0.050) &  & (0.046) & \tabularnewline
-% $HH_{i}$ &  & -0.057 &  & 0.003 & \tabularnewline
+% $HH_{ist}$ &  & -0.057 &  & 0.003 & \tabularnewline
 %  &  & (0.057) &  & (0.044) & \tabularnewline
 % \hline 
-% $HW_{i}\times Hispanic_{i}$ - $WH_{i}\times Hispanic_{i}$ &  & -0.030 &  & -0.043 & \tabularnewline
+% $HW_{ist}\times Hispanic_{ist}$ - $WH_{ist}\times Hispanic_{ist}$ &  & -0.030 &  & -0.043 & \tabularnewline
 %  &  & (0.074) &  & (0.068) & \tabularnewline
 % \hline 
 % \textit{Controlling for:} &  &  &  &  & \tabularnewline
@@ -606,7 +606,7 @@ and when we observe them.}
 
 %   \begin{tablenotes}
 %    \item [\textit{Notes.}] This table includes the estimation results of equation \ref{eq:iden}.
-%    \item [\textit{Notes.}] The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH). $Hispanic_{i}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.
+%    \item [\textit{Notes.}] The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH). $Hispanic_{ist}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.
 %    \item [\textit{Notes.}] The sample is restricted to men working full-time full-year and are waged and salaried workers.
 %     \item [\textit{Notes.}] Column one has the regression results when controlling for hours worked, age, and years of fixed effects. Column two has the results after controlling for education.
 %   \end{tablenotes}
@@ -631,7 +631,7 @@ and when we observe them.}
 %  &  &  &  &  & \tabularnewline
 % Variables &  & Log annual earnings &  & Log annual earnings & \tabularnewline
 % \hline 
-% $Hispanic_{i}$ &  & -0.156{*}{*}{*} &  & -0.060{*}{*}{*} & \tabularnewline
+% $Hispanic_{ist}$ &  & -0.156{*}{*}{*} &  & -0.060{*}{*}{*} & \tabularnewline
 %  &  & (0.006) &  & (0.006) & \tabularnewline
 % \textit{Controlling for:} &  &  &  &  & \tabularnewline
 % Education &  & No &  & Yes & \tabularnewline
@@ -644,7 +644,7 @@ and when we observe them.}
 
 %   \begin{tablenotes}
 %    \item [\textit{Notes.}] This table includes the estimation results of equation \ref{eq:naive}.
-%    \item [\textit{Notes.}] $Hispanic_{i}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.
+%    \item [\textit{Notes.}] $Hispanic_{ist}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.
 %    \item [\textit{Notes.}] The sample is restricted to men working full time full-year and are waged and salaried workers.
 %     \item [\textit{Notes.}] Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.
 %   \end{tablenotes}

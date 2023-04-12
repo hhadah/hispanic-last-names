@@ -13,10 +13,10 @@ ParentDummies <- c("WH:Hispanic_ID", "HW:Hispanic_ID", "HH:Hispanic_ID","WH", "H
 
 # By generation
 reg1 <- list(
-  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age, se = "iid",
+  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
                                                         data = IndividualData |> 
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0)),
-  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + educ, se = "iid",
+  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0))
   
@@ -66,7 +66,7 @@ controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
 
 all_row <- rbind(differences_row, pvalue_row, controling_for, hoursworked)
-attr(all_row, 'position') <- c(7:8, 10:11)
+attr(all_row, 'position') <- c(7:8, 12:13)
 
 cm <- c("WH:Hispanic_ID" = "$WH_{i} \\times Hispanic_{i}$",
         "Hispanic_ID:HW" = "$HW_{i} \\times Hispanic_{i}$",
@@ -78,8 +78,9 @@ cm <- c("WH:Hispanic_ID" = "$WH_{i} \\times Hispanic_{i}$",
 gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "nobs",      "Observations",             0,
-  "FE: age", "Age", 0,
+  "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
+  "FE: age", "Age", 0,
   "FE: educ", "Education", 0,
   "std.error.type", "Standard Errors", 0,
   #"r.squared", "R squared", 3
@@ -120,7 +121,8 @@ regression_tab <- modelsummary(reg1, fmt = 2,
   footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:iden}).}",
                       "\\\\footnotesize{The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH). $Hispanic_{i}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.}",
                       "\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}",
-                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and years of fixed effects. Column two has the results after controlling for education.}"
+                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and years of fixed effects. Column two has the results after controlling for education.}",
+                      "\\\\footnotesize{Standard errors are clustered on the state level.}"
   ),
   footnote_as_chunk = F, title_format = c("italic"),
   escape = F, threeparttable = T
@@ -185,7 +187,6 @@ regression_tab <- modelsummary(reg1, fmt = 2,
   ) |> 
   column_spec(3, background = "#ffff30") |>
   row_spec(8, hline_after = T)
-
 
 regression_tab %>%
   save_kable(file.path(dissertation_wd,"tables/tab06b-regression.tex"))
