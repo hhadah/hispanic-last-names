@@ -92,3 +92,21 @@ regression_tab %>%
 
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab07-regression.tex"))
+
+# dissertation table
+regression_tab <- modelsummary(reg1, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  )
+
+
+regression_tab %>%
+  save_kable(file.path(dissertation_wd,"tables/tab07-naive-regression.tex"))
+
