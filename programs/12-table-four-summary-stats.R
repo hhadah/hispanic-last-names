@@ -800,3 +800,45 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   add_indent(c(9:14)) %>%
   save_kable(file.path(tables_wd,"tab04-summary-stats.tex")) %>% 
   save_kable(file.path(thesis_tabs,"tab04-summary-stats.tex"))
+
+# dissertaion table a and b
+Table_rows <- rbind(row1,  row2,   row3,  row4, 
+                    row5,  row6,   row7,  row8)
+Table_rows <-  Table_rows |> 
+  row_to_names(row_number = 1)
+
+knitr::kable(Table_rows, "latex", align = "lcccccc",
+             booktabs = T,
+             escape = F) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")) |> 
+  add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
+                     "Differences" = 2)) |> 
+  column_spec(6, bold = T, color = "red",background = "#0004ff") |> 
+  column_spec(7, bold = T, background = "#ffff30") |> 
+  row_spec(c(1,5), bold = T) |> 
+  add_indent(c(2:4)) %>%
+  add_indent(c(6:7)) %>%
+  save_kable(file.path(dissertation_wd,"tab04a-summary-stats.tex")) 
+
+# dissertaion table c
+Table_rows <- rbind(row1,  row2,   row3,  row4, 
+                    row5,  row6,   row7,  row8)
+Table_rows <-  Table_rows |> 
+  row_to_names(row_number = 1)
+
+knitr::kable(Table_rows, "latex", align = "lcccccc",
+             booktabs = T,
+             escape = F) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")) |> 
+  add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
+                     "Differences" = 2)) |> 
+  column_spec(6, bold = T, color = "red",background = "#5154f6") |> 
+  column_spec(7, bold = T, background = "#ffff30") |> 
+  row_spec(c(1,5), bold = T) |> 
+  add_indent(c(2:4)) %>%
+  add_indent(c(6:7)) %>%
+  save_kable(file.path(dissertation_wd,"tab04a-summary-stats.tex")) 

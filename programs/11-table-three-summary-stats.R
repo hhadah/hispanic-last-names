@@ -883,7 +883,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 latex_options = c("scale_down", "hold_position")) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
-  column_spec(6, bold = T, background = "#0004ff") |> 
+  column_spec(6, bold = T, color = "red",background = "#0004ff") |> 
   column_spec(7, bold = T, background = "#ffff30") |> 
   row_spec(c(1,5), bold = T) |> 
   add_indent(c(2:4)) |>
@@ -908,7 +908,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 latex_options = c("scale_down", "hold_position")) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
-  column_spec(6, bold = T, background = "#0004ff") |> 
+  column_spec(6, bold = T, color = "red",background = "#0004ff") |> 
   column_spec(7, bold = T, background = "#ffff30") |> 
   row_spec(c(1, 8), bold = T)  |> 
   add_indent(c(2:7)) |>

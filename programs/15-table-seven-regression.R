@@ -10,10 +10,10 @@ IndividualData <- read_dta(file.path(datasets,"BySexAnalysisData.dta")) |>
 
 # By generation
 reg1 <- list(
-  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly | year + age, se = "iid",
+  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly | year + age+ statefip, vcov = ~statefip,
                                                         data = IndividualData |> 
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0)),
-  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly | year + age + educ, se = "iid",
+  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly | year + age + educ+ statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0))
   
@@ -37,8 +37,9 @@ cm <- c("Hispanic_ID" = "$Hispanic_{i}$"
 gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "nobs",      "Observations",             0,
-  "FE: age", "Age", 0,
   "FE: year", "Year FE", 0,
+  "FE: statefip", "State FE", 0,
+  "FE: age", "Age", 0,
   "FE: educ", "Education", 0,
   "std.error.type", "Standard Errors", 0,
   #"r.squared", "R squared", 3
