@@ -12,15 +12,15 @@ ParentData     <- read_dta(file.path(datasets,"ParentDataFull.dta")) |>
   mutate(Tot_ed = HusbandEducation + WifeEducation)
 
 row1 <- c("Variables", 
-          "\\specialcell{White Father \\\\ White Mother \\\\ (WW) \\\\ (i)}",
-          "\\specialcell{White Father \\\\ Hispanic Mother \\\\ (WH) \\\\ (ii)}",
-          "\\specialcell{Hispanic Father \\\\ White Mother \\\\ (HW) \\\\ (iii)}",
-          "\\specialcell{Hispanic Father \\\\ Hispanic Mother \\\\ (HH) \\\\ (iv)}",
-          "\\specialcell{HH - WW \\\\ (v)}",
-          "\\specialcell{HW - WH \\\\ (vi)}"
+          "\\specialcell{White \\\\ White \\\\ (WW) \\\\ (1)}",
+          "\\specialcell{White \\\\ Hispanic \\\\ (WH) \\\\ (2)}",
+          "\\specialcell{Hispanic \\\\ White \\\\ (HW) \\\\ (3)}",
+          "\\specialcell{Hispanic \\\\ Hispanic \\\\ (HH) \\\\ (4)}",
+          "\\specialcell{HH - WW \\\\ (5)}",
+          "\\specialcell{HW - WH \\\\ (6)}"
           )
 dim(row1) <- c(1,7)
-row2 <- c("Panel A: Parent’s", " ", " ", " ", " ", " ", " ")
+row2 <- c("Panel A: Synthetic Parents", " ", " ", " ", " ", " ", " ")
 dim(row2) <- c(1,7)
 
 # parent's panel
@@ -43,7 +43,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row3 <- c(
-  "Husband’seducation (Total Years)",
+  "Husband's education (Total Years)",
   paste0("\\specialcell{", 
          round(HusbandEducation[4,2], digits = 2), 
          "\\\\",
@@ -109,7 +109,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row4 <- c(
-  "Wife’seducation (Total Years)",
+  "Wife's education (Total Years)",
   paste0("\\specialcell{", 
          round(WifeEducation[4,2], digits = 2), 
          "\\\\",
@@ -225,7 +225,7 @@ dim(row5) <- c(1,7)
 
 # Panel B
 # Age and Education
-row6 <- c("Panel B: Education ", " ", " ", " ", " ", " ", " ")
+row6 <- c("Panel B: Children's Education ", " ", " ", " ", " ", " ", " ")
 dim(row6) <- c(1,7)
 
 ## Man's Education
@@ -365,7 +365,7 @@ dim(row8) <- c(1,7)
 
 # Panel C
 # Employment and Earnings
-row9 <- c("Panel C: Employment and Earnings ", " ", " ", " ", " ", " ", " ")
+row9 <- c("Panel C: Children's Employment and Earnings ", " ", " ", " ", " ", " ", " ")
 dim(row9) <- c(1,7)
 
 ## Man's employment
@@ -583,7 +583,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row13 <- c(
-  "Women’s Hourly Earnings",
+  "Women’s Log Hourly Earnings",
   paste0("\\specialcell{", 
          round(Womanlnhourwage_1999[4,2], digits = 2), 
          "\\\\",
@@ -718,7 +718,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row15 <- c(
-  "Women’s Hourly Earnings",
+  "Women’s Log Annual Earnings",
   paste0("\\specialcell{", 
          round(Womanlninctot_1999[4,2], digits = 2), 
          "\\\\",
@@ -772,7 +772,7 @@ dim(row15) <- c(1,7)
 
 # Panel D
 # Identity
-row16 <- c("Panel D: Hispanic Identity ", " ", " ", " ", " ", " ", " ")
+row16 <- c("Panel D: Children's Hispanic Identity ", " ", " ", " ", " ", " ", " ")
 dim(row16) <- c(1,7)
 ## Man's log hourly earns
 ManHispanic <- IndividualData |> 
@@ -847,13 +847,16 @@ Table_rows <-  Table_rows |>
 knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
+       #       longtable = T, 
              caption = "Summary statistics of outcomes using parent's place of birth \\label{tab:c&p1}") |>
   kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")) |> 
-  footnote(number = c("The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States.",
-                      "In each column, I present the average statistics of the different types of people based on the ethnicities of their parents. In column one, I show the summary statistics of children of White fathers and White mothers. In column two, I present the summary statistics of children of White fathers and Hispanic mothers. In column three, I show the summary statistics of children of Hispanic fathers and White mothers. In column four, I present the summary statistics of children of Hispanic fathers and mothers.",
-                      "Columns five and six have data on the HH--WW gaps (column five) and the HW--WH gaps (column six)."),
+                latex_options = c("scale_down", 
+                "HOLD_position"
+              #   "repeat_header"
+                )) |> 
+  footnote(number = c("Source: The 1970-1990 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+                      "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
@@ -865,7 +868,8 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   add_indent(c(9:14)) |>
   add_indent(c(16:17)) |>
   save_kable(file.path(tables_wd,"tab03-summary-stats.tex")) |> 
-  save_kable(file.path(thesis_tabs,"tab03-summary-stats.tex"))
+  save_kable(file.path(thesis_tabs,"tab03-summary-stats.tex"))  |> 
+  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03-summary-stats.tex"))
 
 # presentation panel A and B
 

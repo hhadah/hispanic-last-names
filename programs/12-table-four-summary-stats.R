@@ -12,15 +12,16 @@ ParentData     <- read_dta(file.path(datasets,"ParentDataFull.dta")) |>
   mutate(Tot_ed = HusbandEducation + WifeEducation)
 
 row1 <- c("Variables", 
-          "\\specialcell{White Father \\\\ White Mother \\\\ (WW) \\\\ (i)}",
-          "\\specialcell{White Father \\\\ Hispanic Mother \\\\ (WH) \\\\ (ii)}",
-          "\\specialcell{Hispanic Father \\\\ White Mother \\\\ (HW) \\\\ (iii)}",
-          "\\specialcell{Hispanic Father \\\\ Hispanic Mother \\\\ (HH) \\\\ (iv)}",
-          "\\specialcell{HH - WW \\\\ (v)}",
-          "\\specialcell{HW - WH \\\\ (vi)}"
-)
+          "\\specialcell{White Father \\\\ White Mother \\\\ (WW) \\\\ (1)}",
+          "\\specialcell{White Father \\\\ Hispanic Mother \\\\ (WH) \\\\ (2)}",
+          "\\specialcell{Hispanic Father \\\\ White Mother \\\\ (HW) \\\\ (3)}",
+          "\\specialcell{Hispanic Father \\\\ Hispanic Mother \\\\ (HH) \\\\ (4)}",
+          "\\specialcell{HH - WW \\\\ (5)}",
+          "\\specialcell{HW - WH \\\\ (6)}"
+          )
+
 dim(row1) <- c(1,7)
-row2 <- c("Panel A: Parent’s", " ", " ", " ", " ", " ", " ")
+row2 <- c("Panel A: Children's Sunthetic Parent", " ", " ", " ", " ", " ", " ")
 dim(row2) <- c(1,7)
 
 # parent's panel
@@ -365,7 +366,7 @@ dim(row8) <- c(1,7)
 
 # Panel C
 # Employment and Earnings
-row9 <- c("Panel C: Employment and Earnings ", " ", " ", " ", " ", " ", " ")
+row9 <- c("Panel C: Children's Employment and Earnings ", " ", " ", " ", " ", " ", " ")
 dim(row9) <- c(1,7)
 
 ## Man's employment
@@ -583,7 +584,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row13 <- c(
-  "Women’s Hourly Earnings",
+  "Women’s Log Hourly Earnings",
   paste0("\\specialcell{", 
          round(Womanlnhourwage_1999[4,2], digits = 2), 
          "\\\\",
@@ -718,7 +719,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row15 <- c(
-  "Women’s Hourly Earnings",
+  "Women’s Log Annual Earnings",
   paste0("\\specialcell{", 
          round(Womanlninctot_1999[4,2], digits = 2), 
          "\\\\",
@@ -785,12 +786,15 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
              caption = "Summary statistics of outcomes using parent's place of birth only for those that self-identify as Hispanic \\label{tab:c&p2}") %>%
   kable_classic(full_width = F) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")) |> 
-  footnote(number = c("The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States.",
-                      "In each column, I present the average statistics of the different types of people based on the ethnicities of their parents. In column one, I show the summary statistics of children of White fathers and White mothers. In column two, I present the summary statistics of children of White fathers and Hispanic mothers. In column three, I show the summary statistics of children of Hispanic fathers and White mothers. In column four, I present the summary statistics of children of Hispanic fathers and mothers.",
-                      "Columns five and six have data on the HH--WW gaps (column five) and the HW--WH gaps (column six)."),
+                latex_options = c("scale_down", 
+                "HOLD_position"
+              #   "repeat_header"
+                )) |> 
+  footnote(number = c("Source: The 1970-1990 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+                      "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40, and who identify as Hispanic. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
+
   ) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
@@ -799,7 +803,9 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   add_indent(c(6:7)) %>%
   add_indent(c(9:14)) %>%
   save_kable(file.path(tables_wd,"tab04-summary-stats.tex")) %>% 
-  save_kable(file.path(thesis_tabs,"tab04-summary-stats.tex"))
+  save_kable(file.path(thesis_tabs,"tab04-summary-stats.tex")) |> 
+  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab04-summary-stats.tex"))
+
 
 # dissertaion table a and b
 Table_rows <- rbind(row1,  row2,   row3,  row4, 

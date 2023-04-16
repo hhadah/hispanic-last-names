@@ -19,7 +19,7 @@ WW <- DATA %>%
   filter(Type == "White-White") %>%
   summarise(n())
 # prettyNum(WW, big.mark = ",")
-WW_perc <- paste0("(",round(WW/ALL, digits = 2), ")")
+WW_perc <- paste0(round(WW/ALL, digits = 2))
 
 # calculate the number 
 # of hispanic fathers
@@ -28,7 +28,7 @@ WW_perc <- paste0("(",round(WW/ALL, digits = 2), ")")
 HW <- DATA %>%
   filter(Type == "Hispanic-White") %>%
   summarise(n())
-HW_perc <- paste0("(",round(HW/ALL, digits = 2), ")")
+HW_perc <- paste0(round(HW/ALL, digits = 2))
 
 # calculate the number 
 # of white fathers
@@ -37,7 +37,7 @@ HW_perc <- paste0("(",round(HW/ALL, digits = 2), ")")
 WH <- DATA %>%
   filter(Type == "White-Hispanic") %>%
   summarise(n())
-WH_perc <- paste0("(",round(WH/ALL, digits = 2), ")")
+WH_perc <- paste0(round(WH/ALL, digits = 2))
 
 # calculate the number 
 # of hispanic fathers
@@ -46,13 +46,17 @@ WH_perc <- paste0("(",round(WH/ALL, digits = 2), ")")
 HH <- DATA %>%
   filter(Type == "Hispanic-Hispanic") %>%
   summarise(n())
-HH_perc <- paste0("(",round(HH/ALL, digits = 2), ")")
+HH_perc <- paste0(round(HH/ALL, digits = 2))
 
 # table
 
 first_col <- c(" ",
-               "Observations"
-)
+                paste0("\\specialcell{", 
+                "Observations", 
+                      "\\\\",
+                "Share",
+                      "}"
+))
 
 second_col <- c("\\specialcell{White Father \\\\ White Mother}",
                paste0("\\specialcell{", 
@@ -98,31 +102,35 @@ Table_cols <-  Table_cols |>
 knitr::kable(Table_cols, "latex", align = "lcccc",
              booktabs = T,
              escape = F,
-             caption = "Number of Children from the Different Types of Parents \\label{tab:mat1}") %>%
+             caption = "Number of Children by Parental Type \\label{tab:mat1}") %>%
   column_spec(1, bold = T) %>%
   kable_classic(full_width = F) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")) |> 
-  footnote(number = c("The data is restricted to people interviewed between 1994 and 2019, also White, married, and between the ages of 18 and 65. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if both her parents were born in a Spanish-speaking country. A parent is White if born parents were born in the United States."),
+                latex_options = c("scale_down", "HOLD_position")) |> 
+  footnote(number = c("Source: Current Population Surveys (CPS) 1994-2019",
+                      "The sample includes Whites, who are married, and are between the ages 25 and 40. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White she/he was born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
-  add_header_above(c(" " = 1, "Perent\'s Type" = 4)) |> 
+  add_header_above(c(" " = 1, "Perental Type" = 4)) |> 
   save_kable(file.path(tables_wd,"tab01-observations-by-parents.tex")) %>% 
-  save_kable(file.path(thesis_tabs,"tab01-observations-by-parents.tex"))
+  save_kable(file.path(thesis_tabs,"tab01-observations-by-parents.tex")) |> 
+  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab01-observations-by-parents.tex"))
+
 
 # presentation table
 knitr::kable(Table_cols, "latex", align = "lcccc",
              booktabs = T,
              escape = F,
-             caption = "Number of Children from the Different Types of Parents \\label{tab:mat1}") %>%
+             caption = "Number of Children by Parental Type \\label{tab:mat1}") %>%
   column_spec(1, bold = T) %>%
   kable_classic(full_width = F) %>%
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "hold_position")) |> 
-  footnote(number = c("The data is restricted to people interviewed between 1994 and 2019, also White, married, and between the ages of 18 and 65. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if both her parents were born in a Spanish-speaking country. A parent is White if born parents were born in the United States."),
+  footnote(number = c("Source: Current Population Surveys (CPS) 1994-2019",
+                      "The sample includes Whites, who are married, and are between the ages 18 and 65. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White she/he was born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
-  add_header_above(c(" " = 1, "Perent\'s Type" = 4)) |> 
+  add_header_above(c(" " = 1, "Parental Type" = 4)) |> 
   save_kable(file.path(dissertation_wd,"tables/tab01-observations-by-parents.tex"))

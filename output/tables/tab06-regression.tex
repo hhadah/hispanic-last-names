@@ -1,4 +1,4 @@
-\begin{table}[!h]
+\begin{table}[H]
 
 \caption{Effect of Having Hispanic Last Name \label{tab:identreg}}
 \centering
@@ -8,32 +8,28 @@
 \toprule
   & \specialcell{(1) \\ Log annual earnings} & \specialcell{(2) \\  Log annual earnings}\\
 \midrule
-$WH_{i} \times Hispanic_{i}$ & \num{-0.14}*** & \num{-0.08}\\
+$HW_{i} \times Hispanic_{i}$ & \num{-0.02} & \num{-0.02}\\
+ & (\num{0.08}) & (\num{0.07})\\
+$Hispanic_{i}$ & \num{-0.11}** & \num{-0.06}\\
  & (\num{0.05}) & (\num{0.05})\\
-$HW_{i} \times Hispanic_{i}$ & \num{-0.18}*** & \num{-0.12}*\\
- & (\num{0.07}) & (\num{0.06})\\
-$HH_{i} \times Hispanic_{i}$ & \num{-0.10}* & \num{-0.06}\\
- & (\num{0.06}) & (\num{0.05})\\
+$HW_{i}$ & \num{-0.03} & \num{0.00}\\
+ & (\num{0.08}) & (\num{0.06})\\
 \midrule
-$HW_{i} \times Hispanic_{i} - WH_{i} \times Hispanic_{i}$ & -0.03 & -0.04\\
- & (0.07) & (0.06)\\
-\midrule
-Observations & \num{129359} & \num{129359}\\
 State FE & X & X\\
 Year FE & X & X\\
 \textit{Controlling for:} &  & \\
 Hours Worked & X & X\\
 Age & X & X\\
 Education &  & X\\
+Observations & \num{2423} & \num{2423}\\
 \bottomrule
 \multicolumn{3}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
 \end{tabular}
 \begin{tablenotes}
 \item[1] \footnotesize{This table includes the estimation results of equation (\ref{eq:iden}).}
-\item[2] \footnotesize{The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH). $Hispanic_{i}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.}
+\item[2] \footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother, and Hispanic is an indicator variable that is equal to one if a person self-identifies as Hispanic.}
 \item[3] \footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}
-\item[4] \footnotesize{Column one has the regression results when controlling for hours worked, age, and years of fixed effects. Column two has the results after controlling for education.}
-\item[5] \footnotesize{Standard errors are clustered on the state level.}
+\item[4] \footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}
 \end{tablenotes}
 \end{threeparttable}}
 \end{table}
