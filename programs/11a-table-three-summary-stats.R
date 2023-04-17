@@ -310,6 +310,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   ) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
+  column_spec(1, width = "5cm") |> 
   save_kable(file.path(tables_wd,"tab03a-summary-stats.tex")) |> 
   save_kable(file.path(thesis_tabs,"tab03a-summary-stats.tex"))  |> 
   save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03a-summary-stats.tex"))

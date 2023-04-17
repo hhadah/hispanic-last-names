@@ -11,10 +11,16 @@ ParentDummies <- c("HW", "uhrsworkly")
               
 # By generation
 reg1 <- list(
-  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+  "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW, vcov = ~statefip,
                                                             data = IndividualData |> 
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(2) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies], vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
@@ -54,11 +60,11 @@ reg1 <- list(
 # row_diff <- as.data.frame(row_diff)
 # attr(row_diff, 'position') <- c(7:8)
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "")
-dim(controling_for) <- c(1,3)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
+dim(controling_for) <- c(1,5)
 
-hoursworked <-  c("Hours Worked", "X", "X")
-dim(hoursworked) <- c(1,3)
+hoursworked <-  c("Hours Worked", " ", "X","X", "X")
+dim(hoursworked) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
@@ -72,9 +78,10 @@ all_row <- rbind(
 attr(all_row, 'position') <- c(#7:8, 
                               5:6)
 
-cm <- c("WH" = "$WH_{i}$",
-        "HW" = "$HW_{i}$",
-        "HH" = "$HH_{i}$"
+cm <- c("WH"          = "$WH_{i}$",
+        "HW"          = "$HW_{i}$",
+        "HH"          = "$HH_{i}$",
+        "(Intercept)" = "Constant"
 ) 
 gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
