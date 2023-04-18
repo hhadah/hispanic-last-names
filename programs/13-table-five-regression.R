@@ -87,8 +87,8 @@ gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age", 0,
-  "FE: educ", "Education", 0,
+  "FE: age", "Age FE", 0,
+  "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
   "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
@@ -124,14 +124,14 @@ regression_tab <- modelsummary(reg1, fmt = 2,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
                                title = "Effect of Having Hispanic Last Name \\label{tab:lastnamereg}") %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "HOLD_position")
+  kable_styling(
+                latex_options = c("scale_down", "HOLD_position", "footnotesize", "\\setlength{\\footnotesep}{1\\baselineskip}")
   ) %>%
-  footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}",
-                      "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}",
-                      "\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}",
-                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}",
-                      "\\\\footnotesize{Standard errors are clustered on the state level.}"
+  footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered on the state level.}}"
                       ),
   footnote_as_chunk = F, title_format = c("italic"),
   escape = F, threeparttable = T

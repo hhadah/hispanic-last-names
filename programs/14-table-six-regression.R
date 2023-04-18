@@ -101,7 +101,7 @@ all_row <- rbind(differences_row,
                 pvalue_row, 
                 controling_for, 
                 hoursworked)
-attr(all_row, 'position') <- c(9:10, 13:14)
+attr(all_row, 'position') <- c(9:10, 11:12)
 
 cm <- c("WH:Hispanic_ID" = "$WH_{i} \\times Hispanic_{i}$",
         "HW:Hispanic_ID" = "$HW_{i} \\times Hispanic_{i}$",
@@ -112,16 +112,18 @@ cm <- c("WH:Hispanic_ID" = "$WH_{i} \\times Hispanic_{i}$",
         "(Intercept)" = "Constant"
         # "HH" = "$HH_{i}$"
 ) 
+
 gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age", 0,
-  "FE: educ", "Education", 0,
+  "FE: age", "Age FE", 0,
+  "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
-    "nobs",      "Observations",             0,
+  "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
 )
+
 
 modelsummary(reg1, fmt = 2,  
              coef_map = cm,
@@ -131,8 +133,8 @@ modelsummary(reg1, fmt = 2,
              #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
              stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
              title = "Effect of Having Hispanic Last Name \\label{tab:identreg}") %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")
+  kable_styling(
+                latex_options = c("hold_position")
   ) %>%
   footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:iden}).}",
                       "\\\\footnotesize{The group HW stands for Hispanic Husband White wife (HW).}",
@@ -153,8 +155,8 @@ regression_tab <- modelsummary(reg1, fmt = 2,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
                                title = "Effect of Having Hispanic Last Name \\label{tab:identreg}") %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "HOLD_position")
+  kable_styling(
+                latex_options = c("HOLD_position")
   ) %>%
   footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:iden}).}",
                       "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother, and Hispanic is an indicator variable that is equal to one if a person self-identifies as Hispanic.}",
