@@ -39,7 +39,7 @@ reg1 <- list(
 # as a row
 
 
-test1 <- tidy(glht(reg1[[1]], linfct = c("HW:Hispanic_ID + Hispanic_ID = 0")))
+test1 <- tidy(glht(reg1[[1]], linfct = c("HW:Hispanic_ID + HW = 0")))
 differences1 <- case_when(abs(test1$estimate/test1$std.error)   >= 2.58  ~ paste0(sprintf("%2.5s",round_tidy(test1$estimate, digits = 2)), "***"),
                           abs(test1$estimate/test1$std.error)   <  2.58 & 
                             abs(test1$estimate/test1$std.error) >= 1.96  ~ paste0(sprintf("%2.5s",round_tidy(test1$estimate, digits = 2)), "**"),
@@ -48,7 +48,7 @@ differences1 <- case_when(abs(test1$estimate/test1$std.error)   >= 2.58  ~ paste
                           abs(test1$estimate/test1$std.error)   < 1.645  ~ round_tidy(test1$estimate, digits = 2)
 )
 
-test2 <- tidy(glht(reg1[[2]], linfct = c("HW:Hispanic_ID + Hispanic_ID = 0")))
+test2 <- tidy(glht(reg1[[2]], linfct = c("HW:Hispanic_ID + HW = 0")))
 differences2 <- case_when(abs(test2$estimate/test2$std.error)   >= 2.58  ~ paste0(sprintf("%2.5s",round_tidy(test2$estimate, digits = 2)), "***"),
                           abs(test2$estimate/test2$std.error)   <  2.58 & 
                             abs(test2$estimate/test2$std.error) >= 1.96  ~ paste0(sprintf("%2.5s",round_tidy(test2$estimate, digits = 2)), "**"),
@@ -57,7 +57,7 @@ differences2 <- case_when(abs(test2$estimate/test2$std.error)   >= 2.58  ~ paste
                           abs(test2$estimate/test2$std.error)   < 1.645  ~ round_tidy(test2$estimate, digits = 2)
 )
 
-test3 <- tidy(glht(reg1[[3]], linfct = c("HW:Hispanic_ID + Hispanic_ID = 0")))
+test3 <- tidy(glht(reg1[[3]], linfct = c("HW:Hispanic_ID + HW = 0")))
 differences3 <- case_when(abs(test3$estimate/test3$std.error)   >= 2.58  ~ paste0(sprintf("%2.5s",round_tidy(test3$estimate, digits = 2)), "***"),
                           abs(test3$estimate/test3$std.error)   <  2.58 & 
                             abs(test3$estimate/test3$std.error) >= 1.96  ~ paste0(sprintf("%2.5s",round_tidy(test3$estimate, digits = 2)), "**"),
@@ -66,7 +66,7 @@ differences3 <- case_when(abs(test3$estimate/test3$std.error)   >= 2.58  ~ paste
                           abs(test3$estimate/test3$std.error)   < 1.645  ~ round_tidy(test3$estimate, digits = 2)
 )
 
-test4 <- tidy(glht(reg1[[4]], linfct = c("HW:Hispanic_ID + Hispanic_ID = 0")))
+test4 <- tidy(glht(reg1[[4]], linfct = c("HW:Hispanic_ID + HW = 0")))
 differences4 <- case_when(abs(test4$estimate/test4$std.error)   >= 2.58  ~ paste0(sprintf("%2.5s",round_tidy(test4$estimate, digits = 2)), "***"),
                           abs(test4$estimate/test4$std.error)   <  2.58 & 
                             abs(test4$estimate/test4$std.error) >= 1.96  ~ paste0(sprintf("%2.5s",round_tidy(test4$estimate, digits = 2)), "**"),
@@ -76,7 +76,7 @@ differences4 <- case_when(abs(test4$estimate/test4$std.error)   >= 2.58  ~ paste
 )
 
 
-differences_row <-  c('$HW_{i} \\times Hispanic_{i} + Hispanic_{i}$', differences1, differences2, differences3, differences4)
+differences_row <-  c('$HW_{ist} \\times Hispanic_{ist} + HW_{ist}$', differences1, differences2, differences3, differences4)
 dim(differences_row) <- c(1,5)
 
 pvalue_row <-  c(' ', paste0("(", round(test1$std.error, digits = 2), ")"), paste0("(", round(test2$std.error, digits = 2), ")"), paste0("(", round(test3$std.error, digits = 2), ")"), paste0("(", round(test4$std.error, digits = 2), ")"))
@@ -103,14 +103,14 @@ all_row <- rbind(differences_row,
                 hoursworked)
 attr(all_row, 'position') <- c(9:10, 11:12)
 
-cm <- c("WH:Hispanic_ID" = "$WH_{i} \\times Hispanic_{i}$",
-        "HW:Hispanic_ID" = "$HW_{i} \\times Hispanic_{i}$",
-        "Hispanic_ID" = "$Hispanic_{i}$",
-        "Hispanic_ID:HH" = "$HH_{i} \\times Hispanic_{i}$",
-        # "WH" = "$WH_{i}$",
-        "HW" = "$HW_{i}$",
+cm <- c("WH:Hispanic_ID" = "$WH_{ist} \\times Hispanic_{ist}$",
+        "HW:Hispanic_ID" = "$HW_{ist} \\times Hispanic_{ist}$",
+        "Hispanic_ID" = "$Hispanic_{ist}$",
+        "Hispanic_ID:HH" = "$HH_{ist} \\times Hispanic_{ist}$",
+        # "WH" = "$WH_{ist}$",
+        "HW" = "$HW_{ist}$",
         "(Intercept)" = "Constant"
-        # "HH" = "$HH_{i}$"
+        # "HH" = "$HH_{ist}$"
 ) 
 
 gm <- tibble::tribble(
@@ -138,7 +138,7 @@ modelsummary(reg1, fmt = 2,
   ) %>%
   footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:iden}).}",
                       "\\\\footnotesize{The group HW stands for Hispanic Husband White wife (HW).}",
-                      "\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}",
+                      "\\\\footnotesize{The sample is restricted to men working full-time full-year and are wage and salary workers.}",
                       "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}"
   ),
   footnote_as_chunk = F, title_format = c("italic"),
@@ -154,14 +154,14 @@ regression_tab <- modelsummary(reg1, fmt = 2,
                                escape = F,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
-                               title = "Effect of Having Hispanic Last Name \\label{tab:identreg}") %>%
+                               title = "Effect of Having Hispanic Last Name by Hispanic Identity\\label{tab:identreg}") %>%
   kable_styling(
-                latex_options = c("HOLD_position")
+                latex_options = c("HOLD_position", "scale_down")
   ) %>%
   footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:iden}).}",
                       "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother, and Hispanic is an indicator variable that is equal to one if a person self-identifies as Hispanic.}",
                       "\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}",
-                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}"
+                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, education, year and state fixed effects. Column two has the results after controlling for education.}"
   ),
   footnote_as_chunk = F, title_format = c("italic"),
   escape = F, threeparttable = T
@@ -176,61 +176,4 @@ regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab06-regression.tex"))
 regression_tab %>%
   save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab06-regression.tex"))
-
-
-# dissertaion table
-regression_tab <- modelsummary(reg1, fmt = 2,
-                               output = "latex",
-                               coef_map = cm,
-                               add_rows = all_row,
-                               gof_map = gm,
-                               escape = F,
-                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
-                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")
-  ) |> 
-  row_spec(8, hline_after = T)
-
-
-regression_tab %>%
-  save_kable(file.path(dissertation_wd,"tables/tab06-regression.tex"))
-
-# highlight collumn 2
-regression_tab <- modelsummary(reg1, fmt = 2,
-                               output = "latex",
-                               coef_map = cm,
-                               add_rows = all_row,
-                               gof_map = gm,
-                               escape = F,
-                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
-                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")
-  ) |> 
-  column_spec(2, background = "#ffff30") |>
-  row_spec(8, hline_after = T)
-
-
-regression_tab %>%
-  save_kable(file.path(dissertation_wd,"tables/tab06a-regression.tex"))
-
-# highlight collumn 3
-regression_tab <- modelsummary(reg1, fmt = 2,
-                               output = "latex",
-                               coef_map = cm,
-                               add_rows = all_row,
-                               gof_map = gm,
-                               escape = F,
-                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
-                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")
-  ) |> 
-  column_spec(3, background = "#ffff30") |>
-  row_spec(8, hline_after = T)
-
-regression_tab %>%
-  save_kable(file.path(dissertation_wd,"tables/tab06b-regression.tex"))
-
 

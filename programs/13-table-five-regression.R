@@ -78,9 +78,9 @@ all_row <- rbind(
 attr(all_row, 'position') <- c(#7:8, 
                               5:6)
 
-cm <- c("WH"          = "$WH_{i}$",
-        "HW"          = "$HW_{i}$",
-        "HH"          = "$HH_{i}$",
+cm <- c("WH"          = "$WH_{ist}$",
+        "HW"          = "$HW_{ist}$",
+        "HH"          = "$HH_{ist}$",
         "(Intercept)" = "Constant"
 ) 
 gm <- tibble::tribble(
@@ -125,12 +125,12 @@ regression_tab <- modelsummary(reg1, fmt = 2,
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
                                title = "Effect of Having Hispanic Last Name \\label{tab:lastnamereg}") %>%
   kable_styling(
-                latex_options = c("scale_down", "HOLD_position", "footnotesize", "\\setlength{\\footnotesep}{1\\baselineskip}")
+                latex_options = c("HOLD_position")
   ) %>%
   footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}}",
                       "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
-                      "{\\\\setstretch{1.0}\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}}",
-                      "{\\\\setstretch{1.0}\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{The sample is restricted to men working full-time full-year and are wage and salary workers.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, education, year and state fixed effects. Column two has the results after controlling for education.}}",
                       "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered on the state level.}}"
                       ),
   footnote_as_chunk = F, title_format = c("italic"),
@@ -147,59 +147,3 @@ regression_tab %>%
 regression_tab %>%
   save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab05-regression.tex"))
 
-
-# presentation table
-regression_tab <- modelsummary(reg1, fmt = 2,
-                               output = "latex",
-                               coef_map = cm,
-                               add_rows = all_row,
-                               gof_map = gm,
-                               escape = F,
-                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
-                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "HOLD_position")
-  ) |> 
-  row_spec(8, hline_after = T)
-
-
-regression_tab %>%
-  save_kable(file.path(dissertation_wd,"tables/tab05-regression.tex"))
-
-# hilight column 1
-regression_tab <- modelsummary(reg1, fmt = 2,
-                               output = "latex",
-                               coef_map = cm,
-                               add_rows = all_row,
-                               gof_map = gm,
-                               escape = F,
-                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
-                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")
-  ) |> 
-  row_spec(8, hline_after = T) |> 
-  column_spec(2, background = "#ffff30")
-
-
-regression_tab %>%
-  save_kable(file.path(dissertation_wd,"tables/tab05a-regression.tex"))
-
-# hilight column 2
-regression_tab <- modelsummary(reg1, fmt = 2,
-                               output = "latex",
-                               coef_map = cm,
-                               add_rows = all_row,
-                               gof_map = gm,
-                               escape = F,
-                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
-                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1)) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")
-  ) |> 
-  row_spec(8, hline_after = T) |> 
-  column_spec(3, background = "#ffff30")
-
-
-regression_tab %>%
-  save_kable(file.path(dissertation_wd,"tables/tab05b-regression.tex"))

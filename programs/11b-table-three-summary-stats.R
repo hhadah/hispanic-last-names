@@ -654,7 +654,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 ),
                 repeat_header_continued = "\\textit{(Continued on Next Page...)}") |> 
   footnote(number = c("Source: The 1970-1990 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
-                      "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
+                      "The data is restricted to native-born United States citizens who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 

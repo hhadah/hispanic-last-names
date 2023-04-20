@@ -108,7 +108,7 @@ knitr::kable(Table_cols, "latex", align = "lcccc",
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", "HOLD_position")) |> 
   footnote(number = c("Source: Current Population Surveys (CPS) 1994-2019",
-                      "The sample includes Whites, who are married, and are between the ages 25 and 40. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White she/he was born in the United States."),
+                      "The sample includes Whites, who are married, and are between the ages 25 and 40. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White if she/he was born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
