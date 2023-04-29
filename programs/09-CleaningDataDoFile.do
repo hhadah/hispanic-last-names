@@ -15,13 +15,14 @@ clear all
 
 #delimit;
 
-global wd 	"C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets";
+global wd 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names";
+
 
 /*
 Open dataset
 */
 cd "$wd";
-use "$wd/SyntheticParentsData.dta";
+use "$wd/ACS.dta";
 
 /*
 keep 1980 census
@@ -41,16 +42,22 @@ keep if year == 1970 | year == 1960 | year == 1980;
 keep if year == 1940 | year == 1950 | year == 1960 | year == 1970 | year == 1980 | year == 1990;
 
 */
-
-keep if year == 1960 | year == 1970 | year == 1980;
+#delimit;
+keep if year >= 1950 & year <= 2000;
 
 
 /*
 keep 1930 to 1965 birth cohorts
 */
 #delimit;
+/*
+// gen YOB = year - age;
+// keep if YOB>=1940 & YOB <=1965;
+*/
 gen YOB = year - age;
-keep if YOB>=1940 & YOB <=1965;
+keep if age_mom>=25 & age_mom <=40;
+keep if age_pop>=25 & age_pop <=40;
+keep if YOB >= 1950 & YOB <= 2000;
 
 /*
 keep 25<age<40
@@ -101,40 +108,44 @@ Keep one person per household
 and White couples
 */
 #delimit;
-keep if marst 				== 1;
+// keep if marst 				== 1;
+/*
 keep if pernum 				== 1;
-keep if race_sp 			== 1 & race_head 			== 1;
+keep if race_mom 			== 1 & race_pop 			== 1;
+*/
+keep if race_mom 			== 1 & race_pop				== 1;
+
 /*
 #delimit;
-keep if (fbpl_sp 				== 200 | /* Mexico*/
-		fbpl_sp 				== 210 | /* Central America*/
-		fbpl_sp 				== 250 | /* Cuba*/
-		fbpl_sp 				== 299 | /* Americas n.s. */
-		fbpl_sp 				== 300 | /* South America*/
-		fbpl_sp 				<= 99); /* American States */
+keep if (fbpl_mom 				== 200 | /* Mexico*/
+		fbpl_mom 				== 210 | /* Central America*/
+		fbpl_mom 				== 250 | /* Cuba*/
+		fbpl_mom 				== 299 | /* Americas n.s. */
+		fbpl_mom 				== 300 | /* South America*/
+		fbpl_mom 				<= 99); /* American States */
 #delimit;
-keep if	(fbpl_head 				== 200 | /* Mexico*/
-		fbpl_head 				== 210 | /* Central America*/
-		fbpl_head 				== 250 | /* Cuba*/
-		fbpl_head 				== 299 | /* Americas n.s. */
-		fbpl_head 				== 300 | /* South America*/
-		fbpl_head 				<= 99) ; /* American States */
+keep if	(fbpl_pop 				== 200 | /* Mexico*/
+		fbpl_pop 				== 210 | /* Central America*/
+		fbpl_pop 				== 250 | /* Cuba*/
+		fbpl_pop 				== 299 | /* Americas n.s. */
+		fbpl_pop 				== 300 | /* South America*/
+		fbpl_pop 				<= 99) ; /* American States */
 #delimit;
-keep if	(mbpl_sp 				== 200 | /* Mexico*/
-		mbpl_sp 				== 210 | /* Central America*/
-		mbpl_sp 				== 250 | /* Cuba*/
-		mbpl_sp 				== 299 | /* Americas n.s. */
-		mbpl_sp 				== 300 | /* South America*/
-		mbpl_sp 				<= 99) ; /* American States */
+keep if	(mbpl_mom 				== 200 | /* Mexico*/
+		mbpl_mom 				== 210 | /* Central America*/
+		mbpl_mom 				== 250 | /* Cuba*/
+		mbpl_mom 				== 299 | /* Americas n.s. */
+		mbpl_mom 				== 300 | /* South America*/
+		mbpl_mom 				<= 99) ; /* American States */
 #delimit;
-keep if	(mbpl_head 				== 200 | /* Mexico*/
-		mbpl_head 				== 210 | /* Central America*/
-		mbpl_head 				== 250 | /* Cuba*/
-		mbpl_head 				== 299 | /* Americas n.s. */
-		mbpl_head 				== 300 | /* South America*/
-		mbpl_head 				<= 99) ; /* American States */
+keep if	(mbpl_pop 				== 200 | /* Mexico*/
+		mbpl_pop 				== 210 | /* Central America*/
+		mbpl_pop 				== 250 | /* Cuba*/
+		mbpl_pop 				== 299 | /* Americas n.s. */
+		mbpl_pop 				== 300 | /* South America*/
+		mbpl_pop 				<= 99) ; /* American States */
 #delimit;
-drop if mbpl_sp == 0 & mbpl_head == 0 & fbpl_head == 0 & fbpl_sp == 0;
+drop if mbpl_mom == 0 & mbpl_pop == 0 & fbpl_pop == 0 & fbpl_mom == 0;
 */
 
 /*
@@ -142,33 +153,34 @@ Keep peopel that were born
 in the US or Spanish speaking
 countries and drop missing values
 */
-keep if (bpl_sp 				== 200 | /* Mexico*/
-		bpl_sp 				== 210 | /* Central America*/
-		bpl_sp 				== 250 | /* Cuba*/
-		bpl_sp 				== 299 | /* Americas n.s. */
-		bpl_sp 				== 300 | /* South America*/
-		bpl_sp 				<= 99) &	 /* American States */
-		(bpl_head 			== 200 | /* Mexico*/
-		bpl_head 			== 210 | /* Central America*/
-		bpl_head 			== 250 | /* Cuba*/
-		bpl_head 			== 299 | /* Americas n.s. */
-		bpl_head 			== 300 | /* South America*/
-		bpl_head 			<= 99);	 /* American States */
-drop if bpl_sp == 0 | bpl_head == 0;
+#delimit;
+keep if (bpl_mom 				== 200 | /* Mexico*/
+		bpl_mom 				== 210 | /* Central America*/
+		bpl_mom 				== 250 | /* Cuba*/
+		bpl_mom 				== 299 | /* Americas n.s. */
+		bpl_mom 				== 300 | /* South America*/
+		bpl_mom 				<= 99) &	 /* American States */
+		(bpl_pop 			== 200 | /* Mexico*/
+		bpl_pop 			== 210 | /* Central America*/
+		bpl_pop 			== 250 | /* Cuba*/
+		bpl_pop 			== 299 | /* Americas n.s. */
+		bpl_pop 			== 300 | /* South America*/
+		bpl_pop 			<= 99);	 /* American States */
+drop if bpl_mom == 0 | bpl_pop == 0;
 /*
-keep if (fbpl_sp 				== 200 | /* Mexico*/
-		fbpl_sp 				== 210 | /* Central America*/
-		fbpl_sp 				== 250 | /* Cuba*/
-		fbpl_sp 				== 299 | /* Americas n.s. */
-		fbpl_sp 				== 300 | /* South America*/
-		fbpl_sp 				<= 99) &	 /* American States */
-		(fbpl_head 			== 200 | /* Mexico*/
-		fbpl_head 			== 210 | /* Central America*/
-		fbpl_head 			== 250 | /* Cuba*/
-		fbpl_head 			== 299 | /* Americas n.s. */
-		fbpl_head 			== 300 | /* South America*/
-		fbpl_head 			<= 99);	 /* American States */
-drop if fbpl_sp == 0 | fbpl_head == 0;
+keep if (fbpl_mom 				== 200 | /* Mexico*/
+		fbpl_mom 				== 210 | /* Central America*/
+		fbpl_mom 				== 250 | /* Cuba*/
+		fbpl_mom 				== 299 | /* Americas n.s. */
+		fbpl_mom 				== 300 | /* South America*/
+		fbpl_mom 				<= 99) &	 /* American States */
+		(fbpl_pop 			== 200 | /* Mexico*/
+		fbpl_pop 			== 210 | /* Central America*/
+		fbpl_pop 			== 250 | /* Cuba*/
+		fbpl_pop 			== 299 | /* Americas n.s. */
+		fbpl_pop 			== 300 | /* South America*/
+		fbpl_pop 			<= 99);	 /* American States */
+drop if fbpl_mom == 0 | fbpl_pop == 0;
 */
 /*
 Set global important variables
@@ -184,17 +196,17 @@ gen 		LAWife 					= .;
 label var	LAHusband 				"=1 if husband's father and mother were born in Latin America";
 label var 	LAWife 					"=1 if Wife's father and mother were born in Latin America";
 
-replace 	LAHusband				= 1			if fbpl_sp 		> 99 	| mbpl_sp 		>  99	& 	sex_sp 		== 1;
-replace 	LAHusband				= 1			if fbpl_head 	> 99 	| mbpl_head 	>  99	& 	sex_head 	== 1;
+replace 	LAHusband				= 1			if fbpl_mom 		> 99 	| mbpl_mom 		>  99	& 	sex_mom 		== 1;
+replace 	LAHusband				= 1			if fbpl_pop 	> 99 	| mbpl_pop 	>  99	& 	sex_pop 	== 1;
 
-replace 	LAHusband				= 0			if fbpl_sp 		<= 99 	& mbpl_sp 		<= 99 	&	sex_sp 		== 1;
-replace 	LAHusband				= 0			if fbpl_head 	<= 99 	& mbpl_head 	<= 99	& 	sex_head 	== 1;
+replace 	LAHusband				= 0			if fbpl_mom 		<= 99 	& mbpl_mom 		<= 99 	&	sex_mom 		== 1;
+replace 	LAHusband				= 0			if fbpl_pop 	<= 99 	& mbpl_pop 	<= 99	& 	sex_pop 	== 1;
 
-replace 	LAWife					= 1			if fbpl_sp 		> 99 	| mbpl_sp 		>  99	& 	sex_sp 		== 2;
-replace 	LAWife					= 1			if fbpl_head 	> 99 	| mbpl_head 	>  99	& 	sex_head 	== 2;
+replace 	LAWife					= 1			if fbpl_mom 		> 99 	| mbpl_mom 		>  99	& 	sex_mom 		== 2;
+replace 	LAWife					= 1			if fbpl_pop 	> 99 	| mbpl_pop 	>  99	& 	sex_pop 	== 2;
 
-replace 	LAWife					= 0			if fbpl_sp 		<= 99 	& mbpl_sp 		<= 99	& 	sex_sp 		== 2;
-replace 	LAWife					= 0			if fbpl_head 	<= 99 	& mbpl_head 	<= 99	& 	sex_head 	== 2;
+replace 	LAWife					= 0			if fbpl_mom 		<= 99 	& mbpl_mom 		<= 99	& 	sex_mom 		== 2;
+replace 	LAWife					= 0			if fbpl_pop 	<= 99 	& mbpl_pop 	<= 99	& 	sex_pop 	== 2;
 
 drop if LAHusband == .;
 drop if LAWife	  == .;
@@ -209,17 +221,17 @@ gen 		LAWife 					= .;
 label var	LAHusband 				"=1 if husband's father was born in Latin America";
 label var 	LAWife 					"=1 if Wife's father was born in Latin America";
 
-replace 	LAHusband				= 1			if fbpl_sp 		> 99 	& 	sex_sp 		== 1;
-replace 	LAHusband				= 1			if fbpl_head 	> 99 	& 	sex_head 	== 1;
+replace 	LAHusband				= 1			if fbpl_mom 		> 99 	& 	sex_mom 		== 1;
+replace 	LAHusband				= 1			if fbpl_pop 	> 99 	& 	sex_pop 	== 1;
 
-replace 	LAHusband				= 0			if fbpl_sp 		<= 99	&	sex_sp 		== 1;
-replace 	LAHusband				= 0			if fbpl_head 	<= 99	& 	sex_head 	== 1;
+replace 	LAHusband				= 0			if fbpl_mom 		<= 99	&	sex_mom 		== 1;
+replace 	LAHusband				= 0			if fbpl_pop 	<= 99	& 	sex_pop 	== 1;
 
-replace 	LAWife					= 1			if fbpl_sp 		> 99	& 	sex_sp 		== 2;
-replace 	LAWife					= 1			if fbpl_head 	> 99	& 	sex_head 	== 2;
+replace 	LAWife					= 1			if fbpl_mom 		> 99	& 	sex_mom 		== 2;
+replace 	LAWife					= 1			if fbpl_pop 	> 99	& 	sex_pop 	== 2;
 
-replace 	LAWife					= 0			if fbpl_sp 		<= 99	& 	sex_sp 		== 2;
-replace 	LAWife					= 0			if fbpl_head 	<= 99	& 	sex_head 	== 2;
+replace 	LAWife					= 0			if fbpl_mom 		<= 99	& 	sex_mom 		== 2;
+replace 	LAWife					= 0			if fbpl_pop 	<= 99	& 	sex_pop 	== 2;
 
 drop if LAHusband == .;
 drop if LAWife	  == .;
@@ -233,17 +245,17 @@ gen 		LAWife 					= .;
 label var	LAHusband 				"=1 if husband's father was born in Latin America";
 label var 	LAWife 					"=1 if Wife's father was born in Latin America";
 
-replace 	LAHusband				= 1			if bpl_sp 		> 99 	& 	sex_sp 		== 1;
-replace 	LAHusband				= 1			if bpl_head 	> 99 	& 	sex_head 	== 1;
+replace 	LAHusband				= 1			if bpl_mom 		> 99 	& 	sex_mom 		== 1;
+replace 	LAHusband				= 1			if bpl_pop 	> 99 	& 	sex_pop 	== 1;
 
-replace 	LAHusband				= 0			if bpl_sp 		<= 99	&	sex_sp 		== 1;
-replace 	LAHusband				= 0			if bpl_head 	<= 99	& 	sex_head 	== 1;
+replace 	LAHusband				= 0			if bpl_mom 		<= 99	&	sex_mom 		== 1;
+replace 	LAHusband				= 0			if bpl_pop 	<= 99	& 	sex_pop 	== 1;
 
-replace 	LAWife					= 1			if bpl_sp 		> 99	& 	sex_sp 		== 2;
-replace 	LAWife					= 1			if bpl_head 	> 99	& 	sex_head 	== 2;
+replace 	LAWife					= 1			if bpl_mom 		> 99	& 	sex_mom 		== 2;
+replace 	LAWife					= 1			if bpl_pop 	> 99	& 	sex_pop 	== 2;
 
-replace 	LAWife					= 0			if bpl_sp 		<= 99	& 	sex_sp 		== 2;
-replace 	LAWife					= 0			if bpl_head 	<= 99	& 	sex_head 	== 2;
+replace 	LAWife					= 0			if bpl_mom 		<= 99	& 	sex_mom 		== 2;
+replace 	LAWife					= 0			if bpl_pop 	<= 99	& 	sex_pop 	== 2;
 
 drop if LAHusband == .;
 drop if LAWife	  == .;
@@ -261,12 +273,12 @@ gen 		MexicanWife 				= 0;
 label var	MexicanHusband 				"=1 if husband is born in Mexico";
 label var 	MexicanWife 				"=1 if Wife is born in Mexico";
 
-replace 	MexicanHusband	= 1			if bpl_sp 		== 200 	& 	sex_sp 		== 1;
-replace 	MexicanHusband	= 1			if bpl_head 	== 200 	& 	sex_head 	== 1;
+replace 	MexicanHusband	= 1			if bpl_mom 		== 200 	& 	sex_mom 		== 1;
+replace 	MexicanHusband	= 1			if bpl_pop 	== 200 	& 	sex_pop 	== 1;
 
 
-replace 	MexicanWife		= 1			if bpl_sp 		== 200 	& 	sex_sp 		== 2;
-replace 	MexicanWife		= 1			if bpl_head 	== 200 	& 	sex_head 	== 2;
+replace 	MexicanWife		= 1			if bpl_mom 		== 200 	& 	sex_mom 		== 2;
+replace 	MexicanWife		= 1			if bpl_pop 	== 200 	& 	sex_pop 	== 2;
 */
 
 /*
@@ -280,29 +292,29 @@ gen 		HW_Wife 				= 0;
 gen 		WH_Wife					= 0;
 gen 		WW_Wife 				= 0;
 
-replace 	HH_Husband		= 1				if fbpl_sp 		== 200 	& 	mbpl_sp 		== 200 	& sex_sp 		== 1;
-replace 	HH_Husband		= 1				if fbpl_head 	== 200 	& 	mbpl_head 		== 200 	& sex_head 		== 1;
+replace 	HH_Husband		= 1				if fbpl_mom 		== 200 	& 	mbpl_mom 		== 200 	& sex_mom 		== 1;
+replace 	HH_Husband		= 1				if fbpl_pop 	== 200 	& 	mbpl_pop 		== 200 	& sex_pop 		== 1;
 
-replace 	HW_Husband		= 1				if fbpl_sp 		== 200 	& 	mbpl_sp 		!= 200 	& sex_sp 		== 1;
-replace 	HW_Husband		= 1				if fbpl_head 	== 200 	& 	mbpl_head 		!= 200 	& sex_head 		== 1;
+replace 	HW_Husband		= 1				if fbpl_mom 		== 200 	& 	mbpl_mom 		!= 200 	& sex_mom 		== 1;
+replace 	HW_Husband		= 1				if fbpl_pop 	== 200 	& 	mbpl_pop 		!= 200 	& sex_pop 		== 1;
 
-replace 	WH_Husband		= 1				if fbpl_sp 		!= 200 	& 	mbpl_sp 		== 200 	& sex_sp 		== 1;
-replace 	WH_Husband		= 1				if fbpl_head 	!= 200 	& 	mbpl_head 		== 200 	& sex_head 		== 1;
+replace 	WH_Husband		= 1				if fbpl_mom 		!= 200 	& 	mbpl_mom 		== 200 	& sex_mom 		== 1;
+replace 	WH_Husband		= 1				if fbpl_pop 	!= 200 	& 	mbpl_pop 		== 200 	& sex_pop 		== 1;
 
-replace 	WW_Husband		= 1				if fbpl_sp 		!= 200 	& 	mbpl_sp 		!= 200 	& sex_sp 		== 1;
-replace 	WW_Husband		= 1				if fbpl_head 	!= 200 	& 	mbpl_head 		!= 200 	& sex_head 		== 1;
+replace 	WW_Husband		= 1				if fbpl_mom 		!= 200 	& 	mbpl_mom 		!= 200 	& sex_mom 		== 1;
+replace 	WW_Husband		= 1				if fbpl_pop 	!= 200 	& 	mbpl_pop 		!= 200 	& sex_pop 		== 1;
 
-replace 	HH_Wife			= 1				if fbpl_sp 		== 200 	& 	mbpl_sp 		== 200 	& sex_sp 		== 2;
-replace 	HH_Wife			= 1				if fbpl_head 	== 200 	& 	mbpl_head 		== 200 	& sex_head 		== 2;
+replace 	HH_Wife			= 1				if fbpl_mom 		== 200 	& 	mbpl_mom 		== 200 	& sex_mom 		== 2;
+replace 	HH_Wife			= 1				if fbpl_pop 	== 200 	& 	mbpl_pop 		== 200 	& sex_pop 		== 2;
 
-replace 	HW_Wife			= 1				if fbpl_sp 		== 200 	& 	mbpl_sp 		!= 200 	& sex_sp 		== 2;
-replace 	HW_Wife			= 1				if fbpl_head 	== 200 	& 	mbpl_head 		!= 200	& sex_head 		== 2;
+replace 	HW_Wife			= 1				if fbpl_mom 		== 200 	& 	mbpl_mom 		!= 200 	& sex_mom 		== 2;
+replace 	HW_Wife			= 1				if fbpl_pop 	== 200 	& 	mbpl_pop 		!= 200	& sex_pop 		== 2;
 
-replace 	WH_Wife			= 1				if fbpl_sp 		!= 200 	& 	mbpl_sp 		== 200 	& sex_sp 		== 2;
-replace 	WH_Wife			= 1				if fbpl_head 	!= 200 	& 	mbpl_head 		== 200 	& sex_head 		== 2;
+replace 	WH_Wife			= 1				if fbpl_mom 		!= 200 	& 	mbpl_mom 		== 200 	& sex_mom 		== 2;
+replace 	WH_Wife			= 1				if fbpl_pop 	!= 200 	& 	mbpl_pop 		== 200 	& sex_pop 		== 2;
 
-replace 	WW_Wife			= 1				if fbpl_sp 		!= 200 	& 	mbpl_sp 		!= 200 	& sex_sp 		== 2;
-replace 	WW_Wife			= 1				if fbpl_head 	!= 200 	& 	mbpl_head 		!= 200 	& sex_head 		== 2;
+replace 	WW_Wife			= 1				if fbpl_mom 		!= 200 	& 	mbpl_mom 		!= 200 	& sex_mom 		== 2;
+replace 	WW_Wife			= 1				if fbpl_pop 	!= 200 	& 	mbpl_pop 		!= 200 	& sex_pop 		== 2;
 
 */
 
@@ -347,7 +359,8 @@ replace CoupleType_Wife = "Mexican Mexican" 	if HH_Wife == 1;
 /*
 drop same sex couples
 */
-drop if (sex_sp == 1 & sex_head == 1) | (sex_sp == 2 & sex_head == 2);
+#delimit;
+drop if (sex_mom == 1 & sex_pop == 1) | (sex_mom == 2 & sex_pop == 2);
 /*
 Tab couple types
 
@@ -360,226 +373,227 @@ variables for husband and wife
 
 /*
 ********************************************************************************
-* education: educ_head educ_sp (all series)
+* education: educ_pop educ_mom (all series)
 ********************************************************************************
 */
+#delimit;
 gen HusbandEducation 	= .;
 gen WifeEducation 		= .;
 
-replace HusbandEducation 	= .		if (sex_head == 1 & educd_head == 0);
-replace HusbandEducation 	= . 	if (sex_sp == 1 & educd_sp == 0);
-replace WifeEducation 		= . 	if (sex_head == 2 & educd_head == 0);
-replace WifeEducation 		= . 	if (sex_sp == 2 & educd_sp == 0);
+replace HusbandEducation 	= .		if (sex_pop == 1 & educd_pop == 0);
+replace HusbandEducation 	= . 	if (sex_mom == 1 & educd_mom == 0);
+replace WifeEducation 		= . 	if (sex_pop == 2 & educd_pop == 0);
+replace WifeEducation 		= . 	if (sex_mom == 2 & educd_mom == 0);
 
-replace HusbandEducation 	= . 	if (sex_head == 1 & educd_head == 1);
-replace HusbandEducation 	= . 	if (sex_sp == 1 & educd_sp == 1);
-replace WifeEducation 		= . 	if (sex_head == 2 & educd_head == 1);
-replace WifeEducation 		= . 	if (sex_sp == 2 & educd_sp == 1);
+replace HusbandEducation 	= . 	if (sex_pop == 1 & educd_pop == 1);
+replace HusbandEducation 	= . 	if (sex_mom == 1 & educd_mom == 1);
+replace WifeEducation 		= . 	if (sex_pop == 2 & educd_pop == 1);
+replace WifeEducation 		= . 	if (sex_mom == 2 & educd_mom == 1);
 
-replace HusbandEducation 	= 0 	if (sex_head == 1 & educd_head == 2);
-replace HusbandEducation 	= 0 	if (sex_sp == 1 & educd_sp == 2);
-replace WifeEducation 		= 0 	if (sex_head == 2 & educd_head == 2);
-replace WifeEducation 		= 0 	if (sex_sp == 2 & educd_sp == 2);
+replace HusbandEducation 	= 0 	if (sex_pop == 1 & educd_pop == 2);
+replace HusbandEducation 	= 0 	if (sex_mom == 1 & educd_mom == 2);
+replace WifeEducation 		= 0 	if (sex_pop == 2 & educd_pop == 2);
+replace WifeEducation 		= 0 	if (sex_mom == 2 & educd_mom == 2);
 
-replace HusbandEducation 	= 4 	if (sex_head == 1 & educd_head == 10);
-replace HusbandEducation 	= 4 	if (sex_sp == 1 & educd_sp == 10);
-replace WifeEducation 		= 4 	if (sex_head == 2 & educd_head == 10);
-replace WifeEducation 		= 4 	if (sex_sp == 2 & educd_sp == 10);
+replace HusbandEducation 	= 4 	if (sex_pop == 1 & educd_pop == 10);
+replace HusbandEducation 	= 4 	if (sex_mom == 1 & educd_mom == 10);
+replace WifeEducation 		= 4 	if (sex_pop == 2 & educd_pop == 10);
+replace WifeEducation 		= 4 	if (sex_mom == 2 & educd_mom == 10);
 
-replace HusbandEducation 	= 1 	if (sex_head == 1 & educd_head == 11);
-replace HusbandEducation 	= 1 	if (sex_sp == 1 & educd_sp == 11);
-replace WifeEducation 		= 1 	if (sex_head == 2 & educd_head == 11);
-replace WifeEducation 		= 1 	if (sex_sp == 2 & educd_sp == 11);
+replace HusbandEducation 	= 1 	if (sex_pop == 1 & educd_pop == 11);
+replace HusbandEducation 	= 1 	if (sex_mom == 1 & educd_mom == 11);
+replace WifeEducation 		= 1 	if (sex_pop == 2 & educd_pop == 11);
+replace WifeEducation 		= 1 	if (sex_mom == 2 & educd_mom == 11);
 
-replace HusbandEducation 	= 2 	if (sex_head == 1 & educd_head == 12);
-replace HusbandEducation 	= 2 	if (sex_sp == 1 & educd_sp == 12);
-replace WifeEducation 		= 2 	if (sex_head == 2 & educd_head == 12);
-replace WifeEducation 		= 2 	if (sex_sp == 2 & educd_sp == 12);
+replace HusbandEducation 	= 2 	if (sex_pop == 1 & educd_pop == 12);
+replace HusbandEducation 	= 2 	if (sex_mom == 1 & educd_mom == 12);
+replace WifeEducation 		= 2 	if (sex_pop == 2 & educd_pop == 12);
+replace WifeEducation 		= 2 	if (sex_mom == 2 & educd_mom == 12);
 
-replace HusbandEducation 	= 4 	if (sex_head == 1 & educd_head == 13);
-replace HusbandEducation	= 4 	if (sex_sp == 1 & educd_sp == 13);
-replace WifeEducation 		= 4 	if (sex_head == 2 & educd_head == 13);
-replace WifeEducation 		= 4 	if (sex_sp == 2 & educd_sp == 13);
+replace HusbandEducation 	= 4 	if (sex_pop == 1 & educd_pop == 13);
+replace HusbandEducation	= 4 	if (sex_mom == 1 & educd_mom == 13);
+replace WifeEducation 		= 4 	if (sex_pop == 2 & educd_pop == 13);
+replace WifeEducation 		= 4 	if (sex_mom == 2 & educd_mom == 13);
 
-replace HusbandEducation 	= 1 	if (sex_head == 1 & educd_head == 14);
-replace HusbandEducation 	= 1 	if (sex_sp == 1 & educd_sp == 14);
-replace WifeEducation 		= 1 	if (sex_head == 2 & educd_head == 14);
-replace WifeEducation 		= 1 	if (sex_sp == 2 & educd_sp == 14);
+replace HusbandEducation 	= 1 	if (sex_pop == 1 & educd_pop == 14);
+replace HusbandEducation 	= 1 	if (sex_mom == 1 & educd_mom == 14);
+replace WifeEducation 		= 1 	if (sex_pop == 2 & educd_pop == 14);
+replace WifeEducation 		= 1 	if (sex_mom == 2 & educd_mom == 14);
 
-replace HusbandEducation 	= 2 	if (sex_head == 1 & educd_head == 15);
-replace HusbandEducation 	= 2 	if (sex_sp == 1 & educd_sp == 15);
-replace WifeEducation 		= 2 	if (sex_head == 2 & educd_head == 15);
-replace WifeEducation 		= 2 	if (sex_sp == 2 & educd_sp == 15);
+replace HusbandEducation 	= 2 	if (sex_pop == 1 & educd_pop == 15);
+replace HusbandEducation 	= 2 	if (sex_mom == 1 & educd_mom == 15);
+replace WifeEducation 		= 2 	if (sex_pop == 2 & educd_pop == 15);
+replace WifeEducation 		= 2 	if (sex_mom == 2 & educd_mom == 15);
 
-replace HusbandEducation 	= 3 	if (sex_head == 1 & educd_head == 16);
-replace HusbandEducation 	= 3 	if (sex_sp == 1 & educd_sp == 16);
-replace WifeEducation	 	= 3 	if (sex_head == 2 & educd_head == 16);
-replace WifeEducation 		= 3 	if (sex_sp == 2 & educd_sp == 16);
+replace HusbandEducation 	= 3 	if (sex_pop == 1 & educd_pop == 16);
+replace HusbandEducation 	= 3 	if (sex_mom == 1 & educd_mom == 16);
+replace WifeEducation	 	= 3 	if (sex_pop == 2 & educd_pop == 16);
+replace WifeEducation 		= 3 	if (sex_mom == 2 & educd_mom == 16);
 
-replace HusbandEducation 	= 4 	if (sex_head == 1 & educd_head == 17);
-replace HusbandEducation 	= 4 	if (sex_sp == 1 & educd_sp == 17);
-replace WifeEducation 		= 4 	if (sex_head == 2 & educd_head == 17);
-replace WifeEducation 		= 4 	if (sex_sp == 2 & educd_sp == 17);
+replace HusbandEducation 	= 4 	if (sex_pop == 1 & educd_pop == 17);
+replace HusbandEducation 	= 4 	if (sex_mom == 1 & educd_mom == 17);
+replace WifeEducation 		= 4 	if (sex_pop == 2 & educd_pop == 17);
+replace WifeEducation 		= 4 	if (sex_mom == 2 & educd_mom == 17);
 
-replace HusbandEducation 	= 8 	if (sex_head == 1 & educd_head == 20);
-replace HusbandEducation 	= 8 	if (sex_sp == 1 & educd_sp == 20);
-replace WifeEducation 		= 8 	if (sex_head == 2 & educd_head == 20);
-replace WifeEducation 		= 8 	if (sex_sp == 2 & educd_sp == 20);
+replace HusbandEducation 	= 8 	if (sex_pop == 1 & educd_pop == 20);
+replace HusbandEducation 	= 8 	if (sex_mom == 1 & educd_mom == 20);
+replace WifeEducation 		= 8 	if (sex_pop == 2 & educd_pop == 20);
+replace WifeEducation 		= 8 	if (sex_mom == 2 & educd_mom == 20);
 
-replace HusbandEducation 	= 6 	if (sex_head == 1 & educd_head == 21);
-replace HusbandEducation 	= 6 	if (sex_sp == 1 & educd_sp == 21);
-replace WifeEducation 		= 6 	if (sex_head == 2 & educd_head == 21);
-replace WifeEducation 		= 6 	if (sex_sp == 2 & educd_sp == 21);
+replace HusbandEducation 	= 6 	if (sex_pop == 1 & educd_pop == 21);
+replace HusbandEducation 	= 6 	if (sex_mom == 1 & educd_mom == 21);
+replace WifeEducation 		= 6 	if (sex_pop == 2 & educd_pop == 21);
+replace WifeEducation 		= 6 	if (sex_mom == 2 & educd_mom == 21);
 
-replace HusbandEducation 	= 5 	if (sex_head == 1 & educd_head == 22);
-replace HusbandEducation	= 5 	if (sex_sp == 1 & educd_sp == 22);
-replace WifeEducation 		= 5 	if (sex_head == 2 & educd_head == 22);
-replace WifeEducation 		= 5 	if (sex_sp == 2 & educd_sp == 22);
+replace HusbandEducation 	= 5 	if (sex_pop == 1 & educd_pop == 22);
+replace HusbandEducation	= 5 	if (sex_mom == 1 & educd_mom == 22);
+replace WifeEducation 		= 5 	if (sex_pop == 2 & educd_pop == 22);
+replace WifeEducation 		= 5 	if (sex_mom == 2 & educd_mom == 22);
 
-replace HusbandEducation 	= 6 	if (sex_head == 1 & educd_head == 23);
-replace HusbandEducation 	= 6 	if (sex_sp == 1 & educd_sp == 23);
-replace WifeEducation	 	= 6 	if (sex_head == 2 & educd_head == 23);
-replace WifeEducation 		= 6 	if (sex_sp == 2 & educd_sp == 23);
+replace HusbandEducation 	= 6 	if (sex_pop == 1 & educd_pop == 23);
+replace HusbandEducation 	= 6 	if (sex_mom == 1 & educd_mom == 23);
+replace WifeEducation	 	= 6 	if (sex_pop == 2 & educd_pop == 23);
+replace WifeEducation 		= 6 	if (sex_mom == 2 & educd_mom == 23);
 
-replace HusbandEducation 	= 8 	if (sex_head == 1 & educd_head == 24);
-replace HusbandEducation 	= 8 	if (sex_sp == 1 & educd_sp == 24);
-replace WifeEducation 		= 8 	if (sex_head == 2 & educd_head == 24);
-replace WifeEducation 		= 8 	if (sex_sp == 2 & educd_sp == 24);
+replace HusbandEducation 	= 8 	if (sex_pop == 1 & educd_pop == 24);
+replace HusbandEducation 	= 8 	if (sex_mom == 1 & educd_mom == 24);
+replace WifeEducation 		= 8 	if (sex_pop == 2 & educd_pop == 24);
+replace WifeEducation 		= 8 	if (sex_mom == 2 & educd_mom == 24);
 
-replace HusbandEducation 	= 7 	if (sex_head == 1 & educd_head == 25);
-replace HusbandEducation 	= 7 	if (sex_sp == 1 & educd_sp == 25);
-replace WifeEducation 		= 7 	if (sex_head == 2 & educd_head == 25);
-replace WifeEducation 		= 7 	if (sex_sp == 2 & educd_sp == 25);
+replace HusbandEducation 	= 7 	if (sex_pop == 1 & educd_pop == 25);
+replace HusbandEducation 	= 7 	if (sex_mom == 1 & educd_mom == 25);
+replace WifeEducation 		= 7 	if (sex_pop == 2 & educd_pop == 25);
+replace WifeEducation 		= 7 	if (sex_mom == 2 & educd_mom == 25);
 
-replace HusbandEducation 	= 8 	if (sex_head == 1 & educd_head == 26);
-replace HusbandEducation 	= 8 	if (sex_sp == 1 & educd_sp == 26);
-replace WifeEducation 		= 8 	if (sex_head == 2 & educd_head == 26);
-replace WifeEducation 		= 8 	if (sex_sp == 2 & educd_sp == 26);
+replace HusbandEducation 	= 8 	if (sex_pop == 1 & educd_pop == 26);
+replace HusbandEducation 	= 8 	if (sex_mom == 1 & educd_mom == 26);
+replace WifeEducation 		= 8 	if (sex_pop == 2 & educd_pop == 26);
+replace WifeEducation 		= 8 	if (sex_mom == 2 & educd_mom == 26);
 
-replace HusbandEducation 	= 9 	if (sex_head == 1 & educd_head == 30);
-replace HusbandEducation 	= 9 	if (sex_sp == 1 & educd_sp == 30);
-replace WifeEducation 		= 9 	if (sex_head == 2 & educd_head == 30);
-replace WifeEducation 		= 9 	if (sex_sp == 2 & educd_sp == 30);
+replace HusbandEducation 	= 9 	if (sex_pop == 1 & educd_pop == 30);
+replace HusbandEducation 	= 9 	if (sex_mom == 1 & educd_mom == 30);
+replace WifeEducation 		= 9 	if (sex_pop == 2 & educd_pop == 30);
+replace WifeEducation 		= 9 	if (sex_mom == 2 & educd_mom == 30);
 
-replace HusbandEducation 	= 10 	if (sex_head == 1 & educd_head == 40);
-replace HusbandEducation 	= 10 	if (sex_sp == 1 & educd_sp == 40);
-replace WifeEducation 		= 10 	if (sex_head == 2 & educd_head == 40);
-replace WifeEducation 		= 10 	if (sex_sp == 2 & educd_sp == 40);
+replace HusbandEducation 	= 10 	if (sex_pop == 1 & educd_pop == 40);
+replace HusbandEducation 	= 10 	if (sex_mom == 1 & educd_mom == 40);
+replace WifeEducation 		= 10 	if (sex_pop == 2 & educd_pop == 40);
+replace WifeEducation 		= 10 	if (sex_mom == 2 & educd_mom == 40);
 
-replace HusbandEducation 	= 11 	if (sex_head == 1 & educd_head == 50);
-replace HusbandEducation 	= 11 	if (sex_sp == 1 & educd_sp == 50);
-replace WifeEducation 		= 11 	if (sex_head == 2 & educd_head == 50);
-replace WifeEducation 		= 11 	if (sex_sp == 2 & educd_sp == 50);
+replace HusbandEducation 	= 11 	if (sex_pop == 1 & educd_pop == 50);
+replace HusbandEducation 	= 11 	if (sex_mom == 1 & educd_mom == 50);
+replace WifeEducation 		= 11 	if (sex_pop == 2 & educd_pop == 50);
+replace WifeEducation 		= 11 	if (sex_mom == 2 & educd_mom == 50);
 
-replace HusbandEducation 	= 12 	if (sex_head == 1 & educd_head == 60);
-replace HusbandEducation 	= 12 	if (sex_sp == 1 & educd_sp == 60);
-replace WifeEducation 		= 12 	if (sex_head == 2 & educd_head == 60);
-replace WifeEducation 		= 12 	if (sex_sp == 2 & educd_sp == 60);
+replace HusbandEducation 	= 12 	if (sex_pop == 1 & educd_pop == 60);
+replace HusbandEducation 	= 12 	if (sex_mom == 1 & educd_mom == 60);
+replace WifeEducation 		= 12 	if (sex_pop == 2 & educd_pop == 60);
+replace WifeEducation 		= 12 	if (sex_mom == 2 & educd_mom == 60);
 
-replace HusbandEducation 	= 11 	if (sex_head == 1 & educd_head == 61);
-replace HusbandEducation 	= 11 	if (sex_sp == 1 & educd_sp == 61);
-replace WifeEducation 		= 11 	if (sex_head == 2 & educd_head == 61);
-replace WifeEducation 		= 11 	if (sex_sp == 2 & educd_sp == 61);
+replace HusbandEducation 	= 11 	if (sex_pop == 1 & educd_pop == 61);
+replace HusbandEducation 	= 11 	if (sex_mom == 1 & educd_mom == 61);
+replace WifeEducation 		= 11 	if (sex_pop == 2 & educd_pop == 61);
+replace WifeEducation 		= 11 	if (sex_mom == 2 & educd_mom == 61);
 
-replace HusbandEducation 	= 12 	if (sex_head == 1 & educd_head == 62);
-replace HusbandEducation 	= 12 	if (sex_sp == 1 & educd_sp == 62);
-replace WifeEducation 		= 12 	if (sex_head == 2 & educd_head == 62);
-replace WifeEducation 		= 12 	if (sex_sp == 2 & educd_sp == 62);
+replace HusbandEducation 	= 12 	if (sex_pop == 1 & educd_pop == 62);
+replace HusbandEducation 	= 12 	if (sex_mom == 1 & educd_mom == 62);
+replace WifeEducation 		= 12 	if (sex_pop == 2 & educd_pop == 62);
+replace WifeEducation 		= 12 	if (sex_mom == 2 & educd_mom == 62);
 
-replace HusbandEducation 	= 12 	if (sex_head == 1 & educd_head == 63);
-replace HusbandEducation 	= 12 	if (sex_sp == 1 & educd_sp == 63);
-replace WifeEducation 		= 12 	if (sex_head == 2 & educd_head == 63);
-replace WifeEducation 		= 12 	if (sex_sp == 2 & educd_sp == 63);
+replace HusbandEducation 	= 12 	if (sex_pop == 1 & educd_pop == 63);
+replace HusbandEducation 	= 12 	if (sex_mom == 1 & educd_mom == 63);
+replace WifeEducation 		= 12 	if (sex_pop == 2 & educd_pop == 63);
+replace WifeEducation 		= 12 	if (sex_mom == 2 & educd_mom == 63);
 
-replace HusbandEducation 	= 12 	if (sex_head == 1 & educd_head == 64);
-replace HusbandEducation 	= 12 	if (sex_sp == 1 & educd_sp == 64);
-replace WifeEducation 		= 12 	if (sex_head == 2 & educd_head == 64);
-replace WifeEducation 		= 12 	if (sex_sp == 2 & educd_sp == 64);
+replace HusbandEducation 	= 12 	if (sex_pop == 1 & educd_pop == 64);
+replace HusbandEducation 	= 12 	if (sex_mom == 1 & educd_mom == 64);
+replace WifeEducation 		= 12 	if (sex_pop == 2 & educd_pop == 64);
+replace WifeEducation 		= 12 	if (sex_mom == 2 & educd_mom == 64);
 
-replace HusbandEducation 	= 12 	if (sex_head == 1 & educd_head == 65);
-replace HusbandEducation 	= 12 	if (sex_sp == 1 & educd_sp == 65);
-replace WifeEducation 		= 12 	if (sex_head == 2 & educd_head == 65);
-replace WifeEducation 		= 12 	if (sex_sp == 2 & educd_sp == 65);
+replace HusbandEducation 	= 12 	if (sex_pop == 1 & educd_pop == 65);
+replace HusbandEducation 	= 12 	if (sex_mom == 1 & educd_mom == 65);
+replace WifeEducation 		= 12 	if (sex_pop == 2 & educd_pop == 65);
+replace WifeEducation 		= 12 	if (sex_mom == 2 & educd_mom == 65);
 
-replace HusbandEducation 	= 13 	if (sex_head == 1 & educd_head == 70);
-replace HusbandEducation 	= 13 	if (sex_sp == 1 & educd_sp == 70);
-replace WifeEducation 		= 13 	if (sex_head == 2 & educd_head == 70);
-replace WifeEducation 		= 13 	if (sex_sp == 2 & educd_sp == 70);
+replace HusbandEducation 	= 13 	if (sex_pop == 1 & educd_pop == 70);
+replace HusbandEducation 	= 13 	if (sex_mom == 1 & educd_mom == 70);
+replace WifeEducation 		= 13 	if (sex_pop == 2 & educd_pop == 70);
+replace WifeEducation 		= 13 	if (sex_mom == 2 & educd_mom == 70);
 
-replace HusbandEducation 	= 13 	if (sex_head == 1 & educd_head == 71);
-replace HusbandEducation 	= 13 	if (sex_sp == 1 & educd_sp == 71);
-replace WifeEducation 		= 13 	if (sex_head == 2 & educd_head == 71);
-replace WifeEducation 		= 13 	if (sex_sp == 2 & educd_sp == 71);
+replace HusbandEducation 	= 13 	if (sex_pop == 1 & educd_pop == 71);
+replace HusbandEducation 	= 13 	if (sex_mom == 1 & educd_mom == 71);
+replace WifeEducation 		= 13 	if (sex_pop == 2 & educd_pop == 71);
+replace WifeEducation 		= 13 	if (sex_mom == 2 & educd_mom == 71);
 
-replace HusbandEducation 	= 14 	if (sex_head == 1 & educd_head == 80);
-replace HusbandEducation 	= 14 	if (sex_sp == 1 & educd_sp == 80);
-replace WifeEducation 		= 14 	if (sex_head == 2 & educd_head == 80);
-replace WifeEducation 		= 14 	if (sex_sp == 2 & educd_sp == 80);
+replace HusbandEducation 	= 14 	if (sex_pop == 1 & educd_pop == 80);
+replace HusbandEducation 	= 14 	if (sex_mom == 1 & educd_mom == 80);
+replace WifeEducation 		= 14 	if (sex_pop == 2 & educd_pop == 80);
+replace WifeEducation 		= 14 	if (sex_mom == 2 & educd_mom == 80);
 
-replace HusbandEducation 	= 14 	if (sex_head == 1 & educd_head == 81);
-replace HusbandEducation 	= 14 	if (sex_sp == 1 & educd_sp == 81);
-replace WifeEducation 		= 14 	if (sex_head == 2 & educd_head == 81);
-replace WifeEducation 		= 14 	if (sex_sp == 2 & educd_sp == 81);
+replace HusbandEducation 	= 14 	if (sex_pop == 1 & educd_pop == 81);
+replace HusbandEducation 	= 14 	if (sex_mom == 1 & educd_mom == 81);
+replace WifeEducation 		= 14 	if (sex_pop == 2 & educd_pop == 81);
+replace WifeEducation 		= 14 	if (sex_mom == 2 & educd_mom == 81);
 
-replace HusbandEducation 	= 14 	if (sex_head == 1 & educd_head == 82);
-replace HusbandEducation 	= 14 	if (sex_sp == 1 & educd_sp == 82);
-replace WifeEducation 		= 14 	if (sex_head == 2 & educd_head == 82);
-replace WifeEducation 		= 14 	if (sex_sp == 2 & educd_sp == 82);
+replace HusbandEducation 	= 14 	if (sex_pop == 1 & educd_pop == 82);
+replace HusbandEducation 	= 14 	if (sex_mom == 1 & educd_mom == 82);
+replace WifeEducation 		= 14 	if (sex_pop == 2 & educd_pop == 82);
+replace WifeEducation 		= 14 	if (sex_mom == 2 & educd_mom == 82);
 
-replace HusbandEducation 	= 14 	if (sex_head == 1 & educd_head == 83);
-replace HusbandEducation 	= 14 	if (sex_sp == 1 & educd_sp == 83);
-replace WifeEducation 		= 14 	if (sex_head == 2 & educd_head == 83);
-replace WifeEducation 		= 14 	if (sex_sp == 2 & educd_sp == 83);
+replace HusbandEducation 	= 14 	if (sex_pop == 1 & educd_pop == 83);
+replace HusbandEducation 	= 14 	if (sex_mom == 1 & educd_mom == 83);
+replace WifeEducation 		= 14 	if (sex_pop == 2 & educd_pop == 83);
+replace WifeEducation 		= 14 	if (sex_mom == 2 & educd_mom == 83);
 
-replace HusbandEducation 	= 15 	if (sex_head == 1 & educd_head == 90);
-replace HusbandEducation 	= 15 	if (sex_sp == 1 & educd_sp == 90);
-replace WifeEducation 		= 15 	if (sex_head == 2 & educd_head == 90);
-replace WifeEducation 		= 15 	if (sex_sp == 2 & educd_sp == 90);
+replace HusbandEducation 	= 15 	if (sex_pop == 1 & educd_pop == 90);
+replace HusbandEducation 	= 15 	if (sex_mom == 1 & educd_mom == 90);
+replace WifeEducation 		= 15 	if (sex_pop == 2 & educd_pop == 90);
+replace WifeEducation 		= 15 	if (sex_mom == 2 & educd_mom == 90);
 
-replace HusbandEducation 	= 16 	if (sex_head == 1 & educd_head == 100);
-replace HusbandEducation 	= 16 	if (sex_sp == 1 & educd_sp == 100);
-replace WifeEducation 		= 16 	if (sex_head == 2 & educd_head == 100);
-replace WifeEducation 		= 16 	if (sex_sp == 2 & educd_sp == 100);
+replace HusbandEducation 	= 16 	if (sex_pop == 1 & educd_pop == 100);
+replace HusbandEducation 	= 16 	if (sex_mom == 1 & educd_mom == 100);
+replace WifeEducation 		= 16 	if (sex_pop == 2 & educd_pop == 100);
+replace WifeEducation 		= 16 	if (sex_mom == 2 & educd_mom == 100);
 
-replace HusbandEducation 	= 16 	if (sex_head == 1 & educd_head == 101);
-replace HusbandEducation 	= 16 	if (sex_sp == 1 & educd_sp == 101);
-replace WifeEducation 		= 16 	if (sex_head == 2 & educd_head == 101);
-replace WifeEducation 		= 16 	if (sex_sp == 2 & educd_sp == 101);
+replace HusbandEducation 	= 16 	if (sex_pop == 1 & educd_pop == 101);
+replace HusbandEducation 	= 16 	if (sex_mom == 1 & educd_mom == 101);
+replace WifeEducation 		= 16 	if (sex_pop == 2 & educd_pop == 101);
+replace WifeEducation 		= 16 	if (sex_mom == 2 & educd_mom == 101);
 
-replace HusbandEducation 	= 16 	if (sex_head == 1 & educd_head == 110);
-replace HusbandEducation 	= 16 	if (sex_sp == 1 & educd_sp == 110);
-replace WifeEducation 		= 16 	if (sex_head == 2 & educd_head == 110);
-replace WifeEducation 		= 16 	if (sex_sp == 2 & educd_sp == 110);
+replace HusbandEducation 	= 16 	if (sex_pop == 1 & educd_pop == 110);
+replace HusbandEducation 	= 16 	if (sex_mom == 1 & educd_mom == 110);
+replace WifeEducation 		= 16 	if (sex_pop == 2 & educd_pop == 110);
+replace WifeEducation 		= 16 	if (sex_mom == 2 & educd_mom == 110);
 
-replace HusbandEducation 	= 16 	if (sex_head == 1 & educd_head == 111);
-replace HusbandEducation 	= 16 	if (sex_sp == 1 & educd_sp == 111);
-replace WifeEducation 		= 16 	if (sex_head == 2 & educd_head == 111);
-replace WifeEducation 		= 16 	if (sex_sp == 2 & educd_sp == 111);
+replace HusbandEducation 	= 16 	if (sex_pop == 1 & educd_pop == 111);
+replace HusbandEducation 	= 16 	if (sex_mom == 1 & educd_mom == 111);
+replace WifeEducation 		= 16 	if (sex_pop == 2 & educd_pop == 111);
+replace WifeEducation 		= 16 	if (sex_mom == 2 & educd_mom == 111);
 
-replace HusbandEducation 	= 16 	if (sex_head == 1 & educd_head == 112);
-replace HusbandEducation 	= 16 	if (sex_sp == 1 & educd_sp == 112);
-replace WifeEducation 		= 16 	if (sex_head == 2 & educd_head == 112);
-replace WifeEducation 		= 16 	if (sex_sp == 2 & educd_sp == 112);
+replace HusbandEducation 	= 16 	if (sex_pop == 1 & educd_pop == 112);
+replace HusbandEducation 	= 16 	if (sex_mom == 1 & educd_mom == 112);
+replace WifeEducation 		= 16 	if (sex_pop == 2 & educd_pop == 112);
+replace WifeEducation 		= 16 	if (sex_mom == 2 & educd_mom == 112);
 
-replace HusbandEducation 	= 16 	if (sex_head == 1 & educd_head == 113);
-replace HusbandEducation 	= 16 	if (sex_sp == 1 & educd_sp == 113);
-replace WifeEducation 		= 16 	if (sex_head == 2 & educd_head == 113);
-replace WifeEducation 		= 16 	if (sex_sp == 2 & educd_sp == 113);
+replace HusbandEducation 	= 16 	if (sex_pop == 1 & educd_pop == 113);
+replace HusbandEducation 	= 16 	if (sex_mom == 1 & educd_mom == 113);
+replace WifeEducation 		= 16 	if (sex_pop == 2 & educd_pop == 113);
+replace WifeEducation 		= 16 	if (sex_mom == 2 & educd_mom == 113);
 
-replace HusbandEducation 	= 18 	if (sex_head == 1 & educd_head == 114);
-replace HusbandEducation 	= 18 	if (sex_sp == 1 & educd_sp == 114);
-replace WifeEducation 		= 18 	if (sex_head == 2 & educd_head == 114);
-replace WifeEducation 		= 18 	if (sex_sp == 2 & educd_sp == 114);
+replace HusbandEducation 	= 18 	if (sex_pop == 1 & educd_pop == 114);
+replace HusbandEducation 	= 18 	if (sex_mom == 1 & educd_mom == 114);
+replace WifeEducation 		= 18 	if (sex_pop == 2 & educd_pop == 114);
+replace WifeEducation 		= 18 	if (sex_mom == 2 & educd_mom == 114);
 
-replace HusbandEducation 	= 18 	if (sex_head == 1 & educd_head == 115);
-replace HusbandEducation 	= 18 	if (sex_sp == 1 & educd_sp == 115);
-replace WifeEducation 		= 18 	if (sex_head == 2 & educd_head == 115);
-replace WifeEducation 		= 18 	if (sex_sp == 2 & educd_sp == 115);
+replace HusbandEducation 	= 18 	if (sex_pop == 1 & educd_pop == 115);
+replace HusbandEducation 	= 18 	if (sex_mom == 1 & educd_mom == 115);
+replace WifeEducation 		= 18 	if (sex_pop == 2 & educd_pop == 115);
+replace WifeEducation 		= 18 	if (sex_mom == 2 & educd_mom == 115);
 
-replace HusbandEducation 	= 21 	if (sex_head == 1 & educd_head == 116);
-replace HusbandEducation 	= 21 	if (sex_sp == 1 & educd_sp == 116);
-replace WifeEducation 		= 21 	if (sex_head == 2 & educd_head == 116);
-replace WifeEducation 		= 21 	if (sex_sp == 2 & educd_sp == 116);
+replace HusbandEducation 	= 21 	if (sex_pop == 1 & educd_pop == 116);
+replace HusbandEducation 	= 21 	if (sex_mom == 1 & educd_mom == 116);
+replace WifeEducation 		= 21 	if (sex_pop == 2 & educd_pop == 116);
+replace WifeEducation 		= 21 	if (sex_mom == 2 & educd_mom == 116);
 
 gen Husband_ed_level=cond(HusbandEducation<6,1,0);
 replace Husband_ed_level=cond(HusbandEducation == 6, 2, Husband_ed_level);
@@ -608,41 +622,43 @@ label values Wife_ed_level Wife_ed_ed_levell;
 ********************************************************************************
 * ftotval in 1999's $:
 */
-replace ftotinc_head = . if ftotinc_head >= 9999998;
-replace ftotinc_sp = . if ftotinc_sp >= 9999998;
+#delimit;
+replace ftotinc_pop = . if ftotinc_pop >= 9999998;
+replace ftotinc_mom = . if ftotinc_mom >= 9999998;
 
-gen lnftotval_head1999 = ln(cpi99 * ftotinc_head);
-gen lnftotval_sp1999 = ln(cpi99 * ftotinc_sp);
+gen lnftotval_pop1999 = ln(cpi99 * ftotinc_pop);
+gen lnftotval_mom1999 = ln(cpi99 * ftotinc_mom);
 
 
 gen Husband_ftotval = .;
 gen Wife_ftotval = .;
 
-replace Husband_ftotval = lnftotval_head1999 if sex_head == 1 & ftotinc_head < 9999998;
-replace Husband_ftotval = lnftotval_sp1999 if sex_sp == 1 & ftotinc_sp < 9999998;
+replace Husband_ftotval = lnftotval_pop1999 if sex_pop == 1 & ftotinc_pop < 9999998;
+replace Husband_ftotval = lnftotval_mom1999 if sex_mom == 1 & ftotinc_mom < 9999998;
 
-replace Wife_ftotval = lnftotval_head1999 if sex_head == 2 & ftotinc_head < 9999998;
-replace Wife_ftotval = lnftotval_sp1999 if sex_sp == 2 & ftotinc_sp < 9999998;
+replace Wife_ftotval = lnftotval_pop1999 if sex_pop == 2 & ftotinc_pop < 9999998;
+replace Wife_ftotval = lnftotval_mom1999 if sex_mom == 2 & ftotinc_mom < 9999998;
 /*
 ********************************************************************************
 * Total personal income
 ********************************************************************************
 * inctot in 1999's $:
 */
-replace inctot_head =. if inctot_head >= 9999998;
-replace inctot_sp =. if inctot_sp >= 9999998;
+#delimit;
+replace inctot_pop =. if inctot_pop >= 9999998;
+replace inctot_mom =. if inctot_mom >= 9999998;
 
-gen lninctot_head1999 = ln(cpi99 * inctot_head);
-gen lninctot_sp1999 = ln(cpi99 * inctot_sp);
+gen lninctot_pop1999 = ln(cpi99 * inctot_pop);
+gen lninctot_mom1999 = ln(cpi99 * inctot_mom);
 
 gen Husband_inctot = .;
 gen Wife_inctot = .;
 
-replace Husband_inctot = lninctot_head1999 if sex_head == 1 & inctot_head < 999998;
-replace Husband_inctot = lninctot_sp1999 if sex_sp == 1 & inctot_sp < 999998;
+replace Husband_inctot = lninctot_pop1999 if sex_pop == 1 & inctot_pop < 999998;
+replace Husband_inctot = lninctot_mom1999 if sex_mom == 1 & inctot_mom < 999998;
 
-replace Wife_inctot = lninctot_head1999 if sex_head == 2 & inctot_head < 999998;
-replace Wife_inctot = lninctot_sp1999 if sex_sp == 2 & inctot_sp < 999998;
+replace Wife_inctot = lninctot_pop1999 if sex_pop == 2 & inctot_pop < 999998;
+replace Wife_inctot = lninctot_mom1999 if sex_mom == 2 & inctot_mom < 999998;
 
 /*
 ********************************************************************************
@@ -650,20 +666,20 @@ replace Wife_inctot = lninctot_sp1999 if sex_sp == 2 & inctot_sp < 999998;
 ********************************************************************************
 * incwage in 1999's $:
 */
-replace incwage_head = . if incwage_head >= 999998;
-replace incwage_sp = . if incwage_sp >= 999998;
+replace incwage_pop = . if incwage_pop >= 999998;
+replace incwage_mom = . if incwage_mom >= 999998;
 
-gen lnincwage_head1999 = ln(cpi99 * incwage_head);
-gen lnincwage_sp1999 = ln(cpi99 * incwage_sp);
+gen lnincwage_pop1999 = ln(cpi99 * incwage_pop);
+gen lnincwage_mom1999 = ln(cpi99 * incwage_mom);
 
 gen Husband_incwage = .;
 gen Wife_incwage = .;
 
-replace Husband_incwage = lnincwage_head1999 if sex_head == 1 & incwage_head < 999998;
-replace Husband_incwage = lnincwage_sp1999 if sex_sp == 1 & incwage_sp < 999998;
+replace Husband_incwage = lnincwage_pop1999 if sex_pop == 1 & incwage_pop < 999998;
+replace Husband_incwage = lnincwage_mom1999 if sex_mom == 1 & incwage_mom < 999998;
 
-replace Wife_incwage = lnincwage_head1999 if sex_head == 2 & incwage_head < 999998;
-replace Wife_incwage = lnincwage_sp1999 if sex_sp == 2 & incwage_sp < 999998;
+replace Wife_incwage = lnincwage_pop1999 if sex_pop == 2 & incwage_pop < 999998;
+replace Wife_incwage = lnincwage_mom1999 if sex_mom == 2 & incwage_mom < 999998;
 
 /*
 ********************************************************************************
@@ -673,11 +689,11 @@ replace Wife_incwage = lnincwage_sp1999 if sex_sp == 2 & incwage_sp < 999998;
 gen HusbandAge = .;
 gen WifeAge = .;
 
-replace HusbandAge = age_head if sex_head == 1;
-replace HusbandAge = age_sp if sex_sp == 1;
+replace HusbandAge = age_pop if sex_pop == 1;
+replace HusbandAge = age_mom if sex_mom == 1;
 
-replace WifeAge = age_head if sex_head == 2;
-replace WifeAge = age_sp if sex_sp == 2;
+replace WifeAge = age_pop if sex_pop == 2;
+replace WifeAge = age_mom if sex_mom == 2;
 
 keep if WifeAge >= 25 & WifeAge<=40;
 keep if HusbandAge >= 25 & HusbandAge<=40;
@@ -689,80 +705,93 @@ keep if HusbandAge >= 25 & HusbandAge<=40;
 gen HusbandYOB = .;
 gen WifeYOB = .;
 
-replace HusbandYOB = birthyr_head if sex_head == 1;
-replace HusbandYOB = birthyr_sp if sex_sp == 1;
+replace HusbandYOB = birthyr_pop if sex_pop == 1;
+replace HusbandYOB = birthyr_mom if sex_mom == 1;
 
-replace WifeYOB = birthyr_head if sex_head == 2;
-replace WifeYOB = birthyr_sp if sex_sp == 2;
+replace WifeYOB = birthyr_pop if sex_pop == 2;
+replace WifeYOB = birthyr_mom if sex_mom == 2;
 /*
 ********************************************************************************
 * person weight: perwt
 ********************************************************************************
 */
+#delimit;
 gen Husband_wt = .;
 gen Wife_wt = .;
 
-replace Husband_wt = perwt if sex_head == 1;
-replace Husband_wt = perwt if sex_sp == 1;
+replace Husband_wt = perwt if sex_pop == 1;
+replace Husband_wt = perwt if sex_mom == 1;
 
-replace Wife_wt = perwt if sex_head == 2;
-replace Wife_wt = perwt if sex_sp == 2;
+replace Wife_wt = perwt if sex_pop == 2;
+replace Wife_wt = perwt if sex_mom == 2;
 
 /*
 ********************************************************************************
-* fbpl: fbpl_head fbpl_sp (all series)
+* fbpl: fbpl_pop fbpl_mom (all series)
 ********************************************************************************
 */
 
 gen Husband_fbpl = .;
 gen Wife_fbpl = .;
 
-replace Husband_fbpl = fbpl_head if sex_head == 1;
-replace Husband_fbpl = fbpl_sp if sex_sp == 1;
+replace Husband_fbpl = fbpl_pop if sex_pop == 1;
+replace Husband_fbpl = fbpl_mom if sex_mom == 1;
 
-replace Wife_fbpl = fbpl_head if sex_head == 2;
-replace Wife_fbpl = fbpl_sp if sex_sp == 2;
+replace Wife_fbpl = fbpl_pop if sex_pop == 2;
+replace Wife_fbpl = fbpl_mom if sex_mom == 2;
 
 /*
 ********************************************************************************
-* hispan: hispan_head hispan_sp  (all series)
+* hispan: hispan_pop hispan_mom  (all series)
 ********************************************************************************
 */
 gen Hispanic_Husband =.;
 gen Hispanic_Wife =.;
 
-replace Hispanic_Husband = 1 if hispan_head == 1 & sex_head == 1;
-replace Hispanic_Husband = 1 if hispan_sp == 1 & sex_sp == 1;
+replace Hispanic_Husband = 1 if hispan_pop == 1 & sex_pop == 1;
+replace Hispanic_Husband = 1 if hispan_mom == 1 & sex_mom == 1;
 
-replace Hispanic_Husband = 1 if hispan_head == 2 & sex_head == 1;
-replace Hispanic_Husband = 1 if hispan_sp == 2 & sex_sp == 1;
+replace Hispanic_Husband = 1 if hispan_pop == 2 & sex_pop == 1;
+replace Hispanic_Husband = 1 if hispan_mom == 2 & sex_mom == 1;
 
-replace Hispanic_Husband = 1 if hispan_head == 3 & sex_head == 1;
-replace Hispanic_Husband = 1 if hispan_sp == 3 & sex_sp == 1;
+replace Hispanic_Husband = 1 if hispan_pop == 3 & sex_pop == 1;
+replace Hispanic_Husband = 1 if hispan_mom == 3 & sex_mom == 1;
 
-replace Hispanic_Husband = 1 if hispan_head == 4 & sex_head == 1;
-replace Hispanic_Husband = 1 if hispan_sp == 4 & sex_sp == 1;
+replace Hispanic_Husband = 1 if hispan_pop == 4 & sex_pop == 1;
+replace Hispanic_Husband = 1 if hispan_mom == 4 & sex_mom == 1;
 
-replace Hispanic_Husband = 0 if hispan_head == 0 & sex_head == 1;
-replace Hispanic_Husband = 0 if hispan_sp == 0 & sex_sp == 1;
+replace Hispanic_Husband = 0 if hispan_pop == 0 & sex_pop == 1;
+replace Hispanic_Husband = 0 if hispan_mom == 0 & sex_mom == 1;
 
 
-replace Hispanic_Wife = 1 if hispan_head == 1 & sex_head == 2;
-replace Hispanic_Wife = 1 if hispan_sp == 1 & sex_sp == 2;
+replace Hispanic_Wife = 1 if hispan_pop == 1 & sex_pop == 2;
+replace Hispanic_Wife = 1 if hispan_mom == 1 & sex_mom == 2;
 
-replace Hispanic_Wife = 1 if hispan_head == 2 & sex_head == 2;
-replace Hispanic_Wife = 1 if hispan_sp == 2 & sex_sp == 2;
+replace Hispanic_Wife = 1 if hispan_pop == 2 & sex_pop == 2;
+replace Hispanic_Wife = 1 if hispan_mom == 2 & sex_mom == 2;
 
-replace Hispanic_Wife = 1 if hispan_head == 3 & sex_head == 2;
-replace Hispanic_Wife = 1 if hispan_sp == 3 & sex_sp == 2;
+replace Hispanic_Wife = 1 if hispan_pop == 3 & sex_pop == 2;
+replace Hispanic_Wife = 1 if hispan_mom == 3 & sex_mom == 2;
 
-replace Hispanic_Wife = 1 if hispan_head == 4 & sex_head == 2;
-replace Hispanic_Wife = 1 if hispan_sp == 4 & sex_sp == 2;
+replace Hispanic_Wife = 1 if hispan_pop == 4 & sex_pop == 2;
+replace Hispanic_Wife = 1 if hispan_mom == 4 & sex_mom == 2;
 
-replace Hispanic_Wife = 0 if hispan_head == 0 & sex_head == 2;
-replace Hispanic_Wife = 0 if hispan_sp == 0 & sex_sp == 2;
+replace Hispanic_Wife = 0 if hispan_pop == 0 & sex_pop == 2;
+replace Hispanic_Wife = 0 if hispan_mom == 0 & sex_mom == 2;
 
 tab Hispanic_Wife Hispanic_Husband;
+
+/*
+********************************************************************************
+* chborn_mom : fertility  (all series)
+********************************************************************************
+*/
+#delimit;
+gen Fertility =.;
+
+replace Fertility =chborn_mom if chborn_mom >= 1;
+replace Fertility =. if chborn_mom >= 14;
+
 /*
 ********************************************************************************
 * histograms for level of schooling by type by sex
@@ -809,11 +838,13 @@ restore;
 /*
 Keep main variables
 */
-keep year hhwt HusbandEducation WifeEducation Husband_wt Wife_wt
+#delimit;
+keep year hhwt HusbandEducation WifeEducation Husband_wt Wife_wt Fertility
 Husband_ftotval Wife_ftotval Husband_inctot Wife_inctot Husband_incwage 
 Wife_incwage cpi99 region stateicp statefip countyicp countyfip urban metro city
 HusbandAge WifeAge HusbandYOB WifeYOB LAHusband LAWife CoupleType Husband_ed_level 
-Wife_ed_level Wife_fbpl Husband_fbpl Hispanic_Husband Hispanic_Wife age year YOB;
+Wife_ed_level Wife_fbpl Husband_fbpl Hispanic_Husband Hispanic_Wife age year YOB
+bpl bpl_mom bpl_pop fbpl fbpl_mom fbpl_pop mbpl mbpl_mom mbpl_pop;
 
 /*
 Save full parent's data
