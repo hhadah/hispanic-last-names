@@ -1,13 +1,6 @@
 * NOTE: You need to set the Stata working directory to the path
 * where the data file is located.
-global G_Directory "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\raw"
-cd "$G_Directory"
-* NOTE: You need to set the Stata working directory to the path
-* where the data file is located.
-
-* NOTE: You need to set the Stata working directory to the path
-* where the data file is located.
-
+cd "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names"
 set more off
 
 clear
@@ -38,75 +31,184 @@ quietly infix                      ///
   int     age             120-122  ///
   byte    marst           123-123  ///
   int     birthyr         124-127  ///
-  byte    race            128-128  ///
-  int     raced           129-131  ///
-  byte    hispan          132-132  ///
-  int     hispand         133-135  ///
-  int     bpl             136-138  ///
-  long    bpld            139-143  ///
-  int     mbpl            144-146  ///
-  long    mbpld           147-151  ///
-  int     fbpl            152-154  ///
-  long    fbpld           155-159  ///
-  byte    citizen         160-160  ///
-  byte    higrade         161-162  ///
-  int     higraded        163-165  ///
-  byte    educ            166-167  ///
-  int     educd           168-170  ///
-  byte    gradeatt        171-171  ///
-  byte    gradeattd       172-173  ///
-  long    inctot          174-180  ///
-  long    ftotinc         181-187  ///
-  long    incwage         188-193  ///
-  byte    sex_head        194-194  ///
-  byte    sex_sp          195-195  ///
-  int     age_head        196-198  ///
-  int     age_sp          199-201  ///
-  byte    marst_head      202-202  ///
-  byte    marst_sp        203-203  ///
-  int     birthyr_head    204-207  ///
-  int     birthyr_sp      208-211  ///
-  byte    race_head       212-212  ///
-  byte    race_sp         213-213  ///
-  int     raced_head      214-216  ///
-  int     raced_sp        217-219  ///
-  byte    hispan_head     220-220  ///
-  byte    hispan_sp       221-221  ///
-  int     hispand_head    222-224  ///
-  int     hispand_sp      225-227  ///
-  int     bpl_head        228-230  ///
-  int     bpl_sp          231-233  ///
-  long    bpld_head       234-238  ///
-  long    bpld_sp         239-243  ///
-  int     mbpl_head       244-246  ///
-  int     mbpl_sp         247-249  ///
-  long    mbpld_head      250-254  ///
-  long    mbpld_sp        255-259  ///
-  int     fbpl_head       260-262  ///
-  int     fbpl_sp         263-265  ///
-  long    fbpld_head      266-270  ///
-  long    fbpld_sp        271-275  ///
-  byte    citizen_head    276-276  ///
-  byte    citizen_sp      277-277  ///
-  byte    higrade_head    278-279  ///
-  byte    higrade_sp      280-281  ///
-  int     higraded_head   282-284  ///
-  int     higraded_sp     285-287  ///
-  byte    educ_head       288-289  ///
-  byte    educ_sp         290-291  ///
-  int     educd_head      292-294  ///
-  int     educd_sp        295-297  ///
-  byte    gradeatt_head   298-298  ///
-  byte    gradeatt_sp     299-299  ///
-  byte    gradeattd_head  300-301  ///
-  byte    gradeattd_sp    302-303  ///
-  long    inctot_head     304-310  ///
-  long    inctot_sp       311-317  ///
-  long    ftotinc_head    318-324  ///
-  long    ftotinc_sp      325-331  ///
-  long    incwage_head    332-337  ///
-  long    incwage_sp      338-343  ///
-  using `"usa_00034.dat"'
+  byte    chborn          128-129  ///
+  byte    race            130-130  ///
+  int     raced           131-133  ///
+  byte    hispan          134-134  ///
+  int     hispand         135-137  ///
+  int     bpl             138-140  ///
+  long    bpld            141-145  ///
+  int     mbpl            146-148  ///
+  long    mbpld           149-153  ///
+  int     fbpl            154-156  ///
+  long    fbpld           157-161  ///
+  byte    citizen         162-162  ///
+  byte    higrade         163-164  ///
+  int     higraded        165-167  ///
+  byte    educ            168-169  ///
+  int     educd           170-172  ///
+  byte    gradeatt        173-173  ///
+  byte    gradeattd       174-175  ///
+  long    inctot          176-182  ///
+  long    ftotinc         183-189  ///
+  long    incwage         190-195  ///
+  int     related_head    196-199  ///
+  int     related_mom     200-203  ///
+  int     related_pop     204-207  ///
+  int     related_sp      208-211  ///
+  int     related_mom2    212-215  ///
+  int     related_pop2    216-219  ///
+  byte    sex_head        220-220  ///
+  byte    sex_mom         221-221  ///
+  byte    sex_pop         222-222  ///
+  byte    sex_sp          223-223  ///
+  byte    sex_mom2        224-224  ///
+  byte    sex_pop2        225-225  ///
+  int     age_head        226-228  ///
+  int     age_mom         229-231  ///
+  int     age_pop         232-234  ///
+  int     age_sp          235-237  ///
+  int     age_mom2        238-240  ///
+  int     age_pop2        241-243  ///
+  byte    marst_head      244-244  ///
+  byte    marst_mom       245-245  ///
+  byte    marst_pop       246-246  ///
+  byte    marst_sp        247-247  ///
+  byte    marst_mom2      248-248  ///
+  byte    marst_pop2      249-249  ///
+  int     birthyr_head    250-253  ///
+  int     birthyr_mom     254-257  ///
+  int     birthyr_pop     258-261  ///
+  int     birthyr_sp      262-265  ///
+  int     birthyr_mom2    266-269  ///
+  int     birthyr_pop2    270-273  ///
+  byte    chborn_head     274-275  ///
+  byte    chborn_mom      276-277  ///
+  byte    chborn_pop      278-279  ///
+  byte    chborn_sp       280-281  ///
+  byte    chborn_mom2     282-283  ///
+  byte    chborn_pop2     284-285  ///
+  byte    race_head       286-286  ///
+  byte    race_mom        287-287  ///
+  byte    race_pop        288-288  ///
+  byte    race_sp         289-289  ///
+  byte    race_mom2       290-290  ///
+  byte    race_pop2       291-291  ///
+  int     raced_head      292-294  ///
+  int     raced_mom       295-297  ///
+  int     raced_pop       298-300  ///
+  int     raced_sp        301-303  ///
+  int     raced_mom2      304-306  ///
+  int     raced_pop2      307-309  ///
+  byte    hispan_head     310-310  ///
+  byte    hispan_mom      311-311  ///
+  byte    hispan_pop      312-312  ///
+  byte    hispan_sp       313-313  ///
+  byte    hispan_mom2     314-314  ///
+  byte    hispan_pop2     315-315  ///
+  int     hispand_head    316-318  ///
+  int     hispand_mom     319-321  ///
+  int     hispand_pop     322-324  ///
+  int     hispand_sp      325-327  ///
+  int     hispand_mom2    328-330  ///
+  int     hispand_pop2    331-333  ///
+  int     bpl_head        334-336  ///
+  int     bpl_mom         337-339  ///
+  int     bpl_pop         340-342  ///
+  int     bpl_sp          343-345  ///
+  int     bpl_mom2        346-348  ///
+  int     bpl_pop2        349-351  ///
+  long    bpld_head       352-356  ///
+  long    bpld_mom        357-361  ///
+  long    bpld_pop        362-366  ///
+  long    bpld_sp         367-371  ///
+  long    bpld_mom2       372-376  ///
+  long    bpld_pop2       377-381  ///
+  int     mbpl_head       382-384  ///
+  int     mbpl_mom        385-387  ///
+  int     mbpl_pop        388-390  ///
+  int     mbpl_sp         391-393  ///
+  int     mbpl_mom2       394-396  ///
+  int     mbpl_pop2       397-399  ///
+  long    mbpld_head      400-404  ///
+  long    mbpld_mom       405-409  ///
+  long    mbpld_pop       410-414  ///
+  long    mbpld_sp        415-419  ///
+  long    mbpld_mom2      420-424  ///
+  long    mbpld_pop2      425-429  ///
+  int     fbpl_head       430-432  ///
+  int     fbpl_mom        433-435  ///
+  int     fbpl_pop        436-438  ///
+  int     fbpl_sp         439-441  ///
+  int     fbpl_mom2       442-444  ///
+  int     fbpl_pop2       445-447  ///
+  long    fbpld_head      448-452  ///
+  long    fbpld_mom       453-457  ///
+  long    fbpld_pop       458-462  ///
+  long    fbpld_sp        463-467  ///
+  long    fbpld_mom2      468-472  ///
+  long    fbpld_pop2      473-477  ///
+  byte    citizen_head    478-478  ///
+  byte    citizen_mom     479-479  ///
+  byte    citizen_pop     480-480  ///
+  byte    citizen_sp      481-481  ///
+  byte    citizen_mom2    482-482  ///
+  byte    citizen_pop2    483-483  ///
+  byte    higrade_head    484-485  ///
+  byte    higrade_mom     486-487  ///
+  byte    higrade_pop     488-489  ///
+  byte    higrade_sp      490-491  ///
+  byte    higrade_mom2    492-493  ///
+  byte    higrade_pop2    494-495  ///
+  int     higraded_head   496-498  ///
+  int     higraded_mom    499-501  ///
+  int     higraded_pop    502-504  ///
+  int     higraded_sp     505-507  ///
+  int     higraded_mom2   508-510  ///
+  int     higraded_pop2   511-513  ///
+  byte    educ_head       514-515  ///
+  byte    educ_mom        516-517  ///
+  byte    educ_pop        518-519  ///
+  byte    educ_sp         520-521  ///
+  byte    educ_mom2       522-523  ///
+  byte    educ_pop2       524-525  ///
+  int     educd_head      526-528  ///
+  int     educd_mom       529-531  ///
+  int     educd_pop       532-534  ///
+  int     educd_sp        535-537  ///
+  int     educd_mom2      538-540  ///
+  int     educd_pop2      541-543  ///
+  byte    gradeatt_head   544-544  ///
+  byte    gradeatt_mom    545-545  ///
+  byte    gradeatt_pop    546-546  ///
+  byte    gradeatt_sp     547-547  ///
+  byte    gradeatt_mom2   548-548  ///
+  byte    gradeatt_pop2   549-549  ///
+  byte    gradeattd_head  550-551  ///
+  byte    gradeattd_mom   552-553  ///
+  byte    gradeattd_pop   554-555  ///
+  byte    gradeattd_sp    556-557  ///
+  byte    gradeattd_mom2  558-559  ///
+  byte    gradeattd_pop2  560-561  ///
+  long    inctot_head     562-568  ///
+  long    inctot_mom      569-575  ///
+  long    inctot_pop      576-582  ///
+  long    inctot_sp       583-589  ///
+  long    inctot_mom2     590-596  ///
+  long    inctot_pop2     597-603  ///
+  long    ftotinc_head    604-610  ///
+  long    ftotinc_mom     611-617  ///
+  long    ftotinc_pop     618-624  ///
+  long    ftotinc_sp      625-631  ///
+  long    ftotinc_mom2    632-638  ///
+  long    ftotinc_pop2    639-645  ///
+  long    incwage_head    646-651  ///
+  long    incwage_mom     652-657  ///
+  long    incwage_pop     658-663  ///
+  long    incwage_sp      664-669  ///
+  long    incwage_mom2    670-675  ///
+  long    incwage_pop2    676-681  ///
+  using `"usa_00047.dat"'
 
 replace hhwt           = hhwt           / 100
 replace adjust         = adjust         / 1000000
@@ -148,6 +250,7 @@ label var sex            `"Sex"'
 label var age            `"Age"'
 label var marst          `"Marital status"'
 label var birthyr        `"Year of birth"'
+label var chborn         `"Children ever born"'
 label var race           `"Race [general version]"'
 label var raced          `"Race [detailed version]"'
 label var hispan         `"Hispanic origin [general version]"'
@@ -168,54 +271,162 @@ label var gradeattd      `"Grade level attending [detailed version]"'
 label var inctot         `"Total personal income"'
 label var ftotinc        `"Total family income"'
 label var incwage        `"Wage and salary income"'
+label var related_head   `"Relationship to household head [of Location of household head; detailed version]"'
+label var related_mom    `"Relationship to household head [of Mother's location in the household; detailed "'
+label var related_pop    `"Relationship to household head [of Father's location in the household; detailed "'
+label var related_sp     `"Relationship to household head [of Spouse's location in household; detailed vers"'
+label var related_mom2   `"Relationship to household head [of Second mother's location in the household; de"'
+label var related_pop2   `"Relationship to household head [of Second father's location in the household; de"'
 label var sex_head       `"Sex [of Location of household head]"'
+label var sex_mom        `"Sex [of Mother's location in the household]"'
+label var sex_pop        `"Sex [of Father's location in the household]"'
 label var sex_sp         `"Sex [of Spouse's location in household]"'
+label var sex_mom2       `"Sex [of Second mother's location in the household]"'
+label var sex_pop2       `"Sex [of Second father's location in the household]"'
 label var age_head       `"Age [of Location of household head]"'
+label var age_mom        `"Age [of Mother's location in the household]"'
+label var age_pop        `"Age [of Father's location in the household]"'
 label var age_sp         `"Age [of Spouse's location in household]"'
+label var age_mom2       `"Age [of Second mother's location in the household]"'
+label var age_pop2       `"Age [of Second father's location in the household]"'
 label var marst_head     `"Marital status [of Location of household head]"'
+label var marst_mom      `"Marital status [of Mother's location in the household]"'
+label var marst_pop      `"Marital status [of Father's location in the household]"'
 label var marst_sp       `"Marital status [of Spouse's location in household]"'
+label var marst_mom2     `"Marital status [of Second mother's location in the household]"'
+label var marst_pop2     `"Marital status [of Second father's location in the household]"'
 label var birthyr_head   `"Year of birth [of Location of household head]"'
+label var birthyr_mom    `"Year of birth [of Mother's location in the household]"'
+label var birthyr_pop    `"Year of birth [of Father's location in the household]"'
 label var birthyr_sp     `"Year of birth [of Spouse's location in household]"'
+label var birthyr_mom2   `"Year of birth [of Second mother's location in the household]"'
+label var birthyr_pop2   `"Year of birth [of Second father's location in the household]"'
+label var chborn_head    `"Children ever born [of Location of household head]"'
+label var chborn_mom     `"Children ever born [of Mother's location in the household]"'
+label var chborn_pop     `"Children ever born [of Father's location in the household]"'
+label var chborn_sp      `"Children ever born [of Spouse's location in household]"'
+label var chborn_mom2    `"Children ever born [of Second mother's location in the household]"'
+label var chborn_pop2    `"Children ever born [of Second father's location in the household]"'
 label var race_head      `"Race [of Location of household head; general version]"'
+label var race_mom       `"Race [of Mother's location in the household; general version]"'
+label var race_pop       `"Race [of Father's location in the household; general version]"'
 label var race_sp        `"Race [of Spouse's location in household; general version]"'
+label var race_mom2      `"Race [of Second mother's location in the household; general version]"'
+label var race_pop2      `"Race [of Second father's location in the household; general version]"'
 label var raced_head     `"Race [of Location of household head; detailed version]"'
+label var raced_mom      `"Race [of Mother's location in the household; detailed version]"'
+label var raced_pop      `"Race [of Father's location in the household; detailed version]"'
 label var raced_sp       `"Race [of Spouse's location in household; detailed version]"'
+label var raced_mom2     `"Race [of Second mother's location in the household; detailed version]"'
+label var raced_pop2     `"Race [of Second father's location in the household; detailed version]"'
 label var hispan_head    `"Hispanic origin [of Location of household head; general version]"'
+label var hispan_mom     `"Hispanic origin [of Mother's location in the household; general version]"'
+label var hispan_pop     `"Hispanic origin [of Father's location in the household; general version]"'
 label var hispan_sp      `"Hispanic origin [of Spouse's location in household; general version]"'
+label var hispan_mom2    `"Hispanic origin [of Second mother's location in the household; general version]"'
+label var hispan_pop2    `"Hispanic origin [of Second father's location in the household; general version]"'
 label var hispand_head   `"Hispanic origin [of Location of household head; detailed version]"'
+label var hispand_mom    `"Hispanic origin [of Mother's location in the household; detailed version]"'
+label var hispand_pop    `"Hispanic origin [of Father's location in the household; detailed version]"'
 label var hispand_sp     `"Hispanic origin [of Spouse's location in household; detailed version]"'
+label var hispand_mom2   `"Hispanic origin [of Second mother's location in the household; detailed version]"'
+label var hispand_pop2   `"Hispanic origin [of Second father's location in the household; detailed version]"'
 label var bpl_head       `"Birthplace [of Location of household head; general version]"'
+label var bpl_mom        `"Birthplace [of Mother's location in the household; general version]"'
+label var bpl_pop        `"Birthplace [of Father's location in the household; general version]"'
 label var bpl_sp         `"Birthplace [of Spouse's location in household; general version]"'
+label var bpl_mom2       `"Birthplace [of Second mother's location in the household; general version]"'
+label var bpl_pop2       `"Birthplace [of Second father's location in the household; general version]"'
 label var bpld_head      `"Birthplace [of Location of household head; detailed version]"'
+label var bpld_mom       `"Birthplace [of Mother's location in the household; detailed version]"'
+label var bpld_pop       `"Birthplace [of Father's location in the household; detailed version]"'
 label var bpld_sp        `"Birthplace [of Spouse's location in household; detailed version]"'
+label var bpld_mom2      `"Birthplace [of Second mother's location in the household; detailed version]"'
+label var bpld_pop2      `"Birthplace [of Second father's location in the household; detailed version]"'
 label var mbpl_head      `"Mother's birthplace [of Location of household head; general version]"'
+label var mbpl_mom       `"Mother's birthplace [of Mother's location in the household; general version]"'
+label var mbpl_pop       `"Mother's birthplace [of Father's location in the household; general version]"'
 label var mbpl_sp        `"Mother's birthplace [of Spouse's location in household; general version]"'
+label var mbpl_mom2      `"Mother's birthplace [of Second mother's location in the household; general versi"'
+label var mbpl_pop2      `"Mother's birthplace [of Second father's location in the household; general versi"'
 label var mbpld_head     `"Mother's birthplace [of Location of household head; detailed version]"'
+label var mbpld_mom      `"Mother's birthplace [of Mother's location in the household; detailed version]"'
+label var mbpld_pop      `"Mother's birthplace [of Father's location in the household; detailed version]"'
 label var mbpld_sp       `"Mother's birthplace [of Spouse's location in household; detailed version]"'
+label var mbpld_mom2     `"Mother's birthplace [of Second mother's location in the household; detailed vers"'
+label var mbpld_pop2     `"Mother's birthplace [of Second father's location in the household; detailed vers"'
 label var fbpl_head      `"Father's birthplace [of Location of household head; general version]"'
+label var fbpl_mom       `"Father's birthplace [of Mother's location in the household; general version]"'
+label var fbpl_pop       `"Father's birthplace [of Father's location in the household; general version]"'
 label var fbpl_sp        `"Father's birthplace [of Spouse's location in household; general version]"'
+label var fbpl_mom2      `"Father's birthplace [of Second mother's location in the household; general versi"'
+label var fbpl_pop2      `"Father's birthplace [of Second father's location in the household; general versi"'
 label var fbpld_head     `"Father's birthplace [of Location of household head; detailed version]"'
+label var fbpld_mom      `"Father's birthplace [of Mother's location in the household; detailed version]"'
+label var fbpld_pop      `"Father's birthplace [of Father's location in the household; detailed version]"'
 label var fbpld_sp       `"Father's birthplace [of Spouse's location in household; detailed version]"'
+label var fbpld_mom2     `"Father's birthplace [of Second mother's location in the household; detailed vers"'
+label var fbpld_pop2     `"Father's birthplace [of Second father's location in the household; detailed vers"'
 label var citizen_head   `"Citizenship status [of Location of household head]"'
+label var citizen_mom    `"Citizenship status [of Mother's location in the household]"'
+label var citizen_pop    `"Citizenship status [of Father's location in the household]"'
 label var citizen_sp     `"Citizenship status [of Spouse's location in household]"'
+label var citizen_mom2   `"Citizenship status [of Second mother's location in the household]"'
+label var citizen_pop2   `"Citizenship status [of Second father's location in the household]"'
 label var higrade_head   `"Highest grade of schooling [of Location of household head; general version]"'
+label var higrade_mom    `"Highest grade of schooling [of Mother's location in the household; general versi"'
+label var higrade_pop    `"Highest grade of schooling [of Father's location in the household; general versi"'
 label var higrade_sp     `"Highest grade of schooling [of Spouse's location in household; general version]"'
+label var higrade_mom2   `"Highest grade of schooling [of Second mother's location in the household; genera"'
+label var higrade_pop2   `"Highest grade of schooling [of Second father's location in the household; genera"'
 label var higraded_head  `"Highest grade of schooling [of Location of household head; detailed version]"'
+label var higraded_mom   `"Highest grade of schooling [of Mother's location in the household; detailed vers"'
+label var higraded_pop   `"Highest grade of schooling [of Father's location in the household; detailed vers"'
 label var higraded_sp    `"Highest grade of schooling [of Spouse's location in household; detailed version]"'
+label var higraded_mom2  `"Highest grade of schooling [of Second mother's location in the household; detail"'
+label var higraded_pop2  `"Highest grade of schooling [of Second father's location in the household; detail"'
 label var educ_head      `"Educational attainment [of Location of household head; general version]"'
+label var educ_mom       `"Educational attainment [of Mother's location in the household; general version]"'
+label var educ_pop       `"Educational attainment [of Father's location in the household; general version]"'
 label var educ_sp        `"Educational attainment [of Spouse's location in household; general version]"'
+label var educ_mom2      `"Educational attainment [of Second mother's location in the household; general ve"'
+label var educ_pop2      `"Educational attainment [of Second father's location in the household; general ve"'
 label var educd_head     `"Educational attainment [of Location of household head; detailed version]"'
+label var educd_mom      `"Educational attainment [of Mother's location in the household; detailed version]"'
+label var educd_pop      `"Educational attainment [of Father's location in the household; detailed version]"'
 label var educd_sp       `"Educational attainment [of Spouse's location in household; detailed version]"'
+label var educd_mom2     `"Educational attainment [of Second mother's location in the household; detailed v"'
+label var educd_pop2     `"Educational attainment [of Second father's location in the household; detailed v"'
 label var gradeatt_head  `"Grade level attending [of Location of household head; general version]"'
+label var gradeatt_mom   `"Grade level attending [of Mother's location in the household; general version]"'
+label var gradeatt_pop   `"Grade level attending [of Father's location in the household; general version]"'
 label var gradeatt_sp    `"Grade level attending [of Spouse's location in household; general version]"'
+label var gradeatt_mom2  `"Grade level attending [of Second mother's location in the household; general ver"'
+label var gradeatt_pop2  `"Grade level attending [of Second father's location in the household; general ver"'
 label var gradeattd_head `"Grade level attending [of Location of household head; detailed version]"'
+label var gradeattd_mom  `"Grade level attending [of Mother's location in the household; detailed version]"'
+label var gradeattd_pop  `"Grade level attending [of Father's location in the household; detailed version]"'
 label var gradeattd_sp   `"Grade level attending [of Spouse's location in household; detailed version]"'
+label var gradeattd_mom2 `"Grade level attending [of Second mother's location in the household; detailed ve"'
+label var gradeattd_pop2 `"Grade level attending [of Second father's location in the household; detailed ve"'
 label var inctot_head    `"Total personal income [of Location of household head]"'
+label var inctot_mom     `"Total personal income [of Mother's location in the household]"'
+label var inctot_pop     `"Total personal income [of Father's location in the household]"'
 label var inctot_sp      `"Total personal income [of Spouse's location in household]"'
+label var inctot_mom2    `"Total personal income [of Second mother's location in the household]"'
+label var inctot_pop2    `"Total personal income [of Second father's location in the household]"'
 label var ftotinc_head   `"Total family income [of Location of household head]"'
+label var ftotinc_mom    `"Total family income [of Mother's location in the household]"'
+label var ftotinc_pop    `"Total family income [of Father's location in the household]"'
 label var ftotinc_sp     `"Total family income [of Spouse's location in household]"'
+label var ftotinc_mom2   `"Total family income [of Second mother's location in the household]"'
+label var ftotinc_pop2   `"Total family income [of Second father's location in the household]"'
 label var incwage_head   `"Wage and salary income [of Location of household head]"'
+label var incwage_mom    `"Wage and salary income [of Mother's location in the household]"'
+label var incwage_pop    `"Wage and salary income [of Father's location in the household]"'
 label var incwage_sp     `"Wage and salary income [of Spouse's location in household]"'
+label var incwage_mom2   `"Wage and salary income [of Second mother's location in the household]"'
+label var incwage_pop2   `"Wage and salary income [of Second father's location in the household]"'
 
 label define year_lbl 1850 `"1850"'
 label define year_lbl 1860 `"1860"', add
@@ -251,9 +462,18 @@ label define year_lbl 2016 `"2016"', add
 label define year_lbl 2017 `"2017"', add
 label define year_lbl 2018 `"2018"', add
 label define year_lbl 2019 `"2019"', add
+label define year_lbl 2020 `"2020"', add
+label define year_lbl 2021 `"2021"', add
 label values year year_lbl
 
-label define sample_lbl 201904 `"2015-2019, PRCS 5-year"'
+label define sample_lbl 202104 `"2017-2021, PRCS 5-year"'
+label define sample_lbl 202103 `"2017-2021, ACS 5-year"', add
+label define sample_lbl 202102 `"2021 PRCS"', add
+label define sample_lbl 202101 `"2021 ACS"', add
+label define sample_lbl 202004 `"2016-2020, PRCS 5-year"', add
+label define sample_lbl 202003 `"2016-2020, ACS 5-year"', add
+label define sample_lbl 202001 `"2020 ACS"', add
+label define sample_lbl 201904 `"2015-2019, PRCS 5-year"', add
 label define sample_lbl 201903 `"2015-2019, ACS 5-year"', add
 label define sample_lbl 201902 `"2019 PRCS"', add
 label define sample_lbl 201901 `"2019 ACS"', add
@@ -1060,7 +1280,6 @@ label define city_lbl 1373 `"Coffeyville, KS"', add
 label define city_lbl 1374 `"Cohoes, NY"', add
 label define city_lbl 1375 `"Collingswood, NJ"', add
 label define city_lbl 1390 `"Colorado Springs, CO"', add
-label define city_lbl 1400 `"Cohoes, NY"', add
 label define city_lbl 1410 `"Columbia, SC"', add
 label define city_lbl 1411 `"Columbia, PA"', add
 label define city_lbl 1412 `"Columbia, MO"', add
@@ -1406,7 +1625,6 @@ label define city_lbl 3520 `"Leavenworth, KS"', add
 label define city_lbl 3521 `"Lebanon, PA"', add
 label define city_lbl 3522 `"Leominster, MA"', add
 label define city_lbl 3530 `"Lehigh, PA"', add
-label define city_lbl 3540 `"Lebanon, PA"', add
 label define city_lbl 3550 `"Lewiston, ME"', add
 label define city_lbl 3551 `"Lewistown, PA"', add
 label define city_lbl 3560 `"Lewisville, TX"', add
@@ -1585,7 +1803,6 @@ label define city_lbl 4841 `"North Tonawanda, NY"', add
 label define city_lbl 4842 `"North Yakima, WA"', add
 label define city_lbl 4843 `"Northbridge, MA"', add
 label define city_lbl 4845 `"North Bergen, NJ"', add
-label define city_lbl 4850 `"North Providence, RI"', add
 label define city_lbl 4860 `"Norwalk, CA"', add
 label define city_lbl 4870 `"Norwalk, CT"', add
 label define city_lbl 4890 `"Norwich, CT"', add
@@ -1756,7 +1973,6 @@ label define city_lbl 6191 `"Salisbury, NC"', add
 label define city_lbl 6192 `"Salisbury, MD"', add
 label define city_lbl 6210 `"Salt Lake City, UT"', add
 label define city_lbl 6211 `"San Angelo, TX"', add
-label define city_lbl 6220 `"San Angelo, TX"', add
 label define city_lbl 6230 `"San Antonio, TX"', add
 label define city_lbl 6231 `"San Benito, TX"', add
 label define city_lbl 6250 `"San Bernardino, CA"', add
@@ -1867,7 +2083,7 @@ label define city_lbl 6912 `"Temple, TX"', add
 label define city_lbl 6913 `"Teaneck, NJ"', add
 label define city_lbl 6930 `"Tempe, AZ"', add
 label define city_lbl 6950 `"Terre Haute, IN"', add
-label define city_lbl 6951 `"Texarkana, TX"', add
+label define city_lbl 6951 `"Texarkana, TX/AR"', add
 label define city_lbl 6952 `"Thomasville, GA"', add
 label define city_lbl 6953 `"Thomasville, NC"', add
 label define city_lbl 6954 `"Tiffin, OH"', add
@@ -1895,7 +2111,6 @@ label define city_lbl 7083 `"Urbana, IL"', add
 label define city_lbl 7084 `"Upper Darby, PA"', add
 label define city_lbl 7090 `"Utica, NY"', add
 label define city_lbl 7091 `"Valdosta, GA"', add
-label define city_lbl 7092 `"Vallejo, CA"', add
 label define city_lbl 7093 `"Valley Stream, NY"', add
 label define city_lbl 7100 `"Vancouver, WA"', add
 label define city_lbl 7110 `"Vallejo, CA"', add
@@ -1969,7 +2184,6 @@ label define city_lbl 7402 `"Whittier, CA"', add
 label define city_lbl 7410 `"Wichita, KS"', add
 label define city_lbl 7430 `"Wichita Falls, TX"', add
 label define city_lbl 7450 `"Wilkes-Barre, PA"', add
-label define city_lbl 7451 `"Wilkinsburg, PA"', add
 label define city_lbl 7460 `"Wilkinsburg, PA"', add
 label define city_lbl 7470 `"Williamsport, PA"', add
 label define city_lbl 7471 `"Willimantic, CT"', add
@@ -2264,8 +2478,74 @@ label define marst_lbl 5 `"Widowed"', add
 label define marst_lbl 6 `"Never married/single"', add
 label values marst marst_lbl
 
+label define chborn_lbl 00 `"N/A"'
+label define chborn_lbl 01 `"No children"', add
+label define chborn_lbl 02 `"1 child"', add
+label define chborn_lbl 03 `"2 children"', add
+label define chborn_lbl 04 `"3"', add
+label define chborn_lbl 05 `"4"', add
+label define chborn_lbl 06 `"5"', add
+label define chborn_lbl 07 `"6"', add
+label define chborn_lbl 08 `"7"', add
+label define chborn_lbl 09 `"8"', add
+label define chborn_lbl 10 `"9"', add
+label define chborn_lbl 11 `"10"', add
+label define chborn_lbl 12 `"11"', add
+label define chborn_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_lbl 14 `"13"', add
+label define chborn_lbl 15 `"14"', add
+label define chborn_lbl 16 `"15"', add
+label define chborn_lbl 17 `"16"', add
+label define chborn_lbl 18 `"17"', add
+label define chborn_lbl 19 `"18"', add
+label define chborn_lbl 20 `"19"', add
+label define chborn_lbl 21 `"20"', add
+label define chborn_lbl 22 `"21"', add
+label define chborn_lbl 23 `"22"', add
+label define chborn_lbl 24 `"23"', add
+label define chborn_lbl 25 `"24"', add
+label define chborn_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_lbl 27 `"26"', add
+label define chborn_lbl 28 `"27"', add
+label define chborn_lbl 29 `"28"', add
+label define chborn_lbl 30 `"29"', add
+label define chborn_lbl 31 `"30"', add
+label define chborn_lbl 32 `"31"', add
+label define chborn_lbl 33 `"32"', add
+label define chborn_lbl 34 `"33"', add
+label define chborn_lbl 35 `"34"', add
+label define chborn_lbl 36 `"35"', add
+label define chborn_lbl 37 `"36"', add
+label define chborn_lbl 38 `"37"', add
+label define chborn_lbl 39 `"38"', add
+label define chborn_lbl 40 `"39"', add
+label define chborn_lbl 41 `"40"', add
+label define chborn_lbl 42 `"41"', add
+label define chborn_lbl 43 `"42"', add
+label define chborn_lbl 44 `"43"', add
+label define chborn_lbl 45 `"44"', add
+label define chborn_lbl 46 `"45"', add
+label define chborn_lbl 47 `"46"', add
+label define chborn_lbl 48 `"47"', add
+label define chborn_lbl 49 `"48"', add
+label define chborn_lbl 50 `"49"', add
+label define chborn_lbl 51 `"50"', add
+label define chborn_lbl 52 `"51"', add
+label define chborn_lbl 53 `"52"', add
+label define chborn_lbl 54 `"53"', add
+label define chborn_lbl 55 `"54"', add
+label define chborn_lbl 56 `"55"', add
+label define chborn_lbl 57 `"56"', add
+label define chborn_lbl 58 `"57"', add
+label define chborn_lbl 61 `"60"', add
+label define chborn_lbl 87 `"87"', add
+label define chborn_lbl 97 `"Unknown"', add
+label define chborn_lbl 98 `"Illegible"', add
+label define chborn_lbl 99 `"Missing"', add
+label values chborn chborn_lbl
+
 label define race_lbl 1 `"White"'
-label define race_lbl 2 `"Black/African American/Negro"', add
+label define race_lbl 2 `"Black/African American"', add
 label define race_lbl 3 `"American Indian or Alaska Native"', add
 label define race_lbl 4 `"Chinese"', add
 label define race_lbl 5 `"Japanese"', add
@@ -2281,7 +2561,7 @@ label define raced_lbl 120 `"Blank (white) (1850)"', add
 label define raced_lbl 130 `"Portuguese"', add
 label define raced_lbl 140 `"Mexican (1930)"', add
 label define raced_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
-label define raced_lbl 200 `"Black/African American/Negro"', add
+label define raced_lbl 200 `"Black/African American"', add
 label define raced_lbl 210 `"Mulatto"', add
 label define raced_lbl 300 `"American Indian/Alaska Native"', add
 label define raced_lbl 302 `"Apache"', add
@@ -2378,7 +2658,7 @@ label define raced_lbl 681 `"Tahitian"', add
 label define raced_lbl 682 `"Tongan"', add
 label define raced_lbl 683 `"Other Polynesian (1990)"', add
 label define raced_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
-label define raced_lbl 685 `"Guamanian/Chamorro"', add
+label define raced_lbl 685 `"Chamorro"', add
 label define raced_lbl 686 `"Northern Mariana Islander"', add
 label define raced_lbl 687 `"Palauan"', add
 label define raced_lbl 688 `"Other Micronesian (1990)"', add
@@ -2404,7 +2684,7 @@ label define raced_lbl 819 `"White and two or more Asian groups"', add
 label define raced_lbl 820 `"White and PI"', add
 label define raced_lbl 821 `"White and Native Hawaiian"', add
 label define raced_lbl 822 `"White and Samoan"', add
-label define raced_lbl 823 `"White and Guamanian"', add
+label define raced_lbl 823 `"White and Chamorro"', add
 label define raced_lbl 824 `"White and PI write_in"', add
 label define raced_lbl 825 `"White and other PI race(s)"', add
 label define raced_lbl 826 `"White and other race write_in"', add
@@ -4092,7 +4372,7 @@ label define fbpl_lbl 439 `"Vatican City"', add
 label define fbpl_lbl 440 `"Southern Europe, n.s."', add
 label define fbpl_lbl 450 `"Austria"', add
 label define fbpl_lbl 451 `"Bulgaria"', add
-label define fbpl_lbl 452 `"Czechsolovakia"', add
+label define fbpl_lbl 452 `"Czechoslovakia"', add
 label define fbpl_lbl 453 `"Germany"', add
 label define fbpl_lbl 454 `"Hungary"', add
 label define fbpl_lbl 455 `"Poland"', add
@@ -4408,7 +4688,7 @@ label define fbpld_lbl 45060 `"Austria-Vienna"', add
 label define fbpld_lbl 45070 `"Austria-Kaernsten"', add
 label define fbpld_lbl 45080 `"Austria-Neustadt"', add
 label define fbpld_lbl 45100 `"Bulgaria"', add
-label define fbpld_lbl 45200 `"Czechsolovakia"', add
+label define fbpld_lbl 45200 `"Czechoslovakia"', add
 label define fbpld_lbl 45210 `"Bohemia"', add
 label define fbpld_lbl 45211 `"Bohemia-Moravia"', add
 label define fbpld_lbl 45212 `"Slovakia"', add
@@ -4703,6 +4983,8 @@ label define citizen_lbl 2 `"Naturalized citizen"', add
 label define citizen_lbl 3 `"Not a citizen"', add
 label define citizen_lbl 4 `"Not a citizen, but has received first papers"', add
 label define citizen_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_lbl 8 `"Illegible"', add
+label define citizen_lbl 9 `"Missing/blank"', add
 label values citizen citizen_lbl
 
 label define higrade_lbl 00 `"N/A  (or None, 1980)"'
@@ -4902,13 +5184,605 @@ label define gradeattd_lbl 73 `"Seventh year of college"', add
 label define gradeattd_lbl 74 `"Eighth year of college"', add
 label values gradeattd gradeattd_lbl
 
+label define incwage_lbl 999998 `"Missing"'
+label define incwage_lbl 999999 `"N/A"', add
+label define incwage_lbl 010000 `"010000"', add
+label define incwage_lbl 000000 `"000000"', add
+label values incwage incwage_lbl
+
+label define related_head_lbl 0101 `"Head/Householder"'
+label define related_head_lbl 0201 `"Spouse"', add
+label define related_head_lbl 0202 `"2nd/3rd Wife (Polygamous)"', add
+label define related_head_lbl 0301 `"Child"', add
+label define related_head_lbl 0302 `"Adopted Child"', add
+label define related_head_lbl 0303 `"Stepchild"', add
+label define related_head_lbl 0304 `"Adopted, n.s."', add
+label define related_head_lbl 0401 `"Child-in-law"', add
+label define related_head_lbl 0402 `"Step Child-in-law"', add
+label define related_head_lbl 0501 `"Parent"', add
+label define related_head_lbl 0502 `"Stepparent"', add
+label define related_head_lbl 0601 `"Parent-in-Law"', add
+label define related_head_lbl 0602 `"Stepparent-in-law"', add
+label define related_head_lbl 0701 `"Sibling"', add
+label define related_head_lbl 0702 `"Step/Half/Adopted Sibling"', add
+label define related_head_lbl 0801 `"Sibling-in-Law"', add
+label define related_head_lbl 0802 `"Step/Half Sibling-in-law"', add
+label define related_head_lbl 0901 `"Grandchild"', add
+label define related_head_lbl 0902 `"Adopted Grandchild"', add
+label define related_head_lbl 0903 `"Step Grandchild"', add
+label define related_head_lbl 0904 `"Grandchild-in-law"', add
+label define related_head_lbl 1000 `"Other relatives:"', add
+label define related_head_lbl 1001 `"Other Relatives"', add
+label define related_head_lbl 1011 `"Grandparent"', add
+label define related_head_lbl 1012 `"Step Grandparent"', add
+label define related_head_lbl 1013 `"Grandparent-in-law"', add
+label define related_head_lbl 1021 `"Aunt or Uncle"', add
+label define related_head_lbl 1022 `"Aunt,Uncle-in-law"', add
+label define related_head_lbl 1031 `"Nephew, Niece"', add
+label define related_head_lbl 1032 `"Neph/Niece-in-law"', add
+label define related_head_lbl 1033 `"Step/Adopted Nephew/Niece"', add
+label define related_head_lbl 1034 `"Grand Niece/Nephew"', add
+label define related_head_lbl 1041 `"Cousin"', add
+label define related_head_lbl 1042 `"Cousin-in-law"', add
+label define related_head_lbl 1051 `"Great Grandchild"', add
+label define related_head_lbl 1061 `"Other relatives, nec"', add
+label define related_head_lbl 1100 `"Partner, Friend, Visitor"', add
+label define related_head_lbl 1110 `"Partner/friend"', add
+label define related_head_lbl 1111 `"Friend"', add
+label define related_head_lbl 1112 `"Partner"', add
+label define related_head_lbl 1113 `"Partner/roommate"', add
+label define related_head_lbl 1114 `"Unmarried Partner"', add
+label define related_head_lbl 1115 `"Housemate/Roomate"', add
+label define related_head_lbl 1120 `"Relative of partner"', add
+label define related_head_lbl 1130 `"Concubine/Mistress"', add
+label define related_head_lbl 1131 `"Visitor"', add
+label define related_head_lbl 1132 `"Companion and family of companion"', add
+label define related_head_lbl 1139 `"Allocated partner/friend/visitor"', add
+label define related_head_lbl 1200 `"Other non-relatives"', add
+label define related_head_lbl 1201 `"Roomers/boarders/lodgers"', add
+label define related_head_lbl 1202 `"Boarders"', add
+label define related_head_lbl 1203 `"Lodgers"', add
+label define related_head_lbl 1204 `"Roomer"', add
+label define related_head_lbl 1205 `"Tenant"', add
+label define related_head_lbl 1206 `"Foster child"', add
+label define related_head_lbl 1210 `"Employees:"', add
+label define related_head_lbl 1211 `"Servant"', add
+label define related_head_lbl 1212 `"Housekeeper"', add
+label define related_head_lbl 1213 `"Maid"', add
+label define related_head_lbl 1214 `"Cook"', add
+label define related_head_lbl 1215 `"Nurse"', add
+label define related_head_lbl 1216 `"Other probable domestic employee"', add
+label define related_head_lbl 1217 `"Other employee"', add
+label define related_head_lbl 1219 `"Relative of employee"', add
+label define related_head_lbl 1221 `"Military"', add
+label define related_head_lbl 1222 `"Students"', add
+label define related_head_lbl 1223 `"Members of religious orders"', add
+label define related_head_lbl 1230 `"Other non-relatives"', add
+label define related_head_lbl 1239 `"Allocated other non-relative"', add
+label define related_head_lbl 1240 `"Roomers/boarders/lodgers and foster children"', add
+label define related_head_lbl 1241 `"Roomers/boarders/lodgers"', add
+label define related_head_lbl 1242 `"Foster children"', add
+label define related_head_lbl 1250 `"Employees"', add
+label define related_head_lbl 1251 `"Domestic employees"', add
+label define related_head_lbl 1252 `"Non-domestic employees"', add
+label define related_head_lbl 1253 `"Relative of employee"', add
+label define related_head_lbl 1260 `"Other non-relatives (1990 includes employees)"', add
+label define related_head_lbl 1270 `"Non-inmate 1990"', add
+label define related_head_lbl 1281 `"Head of group quarters"', add
+label define related_head_lbl 1282 `"Employees of group quarters"', add
+label define related_head_lbl 1283 `"Relative of head, staff, or employee group quarters"', add
+label define related_head_lbl 1284 `"Other non-inmate 1940-1959"', add
+label define related_head_lbl 1291 `"Military"', add
+label define related_head_lbl 1292 `"College dormitories"', add
+label define related_head_lbl 1293 `"Residents of rooming houses"', add
+label define related_head_lbl 1294 `"Other non-inmate 1980 (includes employees and non-inmates in"', add
+label define related_head_lbl 1295 `"Other non-inmates 1960-1970 (includes employees)"', add
+label define related_head_lbl 1296 `"Non-inmates in institutions"', add
+label define related_head_lbl 1301 `"Institutional inmates"', add
+label define related_head_lbl 9996 `"Unclassifiable"', add
+label define related_head_lbl 9997 `"Unknown"', add
+label define related_head_lbl 9998 `"Illegible"', add
+label define related_head_lbl 9999 `"Missing"', add
+label values related_head related_head_lbl
+
+label define related_mom_lbl 0101 `"Head/Householder"'
+label define related_mom_lbl 0201 `"Spouse"', add
+label define related_mom_lbl 0202 `"2nd/3rd Wife (Polygamous)"', add
+label define related_mom_lbl 0301 `"Child"', add
+label define related_mom_lbl 0302 `"Adopted Child"', add
+label define related_mom_lbl 0303 `"Stepchild"', add
+label define related_mom_lbl 0304 `"Adopted, n.s."', add
+label define related_mom_lbl 0401 `"Child-in-law"', add
+label define related_mom_lbl 0402 `"Step Child-in-law"', add
+label define related_mom_lbl 0501 `"Parent"', add
+label define related_mom_lbl 0502 `"Stepparent"', add
+label define related_mom_lbl 0601 `"Parent-in-Law"', add
+label define related_mom_lbl 0602 `"Stepparent-in-law"', add
+label define related_mom_lbl 0701 `"Sibling"', add
+label define related_mom_lbl 0702 `"Step/Half/Adopted Sibling"', add
+label define related_mom_lbl 0801 `"Sibling-in-Law"', add
+label define related_mom_lbl 0802 `"Step/Half Sibling-in-law"', add
+label define related_mom_lbl 0901 `"Grandchild"', add
+label define related_mom_lbl 0902 `"Adopted Grandchild"', add
+label define related_mom_lbl 0903 `"Step Grandchild"', add
+label define related_mom_lbl 0904 `"Grandchild-in-law"', add
+label define related_mom_lbl 1000 `"Other relatives:"', add
+label define related_mom_lbl 1001 `"Other Relatives"', add
+label define related_mom_lbl 1011 `"Grandparent"', add
+label define related_mom_lbl 1012 `"Step Grandparent"', add
+label define related_mom_lbl 1013 `"Grandparent-in-law"', add
+label define related_mom_lbl 1021 `"Aunt or Uncle"', add
+label define related_mom_lbl 1022 `"Aunt,Uncle-in-law"', add
+label define related_mom_lbl 1031 `"Nephew, Niece"', add
+label define related_mom_lbl 1032 `"Neph/Niece-in-law"', add
+label define related_mom_lbl 1033 `"Step/Adopted Nephew/Niece"', add
+label define related_mom_lbl 1034 `"Grand Niece/Nephew"', add
+label define related_mom_lbl 1041 `"Cousin"', add
+label define related_mom_lbl 1042 `"Cousin-in-law"', add
+label define related_mom_lbl 1051 `"Great Grandchild"', add
+label define related_mom_lbl 1061 `"Other relatives, nec"', add
+label define related_mom_lbl 1100 `"Partner, Friend, Visitor"', add
+label define related_mom_lbl 1110 `"Partner/friend"', add
+label define related_mom_lbl 1111 `"Friend"', add
+label define related_mom_lbl 1112 `"Partner"', add
+label define related_mom_lbl 1113 `"Partner/roommate"', add
+label define related_mom_lbl 1114 `"Unmarried Partner"', add
+label define related_mom_lbl 1115 `"Housemate/Roomate"', add
+label define related_mom_lbl 1120 `"Relative of partner"', add
+label define related_mom_lbl 1130 `"Concubine/Mistress"', add
+label define related_mom_lbl 1131 `"Visitor"', add
+label define related_mom_lbl 1132 `"Companion and family of companion"', add
+label define related_mom_lbl 1139 `"Allocated partner/friend/visitor"', add
+label define related_mom_lbl 1200 `"Other non-relatives"', add
+label define related_mom_lbl 1201 `"Roomers/boarders/lodgers"', add
+label define related_mom_lbl 1202 `"Boarders"', add
+label define related_mom_lbl 1203 `"Lodgers"', add
+label define related_mom_lbl 1204 `"Roomer"', add
+label define related_mom_lbl 1205 `"Tenant"', add
+label define related_mom_lbl 1206 `"Foster child"', add
+label define related_mom_lbl 1210 `"Employees:"', add
+label define related_mom_lbl 1211 `"Servant"', add
+label define related_mom_lbl 1212 `"Housekeeper"', add
+label define related_mom_lbl 1213 `"Maid"', add
+label define related_mom_lbl 1214 `"Cook"', add
+label define related_mom_lbl 1215 `"Nurse"', add
+label define related_mom_lbl 1216 `"Other probable domestic employee"', add
+label define related_mom_lbl 1217 `"Other employee"', add
+label define related_mom_lbl 1219 `"Relative of employee"', add
+label define related_mom_lbl 1221 `"Military"', add
+label define related_mom_lbl 1222 `"Students"', add
+label define related_mom_lbl 1223 `"Members of religious orders"', add
+label define related_mom_lbl 1230 `"Other non-relatives"', add
+label define related_mom_lbl 1239 `"Allocated other non-relative"', add
+label define related_mom_lbl 1240 `"Roomers/boarders/lodgers and foster children"', add
+label define related_mom_lbl 1241 `"Roomers/boarders/lodgers"', add
+label define related_mom_lbl 1242 `"Foster children"', add
+label define related_mom_lbl 1250 `"Employees"', add
+label define related_mom_lbl 1251 `"Domestic employees"', add
+label define related_mom_lbl 1252 `"Non-domestic employees"', add
+label define related_mom_lbl 1253 `"Relative of employee"', add
+label define related_mom_lbl 1260 `"Other non-relatives (1990 includes employees)"', add
+label define related_mom_lbl 1270 `"Non-inmate 1990"', add
+label define related_mom_lbl 1281 `"Head of group quarters"', add
+label define related_mom_lbl 1282 `"Employees of group quarters"', add
+label define related_mom_lbl 1283 `"Relative of head, staff, or employee group quarters"', add
+label define related_mom_lbl 1284 `"Other non-inmate 1940-1959"', add
+label define related_mom_lbl 1291 `"Military"', add
+label define related_mom_lbl 1292 `"College dormitories"', add
+label define related_mom_lbl 1293 `"Residents of rooming houses"', add
+label define related_mom_lbl 1294 `"Other non-inmate 1980 (includes employees and non-inmates in"', add
+label define related_mom_lbl 1295 `"Other non-inmates 1960-1970 (includes employees)"', add
+label define related_mom_lbl 1296 `"Non-inmates in institutions"', add
+label define related_mom_lbl 1301 `"Institutional inmates"', add
+label define related_mom_lbl 9996 `"Unclassifiable"', add
+label define related_mom_lbl 9997 `"Unknown"', add
+label define related_mom_lbl 9998 `"Illegible"', add
+label define related_mom_lbl 9999 `"Missing"', add
+label values related_mom related_mom_lbl
+
+label define related_pop_lbl 0101 `"Head/Householder"'
+label define related_pop_lbl 0201 `"Spouse"', add
+label define related_pop_lbl 0202 `"2nd/3rd Wife (Polygamous)"', add
+label define related_pop_lbl 0301 `"Child"', add
+label define related_pop_lbl 0302 `"Adopted Child"', add
+label define related_pop_lbl 0303 `"Stepchild"', add
+label define related_pop_lbl 0304 `"Adopted, n.s."', add
+label define related_pop_lbl 0401 `"Child-in-law"', add
+label define related_pop_lbl 0402 `"Step Child-in-law"', add
+label define related_pop_lbl 0501 `"Parent"', add
+label define related_pop_lbl 0502 `"Stepparent"', add
+label define related_pop_lbl 0601 `"Parent-in-Law"', add
+label define related_pop_lbl 0602 `"Stepparent-in-law"', add
+label define related_pop_lbl 0701 `"Sibling"', add
+label define related_pop_lbl 0702 `"Step/Half/Adopted Sibling"', add
+label define related_pop_lbl 0801 `"Sibling-in-Law"', add
+label define related_pop_lbl 0802 `"Step/Half Sibling-in-law"', add
+label define related_pop_lbl 0901 `"Grandchild"', add
+label define related_pop_lbl 0902 `"Adopted Grandchild"', add
+label define related_pop_lbl 0903 `"Step Grandchild"', add
+label define related_pop_lbl 0904 `"Grandchild-in-law"', add
+label define related_pop_lbl 1000 `"Other relatives:"', add
+label define related_pop_lbl 1001 `"Other Relatives"', add
+label define related_pop_lbl 1011 `"Grandparent"', add
+label define related_pop_lbl 1012 `"Step Grandparent"', add
+label define related_pop_lbl 1013 `"Grandparent-in-law"', add
+label define related_pop_lbl 1021 `"Aunt or Uncle"', add
+label define related_pop_lbl 1022 `"Aunt,Uncle-in-law"', add
+label define related_pop_lbl 1031 `"Nephew, Niece"', add
+label define related_pop_lbl 1032 `"Neph/Niece-in-law"', add
+label define related_pop_lbl 1033 `"Step/Adopted Nephew/Niece"', add
+label define related_pop_lbl 1034 `"Grand Niece/Nephew"', add
+label define related_pop_lbl 1041 `"Cousin"', add
+label define related_pop_lbl 1042 `"Cousin-in-law"', add
+label define related_pop_lbl 1051 `"Great Grandchild"', add
+label define related_pop_lbl 1061 `"Other relatives, nec"', add
+label define related_pop_lbl 1100 `"Partner, Friend, Visitor"', add
+label define related_pop_lbl 1110 `"Partner/friend"', add
+label define related_pop_lbl 1111 `"Friend"', add
+label define related_pop_lbl 1112 `"Partner"', add
+label define related_pop_lbl 1113 `"Partner/roommate"', add
+label define related_pop_lbl 1114 `"Unmarried Partner"', add
+label define related_pop_lbl 1115 `"Housemate/Roomate"', add
+label define related_pop_lbl 1120 `"Relative of partner"', add
+label define related_pop_lbl 1130 `"Concubine/Mistress"', add
+label define related_pop_lbl 1131 `"Visitor"', add
+label define related_pop_lbl 1132 `"Companion and family of companion"', add
+label define related_pop_lbl 1139 `"Allocated partner/friend/visitor"', add
+label define related_pop_lbl 1200 `"Other non-relatives"', add
+label define related_pop_lbl 1201 `"Roomers/boarders/lodgers"', add
+label define related_pop_lbl 1202 `"Boarders"', add
+label define related_pop_lbl 1203 `"Lodgers"', add
+label define related_pop_lbl 1204 `"Roomer"', add
+label define related_pop_lbl 1205 `"Tenant"', add
+label define related_pop_lbl 1206 `"Foster child"', add
+label define related_pop_lbl 1210 `"Employees:"', add
+label define related_pop_lbl 1211 `"Servant"', add
+label define related_pop_lbl 1212 `"Housekeeper"', add
+label define related_pop_lbl 1213 `"Maid"', add
+label define related_pop_lbl 1214 `"Cook"', add
+label define related_pop_lbl 1215 `"Nurse"', add
+label define related_pop_lbl 1216 `"Other probable domestic employee"', add
+label define related_pop_lbl 1217 `"Other employee"', add
+label define related_pop_lbl 1219 `"Relative of employee"', add
+label define related_pop_lbl 1221 `"Military"', add
+label define related_pop_lbl 1222 `"Students"', add
+label define related_pop_lbl 1223 `"Members of religious orders"', add
+label define related_pop_lbl 1230 `"Other non-relatives"', add
+label define related_pop_lbl 1239 `"Allocated other non-relative"', add
+label define related_pop_lbl 1240 `"Roomers/boarders/lodgers and foster children"', add
+label define related_pop_lbl 1241 `"Roomers/boarders/lodgers"', add
+label define related_pop_lbl 1242 `"Foster children"', add
+label define related_pop_lbl 1250 `"Employees"', add
+label define related_pop_lbl 1251 `"Domestic employees"', add
+label define related_pop_lbl 1252 `"Non-domestic employees"', add
+label define related_pop_lbl 1253 `"Relative of employee"', add
+label define related_pop_lbl 1260 `"Other non-relatives (1990 includes employees)"', add
+label define related_pop_lbl 1270 `"Non-inmate 1990"', add
+label define related_pop_lbl 1281 `"Head of group quarters"', add
+label define related_pop_lbl 1282 `"Employees of group quarters"', add
+label define related_pop_lbl 1283 `"Relative of head, staff, or employee group quarters"', add
+label define related_pop_lbl 1284 `"Other non-inmate 1940-1959"', add
+label define related_pop_lbl 1291 `"Military"', add
+label define related_pop_lbl 1292 `"College dormitories"', add
+label define related_pop_lbl 1293 `"Residents of rooming houses"', add
+label define related_pop_lbl 1294 `"Other non-inmate 1980 (includes employees and non-inmates in"', add
+label define related_pop_lbl 1295 `"Other non-inmates 1960-1970 (includes employees)"', add
+label define related_pop_lbl 1296 `"Non-inmates in institutions"', add
+label define related_pop_lbl 1301 `"Institutional inmates"', add
+label define related_pop_lbl 9996 `"Unclassifiable"', add
+label define related_pop_lbl 9997 `"Unknown"', add
+label define related_pop_lbl 9998 `"Illegible"', add
+label define related_pop_lbl 9999 `"Missing"', add
+label values related_pop related_pop_lbl
+
+label define related_sp_lbl 0101 `"Head/Householder"'
+label define related_sp_lbl 0201 `"Spouse"', add
+label define related_sp_lbl 0202 `"2nd/3rd Wife (Polygamous)"', add
+label define related_sp_lbl 0301 `"Child"', add
+label define related_sp_lbl 0302 `"Adopted Child"', add
+label define related_sp_lbl 0303 `"Stepchild"', add
+label define related_sp_lbl 0304 `"Adopted, n.s."', add
+label define related_sp_lbl 0401 `"Child-in-law"', add
+label define related_sp_lbl 0402 `"Step Child-in-law"', add
+label define related_sp_lbl 0501 `"Parent"', add
+label define related_sp_lbl 0502 `"Stepparent"', add
+label define related_sp_lbl 0601 `"Parent-in-Law"', add
+label define related_sp_lbl 0602 `"Stepparent-in-law"', add
+label define related_sp_lbl 0701 `"Sibling"', add
+label define related_sp_lbl 0702 `"Step/Half/Adopted Sibling"', add
+label define related_sp_lbl 0801 `"Sibling-in-Law"', add
+label define related_sp_lbl 0802 `"Step/Half Sibling-in-law"', add
+label define related_sp_lbl 0901 `"Grandchild"', add
+label define related_sp_lbl 0902 `"Adopted Grandchild"', add
+label define related_sp_lbl 0903 `"Step Grandchild"', add
+label define related_sp_lbl 0904 `"Grandchild-in-law"', add
+label define related_sp_lbl 1000 `"Other relatives:"', add
+label define related_sp_lbl 1001 `"Other Relatives"', add
+label define related_sp_lbl 1011 `"Grandparent"', add
+label define related_sp_lbl 1012 `"Step Grandparent"', add
+label define related_sp_lbl 1013 `"Grandparent-in-law"', add
+label define related_sp_lbl 1021 `"Aunt or Uncle"', add
+label define related_sp_lbl 1022 `"Aunt,Uncle-in-law"', add
+label define related_sp_lbl 1031 `"Nephew, Niece"', add
+label define related_sp_lbl 1032 `"Neph/Niece-in-law"', add
+label define related_sp_lbl 1033 `"Step/Adopted Nephew/Niece"', add
+label define related_sp_lbl 1034 `"Grand Niece/Nephew"', add
+label define related_sp_lbl 1041 `"Cousin"', add
+label define related_sp_lbl 1042 `"Cousin-in-law"', add
+label define related_sp_lbl 1051 `"Great Grandchild"', add
+label define related_sp_lbl 1061 `"Other relatives, nec"', add
+label define related_sp_lbl 1100 `"Partner, Friend, Visitor"', add
+label define related_sp_lbl 1110 `"Partner/friend"', add
+label define related_sp_lbl 1111 `"Friend"', add
+label define related_sp_lbl 1112 `"Partner"', add
+label define related_sp_lbl 1113 `"Partner/roommate"', add
+label define related_sp_lbl 1114 `"Unmarried Partner"', add
+label define related_sp_lbl 1115 `"Housemate/Roomate"', add
+label define related_sp_lbl 1120 `"Relative of partner"', add
+label define related_sp_lbl 1130 `"Concubine/Mistress"', add
+label define related_sp_lbl 1131 `"Visitor"', add
+label define related_sp_lbl 1132 `"Companion and family of companion"', add
+label define related_sp_lbl 1139 `"Allocated partner/friend/visitor"', add
+label define related_sp_lbl 1200 `"Other non-relatives"', add
+label define related_sp_lbl 1201 `"Roomers/boarders/lodgers"', add
+label define related_sp_lbl 1202 `"Boarders"', add
+label define related_sp_lbl 1203 `"Lodgers"', add
+label define related_sp_lbl 1204 `"Roomer"', add
+label define related_sp_lbl 1205 `"Tenant"', add
+label define related_sp_lbl 1206 `"Foster child"', add
+label define related_sp_lbl 1210 `"Employees:"', add
+label define related_sp_lbl 1211 `"Servant"', add
+label define related_sp_lbl 1212 `"Housekeeper"', add
+label define related_sp_lbl 1213 `"Maid"', add
+label define related_sp_lbl 1214 `"Cook"', add
+label define related_sp_lbl 1215 `"Nurse"', add
+label define related_sp_lbl 1216 `"Other probable domestic employee"', add
+label define related_sp_lbl 1217 `"Other employee"', add
+label define related_sp_lbl 1219 `"Relative of employee"', add
+label define related_sp_lbl 1221 `"Military"', add
+label define related_sp_lbl 1222 `"Students"', add
+label define related_sp_lbl 1223 `"Members of religious orders"', add
+label define related_sp_lbl 1230 `"Other non-relatives"', add
+label define related_sp_lbl 1239 `"Allocated other non-relative"', add
+label define related_sp_lbl 1240 `"Roomers/boarders/lodgers and foster children"', add
+label define related_sp_lbl 1241 `"Roomers/boarders/lodgers"', add
+label define related_sp_lbl 1242 `"Foster children"', add
+label define related_sp_lbl 1250 `"Employees"', add
+label define related_sp_lbl 1251 `"Domestic employees"', add
+label define related_sp_lbl 1252 `"Non-domestic employees"', add
+label define related_sp_lbl 1253 `"Relative of employee"', add
+label define related_sp_lbl 1260 `"Other non-relatives (1990 includes employees)"', add
+label define related_sp_lbl 1270 `"Non-inmate 1990"', add
+label define related_sp_lbl 1281 `"Head of group quarters"', add
+label define related_sp_lbl 1282 `"Employees of group quarters"', add
+label define related_sp_lbl 1283 `"Relative of head, staff, or employee group quarters"', add
+label define related_sp_lbl 1284 `"Other non-inmate 1940-1959"', add
+label define related_sp_lbl 1291 `"Military"', add
+label define related_sp_lbl 1292 `"College dormitories"', add
+label define related_sp_lbl 1293 `"Residents of rooming houses"', add
+label define related_sp_lbl 1294 `"Other non-inmate 1980 (includes employees and non-inmates in"', add
+label define related_sp_lbl 1295 `"Other non-inmates 1960-1970 (includes employees)"', add
+label define related_sp_lbl 1296 `"Non-inmates in institutions"', add
+label define related_sp_lbl 1301 `"Institutional inmates"', add
+label define related_sp_lbl 9996 `"Unclassifiable"', add
+label define related_sp_lbl 9997 `"Unknown"', add
+label define related_sp_lbl 9998 `"Illegible"', add
+label define related_sp_lbl 9999 `"Missing"', add
+label values related_sp related_sp_lbl
+
+label define related_mom2_lbl 0101 `"Head/Householder"'
+label define related_mom2_lbl 0201 `"Spouse"', add
+label define related_mom2_lbl 0202 `"2nd/3rd Wife (Polygamous)"', add
+label define related_mom2_lbl 0301 `"Child"', add
+label define related_mom2_lbl 0302 `"Adopted Child"', add
+label define related_mom2_lbl 0303 `"Stepchild"', add
+label define related_mom2_lbl 0304 `"Adopted, n.s."', add
+label define related_mom2_lbl 0401 `"Child-in-law"', add
+label define related_mom2_lbl 0402 `"Step Child-in-law"', add
+label define related_mom2_lbl 0501 `"Parent"', add
+label define related_mom2_lbl 0502 `"Stepparent"', add
+label define related_mom2_lbl 0601 `"Parent-in-Law"', add
+label define related_mom2_lbl 0602 `"Stepparent-in-law"', add
+label define related_mom2_lbl 0701 `"Sibling"', add
+label define related_mom2_lbl 0702 `"Step/Half/Adopted Sibling"', add
+label define related_mom2_lbl 0801 `"Sibling-in-Law"', add
+label define related_mom2_lbl 0802 `"Step/Half Sibling-in-law"', add
+label define related_mom2_lbl 0901 `"Grandchild"', add
+label define related_mom2_lbl 0902 `"Adopted Grandchild"', add
+label define related_mom2_lbl 0903 `"Step Grandchild"', add
+label define related_mom2_lbl 0904 `"Grandchild-in-law"', add
+label define related_mom2_lbl 1000 `"Other relatives:"', add
+label define related_mom2_lbl 1001 `"Other Relatives"', add
+label define related_mom2_lbl 1011 `"Grandparent"', add
+label define related_mom2_lbl 1012 `"Step Grandparent"', add
+label define related_mom2_lbl 1013 `"Grandparent-in-law"', add
+label define related_mom2_lbl 1021 `"Aunt or Uncle"', add
+label define related_mom2_lbl 1022 `"Aunt,Uncle-in-law"', add
+label define related_mom2_lbl 1031 `"Nephew, Niece"', add
+label define related_mom2_lbl 1032 `"Neph/Niece-in-law"', add
+label define related_mom2_lbl 1033 `"Step/Adopted Nephew/Niece"', add
+label define related_mom2_lbl 1034 `"Grand Niece/Nephew"', add
+label define related_mom2_lbl 1041 `"Cousin"', add
+label define related_mom2_lbl 1042 `"Cousin-in-law"', add
+label define related_mom2_lbl 1051 `"Great Grandchild"', add
+label define related_mom2_lbl 1061 `"Other relatives, nec"', add
+label define related_mom2_lbl 1100 `"Partner, Friend, Visitor"', add
+label define related_mom2_lbl 1110 `"Partner/friend"', add
+label define related_mom2_lbl 1111 `"Friend"', add
+label define related_mom2_lbl 1112 `"Partner"', add
+label define related_mom2_lbl 1113 `"Partner/roommate"', add
+label define related_mom2_lbl 1114 `"Unmarried Partner"', add
+label define related_mom2_lbl 1115 `"Housemate/Roomate"', add
+label define related_mom2_lbl 1120 `"Relative of partner"', add
+label define related_mom2_lbl 1130 `"Concubine/Mistress"', add
+label define related_mom2_lbl 1131 `"Visitor"', add
+label define related_mom2_lbl 1132 `"Companion and family of companion"', add
+label define related_mom2_lbl 1139 `"Allocated partner/friend/visitor"', add
+label define related_mom2_lbl 1200 `"Other non-relatives"', add
+label define related_mom2_lbl 1201 `"Roomers/boarders/lodgers"', add
+label define related_mom2_lbl 1202 `"Boarders"', add
+label define related_mom2_lbl 1203 `"Lodgers"', add
+label define related_mom2_lbl 1204 `"Roomer"', add
+label define related_mom2_lbl 1205 `"Tenant"', add
+label define related_mom2_lbl 1206 `"Foster child"', add
+label define related_mom2_lbl 1210 `"Employees:"', add
+label define related_mom2_lbl 1211 `"Servant"', add
+label define related_mom2_lbl 1212 `"Housekeeper"', add
+label define related_mom2_lbl 1213 `"Maid"', add
+label define related_mom2_lbl 1214 `"Cook"', add
+label define related_mom2_lbl 1215 `"Nurse"', add
+label define related_mom2_lbl 1216 `"Other probable domestic employee"', add
+label define related_mom2_lbl 1217 `"Other employee"', add
+label define related_mom2_lbl 1219 `"Relative of employee"', add
+label define related_mom2_lbl 1221 `"Military"', add
+label define related_mom2_lbl 1222 `"Students"', add
+label define related_mom2_lbl 1223 `"Members of religious orders"', add
+label define related_mom2_lbl 1230 `"Other non-relatives"', add
+label define related_mom2_lbl 1239 `"Allocated other non-relative"', add
+label define related_mom2_lbl 1240 `"Roomers/boarders/lodgers and foster children"', add
+label define related_mom2_lbl 1241 `"Roomers/boarders/lodgers"', add
+label define related_mom2_lbl 1242 `"Foster children"', add
+label define related_mom2_lbl 1250 `"Employees"', add
+label define related_mom2_lbl 1251 `"Domestic employees"', add
+label define related_mom2_lbl 1252 `"Non-domestic employees"', add
+label define related_mom2_lbl 1253 `"Relative of employee"', add
+label define related_mom2_lbl 1260 `"Other non-relatives (1990 includes employees)"', add
+label define related_mom2_lbl 1270 `"Non-inmate 1990"', add
+label define related_mom2_lbl 1281 `"Head of group quarters"', add
+label define related_mom2_lbl 1282 `"Employees of group quarters"', add
+label define related_mom2_lbl 1283 `"Relative of head, staff, or employee group quarters"', add
+label define related_mom2_lbl 1284 `"Other non-inmate 1940-1959"', add
+label define related_mom2_lbl 1291 `"Military"', add
+label define related_mom2_lbl 1292 `"College dormitories"', add
+label define related_mom2_lbl 1293 `"Residents of rooming houses"', add
+label define related_mom2_lbl 1294 `"Other non-inmate 1980 (includes employees and non-inmates in"', add
+label define related_mom2_lbl 1295 `"Other non-inmates 1960-1970 (includes employees)"', add
+label define related_mom2_lbl 1296 `"Non-inmates in institutions"', add
+label define related_mom2_lbl 1301 `"Institutional inmates"', add
+label define related_mom2_lbl 9996 `"Unclassifiable"', add
+label define related_mom2_lbl 9997 `"Unknown"', add
+label define related_mom2_lbl 9998 `"Illegible"', add
+label define related_mom2_lbl 9999 `"Missing"', add
+label values related_mom2 related_mom2_lbl
+
+label define related_pop2_lbl 0101 `"Head/Householder"'
+label define related_pop2_lbl 0201 `"Spouse"', add
+label define related_pop2_lbl 0202 `"2nd/3rd Wife (Polygamous)"', add
+label define related_pop2_lbl 0301 `"Child"', add
+label define related_pop2_lbl 0302 `"Adopted Child"', add
+label define related_pop2_lbl 0303 `"Stepchild"', add
+label define related_pop2_lbl 0304 `"Adopted, n.s."', add
+label define related_pop2_lbl 0401 `"Child-in-law"', add
+label define related_pop2_lbl 0402 `"Step Child-in-law"', add
+label define related_pop2_lbl 0501 `"Parent"', add
+label define related_pop2_lbl 0502 `"Stepparent"', add
+label define related_pop2_lbl 0601 `"Parent-in-Law"', add
+label define related_pop2_lbl 0602 `"Stepparent-in-law"', add
+label define related_pop2_lbl 0701 `"Sibling"', add
+label define related_pop2_lbl 0702 `"Step/Half/Adopted Sibling"', add
+label define related_pop2_lbl 0801 `"Sibling-in-Law"', add
+label define related_pop2_lbl 0802 `"Step/Half Sibling-in-law"', add
+label define related_pop2_lbl 0901 `"Grandchild"', add
+label define related_pop2_lbl 0902 `"Adopted Grandchild"', add
+label define related_pop2_lbl 0903 `"Step Grandchild"', add
+label define related_pop2_lbl 0904 `"Grandchild-in-law"', add
+label define related_pop2_lbl 1000 `"Other relatives:"', add
+label define related_pop2_lbl 1001 `"Other Relatives"', add
+label define related_pop2_lbl 1011 `"Grandparent"', add
+label define related_pop2_lbl 1012 `"Step Grandparent"', add
+label define related_pop2_lbl 1013 `"Grandparent-in-law"', add
+label define related_pop2_lbl 1021 `"Aunt or Uncle"', add
+label define related_pop2_lbl 1022 `"Aunt,Uncle-in-law"', add
+label define related_pop2_lbl 1031 `"Nephew, Niece"', add
+label define related_pop2_lbl 1032 `"Neph/Niece-in-law"', add
+label define related_pop2_lbl 1033 `"Step/Adopted Nephew/Niece"', add
+label define related_pop2_lbl 1034 `"Grand Niece/Nephew"', add
+label define related_pop2_lbl 1041 `"Cousin"', add
+label define related_pop2_lbl 1042 `"Cousin-in-law"', add
+label define related_pop2_lbl 1051 `"Great Grandchild"', add
+label define related_pop2_lbl 1061 `"Other relatives, nec"', add
+label define related_pop2_lbl 1100 `"Partner, Friend, Visitor"', add
+label define related_pop2_lbl 1110 `"Partner/friend"', add
+label define related_pop2_lbl 1111 `"Friend"', add
+label define related_pop2_lbl 1112 `"Partner"', add
+label define related_pop2_lbl 1113 `"Partner/roommate"', add
+label define related_pop2_lbl 1114 `"Unmarried Partner"', add
+label define related_pop2_lbl 1115 `"Housemate/Roomate"', add
+label define related_pop2_lbl 1120 `"Relative of partner"', add
+label define related_pop2_lbl 1130 `"Concubine/Mistress"', add
+label define related_pop2_lbl 1131 `"Visitor"', add
+label define related_pop2_lbl 1132 `"Companion and family of companion"', add
+label define related_pop2_lbl 1139 `"Allocated partner/friend/visitor"', add
+label define related_pop2_lbl 1200 `"Other non-relatives"', add
+label define related_pop2_lbl 1201 `"Roomers/boarders/lodgers"', add
+label define related_pop2_lbl 1202 `"Boarders"', add
+label define related_pop2_lbl 1203 `"Lodgers"', add
+label define related_pop2_lbl 1204 `"Roomer"', add
+label define related_pop2_lbl 1205 `"Tenant"', add
+label define related_pop2_lbl 1206 `"Foster child"', add
+label define related_pop2_lbl 1210 `"Employees:"', add
+label define related_pop2_lbl 1211 `"Servant"', add
+label define related_pop2_lbl 1212 `"Housekeeper"', add
+label define related_pop2_lbl 1213 `"Maid"', add
+label define related_pop2_lbl 1214 `"Cook"', add
+label define related_pop2_lbl 1215 `"Nurse"', add
+label define related_pop2_lbl 1216 `"Other probable domestic employee"', add
+label define related_pop2_lbl 1217 `"Other employee"', add
+label define related_pop2_lbl 1219 `"Relative of employee"', add
+label define related_pop2_lbl 1221 `"Military"', add
+label define related_pop2_lbl 1222 `"Students"', add
+label define related_pop2_lbl 1223 `"Members of religious orders"', add
+label define related_pop2_lbl 1230 `"Other non-relatives"', add
+label define related_pop2_lbl 1239 `"Allocated other non-relative"', add
+label define related_pop2_lbl 1240 `"Roomers/boarders/lodgers and foster children"', add
+label define related_pop2_lbl 1241 `"Roomers/boarders/lodgers"', add
+label define related_pop2_lbl 1242 `"Foster children"', add
+label define related_pop2_lbl 1250 `"Employees"', add
+label define related_pop2_lbl 1251 `"Domestic employees"', add
+label define related_pop2_lbl 1252 `"Non-domestic employees"', add
+label define related_pop2_lbl 1253 `"Relative of employee"', add
+label define related_pop2_lbl 1260 `"Other non-relatives (1990 includes employees)"', add
+label define related_pop2_lbl 1270 `"Non-inmate 1990"', add
+label define related_pop2_lbl 1281 `"Head of group quarters"', add
+label define related_pop2_lbl 1282 `"Employees of group quarters"', add
+label define related_pop2_lbl 1283 `"Relative of head, staff, or employee group quarters"', add
+label define related_pop2_lbl 1284 `"Other non-inmate 1940-1959"', add
+label define related_pop2_lbl 1291 `"Military"', add
+label define related_pop2_lbl 1292 `"College dormitories"', add
+label define related_pop2_lbl 1293 `"Residents of rooming houses"', add
+label define related_pop2_lbl 1294 `"Other non-inmate 1980 (includes employees and non-inmates in"', add
+label define related_pop2_lbl 1295 `"Other non-inmates 1960-1970 (includes employees)"', add
+label define related_pop2_lbl 1296 `"Non-inmates in institutions"', add
+label define related_pop2_lbl 1301 `"Institutional inmates"', add
+label define related_pop2_lbl 9996 `"Unclassifiable"', add
+label define related_pop2_lbl 9997 `"Unknown"', add
+label define related_pop2_lbl 9998 `"Illegible"', add
+label define related_pop2_lbl 9999 `"Missing"', add
+label values related_pop2 related_pop2_lbl
+
 label define sex_head_lbl 1 `"Male"'
 label define sex_head_lbl 2 `"Female"', add
 label values sex_head sex_head_lbl
 
+label define sex_mom_lbl 1 `"Male"'
+label define sex_mom_lbl 2 `"Female"', add
+label values sex_mom sex_mom_lbl
+
+label define sex_pop_lbl 1 `"Male"'
+label define sex_pop_lbl 2 `"Female"', add
+label values sex_pop sex_pop_lbl
+
 label define sex_sp_lbl 1 `"Male"'
 label define sex_sp_lbl 2 `"Female"', add
 label values sex_sp sex_sp_lbl
+
+label define sex_mom2_lbl 1 `"Male"'
+label define sex_mom2_lbl 2 `"Female"', add
+label values sex_mom2 sex_mom2_lbl
+
+label define sex_pop2_lbl 1 `"Male"'
+label define sex_pop2_lbl 2 `"Female"', add
+label values sex_pop2 sex_pop2_lbl
 
 label define age_head_lbl 000 `"Less than 1 year old"'
 label define age_head_lbl 001 `"1"', add
@@ -5042,6 +5916,270 @@ label define age_head_lbl 130 `"130"', add
 label define age_head_lbl 135 `"135"', add
 label values age_head age_head_lbl
 
+label define age_mom_lbl 000 `"Less than 1 year old"'
+label define age_mom_lbl 001 `"1"', add
+label define age_mom_lbl 002 `"2"', add
+label define age_mom_lbl 003 `"3"', add
+label define age_mom_lbl 004 `"4"', add
+label define age_mom_lbl 005 `"5"', add
+label define age_mom_lbl 006 `"6"', add
+label define age_mom_lbl 007 `"7"', add
+label define age_mom_lbl 008 `"8"', add
+label define age_mom_lbl 009 `"9"', add
+label define age_mom_lbl 010 `"10"', add
+label define age_mom_lbl 011 `"11"', add
+label define age_mom_lbl 012 `"12"', add
+label define age_mom_lbl 013 `"13"', add
+label define age_mom_lbl 014 `"14"', add
+label define age_mom_lbl 015 `"15"', add
+label define age_mom_lbl 016 `"16"', add
+label define age_mom_lbl 017 `"17"', add
+label define age_mom_lbl 018 `"18"', add
+label define age_mom_lbl 019 `"19"', add
+label define age_mom_lbl 020 `"20"', add
+label define age_mom_lbl 021 `"21"', add
+label define age_mom_lbl 022 `"22"', add
+label define age_mom_lbl 023 `"23"', add
+label define age_mom_lbl 024 `"24"', add
+label define age_mom_lbl 025 `"25"', add
+label define age_mom_lbl 026 `"26"', add
+label define age_mom_lbl 027 `"27"', add
+label define age_mom_lbl 028 `"28"', add
+label define age_mom_lbl 029 `"29"', add
+label define age_mom_lbl 030 `"30"', add
+label define age_mom_lbl 031 `"31"', add
+label define age_mom_lbl 032 `"32"', add
+label define age_mom_lbl 033 `"33"', add
+label define age_mom_lbl 034 `"34"', add
+label define age_mom_lbl 035 `"35"', add
+label define age_mom_lbl 036 `"36"', add
+label define age_mom_lbl 037 `"37"', add
+label define age_mom_lbl 038 `"38"', add
+label define age_mom_lbl 039 `"39"', add
+label define age_mom_lbl 040 `"40"', add
+label define age_mom_lbl 041 `"41"', add
+label define age_mom_lbl 042 `"42"', add
+label define age_mom_lbl 043 `"43"', add
+label define age_mom_lbl 044 `"44"', add
+label define age_mom_lbl 045 `"45"', add
+label define age_mom_lbl 046 `"46"', add
+label define age_mom_lbl 047 `"47"', add
+label define age_mom_lbl 048 `"48"', add
+label define age_mom_lbl 049 `"49"', add
+label define age_mom_lbl 050 `"50"', add
+label define age_mom_lbl 051 `"51"', add
+label define age_mom_lbl 052 `"52"', add
+label define age_mom_lbl 053 `"53"', add
+label define age_mom_lbl 054 `"54"', add
+label define age_mom_lbl 055 `"55"', add
+label define age_mom_lbl 056 `"56"', add
+label define age_mom_lbl 057 `"57"', add
+label define age_mom_lbl 058 `"58"', add
+label define age_mom_lbl 059 `"59"', add
+label define age_mom_lbl 060 `"60"', add
+label define age_mom_lbl 061 `"61"', add
+label define age_mom_lbl 062 `"62"', add
+label define age_mom_lbl 063 `"63"', add
+label define age_mom_lbl 064 `"64"', add
+label define age_mom_lbl 065 `"65"', add
+label define age_mom_lbl 066 `"66"', add
+label define age_mom_lbl 067 `"67"', add
+label define age_mom_lbl 068 `"68"', add
+label define age_mom_lbl 069 `"69"', add
+label define age_mom_lbl 070 `"70"', add
+label define age_mom_lbl 071 `"71"', add
+label define age_mom_lbl 072 `"72"', add
+label define age_mom_lbl 073 `"73"', add
+label define age_mom_lbl 074 `"74"', add
+label define age_mom_lbl 075 `"75"', add
+label define age_mom_lbl 076 `"76"', add
+label define age_mom_lbl 077 `"77"', add
+label define age_mom_lbl 078 `"78"', add
+label define age_mom_lbl 079 `"79"', add
+label define age_mom_lbl 080 `"80"', add
+label define age_mom_lbl 081 `"81"', add
+label define age_mom_lbl 082 `"82"', add
+label define age_mom_lbl 083 `"83"', add
+label define age_mom_lbl 084 `"84"', add
+label define age_mom_lbl 085 `"85"', add
+label define age_mom_lbl 086 `"86"', add
+label define age_mom_lbl 087 `"87"', add
+label define age_mom_lbl 088 `"88"', add
+label define age_mom_lbl 089 `"89"', add
+label define age_mom_lbl 090 `"90 (90+ in 1980 and 1990)"', add
+label define age_mom_lbl 091 `"91"', add
+label define age_mom_lbl 092 `"92"', add
+label define age_mom_lbl 093 `"93"', add
+label define age_mom_lbl 094 `"94"', add
+label define age_mom_lbl 095 `"95"', add
+label define age_mom_lbl 096 `"96"', add
+label define age_mom_lbl 097 `"97"', add
+label define age_mom_lbl 098 `"98"', add
+label define age_mom_lbl 099 `"99"', add
+label define age_mom_lbl 100 `"100 (100+ in 1960-1970)"', add
+label define age_mom_lbl 101 `"101"', add
+label define age_mom_lbl 102 `"102"', add
+label define age_mom_lbl 103 `"103"', add
+label define age_mom_lbl 104 `"104"', add
+label define age_mom_lbl 105 `"105"', add
+label define age_mom_lbl 106 `"106"', add
+label define age_mom_lbl 107 `"107"', add
+label define age_mom_lbl 108 `"108"', add
+label define age_mom_lbl 109 `"109"', add
+label define age_mom_lbl 110 `"110"', add
+label define age_mom_lbl 111 `"111"', add
+label define age_mom_lbl 112 `"112 (112+ in the 1980 internal data)"', add
+label define age_mom_lbl 113 `"113"', add
+label define age_mom_lbl 114 `"114"', add
+label define age_mom_lbl 115 `"115 (115+ in the 1990 internal data)"', add
+label define age_mom_lbl 116 `"116"', add
+label define age_mom_lbl 117 `"117"', add
+label define age_mom_lbl 118 `"118"', add
+label define age_mom_lbl 119 `"119"', add
+label define age_mom_lbl 120 `"120"', add
+label define age_mom_lbl 121 `"121"', add
+label define age_mom_lbl 122 `"122"', add
+label define age_mom_lbl 123 `"123"', add
+label define age_mom_lbl 124 `"124"', add
+label define age_mom_lbl 125 `"125"', add
+label define age_mom_lbl 126 `"126"', add
+label define age_mom_lbl 129 `"129"', add
+label define age_mom_lbl 130 `"130"', add
+label define age_mom_lbl 135 `"135"', add
+label values age_mom age_mom_lbl
+
+label define age_pop_lbl 000 `"Less than 1 year old"'
+label define age_pop_lbl 001 `"1"', add
+label define age_pop_lbl 002 `"2"', add
+label define age_pop_lbl 003 `"3"', add
+label define age_pop_lbl 004 `"4"', add
+label define age_pop_lbl 005 `"5"', add
+label define age_pop_lbl 006 `"6"', add
+label define age_pop_lbl 007 `"7"', add
+label define age_pop_lbl 008 `"8"', add
+label define age_pop_lbl 009 `"9"', add
+label define age_pop_lbl 010 `"10"', add
+label define age_pop_lbl 011 `"11"', add
+label define age_pop_lbl 012 `"12"', add
+label define age_pop_lbl 013 `"13"', add
+label define age_pop_lbl 014 `"14"', add
+label define age_pop_lbl 015 `"15"', add
+label define age_pop_lbl 016 `"16"', add
+label define age_pop_lbl 017 `"17"', add
+label define age_pop_lbl 018 `"18"', add
+label define age_pop_lbl 019 `"19"', add
+label define age_pop_lbl 020 `"20"', add
+label define age_pop_lbl 021 `"21"', add
+label define age_pop_lbl 022 `"22"', add
+label define age_pop_lbl 023 `"23"', add
+label define age_pop_lbl 024 `"24"', add
+label define age_pop_lbl 025 `"25"', add
+label define age_pop_lbl 026 `"26"', add
+label define age_pop_lbl 027 `"27"', add
+label define age_pop_lbl 028 `"28"', add
+label define age_pop_lbl 029 `"29"', add
+label define age_pop_lbl 030 `"30"', add
+label define age_pop_lbl 031 `"31"', add
+label define age_pop_lbl 032 `"32"', add
+label define age_pop_lbl 033 `"33"', add
+label define age_pop_lbl 034 `"34"', add
+label define age_pop_lbl 035 `"35"', add
+label define age_pop_lbl 036 `"36"', add
+label define age_pop_lbl 037 `"37"', add
+label define age_pop_lbl 038 `"38"', add
+label define age_pop_lbl 039 `"39"', add
+label define age_pop_lbl 040 `"40"', add
+label define age_pop_lbl 041 `"41"', add
+label define age_pop_lbl 042 `"42"', add
+label define age_pop_lbl 043 `"43"', add
+label define age_pop_lbl 044 `"44"', add
+label define age_pop_lbl 045 `"45"', add
+label define age_pop_lbl 046 `"46"', add
+label define age_pop_lbl 047 `"47"', add
+label define age_pop_lbl 048 `"48"', add
+label define age_pop_lbl 049 `"49"', add
+label define age_pop_lbl 050 `"50"', add
+label define age_pop_lbl 051 `"51"', add
+label define age_pop_lbl 052 `"52"', add
+label define age_pop_lbl 053 `"53"', add
+label define age_pop_lbl 054 `"54"', add
+label define age_pop_lbl 055 `"55"', add
+label define age_pop_lbl 056 `"56"', add
+label define age_pop_lbl 057 `"57"', add
+label define age_pop_lbl 058 `"58"', add
+label define age_pop_lbl 059 `"59"', add
+label define age_pop_lbl 060 `"60"', add
+label define age_pop_lbl 061 `"61"', add
+label define age_pop_lbl 062 `"62"', add
+label define age_pop_lbl 063 `"63"', add
+label define age_pop_lbl 064 `"64"', add
+label define age_pop_lbl 065 `"65"', add
+label define age_pop_lbl 066 `"66"', add
+label define age_pop_lbl 067 `"67"', add
+label define age_pop_lbl 068 `"68"', add
+label define age_pop_lbl 069 `"69"', add
+label define age_pop_lbl 070 `"70"', add
+label define age_pop_lbl 071 `"71"', add
+label define age_pop_lbl 072 `"72"', add
+label define age_pop_lbl 073 `"73"', add
+label define age_pop_lbl 074 `"74"', add
+label define age_pop_lbl 075 `"75"', add
+label define age_pop_lbl 076 `"76"', add
+label define age_pop_lbl 077 `"77"', add
+label define age_pop_lbl 078 `"78"', add
+label define age_pop_lbl 079 `"79"', add
+label define age_pop_lbl 080 `"80"', add
+label define age_pop_lbl 081 `"81"', add
+label define age_pop_lbl 082 `"82"', add
+label define age_pop_lbl 083 `"83"', add
+label define age_pop_lbl 084 `"84"', add
+label define age_pop_lbl 085 `"85"', add
+label define age_pop_lbl 086 `"86"', add
+label define age_pop_lbl 087 `"87"', add
+label define age_pop_lbl 088 `"88"', add
+label define age_pop_lbl 089 `"89"', add
+label define age_pop_lbl 090 `"90 (90+ in 1980 and 1990)"', add
+label define age_pop_lbl 091 `"91"', add
+label define age_pop_lbl 092 `"92"', add
+label define age_pop_lbl 093 `"93"', add
+label define age_pop_lbl 094 `"94"', add
+label define age_pop_lbl 095 `"95"', add
+label define age_pop_lbl 096 `"96"', add
+label define age_pop_lbl 097 `"97"', add
+label define age_pop_lbl 098 `"98"', add
+label define age_pop_lbl 099 `"99"', add
+label define age_pop_lbl 100 `"100 (100+ in 1960-1970)"', add
+label define age_pop_lbl 101 `"101"', add
+label define age_pop_lbl 102 `"102"', add
+label define age_pop_lbl 103 `"103"', add
+label define age_pop_lbl 104 `"104"', add
+label define age_pop_lbl 105 `"105"', add
+label define age_pop_lbl 106 `"106"', add
+label define age_pop_lbl 107 `"107"', add
+label define age_pop_lbl 108 `"108"', add
+label define age_pop_lbl 109 `"109"', add
+label define age_pop_lbl 110 `"110"', add
+label define age_pop_lbl 111 `"111"', add
+label define age_pop_lbl 112 `"112 (112+ in the 1980 internal data)"', add
+label define age_pop_lbl 113 `"113"', add
+label define age_pop_lbl 114 `"114"', add
+label define age_pop_lbl 115 `"115 (115+ in the 1990 internal data)"', add
+label define age_pop_lbl 116 `"116"', add
+label define age_pop_lbl 117 `"117"', add
+label define age_pop_lbl 118 `"118"', add
+label define age_pop_lbl 119 `"119"', add
+label define age_pop_lbl 120 `"120"', add
+label define age_pop_lbl 121 `"121"', add
+label define age_pop_lbl 122 `"122"', add
+label define age_pop_lbl 123 `"123"', add
+label define age_pop_lbl 124 `"124"', add
+label define age_pop_lbl 125 `"125"', add
+label define age_pop_lbl 126 `"126"', add
+label define age_pop_lbl 129 `"129"', add
+label define age_pop_lbl 130 `"130"', add
+label define age_pop_lbl 135 `"135"', add
+label values age_pop age_pop_lbl
+
 label define age_sp_lbl 000 `"Less than 1 year old"'
 label define age_sp_lbl 001 `"1"', add
 label define age_sp_lbl 002 `"2"', add
@@ -5174,6 +6312,270 @@ label define age_sp_lbl 130 `"130"', add
 label define age_sp_lbl 135 `"135"', add
 label values age_sp age_sp_lbl
 
+label define age_mom2_lbl 000 `"Less than 1 year old"'
+label define age_mom2_lbl 001 `"1"', add
+label define age_mom2_lbl 002 `"2"', add
+label define age_mom2_lbl 003 `"3"', add
+label define age_mom2_lbl 004 `"4"', add
+label define age_mom2_lbl 005 `"5"', add
+label define age_mom2_lbl 006 `"6"', add
+label define age_mom2_lbl 007 `"7"', add
+label define age_mom2_lbl 008 `"8"', add
+label define age_mom2_lbl 009 `"9"', add
+label define age_mom2_lbl 010 `"10"', add
+label define age_mom2_lbl 011 `"11"', add
+label define age_mom2_lbl 012 `"12"', add
+label define age_mom2_lbl 013 `"13"', add
+label define age_mom2_lbl 014 `"14"', add
+label define age_mom2_lbl 015 `"15"', add
+label define age_mom2_lbl 016 `"16"', add
+label define age_mom2_lbl 017 `"17"', add
+label define age_mom2_lbl 018 `"18"', add
+label define age_mom2_lbl 019 `"19"', add
+label define age_mom2_lbl 020 `"20"', add
+label define age_mom2_lbl 021 `"21"', add
+label define age_mom2_lbl 022 `"22"', add
+label define age_mom2_lbl 023 `"23"', add
+label define age_mom2_lbl 024 `"24"', add
+label define age_mom2_lbl 025 `"25"', add
+label define age_mom2_lbl 026 `"26"', add
+label define age_mom2_lbl 027 `"27"', add
+label define age_mom2_lbl 028 `"28"', add
+label define age_mom2_lbl 029 `"29"', add
+label define age_mom2_lbl 030 `"30"', add
+label define age_mom2_lbl 031 `"31"', add
+label define age_mom2_lbl 032 `"32"', add
+label define age_mom2_lbl 033 `"33"', add
+label define age_mom2_lbl 034 `"34"', add
+label define age_mom2_lbl 035 `"35"', add
+label define age_mom2_lbl 036 `"36"', add
+label define age_mom2_lbl 037 `"37"', add
+label define age_mom2_lbl 038 `"38"', add
+label define age_mom2_lbl 039 `"39"', add
+label define age_mom2_lbl 040 `"40"', add
+label define age_mom2_lbl 041 `"41"', add
+label define age_mom2_lbl 042 `"42"', add
+label define age_mom2_lbl 043 `"43"', add
+label define age_mom2_lbl 044 `"44"', add
+label define age_mom2_lbl 045 `"45"', add
+label define age_mom2_lbl 046 `"46"', add
+label define age_mom2_lbl 047 `"47"', add
+label define age_mom2_lbl 048 `"48"', add
+label define age_mom2_lbl 049 `"49"', add
+label define age_mom2_lbl 050 `"50"', add
+label define age_mom2_lbl 051 `"51"', add
+label define age_mom2_lbl 052 `"52"', add
+label define age_mom2_lbl 053 `"53"', add
+label define age_mom2_lbl 054 `"54"', add
+label define age_mom2_lbl 055 `"55"', add
+label define age_mom2_lbl 056 `"56"', add
+label define age_mom2_lbl 057 `"57"', add
+label define age_mom2_lbl 058 `"58"', add
+label define age_mom2_lbl 059 `"59"', add
+label define age_mom2_lbl 060 `"60"', add
+label define age_mom2_lbl 061 `"61"', add
+label define age_mom2_lbl 062 `"62"', add
+label define age_mom2_lbl 063 `"63"', add
+label define age_mom2_lbl 064 `"64"', add
+label define age_mom2_lbl 065 `"65"', add
+label define age_mom2_lbl 066 `"66"', add
+label define age_mom2_lbl 067 `"67"', add
+label define age_mom2_lbl 068 `"68"', add
+label define age_mom2_lbl 069 `"69"', add
+label define age_mom2_lbl 070 `"70"', add
+label define age_mom2_lbl 071 `"71"', add
+label define age_mom2_lbl 072 `"72"', add
+label define age_mom2_lbl 073 `"73"', add
+label define age_mom2_lbl 074 `"74"', add
+label define age_mom2_lbl 075 `"75"', add
+label define age_mom2_lbl 076 `"76"', add
+label define age_mom2_lbl 077 `"77"', add
+label define age_mom2_lbl 078 `"78"', add
+label define age_mom2_lbl 079 `"79"', add
+label define age_mom2_lbl 080 `"80"', add
+label define age_mom2_lbl 081 `"81"', add
+label define age_mom2_lbl 082 `"82"', add
+label define age_mom2_lbl 083 `"83"', add
+label define age_mom2_lbl 084 `"84"', add
+label define age_mom2_lbl 085 `"85"', add
+label define age_mom2_lbl 086 `"86"', add
+label define age_mom2_lbl 087 `"87"', add
+label define age_mom2_lbl 088 `"88"', add
+label define age_mom2_lbl 089 `"89"', add
+label define age_mom2_lbl 090 `"90 (90+ in 1980 and 1990)"', add
+label define age_mom2_lbl 091 `"91"', add
+label define age_mom2_lbl 092 `"92"', add
+label define age_mom2_lbl 093 `"93"', add
+label define age_mom2_lbl 094 `"94"', add
+label define age_mom2_lbl 095 `"95"', add
+label define age_mom2_lbl 096 `"96"', add
+label define age_mom2_lbl 097 `"97"', add
+label define age_mom2_lbl 098 `"98"', add
+label define age_mom2_lbl 099 `"99"', add
+label define age_mom2_lbl 100 `"100 (100+ in 1960-1970)"', add
+label define age_mom2_lbl 101 `"101"', add
+label define age_mom2_lbl 102 `"102"', add
+label define age_mom2_lbl 103 `"103"', add
+label define age_mom2_lbl 104 `"104"', add
+label define age_mom2_lbl 105 `"105"', add
+label define age_mom2_lbl 106 `"106"', add
+label define age_mom2_lbl 107 `"107"', add
+label define age_mom2_lbl 108 `"108"', add
+label define age_mom2_lbl 109 `"109"', add
+label define age_mom2_lbl 110 `"110"', add
+label define age_mom2_lbl 111 `"111"', add
+label define age_mom2_lbl 112 `"112 (112+ in the 1980 internal data)"', add
+label define age_mom2_lbl 113 `"113"', add
+label define age_mom2_lbl 114 `"114"', add
+label define age_mom2_lbl 115 `"115 (115+ in the 1990 internal data)"', add
+label define age_mom2_lbl 116 `"116"', add
+label define age_mom2_lbl 117 `"117"', add
+label define age_mom2_lbl 118 `"118"', add
+label define age_mom2_lbl 119 `"119"', add
+label define age_mom2_lbl 120 `"120"', add
+label define age_mom2_lbl 121 `"121"', add
+label define age_mom2_lbl 122 `"122"', add
+label define age_mom2_lbl 123 `"123"', add
+label define age_mom2_lbl 124 `"124"', add
+label define age_mom2_lbl 125 `"125"', add
+label define age_mom2_lbl 126 `"126"', add
+label define age_mom2_lbl 129 `"129"', add
+label define age_mom2_lbl 130 `"130"', add
+label define age_mom2_lbl 135 `"135"', add
+label values age_mom2 age_mom2_lbl
+
+label define age_pop2_lbl 000 `"Less than 1 year old"'
+label define age_pop2_lbl 001 `"1"', add
+label define age_pop2_lbl 002 `"2"', add
+label define age_pop2_lbl 003 `"3"', add
+label define age_pop2_lbl 004 `"4"', add
+label define age_pop2_lbl 005 `"5"', add
+label define age_pop2_lbl 006 `"6"', add
+label define age_pop2_lbl 007 `"7"', add
+label define age_pop2_lbl 008 `"8"', add
+label define age_pop2_lbl 009 `"9"', add
+label define age_pop2_lbl 010 `"10"', add
+label define age_pop2_lbl 011 `"11"', add
+label define age_pop2_lbl 012 `"12"', add
+label define age_pop2_lbl 013 `"13"', add
+label define age_pop2_lbl 014 `"14"', add
+label define age_pop2_lbl 015 `"15"', add
+label define age_pop2_lbl 016 `"16"', add
+label define age_pop2_lbl 017 `"17"', add
+label define age_pop2_lbl 018 `"18"', add
+label define age_pop2_lbl 019 `"19"', add
+label define age_pop2_lbl 020 `"20"', add
+label define age_pop2_lbl 021 `"21"', add
+label define age_pop2_lbl 022 `"22"', add
+label define age_pop2_lbl 023 `"23"', add
+label define age_pop2_lbl 024 `"24"', add
+label define age_pop2_lbl 025 `"25"', add
+label define age_pop2_lbl 026 `"26"', add
+label define age_pop2_lbl 027 `"27"', add
+label define age_pop2_lbl 028 `"28"', add
+label define age_pop2_lbl 029 `"29"', add
+label define age_pop2_lbl 030 `"30"', add
+label define age_pop2_lbl 031 `"31"', add
+label define age_pop2_lbl 032 `"32"', add
+label define age_pop2_lbl 033 `"33"', add
+label define age_pop2_lbl 034 `"34"', add
+label define age_pop2_lbl 035 `"35"', add
+label define age_pop2_lbl 036 `"36"', add
+label define age_pop2_lbl 037 `"37"', add
+label define age_pop2_lbl 038 `"38"', add
+label define age_pop2_lbl 039 `"39"', add
+label define age_pop2_lbl 040 `"40"', add
+label define age_pop2_lbl 041 `"41"', add
+label define age_pop2_lbl 042 `"42"', add
+label define age_pop2_lbl 043 `"43"', add
+label define age_pop2_lbl 044 `"44"', add
+label define age_pop2_lbl 045 `"45"', add
+label define age_pop2_lbl 046 `"46"', add
+label define age_pop2_lbl 047 `"47"', add
+label define age_pop2_lbl 048 `"48"', add
+label define age_pop2_lbl 049 `"49"', add
+label define age_pop2_lbl 050 `"50"', add
+label define age_pop2_lbl 051 `"51"', add
+label define age_pop2_lbl 052 `"52"', add
+label define age_pop2_lbl 053 `"53"', add
+label define age_pop2_lbl 054 `"54"', add
+label define age_pop2_lbl 055 `"55"', add
+label define age_pop2_lbl 056 `"56"', add
+label define age_pop2_lbl 057 `"57"', add
+label define age_pop2_lbl 058 `"58"', add
+label define age_pop2_lbl 059 `"59"', add
+label define age_pop2_lbl 060 `"60"', add
+label define age_pop2_lbl 061 `"61"', add
+label define age_pop2_lbl 062 `"62"', add
+label define age_pop2_lbl 063 `"63"', add
+label define age_pop2_lbl 064 `"64"', add
+label define age_pop2_lbl 065 `"65"', add
+label define age_pop2_lbl 066 `"66"', add
+label define age_pop2_lbl 067 `"67"', add
+label define age_pop2_lbl 068 `"68"', add
+label define age_pop2_lbl 069 `"69"', add
+label define age_pop2_lbl 070 `"70"', add
+label define age_pop2_lbl 071 `"71"', add
+label define age_pop2_lbl 072 `"72"', add
+label define age_pop2_lbl 073 `"73"', add
+label define age_pop2_lbl 074 `"74"', add
+label define age_pop2_lbl 075 `"75"', add
+label define age_pop2_lbl 076 `"76"', add
+label define age_pop2_lbl 077 `"77"', add
+label define age_pop2_lbl 078 `"78"', add
+label define age_pop2_lbl 079 `"79"', add
+label define age_pop2_lbl 080 `"80"', add
+label define age_pop2_lbl 081 `"81"', add
+label define age_pop2_lbl 082 `"82"', add
+label define age_pop2_lbl 083 `"83"', add
+label define age_pop2_lbl 084 `"84"', add
+label define age_pop2_lbl 085 `"85"', add
+label define age_pop2_lbl 086 `"86"', add
+label define age_pop2_lbl 087 `"87"', add
+label define age_pop2_lbl 088 `"88"', add
+label define age_pop2_lbl 089 `"89"', add
+label define age_pop2_lbl 090 `"90 (90+ in 1980 and 1990)"', add
+label define age_pop2_lbl 091 `"91"', add
+label define age_pop2_lbl 092 `"92"', add
+label define age_pop2_lbl 093 `"93"', add
+label define age_pop2_lbl 094 `"94"', add
+label define age_pop2_lbl 095 `"95"', add
+label define age_pop2_lbl 096 `"96"', add
+label define age_pop2_lbl 097 `"97"', add
+label define age_pop2_lbl 098 `"98"', add
+label define age_pop2_lbl 099 `"99"', add
+label define age_pop2_lbl 100 `"100 (100+ in 1960-1970)"', add
+label define age_pop2_lbl 101 `"101"', add
+label define age_pop2_lbl 102 `"102"', add
+label define age_pop2_lbl 103 `"103"', add
+label define age_pop2_lbl 104 `"104"', add
+label define age_pop2_lbl 105 `"105"', add
+label define age_pop2_lbl 106 `"106"', add
+label define age_pop2_lbl 107 `"107"', add
+label define age_pop2_lbl 108 `"108"', add
+label define age_pop2_lbl 109 `"109"', add
+label define age_pop2_lbl 110 `"110"', add
+label define age_pop2_lbl 111 `"111"', add
+label define age_pop2_lbl 112 `"112 (112+ in the 1980 internal data)"', add
+label define age_pop2_lbl 113 `"113"', add
+label define age_pop2_lbl 114 `"114"', add
+label define age_pop2_lbl 115 `"115 (115+ in the 1990 internal data)"', add
+label define age_pop2_lbl 116 `"116"', add
+label define age_pop2_lbl 117 `"117"', add
+label define age_pop2_lbl 118 `"118"', add
+label define age_pop2_lbl 119 `"119"', add
+label define age_pop2_lbl 120 `"120"', add
+label define age_pop2_lbl 121 `"121"', add
+label define age_pop2_lbl 122 `"122"', add
+label define age_pop2_lbl 123 `"123"', add
+label define age_pop2_lbl 124 `"124"', add
+label define age_pop2_lbl 125 `"125"', add
+label define age_pop2_lbl 126 `"126"', add
+label define age_pop2_lbl 129 `"129"', add
+label define age_pop2_lbl 130 `"130"', add
+label define age_pop2_lbl 135 `"135"', add
+label values age_pop2 age_pop2_lbl
+
 label define marst_head_lbl 1 `"Married, spouse present"'
 label define marst_head_lbl 2 `"Married, spouse absent"', add
 label define marst_head_lbl 3 `"Separated"', add
@@ -5181,6 +6583,22 @@ label define marst_head_lbl 4 `"Divorced"', add
 label define marst_head_lbl 5 `"Widowed"', add
 label define marst_head_lbl 6 `"Never married/single"', add
 label values marst_head marst_head_lbl
+
+label define marst_mom_lbl 1 `"Married, spouse present"'
+label define marst_mom_lbl 2 `"Married, spouse absent"', add
+label define marst_mom_lbl 3 `"Separated"', add
+label define marst_mom_lbl 4 `"Divorced"', add
+label define marst_mom_lbl 5 `"Widowed"', add
+label define marst_mom_lbl 6 `"Never married/single"', add
+label values marst_mom marst_mom_lbl
+
+label define marst_pop_lbl 1 `"Married, spouse present"'
+label define marst_pop_lbl 2 `"Married, spouse absent"', add
+label define marst_pop_lbl 3 `"Separated"', add
+label define marst_pop_lbl 4 `"Divorced"', add
+label define marst_pop_lbl 5 `"Widowed"', add
+label define marst_pop_lbl 6 `"Never married/single"', add
+label values marst_pop marst_pop_lbl
 
 label define marst_sp_lbl 1 `"Married, spouse present"'
 label define marst_sp_lbl 2 `"Married, spouse absent"', add
@@ -5190,8 +6608,420 @@ label define marst_sp_lbl 5 `"Widowed"', add
 label define marst_sp_lbl 6 `"Never married/single"', add
 label values marst_sp marst_sp_lbl
 
+label define marst_mom2_lbl 1 `"Married, spouse present"'
+label define marst_mom2_lbl 2 `"Married, spouse absent"', add
+label define marst_mom2_lbl 3 `"Separated"', add
+label define marst_mom2_lbl 4 `"Divorced"', add
+label define marst_mom2_lbl 5 `"Widowed"', add
+label define marst_mom2_lbl 6 `"Never married/single"', add
+label values marst_mom2 marst_mom2_lbl
+
+label define marst_pop2_lbl 1 `"Married, spouse present"'
+label define marst_pop2_lbl 2 `"Married, spouse absent"', add
+label define marst_pop2_lbl 3 `"Separated"', add
+label define marst_pop2_lbl 4 `"Divorced"', add
+label define marst_pop2_lbl 5 `"Widowed"', add
+label define marst_pop2_lbl 6 `"Never married/single"', add
+label values marst_pop2 marst_pop2_lbl
+
+label define chborn_head_lbl 00 `"N/A"'
+label define chborn_head_lbl 01 `"No children"', add
+label define chborn_head_lbl 02 `"1 child"', add
+label define chborn_head_lbl 03 `"2 children"', add
+label define chborn_head_lbl 04 `"3"', add
+label define chborn_head_lbl 05 `"4"', add
+label define chborn_head_lbl 06 `"5"', add
+label define chborn_head_lbl 07 `"6"', add
+label define chborn_head_lbl 08 `"7"', add
+label define chborn_head_lbl 09 `"8"', add
+label define chborn_head_lbl 10 `"9"', add
+label define chborn_head_lbl 11 `"10"', add
+label define chborn_head_lbl 12 `"11"', add
+label define chborn_head_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_head_lbl 14 `"13"', add
+label define chborn_head_lbl 15 `"14"', add
+label define chborn_head_lbl 16 `"15"', add
+label define chborn_head_lbl 17 `"16"', add
+label define chborn_head_lbl 18 `"17"', add
+label define chborn_head_lbl 19 `"18"', add
+label define chborn_head_lbl 20 `"19"', add
+label define chborn_head_lbl 21 `"20"', add
+label define chborn_head_lbl 22 `"21"', add
+label define chborn_head_lbl 23 `"22"', add
+label define chborn_head_lbl 24 `"23"', add
+label define chborn_head_lbl 25 `"24"', add
+label define chborn_head_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_head_lbl 27 `"26"', add
+label define chborn_head_lbl 28 `"27"', add
+label define chborn_head_lbl 29 `"28"', add
+label define chborn_head_lbl 30 `"29"', add
+label define chborn_head_lbl 31 `"30"', add
+label define chborn_head_lbl 32 `"31"', add
+label define chborn_head_lbl 33 `"32"', add
+label define chborn_head_lbl 34 `"33"', add
+label define chborn_head_lbl 35 `"34"', add
+label define chborn_head_lbl 36 `"35"', add
+label define chborn_head_lbl 37 `"36"', add
+label define chborn_head_lbl 38 `"37"', add
+label define chborn_head_lbl 39 `"38"', add
+label define chborn_head_lbl 40 `"39"', add
+label define chborn_head_lbl 41 `"40"', add
+label define chborn_head_lbl 42 `"41"', add
+label define chborn_head_lbl 43 `"42"', add
+label define chborn_head_lbl 44 `"43"', add
+label define chborn_head_lbl 45 `"44"', add
+label define chborn_head_lbl 46 `"45"', add
+label define chborn_head_lbl 47 `"46"', add
+label define chborn_head_lbl 48 `"47"', add
+label define chborn_head_lbl 49 `"48"', add
+label define chborn_head_lbl 50 `"49"', add
+label define chborn_head_lbl 51 `"50"', add
+label define chborn_head_lbl 52 `"51"', add
+label define chborn_head_lbl 53 `"52"', add
+label define chborn_head_lbl 54 `"53"', add
+label define chborn_head_lbl 55 `"54"', add
+label define chborn_head_lbl 56 `"55"', add
+label define chborn_head_lbl 57 `"56"', add
+label define chborn_head_lbl 58 `"57"', add
+label define chborn_head_lbl 61 `"60"', add
+label define chborn_head_lbl 87 `"87"', add
+label define chborn_head_lbl 97 `"Unknown"', add
+label define chborn_head_lbl 98 `"Illegible"', add
+label define chborn_head_lbl 99 `"Missing"', add
+label values chborn_head chborn_head_lbl
+
+label define chborn_mom_lbl 00 `"N/A"'
+label define chborn_mom_lbl 01 `"No children"', add
+label define chborn_mom_lbl 02 `"1 child"', add
+label define chborn_mom_lbl 03 `"2 children"', add
+label define chborn_mom_lbl 04 `"3"', add
+label define chborn_mom_lbl 05 `"4"', add
+label define chborn_mom_lbl 06 `"5"', add
+label define chborn_mom_lbl 07 `"6"', add
+label define chborn_mom_lbl 08 `"7"', add
+label define chborn_mom_lbl 09 `"8"', add
+label define chborn_mom_lbl 10 `"9"', add
+label define chborn_mom_lbl 11 `"10"', add
+label define chborn_mom_lbl 12 `"11"', add
+label define chborn_mom_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_mom_lbl 14 `"13"', add
+label define chborn_mom_lbl 15 `"14"', add
+label define chborn_mom_lbl 16 `"15"', add
+label define chborn_mom_lbl 17 `"16"', add
+label define chborn_mom_lbl 18 `"17"', add
+label define chborn_mom_lbl 19 `"18"', add
+label define chborn_mom_lbl 20 `"19"', add
+label define chborn_mom_lbl 21 `"20"', add
+label define chborn_mom_lbl 22 `"21"', add
+label define chborn_mom_lbl 23 `"22"', add
+label define chborn_mom_lbl 24 `"23"', add
+label define chborn_mom_lbl 25 `"24"', add
+label define chborn_mom_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_mom_lbl 27 `"26"', add
+label define chborn_mom_lbl 28 `"27"', add
+label define chborn_mom_lbl 29 `"28"', add
+label define chborn_mom_lbl 30 `"29"', add
+label define chborn_mom_lbl 31 `"30"', add
+label define chborn_mom_lbl 32 `"31"', add
+label define chborn_mom_lbl 33 `"32"', add
+label define chborn_mom_lbl 34 `"33"', add
+label define chborn_mom_lbl 35 `"34"', add
+label define chborn_mom_lbl 36 `"35"', add
+label define chborn_mom_lbl 37 `"36"', add
+label define chborn_mom_lbl 38 `"37"', add
+label define chborn_mom_lbl 39 `"38"', add
+label define chborn_mom_lbl 40 `"39"', add
+label define chborn_mom_lbl 41 `"40"', add
+label define chborn_mom_lbl 42 `"41"', add
+label define chborn_mom_lbl 43 `"42"', add
+label define chborn_mom_lbl 44 `"43"', add
+label define chborn_mom_lbl 45 `"44"', add
+label define chborn_mom_lbl 46 `"45"', add
+label define chborn_mom_lbl 47 `"46"', add
+label define chborn_mom_lbl 48 `"47"', add
+label define chborn_mom_lbl 49 `"48"', add
+label define chborn_mom_lbl 50 `"49"', add
+label define chborn_mom_lbl 51 `"50"', add
+label define chborn_mom_lbl 52 `"51"', add
+label define chborn_mom_lbl 53 `"52"', add
+label define chborn_mom_lbl 54 `"53"', add
+label define chborn_mom_lbl 55 `"54"', add
+label define chborn_mom_lbl 56 `"55"', add
+label define chborn_mom_lbl 57 `"56"', add
+label define chborn_mom_lbl 58 `"57"', add
+label define chborn_mom_lbl 61 `"60"', add
+label define chborn_mom_lbl 87 `"87"', add
+label define chborn_mom_lbl 97 `"Unknown"', add
+label define chborn_mom_lbl 98 `"Illegible"', add
+label define chborn_mom_lbl 99 `"Missing"', add
+label values chborn_mom chborn_mom_lbl
+
+label define chborn_pop_lbl 00 `"N/A"'
+label define chborn_pop_lbl 01 `"No children"', add
+label define chborn_pop_lbl 02 `"1 child"', add
+label define chborn_pop_lbl 03 `"2 children"', add
+label define chborn_pop_lbl 04 `"3"', add
+label define chborn_pop_lbl 05 `"4"', add
+label define chborn_pop_lbl 06 `"5"', add
+label define chborn_pop_lbl 07 `"6"', add
+label define chborn_pop_lbl 08 `"7"', add
+label define chborn_pop_lbl 09 `"8"', add
+label define chborn_pop_lbl 10 `"9"', add
+label define chborn_pop_lbl 11 `"10"', add
+label define chborn_pop_lbl 12 `"11"', add
+label define chborn_pop_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_pop_lbl 14 `"13"', add
+label define chborn_pop_lbl 15 `"14"', add
+label define chborn_pop_lbl 16 `"15"', add
+label define chborn_pop_lbl 17 `"16"', add
+label define chborn_pop_lbl 18 `"17"', add
+label define chborn_pop_lbl 19 `"18"', add
+label define chborn_pop_lbl 20 `"19"', add
+label define chborn_pop_lbl 21 `"20"', add
+label define chborn_pop_lbl 22 `"21"', add
+label define chborn_pop_lbl 23 `"22"', add
+label define chborn_pop_lbl 24 `"23"', add
+label define chborn_pop_lbl 25 `"24"', add
+label define chborn_pop_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_pop_lbl 27 `"26"', add
+label define chborn_pop_lbl 28 `"27"', add
+label define chborn_pop_lbl 29 `"28"', add
+label define chborn_pop_lbl 30 `"29"', add
+label define chborn_pop_lbl 31 `"30"', add
+label define chborn_pop_lbl 32 `"31"', add
+label define chborn_pop_lbl 33 `"32"', add
+label define chborn_pop_lbl 34 `"33"', add
+label define chborn_pop_lbl 35 `"34"', add
+label define chborn_pop_lbl 36 `"35"', add
+label define chborn_pop_lbl 37 `"36"', add
+label define chborn_pop_lbl 38 `"37"', add
+label define chborn_pop_lbl 39 `"38"', add
+label define chborn_pop_lbl 40 `"39"', add
+label define chborn_pop_lbl 41 `"40"', add
+label define chborn_pop_lbl 42 `"41"', add
+label define chborn_pop_lbl 43 `"42"', add
+label define chborn_pop_lbl 44 `"43"', add
+label define chborn_pop_lbl 45 `"44"', add
+label define chborn_pop_lbl 46 `"45"', add
+label define chborn_pop_lbl 47 `"46"', add
+label define chborn_pop_lbl 48 `"47"', add
+label define chborn_pop_lbl 49 `"48"', add
+label define chborn_pop_lbl 50 `"49"', add
+label define chborn_pop_lbl 51 `"50"', add
+label define chborn_pop_lbl 52 `"51"', add
+label define chborn_pop_lbl 53 `"52"', add
+label define chborn_pop_lbl 54 `"53"', add
+label define chborn_pop_lbl 55 `"54"', add
+label define chborn_pop_lbl 56 `"55"', add
+label define chborn_pop_lbl 57 `"56"', add
+label define chborn_pop_lbl 58 `"57"', add
+label define chborn_pop_lbl 61 `"60"', add
+label define chborn_pop_lbl 87 `"87"', add
+label define chborn_pop_lbl 97 `"Unknown"', add
+label define chborn_pop_lbl 98 `"Illegible"', add
+label define chborn_pop_lbl 99 `"Missing"', add
+label values chborn_pop chborn_pop_lbl
+
+label define chborn_sp_lbl 00 `"N/A"'
+label define chborn_sp_lbl 01 `"No children"', add
+label define chborn_sp_lbl 02 `"1 child"', add
+label define chborn_sp_lbl 03 `"2 children"', add
+label define chborn_sp_lbl 04 `"3"', add
+label define chborn_sp_lbl 05 `"4"', add
+label define chborn_sp_lbl 06 `"5"', add
+label define chborn_sp_lbl 07 `"6"', add
+label define chborn_sp_lbl 08 `"7"', add
+label define chborn_sp_lbl 09 `"8"', add
+label define chborn_sp_lbl 10 `"9"', add
+label define chborn_sp_lbl 11 `"10"', add
+label define chborn_sp_lbl 12 `"11"', add
+label define chborn_sp_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_sp_lbl 14 `"13"', add
+label define chborn_sp_lbl 15 `"14"', add
+label define chborn_sp_lbl 16 `"15"', add
+label define chborn_sp_lbl 17 `"16"', add
+label define chborn_sp_lbl 18 `"17"', add
+label define chborn_sp_lbl 19 `"18"', add
+label define chborn_sp_lbl 20 `"19"', add
+label define chborn_sp_lbl 21 `"20"', add
+label define chborn_sp_lbl 22 `"21"', add
+label define chborn_sp_lbl 23 `"22"', add
+label define chborn_sp_lbl 24 `"23"', add
+label define chborn_sp_lbl 25 `"24"', add
+label define chborn_sp_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_sp_lbl 27 `"26"', add
+label define chborn_sp_lbl 28 `"27"', add
+label define chborn_sp_lbl 29 `"28"', add
+label define chborn_sp_lbl 30 `"29"', add
+label define chborn_sp_lbl 31 `"30"', add
+label define chborn_sp_lbl 32 `"31"', add
+label define chborn_sp_lbl 33 `"32"', add
+label define chborn_sp_lbl 34 `"33"', add
+label define chborn_sp_lbl 35 `"34"', add
+label define chborn_sp_lbl 36 `"35"', add
+label define chborn_sp_lbl 37 `"36"', add
+label define chborn_sp_lbl 38 `"37"', add
+label define chborn_sp_lbl 39 `"38"', add
+label define chborn_sp_lbl 40 `"39"', add
+label define chborn_sp_lbl 41 `"40"', add
+label define chborn_sp_lbl 42 `"41"', add
+label define chborn_sp_lbl 43 `"42"', add
+label define chborn_sp_lbl 44 `"43"', add
+label define chborn_sp_lbl 45 `"44"', add
+label define chborn_sp_lbl 46 `"45"', add
+label define chborn_sp_lbl 47 `"46"', add
+label define chborn_sp_lbl 48 `"47"', add
+label define chborn_sp_lbl 49 `"48"', add
+label define chborn_sp_lbl 50 `"49"', add
+label define chborn_sp_lbl 51 `"50"', add
+label define chborn_sp_lbl 52 `"51"', add
+label define chborn_sp_lbl 53 `"52"', add
+label define chborn_sp_lbl 54 `"53"', add
+label define chborn_sp_lbl 55 `"54"', add
+label define chborn_sp_lbl 56 `"55"', add
+label define chborn_sp_lbl 57 `"56"', add
+label define chborn_sp_lbl 58 `"57"', add
+label define chborn_sp_lbl 61 `"60"', add
+label define chborn_sp_lbl 87 `"87"', add
+label define chborn_sp_lbl 97 `"Unknown"', add
+label define chborn_sp_lbl 98 `"Illegible"', add
+label define chborn_sp_lbl 99 `"Missing"', add
+label values chborn_sp chborn_sp_lbl
+
+label define chborn_mom2_lbl 00 `"N/A"'
+label define chborn_mom2_lbl 01 `"No children"', add
+label define chborn_mom2_lbl 02 `"1 child"', add
+label define chborn_mom2_lbl 03 `"2 children"', add
+label define chborn_mom2_lbl 04 `"3"', add
+label define chborn_mom2_lbl 05 `"4"', add
+label define chborn_mom2_lbl 06 `"5"', add
+label define chborn_mom2_lbl 07 `"6"', add
+label define chborn_mom2_lbl 08 `"7"', add
+label define chborn_mom2_lbl 09 `"8"', add
+label define chborn_mom2_lbl 10 `"9"', add
+label define chborn_mom2_lbl 11 `"10"', add
+label define chborn_mom2_lbl 12 `"11"', add
+label define chborn_mom2_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_mom2_lbl 14 `"13"', add
+label define chborn_mom2_lbl 15 `"14"', add
+label define chborn_mom2_lbl 16 `"15"', add
+label define chborn_mom2_lbl 17 `"16"', add
+label define chborn_mom2_lbl 18 `"17"', add
+label define chborn_mom2_lbl 19 `"18"', add
+label define chborn_mom2_lbl 20 `"19"', add
+label define chborn_mom2_lbl 21 `"20"', add
+label define chborn_mom2_lbl 22 `"21"', add
+label define chborn_mom2_lbl 23 `"22"', add
+label define chborn_mom2_lbl 24 `"23"', add
+label define chborn_mom2_lbl 25 `"24"', add
+label define chborn_mom2_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_mom2_lbl 27 `"26"', add
+label define chborn_mom2_lbl 28 `"27"', add
+label define chborn_mom2_lbl 29 `"28"', add
+label define chborn_mom2_lbl 30 `"29"', add
+label define chborn_mom2_lbl 31 `"30"', add
+label define chborn_mom2_lbl 32 `"31"', add
+label define chborn_mom2_lbl 33 `"32"', add
+label define chborn_mom2_lbl 34 `"33"', add
+label define chborn_mom2_lbl 35 `"34"', add
+label define chborn_mom2_lbl 36 `"35"', add
+label define chborn_mom2_lbl 37 `"36"', add
+label define chborn_mom2_lbl 38 `"37"', add
+label define chborn_mom2_lbl 39 `"38"', add
+label define chborn_mom2_lbl 40 `"39"', add
+label define chborn_mom2_lbl 41 `"40"', add
+label define chborn_mom2_lbl 42 `"41"', add
+label define chborn_mom2_lbl 43 `"42"', add
+label define chborn_mom2_lbl 44 `"43"', add
+label define chborn_mom2_lbl 45 `"44"', add
+label define chborn_mom2_lbl 46 `"45"', add
+label define chborn_mom2_lbl 47 `"46"', add
+label define chborn_mom2_lbl 48 `"47"', add
+label define chborn_mom2_lbl 49 `"48"', add
+label define chborn_mom2_lbl 50 `"49"', add
+label define chborn_mom2_lbl 51 `"50"', add
+label define chborn_mom2_lbl 52 `"51"', add
+label define chborn_mom2_lbl 53 `"52"', add
+label define chborn_mom2_lbl 54 `"53"', add
+label define chborn_mom2_lbl 55 `"54"', add
+label define chborn_mom2_lbl 56 `"55"', add
+label define chborn_mom2_lbl 57 `"56"', add
+label define chborn_mom2_lbl 58 `"57"', add
+label define chborn_mom2_lbl 61 `"60"', add
+label define chborn_mom2_lbl 87 `"87"', add
+label define chborn_mom2_lbl 97 `"Unknown"', add
+label define chborn_mom2_lbl 98 `"Illegible"', add
+label define chborn_mom2_lbl 99 `"Missing"', add
+label values chborn_mom2 chborn_mom2_lbl
+
+label define chborn_pop2_lbl 00 `"N/A"'
+label define chborn_pop2_lbl 01 `"No children"', add
+label define chborn_pop2_lbl 02 `"1 child"', add
+label define chborn_pop2_lbl 03 `"2 children"', add
+label define chborn_pop2_lbl 04 `"3"', add
+label define chborn_pop2_lbl 05 `"4"', add
+label define chborn_pop2_lbl 06 `"5"', add
+label define chborn_pop2_lbl 07 `"6"', add
+label define chborn_pop2_lbl 08 `"7"', add
+label define chborn_pop2_lbl 09 `"8"', add
+label define chborn_pop2_lbl 10 `"9"', add
+label define chborn_pop2_lbl 11 `"10"', add
+label define chborn_pop2_lbl 12 `"11"', add
+label define chborn_pop2_lbl 13 `"12 (12+ 1960-1990)"', add
+label define chborn_pop2_lbl 14 `"13"', add
+label define chborn_pop2_lbl 15 `"14"', add
+label define chborn_pop2_lbl 16 `"15"', add
+label define chborn_pop2_lbl 17 `"16"', add
+label define chborn_pop2_lbl 18 `"17"', add
+label define chborn_pop2_lbl 19 `"18"', add
+label define chborn_pop2_lbl 20 `"19"', add
+label define chborn_pop2_lbl 21 `"20"', add
+label define chborn_pop2_lbl 22 `"21"', add
+label define chborn_pop2_lbl 23 `"22"', add
+label define chborn_pop2_lbl 24 `"23"', add
+label define chborn_pop2_lbl 25 `"24"', add
+label define chborn_pop2_lbl 26 `"25 (25+ 1950)"', add
+label define chborn_pop2_lbl 27 `"26"', add
+label define chborn_pop2_lbl 28 `"27"', add
+label define chborn_pop2_lbl 29 `"28"', add
+label define chborn_pop2_lbl 30 `"29"', add
+label define chborn_pop2_lbl 31 `"30"', add
+label define chborn_pop2_lbl 32 `"31"', add
+label define chborn_pop2_lbl 33 `"32"', add
+label define chborn_pop2_lbl 34 `"33"', add
+label define chborn_pop2_lbl 35 `"34"', add
+label define chborn_pop2_lbl 36 `"35"', add
+label define chborn_pop2_lbl 37 `"36"', add
+label define chborn_pop2_lbl 38 `"37"', add
+label define chborn_pop2_lbl 39 `"38"', add
+label define chborn_pop2_lbl 40 `"39"', add
+label define chborn_pop2_lbl 41 `"40"', add
+label define chborn_pop2_lbl 42 `"41"', add
+label define chborn_pop2_lbl 43 `"42"', add
+label define chborn_pop2_lbl 44 `"43"', add
+label define chborn_pop2_lbl 45 `"44"', add
+label define chborn_pop2_lbl 46 `"45"', add
+label define chborn_pop2_lbl 47 `"46"', add
+label define chborn_pop2_lbl 48 `"47"', add
+label define chborn_pop2_lbl 49 `"48"', add
+label define chborn_pop2_lbl 50 `"49"', add
+label define chborn_pop2_lbl 51 `"50"', add
+label define chborn_pop2_lbl 52 `"51"', add
+label define chborn_pop2_lbl 53 `"52"', add
+label define chborn_pop2_lbl 54 `"53"', add
+label define chborn_pop2_lbl 55 `"54"', add
+label define chborn_pop2_lbl 56 `"55"', add
+label define chborn_pop2_lbl 57 `"56"', add
+label define chborn_pop2_lbl 58 `"57"', add
+label define chborn_pop2_lbl 61 `"60"', add
+label define chborn_pop2_lbl 87 `"87"', add
+label define chborn_pop2_lbl 97 `"Unknown"', add
+label define chborn_pop2_lbl 98 `"Illegible"', add
+label define chborn_pop2_lbl 99 `"Missing"', add
+label values chborn_pop2 chborn_pop2_lbl
+
 label define race_head_lbl 1 `"White"'
-label define race_head_lbl 2 `"Black/African American/Negro"', add
+label define race_head_lbl 2 `"Black/African American"', add
 label define race_head_lbl 3 `"American Indian or Alaska Native"', add
 label define race_head_lbl 4 `"Chinese"', add
 label define race_head_lbl 5 `"Japanese"', add
@@ -5201,8 +7031,30 @@ label define race_head_lbl 8 `"Two major races"', add
 label define race_head_lbl 9 `"Three or more major races"', add
 label values race_head race_head_lbl
 
+label define race_mom_lbl 1 `"White"'
+label define race_mom_lbl 2 `"Black/African American"', add
+label define race_mom_lbl 3 `"American Indian or Alaska Native"', add
+label define race_mom_lbl 4 `"Chinese"', add
+label define race_mom_lbl 5 `"Japanese"', add
+label define race_mom_lbl 6 `"Other Asian or Pacific Islander"', add
+label define race_mom_lbl 7 `"Other race, nec"', add
+label define race_mom_lbl 8 `"Two major races"', add
+label define race_mom_lbl 9 `"Three or more major races"', add
+label values race_mom race_mom_lbl
+
+label define race_pop_lbl 1 `"White"'
+label define race_pop_lbl 2 `"Black/African American"', add
+label define race_pop_lbl 3 `"American Indian or Alaska Native"', add
+label define race_pop_lbl 4 `"Chinese"', add
+label define race_pop_lbl 5 `"Japanese"', add
+label define race_pop_lbl 6 `"Other Asian or Pacific Islander"', add
+label define race_pop_lbl 7 `"Other race, nec"', add
+label define race_pop_lbl 8 `"Two major races"', add
+label define race_pop_lbl 9 `"Three or more major races"', add
+label values race_pop race_pop_lbl
+
 label define race_sp_lbl 1 `"White"'
-label define race_sp_lbl 2 `"Black/African American/Negro"', add
+label define race_sp_lbl 2 `"Black/African American"', add
 label define race_sp_lbl 3 `"American Indian or Alaska Native"', add
 label define race_sp_lbl 4 `"Chinese"', add
 label define race_sp_lbl 5 `"Japanese"', add
@@ -5212,13 +7064,35 @@ label define race_sp_lbl 8 `"Two major races"', add
 label define race_sp_lbl 9 `"Three or more major races"', add
 label values race_sp race_sp_lbl
 
+label define race_mom2_lbl 1 `"White"'
+label define race_mom2_lbl 2 `"Black/African American"', add
+label define race_mom2_lbl 3 `"American Indian or Alaska Native"', add
+label define race_mom2_lbl 4 `"Chinese"', add
+label define race_mom2_lbl 5 `"Japanese"', add
+label define race_mom2_lbl 6 `"Other Asian or Pacific Islander"', add
+label define race_mom2_lbl 7 `"Other race, nec"', add
+label define race_mom2_lbl 8 `"Two major races"', add
+label define race_mom2_lbl 9 `"Three or more major races"', add
+label values race_mom2 race_mom2_lbl
+
+label define race_pop2_lbl 1 `"White"'
+label define race_pop2_lbl 2 `"Black/African American"', add
+label define race_pop2_lbl 3 `"American Indian or Alaska Native"', add
+label define race_pop2_lbl 4 `"Chinese"', add
+label define race_pop2_lbl 5 `"Japanese"', add
+label define race_pop2_lbl 6 `"Other Asian or Pacific Islander"', add
+label define race_pop2_lbl 7 `"Other race, nec"', add
+label define race_pop2_lbl 8 `"Two major races"', add
+label define race_pop2_lbl 9 `"Three or more major races"', add
+label values race_pop2 race_pop2_lbl
+
 label define raced_head_lbl 100 `"White"'
 label define raced_head_lbl 110 `"Spanish write_in"', add
 label define raced_head_lbl 120 `"Blank (white) (1850)"', add
 label define raced_head_lbl 130 `"Portuguese"', add
 label define raced_head_lbl 140 `"Mexican (1930)"', add
 label define raced_head_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
-label define raced_head_lbl 200 `"Black/African American/Negro"', add
+label define raced_head_lbl 200 `"Black/African American"', add
 label define raced_head_lbl 210 `"Mulatto"', add
 label define raced_head_lbl 300 `"American Indian/Alaska Native"', add
 label define raced_head_lbl 302 `"Apache"', add
@@ -5315,7 +7189,7 @@ label define raced_head_lbl 681 `"Tahitian"', add
 label define raced_head_lbl 682 `"Tongan"', add
 label define raced_head_lbl 683 `"Other Polynesian (1990)"', add
 label define raced_head_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
-label define raced_head_lbl 685 `"Guamanian/Chamorro"', add
+label define raced_head_lbl 685 `"Chamorro"', add
 label define raced_head_lbl 686 `"Northern Mariana Islander"', add
 label define raced_head_lbl 687 `"Palauan"', add
 label define raced_head_lbl 688 `"Other Micronesian (1990)"', add
@@ -5341,7 +7215,7 @@ label define raced_head_lbl 819 `"White and two or more Asian groups"', add
 label define raced_head_lbl 820 `"White and PI"', add
 label define raced_head_lbl 821 `"White and Native Hawaiian"', add
 label define raced_head_lbl 822 `"White and Samoan"', add
-label define raced_head_lbl 823 `"White and Guamanian"', add
+label define raced_head_lbl 823 `"White and Chamorro"', add
 label define raced_head_lbl 824 `"White and PI write_in"', add
 label define raced_head_lbl 825 `"White and other PI race(s)"', add
 label define raced_head_lbl 826 `"White and other race write_in"', add
@@ -5452,13 +7326,493 @@ label define raced_head_lbl 991 `"White race; Some other race; Black or African 
 label define raced_head_lbl 996 `"2+ races, n.e.c. (CPS)"', add
 label values raced_head raced_head_lbl
 
+label define raced_mom_lbl 100 `"White"'
+label define raced_mom_lbl 110 `"Spanish write_in"', add
+label define raced_mom_lbl 120 `"Blank (white) (1850)"', add
+label define raced_mom_lbl 130 `"Portuguese"', add
+label define raced_mom_lbl 140 `"Mexican (1930)"', add
+label define raced_mom_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
+label define raced_mom_lbl 200 `"Black/African American"', add
+label define raced_mom_lbl 210 `"Mulatto"', add
+label define raced_mom_lbl 300 `"American Indian/Alaska Native"', add
+label define raced_mom_lbl 302 `"Apache"', add
+label define raced_mom_lbl 303 `"Blackfoot"', add
+label define raced_mom_lbl 304 `"Cherokee"', add
+label define raced_mom_lbl 305 `"Cheyenne"', add
+label define raced_mom_lbl 306 `"Chickasaw"', add
+label define raced_mom_lbl 307 `"Chippewa"', add
+label define raced_mom_lbl 308 `"Choctaw"', add
+label define raced_mom_lbl 309 `"Comanche"', add
+label define raced_mom_lbl 310 `"Creek"', add
+label define raced_mom_lbl 311 `"Crow"', add
+label define raced_mom_lbl 312 `"Iroquois"', add
+label define raced_mom_lbl 313 `"Kiowa"', add
+label define raced_mom_lbl 314 `"Lumbee"', add
+label define raced_mom_lbl 315 `"Navajo"', add
+label define raced_mom_lbl 316 `"Osage"', add
+label define raced_mom_lbl 317 `"Paiute"', add
+label define raced_mom_lbl 318 `"Pima"', add
+label define raced_mom_lbl 319 `"Potawatomi"', add
+label define raced_mom_lbl 320 `"Pueblo"', add
+label define raced_mom_lbl 321 `"Seminole"', add
+label define raced_mom_lbl 322 `"Shoshone"', add
+label define raced_mom_lbl 323 `"Sioux"', add
+label define raced_mom_lbl 324 `"Tlingit (Tlingit_Haida, 2000/ACS)"', add
+label define raced_mom_lbl 325 `"Tohono O Odham"', add
+label define raced_mom_lbl 326 `"All other tribes (1990)"', add
+label define raced_mom_lbl 328 `"Hopi"', add
+label define raced_mom_lbl 329 `"Central American Indian"', add
+label define raced_mom_lbl 330 `"Spanish American Indian"', add
+label define raced_mom_lbl 350 `"Delaware"', add
+label define raced_mom_lbl 351 `"Latin American Indian"', add
+label define raced_mom_lbl 352 `"Puget Sound Salish"', add
+label define raced_mom_lbl 353 `"Yakama"', add
+label define raced_mom_lbl 354 `"Yaqui"', add
+label define raced_mom_lbl 355 `"Colville"', add
+label define raced_mom_lbl 356 `"Houma"', add
+label define raced_mom_lbl 357 `"Menominee"', add
+label define raced_mom_lbl 358 `"Yuman"', add
+label define raced_mom_lbl 359 `"South American Indian"', add
+label define raced_mom_lbl 360 `"Mexican American Indian"', add
+label define raced_mom_lbl 361 `"Other Amer. Indian tribe (2000,ACS)"', add
+label define raced_mom_lbl 362 `"2+ Amer. Indian tribes (2000,ACS)"', add
+label define raced_mom_lbl 370 `"Alaskan Athabaskan"', add
+label define raced_mom_lbl 371 `"Aleut"', add
+label define raced_mom_lbl 372 `"Eskimo"', add
+label define raced_mom_lbl 373 `"Alaskan mixed"', add
+label define raced_mom_lbl 374 `"Inupiat"', add
+label define raced_mom_lbl 375 `"Yup'ik"', add
+label define raced_mom_lbl 379 `"Other Alaska Native tribe(s) (2000,ACS)"', add
+label define raced_mom_lbl 398 `"Both Am. Ind. and Alaska Native (2000,ACS)"', add
+label define raced_mom_lbl 399 `"Tribe not specified"', add
+label define raced_mom_lbl 400 `"Chinese"', add
+label define raced_mom_lbl 410 `"Taiwanese"', add
+label define raced_mom_lbl 420 `"Chinese and Taiwanese"', add
+label define raced_mom_lbl 500 `"Japanese"', add
+label define raced_mom_lbl 600 `"Filipino"', add
+label define raced_mom_lbl 610 `"Asian Indian (Hindu 1920_1940)"', add
+label define raced_mom_lbl 620 `"Korean"', add
+label define raced_mom_lbl 630 `"Hawaiian"', add
+label define raced_mom_lbl 631 `"Hawaiian and Asian (1900,1920)"', add
+label define raced_mom_lbl 632 `"Hawaiian and European (1900,1920)"', add
+label define raced_mom_lbl 634 `"Hawaiian mixed"', add
+label define raced_mom_lbl 640 `"Vietnamese"', add
+label define raced_mom_lbl 641 `"Bhutanese"', add
+label define raced_mom_lbl 642 `"Mongolian"', add
+label define raced_mom_lbl 643 `"Nepalese"', add
+label define raced_mom_lbl 650 `"Other Asian or Pacific Islander (1920,1980)"', add
+label define raced_mom_lbl 651 `"Asian only (CPS)"', add
+label define raced_mom_lbl 652 `"Pacific Islander only (CPS)"', add
+label define raced_mom_lbl 653 `"Asian or Pacific Islander, n.s. (1990 Internal Census files)"', add
+label define raced_mom_lbl 660 `"Cambodian"', add
+label define raced_mom_lbl 661 `"Hmong"', add
+label define raced_mom_lbl 662 `"Laotian"', add
+label define raced_mom_lbl 663 `"Thai"', add
+label define raced_mom_lbl 664 `"Bangladeshi"', add
+label define raced_mom_lbl 665 `"Burmese"', add
+label define raced_mom_lbl 666 `"Indonesian"', add
+label define raced_mom_lbl 667 `"Malaysian"', add
+label define raced_mom_lbl 668 `"Okinawan"', add
+label define raced_mom_lbl 669 `"Pakistani"', add
+label define raced_mom_lbl 670 `"Sri Lankan"', add
+label define raced_mom_lbl 671 `"Other Asian, n.e.c."', add
+label define raced_mom_lbl 672 `"Asian, not specified"', add
+label define raced_mom_lbl 673 `"Chinese and Japanese"', add
+label define raced_mom_lbl 674 `"Chinese and Filipino"', add
+label define raced_mom_lbl 675 `"Chinese and Vietnamese"', add
+label define raced_mom_lbl 676 `"Chinese and Asian write_in"', add
+label define raced_mom_lbl 677 `"Japanese and Filipino"', add
+label define raced_mom_lbl 678 `"Asian Indian and Asian write_in"', add
+label define raced_mom_lbl 679 `"Other Asian race combinations"', add
+label define raced_mom_lbl 680 `"Samoan"', add
+label define raced_mom_lbl 681 `"Tahitian"', add
+label define raced_mom_lbl 682 `"Tongan"', add
+label define raced_mom_lbl 683 `"Other Polynesian (1990)"', add
+label define raced_mom_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
+label define raced_mom_lbl 685 `"Chamorro"', add
+label define raced_mom_lbl 686 `"Northern Mariana Islander"', add
+label define raced_mom_lbl 687 `"Palauan"', add
+label define raced_mom_lbl 688 `"Other Micronesian (1990)"', add
+label define raced_mom_lbl 689 `"1+ other Micronesian races (2000,ACS)"', add
+label define raced_mom_lbl 690 `"Fijian"', add
+label define raced_mom_lbl 691 `"Other Melanesian (1990)"', add
+label define raced_mom_lbl 692 `"1+ other Melanesian races (2000,ACS)"', add
+label define raced_mom_lbl 698 `"2+ PI races from 2+ PI regions"', add
+label define raced_mom_lbl 699 `"Pacific Islander, n.s."', add
+label define raced_mom_lbl 700 `"Other race, n.e.c."', add
+label define raced_mom_lbl 801 `"White and Black"', add
+label define raced_mom_lbl 802 `"White and AIAN"', add
+label define raced_mom_lbl 810 `"White and Asian"', add
+label define raced_mom_lbl 811 `"White and Chinese"', add
+label define raced_mom_lbl 812 `"White and Japanese"', add
+label define raced_mom_lbl 813 `"White and Filipino"', add
+label define raced_mom_lbl 814 `"White and Asian Indian"', add
+label define raced_mom_lbl 815 `"White and Korean"', add
+label define raced_mom_lbl 816 `"White and Vietnamese"', add
+label define raced_mom_lbl 817 `"White and Asian write_in"', add
+label define raced_mom_lbl 818 `"White and other Asian race(s)"', add
+label define raced_mom_lbl 819 `"White and two or more Asian groups"', add
+label define raced_mom_lbl 820 `"White and PI"', add
+label define raced_mom_lbl 821 `"White and Native Hawaiian"', add
+label define raced_mom_lbl 822 `"White and Samoan"', add
+label define raced_mom_lbl 823 `"White and Chamorro"', add
+label define raced_mom_lbl 824 `"White and PI write_in"', add
+label define raced_mom_lbl 825 `"White and other PI race(s)"', add
+label define raced_mom_lbl 826 `"White and other race write_in"', add
+label define raced_mom_lbl 827 `"White and other race, n.e.c."', add
+label define raced_mom_lbl 830 `"Black and AIAN"', add
+label define raced_mom_lbl 831 `"Black and Asian"', add
+label define raced_mom_lbl 832 `"Black and Chinese"', add
+label define raced_mom_lbl 833 `"Black and Japanese"', add
+label define raced_mom_lbl 834 `"Black and Filipino"', add
+label define raced_mom_lbl 835 `"Black and Asian Indian"', add
+label define raced_mom_lbl 836 `"Black and Korean"', add
+label define raced_mom_lbl 837 `"Black and Asian write_in"', add
+label define raced_mom_lbl 838 `"Black and other Asian race(s)"', add
+label define raced_mom_lbl 840 `"Black and PI"', add
+label define raced_mom_lbl 841 `"Black and PI write_in"', add
+label define raced_mom_lbl 842 `"Black and other PI race(s)"', add
+label define raced_mom_lbl 845 `"Black and other race write_in"', add
+label define raced_mom_lbl 850 `"AIAN and Asian"', add
+label define raced_mom_lbl 851 `"AIAN and Filipino (2000 1%)"', add
+label define raced_mom_lbl 852 `"AIAN and Asian Indian"', add
+label define raced_mom_lbl 853 `"AIAN and Asian write_in (2000 1%)"', add
+label define raced_mom_lbl 854 `"AIAN and other Asian race(s)"', add
+label define raced_mom_lbl 855 `"AIAN and PI"', add
+label define raced_mom_lbl 856 `"AIAN and other race write_in"', add
+label define raced_mom_lbl 860 `"Asian and PI"', add
+label define raced_mom_lbl 861 `"Chinese and Hawaiian"', add
+label define raced_mom_lbl 862 `"Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_mom_lbl 863 `"Japanese and Hawaiian (2000 1%)"', add
+label define raced_mom_lbl 864 `"Filipino and Hawaiian"', add
+label define raced_mom_lbl 865 `"Filipino and PI write_in"', add
+label define raced_mom_lbl 866 `"Asian Indian and PI write_in (2000 1%)"', add
+label define raced_mom_lbl 867 `"Asian write_in and PI write_in"', add
+label define raced_mom_lbl 868 `"Other Asian race(s) and PI race(s)"', add
+label define raced_mom_lbl 869 `"Japanese and Korean (ACS)"', add
+label define raced_mom_lbl 880 `"Asian and other race write_in"', add
+label define raced_mom_lbl 881 `"Chinese and other race write_in"', add
+label define raced_mom_lbl 882 `"Japanese and other race write_in"', add
+label define raced_mom_lbl 883 `"Filipino and other race write_in"', add
+label define raced_mom_lbl 884 `"Asian Indian and other race write_in"', add
+label define raced_mom_lbl 885 `"Asian write_in and other race write_in"', add
+label define raced_mom_lbl 886 `"Other Asian race(s) and other race write_in"', add
+label define raced_mom_lbl 887 `"Chinese and Korean"', add
+label define raced_mom_lbl 890 `"PI and other race write_in:"', add
+label define raced_mom_lbl 891 `"PI write_in and other race write_in"', add
+label define raced_mom_lbl 892 `"Other PI race(s) and other race write_in"', add
+label define raced_mom_lbl 893 `"Native Hawaiian or PI other race(s)"', add
+label define raced_mom_lbl 899 `"API and other race write_in"', add
+label define raced_mom_lbl 901 `"White, Black, AIAN"', add
+label define raced_mom_lbl 902 `"White, Black, Asian"', add
+label define raced_mom_lbl 903 `"White, Black, PI"', add
+label define raced_mom_lbl 904 `"White, Black, other race write_in"', add
+label define raced_mom_lbl 905 `"White, AIAN, Asian"', add
+label define raced_mom_lbl 906 `"White, AIAN, PI"', add
+label define raced_mom_lbl 907 `"White, AIAN, other race write_in"', add
+label define raced_mom_lbl 910 `"White, Asian, PI"', add
+label define raced_mom_lbl 911 `"White, Chinese, Hawaiian"', add
+label define raced_mom_lbl 912 `"White, Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_mom_lbl 913 `"White, Japanese, Hawaiian (2000 1%)"', add
+label define raced_mom_lbl 914 `"White, Filipino, Hawaiian"', add
+label define raced_mom_lbl 915 `"Other White, Asian race(s), PI race(s)"', add
+label define raced_mom_lbl 916 `"White, AIAN and Filipino"', add
+label define raced_mom_lbl 917 `"White, Black, and Filipino"', add
+label define raced_mom_lbl 920 `"White, Asian, other race write_in"', add
+label define raced_mom_lbl 921 `"White, Filipino, other race write_in (2000 1%)"', add
+label define raced_mom_lbl 922 `"White, Asian write_in, other race write_in (2000 1%)"', add
+label define raced_mom_lbl 923 `"Other White, Asian race(s), other race write_in (2000 1%)"', add
+label define raced_mom_lbl 925 `"White, PI, other race write_in"', add
+label define raced_mom_lbl 930 `"Black, AIAN, Asian"', add
+label define raced_mom_lbl 931 `"Black, AIAN, PI"', add
+label define raced_mom_lbl 932 `"Black, AIAN, other race write_in"', add
+label define raced_mom_lbl 933 `"Black, Asian, PI"', add
+label define raced_mom_lbl 934 `"Black, Asian, other race write_in"', add
+label define raced_mom_lbl 935 `"Black, PI, other race write_in"', add
+label define raced_mom_lbl 940 `"AIAN, Asian, PI"', add
+label define raced_mom_lbl 941 `"AIAN, Asian, other race write_in"', add
+label define raced_mom_lbl 942 `"AIAN, PI, other race write_in"', add
+label define raced_mom_lbl 943 `"Asian, PI, other race write_in"', add
+label define raced_mom_lbl 944 `"Asian (Chinese, Japanese, Korean, Vietnamese); and Native Hawaiian or PI; and Other"', add
+label define raced_mom_lbl 949 `"2 or 3 races (CPS)"', add
+label define raced_mom_lbl 950 `"White, Black, AIAN, Asian"', add
+label define raced_mom_lbl 951 `"White, Black, AIAN, PI"', add
+label define raced_mom_lbl 952 `"White, Black, AIAN, other race write_in"', add
+label define raced_mom_lbl 953 `"White, Black, Asian, PI"', add
+label define raced_mom_lbl 954 `"White, Black, Asian, other race write_in"', add
+label define raced_mom_lbl 955 `"White, Black, PI, other race write_in"', add
+label define raced_mom_lbl 960 `"White, AIAN, Asian, PI"', add
+label define raced_mom_lbl 961 `"White, AIAN, Asian, other race write_in"', add
+label define raced_mom_lbl 962 `"White, AIAN, PI, other race write_in"', add
+label define raced_mom_lbl 963 `"White, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 964 `"White, Chinese, Japanese, Native Hawaiian"', add
+label define raced_mom_lbl 970 `"Black, AIAN, Asian, PI"', add
+label define raced_mom_lbl 971 `"Black, AIAN, Asian, other race write_in"', add
+label define raced_mom_lbl 972 `"Black, AIAN, PI, other race write_in"', add
+label define raced_mom_lbl 973 `"Black, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 974 `"AIAN, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 975 `"AIAN, Asian, PI, Hawaiian other race write_in"', add
+label define raced_mom_lbl 976 `"Two specified Asian  (Chinese and other Asian, Chinese and Japanese, Japanese and other Asian, Korean and other Asian); Native Hawaiian/PI; and Other Race"', add
+label define raced_mom_lbl 980 `"White, Black, AIAN, Asian, PI"', add
+label define raced_mom_lbl 981 `"White, Black, AIAN, Asian, other race write_in"', add
+label define raced_mom_lbl 982 `"White, Black, AIAN, PI, other race write_in"', add
+label define raced_mom_lbl 983 `"White, Black, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 984 `"White, AIAN, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 985 `"Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 986 `"Black, AIAN, Asian, PI, Hawaiian, other race write_in"', add
+label define raced_mom_lbl 989 `"4 or 5 races (CPS)"', add
+label define raced_mom_lbl 990 `"White, Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_mom_lbl 991 `"White race; Some other race; Black or African American race and/or American Indian and Alaska Native race and/or Asian groups and/or Native Hawaiian and Other Pacific Islander groups"', add
+label define raced_mom_lbl 996 `"2+ races, n.e.c. (CPS)"', add
+label values raced_mom raced_mom_lbl
+
+label define raced_pop_lbl 100 `"White"'
+label define raced_pop_lbl 110 `"Spanish write_in"', add
+label define raced_pop_lbl 120 `"Blank (white) (1850)"', add
+label define raced_pop_lbl 130 `"Portuguese"', add
+label define raced_pop_lbl 140 `"Mexican (1930)"', add
+label define raced_pop_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
+label define raced_pop_lbl 200 `"Black/African American"', add
+label define raced_pop_lbl 210 `"Mulatto"', add
+label define raced_pop_lbl 300 `"American Indian/Alaska Native"', add
+label define raced_pop_lbl 302 `"Apache"', add
+label define raced_pop_lbl 303 `"Blackfoot"', add
+label define raced_pop_lbl 304 `"Cherokee"', add
+label define raced_pop_lbl 305 `"Cheyenne"', add
+label define raced_pop_lbl 306 `"Chickasaw"', add
+label define raced_pop_lbl 307 `"Chippewa"', add
+label define raced_pop_lbl 308 `"Choctaw"', add
+label define raced_pop_lbl 309 `"Comanche"', add
+label define raced_pop_lbl 310 `"Creek"', add
+label define raced_pop_lbl 311 `"Crow"', add
+label define raced_pop_lbl 312 `"Iroquois"', add
+label define raced_pop_lbl 313 `"Kiowa"', add
+label define raced_pop_lbl 314 `"Lumbee"', add
+label define raced_pop_lbl 315 `"Navajo"', add
+label define raced_pop_lbl 316 `"Osage"', add
+label define raced_pop_lbl 317 `"Paiute"', add
+label define raced_pop_lbl 318 `"Pima"', add
+label define raced_pop_lbl 319 `"Potawatomi"', add
+label define raced_pop_lbl 320 `"Pueblo"', add
+label define raced_pop_lbl 321 `"Seminole"', add
+label define raced_pop_lbl 322 `"Shoshone"', add
+label define raced_pop_lbl 323 `"Sioux"', add
+label define raced_pop_lbl 324 `"Tlingit (Tlingit_Haida, 2000/ACS)"', add
+label define raced_pop_lbl 325 `"Tohono O Odham"', add
+label define raced_pop_lbl 326 `"All other tribes (1990)"', add
+label define raced_pop_lbl 328 `"Hopi"', add
+label define raced_pop_lbl 329 `"Central American Indian"', add
+label define raced_pop_lbl 330 `"Spanish American Indian"', add
+label define raced_pop_lbl 350 `"Delaware"', add
+label define raced_pop_lbl 351 `"Latin American Indian"', add
+label define raced_pop_lbl 352 `"Puget Sound Salish"', add
+label define raced_pop_lbl 353 `"Yakama"', add
+label define raced_pop_lbl 354 `"Yaqui"', add
+label define raced_pop_lbl 355 `"Colville"', add
+label define raced_pop_lbl 356 `"Houma"', add
+label define raced_pop_lbl 357 `"Menominee"', add
+label define raced_pop_lbl 358 `"Yuman"', add
+label define raced_pop_lbl 359 `"South American Indian"', add
+label define raced_pop_lbl 360 `"Mexican American Indian"', add
+label define raced_pop_lbl 361 `"Other Amer. Indian tribe (2000,ACS)"', add
+label define raced_pop_lbl 362 `"2+ Amer. Indian tribes (2000,ACS)"', add
+label define raced_pop_lbl 370 `"Alaskan Athabaskan"', add
+label define raced_pop_lbl 371 `"Aleut"', add
+label define raced_pop_lbl 372 `"Eskimo"', add
+label define raced_pop_lbl 373 `"Alaskan mixed"', add
+label define raced_pop_lbl 374 `"Inupiat"', add
+label define raced_pop_lbl 375 `"Yup'ik"', add
+label define raced_pop_lbl 379 `"Other Alaska Native tribe(s) (2000,ACS)"', add
+label define raced_pop_lbl 398 `"Both Am. Ind. and Alaska Native (2000,ACS)"', add
+label define raced_pop_lbl 399 `"Tribe not specified"', add
+label define raced_pop_lbl 400 `"Chinese"', add
+label define raced_pop_lbl 410 `"Taiwanese"', add
+label define raced_pop_lbl 420 `"Chinese and Taiwanese"', add
+label define raced_pop_lbl 500 `"Japanese"', add
+label define raced_pop_lbl 600 `"Filipino"', add
+label define raced_pop_lbl 610 `"Asian Indian (Hindu 1920_1940)"', add
+label define raced_pop_lbl 620 `"Korean"', add
+label define raced_pop_lbl 630 `"Hawaiian"', add
+label define raced_pop_lbl 631 `"Hawaiian and Asian (1900,1920)"', add
+label define raced_pop_lbl 632 `"Hawaiian and European (1900,1920)"', add
+label define raced_pop_lbl 634 `"Hawaiian mixed"', add
+label define raced_pop_lbl 640 `"Vietnamese"', add
+label define raced_pop_lbl 641 `"Bhutanese"', add
+label define raced_pop_lbl 642 `"Mongolian"', add
+label define raced_pop_lbl 643 `"Nepalese"', add
+label define raced_pop_lbl 650 `"Other Asian or Pacific Islander (1920,1980)"', add
+label define raced_pop_lbl 651 `"Asian only (CPS)"', add
+label define raced_pop_lbl 652 `"Pacific Islander only (CPS)"', add
+label define raced_pop_lbl 653 `"Asian or Pacific Islander, n.s. (1990 Internal Census files)"', add
+label define raced_pop_lbl 660 `"Cambodian"', add
+label define raced_pop_lbl 661 `"Hmong"', add
+label define raced_pop_lbl 662 `"Laotian"', add
+label define raced_pop_lbl 663 `"Thai"', add
+label define raced_pop_lbl 664 `"Bangladeshi"', add
+label define raced_pop_lbl 665 `"Burmese"', add
+label define raced_pop_lbl 666 `"Indonesian"', add
+label define raced_pop_lbl 667 `"Malaysian"', add
+label define raced_pop_lbl 668 `"Okinawan"', add
+label define raced_pop_lbl 669 `"Pakistani"', add
+label define raced_pop_lbl 670 `"Sri Lankan"', add
+label define raced_pop_lbl 671 `"Other Asian, n.e.c."', add
+label define raced_pop_lbl 672 `"Asian, not specified"', add
+label define raced_pop_lbl 673 `"Chinese and Japanese"', add
+label define raced_pop_lbl 674 `"Chinese and Filipino"', add
+label define raced_pop_lbl 675 `"Chinese and Vietnamese"', add
+label define raced_pop_lbl 676 `"Chinese and Asian write_in"', add
+label define raced_pop_lbl 677 `"Japanese and Filipino"', add
+label define raced_pop_lbl 678 `"Asian Indian and Asian write_in"', add
+label define raced_pop_lbl 679 `"Other Asian race combinations"', add
+label define raced_pop_lbl 680 `"Samoan"', add
+label define raced_pop_lbl 681 `"Tahitian"', add
+label define raced_pop_lbl 682 `"Tongan"', add
+label define raced_pop_lbl 683 `"Other Polynesian (1990)"', add
+label define raced_pop_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
+label define raced_pop_lbl 685 `"Chamorro"', add
+label define raced_pop_lbl 686 `"Northern Mariana Islander"', add
+label define raced_pop_lbl 687 `"Palauan"', add
+label define raced_pop_lbl 688 `"Other Micronesian (1990)"', add
+label define raced_pop_lbl 689 `"1+ other Micronesian races (2000,ACS)"', add
+label define raced_pop_lbl 690 `"Fijian"', add
+label define raced_pop_lbl 691 `"Other Melanesian (1990)"', add
+label define raced_pop_lbl 692 `"1+ other Melanesian races (2000,ACS)"', add
+label define raced_pop_lbl 698 `"2+ PI races from 2+ PI regions"', add
+label define raced_pop_lbl 699 `"Pacific Islander, n.s."', add
+label define raced_pop_lbl 700 `"Other race, n.e.c."', add
+label define raced_pop_lbl 801 `"White and Black"', add
+label define raced_pop_lbl 802 `"White and AIAN"', add
+label define raced_pop_lbl 810 `"White and Asian"', add
+label define raced_pop_lbl 811 `"White and Chinese"', add
+label define raced_pop_lbl 812 `"White and Japanese"', add
+label define raced_pop_lbl 813 `"White and Filipino"', add
+label define raced_pop_lbl 814 `"White and Asian Indian"', add
+label define raced_pop_lbl 815 `"White and Korean"', add
+label define raced_pop_lbl 816 `"White and Vietnamese"', add
+label define raced_pop_lbl 817 `"White and Asian write_in"', add
+label define raced_pop_lbl 818 `"White and other Asian race(s)"', add
+label define raced_pop_lbl 819 `"White and two or more Asian groups"', add
+label define raced_pop_lbl 820 `"White and PI"', add
+label define raced_pop_lbl 821 `"White and Native Hawaiian"', add
+label define raced_pop_lbl 822 `"White and Samoan"', add
+label define raced_pop_lbl 823 `"White and Chamorro"', add
+label define raced_pop_lbl 824 `"White and PI write_in"', add
+label define raced_pop_lbl 825 `"White and other PI race(s)"', add
+label define raced_pop_lbl 826 `"White and other race write_in"', add
+label define raced_pop_lbl 827 `"White and other race, n.e.c."', add
+label define raced_pop_lbl 830 `"Black and AIAN"', add
+label define raced_pop_lbl 831 `"Black and Asian"', add
+label define raced_pop_lbl 832 `"Black and Chinese"', add
+label define raced_pop_lbl 833 `"Black and Japanese"', add
+label define raced_pop_lbl 834 `"Black and Filipino"', add
+label define raced_pop_lbl 835 `"Black and Asian Indian"', add
+label define raced_pop_lbl 836 `"Black and Korean"', add
+label define raced_pop_lbl 837 `"Black and Asian write_in"', add
+label define raced_pop_lbl 838 `"Black and other Asian race(s)"', add
+label define raced_pop_lbl 840 `"Black and PI"', add
+label define raced_pop_lbl 841 `"Black and PI write_in"', add
+label define raced_pop_lbl 842 `"Black and other PI race(s)"', add
+label define raced_pop_lbl 845 `"Black and other race write_in"', add
+label define raced_pop_lbl 850 `"AIAN and Asian"', add
+label define raced_pop_lbl 851 `"AIAN and Filipino (2000 1%)"', add
+label define raced_pop_lbl 852 `"AIAN and Asian Indian"', add
+label define raced_pop_lbl 853 `"AIAN and Asian write_in (2000 1%)"', add
+label define raced_pop_lbl 854 `"AIAN and other Asian race(s)"', add
+label define raced_pop_lbl 855 `"AIAN and PI"', add
+label define raced_pop_lbl 856 `"AIAN and other race write_in"', add
+label define raced_pop_lbl 860 `"Asian and PI"', add
+label define raced_pop_lbl 861 `"Chinese and Hawaiian"', add
+label define raced_pop_lbl 862 `"Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_pop_lbl 863 `"Japanese and Hawaiian (2000 1%)"', add
+label define raced_pop_lbl 864 `"Filipino and Hawaiian"', add
+label define raced_pop_lbl 865 `"Filipino and PI write_in"', add
+label define raced_pop_lbl 866 `"Asian Indian and PI write_in (2000 1%)"', add
+label define raced_pop_lbl 867 `"Asian write_in and PI write_in"', add
+label define raced_pop_lbl 868 `"Other Asian race(s) and PI race(s)"', add
+label define raced_pop_lbl 869 `"Japanese and Korean (ACS)"', add
+label define raced_pop_lbl 880 `"Asian and other race write_in"', add
+label define raced_pop_lbl 881 `"Chinese and other race write_in"', add
+label define raced_pop_lbl 882 `"Japanese and other race write_in"', add
+label define raced_pop_lbl 883 `"Filipino and other race write_in"', add
+label define raced_pop_lbl 884 `"Asian Indian and other race write_in"', add
+label define raced_pop_lbl 885 `"Asian write_in and other race write_in"', add
+label define raced_pop_lbl 886 `"Other Asian race(s) and other race write_in"', add
+label define raced_pop_lbl 887 `"Chinese and Korean"', add
+label define raced_pop_lbl 890 `"PI and other race write_in:"', add
+label define raced_pop_lbl 891 `"PI write_in and other race write_in"', add
+label define raced_pop_lbl 892 `"Other PI race(s) and other race write_in"', add
+label define raced_pop_lbl 893 `"Native Hawaiian or PI other race(s)"', add
+label define raced_pop_lbl 899 `"API and other race write_in"', add
+label define raced_pop_lbl 901 `"White, Black, AIAN"', add
+label define raced_pop_lbl 902 `"White, Black, Asian"', add
+label define raced_pop_lbl 903 `"White, Black, PI"', add
+label define raced_pop_lbl 904 `"White, Black, other race write_in"', add
+label define raced_pop_lbl 905 `"White, AIAN, Asian"', add
+label define raced_pop_lbl 906 `"White, AIAN, PI"', add
+label define raced_pop_lbl 907 `"White, AIAN, other race write_in"', add
+label define raced_pop_lbl 910 `"White, Asian, PI"', add
+label define raced_pop_lbl 911 `"White, Chinese, Hawaiian"', add
+label define raced_pop_lbl 912 `"White, Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_pop_lbl 913 `"White, Japanese, Hawaiian (2000 1%)"', add
+label define raced_pop_lbl 914 `"White, Filipino, Hawaiian"', add
+label define raced_pop_lbl 915 `"Other White, Asian race(s), PI race(s)"', add
+label define raced_pop_lbl 916 `"White, AIAN and Filipino"', add
+label define raced_pop_lbl 917 `"White, Black, and Filipino"', add
+label define raced_pop_lbl 920 `"White, Asian, other race write_in"', add
+label define raced_pop_lbl 921 `"White, Filipino, other race write_in (2000 1%)"', add
+label define raced_pop_lbl 922 `"White, Asian write_in, other race write_in (2000 1%)"', add
+label define raced_pop_lbl 923 `"Other White, Asian race(s), other race write_in (2000 1%)"', add
+label define raced_pop_lbl 925 `"White, PI, other race write_in"', add
+label define raced_pop_lbl 930 `"Black, AIAN, Asian"', add
+label define raced_pop_lbl 931 `"Black, AIAN, PI"', add
+label define raced_pop_lbl 932 `"Black, AIAN, other race write_in"', add
+label define raced_pop_lbl 933 `"Black, Asian, PI"', add
+label define raced_pop_lbl 934 `"Black, Asian, other race write_in"', add
+label define raced_pop_lbl 935 `"Black, PI, other race write_in"', add
+label define raced_pop_lbl 940 `"AIAN, Asian, PI"', add
+label define raced_pop_lbl 941 `"AIAN, Asian, other race write_in"', add
+label define raced_pop_lbl 942 `"AIAN, PI, other race write_in"', add
+label define raced_pop_lbl 943 `"Asian, PI, other race write_in"', add
+label define raced_pop_lbl 944 `"Asian (Chinese, Japanese, Korean, Vietnamese); and Native Hawaiian or PI; and Other"', add
+label define raced_pop_lbl 949 `"2 or 3 races (CPS)"', add
+label define raced_pop_lbl 950 `"White, Black, AIAN, Asian"', add
+label define raced_pop_lbl 951 `"White, Black, AIAN, PI"', add
+label define raced_pop_lbl 952 `"White, Black, AIAN, other race write_in"', add
+label define raced_pop_lbl 953 `"White, Black, Asian, PI"', add
+label define raced_pop_lbl 954 `"White, Black, Asian, other race write_in"', add
+label define raced_pop_lbl 955 `"White, Black, PI, other race write_in"', add
+label define raced_pop_lbl 960 `"White, AIAN, Asian, PI"', add
+label define raced_pop_lbl 961 `"White, AIAN, Asian, other race write_in"', add
+label define raced_pop_lbl 962 `"White, AIAN, PI, other race write_in"', add
+label define raced_pop_lbl 963 `"White, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 964 `"White, Chinese, Japanese, Native Hawaiian"', add
+label define raced_pop_lbl 970 `"Black, AIAN, Asian, PI"', add
+label define raced_pop_lbl 971 `"Black, AIAN, Asian, other race write_in"', add
+label define raced_pop_lbl 972 `"Black, AIAN, PI, other race write_in"', add
+label define raced_pop_lbl 973 `"Black, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 974 `"AIAN, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 975 `"AIAN, Asian, PI, Hawaiian other race write_in"', add
+label define raced_pop_lbl 976 `"Two specified Asian  (Chinese and other Asian, Chinese and Japanese, Japanese and other Asian, Korean and other Asian); Native Hawaiian/PI; and Other Race"', add
+label define raced_pop_lbl 980 `"White, Black, AIAN, Asian, PI"', add
+label define raced_pop_lbl 981 `"White, Black, AIAN, Asian, other race write_in"', add
+label define raced_pop_lbl 982 `"White, Black, AIAN, PI, other race write_in"', add
+label define raced_pop_lbl 983 `"White, Black, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 984 `"White, AIAN, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 985 `"Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 986 `"Black, AIAN, Asian, PI, Hawaiian, other race write_in"', add
+label define raced_pop_lbl 989 `"4 or 5 races (CPS)"', add
+label define raced_pop_lbl 990 `"White, Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_pop_lbl 991 `"White race; Some other race; Black or African American race and/or American Indian and Alaska Native race and/or Asian groups and/or Native Hawaiian and Other Pacific Islander groups"', add
+label define raced_pop_lbl 996 `"2+ races, n.e.c. (CPS)"', add
+label values raced_pop raced_pop_lbl
+
 label define raced_sp_lbl 100 `"White"'
 label define raced_sp_lbl 110 `"Spanish write_in"', add
 label define raced_sp_lbl 120 `"Blank (white) (1850)"', add
 label define raced_sp_lbl 130 `"Portuguese"', add
 label define raced_sp_lbl 140 `"Mexican (1930)"', add
 label define raced_sp_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
-label define raced_sp_lbl 200 `"Black/African American/Negro"', add
+label define raced_sp_lbl 200 `"Black/African American"', add
 label define raced_sp_lbl 210 `"Mulatto"', add
 label define raced_sp_lbl 300 `"American Indian/Alaska Native"', add
 label define raced_sp_lbl 302 `"Apache"', add
@@ -5555,7 +7909,7 @@ label define raced_sp_lbl 681 `"Tahitian"', add
 label define raced_sp_lbl 682 `"Tongan"', add
 label define raced_sp_lbl 683 `"Other Polynesian (1990)"', add
 label define raced_sp_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
-label define raced_sp_lbl 685 `"Guamanian/Chamorro"', add
+label define raced_sp_lbl 685 `"Chamorro"', add
 label define raced_sp_lbl 686 `"Northern Mariana Islander"', add
 label define raced_sp_lbl 687 `"Palauan"', add
 label define raced_sp_lbl 688 `"Other Micronesian (1990)"', add
@@ -5581,7 +7935,7 @@ label define raced_sp_lbl 819 `"White and two or more Asian groups"', add
 label define raced_sp_lbl 820 `"White and PI"', add
 label define raced_sp_lbl 821 `"White and Native Hawaiian"', add
 label define raced_sp_lbl 822 `"White and Samoan"', add
-label define raced_sp_lbl 823 `"White and Guamanian"', add
+label define raced_sp_lbl 823 `"White and Chamorro"', add
 label define raced_sp_lbl 824 `"White and PI write_in"', add
 label define raced_sp_lbl 825 `"White and other PI race(s)"', add
 label define raced_sp_lbl 826 `"White and other race write_in"', add
@@ -5692,6 +8046,486 @@ label define raced_sp_lbl 991 `"White race; Some other race; Black or African Am
 label define raced_sp_lbl 996 `"2+ races, n.e.c. (CPS)"', add
 label values raced_sp raced_sp_lbl
 
+label define raced_mom2_lbl 100 `"White"'
+label define raced_mom2_lbl 110 `"Spanish write_in"', add
+label define raced_mom2_lbl 120 `"Blank (white) (1850)"', add
+label define raced_mom2_lbl 130 `"Portuguese"', add
+label define raced_mom2_lbl 140 `"Mexican (1930)"', add
+label define raced_mom2_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
+label define raced_mom2_lbl 200 `"Black/African American"', add
+label define raced_mom2_lbl 210 `"Mulatto"', add
+label define raced_mom2_lbl 300 `"American Indian/Alaska Native"', add
+label define raced_mom2_lbl 302 `"Apache"', add
+label define raced_mom2_lbl 303 `"Blackfoot"', add
+label define raced_mom2_lbl 304 `"Cherokee"', add
+label define raced_mom2_lbl 305 `"Cheyenne"', add
+label define raced_mom2_lbl 306 `"Chickasaw"', add
+label define raced_mom2_lbl 307 `"Chippewa"', add
+label define raced_mom2_lbl 308 `"Choctaw"', add
+label define raced_mom2_lbl 309 `"Comanche"', add
+label define raced_mom2_lbl 310 `"Creek"', add
+label define raced_mom2_lbl 311 `"Crow"', add
+label define raced_mom2_lbl 312 `"Iroquois"', add
+label define raced_mom2_lbl 313 `"Kiowa"', add
+label define raced_mom2_lbl 314 `"Lumbee"', add
+label define raced_mom2_lbl 315 `"Navajo"', add
+label define raced_mom2_lbl 316 `"Osage"', add
+label define raced_mom2_lbl 317 `"Paiute"', add
+label define raced_mom2_lbl 318 `"Pima"', add
+label define raced_mom2_lbl 319 `"Potawatomi"', add
+label define raced_mom2_lbl 320 `"Pueblo"', add
+label define raced_mom2_lbl 321 `"Seminole"', add
+label define raced_mom2_lbl 322 `"Shoshone"', add
+label define raced_mom2_lbl 323 `"Sioux"', add
+label define raced_mom2_lbl 324 `"Tlingit (Tlingit_Haida, 2000/ACS)"', add
+label define raced_mom2_lbl 325 `"Tohono O Odham"', add
+label define raced_mom2_lbl 326 `"All other tribes (1990)"', add
+label define raced_mom2_lbl 328 `"Hopi"', add
+label define raced_mom2_lbl 329 `"Central American Indian"', add
+label define raced_mom2_lbl 330 `"Spanish American Indian"', add
+label define raced_mom2_lbl 350 `"Delaware"', add
+label define raced_mom2_lbl 351 `"Latin American Indian"', add
+label define raced_mom2_lbl 352 `"Puget Sound Salish"', add
+label define raced_mom2_lbl 353 `"Yakama"', add
+label define raced_mom2_lbl 354 `"Yaqui"', add
+label define raced_mom2_lbl 355 `"Colville"', add
+label define raced_mom2_lbl 356 `"Houma"', add
+label define raced_mom2_lbl 357 `"Menominee"', add
+label define raced_mom2_lbl 358 `"Yuman"', add
+label define raced_mom2_lbl 359 `"South American Indian"', add
+label define raced_mom2_lbl 360 `"Mexican American Indian"', add
+label define raced_mom2_lbl 361 `"Other Amer. Indian tribe (2000,ACS)"', add
+label define raced_mom2_lbl 362 `"2+ Amer. Indian tribes (2000,ACS)"', add
+label define raced_mom2_lbl 370 `"Alaskan Athabaskan"', add
+label define raced_mom2_lbl 371 `"Aleut"', add
+label define raced_mom2_lbl 372 `"Eskimo"', add
+label define raced_mom2_lbl 373 `"Alaskan mixed"', add
+label define raced_mom2_lbl 374 `"Inupiat"', add
+label define raced_mom2_lbl 375 `"Yup'ik"', add
+label define raced_mom2_lbl 379 `"Other Alaska Native tribe(s) (2000,ACS)"', add
+label define raced_mom2_lbl 398 `"Both Am. Ind. and Alaska Native (2000,ACS)"', add
+label define raced_mom2_lbl 399 `"Tribe not specified"', add
+label define raced_mom2_lbl 400 `"Chinese"', add
+label define raced_mom2_lbl 410 `"Taiwanese"', add
+label define raced_mom2_lbl 420 `"Chinese and Taiwanese"', add
+label define raced_mom2_lbl 500 `"Japanese"', add
+label define raced_mom2_lbl 600 `"Filipino"', add
+label define raced_mom2_lbl 610 `"Asian Indian (Hindu 1920_1940)"', add
+label define raced_mom2_lbl 620 `"Korean"', add
+label define raced_mom2_lbl 630 `"Hawaiian"', add
+label define raced_mom2_lbl 631 `"Hawaiian and Asian (1900,1920)"', add
+label define raced_mom2_lbl 632 `"Hawaiian and European (1900,1920)"', add
+label define raced_mom2_lbl 634 `"Hawaiian mixed"', add
+label define raced_mom2_lbl 640 `"Vietnamese"', add
+label define raced_mom2_lbl 641 `"Bhutanese"', add
+label define raced_mom2_lbl 642 `"Mongolian"', add
+label define raced_mom2_lbl 643 `"Nepalese"', add
+label define raced_mom2_lbl 650 `"Other Asian or Pacific Islander (1920,1980)"', add
+label define raced_mom2_lbl 651 `"Asian only (CPS)"', add
+label define raced_mom2_lbl 652 `"Pacific Islander only (CPS)"', add
+label define raced_mom2_lbl 653 `"Asian or Pacific Islander, n.s. (1990 Internal Census files)"', add
+label define raced_mom2_lbl 660 `"Cambodian"', add
+label define raced_mom2_lbl 661 `"Hmong"', add
+label define raced_mom2_lbl 662 `"Laotian"', add
+label define raced_mom2_lbl 663 `"Thai"', add
+label define raced_mom2_lbl 664 `"Bangladeshi"', add
+label define raced_mom2_lbl 665 `"Burmese"', add
+label define raced_mom2_lbl 666 `"Indonesian"', add
+label define raced_mom2_lbl 667 `"Malaysian"', add
+label define raced_mom2_lbl 668 `"Okinawan"', add
+label define raced_mom2_lbl 669 `"Pakistani"', add
+label define raced_mom2_lbl 670 `"Sri Lankan"', add
+label define raced_mom2_lbl 671 `"Other Asian, n.e.c."', add
+label define raced_mom2_lbl 672 `"Asian, not specified"', add
+label define raced_mom2_lbl 673 `"Chinese and Japanese"', add
+label define raced_mom2_lbl 674 `"Chinese and Filipino"', add
+label define raced_mom2_lbl 675 `"Chinese and Vietnamese"', add
+label define raced_mom2_lbl 676 `"Chinese and Asian write_in"', add
+label define raced_mom2_lbl 677 `"Japanese and Filipino"', add
+label define raced_mom2_lbl 678 `"Asian Indian and Asian write_in"', add
+label define raced_mom2_lbl 679 `"Other Asian race combinations"', add
+label define raced_mom2_lbl 680 `"Samoan"', add
+label define raced_mom2_lbl 681 `"Tahitian"', add
+label define raced_mom2_lbl 682 `"Tongan"', add
+label define raced_mom2_lbl 683 `"Other Polynesian (1990)"', add
+label define raced_mom2_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
+label define raced_mom2_lbl 685 `"Chamorro"', add
+label define raced_mom2_lbl 686 `"Northern Mariana Islander"', add
+label define raced_mom2_lbl 687 `"Palauan"', add
+label define raced_mom2_lbl 688 `"Other Micronesian (1990)"', add
+label define raced_mom2_lbl 689 `"1+ other Micronesian races (2000,ACS)"', add
+label define raced_mom2_lbl 690 `"Fijian"', add
+label define raced_mom2_lbl 691 `"Other Melanesian (1990)"', add
+label define raced_mom2_lbl 692 `"1+ other Melanesian races (2000,ACS)"', add
+label define raced_mom2_lbl 698 `"2+ PI races from 2+ PI regions"', add
+label define raced_mom2_lbl 699 `"Pacific Islander, n.s."', add
+label define raced_mom2_lbl 700 `"Other race, n.e.c."', add
+label define raced_mom2_lbl 801 `"White and Black"', add
+label define raced_mom2_lbl 802 `"White and AIAN"', add
+label define raced_mom2_lbl 810 `"White and Asian"', add
+label define raced_mom2_lbl 811 `"White and Chinese"', add
+label define raced_mom2_lbl 812 `"White and Japanese"', add
+label define raced_mom2_lbl 813 `"White and Filipino"', add
+label define raced_mom2_lbl 814 `"White and Asian Indian"', add
+label define raced_mom2_lbl 815 `"White and Korean"', add
+label define raced_mom2_lbl 816 `"White and Vietnamese"', add
+label define raced_mom2_lbl 817 `"White and Asian write_in"', add
+label define raced_mom2_lbl 818 `"White and other Asian race(s)"', add
+label define raced_mom2_lbl 819 `"White and two or more Asian groups"', add
+label define raced_mom2_lbl 820 `"White and PI"', add
+label define raced_mom2_lbl 821 `"White and Native Hawaiian"', add
+label define raced_mom2_lbl 822 `"White and Samoan"', add
+label define raced_mom2_lbl 823 `"White and Chamorro"', add
+label define raced_mom2_lbl 824 `"White and PI write_in"', add
+label define raced_mom2_lbl 825 `"White and other PI race(s)"', add
+label define raced_mom2_lbl 826 `"White and other race write_in"', add
+label define raced_mom2_lbl 827 `"White and other race, n.e.c."', add
+label define raced_mom2_lbl 830 `"Black and AIAN"', add
+label define raced_mom2_lbl 831 `"Black and Asian"', add
+label define raced_mom2_lbl 832 `"Black and Chinese"', add
+label define raced_mom2_lbl 833 `"Black and Japanese"', add
+label define raced_mom2_lbl 834 `"Black and Filipino"', add
+label define raced_mom2_lbl 835 `"Black and Asian Indian"', add
+label define raced_mom2_lbl 836 `"Black and Korean"', add
+label define raced_mom2_lbl 837 `"Black and Asian write_in"', add
+label define raced_mom2_lbl 838 `"Black and other Asian race(s)"', add
+label define raced_mom2_lbl 840 `"Black and PI"', add
+label define raced_mom2_lbl 841 `"Black and PI write_in"', add
+label define raced_mom2_lbl 842 `"Black and other PI race(s)"', add
+label define raced_mom2_lbl 845 `"Black and other race write_in"', add
+label define raced_mom2_lbl 850 `"AIAN and Asian"', add
+label define raced_mom2_lbl 851 `"AIAN and Filipino (2000 1%)"', add
+label define raced_mom2_lbl 852 `"AIAN and Asian Indian"', add
+label define raced_mom2_lbl 853 `"AIAN and Asian write_in (2000 1%)"', add
+label define raced_mom2_lbl 854 `"AIAN and other Asian race(s)"', add
+label define raced_mom2_lbl 855 `"AIAN and PI"', add
+label define raced_mom2_lbl 856 `"AIAN and other race write_in"', add
+label define raced_mom2_lbl 860 `"Asian and PI"', add
+label define raced_mom2_lbl 861 `"Chinese and Hawaiian"', add
+label define raced_mom2_lbl 862 `"Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_mom2_lbl 863 `"Japanese and Hawaiian (2000 1%)"', add
+label define raced_mom2_lbl 864 `"Filipino and Hawaiian"', add
+label define raced_mom2_lbl 865 `"Filipino and PI write_in"', add
+label define raced_mom2_lbl 866 `"Asian Indian and PI write_in (2000 1%)"', add
+label define raced_mom2_lbl 867 `"Asian write_in and PI write_in"', add
+label define raced_mom2_lbl 868 `"Other Asian race(s) and PI race(s)"', add
+label define raced_mom2_lbl 869 `"Japanese and Korean (ACS)"', add
+label define raced_mom2_lbl 880 `"Asian and other race write_in"', add
+label define raced_mom2_lbl 881 `"Chinese and other race write_in"', add
+label define raced_mom2_lbl 882 `"Japanese and other race write_in"', add
+label define raced_mom2_lbl 883 `"Filipino and other race write_in"', add
+label define raced_mom2_lbl 884 `"Asian Indian and other race write_in"', add
+label define raced_mom2_lbl 885 `"Asian write_in and other race write_in"', add
+label define raced_mom2_lbl 886 `"Other Asian race(s) and other race write_in"', add
+label define raced_mom2_lbl 887 `"Chinese and Korean"', add
+label define raced_mom2_lbl 890 `"PI and other race write_in:"', add
+label define raced_mom2_lbl 891 `"PI write_in and other race write_in"', add
+label define raced_mom2_lbl 892 `"Other PI race(s) and other race write_in"', add
+label define raced_mom2_lbl 893 `"Native Hawaiian or PI other race(s)"', add
+label define raced_mom2_lbl 899 `"API and other race write_in"', add
+label define raced_mom2_lbl 901 `"White, Black, AIAN"', add
+label define raced_mom2_lbl 902 `"White, Black, Asian"', add
+label define raced_mom2_lbl 903 `"White, Black, PI"', add
+label define raced_mom2_lbl 904 `"White, Black, other race write_in"', add
+label define raced_mom2_lbl 905 `"White, AIAN, Asian"', add
+label define raced_mom2_lbl 906 `"White, AIAN, PI"', add
+label define raced_mom2_lbl 907 `"White, AIAN, other race write_in"', add
+label define raced_mom2_lbl 910 `"White, Asian, PI"', add
+label define raced_mom2_lbl 911 `"White, Chinese, Hawaiian"', add
+label define raced_mom2_lbl 912 `"White, Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_mom2_lbl 913 `"White, Japanese, Hawaiian (2000 1%)"', add
+label define raced_mom2_lbl 914 `"White, Filipino, Hawaiian"', add
+label define raced_mom2_lbl 915 `"Other White, Asian race(s), PI race(s)"', add
+label define raced_mom2_lbl 916 `"White, AIAN and Filipino"', add
+label define raced_mom2_lbl 917 `"White, Black, and Filipino"', add
+label define raced_mom2_lbl 920 `"White, Asian, other race write_in"', add
+label define raced_mom2_lbl 921 `"White, Filipino, other race write_in (2000 1%)"', add
+label define raced_mom2_lbl 922 `"White, Asian write_in, other race write_in (2000 1%)"', add
+label define raced_mom2_lbl 923 `"Other White, Asian race(s), other race write_in (2000 1%)"', add
+label define raced_mom2_lbl 925 `"White, PI, other race write_in"', add
+label define raced_mom2_lbl 930 `"Black, AIAN, Asian"', add
+label define raced_mom2_lbl 931 `"Black, AIAN, PI"', add
+label define raced_mom2_lbl 932 `"Black, AIAN, other race write_in"', add
+label define raced_mom2_lbl 933 `"Black, Asian, PI"', add
+label define raced_mom2_lbl 934 `"Black, Asian, other race write_in"', add
+label define raced_mom2_lbl 935 `"Black, PI, other race write_in"', add
+label define raced_mom2_lbl 940 `"AIAN, Asian, PI"', add
+label define raced_mom2_lbl 941 `"AIAN, Asian, other race write_in"', add
+label define raced_mom2_lbl 942 `"AIAN, PI, other race write_in"', add
+label define raced_mom2_lbl 943 `"Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 944 `"Asian (Chinese, Japanese, Korean, Vietnamese); and Native Hawaiian or PI; and Other"', add
+label define raced_mom2_lbl 949 `"2 or 3 races (CPS)"', add
+label define raced_mom2_lbl 950 `"White, Black, AIAN, Asian"', add
+label define raced_mom2_lbl 951 `"White, Black, AIAN, PI"', add
+label define raced_mom2_lbl 952 `"White, Black, AIAN, other race write_in"', add
+label define raced_mom2_lbl 953 `"White, Black, Asian, PI"', add
+label define raced_mom2_lbl 954 `"White, Black, Asian, other race write_in"', add
+label define raced_mom2_lbl 955 `"White, Black, PI, other race write_in"', add
+label define raced_mom2_lbl 960 `"White, AIAN, Asian, PI"', add
+label define raced_mom2_lbl 961 `"White, AIAN, Asian, other race write_in"', add
+label define raced_mom2_lbl 962 `"White, AIAN, PI, other race write_in"', add
+label define raced_mom2_lbl 963 `"White, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 964 `"White, Chinese, Japanese, Native Hawaiian"', add
+label define raced_mom2_lbl 970 `"Black, AIAN, Asian, PI"', add
+label define raced_mom2_lbl 971 `"Black, AIAN, Asian, other race write_in"', add
+label define raced_mom2_lbl 972 `"Black, AIAN, PI, other race write_in"', add
+label define raced_mom2_lbl 973 `"Black, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 974 `"AIAN, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 975 `"AIAN, Asian, PI, Hawaiian other race write_in"', add
+label define raced_mom2_lbl 976 `"Two specified Asian  (Chinese and other Asian, Chinese and Japanese, Japanese and other Asian, Korean and other Asian); Native Hawaiian/PI; and Other Race"', add
+label define raced_mom2_lbl 980 `"White, Black, AIAN, Asian, PI"', add
+label define raced_mom2_lbl 981 `"White, Black, AIAN, Asian, other race write_in"', add
+label define raced_mom2_lbl 982 `"White, Black, AIAN, PI, other race write_in"', add
+label define raced_mom2_lbl 983 `"White, Black, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 984 `"White, AIAN, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 985 `"Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 986 `"Black, AIAN, Asian, PI, Hawaiian, other race write_in"', add
+label define raced_mom2_lbl 989 `"4 or 5 races (CPS)"', add
+label define raced_mom2_lbl 990 `"White, Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_mom2_lbl 991 `"White race; Some other race; Black or African American race and/or American Indian and Alaska Native race and/or Asian groups and/or Native Hawaiian and Other Pacific Islander groups"', add
+label define raced_mom2_lbl 996 `"2+ races, n.e.c. (CPS)"', add
+label values raced_mom2 raced_mom2_lbl
+
+label define raced_pop2_lbl 100 `"White"'
+label define raced_pop2_lbl 110 `"Spanish write_in"', add
+label define raced_pop2_lbl 120 `"Blank (white) (1850)"', add
+label define raced_pop2_lbl 130 `"Portuguese"', add
+label define raced_pop2_lbl 140 `"Mexican (1930)"', add
+label define raced_pop2_lbl 150 `"Puerto Rican (1910 Hawaii)"', add
+label define raced_pop2_lbl 200 `"Black/African American"', add
+label define raced_pop2_lbl 210 `"Mulatto"', add
+label define raced_pop2_lbl 300 `"American Indian/Alaska Native"', add
+label define raced_pop2_lbl 302 `"Apache"', add
+label define raced_pop2_lbl 303 `"Blackfoot"', add
+label define raced_pop2_lbl 304 `"Cherokee"', add
+label define raced_pop2_lbl 305 `"Cheyenne"', add
+label define raced_pop2_lbl 306 `"Chickasaw"', add
+label define raced_pop2_lbl 307 `"Chippewa"', add
+label define raced_pop2_lbl 308 `"Choctaw"', add
+label define raced_pop2_lbl 309 `"Comanche"', add
+label define raced_pop2_lbl 310 `"Creek"', add
+label define raced_pop2_lbl 311 `"Crow"', add
+label define raced_pop2_lbl 312 `"Iroquois"', add
+label define raced_pop2_lbl 313 `"Kiowa"', add
+label define raced_pop2_lbl 314 `"Lumbee"', add
+label define raced_pop2_lbl 315 `"Navajo"', add
+label define raced_pop2_lbl 316 `"Osage"', add
+label define raced_pop2_lbl 317 `"Paiute"', add
+label define raced_pop2_lbl 318 `"Pima"', add
+label define raced_pop2_lbl 319 `"Potawatomi"', add
+label define raced_pop2_lbl 320 `"Pueblo"', add
+label define raced_pop2_lbl 321 `"Seminole"', add
+label define raced_pop2_lbl 322 `"Shoshone"', add
+label define raced_pop2_lbl 323 `"Sioux"', add
+label define raced_pop2_lbl 324 `"Tlingit (Tlingit_Haida, 2000/ACS)"', add
+label define raced_pop2_lbl 325 `"Tohono O Odham"', add
+label define raced_pop2_lbl 326 `"All other tribes (1990)"', add
+label define raced_pop2_lbl 328 `"Hopi"', add
+label define raced_pop2_lbl 329 `"Central American Indian"', add
+label define raced_pop2_lbl 330 `"Spanish American Indian"', add
+label define raced_pop2_lbl 350 `"Delaware"', add
+label define raced_pop2_lbl 351 `"Latin American Indian"', add
+label define raced_pop2_lbl 352 `"Puget Sound Salish"', add
+label define raced_pop2_lbl 353 `"Yakama"', add
+label define raced_pop2_lbl 354 `"Yaqui"', add
+label define raced_pop2_lbl 355 `"Colville"', add
+label define raced_pop2_lbl 356 `"Houma"', add
+label define raced_pop2_lbl 357 `"Menominee"', add
+label define raced_pop2_lbl 358 `"Yuman"', add
+label define raced_pop2_lbl 359 `"South American Indian"', add
+label define raced_pop2_lbl 360 `"Mexican American Indian"', add
+label define raced_pop2_lbl 361 `"Other Amer. Indian tribe (2000,ACS)"', add
+label define raced_pop2_lbl 362 `"2+ Amer. Indian tribes (2000,ACS)"', add
+label define raced_pop2_lbl 370 `"Alaskan Athabaskan"', add
+label define raced_pop2_lbl 371 `"Aleut"', add
+label define raced_pop2_lbl 372 `"Eskimo"', add
+label define raced_pop2_lbl 373 `"Alaskan mixed"', add
+label define raced_pop2_lbl 374 `"Inupiat"', add
+label define raced_pop2_lbl 375 `"Yup'ik"', add
+label define raced_pop2_lbl 379 `"Other Alaska Native tribe(s) (2000,ACS)"', add
+label define raced_pop2_lbl 398 `"Both Am. Ind. and Alaska Native (2000,ACS)"', add
+label define raced_pop2_lbl 399 `"Tribe not specified"', add
+label define raced_pop2_lbl 400 `"Chinese"', add
+label define raced_pop2_lbl 410 `"Taiwanese"', add
+label define raced_pop2_lbl 420 `"Chinese and Taiwanese"', add
+label define raced_pop2_lbl 500 `"Japanese"', add
+label define raced_pop2_lbl 600 `"Filipino"', add
+label define raced_pop2_lbl 610 `"Asian Indian (Hindu 1920_1940)"', add
+label define raced_pop2_lbl 620 `"Korean"', add
+label define raced_pop2_lbl 630 `"Hawaiian"', add
+label define raced_pop2_lbl 631 `"Hawaiian and Asian (1900,1920)"', add
+label define raced_pop2_lbl 632 `"Hawaiian and European (1900,1920)"', add
+label define raced_pop2_lbl 634 `"Hawaiian mixed"', add
+label define raced_pop2_lbl 640 `"Vietnamese"', add
+label define raced_pop2_lbl 641 `"Bhutanese"', add
+label define raced_pop2_lbl 642 `"Mongolian"', add
+label define raced_pop2_lbl 643 `"Nepalese"', add
+label define raced_pop2_lbl 650 `"Other Asian or Pacific Islander (1920,1980)"', add
+label define raced_pop2_lbl 651 `"Asian only (CPS)"', add
+label define raced_pop2_lbl 652 `"Pacific Islander only (CPS)"', add
+label define raced_pop2_lbl 653 `"Asian or Pacific Islander, n.s. (1990 Internal Census files)"', add
+label define raced_pop2_lbl 660 `"Cambodian"', add
+label define raced_pop2_lbl 661 `"Hmong"', add
+label define raced_pop2_lbl 662 `"Laotian"', add
+label define raced_pop2_lbl 663 `"Thai"', add
+label define raced_pop2_lbl 664 `"Bangladeshi"', add
+label define raced_pop2_lbl 665 `"Burmese"', add
+label define raced_pop2_lbl 666 `"Indonesian"', add
+label define raced_pop2_lbl 667 `"Malaysian"', add
+label define raced_pop2_lbl 668 `"Okinawan"', add
+label define raced_pop2_lbl 669 `"Pakistani"', add
+label define raced_pop2_lbl 670 `"Sri Lankan"', add
+label define raced_pop2_lbl 671 `"Other Asian, n.e.c."', add
+label define raced_pop2_lbl 672 `"Asian, not specified"', add
+label define raced_pop2_lbl 673 `"Chinese and Japanese"', add
+label define raced_pop2_lbl 674 `"Chinese and Filipino"', add
+label define raced_pop2_lbl 675 `"Chinese and Vietnamese"', add
+label define raced_pop2_lbl 676 `"Chinese and Asian write_in"', add
+label define raced_pop2_lbl 677 `"Japanese and Filipino"', add
+label define raced_pop2_lbl 678 `"Asian Indian and Asian write_in"', add
+label define raced_pop2_lbl 679 `"Other Asian race combinations"', add
+label define raced_pop2_lbl 680 `"Samoan"', add
+label define raced_pop2_lbl 681 `"Tahitian"', add
+label define raced_pop2_lbl 682 `"Tongan"', add
+label define raced_pop2_lbl 683 `"Other Polynesian (1990)"', add
+label define raced_pop2_lbl 684 `"1+ other Polynesian races (2000,ACS)"', add
+label define raced_pop2_lbl 685 `"Chamorro"', add
+label define raced_pop2_lbl 686 `"Northern Mariana Islander"', add
+label define raced_pop2_lbl 687 `"Palauan"', add
+label define raced_pop2_lbl 688 `"Other Micronesian (1990)"', add
+label define raced_pop2_lbl 689 `"1+ other Micronesian races (2000,ACS)"', add
+label define raced_pop2_lbl 690 `"Fijian"', add
+label define raced_pop2_lbl 691 `"Other Melanesian (1990)"', add
+label define raced_pop2_lbl 692 `"1+ other Melanesian races (2000,ACS)"', add
+label define raced_pop2_lbl 698 `"2+ PI races from 2+ PI regions"', add
+label define raced_pop2_lbl 699 `"Pacific Islander, n.s."', add
+label define raced_pop2_lbl 700 `"Other race, n.e.c."', add
+label define raced_pop2_lbl 801 `"White and Black"', add
+label define raced_pop2_lbl 802 `"White and AIAN"', add
+label define raced_pop2_lbl 810 `"White and Asian"', add
+label define raced_pop2_lbl 811 `"White and Chinese"', add
+label define raced_pop2_lbl 812 `"White and Japanese"', add
+label define raced_pop2_lbl 813 `"White and Filipino"', add
+label define raced_pop2_lbl 814 `"White and Asian Indian"', add
+label define raced_pop2_lbl 815 `"White and Korean"', add
+label define raced_pop2_lbl 816 `"White and Vietnamese"', add
+label define raced_pop2_lbl 817 `"White and Asian write_in"', add
+label define raced_pop2_lbl 818 `"White and other Asian race(s)"', add
+label define raced_pop2_lbl 819 `"White and two or more Asian groups"', add
+label define raced_pop2_lbl 820 `"White and PI"', add
+label define raced_pop2_lbl 821 `"White and Native Hawaiian"', add
+label define raced_pop2_lbl 822 `"White and Samoan"', add
+label define raced_pop2_lbl 823 `"White and Chamorro"', add
+label define raced_pop2_lbl 824 `"White and PI write_in"', add
+label define raced_pop2_lbl 825 `"White and other PI race(s)"', add
+label define raced_pop2_lbl 826 `"White and other race write_in"', add
+label define raced_pop2_lbl 827 `"White and other race, n.e.c."', add
+label define raced_pop2_lbl 830 `"Black and AIAN"', add
+label define raced_pop2_lbl 831 `"Black and Asian"', add
+label define raced_pop2_lbl 832 `"Black and Chinese"', add
+label define raced_pop2_lbl 833 `"Black and Japanese"', add
+label define raced_pop2_lbl 834 `"Black and Filipino"', add
+label define raced_pop2_lbl 835 `"Black and Asian Indian"', add
+label define raced_pop2_lbl 836 `"Black and Korean"', add
+label define raced_pop2_lbl 837 `"Black and Asian write_in"', add
+label define raced_pop2_lbl 838 `"Black and other Asian race(s)"', add
+label define raced_pop2_lbl 840 `"Black and PI"', add
+label define raced_pop2_lbl 841 `"Black and PI write_in"', add
+label define raced_pop2_lbl 842 `"Black and other PI race(s)"', add
+label define raced_pop2_lbl 845 `"Black and other race write_in"', add
+label define raced_pop2_lbl 850 `"AIAN and Asian"', add
+label define raced_pop2_lbl 851 `"AIAN and Filipino (2000 1%)"', add
+label define raced_pop2_lbl 852 `"AIAN and Asian Indian"', add
+label define raced_pop2_lbl 853 `"AIAN and Asian write_in (2000 1%)"', add
+label define raced_pop2_lbl 854 `"AIAN and other Asian race(s)"', add
+label define raced_pop2_lbl 855 `"AIAN and PI"', add
+label define raced_pop2_lbl 856 `"AIAN and other race write_in"', add
+label define raced_pop2_lbl 860 `"Asian and PI"', add
+label define raced_pop2_lbl 861 `"Chinese and Hawaiian"', add
+label define raced_pop2_lbl 862 `"Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_pop2_lbl 863 `"Japanese and Hawaiian (2000 1%)"', add
+label define raced_pop2_lbl 864 `"Filipino and Hawaiian"', add
+label define raced_pop2_lbl 865 `"Filipino and PI write_in"', add
+label define raced_pop2_lbl 866 `"Asian Indian and PI write_in (2000 1%)"', add
+label define raced_pop2_lbl 867 `"Asian write_in and PI write_in"', add
+label define raced_pop2_lbl 868 `"Other Asian race(s) and PI race(s)"', add
+label define raced_pop2_lbl 869 `"Japanese and Korean (ACS)"', add
+label define raced_pop2_lbl 880 `"Asian and other race write_in"', add
+label define raced_pop2_lbl 881 `"Chinese and other race write_in"', add
+label define raced_pop2_lbl 882 `"Japanese and other race write_in"', add
+label define raced_pop2_lbl 883 `"Filipino and other race write_in"', add
+label define raced_pop2_lbl 884 `"Asian Indian and other race write_in"', add
+label define raced_pop2_lbl 885 `"Asian write_in and other race write_in"', add
+label define raced_pop2_lbl 886 `"Other Asian race(s) and other race write_in"', add
+label define raced_pop2_lbl 887 `"Chinese and Korean"', add
+label define raced_pop2_lbl 890 `"PI and other race write_in:"', add
+label define raced_pop2_lbl 891 `"PI write_in and other race write_in"', add
+label define raced_pop2_lbl 892 `"Other PI race(s) and other race write_in"', add
+label define raced_pop2_lbl 893 `"Native Hawaiian or PI other race(s)"', add
+label define raced_pop2_lbl 899 `"API and other race write_in"', add
+label define raced_pop2_lbl 901 `"White, Black, AIAN"', add
+label define raced_pop2_lbl 902 `"White, Black, Asian"', add
+label define raced_pop2_lbl 903 `"White, Black, PI"', add
+label define raced_pop2_lbl 904 `"White, Black, other race write_in"', add
+label define raced_pop2_lbl 905 `"White, AIAN, Asian"', add
+label define raced_pop2_lbl 906 `"White, AIAN, PI"', add
+label define raced_pop2_lbl 907 `"White, AIAN, other race write_in"', add
+label define raced_pop2_lbl 910 `"White, Asian, PI"', add
+label define raced_pop2_lbl 911 `"White, Chinese, Hawaiian"', add
+label define raced_pop2_lbl 912 `"White, Chinese, Filipino, Hawaiian (2000 1%)"', add
+label define raced_pop2_lbl 913 `"White, Japanese, Hawaiian (2000 1%)"', add
+label define raced_pop2_lbl 914 `"White, Filipino, Hawaiian"', add
+label define raced_pop2_lbl 915 `"Other White, Asian race(s), PI race(s)"', add
+label define raced_pop2_lbl 916 `"White, AIAN and Filipino"', add
+label define raced_pop2_lbl 917 `"White, Black, and Filipino"', add
+label define raced_pop2_lbl 920 `"White, Asian, other race write_in"', add
+label define raced_pop2_lbl 921 `"White, Filipino, other race write_in (2000 1%)"', add
+label define raced_pop2_lbl 922 `"White, Asian write_in, other race write_in (2000 1%)"', add
+label define raced_pop2_lbl 923 `"Other White, Asian race(s), other race write_in (2000 1%)"', add
+label define raced_pop2_lbl 925 `"White, PI, other race write_in"', add
+label define raced_pop2_lbl 930 `"Black, AIAN, Asian"', add
+label define raced_pop2_lbl 931 `"Black, AIAN, PI"', add
+label define raced_pop2_lbl 932 `"Black, AIAN, other race write_in"', add
+label define raced_pop2_lbl 933 `"Black, Asian, PI"', add
+label define raced_pop2_lbl 934 `"Black, Asian, other race write_in"', add
+label define raced_pop2_lbl 935 `"Black, PI, other race write_in"', add
+label define raced_pop2_lbl 940 `"AIAN, Asian, PI"', add
+label define raced_pop2_lbl 941 `"AIAN, Asian, other race write_in"', add
+label define raced_pop2_lbl 942 `"AIAN, PI, other race write_in"', add
+label define raced_pop2_lbl 943 `"Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 944 `"Asian (Chinese, Japanese, Korean, Vietnamese); and Native Hawaiian or PI; and Other"', add
+label define raced_pop2_lbl 949 `"2 or 3 races (CPS)"', add
+label define raced_pop2_lbl 950 `"White, Black, AIAN, Asian"', add
+label define raced_pop2_lbl 951 `"White, Black, AIAN, PI"', add
+label define raced_pop2_lbl 952 `"White, Black, AIAN, other race write_in"', add
+label define raced_pop2_lbl 953 `"White, Black, Asian, PI"', add
+label define raced_pop2_lbl 954 `"White, Black, Asian, other race write_in"', add
+label define raced_pop2_lbl 955 `"White, Black, PI, other race write_in"', add
+label define raced_pop2_lbl 960 `"White, AIAN, Asian, PI"', add
+label define raced_pop2_lbl 961 `"White, AIAN, Asian, other race write_in"', add
+label define raced_pop2_lbl 962 `"White, AIAN, PI, other race write_in"', add
+label define raced_pop2_lbl 963 `"White, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 964 `"White, Chinese, Japanese, Native Hawaiian"', add
+label define raced_pop2_lbl 970 `"Black, AIAN, Asian, PI"', add
+label define raced_pop2_lbl 971 `"Black, AIAN, Asian, other race write_in"', add
+label define raced_pop2_lbl 972 `"Black, AIAN, PI, other race write_in"', add
+label define raced_pop2_lbl 973 `"Black, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 974 `"AIAN, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 975 `"AIAN, Asian, PI, Hawaiian other race write_in"', add
+label define raced_pop2_lbl 976 `"Two specified Asian  (Chinese and other Asian, Chinese and Japanese, Japanese and other Asian, Korean and other Asian); Native Hawaiian/PI; and Other Race"', add
+label define raced_pop2_lbl 980 `"White, Black, AIAN, Asian, PI"', add
+label define raced_pop2_lbl 981 `"White, Black, AIAN, Asian, other race write_in"', add
+label define raced_pop2_lbl 982 `"White, Black, AIAN, PI, other race write_in"', add
+label define raced_pop2_lbl 983 `"White, Black, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 984 `"White, AIAN, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 985 `"Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 986 `"Black, AIAN, Asian, PI, Hawaiian, other race write_in"', add
+label define raced_pop2_lbl 989 `"4 or 5 races (CPS)"', add
+label define raced_pop2_lbl 990 `"White, Black, AIAN, Asian, PI, other race write_in"', add
+label define raced_pop2_lbl 991 `"White race; Some other race; Black or African American race and/or American Indian and Alaska Native race and/or Asian groups and/or Native Hawaiian and Other Pacific Islander groups"', add
+label define raced_pop2_lbl 996 `"2+ races, n.e.c. (CPS)"', add
+label values raced_pop2 raced_pop2_lbl
+
 label define hispan_head_lbl 0 `"Not Hispanic"'
 label define hispan_head_lbl 1 `"Mexican"', add
 label define hispan_head_lbl 2 `"Puerto Rican"', add
@@ -5700,6 +8534,22 @@ label define hispan_head_lbl 4 `"Other"', add
 label define hispan_head_lbl 9 `"Not Reported"', add
 label values hispan_head hispan_head_lbl
 
+label define hispan_mom_lbl 0 `"Not Hispanic"'
+label define hispan_mom_lbl 1 `"Mexican"', add
+label define hispan_mom_lbl 2 `"Puerto Rican"', add
+label define hispan_mom_lbl 3 `"Cuban"', add
+label define hispan_mom_lbl 4 `"Other"', add
+label define hispan_mom_lbl 9 `"Not Reported"', add
+label values hispan_mom hispan_mom_lbl
+
+label define hispan_pop_lbl 0 `"Not Hispanic"'
+label define hispan_pop_lbl 1 `"Mexican"', add
+label define hispan_pop_lbl 2 `"Puerto Rican"', add
+label define hispan_pop_lbl 3 `"Cuban"', add
+label define hispan_pop_lbl 4 `"Other"', add
+label define hispan_pop_lbl 9 `"Not Reported"', add
+label values hispan_pop hispan_pop_lbl
+
 label define hispan_sp_lbl 0 `"Not Hispanic"'
 label define hispan_sp_lbl 1 `"Mexican"', add
 label define hispan_sp_lbl 2 `"Puerto Rican"', add
@@ -5707,6 +8557,22 @@ label define hispan_sp_lbl 3 `"Cuban"', add
 label define hispan_sp_lbl 4 `"Other"', add
 label define hispan_sp_lbl 9 `"Not Reported"', add
 label values hispan_sp hispan_sp_lbl
+
+label define hispan_mom2_lbl 0 `"Not Hispanic"'
+label define hispan_mom2_lbl 1 `"Mexican"', add
+label define hispan_mom2_lbl 2 `"Puerto Rican"', add
+label define hispan_mom2_lbl 3 `"Cuban"', add
+label define hispan_mom2_lbl 4 `"Other"', add
+label define hispan_mom2_lbl 9 `"Not Reported"', add
+label values hispan_mom2 hispan_mom2_lbl
+
+label define hispan_pop2_lbl 0 `"Not Hispanic"'
+label define hispan_pop2_lbl 1 `"Mexican"', add
+label define hispan_pop2_lbl 2 `"Puerto Rican"', add
+label define hispan_pop2_lbl 3 `"Cuban"', add
+label define hispan_pop2_lbl 4 `"Other"', add
+label define hispan_pop2_lbl 9 `"Not Reported"', add
+label values hispan_pop2 hispan_pop2_lbl
 
 label define hispand_head_lbl 000 `"Not Hispanic"'
 label define hispand_head_lbl 100 `"Mexican"', add
@@ -5765,6 +8631,120 @@ label define hispand_head_lbl 499 `"Other, n.e.c."', add
 label define hispand_head_lbl 900 `"Not Reported"', add
 label values hispand_head hispand_head_lbl
 
+label define hispand_mom_lbl 000 `"Not Hispanic"'
+label define hispand_mom_lbl 100 `"Mexican"', add
+label define hispand_mom_lbl 102 `"Mexican American"', add
+label define hispand_mom_lbl 103 `"Mexicano/Mexicana"', add
+label define hispand_mom_lbl 104 `"Chicano/Chicana"', add
+label define hispand_mom_lbl 105 `"La Raza"', add
+label define hispand_mom_lbl 106 `"Mexican American Indian"', add
+label define hispand_mom_lbl 107 `"Mexico"', add
+label define hispand_mom_lbl 200 `"Puerto Rican"', add
+label define hispand_mom_lbl 300 `"Cuban"', add
+label define hispand_mom_lbl 401 `"Central American Indian"', add
+label define hispand_mom_lbl 402 `"Canal Zone"', add
+label define hispand_mom_lbl 411 `"Costa Rican"', add
+label define hispand_mom_lbl 412 `"Guatemalan"', add
+label define hispand_mom_lbl 413 `"Honduran"', add
+label define hispand_mom_lbl 414 `"Nicaraguan"', add
+label define hispand_mom_lbl 415 `"Panamanian"', add
+label define hispand_mom_lbl 416 `"Salvadoran"', add
+label define hispand_mom_lbl 417 `"Central American, n.e.c."', add
+label define hispand_mom_lbl 420 `"Argentinean"', add
+label define hispand_mom_lbl 421 `"Bolivian"', add
+label define hispand_mom_lbl 422 `"Chilean"', add
+label define hispand_mom_lbl 423 `"Colombian"', add
+label define hispand_mom_lbl 424 `"Ecuadorian"', add
+label define hispand_mom_lbl 425 `"Paraguayan"', add
+label define hispand_mom_lbl 426 `"Peruvian"', add
+label define hispand_mom_lbl 427 `"Uruguayan"', add
+label define hispand_mom_lbl 428 `"Venezuelan"', add
+label define hispand_mom_lbl 429 `"South American Indian"', add
+label define hispand_mom_lbl 430 `"Criollo"', add
+label define hispand_mom_lbl 431 `"South American, n.e.c."', add
+label define hispand_mom_lbl 450 `"Spaniard"', add
+label define hispand_mom_lbl 451 `"Andalusian"', add
+label define hispand_mom_lbl 452 `"Asturian"', add
+label define hispand_mom_lbl 453 `"Castillian"', add
+label define hispand_mom_lbl 454 `"Catalonian"', add
+label define hispand_mom_lbl 455 `"Balearic Islander"', add
+label define hispand_mom_lbl 456 `"Gallego"', add
+label define hispand_mom_lbl 457 `"Valencian"', add
+label define hispand_mom_lbl 458 `"Canarian"', add
+label define hispand_mom_lbl 459 `"Spanish Basque"', add
+label define hispand_mom_lbl 460 `"Dominican"', add
+label define hispand_mom_lbl 465 `"Latin American"', add
+label define hispand_mom_lbl 470 `"Hispanic"', add
+label define hispand_mom_lbl 480 `"Spanish"', add
+label define hispand_mom_lbl 490 `"Californio"', add
+label define hispand_mom_lbl 491 `"Tejano"', add
+label define hispand_mom_lbl 492 `"Nuevo Mexicano"', add
+label define hispand_mom_lbl 493 `"Spanish American"', add
+label define hispand_mom_lbl 494 `"Spanish American Indian"', add
+label define hispand_mom_lbl 495 `"Meso American Indian"', add
+label define hispand_mom_lbl 496 `"Mestizo"', add
+label define hispand_mom_lbl 498 `"Other, n.s."', add
+label define hispand_mom_lbl 499 `"Other, n.e.c."', add
+label define hispand_mom_lbl 900 `"Not Reported"', add
+label values hispand_mom hispand_mom_lbl
+
+label define hispand_pop_lbl 000 `"Not Hispanic"'
+label define hispand_pop_lbl 100 `"Mexican"', add
+label define hispand_pop_lbl 102 `"Mexican American"', add
+label define hispand_pop_lbl 103 `"Mexicano/Mexicana"', add
+label define hispand_pop_lbl 104 `"Chicano/Chicana"', add
+label define hispand_pop_lbl 105 `"La Raza"', add
+label define hispand_pop_lbl 106 `"Mexican American Indian"', add
+label define hispand_pop_lbl 107 `"Mexico"', add
+label define hispand_pop_lbl 200 `"Puerto Rican"', add
+label define hispand_pop_lbl 300 `"Cuban"', add
+label define hispand_pop_lbl 401 `"Central American Indian"', add
+label define hispand_pop_lbl 402 `"Canal Zone"', add
+label define hispand_pop_lbl 411 `"Costa Rican"', add
+label define hispand_pop_lbl 412 `"Guatemalan"', add
+label define hispand_pop_lbl 413 `"Honduran"', add
+label define hispand_pop_lbl 414 `"Nicaraguan"', add
+label define hispand_pop_lbl 415 `"Panamanian"', add
+label define hispand_pop_lbl 416 `"Salvadoran"', add
+label define hispand_pop_lbl 417 `"Central American, n.e.c."', add
+label define hispand_pop_lbl 420 `"Argentinean"', add
+label define hispand_pop_lbl 421 `"Bolivian"', add
+label define hispand_pop_lbl 422 `"Chilean"', add
+label define hispand_pop_lbl 423 `"Colombian"', add
+label define hispand_pop_lbl 424 `"Ecuadorian"', add
+label define hispand_pop_lbl 425 `"Paraguayan"', add
+label define hispand_pop_lbl 426 `"Peruvian"', add
+label define hispand_pop_lbl 427 `"Uruguayan"', add
+label define hispand_pop_lbl 428 `"Venezuelan"', add
+label define hispand_pop_lbl 429 `"South American Indian"', add
+label define hispand_pop_lbl 430 `"Criollo"', add
+label define hispand_pop_lbl 431 `"South American, n.e.c."', add
+label define hispand_pop_lbl 450 `"Spaniard"', add
+label define hispand_pop_lbl 451 `"Andalusian"', add
+label define hispand_pop_lbl 452 `"Asturian"', add
+label define hispand_pop_lbl 453 `"Castillian"', add
+label define hispand_pop_lbl 454 `"Catalonian"', add
+label define hispand_pop_lbl 455 `"Balearic Islander"', add
+label define hispand_pop_lbl 456 `"Gallego"', add
+label define hispand_pop_lbl 457 `"Valencian"', add
+label define hispand_pop_lbl 458 `"Canarian"', add
+label define hispand_pop_lbl 459 `"Spanish Basque"', add
+label define hispand_pop_lbl 460 `"Dominican"', add
+label define hispand_pop_lbl 465 `"Latin American"', add
+label define hispand_pop_lbl 470 `"Hispanic"', add
+label define hispand_pop_lbl 480 `"Spanish"', add
+label define hispand_pop_lbl 490 `"Californio"', add
+label define hispand_pop_lbl 491 `"Tejano"', add
+label define hispand_pop_lbl 492 `"Nuevo Mexicano"', add
+label define hispand_pop_lbl 493 `"Spanish American"', add
+label define hispand_pop_lbl 494 `"Spanish American Indian"', add
+label define hispand_pop_lbl 495 `"Meso American Indian"', add
+label define hispand_pop_lbl 496 `"Mestizo"', add
+label define hispand_pop_lbl 498 `"Other, n.s."', add
+label define hispand_pop_lbl 499 `"Other, n.e.c."', add
+label define hispand_pop_lbl 900 `"Not Reported"', add
+label values hispand_pop hispand_pop_lbl
+
 label define hispand_sp_lbl 000 `"Not Hispanic"'
 label define hispand_sp_lbl 100 `"Mexican"', add
 label define hispand_sp_lbl 102 `"Mexican American"', add
@@ -5821,6 +8801,120 @@ label define hispand_sp_lbl 498 `"Other, n.s."', add
 label define hispand_sp_lbl 499 `"Other, n.e.c."', add
 label define hispand_sp_lbl 900 `"Not Reported"', add
 label values hispand_sp hispand_sp_lbl
+
+label define hispand_mom2_lbl 000 `"Not Hispanic"'
+label define hispand_mom2_lbl 100 `"Mexican"', add
+label define hispand_mom2_lbl 102 `"Mexican American"', add
+label define hispand_mom2_lbl 103 `"Mexicano/Mexicana"', add
+label define hispand_mom2_lbl 104 `"Chicano/Chicana"', add
+label define hispand_mom2_lbl 105 `"La Raza"', add
+label define hispand_mom2_lbl 106 `"Mexican American Indian"', add
+label define hispand_mom2_lbl 107 `"Mexico"', add
+label define hispand_mom2_lbl 200 `"Puerto Rican"', add
+label define hispand_mom2_lbl 300 `"Cuban"', add
+label define hispand_mom2_lbl 401 `"Central American Indian"', add
+label define hispand_mom2_lbl 402 `"Canal Zone"', add
+label define hispand_mom2_lbl 411 `"Costa Rican"', add
+label define hispand_mom2_lbl 412 `"Guatemalan"', add
+label define hispand_mom2_lbl 413 `"Honduran"', add
+label define hispand_mom2_lbl 414 `"Nicaraguan"', add
+label define hispand_mom2_lbl 415 `"Panamanian"', add
+label define hispand_mom2_lbl 416 `"Salvadoran"', add
+label define hispand_mom2_lbl 417 `"Central American, n.e.c."', add
+label define hispand_mom2_lbl 420 `"Argentinean"', add
+label define hispand_mom2_lbl 421 `"Bolivian"', add
+label define hispand_mom2_lbl 422 `"Chilean"', add
+label define hispand_mom2_lbl 423 `"Colombian"', add
+label define hispand_mom2_lbl 424 `"Ecuadorian"', add
+label define hispand_mom2_lbl 425 `"Paraguayan"', add
+label define hispand_mom2_lbl 426 `"Peruvian"', add
+label define hispand_mom2_lbl 427 `"Uruguayan"', add
+label define hispand_mom2_lbl 428 `"Venezuelan"', add
+label define hispand_mom2_lbl 429 `"South American Indian"', add
+label define hispand_mom2_lbl 430 `"Criollo"', add
+label define hispand_mom2_lbl 431 `"South American, n.e.c."', add
+label define hispand_mom2_lbl 450 `"Spaniard"', add
+label define hispand_mom2_lbl 451 `"Andalusian"', add
+label define hispand_mom2_lbl 452 `"Asturian"', add
+label define hispand_mom2_lbl 453 `"Castillian"', add
+label define hispand_mom2_lbl 454 `"Catalonian"', add
+label define hispand_mom2_lbl 455 `"Balearic Islander"', add
+label define hispand_mom2_lbl 456 `"Gallego"', add
+label define hispand_mom2_lbl 457 `"Valencian"', add
+label define hispand_mom2_lbl 458 `"Canarian"', add
+label define hispand_mom2_lbl 459 `"Spanish Basque"', add
+label define hispand_mom2_lbl 460 `"Dominican"', add
+label define hispand_mom2_lbl 465 `"Latin American"', add
+label define hispand_mom2_lbl 470 `"Hispanic"', add
+label define hispand_mom2_lbl 480 `"Spanish"', add
+label define hispand_mom2_lbl 490 `"Californio"', add
+label define hispand_mom2_lbl 491 `"Tejano"', add
+label define hispand_mom2_lbl 492 `"Nuevo Mexicano"', add
+label define hispand_mom2_lbl 493 `"Spanish American"', add
+label define hispand_mom2_lbl 494 `"Spanish American Indian"', add
+label define hispand_mom2_lbl 495 `"Meso American Indian"', add
+label define hispand_mom2_lbl 496 `"Mestizo"', add
+label define hispand_mom2_lbl 498 `"Other, n.s."', add
+label define hispand_mom2_lbl 499 `"Other, n.e.c."', add
+label define hispand_mom2_lbl 900 `"Not Reported"', add
+label values hispand_mom2 hispand_mom2_lbl
+
+label define hispand_pop2_lbl 000 `"Not Hispanic"'
+label define hispand_pop2_lbl 100 `"Mexican"', add
+label define hispand_pop2_lbl 102 `"Mexican American"', add
+label define hispand_pop2_lbl 103 `"Mexicano/Mexicana"', add
+label define hispand_pop2_lbl 104 `"Chicano/Chicana"', add
+label define hispand_pop2_lbl 105 `"La Raza"', add
+label define hispand_pop2_lbl 106 `"Mexican American Indian"', add
+label define hispand_pop2_lbl 107 `"Mexico"', add
+label define hispand_pop2_lbl 200 `"Puerto Rican"', add
+label define hispand_pop2_lbl 300 `"Cuban"', add
+label define hispand_pop2_lbl 401 `"Central American Indian"', add
+label define hispand_pop2_lbl 402 `"Canal Zone"', add
+label define hispand_pop2_lbl 411 `"Costa Rican"', add
+label define hispand_pop2_lbl 412 `"Guatemalan"', add
+label define hispand_pop2_lbl 413 `"Honduran"', add
+label define hispand_pop2_lbl 414 `"Nicaraguan"', add
+label define hispand_pop2_lbl 415 `"Panamanian"', add
+label define hispand_pop2_lbl 416 `"Salvadoran"', add
+label define hispand_pop2_lbl 417 `"Central American, n.e.c."', add
+label define hispand_pop2_lbl 420 `"Argentinean"', add
+label define hispand_pop2_lbl 421 `"Bolivian"', add
+label define hispand_pop2_lbl 422 `"Chilean"', add
+label define hispand_pop2_lbl 423 `"Colombian"', add
+label define hispand_pop2_lbl 424 `"Ecuadorian"', add
+label define hispand_pop2_lbl 425 `"Paraguayan"', add
+label define hispand_pop2_lbl 426 `"Peruvian"', add
+label define hispand_pop2_lbl 427 `"Uruguayan"', add
+label define hispand_pop2_lbl 428 `"Venezuelan"', add
+label define hispand_pop2_lbl 429 `"South American Indian"', add
+label define hispand_pop2_lbl 430 `"Criollo"', add
+label define hispand_pop2_lbl 431 `"South American, n.e.c."', add
+label define hispand_pop2_lbl 450 `"Spaniard"', add
+label define hispand_pop2_lbl 451 `"Andalusian"', add
+label define hispand_pop2_lbl 452 `"Asturian"', add
+label define hispand_pop2_lbl 453 `"Castillian"', add
+label define hispand_pop2_lbl 454 `"Catalonian"', add
+label define hispand_pop2_lbl 455 `"Balearic Islander"', add
+label define hispand_pop2_lbl 456 `"Gallego"', add
+label define hispand_pop2_lbl 457 `"Valencian"', add
+label define hispand_pop2_lbl 458 `"Canarian"', add
+label define hispand_pop2_lbl 459 `"Spanish Basque"', add
+label define hispand_pop2_lbl 460 `"Dominican"', add
+label define hispand_pop2_lbl 465 `"Latin American"', add
+label define hispand_pop2_lbl 470 `"Hispanic"', add
+label define hispand_pop2_lbl 480 `"Spanish"', add
+label define hispand_pop2_lbl 490 `"Californio"', add
+label define hispand_pop2_lbl 491 `"Tejano"', add
+label define hispand_pop2_lbl 492 `"Nuevo Mexicano"', add
+label define hispand_pop2_lbl 493 `"Spanish American"', add
+label define hispand_pop2_lbl 494 `"Spanish American Indian"', add
+label define hispand_pop2_lbl 495 `"Meso American Indian"', add
+label define hispand_pop2_lbl 496 `"Mestizo"', add
+label define hispand_pop2_lbl 498 `"Other, n.s."', add
+label define hispand_pop2_lbl 499 `"Other, n.e.c."', add
+label define hispand_pop2_lbl 900 `"Not Reported"', add
+label values hispand_pop2 hispand_pop2_lbl
 
 label define bpl_head_lbl 001 `"Alabama"'
 label define bpl_head_lbl 002 `"Alaska"', add
@@ -5987,6 +9081,336 @@ label define bpl_head_lbl 950 `"Other n.e.c."', add
 label define bpl_head_lbl 999 `"Missing/blank"', add
 label values bpl_head bpl_head_lbl
 
+label define bpl_mom_lbl 001 `"Alabama"'
+label define bpl_mom_lbl 002 `"Alaska"', add
+label define bpl_mom_lbl 004 `"Arizona"', add
+label define bpl_mom_lbl 005 `"Arkansas"', add
+label define bpl_mom_lbl 006 `"California"', add
+label define bpl_mom_lbl 008 `"Colorado"', add
+label define bpl_mom_lbl 009 `"Connecticut"', add
+label define bpl_mom_lbl 010 `"Delaware"', add
+label define bpl_mom_lbl 011 `"District of Columbia"', add
+label define bpl_mom_lbl 012 `"Florida"', add
+label define bpl_mom_lbl 013 `"Georgia"', add
+label define bpl_mom_lbl 015 `"Hawaii"', add
+label define bpl_mom_lbl 016 `"Idaho"', add
+label define bpl_mom_lbl 017 `"Illinois"', add
+label define bpl_mom_lbl 018 `"Indiana"', add
+label define bpl_mom_lbl 019 `"Iowa"', add
+label define bpl_mom_lbl 020 `"Kansas"', add
+label define bpl_mom_lbl 021 `"Kentucky"', add
+label define bpl_mom_lbl 022 `"Louisiana"', add
+label define bpl_mom_lbl 023 `"Maine"', add
+label define bpl_mom_lbl 024 `"Maryland"', add
+label define bpl_mom_lbl 025 `"Massachusetts"', add
+label define bpl_mom_lbl 026 `"Michigan"', add
+label define bpl_mom_lbl 027 `"Minnesota"', add
+label define bpl_mom_lbl 028 `"Mississippi"', add
+label define bpl_mom_lbl 029 `"Missouri"', add
+label define bpl_mom_lbl 030 `"Montana"', add
+label define bpl_mom_lbl 031 `"Nebraska"', add
+label define bpl_mom_lbl 032 `"Nevada"', add
+label define bpl_mom_lbl 033 `"New Hampshire"', add
+label define bpl_mom_lbl 034 `"New Jersey"', add
+label define bpl_mom_lbl 035 `"New Mexico"', add
+label define bpl_mom_lbl 036 `"New York"', add
+label define bpl_mom_lbl 037 `"North Carolina"', add
+label define bpl_mom_lbl 038 `"North Dakota"', add
+label define bpl_mom_lbl 039 `"Ohio"', add
+label define bpl_mom_lbl 040 `"Oklahoma"', add
+label define bpl_mom_lbl 041 `"Oregon"', add
+label define bpl_mom_lbl 042 `"Pennsylvania"', add
+label define bpl_mom_lbl 044 `"Rhode Island"', add
+label define bpl_mom_lbl 045 `"South Carolina"', add
+label define bpl_mom_lbl 046 `"South Dakota"', add
+label define bpl_mom_lbl 047 `"Tennessee"', add
+label define bpl_mom_lbl 048 `"Texas"', add
+label define bpl_mom_lbl 049 `"Utah"', add
+label define bpl_mom_lbl 050 `"Vermont"', add
+label define bpl_mom_lbl 051 `"Virginia"', add
+label define bpl_mom_lbl 053 `"Washington"', add
+label define bpl_mom_lbl 054 `"West Virginia"', add
+label define bpl_mom_lbl 055 `"Wisconsin"', add
+label define bpl_mom_lbl 056 `"Wyoming"', add
+label define bpl_mom_lbl 090 `"Native American"', add
+label define bpl_mom_lbl 099 `"United States, ns"', add
+label define bpl_mom_lbl 100 `"American Samoa"', add
+label define bpl_mom_lbl 105 `"Guam"', add
+label define bpl_mom_lbl 110 `"Puerto Rico"', add
+label define bpl_mom_lbl 115 `"U.S. Virgin Islands"', add
+label define bpl_mom_lbl 120 `"Other US Possessions"', add
+label define bpl_mom_lbl 150 `"Canada"', add
+label define bpl_mom_lbl 155 `"St. Pierre and Miquelon"', add
+label define bpl_mom_lbl 160 `"Atlantic Islands"', add
+label define bpl_mom_lbl 199 `"North America, ns"', add
+label define bpl_mom_lbl 200 `"Mexico"', add
+label define bpl_mom_lbl 210 `"Central America"', add
+label define bpl_mom_lbl 250 `"Cuba"', add
+label define bpl_mom_lbl 260 `"West Indies"', add
+label define bpl_mom_lbl 299 `"Americas, n.s."', add
+label define bpl_mom_lbl 300 `"SOUTH AMERICA"', add
+label define bpl_mom_lbl 400 `"Denmark"', add
+label define bpl_mom_lbl 401 `"Finland"', add
+label define bpl_mom_lbl 402 `"Iceland"', add
+label define bpl_mom_lbl 403 `"Lapland, n.s."', add
+label define bpl_mom_lbl 404 `"Norway"', add
+label define bpl_mom_lbl 405 `"Sweden"', add
+label define bpl_mom_lbl 410 `"England"', add
+label define bpl_mom_lbl 411 `"Scotland"', add
+label define bpl_mom_lbl 412 `"Wales"', add
+label define bpl_mom_lbl 413 `"United Kingdom, ns"', add
+label define bpl_mom_lbl 414 `"Ireland"', add
+label define bpl_mom_lbl 419 `"Northern Europe, ns"', add
+label define bpl_mom_lbl 420 `"Belgium"', add
+label define bpl_mom_lbl 421 `"France"', add
+label define bpl_mom_lbl 422 `"Liechtenstein"', add
+label define bpl_mom_lbl 423 `"Luxembourg"', add
+label define bpl_mom_lbl 424 `"Monaco"', add
+label define bpl_mom_lbl 425 `"Netherlands"', add
+label define bpl_mom_lbl 426 `"Switzerland"', add
+label define bpl_mom_lbl 429 `"Western Europe, ns"', add
+label define bpl_mom_lbl 430 `"Albania"', add
+label define bpl_mom_lbl 431 `"Andorra"', add
+label define bpl_mom_lbl 432 `"Gibraltar"', add
+label define bpl_mom_lbl 433 `"Greece"', add
+label define bpl_mom_lbl 434 `"Italy"', add
+label define bpl_mom_lbl 435 `"Malta"', add
+label define bpl_mom_lbl 436 `"Portugal"', add
+label define bpl_mom_lbl 437 `"San Marino"', add
+label define bpl_mom_lbl 438 `"Spain"', add
+label define bpl_mom_lbl 439 `"Vatican City"', add
+label define bpl_mom_lbl 440 `"Southern Europe, ns"', add
+label define bpl_mom_lbl 450 `"Austria"', add
+label define bpl_mom_lbl 451 `"Bulgaria"', add
+label define bpl_mom_lbl 452 `"Czechoslovakia"', add
+label define bpl_mom_lbl 453 `"Germany"', add
+label define bpl_mom_lbl 454 `"Hungary"', add
+label define bpl_mom_lbl 455 `"Poland"', add
+label define bpl_mom_lbl 456 `"Romania"', add
+label define bpl_mom_lbl 457 `"Yugoslavia"', add
+label define bpl_mom_lbl 458 `"Central Europe, ns"', add
+label define bpl_mom_lbl 459 `"Eastern Europe, ns"', add
+label define bpl_mom_lbl 460 `"Estonia"', add
+label define bpl_mom_lbl 461 `"Latvia"', add
+label define bpl_mom_lbl 462 `"Lithuania"', add
+label define bpl_mom_lbl 463 `"Baltic States, ns"', add
+label define bpl_mom_lbl 465 `"Other USSR/Russia"', add
+label define bpl_mom_lbl 499 `"Europe, ns"', add
+label define bpl_mom_lbl 500 `"China"', add
+label define bpl_mom_lbl 501 `"Japan"', add
+label define bpl_mom_lbl 502 `"Korea"', add
+label define bpl_mom_lbl 509 `"East Asia, ns"', add
+label define bpl_mom_lbl 510 `"Brunei"', add
+label define bpl_mom_lbl 511 `"Cambodia (Kampuchea)"', add
+label define bpl_mom_lbl 512 `"Indonesia"', add
+label define bpl_mom_lbl 513 `"Laos"', add
+label define bpl_mom_lbl 514 `"Malaysia"', add
+label define bpl_mom_lbl 515 `"Philippines"', add
+label define bpl_mom_lbl 516 `"Singapore"', add
+label define bpl_mom_lbl 517 `"Thailand"', add
+label define bpl_mom_lbl 518 `"Vietnam"', add
+label define bpl_mom_lbl 519 `"Southeast Asia, ns"', add
+label define bpl_mom_lbl 520 `"Afghanistan"', add
+label define bpl_mom_lbl 521 `"India"', add
+label define bpl_mom_lbl 522 `"Iran"', add
+label define bpl_mom_lbl 523 `"Maldives"', add
+label define bpl_mom_lbl 524 `"Nepal"', add
+label define bpl_mom_lbl 530 `"Bahrain"', add
+label define bpl_mom_lbl 531 `"Cyprus"', add
+label define bpl_mom_lbl 532 `"Iraq"', add
+label define bpl_mom_lbl 533 `"Iraq/Saudi Arabia"', add
+label define bpl_mom_lbl 534 `"Israel/Palestine"', add
+label define bpl_mom_lbl 535 `"Jordan"', add
+label define bpl_mom_lbl 536 `"Kuwait"', add
+label define bpl_mom_lbl 537 `"Lebanon"', add
+label define bpl_mom_lbl 538 `"Oman"', add
+label define bpl_mom_lbl 539 `"Qatar"', add
+label define bpl_mom_lbl 540 `"Saudi Arabia"', add
+label define bpl_mom_lbl 541 `"Syria"', add
+label define bpl_mom_lbl 542 `"Turkey"', add
+label define bpl_mom_lbl 543 `"United Arab Emirates"', add
+label define bpl_mom_lbl 544 `"Yemen Arab Republic (North)"', add
+label define bpl_mom_lbl 545 `"Yemen, PDR (South)"', add
+label define bpl_mom_lbl 546 `"Persian Gulf States, n.s."', add
+label define bpl_mom_lbl 547 `"Middle East, ns"', add
+label define bpl_mom_lbl 548 `"Southwest Asia, nec/ns"', add
+label define bpl_mom_lbl 549 `"Asia Minor, ns"', add
+label define bpl_mom_lbl 550 `"South Asia, nec"', add
+label define bpl_mom_lbl 599 `"Asia, nec/ns"', add
+label define bpl_mom_lbl 600 `"AFRICA"', add
+label define bpl_mom_lbl 700 `"Australia and New Zealand"', add
+label define bpl_mom_lbl 710 `"Pacific Islands"', add
+label define bpl_mom_lbl 800 `"Antarctica, ns/nec"', add
+label define bpl_mom_lbl 900 `"Abroad (unknown) or at sea"', add
+label define bpl_mom_lbl 950 `"Other n.e.c."', add
+label define bpl_mom_lbl 999 `"Missing/blank"', add
+label values bpl_mom bpl_mom_lbl
+
+label define bpl_pop_lbl 001 `"Alabama"'
+label define bpl_pop_lbl 002 `"Alaska"', add
+label define bpl_pop_lbl 004 `"Arizona"', add
+label define bpl_pop_lbl 005 `"Arkansas"', add
+label define bpl_pop_lbl 006 `"California"', add
+label define bpl_pop_lbl 008 `"Colorado"', add
+label define bpl_pop_lbl 009 `"Connecticut"', add
+label define bpl_pop_lbl 010 `"Delaware"', add
+label define bpl_pop_lbl 011 `"District of Columbia"', add
+label define bpl_pop_lbl 012 `"Florida"', add
+label define bpl_pop_lbl 013 `"Georgia"', add
+label define bpl_pop_lbl 015 `"Hawaii"', add
+label define bpl_pop_lbl 016 `"Idaho"', add
+label define bpl_pop_lbl 017 `"Illinois"', add
+label define bpl_pop_lbl 018 `"Indiana"', add
+label define bpl_pop_lbl 019 `"Iowa"', add
+label define bpl_pop_lbl 020 `"Kansas"', add
+label define bpl_pop_lbl 021 `"Kentucky"', add
+label define bpl_pop_lbl 022 `"Louisiana"', add
+label define bpl_pop_lbl 023 `"Maine"', add
+label define bpl_pop_lbl 024 `"Maryland"', add
+label define bpl_pop_lbl 025 `"Massachusetts"', add
+label define bpl_pop_lbl 026 `"Michigan"', add
+label define bpl_pop_lbl 027 `"Minnesota"', add
+label define bpl_pop_lbl 028 `"Mississippi"', add
+label define bpl_pop_lbl 029 `"Missouri"', add
+label define bpl_pop_lbl 030 `"Montana"', add
+label define bpl_pop_lbl 031 `"Nebraska"', add
+label define bpl_pop_lbl 032 `"Nevada"', add
+label define bpl_pop_lbl 033 `"New Hampshire"', add
+label define bpl_pop_lbl 034 `"New Jersey"', add
+label define bpl_pop_lbl 035 `"New Mexico"', add
+label define bpl_pop_lbl 036 `"New York"', add
+label define bpl_pop_lbl 037 `"North Carolina"', add
+label define bpl_pop_lbl 038 `"North Dakota"', add
+label define bpl_pop_lbl 039 `"Ohio"', add
+label define bpl_pop_lbl 040 `"Oklahoma"', add
+label define bpl_pop_lbl 041 `"Oregon"', add
+label define bpl_pop_lbl 042 `"Pennsylvania"', add
+label define bpl_pop_lbl 044 `"Rhode Island"', add
+label define bpl_pop_lbl 045 `"South Carolina"', add
+label define bpl_pop_lbl 046 `"South Dakota"', add
+label define bpl_pop_lbl 047 `"Tennessee"', add
+label define bpl_pop_lbl 048 `"Texas"', add
+label define bpl_pop_lbl 049 `"Utah"', add
+label define bpl_pop_lbl 050 `"Vermont"', add
+label define bpl_pop_lbl 051 `"Virginia"', add
+label define bpl_pop_lbl 053 `"Washington"', add
+label define bpl_pop_lbl 054 `"West Virginia"', add
+label define bpl_pop_lbl 055 `"Wisconsin"', add
+label define bpl_pop_lbl 056 `"Wyoming"', add
+label define bpl_pop_lbl 090 `"Native American"', add
+label define bpl_pop_lbl 099 `"United States, ns"', add
+label define bpl_pop_lbl 100 `"American Samoa"', add
+label define bpl_pop_lbl 105 `"Guam"', add
+label define bpl_pop_lbl 110 `"Puerto Rico"', add
+label define bpl_pop_lbl 115 `"U.S. Virgin Islands"', add
+label define bpl_pop_lbl 120 `"Other US Possessions"', add
+label define bpl_pop_lbl 150 `"Canada"', add
+label define bpl_pop_lbl 155 `"St. Pierre and Miquelon"', add
+label define bpl_pop_lbl 160 `"Atlantic Islands"', add
+label define bpl_pop_lbl 199 `"North America, ns"', add
+label define bpl_pop_lbl 200 `"Mexico"', add
+label define bpl_pop_lbl 210 `"Central America"', add
+label define bpl_pop_lbl 250 `"Cuba"', add
+label define bpl_pop_lbl 260 `"West Indies"', add
+label define bpl_pop_lbl 299 `"Americas, n.s."', add
+label define bpl_pop_lbl 300 `"SOUTH AMERICA"', add
+label define bpl_pop_lbl 400 `"Denmark"', add
+label define bpl_pop_lbl 401 `"Finland"', add
+label define bpl_pop_lbl 402 `"Iceland"', add
+label define bpl_pop_lbl 403 `"Lapland, n.s."', add
+label define bpl_pop_lbl 404 `"Norway"', add
+label define bpl_pop_lbl 405 `"Sweden"', add
+label define bpl_pop_lbl 410 `"England"', add
+label define bpl_pop_lbl 411 `"Scotland"', add
+label define bpl_pop_lbl 412 `"Wales"', add
+label define bpl_pop_lbl 413 `"United Kingdom, ns"', add
+label define bpl_pop_lbl 414 `"Ireland"', add
+label define bpl_pop_lbl 419 `"Northern Europe, ns"', add
+label define bpl_pop_lbl 420 `"Belgium"', add
+label define bpl_pop_lbl 421 `"France"', add
+label define bpl_pop_lbl 422 `"Liechtenstein"', add
+label define bpl_pop_lbl 423 `"Luxembourg"', add
+label define bpl_pop_lbl 424 `"Monaco"', add
+label define bpl_pop_lbl 425 `"Netherlands"', add
+label define bpl_pop_lbl 426 `"Switzerland"', add
+label define bpl_pop_lbl 429 `"Western Europe, ns"', add
+label define bpl_pop_lbl 430 `"Albania"', add
+label define bpl_pop_lbl 431 `"Andorra"', add
+label define bpl_pop_lbl 432 `"Gibraltar"', add
+label define bpl_pop_lbl 433 `"Greece"', add
+label define bpl_pop_lbl 434 `"Italy"', add
+label define bpl_pop_lbl 435 `"Malta"', add
+label define bpl_pop_lbl 436 `"Portugal"', add
+label define bpl_pop_lbl 437 `"San Marino"', add
+label define bpl_pop_lbl 438 `"Spain"', add
+label define bpl_pop_lbl 439 `"Vatican City"', add
+label define bpl_pop_lbl 440 `"Southern Europe, ns"', add
+label define bpl_pop_lbl 450 `"Austria"', add
+label define bpl_pop_lbl 451 `"Bulgaria"', add
+label define bpl_pop_lbl 452 `"Czechoslovakia"', add
+label define bpl_pop_lbl 453 `"Germany"', add
+label define bpl_pop_lbl 454 `"Hungary"', add
+label define bpl_pop_lbl 455 `"Poland"', add
+label define bpl_pop_lbl 456 `"Romania"', add
+label define bpl_pop_lbl 457 `"Yugoslavia"', add
+label define bpl_pop_lbl 458 `"Central Europe, ns"', add
+label define bpl_pop_lbl 459 `"Eastern Europe, ns"', add
+label define bpl_pop_lbl 460 `"Estonia"', add
+label define bpl_pop_lbl 461 `"Latvia"', add
+label define bpl_pop_lbl 462 `"Lithuania"', add
+label define bpl_pop_lbl 463 `"Baltic States, ns"', add
+label define bpl_pop_lbl 465 `"Other USSR/Russia"', add
+label define bpl_pop_lbl 499 `"Europe, ns"', add
+label define bpl_pop_lbl 500 `"China"', add
+label define bpl_pop_lbl 501 `"Japan"', add
+label define bpl_pop_lbl 502 `"Korea"', add
+label define bpl_pop_lbl 509 `"East Asia, ns"', add
+label define bpl_pop_lbl 510 `"Brunei"', add
+label define bpl_pop_lbl 511 `"Cambodia (Kampuchea)"', add
+label define bpl_pop_lbl 512 `"Indonesia"', add
+label define bpl_pop_lbl 513 `"Laos"', add
+label define bpl_pop_lbl 514 `"Malaysia"', add
+label define bpl_pop_lbl 515 `"Philippines"', add
+label define bpl_pop_lbl 516 `"Singapore"', add
+label define bpl_pop_lbl 517 `"Thailand"', add
+label define bpl_pop_lbl 518 `"Vietnam"', add
+label define bpl_pop_lbl 519 `"Southeast Asia, ns"', add
+label define bpl_pop_lbl 520 `"Afghanistan"', add
+label define bpl_pop_lbl 521 `"India"', add
+label define bpl_pop_lbl 522 `"Iran"', add
+label define bpl_pop_lbl 523 `"Maldives"', add
+label define bpl_pop_lbl 524 `"Nepal"', add
+label define bpl_pop_lbl 530 `"Bahrain"', add
+label define bpl_pop_lbl 531 `"Cyprus"', add
+label define bpl_pop_lbl 532 `"Iraq"', add
+label define bpl_pop_lbl 533 `"Iraq/Saudi Arabia"', add
+label define bpl_pop_lbl 534 `"Israel/Palestine"', add
+label define bpl_pop_lbl 535 `"Jordan"', add
+label define bpl_pop_lbl 536 `"Kuwait"', add
+label define bpl_pop_lbl 537 `"Lebanon"', add
+label define bpl_pop_lbl 538 `"Oman"', add
+label define bpl_pop_lbl 539 `"Qatar"', add
+label define bpl_pop_lbl 540 `"Saudi Arabia"', add
+label define bpl_pop_lbl 541 `"Syria"', add
+label define bpl_pop_lbl 542 `"Turkey"', add
+label define bpl_pop_lbl 543 `"United Arab Emirates"', add
+label define bpl_pop_lbl 544 `"Yemen Arab Republic (North)"', add
+label define bpl_pop_lbl 545 `"Yemen, PDR (South)"', add
+label define bpl_pop_lbl 546 `"Persian Gulf States, n.s."', add
+label define bpl_pop_lbl 547 `"Middle East, ns"', add
+label define bpl_pop_lbl 548 `"Southwest Asia, nec/ns"', add
+label define bpl_pop_lbl 549 `"Asia Minor, ns"', add
+label define bpl_pop_lbl 550 `"South Asia, nec"', add
+label define bpl_pop_lbl 599 `"Asia, nec/ns"', add
+label define bpl_pop_lbl 600 `"AFRICA"', add
+label define bpl_pop_lbl 700 `"Australia and New Zealand"', add
+label define bpl_pop_lbl 710 `"Pacific Islands"', add
+label define bpl_pop_lbl 800 `"Antarctica, ns/nec"', add
+label define bpl_pop_lbl 900 `"Abroad (unknown) or at sea"', add
+label define bpl_pop_lbl 950 `"Other n.e.c."', add
+label define bpl_pop_lbl 999 `"Missing/blank"', add
+label values bpl_pop bpl_pop_lbl
+
 label define bpl_sp_lbl 001 `"Alabama"'
 label define bpl_sp_lbl 002 `"Alaska"', add
 label define bpl_sp_lbl 004 `"Arizona"', add
@@ -6151,6 +9575,336 @@ label define bpl_sp_lbl 900 `"Abroad (unknown) or at sea"', add
 label define bpl_sp_lbl 950 `"Other n.e.c."', add
 label define bpl_sp_lbl 999 `"Missing/blank"', add
 label values bpl_sp bpl_sp_lbl
+
+label define bpl_mom2_lbl 001 `"Alabama"'
+label define bpl_mom2_lbl 002 `"Alaska"', add
+label define bpl_mom2_lbl 004 `"Arizona"', add
+label define bpl_mom2_lbl 005 `"Arkansas"', add
+label define bpl_mom2_lbl 006 `"California"', add
+label define bpl_mom2_lbl 008 `"Colorado"', add
+label define bpl_mom2_lbl 009 `"Connecticut"', add
+label define bpl_mom2_lbl 010 `"Delaware"', add
+label define bpl_mom2_lbl 011 `"District of Columbia"', add
+label define bpl_mom2_lbl 012 `"Florida"', add
+label define bpl_mom2_lbl 013 `"Georgia"', add
+label define bpl_mom2_lbl 015 `"Hawaii"', add
+label define bpl_mom2_lbl 016 `"Idaho"', add
+label define bpl_mom2_lbl 017 `"Illinois"', add
+label define bpl_mom2_lbl 018 `"Indiana"', add
+label define bpl_mom2_lbl 019 `"Iowa"', add
+label define bpl_mom2_lbl 020 `"Kansas"', add
+label define bpl_mom2_lbl 021 `"Kentucky"', add
+label define bpl_mom2_lbl 022 `"Louisiana"', add
+label define bpl_mom2_lbl 023 `"Maine"', add
+label define bpl_mom2_lbl 024 `"Maryland"', add
+label define bpl_mom2_lbl 025 `"Massachusetts"', add
+label define bpl_mom2_lbl 026 `"Michigan"', add
+label define bpl_mom2_lbl 027 `"Minnesota"', add
+label define bpl_mom2_lbl 028 `"Mississippi"', add
+label define bpl_mom2_lbl 029 `"Missouri"', add
+label define bpl_mom2_lbl 030 `"Montana"', add
+label define bpl_mom2_lbl 031 `"Nebraska"', add
+label define bpl_mom2_lbl 032 `"Nevada"', add
+label define bpl_mom2_lbl 033 `"New Hampshire"', add
+label define bpl_mom2_lbl 034 `"New Jersey"', add
+label define bpl_mom2_lbl 035 `"New Mexico"', add
+label define bpl_mom2_lbl 036 `"New York"', add
+label define bpl_mom2_lbl 037 `"North Carolina"', add
+label define bpl_mom2_lbl 038 `"North Dakota"', add
+label define bpl_mom2_lbl 039 `"Ohio"', add
+label define bpl_mom2_lbl 040 `"Oklahoma"', add
+label define bpl_mom2_lbl 041 `"Oregon"', add
+label define bpl_mom2_lbl 042 `"Pennsylvania"', add
+label define bpl_mom2_lbl 044 `"Rhode Island"', add
+label define bpl_mom2_lbl 045 `"South Carolina"', add
+label define bpl_mom2_lbl 046 `"South Dakota"', add
+label define bpl_mom2_lbl 047 `"Tennessee"', add
+label define bpl_mom2_lbl 048 `"Texas"', add
+label define bpl_mom2_lbl 049 `"Utah"', add
+label define bpl_mom2_lbl 050 `"Vermont"', add
+label define bpl_mom2_lbl 051 `"Virginia"', add
+label define bpl_mom2_lbl 053 `"Washington"', add
+label define bpl_mom2_lbl 054 `"West Virginia"', add
+label define bpl_mom2_lbl 055 `"Wisconsin"', add
+label define bpl_mom2_lbl 056 `"Wyoming"', add
+label define bpl_mom2_lbl 090 `"Native American"', add
+label define bpl_mom2_lbl 099 `"United States, ns"', add
+label define bpl_mom2_lbl 100 `"American Samoa"', add
+label define bpl_mom2_lbl 105 `"Guam"', add
+label define bpl_mom2_lbl 110 `"Puerto Rico"', add
+label define bpl_mom2_lbl 115 `"U.S. Virgin Islands"', add
+label define bpl_mom2_lbl 120 `"Other US Possessions"', add
+label define bpl_mom2_lbl 150 `"Canada"', add
+label define bpl_mom2_lbl 155 `"St. Pierre and Miquelon"', add
+label define bpl_mom2_lbl 160 `"Atlantic Islands"', add
+label define bpl_mom2_lbl 199 `"North America, ns"', add
+label define bpl_mom2_lbl 200 `"Mexico"', add
+label define bpl_mom2_lbl 210 `"Central America"', add
+label define bpl_mom2_lbl 250 `"Cuba"', add
+label define bpl_mom2_lbl 260 `"West Indies"', add
+label define bpl_mom2_lbl 299 `"Americas, n.s."', add
+label define bpl_mom2_lbl 300 `"SOUTH AMERICA"', add
+label define bpl_mom2_lbl 400 `"Denmark"', add
+label define bpl_mom2_lbl 401 `"Finland"', add
+label define bpl_mom2_lbl 402 `"Iceland"', add
+label define bpl_mom2_lbl 403 `"Lapland, n.s."', add
+label define bpl_mom2_lbl 404 `"Norway"', add
+label define bpl_mom2_lbl 405 `"Sweden"', add
+label define bpl_mom2_lbl 410 `"England"', add
+label define bpl_mom2_lbl 411 `"Scotland"', add
+label define bpl_mom2_lbl 412 `"Wales"', add
+label define bpl_mom2_lbl 413 `"United Kingdom, ns"', add
+label define bpl_mom2_lbl 414 `"Ireland"', add
+label define bpl_mom2_lbl 419 `"Northern Europe, ns"', add
+label define bpl_mom2_lbl 420 `"Belgium"', add
+label define bpl_mom2_lbl 421 `"France"', add
+label define bpl_mom2_lbl 422 `"Liechtenstein"', add
+label define bpl_mom2_lbl 423 `"Luxembourg"', add
+label define bpl_mom2_lbl 424 `"Monaco"', add
+label define bpl_mom2_lbl 425 `"Netherlands"', add
+label define bpl_mom2_lbl 426 `"Switzerland"', add
+label define bpl_mom2_lbl 429 `"Western Europe, ns"', add
+label define bpl_mom2_lbl 430 `"Albania"', add
+label define bpl_mom2_lbl 431 `"Andorra"', add
+label define bpl_mom2_lbl 432 `"Gibraltar"', add
+label define bpl_mom2_lbl 433 `"Greece"', add
+label define bpl_mom2_lbl 434 `"Italy"', add
+label define bpl_mom2_lbl 435 `"Malta"', add
+label define bpl_mom2_lbl 436 `"Portugal"', add
+label define bpl_mom2_lbl 437 `"San Marino"', add
+label define bpl_mom2_lbl 438 `"Spain"', add
+label define bpl_mom2_lbl 439 `"Vatican City"', add
+label define bpl_mom2_lbl 440 `"Southern Europe, ns"', add
+label define bpl_mom2_lbl 450 `"Austria"', add
+label define bpl_mom2_lbl 451 `"Bulgaria"', add
+label define bpl_mom2_lbl 452 `"Czechoslovakia"', add
+label define bpl_mom2_lbl 453 `"Germany"', add
+label define bpl_mom2_lbl 454 `"Hungary"', add
+label define bpl_mom2_lbl 455 `"Poland"', add
+label define bpl_mom2_lbl 456 `"Romania"', add
+label define bpl_mom2_lbl 457 `"Yugoslavia"', add
+label define bpl_mom2_lbl 458 `"Central Europe, ns"', add
+label define bpl_mom2_lbl 459 `"Eastern Europe, ns"', add
+label define bpl_mom2_lbl 460 `"Estonia"', add
+label define bpl_mom2_lbl 461 `"Latvia"', add
+label define bpl_mom2_lbl 462 `"Lithuania"', add
+label define bpl_mom2_lbl 463 `"Baltic States, ns"', add
+label define bpl_mom2_lbl 465 `"Other USSR/Russia"', add
+label define bpl_mom2_lbl 499 `"Europe, ns"', add
+label define bpl_mom2_lbl 500 `"China"', add
+label define bpl_mom2_lbl 501 `"Japan"', add
+label define bpl_mom2_lbl 502 `"Korea"', add
+label define bpl_mom2_lbl 509 `"East Asia, ns"', add
+label define bpl_mom2_lbl 510 `"Brunei"', add
+label define bpl_mom2_lbl 511 `"Cambodia (Kampuchea)"', add
+label define bpl_mom2_lbl 512 `"Indonesia"', add
+label define bpl_mom2_lbl 513 `"Laos"', add
+label define bpl_mom2_lbl 514 `"Malaysia"', add
+label define bpl_mom2_lbl 515 `"Philippines"', add
+label define bpl_mom2_lbl 516 `"Singapore"', add
+label define bpl_mom2_lbl 517 `"Thailand"', add
+label define bpl_mom2_lbl 518 `"Vietnam"', add
+label define bpl_mom2_lbl 519 `"Southeast Asia, ns"', add
+label define bpl_mom2_lbl 520 `"Afghanistan"', add
+label define bpl_mom2_lbl 521 `"India"', add
+label define bpl_mom2_lbl 522 `"Iran"', add
+label define bpl_mom2_lbl 523 `"Maldives"', add
+label define bpl_mom2_lbl 524 `"Nepal"', add
+label define bpl_mom2_lbl 530 `"Bahrain"', add
+label define bpl_mom2_lbl 531 `"Cyprus"', add
+label define bpl_mom2_lbl 532 `"Iraq"', add
+label define bpl_mom2_lbl 533 `"Iraq/Saudi Arabia"', add
+label define bpl_mom2_lbl 534 `"Israel/Palestine"', add
+label define bpl_mom2_lbl 535 `"Jordan"', add
+label define bpl_mom2_lbl 536 `"Kuwait"', add
+label define bpl_mom2_lbl 537 `"Lebanon"', add
+label define bpl_mom2_lbl 538 `"Oman"', add
+label define bpl_mom2_lbl 539 `"Qatar"', add
+label define bpl_mom2_lbl 540 `"Saudi Arabia"', add
+label define bpl_mom2_lbl 541 `"Syria"', add
+label define bpl_mom2_lbl 542 `"Turkey"', add
+label define bpl_mom2_lbl 543 `"United Arab Emirates"', add
+label define bpl_mom2_lbl 544 `"Yemen Arab Republic (North)"', add
+label define bpl_mom2_lbl 545 `"Yemen, PDR (South)"', add
+label define bpl_mom2_lbl 546 `"Persian Gulf States, n.s."', add
+label define bpl_mom2_lbl 547 `"Middle East, ns"', add
+label define bpl_mom2_lbl 548 `"Southwest Asia, nec/ns"', add
+label define bpl_mom2_lbl 549 `"Asia Minor, ns"', add
+label define bpl_mom2_lbl 550 `"South Asia, nec"', add
+label define bpl_mom2_lbl 599 `"Asia, nec/ns"', add
+label define bpl_mom2_lbl 600 `"AFRICA"', add
+label define bpl_mom2_lbl 700 `"Australia and New Zealand"', add
+label define bpl_mom2_lbl 710 `"Pacific Islands"', add
+label define bpl_mom2_lbl 800 `"Antarctica, ns/nec"', add
+label define bpl_mom2_lbl 900 `"Abroad (unknown) or at sea"', add
+label define bpl_mom2_lbl 950 `"Other n.e.c."', add
+label define bpl_mom2_lbl 999 `"Missing/blank"', add
+label values bpl_mom2 bpl_mom2_lbl
+
+label define bpl_pop2_lbl 001 `"Alabama"'
+label define bpl_pop2_lbl 002 `"Alaska"', add
+label define bpl_pop2_lbl 004 `"Arizona"', add
+label define bpl_pop2_lbl 005 `"Arkansas"', add
+label define bpl_pop2_lbl 006 `"California"', add
+label define bpl_pop2_lbl 008 `"Colorado"', add
+label define bpl_pop2_lbl 009 `"Connecticut"', add
+label define bpl_pop2_lbl 010 `"Delaware"', add
+label define bpl_pop2_lbl 011 `"District of Columbia"', add
+label define bpl_pop2_lbl 012 `"Florida"', add
+label define bpl_pop2_lbl 013 `"Georgia"', add
+label define bpl_pop2_lbl 015 `"Hawaii"', add
+label define bpl_pop2_lbl 016 `"Idaho"', add
+label define bpl_pop2_lbl 017 `"Illinois"', add
+label define bpl_pop2_lbl 018 `"Indiana"', add
+label define bpl_pop2_lbl 019 `"Iowa"', add
+label define bpl_pop2_lbl 020 `"Kansas"', add
+label define bpl_pop2_lbl 021 `"Kentucky"', add
+label define bpl_pop2_lbl 022 `"Louisiana"', add
+label define bpl_pop2_lbl 023 `"Maine"', add
+label define bpl_pop2_lbl 024 `"Maryland"', add
+label define bpl_pop2_lbl 025 `"Massachusetts"', add
+label define bpl_pop2_lbl 026 `"Michigan"', add
+label define bpl_pop2_lbl 027 `"Minnesota"', add
+label define bpl_pop2_lbl 028 `"Mississippi"', add
+label define bpl_pop2_lbl 029 `"Missouri"', add
+label define bpl_pop2_lbl 030 `"Montana"', add
+label define bpl_pop2_lbl 031 `"Nebraska"', add
+label define bpl_pop2_lbl 032 `"Nevada"', add
+label define bpl_pop2_lbl 033 `"New Hampshire"', add
+label define bpl_pop2_lbl 034 `"New Jersey"', add
+label define bpl_pop2_lbl 035 `"New Mexico"', add
+label define bpl_pop2_lbl 036 `"New York"', add
+label define bpl_pop2_lbl 037 `"North Carolina"', add
+label define bpl_pop2_lbl 038 `"North Dakota"', add
+label define bpl_pop2_lbl 039 `"Ohio"', add
+label define bpl_pop2_lbl 040 `"Oklahoma"', add
+label define bpl_pop2_lbl 041 `"Oregon"', add
+label define bpl_pop2_lbl 042 `"Pennsylvania"', add
+label define bpl_pop2_lbl 044 `"Rhode Island"', add
+label define bpl_pop2_lbl 045 `"South Carolina"', add
+label define bpl_pop2_lbl 046 `"South Dakota"', add
+label define bpl_pop2_lbl 047 `"Tennessee"', add
+label define bpl_pop2_lbl 048 `"Texas"', add
+label define bpl_pop2_lbl 049 `"Utah"', add
+label define bpl_pop2_lbl 050 `"Vermont"', add
+label define bpl_pop2_lbl 051 `"Virginia"', add
+label define bpl_pop2_lbl 053 `"Washington"', add
+label define bpl_pop2_lbl 054 `"West Virginia"', add
+label define bpl_pop2_lbl 055 `"Wisconsin"', add
+label define bpl_pop2_lbl 056 `"Wyoming"', add
+label define bpl_pop2_lbl 090 `"Native American"', add
+label define bpl_pop2_lbl 099 `"United States, ns"', add
+label define bpl_pop2_lbl 100 `"American Samoa"', add
+label define bpl_pop2_lbl 105 `"Guam"', add
+label define bpl_pop2_lbl 110 `"Puerto Rico"', add
+label define bpl_pop2_lbl 115 `"U.S. Virgin Islands"', add
+label define bpl_pop2_lbl 120 `"Other US Possessions"', add
+label define bpl_pop2_lbl 150 `"Canada"', add
+label define bpl_pop2_lbl 155 `"St. Pierre and Miquelon"', add
+label define bpl_pop2_lbl 160 `"Atlantic Islands"', add
+label define bpl_pop2_lbl 199 `"North America, ns"', add
+label define bpl_pop2_lbl 200 `"Mexico"', add
+label define bpl_pop2_lbl 210 `"Central America"', add
+label define bpl_pop2_lbl 250 `"Cuba"', add
+label define bpl_pop2_lbl 260 `"West Indies"', add
+label define bpl_pop2_lbl 299 `"Americas, n.s."', add
+label define bpl_pop2_lbl 300 `"SOUTH AMERICA"', add
+label define bpl_pop2_lbl 400 `"Denmark"', add
+label define bpl_pop2_lbl 401 `"Finland"', add
+label define bpl_pop2_lbl 402 `"Iceland"', add
+label define bpl_pop2_lbl 403 `"Lapland, n.s."', add
+label define bpl_pop2_lbl 404 `"Norway"', add
+label define bpl_pop2_lbl 405 `"Sweden"', add
+label define bpl_pop2_lbl 410 `"England"', add
+label define bpl_pop2_lbl 411 `"Scotland"', add
+label define bpl_pop2_lbl 412 `"Wales"', add
+label define bpl_pop2_lbl 413 `"United Kingdom, ns"', add
+label define bpl_pop2_lbl 414 `"Ireland"', add
+label define bpl_pop2_lbl 419 `"Northern Europe, ns"', add
+label define bpl_pop2_lbl 420 `"Belgium"', add
+label define bpl_pop2_lbl 421 `"France"', add
+label define bpl_pop2_lbl 422 `"Liechtenstein"', add
+label define bpl_pop2_lbl 423 `"Luxembourg"', add
+label define bpl_pop2_lbl 424 `"Monaco"', add
+label define bpl_pop2_lbl 425 `"Netherlands"', add
+label define bpl_pop2_lbl 426 `"Switzerland"', add
+label define bpl_pop2_lbl 429 `"Western Europe, ns"', add
+label define bpl_pop2_lbl 430 `"Albania"', add
+label define bpl_pop2_lbl 431 `"Andorra"', add
+label define bpl_pop2_lbl 432 `"Gibraltar"', add
+label define bpl_pop2_lbl 433 `"Greece"', add
+label define bpl_pop2_lbl 434 `"Italy"', add
+label define bpl_pop2_lbl 435 `"Malta"', add
+label define bpl_pop2_lbl 436 `"Portugal"', add
+label define bpl_pop2_lbl 437 `"San Marino"', add
+label define bpl_pop2_lbl 438 `"Spain"', add
+label define bpl_pop2_lbl 439 `"Vatican City"', add
+label define bpl_pop2_lbl 440 `"Southern Europe, ns"', add
+label define bpl_pop2_lbl 450 `"Austria"', add
+label define bpl_pop2_lbl 451 `"Bulgaria"', add
+label define bpl_pop2_lbl 452 `"Czechoslovakia"', add
+label define bpl_pop2_lbl 453 `"Germany"', add
+label define bpl_pop2_lbl 454 `"Hungary"', add
+label define bpl_pop2_lbl 455 `"Poland"', add
+label define bpl_pop2_lbl 456 `"Romania"', add
+label define bpl_pop2_lbl 457 `"Yugoslavia"', add
+label define bpl_pop2_lbl 458 `"Central Europe, ns"', add
+label define bpl_pop2_lbl 459 `"Eastern Europe, ns"', add
+label define bpl_pop2_lbl 460 `"Estonia"', add
+label define bpl_pop2_lbl 461 `"Latvia"', add
+label define bpl_pop2_lbl 462 `"Lithuania"', add
+label define bpl_pop2_lbl 463 `"Baltic States, ns"', add
+label define bpl_pop2_lbl 465 `"Other USSR/Russia"', add
+label define bpl_pop2_lbl 499 `"Europe, ns"', add
+label define bpl_pop2_lbl 500 `"China"', add
+label define bpl_pop2_lbl 501 `"Japan"', add
+label define bpl_pop2_lbl 502 `"Korea"', add
+label define bpl_pop2_lbl 509 `"East Asia, ns"', add
+label define bpl_pop2_lbl 510 `"Brunei"', add
+label define bpl_pop2_lbl 511 `"Cambodia (Kampuchea)"', add
+label define bpl_pop2_lbl 512 `"Indonesia"', add
+label define bpl_pop2_lbl 513 `"Laos"', add
+label define bpl_pop2_lbl 514 `"Malaysia"', add
+label define bpl_pop2_lbl 515 `"Philippines"', add
+label define bpl_pop2_lbl 516 `"Singapore"', add
+label define bpl_pop2_lbl 517 `"Thailand"', add
+label define bpl_pop2_lbl 518 `"Vietnam"', add
+label define bpl_pop2_lbl 519 `"Southeast Asia, ns"', add
+label define bpl_pop2_lbl 520 `"Afghanistan"', add
+label define bpl_pop2_lbl 521 `"India"', add
+label define bpl_pop2_lbl 522 `"Iran"', add
+label define bpl_pop2_lbl 523 `"Maldives"', add
+label define bpl_pop2_lbl 524 `"Nepal"', add
+label define bpl_pop2_lbl 530 `"Bahrain"', add
+label define bpl_pop2_lbl 531 `"Cyprus"', add
+label define bpl_pop2_lbl 532 `"Iraq"', add
+label define bpl_pop2_lbl 533 `"Iraq/Saudi Arabia"', add
+label define bpl_pop2_lbl 534 `"Israel/Palestine"', add
+label define bpl_pop2_lbl 535 `"Jordan"', add
+label define bpl_pop2_lbl 536 `"Kuwait"', add
+label define bpl_pop2_lbl 537 `"Lebanon"', add
+label define bpl_pop2_lbl 538 `"Oman"', add
+label define bpl_pop2_lbl 539 `"Qatar"', add
+label define bpl_pop2_lbl 540 `"Saudi Arabia"', add
+label define bpl_pop2_lbl 541 `"Syria"', add
+label define bpl_pop2_lbl 542 `"Turkey"', add
+label define bpl_pop2_lbl 543 `"United Arab Emirates"', add
+label define bpl_pop2_lbl 544 `"Yemen Arab Republic (North)"', add
+label define bpl_pop2_lbl 545 `"Yemen, PDR (South)"', add
+label define bpl_pop2_lbl 546 `"Persian Gulf States, n.s."', add
+label define bpl_pop2_lbl 547 `"Middle East, ns"', add
+label define bpl_pop2_lbl 548 `"Southwest Asia, nec/ns"', add
+label define bpl_pop2_lbl 549 `"Asia Minor, ns"', add
+label define bpl_pop2_lbl 550 `"South Asia, nec"', add
+label define bpl_pop2_lbl 599 `"Asia, nec/ns"', add
+label define bpl_pop2_lbl 600 `"AFRICA"', add
+label define bpl_pop2_lbl 700 `"Australia and New Zealand"', add
+label define bpl_pop2_lbl 710 `"Pacific Islands"', add
+label define bpl_pop2_lbl 800 `"Antarctica, ns/nec"', add
+label define bpl_pop2_lbl 900 `"Abroad (unknown) or at sea"', add
+label define bpl_pop2_lbl 950 `"Other n.e.c."', add
+label define bpl_pop2_lbl 999 `"Missing/blank"', add
+label values bpl_pop2 bpl_pop2_lbl
 
 label define bpld_head_lbl 00100 `"Alabama"'
 label define bpld_head_lbl 00200 `"Alaska"', add
@@ -6691,6 +10445,1084 @@ label define bpld_head_lbl 95000 `"Other n.e.c."', add
 label define bpld_head_lbl 99900 `"Missing/blank"', add
 label values bpld_head bpld_head_lbl
 
+label define bpld_mom_lbl 00100 `"Alabama"'
+label define bpld_mom_lbl 00200 `"Alaska"', add
+label define bpld_mom_lbl 00400 `"Arizona"', add
+label define bpld_mom_lbl 00500 `"Arkansas"', add
+label define bpld_mom_lbl 00600 `"California"', add
+label define bpld_mom_lbl 00800 `"Colorado"', add
+label define bpld_mom_lbl 00900 `"Connecticut"', add
+label define bpld_mom_lbl 01000 `"Delaware"', add
+label define bpld_mom_lbl 01100 `"District of Columbia"', add
+label define bpld_mom_lbl 01200 `"Florida"', add
+label define bpld_mom_lbl 01300 `"Georgia"', add
+label define bpld_mom_lbl 01500 `"Hawaii"', add
+label define bpld_mom_lbl 01600 `"Idaho"', add
+label define bpld_mom_lbl 01610 `"Idaho Territory"', add
+label define bpld_mom_lbl 01700 `"Illinois"', add
+label define bpld_mom_lbl 01800 `"Indiana"', add
+label define bpld_mom_lbl 01900 `"Iowa"', add
+label define bpld_mom_lbl 02000 `"Kansas"', add
+label define bpld_mom_lbl 02100 `"Kentucky"', add
+label define bpld_mom_lbl 02200 `"Louisiana"', add
+label define bpld_mom_lbl 02300 `"Maine"', add
+label define bpld_mom_lbl 02400 `"Maryland"', add
+label define bpld_mom_lbl 02500 `"Massachusetts"', add
+label define bpld_mom_lbl 02600 `"Michigan"', add
+label define bpld_mom_lbl 02700 `"Minnesota"', add
+label define bpld_mom_lbl 02800 `"Mississippi"', add
+label define bpld_mom_lbl 02900 `"Missouri"', add
+label define bpld_mom_lbl 03000 `"Montana"', add
+label define bpld_mom_lbl 03100 `"Nebraska"', add
+label define bpld_mom_lbl 03200 `"Nevada"', add
+label define bpld_mom_lbl 03300 `"New Hampshire"', add
+label define bpld_mom_lbl 03400 `"New Jersey"', add
+label define bpld_mom_lbl 03500 `"New Mexico"', add
+label define bpld_mom_lbl 03510 `"New Mexico Territory"', add
+label define bpld_mom_lbl 03600 `"New York"', add
+label define bpld_mom_lbl 03700 `"North Carolina"', add
+label define bpld_mom_lbl 03800 `"North Dakota"', add
+label define bpld_mom_lbl 03900 `"Ohio"', add
+label define bpld_mom_lbl 04000 `"Oklahoma"', add
+label define bpld_mom_lbl 04010 `"Indian Territory"', add
+label define bpld_mom_lbl 04100 `"Oregon"', add
+label define bpld_mom_lbl 04200 `"Pennsylvania"', add
+label define bpld_mom_lbl 04400 `"Rhode Island"', add
+label define bpld_mom_lbl 04500 `"South Carolina"', add
+label define bpld_mom_lbl 04600 `"South Dakota"', add
+label define bpld_mom_lbl 04610 `"Dakota Territory"', add
+label define bpld_mom_lbl 04700 `"Tennessee"', add
+label define bpld_mom_lbl 04800 `"Texas"', add
+label define bpld_mom_lbl 04900 `"Utah"', add
+label define bpld_mom_lbl 04910 `"Utah Territory"', add
+label define bpld_mom_lbl 05000 `"Vermont"', add
+label define bpld_mom_lbl 05100 `"Virginia"', add
+label define bpld_mom_lbl 05300 `"Washington"', add
+label define bpld_mom_lbl 05400 `"West Virginia"', add
+label define bpld_mom_lbl 05500 `"Wisconsin"', add
+label define bpld_mom_lbl 05600 `"Wyoming"', add
+label define bpld_mom_lbl 05610 `"Wyoming Territory"', add
+label define bpld_mom_lbl 09000 `"Native American"', add
+label define bpld_mom_lbl 09900 `"United States, ns"', add
+label define bpld_mom_lbl 10000 `"American Samoa"', add
+label define bpld_mom_lbl 10010 `"Samoa, 1940-1950"', add
+label define bpld_mom_lbl 10500 `"Guam"', add
+label define bpld_mom_lbl 11000 `"Puerto Rico"', add
+label define bpld_mom_lbl 11500 `"U.S. Virgin Islands"', add
+label define bpld_mom_lbl 11510 `"St. Croix"', add
+label define bpld_mom_lbl 11520 `"St. John"', add
+label define bpld_mom_lbl 11530 `"St. Thomas"', add
+label define bpld_mom_lbl 12000 `"Other US Possessions:"', add
+label define bpld_mom_lbl 12010 `"Johnston Atoll"', add
+label define bpld_mom_lbl 12020 `"Midway Islands"', add
+label define bpld_mom_lbl 12030 `"Wake Island"', add
+label define bpld_mom_lbl 12040 `"Other US Caribbean Islands"', add
+label define bpld_mom_lbl 12041 `"Navassa Island"', add
+label define bpld_mom_lbl 12050 `"Other US Pacific Islands"', add
+label define bpld_mom_lbl 12051 `"Baker Island"', add
+label define bpld_mom_lbl 12052 `"Howland Island"', add
+label define bpld_mom_lbl 12053 `"Jarvis Island"', add
+label define bpld_mom_lbl 12054 `"Kingman Reef"', add
+label define bpld_mom_lbl 12055 `"Palmyra Atoll"', add
+label define bpld_mom_lbl 12056 `"Canton and Enderbury Island"', add
+label define bpld_mom_lbl 12090 `"US outlying areas, ns"', add
+label define bpld_mom_lbl 12091 `"US possessions, ns"', add
+label define bpld_mom_lbl 12092 `"US territory, ns"', add
+label define bpld_mom_lbl 15000 `"Canada"', add
+label define bpld_mom_lbl 15010 `"English Canada"', add
+label define bpld_mom_lbl 15011 `"British Columbia"', add
+label define bpld_mom_lbl 15013 `"Alberta"', add
+label define bpld_mom_lbl 15015 `"Saskatchewan"', add
+label define bpld_mom_lbl 15017 `"Northwest"', add
+label define bpld_mom_lbl 15019 `"Ruperts Land"', add
+label define bpld_mom_lbl 15020 `"Manitoba"', add
+label define bpld_mom_lbl 15021 `"Red River"', add
+label define bpld_mom_lbl 15030 `"Ontario/Upper Canada"', add
+label define bpld_mom_lbl 15031 `"Upper Canada"', add
+label define bpld_mom_lbl 15032 `"Canada West"', add
+label define bpld_mom_lbl 15040 `"New Brunswick"', add
+label define bpld_mom_lbl 15050 `"Nova Scotia"', add
+label define bpld_mom_lbl 15051 `"Cape Breton"', add
+label define bpld_mom_lbl 15052 `"Halifax"', add
+label define bpld_mom_lbl 15060 `"Prince Edward Island"', add
+label define bpld_mom_lbl 15070 `"Newfoundland"', add
+label define bpld_mom_lbl 15080 `"French Canada"', add
+label define bpld_mom_lbl 15081 `"Quebec"', add
+label define bpld_mom_lbl 15082 `"Lower Canada"', add
+label define bpld_mom_lbl 15083 `"Canada East"', add
+label define bpld_mom_lbl 15500 `"St. Pierre and Miquelon"', add
+label define bpld_mom_lbl 16000 `"Atlantic Islands"', add
+label define bpld_mom_lbl 16010 `"Bermuda"', add
+label define bpld_mom_lbl 16020 `"Cape Verde"', add
+label define bpld_mom_lbl 16030 `"Falkland Islands"', add
+label define bpld_mom_lbl 16040 `"Greenland"', add
+label define bpld_mom_lbl 16050 `"St. Helena and Ascension"', add
+label define bpld_mom_lbl 16060 `"Canary Islands"', add
+label define bpld_mom_lbl 19900 `"North America, ns"', add
+label define bpld_mom_lbl 20000 `"Mexico"', add
+label define bpld_mom_lbl 21000 `"Central America"', add
+label define bpld_mom_lbl 21010 `"Belize/British Honduras"', add
+label define bpld_mom_lbl 21020 `"Costa Rica"', add
+label define bpld_mom_lbl 21030 `"El Salvador"', add
+label define bpld_mom_lbl 21040 `"Guatemala"', add
+label define bpld_mom_lbl 21050 `"Honduras"', add
+label define bpld_mom_lbl 21060 `"Nicaragua"', add
+label define bpld_mom_lbl 21070 `"Panama"', add
+label define bpld_mom_lbl 21071 `"Canal Zone"', add
+label define bpld_mom_lbl 21090 `"Central America, ns"', add
+label define bpld_mom_lbl 25000 `"Cuba"', add
+label define bpld_mom_lbl 26000 `"West Indies"', add
+label define bpld_mom_lbl 26010 `"Dominican Republic"', add
+label define bpld_mom_lbl 26020 `"Haiti"', add
+label define bpld_mom_lbl 26030 `"Jamaica"', add
+label define bpld_mom_lbl 26040 `"British West Indies"', add
+label define bpld_mom_lbl 26041 `"Anguilla"', add
+label define bpld_mom_lbl 26042 `"Antigua-Barbuda"', add
+label define bpld_mom_lbl 26043 `"Bahamas"', add
+label define bpld_mom_lbl 26044 `"Barbados"', add
+label define bpld_mom_lbl 26045 `"British Virgin Islands"', add
+label define bpld_mom_lbl 26046 `"Anegada"', add
+label define bpld_mom_lbl 26047 `"Cooper"', add
+label define bpld_mom_lbl 26048 `"Jost Van Dyke"', add
+label define bpld_mom_lbl 26049 `"Peter"', add
+label define bpld_mom_lbl 26050 `"Tortola"', add
+label define bpld_mom_lbl 26051 `"Virgin Gorda"', add
+label define bpld_mom_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define bpld_mom_lbl 26053 `"Cayman Islands"', add
+label define bpld_mom_lbl 26054 `"Dominica"', add
+label define bpld_mom_lbl 26055 `"Grenada"', add
+label define bpld_mom_lbl 26056 `"Montserrat"', add
+label define bpld_mom_lbl 26057 `"St. Kitts-Nevis"', add
+label define bpld_mom_lbl 26058 `"St. Lucia"', add
+label define bpld_mom_lbl 26059 `"St. Vincent"', add
+label define bpld_mom_lbl 26060 `"Trinidad and Tobago"', add
+label define bpld_mom_lbl 26061 `"Turks and Caicos"', add
+label define bpld_mom_lbl 26069 `"Br. Virgin Islands, ns"', add
+label define bpld_mom_lbl 26070 `"Other West Indies"', add
+label define bpld_mom_lbl 26071 `"Aruba"', add
+label define bpld_mom_lbl 26072 `"Netherlands Antilles"', add
+label define bpld_mom_lbl 26073 `"Bonaire"', add
+label define bpld_mom_lbl 26074 `"Curacao"', add
+label define bpld_mom_lbl 26075 `"Dutch St. Maarten"', add
+label define bpld_mom_lbl 26076 `"Saba"', add
+label define bpld_mom_lbl 26077 `"St. Eustatius"', add
+label define bpld_mom_lbl 26079 `"Dutch Caribbean, ns"', add
+label define bpld_mom_lbl 26080 `"French St. Maarten"', add
+label define bpld_mom_lbl 26081 `"Guadeloupe"', add
+label define bpld_mom_lbl 26082 `"Martinique"', add
+label define bpld_mom_lbl 26083 `"St. Barthelemy"', add
+label define bpld_mom_lbl 26089 `"French Caribbean, ns"', add
+label define bpld_mom_lbl 26090 `"Antilles, ns"', add
+label define bpld_mom_lbl 26091 `"Caribbean, ns"', add
+label define bpld_mom_lbl 26092 `"Latin America, ns"', add
+label define bpld_mom_lbl 26093 `"Leeward Islands, ns"', add
+label define bpld_mom_lbl 26094 `"West Indies, ns"', add
+label define bpld_mom_lbl 26095 `"Windward Islands, ns"', add
+label define bpld_mom_lbl 29900 `"Americas, ns"', add
+label define bpld_mom_lbl 30000 `"South America"', add
+label define bpld_mom_lbl 30005 `"Argentina"', add
+label define bpld_mom_lbl 30010 `"Bolivia"', add
+label define bpld_mom_lbl 30015 `"Brazil"', add
+label define bpld_mom_lbl 30020 `"Chile"', add
+label define bpld_mom_lbl 30025 `"Colombia"', add
+label define bpld_mom_lbl 30030 `"Ecuador"', add
+label define bpld_mom_lbl 30035 `"French Guiana"', add
+label define bpld_mom_lbl 30040 `"Guyana/British Guiana"', add
+label define bpld_mom_lbl 30045 `"Paraguay"', add
+label define bpld_mom_lbl 30050 `"Peru"', add
+label define bpld_mom_lbl 30055 `"Suriname"', add
+label define bpld_mom_lbl 30060 `"Uruguay"', add
+label define bpld_mom_lbl 30065 `"Venezuela"', add
+label define bpld_mom_lbl 30090 `"South America, ns"', add
+label define bpld_mom_lbl 30091 `"South and Central America, n.s."', add
+label define bpld_mom_lbl 40000 `"Denmark"', add
+label define bpld_mom_lbl 40010 `"Faeroe Islands"', add
+label define bpld_mom_lbl 40100 `"Finland"', add
+label define bpld_mom_lbl 40200 `"Iceland"', add
+label define bpld_mom_lbl 40300 `"Lapland, ns"', add
+label define bpld_mom_lbl 40400 `"Norway"', add
+label define bpld_mom_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define bpld_mom_lbl 40411 `"Svalbard"', add
+label define bpld_mom_lbl 40412 `"Jan Meyen"', add
+label define bpld_mom_lbl 40500 `"Sweden"', add
+label define bpld_mom_lbl 41000 `"England"', add
+label define bpld_mom_lbl 41010 `"Channel Islands"', add
+label define bpld_mom_lbl 41011 `"Guernsey"', add
+label define bpld_mom_lbl 41012 `"Jersey"', add
+label define bpld_mom_lbl 41020 `"Isle of Man"', add
+label define bpld_mom_lbl 41100 `"Scotland"', add
+label define bpld_mom_lbl 41200 `"Wales"', add
+label define bpld_mom_lbl 41300 `"United Kingdom, ns"', add
+label define bpld_mom_lbl 41400 `"Ireland"', add
+label define bpld_mom_lbl 41410 `"Northern Ireland"', add
+label define bpld_mom_lbl 41900 `"Northern Europe, ns"', add
+label define bpld_mom_lbl 42000 `"Belgium"', add
+label define bpld_mom_lbl 42100 `"France"', add
+label define bpld_mom_lbl 42110 `"Alsace-Lorraine"', add
+label define bpld_mom_lbl 42111 `"Alsace"', add
+label define bpld_mom_lbl 42112 `"Lorraine"', add
+label define bpld_mom_lbl 42200 `"Liechtenstein"', add
+label define bpld_mom_lbl 42300 `"Luxembourg"', add
+label define bpld_mom_lbl 42400 `"Monaco"', add
+label define bpld_mom_lbl 42500 `"Netherlands"', add
+label define bpld_mom_lbl 42600 `"Switzerland"', add
+label define bpld_mom_lbl 42900 `"Western Europe, ns"', add
+label define bpld_mom_lbl 43000 `"Albania"', add
+label define bpld_mom_lbl 43100 `"Andorra"', add
+label define bpld_mom_lbl 43200 `"Gibraltar"', add
+label define bpld_mom_lbl 43300 `"Greece"', add
+label define bpld_mom_lbl 43310 `"Dodecanese Islands"', add
+label define bpld_mom_lbl 43320 `"Turkey Greece"', add
+label define bpld_mom_lbl 43330 `"Macedonia"', add
+label define bpld_mom_lbl 43400 `"Italy"', add
+label define bpld_mom_lbl 43500 `"Malta"', add
+label define bpld_mom_lbl 43600 `"Portugal"', add
+label define bpld_mom_lbl 43610 `"Azores"', add
+label define bpld_mom_lbl 43620 `"Madeira Islands"', add
+label define bpld_mom_lbl 43630 `"Cape Verde Islands"', add
+label define bpld_mom_lbl 43640 `"St. Miguel"', add
+label define bpld_mom_lbl 43700 `"San Marino"', add
+label define bpld_mom_lbl 43800 `"Spain"', add
+label define bpld_mom_lbl 43900 `"Vatican City"', add
+label define bpld_mom_lbl 44000 `"Southern Europe, ns"', add
+label define bpld_mom_lbl 45000 `"Austria"', add
+label define bpld_mom_lbl 45010 `"Austria-Hungary"', add
+label define bpld_mom_lbl 45020 `"Austria-Graz"', add
+label define bpld_mom_lbl 45030 `"Austria-Linz"', add
+label define bpld_mom_lbl 45040 `"Austria-Salzburg"', add
+label define bpld_mom_lbl 45050 `"Austria-Tyrol"', add
+label define bpld_mom_lbl 45060 `"Austria-Vienna"', add
+label define bpld_mom_lbl 45070 `"Austria-Kaernsten"', add
+label define bpld_mom_lbl 45080 `"Austria-Neustadt"', add
+label define bpld_mom_lbl 45100 `"Bulgaria"', add
+label define bpld_mom_lbl 45200 `"Czechoslovakia"', add
+label define bpld_mom_lbl 45210 `"Bohemia"', add
+label define bpld_mom_lbl 45211 `"Bohemia-Moravia"', add
+label define bpld_mom_lbl 45212 `"Slovakia"', add
+label define bpld_mom_lbl 45213 `"Czech Republic"', add
+label define bpld_mom_lbl 45300 `"Germany"', add
+label define bpld_mom_lbl 45301 `"Berlin"', add
+label define bpld_mom_lbl 45302 `"West Berlin"', add
+label define bpld_mom_lbl 45303 `"East Berlin"', add
+label define bpld_mom_lbl 45310 `"West Germany"', add
+label define bpld_mom_lbl 45311 `"Baden"', add
+label define bpld_mom_lbl 45312 `"Bavaria"', add
+label define bpld_mom_lbl 45313 `"Braunschweig"', add
+label define bpld_mom_lbl 45314 `"Bremen"', add
+label define bpld_mom_lbl 45315 `"Hamburg"', add
+label define bpld_mom_lbl 45316 `"Hanover"', add
+label define bpld_mom_lbl 45317 `"Hessen"', add
+label define bpld_mom_lbl 45318 `"Hesse-Nassau"', add
+label define bpld_mom_lbl 45319 `"Lippe"', add
+label define bpld_mom_lbl 45320 `"Lubeck"', add
+label define bpld_mom_lbl 45321 `"Oldenburg"', add
+label define bpld_mom_lbl 45322 `"Rheinland"', add
+label define bpld_mom_lbl 45323 `"Schaumburg-Lippe"', add
+label define bpld_mom_lbl 45324 `"Schleswig"', add
+label define bpld_mom_lbl 45325 `"Sigmaringen"', add
+label define bpld_mom_lbl 45326 `"Schwarzburg"', add
+label define bpld_mom_lbl 45327 `"Westphalia"', add
+label define bpld_mom_lbl 45328 `"Wurttemberg"', add
+label define bpld_mom_lbl 45329 `"Waldeck"', add
+label define bpld_mom_lbl 45330 `"Wittenberg"', add
+label define bpld_mom_lbl 45331 `"Frankfurt"', add
+label define bpld_mom_lbl 45332 `"Saarland"', add
+label define bpld_mom_lbl 45333 `"Nordrhein-Westfalen"', add
+label define bpld_mom_lbl 45340 `"East Germany"', add
+label define bpld_mom_lbl 45341 `"Anhalt"', add
+label define bpld_mom_lbl 45342 `"Brandenburg"', add
+label define bpld_mom_lbl 45344 `"Kingdom of Saxony"', add
+label define bpld_mom_lbl 45345 `"Mecklenburg"', add
+label define bpld_mom_lbl 45346 `"Saxony"', add
+label define bpld_mom_lbl 45347 `"Thuringian States"', add
+label define bpld_mom_lbl 45348 `"Sachsen-Meiningen"', add
+label define bpld_mom_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define bpld_mom_lbl 45350 `"Probable Saxony"', add
+label define bpld_mom_lbl 45351 `"Schwerin"', add
+label define bpld_mom_lbl 45352 `"Strelitz"', add
+label define bpld_mom_lbl 45353 `"Probably Thuringian States"', add
+label define bpld_mom_lbl 45360 `"Prussia, nec"', add
+label define bpld_mom_lbl 45361 `"Hohenzollern"', add
+label define bpld_mom_lbl 45362 `"Niedersachsen"', add
+label define bpld_mom_lbl 45400 `"Hungary"', add
+label define bpld_mom_lbl 45500 `"Poland"', add
+label define bpld_mom_lbl 45510 `"Austrian Poland"', add
+label define bpld_mom_lbl 45511 `"Galicia"', add
+label define bpld_mom_lbl 45520 `"German Poland"', add
+label define bpld_mom_lbl 45521 `"East Prussia"', add
+label define bpld_mom_lbl 45522 `"Pomerania"', add
+label define bpld_mom_lbl 45523 `"Posen"', add
+label define bpld_mom_lbl 45524 `"Prussian Poland"', add
+label define bpld_mom_lbl 45525 `"Silesia"', add
+label define bpld_mom_lbl 45526 `"West Prussia"', add
+label define bpld_mom_lbl 45530 `"Russian Poland"', add
+label define bpld_mom_lbl 45600 `"Romania"', add
+label define bpld_mom_lbl 45610 `"Transylvania"', add
+label define bpld_mom_lbl 45700 `"Yugoslavia"', add
+label define bpld_mom_lbl 45710 `"Croatia"', add
+label define bpld_mom_lbl 45720 `"Montenegro"', add
+label define bpld_mom_lbl 45730 `"Serbia"', add
+label define bpld_mom_lbl 45740 `"Bosnia"', add
+label define bpld_mom_lbl 45750 `"Dalmatia"', add
+label define bpld_mom_lbl 45760 `"Slovonia"', add
+label define bpld_mom_lbl 45770 `"Carniola"', add
+label define bpld_mom_lbl 45780 `"Slovenia"', add
+label define bpld_mom_lbl 45790 `"Kosovo"', add
+label define bpld_mom_lbl 45800 `"Central Europe, ns"', add
+label define bpld_mom_lbl 45900 `"Eastern Europe, ns"', add
+label define bpld_mom_lbl 46000 `"Estonia"', add
+label define bpld_mom_lbl 46100 `"Latvia"', add
+label define bpld_mom_lbl 46200 `"Lithuania"', add
+label define bpld_mom_lbl 46300 `"Baltic States, ns"', add
+label define bpld_mom_lbl 46500 `"Other USSR/Russia"', add
+label define bpld_mom_lbl 46510 `"Byelorussia"', add
+label define bpld_mom_lbl 46520 `"Moldavia"', add
+label define bpld_mom_lbl 46521 `"Bessarabia"', add
+label define bpld_mom_lbl 46530 `"Ukraine"', add
+label define bpld_mom_lbl 46540 `"Armenia"', add
+label define bpld_mom_lbl 46541 `"Azerbaijan"', add
+label define bpld_mom_lbl 46542 `"Republic of Georgia"', add
+label define bpld_mom_lbl 46543 `"Kazakhstan"', add
+label define bpld_mom_lbl 46544 `"Kirghizia"', add
+label define bpld_mom_lbl 46545 `"Tadzhik"', add
+label define bpld_mom_lbl 46546 `"Turkmenistan"', add
+label define bpld_mom_lbl 46547 `"Uzbekistan"', add
+label define bpld_mom_lbl 46548 `"Siberia"', add
+label define bpld_mom_lbl 46590 `"USSR, ns"', add
+label define bpld_mom_lbl 49900 `"Europe, ns."', add
+label define bpld_mom_lbl 50000 `"China"', add
+label define bpld_mom_lbl 50010 `"Hong Kong"', add
+label define bpld_mom_lbl 50020 `"Macau"', add
+label define bpld_mom_lbl 50030 `"Mongolia"', add
+label define bpld_mom_lbl 50040 `"Taiwan"', add
+label define bpld_mom_lbl 50100 `"Japan"', add
+label define bpld_mom_lbl 50200 `"Korea"', add
+label define bpld_mom_lbl 50210 `"North Korea"', add
+label define bpld_mom_lbl 50220 `"South Korea"', add
+label define bpld_mom_lbl 50900 `"East Asia, ns"', add
+label define bpld_mom_lbl 51000 `"Brunei"', add
+label define bpld_mom_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define bpld_mom_lbl 51200 `"Indonesia"', add
+label define bpld_mom_lbl 51210 `"East Indies"', add
+label define bpld_mom_lbl 51220 `"East Timor"', add
+label define bpld_mom_lbl 51300 `"Laos"', add
+label define bpld_mom_lbl 51400 `"Malaysia"', add
+label define bpld_mom_lbl 51500 `"Philippines"', add
+label define bpld_mom_lbl 51600 `"Singapore"', add
+label define bpld_mom_lbl 51700 `"Thailand"', add
+label define bpld_mom_lbl 51800 `"Vietnam"', add
+label define bpld_mom_lbl 51900 `"Southeast Asia, ns"', add
+label define bpld_mom_lbl 51910 `"Indochina, ns"', add
+label define bpld_mom_lbl 52000 `"Afghanistan"', add
+label define bpld_mom_lbl 52100 `"India"', add
+label define bpld_mom_lbl 52110 `"Bangladesh"', add
+label define bpld_mom_lbl 52120 `"Bhutan"', add
+label define bpld_mom_lbl 52130 `"Burma (Myanmar)"', add
+label define bpld_mom_lbl 52140 `"Pakistan"', add
+label define bpld_mom_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define bpld_mom_lbl 52200 `"Iran"', add
+label define bpld_mom_lbl 52300 `"Maldives"', add
+label define bpld_mom_lbl 52400 `"Nepal"', add
+label define bpld_mom_lbl 53000 `"Bahrain"', add
+label define bpld_mom_lbl 53100 `"Cyprus"', add
+label define bpld_mom_lbl 53200 `"Iraq"', add
+label define bpld_mom_lbl 53210 `"Mesopotamia"', add
+label define bpld_mom_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define bpld_mom_lbl 53400 `"Israel/Palestine"', add
+label define bpld_mom_lbl 53410 `"Gaza Strip"', add
+label define bpld_mom_lbl 53420 `"Palestine"', add
+label define bpld_mom_lbl 53430 `"West Bank"', add
+label define bpld_mom_lbl 53440 `"Israel"', add
+label define bpld_mom_lbl 53500 `"Jordan"', add
+label define bpld_mom_lbl 53600 `"Kuwait"', add
+label define bpld_mom_lbl 53700 `"Lebanon"', add
+label define bpld_mom_lbl 53800 `"Oman"', add
+label define bpld_mom_lbl 53900 `"Qatar"', add
+label define bpld_mom_lbl 54000 `"Saudi Arabia"', add
+label define bpld_mom_lbl 54100 `"Syria"', add
+label define bpld_mom_lbl 54200 `"Turkey"', add
+label define bpld_mom_lbl 54210 `"European Turkey"', add
+label define bpld_mom_lbl 54220 `"Asian Turkey"', add
+label define bpld_mom_lbl 54300 `"United Arab Emirates"', add
+label define bpld_mom_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define bpld_mom_lbl 54500 `"Yemen, PDR (South)"', add
+label define bpld_mom_lbl 54600 `"Persian Gulf States, ns"', add
+label define bpld_mom_lbl 54700 `"Middle East, ns"', add
+label define bpld_mom_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define bpld_mom_lbl 54900 `"Asia Minor, ns"', add
+label define bpld_mom_lbl 55000 `"South Asia, nec"', add
+label define bpld_mom_lbl 59900 `"Asia, nec/ns"', add
+label define bpld_mom_lbl 60000 `"Africa"', add
+label define bpld_mom_lbl 60010 `"Northern Africa"', add
+label define bpld_mom_lbl 60011 `"Algeria"', add
+label define bpld_mom_lbl 60012 `"Egypt/United Arab Rep."', add
+label define bpld_mom_lbl 60013 `"Libya"', add
+label define bpld_mom_lbl 60014 `"Morocco"', add
+label define bpld_mom_lbl 60015 `"Sudan"', add
+label define bpld_mom_lbl 60016 `"Tunisia"', add
+label define bpld_mom_lbl 60017 `"Western Sahara"', add
+label define bpld_mom_lbl 60019 `"North Africa, ns"', add
+label define bpld_mom_lbl 60020 `"Benin"', add
+label define bpld_mom_lbl 60021 `"Burkina Faso"', add
+label define bpld_mom_lbl 60022 `"Gambia"', add
+label define bpld_mom_lbl 60023 `"Ghana"', add
+label define bpld_mom_lbl 60024 `"Guinea"', add
+label define bpld_mom_lbl 60025 `"Guinea-Bissau"', add
+label define bpld_mom_lbl 60026 `"Ivory Coast"', add
+label define bpld_mom_lbl 60027 `"Liberia"', add
+label define bpld_mom_lbl 60028 `"Mali"', add
+label define bpld_mom_lbl 60029 `"Mauritania"', add
+label define bpld_mom_lbl 60030 `"Niger"', add
+label define bpld_mom_lbl 60031 `"Nigeria"', add
+label define bpld_mom_lbl 60032 `"Senegal"', add
+label define bpld_mom_lbl 60033 `"Sierra Leone"', add
+label define bpld_mom_lbl 60034 `"Togo"', add
+label define bpld_mom_lbl 60038 `"Western Africa, ns"', add
+label define bpld_mom_lbl 60039 `"French West Africa, ns"', add
+label define bpld_mom_lbl 60040 `"British Indian Ocean Territory"', add
+label define bpld_mom_lbl 60041 `"Burundi"', add
+label define bpld_mom_lbl 60042 `"Comoros"', add
+label define bpld_mom_lbl 60043 `"Djibouti"', add
+label define bpld_mom_lbl 60044 `"Ethiopia"', add
+label define bpld_mom_lbl 60045 `"Kenya"', add
+label define bpld_mom_lbl 60046 `"Madagascar"', add
+label define bpld_mom_lbl 60047 `"Malawi"', add
+label define bpld_mom_lbl 60048 `"Mauritius"', add
+label define bpld_mom_lbl 60049 `"Mozambique"', add
+label define bpld_mom_lbl 60050 `"Reunion"', add
+label define bpld_mom_lbl 60051 `"Rwanda"', add
+label define bpld_mom_lbl 60052 `"Seychelles"', add
+label define bpld_mom_lbl 60053 `"Somalia"', add
+label define bpld_mom_lbl 60054 `"Tanzania"', add
+label define bpld_mom_lbl 60055 `"Uganda"', add
+label define bpld_mom_lbl 60056 `"Zambia"', add
+label define bpld_mom_lbl 60057 `"Zimbabwe"', add
+label define bpld_mom_lbl 60058 `"Bassas de India"', add
+label define bpld_mom_lbl 60059 `"Europa"', add
+label define bpld_mom_lbl 60060 `"Gloriosos"', add
+label define bpld_mom_lbl 60061 `"Juan de Nova"', add
+label define bpld_mom_lbl 60062 `"Mayotte"', add
+label define bpld_mom_lbl 60063 `"Tromelin"', add
+label define bpld_mom_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define bpld_mom_lbl 60065 `"Eritrea"', add
+label define bpld_mom_lbl 60066 `"South Sudan"', add
+label define bpld_mom_lbl 60070 `"Central Africa"', add
+label define bpld_mom_lbl 60071 `"Angola"', add
+label define bpld_mom_lbl 60072 `"Cameroon"', add
+label define bpld_mom_lbl 60073 `"Central African Republic"', add
+label define bpld_mom_lbl 60074 `"Chad"', add
+label define bpld_mom_lbl 60075 `"Congo"', add
+label define bpld_mom_lbl 60076 `"Equatorial Guinea"', add
+label define bpld_mom_lbl 60077 `"Gabon"', add
+label define bpld_mom_lbl 60078 `"Sao Tome and Principe"', add
+label define bpld_mom_lbl 60079 `"Zaire"', add
+label define bpld_mom_lbl 60080 `"Central Africa, ns"', add
+label define bpld_mom_lbl 60081 `"Equatorial Africa, ns"', add
+label define bpld_mom_lbl 60082 `"French Equatorial Africa, ns"', add
+label define bpld_mom_lbl 60090 `"Southern Africa"', add
+label define bpld_mom_lbl 60091 `"Botswana"', add
+label define bpld_mom_lbl 60092 `"Lesotho"', add
+label define bpld_mom_lbl 60093 `"Namibia"', add
+label define bpld_mom_lbl 60094 `"South Africa (Union of)"', add
+label define bpld_mom_lbl 60095 `"Swaziland"', add
+label define bpld_mom_lbl 60096 `"Southern Africa, ns"', add
+label define bpld_mom_lbl 60099 `"Africa, ns/nec"', add
+label define bpld_mom_lbl 70000 `"Australia and New Zealand"', add
+label define bpld_mom_lbl 70010 `"Australia"', add
+label define bpld_mom_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define bpld_mom_lbl 70012 `"Coral Sea Islands Territory"', add
+label define bpld_mom_lbl 70013 `"Christmas Island"', add
+label define bpld_mom_lbl 70014 `"Cocos Islands"', add
+label define bpld_mom_lbl 70020 `"New Zealand"', add
+label define bpld_mom_lbl 71000 `"Pacific Islands"', add
+label define bpld_mom_lbl 71010 `"New Caledonia"', add
+label define bpld_mom_lbl 71012 `"Papua New Guinea"', add
+label define bpld_mom_lbl 71013 `"Solomon Islands"', add
+label define bpld_mom_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define bpld_mom_lbl 71015 `"Fiji"', add
+label define bpld_mom_lbl 71016 `"Melanesia, ns"', add
+label define bpld_mom_lbl 71017 `"Norfolk Islands"', add
+label define bpld_mom_lbl 71018 `"Niue"', add
+label define bpld_mom_lbl 71020 `"Cook Islands"', add
+label define bpld_mom_lbl 71022 `"French Polynesia"', add
+label define bpld_mom_lbl 71023 `"Tonga"', add
+label define bpld_mom_lbl 71024 `"Wallis and Futuna Islands"', add
+label define bpld_mom_lbl 71025 `"Western Samoa"', add
+label define bpld_mom_lbl 71026 `"Pitcairn Island"', add
+label define bpld_mom_lbl 71027 `"Tokelau"', add
+label define bpld_mom_lbl 71028 `"Tuvalu"', add
+label define bpld_mom_lbl 71029 `"Polynesia, ns"', add
+label define bpld_mom_lbl 71032 `"Kiribati"', add
+label define bpld_mom_lbl 71033 `"Canton and Enderbury"', add
+label define bpld_mom_lbl 71034 `"Nauru"', add
+label define bpld_mom_lbl 71039 `"Micronesia, ns"', add
+label define bpld_mom_lbl 71040 `"US Pacific Trust Territories"', add
+label define bpld_mom_lbl 71041 `"Marshall Islands"', add
+label define bpld_mom_lbl 71042 `"Micronesia"', add
+label define bpld_mom_lbl 71043 `"Kosrae"', add
+label define bpld_mom_lbl 71044 `"Pohnpei"', add
+label define bpld_mom_lbl 71045 `"Truk"', add
+label define bpld_mom_lbl 71046 `"Yap"', add
+label define bpld_mom_lbl 71047 `"Northern Mariana Islands"', add
+label define bpld_mom_lbl 71048 `"Palau"', add
+label define bpld_mom_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define bpld_mom_lbl 71050 `"Clipperton Island"', add
+label define bpld_mom_lbl 71090 `"Oceania, ns/nec"', add
+label define bpld_mom_lbl 80000 `"Antarctica, ns/nec"', add
+label define bpld_mom_lbl 80010 `"Bouvet Islands"', add
+label define bpld_mom_lbl 80020 `"British Antarctic Terr."', add
+label define bpld_mom_lbl 80030 `"Dronning Maud Land"', add
+label define bpld_mom_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define bpld_mom_lbl 80050 `"Heard and McDonald Islands"', add
+label define bpld_mom_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define bpld_mom_lbl 90010 `"Abroad, ns"', add
+label define bpld_mom_lbl 90011 `"Abroad (US citizen)"', add
+label define bpld_mom_lbl 90020 `"At sea"', add
+label define bpld_mom_lbl 90021 `"At sea (US citizen)"', add
+label define bpld_mom_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define bpld_mom_lbl 95000 `"Other n.e.c."', add
+label define bpld_mom_lbl 99900 `"Missing/blank"', add
+label values bpld_mom bpld_mom_lbl
+
+label define bpld_pop_lbl 00100 `"Alabama"'
+label define bpld_pop_lbl 00200 `"Alaska"', add
+label define bpld_pop_lbl 00400 `"Arizona"', add
+label define bpld_pop_lbl 00500 `"Arkansas"', add
+label define bpld_pop_lbl 00600 `"California"', add
+label define bpld_pop_lbl 00800 `"Colorado"', add
+label define bpld_pop_lbl 00900 `"Connecticut"', add
+label define bpld_pop_lbl 01000 `"Delaware"', add
+label define bpld_pop_lbl 01100 `"District of Columbia"', add
+label define bpld_pop_lbl 01200 `"Florida"', add
+label define bpld_pop_lbl 01300 `"Georgia"', add
+label define bpld_pop_lbl 01500 `"Hawaii"', add
+label define bpld_pop_lbl 01600 `"Idaho"', add
+label define bpld_pop_lbl 01610 `"Idaho Territory"', add
+label define bpld_pop_lbl 01700 `"Illinois"', add
+label define bpld_pop_lbl 01800 `"Indiana"', add
+label define bpld_pop_lbl 01900 `"Iowa"', add
+label define bpld_pop_lbl 02000 `"Kansas"', add
+label define bpld_pop_lbl 02100 `"Kentucky"', add
+label define bpld_pop_lbl 02200 `"Louisiana"', add
+label define bpld_pop_lbl 02300 `"Maine"', add
+label define bpld_pop_lbl 02400 `"Maryland"', add
+label define bpld_pop_lbl 02500 `"Massachusetts"', add
+label define bpld_pop_lbl 02600 `"Michigan"', add
+label define bpld_pop_lbl 02700 `"Minnesota"', add
+label define bpld_pop_lbl 02800 `"Mississippi"', add
+label define bpld_pop_lbl 02900 `"Missouri"', add
+label define bpld_pop_lbl 03000 `"Montana"', add
+label define bpld_pop_lbl 03100 `"Nebraska"', add
+label define bpld_pop_lbl 03200 `"Nevada"', add
+label define bpld_pop_lbl 03300 `"New Hampshire"', add
+label define bpld_pop_lbl 03400 `"New Jersey"', add
+label define bpld_pop_lbl 03500 `"New Mexico"', add
+label define bpld_pop_lbl 03510 `"New Mexico Territory"', add
+label define bpld_pop_lbl 03600 `"New York"', add
+label define bpld_pop_lbl 03700 `"North Carolina"', add
+label define bpld_pop_lbl 03800 `"North Dakota"', add
+label define bpld_pop_lbl 03900 `"Ohio"', add
+label define bpld_pop_lbl 04000 `"Oklahoma"', add
+label define bpld_pop_lbl 04010 `"Indian Territory"', add
+label define bpld_pop_lbl 04100 `"Oregon"', add
+label define bpld_pop_lbl 04200 `"Pennsylvania"', add
+label define bpld_pop_lbl 04400 `"Rhode Island"', add
+label define bpld_pop_lbl 04500 `"South Carolina"', add
+label define bpld_pop_lbl 04600 `"South Dakota"', add
+label define bpld_pop_lbl 04610 `"Dakota Territory"', add
+label define bpld_pop_lbl 04700 `"Tennessee"', add
+label define bpld_pop_lbl 04800 `"Texas"', add
+label define bpld_pop_lbl 04900 `"Utah"', add
+label define bpld_pop_lbl 04910 `"Utah Territory"', add
+label define bpld_pop_lbl 05000 `"Vermont"', add
+label define bpld_pop_lbl 05100 `"Virginia"', add
+label define bpld_pop_lbl 05300 `"Washington"', add
+label define bpld_pop_lbl 05400 `"West Virginia"', add
+label define bpld_pop_lbl 05500 `"Wisconsin"', add
+label define bpld_pop_lbl 05600 `"Wyoming"', add
+label define bpld_pop_lbl 05610 `"Wyoming Territory"', add
+label define bpld_pop_lbl 09000 `"Native American"', add
+label define bpld_pop_lbl 09900 `"United States, ns"', add
+label define bpld_pop_lbl 10000 `"American Samoa"', add
+label define bpld_pop_lbl 10010 `"Samoa, 1940-1950"', add
+label define bpld_pop_lbl 10500 `"Guam"', add
+label define bpld_pop_lbl 11000 `"Puerto Rico"', add
+label define bpld_pop_lbl 11500 `"U.S. Virgin Islands"', add
+label define bpld_pop_lbl 11510 `"St. Croix"', add
+label define bpld_pop_lbl 11520 `"St. John"', add
+label define bpld_pop_lbl 11530 `"St. Thomas"', add
+label define bpld_pop_lbl 12000 `"Other US Possessions:"', add
+label define bpld_pop_lbl 12010 `"Johnston Atoll"', add
+label define bpld_pop_lbl 12020 `"Midway Islands"', add
+label define bpld_pop_lbl 12030 `"Wake Island"', add
+label define bpld_pop_lbl 12040 `"Other US Caribbean Islands"', add
+label define bpld_pop_lbl 12041 `"Navassa Island"', add
+label define bpld_pop_lbl 12050 `"Other US Pacific Islands"', add
+label define bpld_pop_lbl 12051 `"Baker Island"', add
+label define bpld_pop_lbl 12052 `"Howland Island"', add
+label define bpld_pop_lbl 12053 `"Jarvis Island"', add
+label define bpld_pop_lbl 12054 `"Kingman Reef"', add
+label define bpld_pop_lbl 12055 `"Palmyra Atoll"', add
+label define bpld_pop_lbl 12056 `"Canton and Enderbury Island"', add
+label define bpld_pop_lbl 12090 `"US outlying areas, ns"', add
+label define bpld_pop_lbl 12091 `"US possessions, ns"', add
+label define bpld_pop_lbl 12092 `"US territory, ns"', add
+label define bpld_pop_lbl 15000 `"Canada"', add
+label define bpld_pop_lbl 15010 `"English Canada"', add
+label define bpld_pop_lbl 15011 `"British Columbia"', add
+label define bpld_pop_lbl 15013 `"Alberta"', add
+label define bpld_pop_lbl 15015 `"Saskatchewan"', add
+label define bpld_pop_lbl 15017 `"Northwest"', add
+label define bpld_pop_lbl 15019 `"Ruperts Land"', add
+label define bpld_pop_lbl 15020 `"Manitoba"', add
+label define bpld_pop_lbl 15021 `"Red River"', add
+label define bpld_pop_lbl 15030 `"Ontario/Upper Canada"', add
+label define bpld_pop_lbl 15031 `"Upper Canada"', add
+label define bpld_pop_lbl 15032 `"Canada West"', add
+label define bpld_pop_lbl 15040 `"New Brunswick"', add
+label define bpld_pop_lbl 15050 `"Nova Scotia"', add
+label define bpld_pop_lbl 15051 `"Cape Breton"', add
+label define bpld_pop_lbl 15052 `"Halifax"', add
+label define bpld_pop_lbl 15060 `"Prince Edward Island"', add
+label define bpld_pop_lbl 15070 `"Newfoundland"', add
+label define bpld_pop_lbl 15080 `"French Canada"', add
+label define bpld_pop_lbl 15081 `"Quebec"', add
+label define bpld_pop_lbl 15082 `"Lower Canada"', add
+label define bpld_pop_lbl 15083 `"Canada East"', add
+label define bpld_pop_lbl 15500 `"St. Pierre and Miquelon"', add
+label define bpld_pop_lbl 16000 `"Atlantic Islands"', add
+label define bpld_pop_lbl 16010 `"Bermuda"', add
+label define bpld_pop_lbl 16020 `"Cape Verde"', add
+label define bpld_pop_lbl 16030 `"Falkland Islands"', add
+label define bpld_pop_lbl 16040 `"Greenland"', add
+label define bpld_pop_lbl 16050 `"St. Helena and Ascension"', add
+label define bpld_pop_lbl 16060 `"Canary Islands"', add
+label define bpld_pop_lbl 19900 `"North America, ns"', add
+label define bpld_pop_lbl 20000 `"Mexico"', add
+label define bpld_pop_lbl 21000 `"Central America"', add
+label define bpld_pop_lbl 21010 `"Belize/British Honduras"', add
+label define bpld_pop_lbl 21020 `"Costa Rica"', add
+label define bpld_pop_lbl 21030 `"El Salvador"', add
+label define bpld_pop_lbl 21040 `"Guatemala"', add
+label define bpld_pop_lbl 21050 `"Honduras"', add
+label define bpld_pop_lbl 21060 `"Nicaragua"', add
+label define bpld_pop_lbl 21070 `"Panama"', add
+label define bpld_pop_lbl 21071 `"Canal Zone"', add
+label define bpld_pop_lbl 21090 `"Central America, ns"', add
+label define bpld_pop_lbl 25000 `"Cuba"', add
+label define bpld_pop_lbl 26000 `"West Indies"', add
+label define bpld_pop_lbl 26010 `"Dominican Republic"', add
+label define bpld_pop_lbl 26020 `"Haiti"', add
+label define bpld_pop_lbl 26030 `"Jamaica"', add
+label define bpld_pop_lbl 26040 `"British West Indies"', add
+label define bpld_pop_lbl 26041 `"Anguilla"', add
+label define bpld_pop_lbl 26042 `"Antigua-Barbuda"', add
+label define bpld_pop_lbl 26043 `"Bahamas"', add
+label define bpld_pop_lbl 26044 `"Barbados"', add
+label define bpld_pop_lbl 26045 `"British Virgin Islands"', add
+label define bpld_pop_lbl 26046 `"Anegada"', add
+label define bpld_pop_lbl 26047 `"Cooper"', add
+label define bpld_pop_lbl 26048 `"Jost Van Dyke"', add
+label define bpld_pop_lbl 26049 `"Peter"', add
+label define bpld_pop_lbl 26050 `"Tortola"', add
+label define bpld_pop_lbl 26051 `"Virgin Gorda"', add
+label define bpld_pop_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define bpld_pop_lbl 26053 `"Cayman Islands"', add
+label define bpld_pop_lbl 26054 `"Dominica"', add
+label define bpld_pop_lbl 26055 `"Grenada"', add
+label define bpld_pop_lbl 26056 `"Montserrat"', add
+label define bpld_pop_lbl 26057 `"St. Kitts-Nevis"', add
+label define bpld_pop_lbl 26058 `"St. Lucia"', add
+label define bpld_pop_lbl 26059 `"St. Vincent"', add
+label define bpld_pop_lbl 26060 `"Trinidad and Tobago"', add
+label define bpld_pop_lbl 26061 `"Turks and Caicos"', add
+label define bpld_pop_lbl 26069 `"Br. Virgin Islands, ns"', add
+label define bpld_pop_lbl 26070 `"Other West Indies"', add
+label define bpld_pop_lbl 26071 `"Aruba"', add
+label define bpld_pop_lbl 26072 `"Netherlands Antilles"', add
+label define bpld_pop_lbl 26073 `"Bonaire"', add
+label define bpld_pop_lbl 26074 `"Curacao"', add
+label define bpld_pop_lbl 26075 `"Dutch St. Maarten"', add
+label define bpld_pop_lbl 26076 `"Saba"', add
+label define bpld_pop_lbl 26077 `"St. Eustatius"', add
+label define bpld_pop_lbl 26079 `"Dutch Caribbean, ns"', add
+label define bpld_pop_lbl 26080 `"French St. Maarten"', add
+label define bpld_pop_lbl 26081 `"Guadeloupe"', add
+label define bpld_pop_lbl 26082 `"Martinique"', add
+label define bpld_pop_lbl 26083 `"St. Barthelemy"', add
+label define bpld_pop_lbl 26089 `"French Caribbean, ns"', add
+label define bpld_pop_lbl 26090 `"Antilles, ns"', add
+label define bpld_pop_lbl 26091 `"Caribbean, ns"', add
+label define bpld_pop_lbl 26092 `"Latin America, ns"', add
+label define bpld_pop_lbl 26093 `"Leeward Islands, ns"', add
+label define bpld_pop_lbl 26094 `"West Indies, ns"', add
+label define bpld_pop_lbl 26095 `"Windward Islands, ns"', add
+label define bpld_pop_lbl 29900 `"Americas, ns"', add
+label define bpld_pop_lbl 30000 `"South America"', add
+label define bpld_pop_lbl 30005 `"Argentina"', add
+label define bpld_pop_lbl 30010 `"Bolivia"', add
+label define bpld_pop_lbl 30015 `"Brazil"', add
+label define bpld_pop_lbl 30020 `"Chile"', add
+label define bpld_pop_lbl 30025 `"Colombia"', add
+label define bpld_pop_lbl 30030 `"Ecuador"', add
+label define bpld_pop_lbl 30035 `"French Guiana"', add
+label define bpld_pop_lbl 30040 `"Guyana/British Guiana"', add
+label define bpld_pop_lbl 30045 `"Paraguay"', add
+label define bpld_pop_lbl 30050 `"Peru"', add
+label define bpld_pop_lbl 30055 `"Suriname"', add
+label define bpld_pop_lbl 30060 `"Uruguay"', add
+label define bpld_pop_lbl 30065 `"Venezuela"', add
+label define bpld_pop_lbl 30090 `"South America, ns"', add
+label define bpld_pop_lbl 30091 `"South and Central America, n.s."', add
+label define bpld_pop_lbl 40000 `"Denmark"', add
+label define bpld_pop_lbl 40010 `"Faeroe Islands"', add
+label define bpld_pop_lbl 40100 `"Finland"', add
+label define bpld_pop_lbl 40200 `"Iceland"', add
+label define bpld_pop_lbl 40300 `"Lapland, ns"', add
+label define bpld_pop_lbl 40400 `"Norway"', add
+label define bpld_pop_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define bpld_pop_lbl 40411 `"Svalbard"', add
+label define bpld_pop_lbl 40412 `"Jan Meyen"', add
+label define bpld_pop_lbl 40500 `"Sweden"', add
+label define bpld_pop_lbl 41000 `"England"', add
+label define bpld_pop_lbl 41010 `"Channel Islands"', add
+label define bpld_pop_lbl 41011 `"Guernsey"', add
+label define bpld_pop_lbl 41012 `"Jersey"', add
+label define bpld_pop_lbl 41020 `"Isle of Man"', add
+label define bpld_pop_lbl 41100 `"Scotland"', add
+label define bpld_pop_lbl 41200 `"Wales"', add
+label define bpld_pop_lbl 41300 `"United Kingdom, ns"', add
+label define bpld_pop_lbl 41400 `"Ireland"', add
+label define bpld_pop_lbl 41410 `"Northern Ireland"', add
+label define bpld_pop_lbl 41900 `"Northern Europe, ns"', add
+label define bpld_pop_lbl 42000 `"Belgium"', add
+label define bpld_pop_lbl 42100 `"France"', add
+label define bpld_pop_lbl 42110 `"Alsace-Lorraine"', add
+label define bpld_pop_lbl 42111 `"Alsace"', add
+label define bpld_pop_lbl 42112 `"Lorraine"', add
+label define bpld_pop_lbl 42200 `"Liechtenstein"', add
+label define bpld_pop_lbl 42300 `"Luxembourg"', add
+label define bpld_pop_lbl 42400 `"Monaco"', add
+label define bpld_pop_lbl 42500 `"Netherlands"', add
+label define bpld_pop_lbl 42600 `"Switzerland"', add
+label define bpld_pop_lbl 42900 `"Western Europe, ns"', add
+label define bpld_pop_lbl 43000 `"Albania"', add
+label define bpld_pop_lbl 43100 `"Andorra"', add
+label define bpld_pop_lbl 43200 `"Gibraltar"', add
+label define bpld_pop_lbl 43300 `"Greece"', add
+label define bpld_pop_lbl 43310 `"Dodecanese Islands"', add
+label define bpld_pop_lbl 43320 `"Turkey Greece"', add
+label define bpld_pop_lbl 43330 `"Macedonia"', add
+label define bpld_pop_lbl 43400 `"Italy"', add
+label define bpld_pop_lbl 43500 `"Malta"', add
+label define bpld_pop_lbl 43600 `"Portugal"', add
+label define bpld_pop_lbl 43610 `"Azores"', add
+label define bpld_pop_lbl 43620 `"Madeira Islands"', add
+label define bpld_pop_lbl 43630 `"Cape Verde Islands"', add
+label define bpld_pop_lbl 43640 `"St. Miguel"', add
+label define bpld_pop_lbl 43700 `"San Marino"', add
+label define bpld_pop_lbl 43800 `"Spain"', add
+label define bpld_pop_lbl 43900 `"Vatican City"', add
+label define bpld_pop_lbl 44000 `"Southern Europe, ns"', add
+label define bpld_pop_lbl 45000 `"Austria"', add
+label define bpld_pop_lbl 45010 `"Austria-Hungary"', add
+label define bpld_pop_lbl 45020 `"Austria-Graz"', add
+label define bpld_pop_lbl 45030 `"Austria-Linz"', add
+label define bpld_pop_lbl 45040 `"Austria-Salzburg"', add
+label define bpld_pop_lbl 45050 `"Austria-Tyrol"', add
+label define bpld_pop_lbl 45060 `"Austria-Vienna"', add
+label define bpld_pop_lbl 45070 `"Austria-Kaernsten"', add
+label define bpld_pop_lbl 45080 `"Austria-Neustadt"', add
+label define bpld_pop_lbl 45100 `"Bulgaria"', add
+label define bpld_pop_lbl 45200 `"Czechoslovakia"', add
+label define bpld_pop_lbl 45210 `"Bohemia"', add
+label define bpld_pop_lbl 45211 `"Bohemia-Moravia"', add
+label define bpld_pop_lbl 45212 `"Slovakia"', add
+label define bpld_pop_lbl 45213 `"Czech Republic"', add
+label define bpld_pop_lbl 45300 `"Germany"', add
+label define bpld_pop_lbl 45301 `"Berlin"', add
+label define bpld_pop_lbl 45302 `"West Berlin"', add
+label define bpld_pop_lbl 45303 `"East Berlin"', add
+label define bpld_pop_lbl 45310 `"West Germany"', add
+label define bpld_pop_lbl 45311 `"Baden"', add
+label define bpld_pop_lbl 45312 `"Bavaria"', add
+label define bpld_pop_lbl 45313 `"Braunschweig"', add
+label define bpld_pop_lbl 45314 `"Bremen"', add
+label define bpld_pop_lbl 45315 `"Hamburg"', add
+label define bpld_pop_lbl 45316 `"Hanover"', add
+label define bpld_pop_lbl 45317 `"Hessen"', add
+label define bpld_pop_lbl 45318 `"Hesse-Nassau"', add
+label define bpld_pop_lbl 45319 `"Lippe"', add
+label define bpld_pop_lbl 45320 `"Lubeck"', add
+label define bpld_pop_lbl 45321 `"Oldenburg"', add
+label define bpld_pop_lbl 45322 `"Rheinland"', add
+label define bpld_pop_lbl 45323 `"Schaumburg-Lippe"', add
+label define bpld_pop_lbl 45324 `"Schleswig"', add
+label define bpld_pop_lbl 45325 `"Sigmaringen"', add
+label define bpld_pop_lbl 45326 `"Schwarzburg"', add
+label define bpld_pop_lbl 45327 `"Westphalia"', add
+label define bpld_pop_lbl 45328 `"Wurttemberg"', add
+label define bpld_pop_lbl 45329 `"Waldeck"', add
+label define bpld_pop_lbl 45330 `"Wittenberg"', add
+label define bpld_pop_lbl 45331 `"Frankfurt"', add
+label define bpld_pop_lbl 45332 `"Saarland"', add
+label define bpld_pop_lbl 45333 `"Nordrhein-Westfalen"', add
+label define bpld_pop_lbl 45340 `"East Germany"', add
+label define bpld_pop_lbl 45341 `"Anhalt"', add
+label define bpld_pop_lbl 45342 `"Brandenburg"', add
+label define bpld_pop_lbl 45344 `"Kingdom of Saxony"', add
+label define bpld_pop_lbl 45345 `"Mecklenburg"', add
+label define bpld_pop_lbl 45346 `"Saxony"', add
+label define bpld_pop_lbl 45347 `"Thuringian States"', add
+label define bpld_pop_lbl 45348 `"Sachsen-Meiningen"', add
+label define bpld_pop_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define bpld_pop_lbl 45350 `"Probable Saxony"', add
+label define bpld_pop_lbl 45351 `"Schwerin"', add
+label define bpld_pop_lbl 45352 `"Strelitz"', add
+label define bpld_pop_lbl 45353 `"Probably Thuringian States"', add
+label define bpld_pop_lbl 45360 `"Prussia, nec"', add
+label define bpld_pop_lbl 45361 `"Hohenzollern"', add
+label define bpld_pop_lbl 45362 `"Niedersachsen"', add
+label define bpld_pop_lbl 45400 `"Hungary"', add
+label define bpld_pop_lbl 45500 `"Poland"', add
+label define bpld_pop_lbl 45510 `"Austrian Poland"', add
+label define bpld_pop_lbl 45511 `"Galicia"', add
+label define bpld_pop_lbl 45520 `"German Poland"', add
+label define bpld_pop_lbl 45521 `"East Prussia"', add
+label define bpld_pop_lbl 45522 `"Pomerania"', add
+label define bpld_pop_lbl 45523 `"Posen"', add
+label define bpld_pop_lbl 45524 `"Prussian Poland"', add
+label define bpld_pop_lbl 45525 `"Silesia"', add
+label define bpld_pop_lbl 45526 `"West Prussia"', add
+label define bpld_pop_lbl 45530 `"Russian Poland"', add
+label define bpld_pop_lbl 45600 `"Romania"', add
+label define bpld_pop_lbl 45610 `"Transylvania"', add
+label define bpld_pop_lbl 45700 `"Yugoslavia"', add
+label define bpld_pop_lbl 45710 `"Croatia"', add
+label define bpld_pop_lbl 45720 `"Montenegro"', add
+label define bpld_pop_lbl 45730 `"Serbia"', add
+label define bpld_pop_lbl 45740 `"Bosnia"', add
+label define bpld_pop_lbl 45750 `"Dalmatia"', add
+label define bpld_pop_lbl 45760 `"Slovonia"', add
+label define bpld_pop_lbl 45770 `"Carniola"', add
+label define bpld_pop_lbl 45780 `"Slovenia"', add
+label define bpld_pop_lbl 45790 `"Kosovo"', add
+label define bpld_pop_lbl 45800 `"Central Europe, ns"', add
+label define bpld_pop_lbl 45900 `"Eastern Europe, ns"', add
+label define bpld_pop_lbl 46000 `"Estonia"', add
+label define bpld_pop_lbl 46100 `"Latvia"', add
+label define bpld_pop_lbl 46200 `"Lithuania"', add
+label define bpld_pop_lbl 46300 `"Baltic States, ns"', add
+label define bpld_pop_lbl 46500 `"Other USSR/Russia"', add
+label define bpld_pop_lbl 46510 `"Byelorussia"', add
+label define bpld_pop_lbl 46520 `"Moldavia"', add
+label define bpld_pop_lbl 46521 `"Bessarabia"', add
+label define bpld_pop_lbl 46530 `"Ukraine"', add
+label define bpld_pop_lbl 46540 `"Armenia"', add
+label define bpld_pop_lbl 46541 `"Azerbaijan"', add
+label define bpld_pop_lbl 46542 `"Republic of Georgia"', add
+label define bpld_pop_lbl 46543 `"Kazakhstan"', add
+label define bpld_pop_lbl 46544 `"Kirghizia"', add
+label define bpld_pop_lbl 46545 `"Tadzhik"', add
+label define bpld_pop_lbl 46546 `"Turkmenistan"', add
+label define bpld_pop_lbl 46547 `"Uzbekistan"', add
+label define bpld_pop_lbl 46548 `"Siberia"', add
+label define bpld_pop_lbl 46590 `"USSR, ns"', add
+label define bpld_pop_lbl 49900 `"Europe, ns."', add
+label define bpld_pop_lbl 50000 `"China"', add
+label define bpld_pop_lbl 50010 `"Hong Kong"', add
+label define bpld_pop_lbl 50020 `"Macau"', add
+label define bpld_pop_lbl 50030 `"Mongolia"', add
+label define bpld_pop_lbl 50040 `"Taiwan"', add
+label define bpld_pop_lbl 50100 `"Japan"', add
+label define bpld_pop_lbl 50200 `"Korea"', add
+label define bpld_pop_lbl 50210 `"North Korea"', add
+label define bpld_pop_lbl 50220 `"South Korea"', add
+label define bpld_pop_lbl 50900 `"East Asia, ns"', add
+label define bpld_pop_lbl 51000 `"Brunei"', add
+label define bpld_pop_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define bpld_pop_lbl 51200 `"Indonesia"', add
+label define bpld_pop_lbl 51210 `"East Indies"', add
+label define bpld_pop_lbl 51220 `"East Timor"', add
+label define bpld_pop_lbl 51300 `"Laos"', add
+label define bpld_pop_lbl 51400 `"Malaysia"', add
+label define bpld_pop_lbl 51500 `"Philippines"', add
+label define bpld_pop_lbl 51600 `"Singapore"', add
+label define bpld_pop_lbl 51700 `"Thailand"', add
+label define bpld_pop_lbl 51800 `"Vietnam"', add
+label define bpld_pop_lbl 51900 `"Southeast Asia, ns"', add
+label define bpld_pop_lbl 51910 `"Indochina, ns"', add
+label define bpld_pop_lbl 52000 `"Afghanistan"', add
+label define bpld_pop_lbl 52100 `"India"', add
+label define bpld_pop_lbl 52110 `"Bangladesh"', add
+label define bpld_pop_lbl 52120 `"Bhutan"', add
+label define bpld_pop_lbl 52130 `"Burma (Myanmar)"', add
+label define bpld_pop_lbl 52140 `"Pakistan"', add
+label define bpld_pop_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define bpld_pop_lbl 52200 `"Iran"', add
+label define bpld_pop_lbl 52300 `"Maldives"', add
+label define bpld_pop_lbl 52400 `"Nepal"', add
+label define bpld_pop_lbl 53000 `"Bahrain"', add
+label define bpld_pop_lbl 53100 `"Cyprus"', add
+label define bpld_pop_lbl 53200 `"Iraq"', add
+label define bpld_pop_lbl 53210 `"Mesopotamia"', add
+label define bpld_pop_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define bpld_pop_lbl 53400 `"Israel/Palestine"', add
+label define bpld_pop_lbl 53410 `"Gaza Strip"', add
+label define bpld_pop_lbl 53420 `"Palestine"', add
+label define bpld_pop_lbl 53430 `"West Bank"', add
+label define bpld_pop_lbl 53440 `"Israel"', add
+label define bpld_pop_lbl 53500 `"Jordan"', add
+label define bpld_pop_lbl 53600 `"Kuwait"', add
+label define bpld_pop_lbl 53700 `"Lebanon"', add
+label define bpld_pop_lbl 53800 `"Oman"', add
+label define bpld_pop_lbl 53900 `"Qatar"', add
+label define bpld_pop_lbl 54000 `"Saudi Arabia"', add
+label define bpld_pop_lbl 54100 `"Syria"', add
+label define bpld_pop_lbl 54200 `"Turkey"', add
+label define bpld_pop_lbl 54210 `"European Turkey"', add
+label define bpld_pop_lbl 54220 `"Asian Turkey"', add
+label define bpld_pop_lbl 54300 `"United Arab Emirates"', add
+label define bpld_pop_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define bpld_pop_lbl 54500 `"Yemen, PDR (South)"', add
+label define bpld_pop_lbl 54600 `"Persian Gulf States, ns"', add
+label define bpld_pop_lbl 54700 `"Middle East, ns"', add
+label define bpld_pop_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define bpld_pop_lbl 54900 `"Asia Minor, ns"', add
+label define bpld_pop_lbl 55000 `"South Asia, nec"', add
+label define bpld_pop_lbl 59900 `"Asia, nec/ns"', add
+label define bpld_pop_lbl 60000 `"Africa"', add
+label define bpld_pop_lbl 60010 `"Northern Africa"', add
+label define bpld_pop_lbl 60011 `"Algeria"', add
+label define bpld_pop_lbl 60012 `"Egypt/United Arab Rep."', add
+label define bpld_pop_lbl 60013 `"Libya"', add
+label define bpld_pop_lbl 60014 `"Morocco"', add
+label define bpld_pop_lbl 60015 `"Sudan"', add
+label define bpld_pop_lbl 60016 `"Tunisia"', add
+label define bpld_pop_lbl 60017 `"Western Sahara"', add
+label define bpld_pop_lbl 60019 `"North Africa, ns"', add
+label define bpld_pop_lbl 60020 `"Benin"', add
+label define bpld_pop_lbl 60021 `"Burkina Faso"', add
+label define bpld_pop_lbl 60022 `"Gambia"', add
+label define bpld_pop_lbl 60023 `"Ghana"', add
+label define bpld_pop_lbl 60024 `"Guinea"', add
+label define bpld_pop_lbl 60025 `"Guinea-Bissau"', add
+label define bpld_pop_lbl 60026 `"Ivory Coast"', add
+label define bpld_pop_lbl 60027 `"Liberia"', add
+label define bpld_pop_lbl 60028 `"Mali"', add
+label define bpld_pop_lbl 60029 `"Mauritania"', add
+label define bpld_pop_lbl 60030 `"Niger"', add
+label define bpld_pop_lbl 60031 `"Nigeria"', add
+label define bpld_pop_lbl 60032 `"Senegal"', add
+label define bpld_pop_lbl 60033 `"Sierra Leone"', add
+label define bpld_pop_lbl 60034 `"Togo"', add
+label define bpld_pop_lbl 60038 `"Western Africa, ns"', add
+label define bpld_pop_lbl 60039 `"French West Africa, ns"', add
+label define bpld_pop_lbl 60040 `"British Indian Ocean Territory"', add
+label define bpld_pop_lbl 60041 `"Burundi"', add
+label define bpld_pop_lbl 60042 `"Comoros"', add
+label define bpld_pop_lbl 60043 `"Djibouti"', add
+label define bpld_pop_lbl 60044 `"Ethiopia"', add
+label define bpld_pop_lbl 60045 `"Kenya"', add
+label define bpld_pop_lbl 60046 `"Madagascar"', add
+label define bpld_pop_lbl 60047 `"Malawi"', add
+label define bpld_pop_lbl 60048 `"Mauritius"', add
+label define bpld_pop_lbl 60049 `"Mozambique"', add
+label define bpld_pop_lbl 60050 `"Reunion"', add
+label define bpld_pop_lbl 60051 `"Rwanda"', add
+label define bpld_pop_lbl 60052 `"Seychelles"', add
+label define bpld_pop_lbl 60053 `"Somalia"', add
+label define bpld_pop_lbl 60054 `"Tanzania"', add
+label define bpld_pop_lbl 60055 `"Uganda"', add
+label define bpld_pop_lbl 60056 `"Zambia"', add
+label define bpld_pop_lbl 60057 `"Zimbabwe"', add
+label define bpld_pop_lbl 60058 `"Bassas de India"', add
+label define bpld_pop_lbl 60059 `"Europa"', add
+label define bpld_pop_lbl 60060 `"Gloriosos"', add
+label define bpld_pop_lbl 60061 `"Juan de Nova"', add
+label define bpld_pop_lbl 60062 `"Mayotte"', add
+label define bpld_pop_lbl 60063 `"Tromelin"', add
+label define bpld_pop_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define bpld_pop_lbl 60065 `"Eritrea"', add
+label define bpld_pop_lbl 60066 `"South Sudan"', add
+label define bpld_pop_lbl 60070 `"Central Africa"', add
+label define bpld_pop_lbl 60071 `"Angola"', add
+label define bpld_pop_lbl 60072 `"Cameroon"', add
+label define bpld_pop_lbl 60073 `"Central African Republic"', add
+label define bpld_pop_lbl 60074 `"Chad"', add
+label define bpld_pop_lbl 60075 `"Congo"', add
+label define bpld_pop_lbl 60076 `"Equatorial Guinea"', add
+label define bpld_pop_lbl 60077 `"Gabon"', add
+label define bpld_pop_lbl 60078 `"Sao Tome and Principe"', add
+label define bpld_pop_lbl 60079 `"Zaire"', add
+label define bpld_pop_lbl 60080 `"Central Africa, ns"', add
+label define bpld_pop_lbl 60081 `"Equatorial Africa, ns"', add
+label define bpld_pop_lbl 60082 `"French Equatorial Africa, ns"', add
+label define bpld_pop_lbl 60090 `"Southern Africa"', add
+label define bpld_pop_lbl 60091 `"Botswana"', add
+label define bpld_pop_lbl 60092 `"Lesotho"', add
+label define bpld_pop_lbl 60093 `"Namibia"', add
+label define bpld_pop_lbl 60094 `"South Africa (Union of)"', add
+label define bpld_pop_lbl 60095 `"Swaziland"', add
+label define bpld_pop_lbl 60096 `"Southern Africa, ns"', add
+label define bpld_pop_lbl 60099 `"Africa, ns/nec"', add
+label define bpld_pop_lbl 70000 `"Australia and New Zealand"', add
+label define bpld_pop_lbl 70010 `"Australia"', add
+label define bpld_pop_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define bpld_pop_lbl 70012 `"Coral Sea Islands Territory"', add
+label define bpld_pop_lbl 70013 `"Christmas Island"', add
+label define bpld_pop_lbl 70014 `"Cocos Islands"', add
+label define bpld_pop_lbl 70020 `"New Zealand"', add
+label define bpld_pop_lbl 71000 `"Pacific Islands"', add
+label define bpld_pop_lbl 71010 `"New Caledonia"', add
+label define bpld_pop_lbl 71012 `"Papua New Guinea"', add
+label define bpld_pop_lbl 71013 `"Solomon Islands"', add
+label define bpld_pop_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define bpld_pop_lbl 71015 `"Fiji"', add
+label define bpld_pop_lbl 71016 `"Melanesia, ns"', add
+label define bpld_pop_lbl 71017 `"Norfolk Islands"', add
+label define bpld_pop_lbl 71018 `"Niue"', add
+label define bpld_pop_lbl 71020 `"Cook Islands"', add
+label define bpld_pop_lbl 71022 `"French Polynesia"', add
+label define bpld_pop_lbl 71023 `"Tonga"', add
+label define bpld_pop_lbl 71024 `"Wallis and Futuna Islands"', add
+label define bpld_pop_lbl 71025 `"Western Samoa"', add
+label define bpld_pop_lbl 71026 `"Pitcairn Island"', add
+label define bpld_pop_lbl 71027 `"Tokelau"', add
+label define bpld_pop_lbl 71028 `"Tuvalu"', add
+label define bpld_pop_lbl 71029 `"Polynesia, ns"', add
+label define bpld_pop_lbl 71032 `"Kiribati"', add
+label define bpld_pop_lbl 71033 `"Canton and Enderbury"', add
+label define bpld_pop_lbl 71034 `"Nauru"', add
+label define bpld_pop_lbl 71039 `"Micronesia, ns"', add
+label define bpld_pop_lbl 71040 `"US Pacific Trust Territories"', add
+label define bpld_pop_lbl 71041 `"Marshall Islands"', add
+label define bpld_pop_lbl 71042 `"Micronesia"', add
+label define bpld_pop_lbl 71043 `"Kosrae"', add
+label define bpld_pop_lbl 71044 `"Pohnpei"', add
+label define bpld_pop_lbl 71045 `"Truk"', add
+label define bpld_pop_lbl 71046 `"Yap"', add
+label define bpld_pop_lbl 71047 `"Northern Mariana Islands"', add
+label define bpld_pop_lbl 71048 `"Palau"', add
+label define bpld_pop_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define bpld_pop_lbl 71050 `"Clipperton Island"', add
+label define bpld_pop_lbl 71090 `"Oceania, ns/nec"', add
+label define bpld_pop_lbl 80000 `"Antarctica, ns/nec"', add
+label define bpld_pop_lbl 80010 `"Bouvet Islands"', add
+label define bpld_pop_lbl 80020 `"British Antarctic Terr."', add
+label define bpld_pop_lbl 80030 `"Dronning Maud Land"', add
+label define bpld_pop_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define bpld_pop_lbl 80050 `"Heard and McDonald Islands"', add
+label define bpld_pop_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define bpld_pop_lbl 90010 `"Abroad, ns"', add
+label define bpld_pop_lbl 90011 `"Abroad (US citizen)"', add
+label define bpld_pop_lbl 90020 `"At sea"', add
+label define bpld_pop_lbl 90021 `"At sea (US citizen)"', add
+label define bpld_pop_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define bpld_pop_lbl 95000 `"Other n.e.c."', add
+label define bpld_pop_lbl 99900 `"Missing/blank"', add
+label values bpld_pop bpld_pop_lbl
+
 label define bpld_sp_lbl 00100 `"Alabama"'
 label define bpld_sp_lbl 00200 `"Alaska"', add
 label define bpld_sp_lbl 00400 `"Arizona"', add
@@ -7230,6 +12062,1084 @@ label define bpld_sp_lbl 95000 `"Other n.e.c."', add
 label define bpld_sp_lbl 99900 `"Missing/blank"', add
 label values bpld_sp bpld_sp_lbl
 
+label define bpld_mom2_lbl 00100 `"Alabama"'
+label define bpld_mom2_lbl 00200 `"Alaska"', add
+label define bpld_mom2_lbl 00400 `"Arizona"', add
+label define bpld_mom2_lbl 00500 `"Arkansas"', add
+label define bpld_mom2_lbl 00600 `"California"', add
+label define bpld_mom2_lbl 00800 `"Colorado"', add
+label define bpld_mom2_lbl 00900 `"Connecticut"', add
+label define bpld_mom2_lbl 01000 `"Delaware"', add
+label define bpld_mom2_lbl 01100 `"District of Columbia"', add
+label define bpld_mom2_lbl 01200 `"Florida"', add
+label define bpld_mom2_lbl 01300 `"Georgia"', add
+label define bpld_mom2_lbl 01500 `"Hawaii"', add
+label define bpld_mom2_lbl 01600 `"Idaho"', add
+label define bpld_mom2_lbl 01610 `"Idaho Territory"', add
+label define bpld_mom2_lbl 01700 `"Illinois"', add
+label define bpld_mom2_lbl 01800 `"Indiana"', add
+label define bpld_mom2_lbl 01900 `"Iowa"', add
+label define bpld_mom2_lbl 02000 `"Kansas"', add
+label define bpld_mom2_lbl 02100 `"Kentucky"', add
+label define bpld_mom2_lbl 02200 `"Louisiana"', add
+label define bpld_mom2_lbl 02300 `"Maine"', add
+label define bpld_mom2_lbl 02400 `"Maryland"', add
+label define bpld_mom2_lbl 02500 `"Massachusetts"', add
+label define bpld_mom2_lbl 02600 `"Michigan"', add
+label define bpld_mom2_lbl 02700 `"Minnesota"', add
+label define bpld_mom2_lbl 02800 `"Mississippi"', add
+label define bpld_mom2_lbl 02900 `"Missouri"', add
+label define bpld_mom2_lbl 03000 `"Montana"', add
+label define bpld_mom2_lbl 03100 `"Nebraska"', add
+label define bpld_mom2_lbl 03200 `"Nevada"', add
+label define bpld_mom2_lbl 03300 `"New Hampshire"', add
+label define bpld_mom2_lbl 03400 `"New Jersey"', add
+label define bpld_mom2_lbl 03500 `"New Mexico"', add
+label define bpld_mom2_lbl 03510 `"New Mexico Territory"', add
+label define bpld_mom2_lbl 03600 `"New York"', add
+label define bpld_mom2_lbl 03700 `"North Carolina"', add
+label define bpld_mom2_lbl 03800 `"North Dakota"', add
+label define bpld_mom2_lbl 03900 `"Ohio"', add
+label define bpld_mom2_lbl 04000 `"Oklahoma"', add
+label define bpld_mom2_lbl 04010 `"Indian Territory"', add
+label define bpld_mom2_lbl 04100 `"Oregon"', add
+label define bpld_mom2_lbl 04200 `"Pennsylvania"', add
+label define bpld_mom2_lbl 04400 `"Rhode Island"', add
+label define bpld_mom2_lbl 04500 `"South Carolina"', add
+label define bpld_mom2_lbl 04600 `"South Dakota"', add
+label define bpld_mom2_lbl 04610 `"Dakota Territory"', add
+label define bpld_mom2_lbl 04700 `"Tennessee"', add
+label define bpld_mom2_lbl 04800 `"Texas"', add
+label define bpld_mom2_lbl 04900 `"Utah"', add
+label define bpld_mom2_lbl 04910 `"Utah Territory"', add
+label define bpld_mom2_lbl 05000 `"Vermont"', add
+label define bpld_mom2_lbl 05100 `"Virginia"', add
+label define bpld_mom2_lbl 05300 `"Washington"', add
+label define bpld_mom2_lbl 05400 `"West Virginia"', add
+label define bpld_mom2_lbl 05500 `"Wisconsin"', add
+label define bpld_mom2_lbl 05600 `"Wyoming"', add
+label define bpld_mom2_lbl 05610 `"Wyoming Territory"', add
+label define bpld_mom2_lbl 09000 `"Native American"', add
+label define bpld_mom2_lbl 09900 `"United States, ns"', add
+label define bpld_mom2_lbl 10000 `"American Samoa"', add
+label define bpld_mom2_lbl 10010 `"Samoa, 1940-1950"', add
+label define bpld_mom2_lbl 10500 `"Guam"', add
+label define bpld_mom2_lbl 11000 `"Puerto Rico"', add
+label define bpld_mom2_lbl 11500 `"U.S. Virgin Islands"', add
+label define bpld_mom2_lbl 11510 `"St. Croix"', add
+label define bpld_mom2_lbl 11520 `"St. John"', add
+label define bpld_mom2_lbl 11530 `"St. Thomas"', add
+label define bpld_mom2_lbl 12000 `"Other US Possessions:"', add
+label define bpld_mom2_lbl 12010 `"Johnston Atoll"', add
+label define bpld_mom2_lbl 12020 `"Midway Islands"', add
+label define bpld_mom2_lbl 12030 `"Wake Island"', add
+label define bpld_mom2_lbl 12040 `"Other US Caribbean Islands"', add
+label define bpld_mom2_lbl 12041 `"Navassa Island"', add
+label define bpld_mom2_lbl 12050 `"Other US Pacific Islands"', add
+label define bpld_mom2_lbl 12051 `"Baker Island"', add
+label define bpld_mom2_lbl 12052 `"Howland Island"', add
+label define bpld_mom2_lbl 12053 `"Jarvis Island"', add
+label define bpld_mom2_lbl 12054 `"Kingman Reef"', add
+label define bpld_mom2_lbl 12055 `"Palmyra Atoll"', add
+label define bpld_mom2_lbl 12056 `"Canton and Enderbury Island"', add
+label define bpld_mom2_lbl 12090 `"US outlying areas, ns"', add
+label define bpld_mom2_lbl 12091 `"US possessions, ns"', add
+label define bpld_mom2_lbl 12092 `"US territory, ns"', add
+label define bpld_mom2_lbl 15000 `"Canada"', add
+label define bpld_mom2_lbl 15010 `"English Canada"', add
+label define bpld_mom2_lbl 15011 `"British Columbia"', add
+label define bpld_mom2_lbl 15013 `"Alberta"', add
+label define bpld_mom2_lbl 15015 `"Saskatchewan"', add
+label define bpld_mom2_lbl 15017 `"Northwest"', add
+label define bpld_mom2_lbl 15019 `"Ruperts Land"', add
+label define bpld_mom2_lbl 15020 `"Manitoba"', add
+label define bpld_mom2_lbl 15021 `"Red River"', add
+label define bpld_mom2_lbl 15030 `"Ontario/Upper Canada"', add
+label define bpld_mom2_lbl 15031 `"Upper Canada"', add
+label define bpld_mom2_lbl 15032 `"Canada West"', add
+label define bpld_mom2_lbl 15040 `"New Brunswick"', add
+label define bpld_mom2_lbl 15050 `"Nova Scotia"', add
+label define bpld_mom2_lbl 15051 `"Cape Breton"', add
+label define bpld_mom2_lbl 15052 `"Halifax"', add
+label define bpld_mom2_lbl 15060 `"Prince Edward Island"', add
+label define bpld_mom2_lbl 15070 `"Newfoundland"', add
+label define bpld_mom2_lbl 15080 `"French Canada"', add
+label define bpld_mom2_lbl 15081 `"Quebec"', add
+label define bpld_mom2_lbl 15082 `"Lower Canada"', add
+label define bpld_mom2_lbl 15083 `"Canada East"', add
+label define bpld_mom2_lbl 15500 `"St. Pierre and Miquelon"', add
+label define bpld_mom2_lbl 16000 `"Atlantic Islands"', add
+label define bpld_mom2_lbl 16010 `"Bermuda"', add
+label define bpld_mom2_lbl 16020 `"Cape Verde"', add
+label define bpld_mom2_lbl 16030 `"Falkland Islands"', add
+label define bpld_mom2_lbl 16040 `"Greenland"', add
+label define bpld_mom2_lbl 16050 `"St. Helena and Ascension"', add
+label define bpld_mom2_lbl 16060 `"Canary Islands"', add
+label define bpld_mom2_lbl 19900 `"North America, ns"', add
+label define bpld_mom2_lbl 20000 `"Mexico"', add
+label define bpld_mom2_lbl 21000 `"Central America"', add
+label define bpld_mom2_lbl 21010 `"Belize/British Honduras"', add
+label define bpld_mom2_lbl 21020 `"Costa Rica"', add
+label define bpld_mom2_lbl 21030 `"El Salvador"', add
+label define bpld_mom2_lbl 21040 `"Guatemala"', add
+label define bpld_mom2_lbl 21050 `"Honduras"', add
+label define bpld_mom2_lbl 21060 `"Nicaragua"', add
+label define bpld_mom2_lbl 21070 `"Panama"', add
+label define bpld_mom2_lbl 21071 `"Canal Zone"', add
+label define bpld_mom2_lbl 21090 `"Central America, ns"', add
+label define bpld_mom2_lbl 25000 `"Cuba"', add
+label define bpld_mom2_lbl 26000 `"West Indies"', add
+label define bpld_mom2_lbl 26010 `"Dominican Republic"', add
+label define bpld_mom2_lbl 26020 `"Haiti"', add
+label define bpld_mom2_lbl 26030 `"Jamaica"', add
+label define bpld_mom2_lbl 26040 `"British West Indies"', add
+label define bpld_mom2_lbl 26041 `"Anguilla"', add
+label define bpld_mom2_lbl 26042 `"Antigua-Barbuda"', add
+label define bpld_mom2_lbl 26043 `"Bahamas"', add
+label define bpld_mom2_lbl 26044 `"Barbados"', add
+label define bpld_mom2_lbl 26045 `"British Virgin Islands"', add
+label define bpld_mom2_lbl 26046 `"Anegada"', add
+label define bpld_mom2_lbl 26047 `"Cooper"', add
+label define bpld_mom2_lbl 26048 `"Jost Van Dyke"', add
+label define bpld_mom2_lbl 26049 `"Peter"', add
+label define bpld_mom2_lbl 26050 `"Tortola"', add
+label define bpld_mom2_lbl 26051 `"Virgin Gorda"', add
+label define bpld_mom2_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define bpld_mom2_lbl 26053 `"Cayman Islands"', add
+label define bpld_mom2_lbl 26054 `"Dominica"', add
+label define bpld_mom2_lbl 26055 `"Grenada"', add
+label define bpld_mom2_lbl 26056 `"Montserrat"', add
+label define bpld_mom2_lbl 26057 `"St. Kitts-Nevis"', add
+label define bpld_mom2_lbl 26058 `"St. Lucia"', add
+label define bpld_mom2_lbl 26059 `"St. Vincent"', add
+label define bpld_mom2_lbl 26060 `"Trinidad and Tobago"', add
+label define bpld_mom2_lbl 26061 `"Turks and Caicos"', add
+label define bpld_mom2_lbl 26069 `"Br. Virgin Islands, ns"', add
+label define bpld_mom2_lbl 26070 `"Other West Indies"', add
+label define bpld_mom2_lbl 26071 `"Aruba"', add
+label define bpld_mom2_lbl 26072 `"Netherlands Antilles"', add
+label define bpld_mom2_lbl 26073 `"Bonaire"', add
+label define bpld_mom2_lbl 26074 `"Curacao"', add
+label define bpld_mom2_lbl 26075 `"Dutch St. Maarten"', add
+label define bpld_mom2_lbl 26076 `"Saba"', add
+label define bpld_mom2_lbl 26077 `"St. Eustatius"', add
+label define bpld_mom2_lbl 26079 `"Dutch Caribbean, ns"', add
+label define bpld_mom2_lbl 26080 `"French St. Maarten"', add
+label define bpld_mom2_lbl 26081 `"Guadeloupe"', add
+label define bpld_mom2_lbl 26082 `"Martinique"', add
+label define bpld_mom2_lbl 26083 `"St. Barthelemy"', add
+label define bpld_mom2_lbl 26089 `"French Caribbean, ns"', add
+label define bpld_mom2_lbl 26090 `"Antilles, ns"', add
+label define bpld_mom2_lbl 26091 `"Caribbean, ns"', add
+label define bpld_mom2_lbl 26092 `"Latin America, ns"', add
+label define bpld_mom2_lbl 26093 `"Leeward Islands, ns"', add
+label define bpld_mom2_lbl 26094 `"West Indies, ns"', add
+label define bpld_mom2_lbl 26095 `"Windward Islands, ns"', add
+label define bpld_mom2_lbl 29900 `"Americas, ns"', add
+label define bpld_mom2_lbl 30000 `"South America"', add
+label define bpld_mom2_lbl 30005 `"Argentina"', add
+label define bpld_mom2_lbl 30010 `"Bolivia"', add
+label define bpld_mom2_lbl 30015 `"Brazil"', add
+label define bpld_mom2_lbl 30020 `"Chile"', add
+label define bpld_mom2_lbl 30025 `"Colombia"', add
+label define bpld_mom2_lbl 30030 `"Ecuador"', add
+label define bpld_mom2_lbl 30035 `"French Guiana"', add
+label define bpld_mom2_lbl 30040 `"Guyana/British Guiana"', add
+label define bpld_mom2_lbl 30045 `"Paraguay"', add
+label define bpld_mom2_lbl 30050 `"Peru"', add
+label define bpld_mom2_lbl 30055 `"Suriname"', add
+label define bpld_mom2_lbl 30060 `"Uruguay"', add
+label define bpld_mom2_lbl 30065 `"Venezuela"', add
+label define bpld_mom2_lbl 30090 `"South America, ns"', add
+label define bpld_mom2_lbl 30091 `"South and Central America, n.s."', add
+label define bpld_mom2_lbl 40000 `"Denmark"', add
+label define bpld_mom2_lbl 40010 `"Faeroe Islands"', add
+label define bpld_mom2_lbl 40100 `"Finland"', add
+label define bpld_mom2_lbl 40200 `"Iceland"', add
+label define bpld_mom2_lbl 40300 `"Lapland, ns"', add
+label define bpld_mom2_lbl 40400 `"Norway"', add
+label define bpld_mom2_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define bpld_mom2_lbl 40411 `"Svalbard"', add
+label define bpld_mom2_lbl 40412 `"Jan Meyen"', add
+label define bpld_mom2_lbl 40500 `"Sweden"', add
+label define bpld_mom2_lbl 41000 `"England"', add
+label define bpld_mom2_lbl 41010 `"Channel Islands"', add
+label define bpld_mom2_lbl 41011 `"Guernsey"', add
+label define bpld_mom2_lbl 41012 `"Jersey"', add
+label define bpld_mom2_lbl 41020 `"Isle of Man"', add
+label define bpld_mom2_lbl 41100 `"Scotland"', add
+label define bpld_mom2_lbl 41200 `"Wales"', add
+label define bpld_mom2_lbl 41300 `"United Kingdom, ns"', add
+label define bpld_mom2_lbl 41400 `"Ireland"', add
+label define bpld_mom2_lbl 41410 `"Northern Ireland"', add
+label define bpld_mom2_lbl 41900 `"Northern Europe, ns"', add
+label define bpld_mom2_lbl 42000 `"Belgium"', add
+label define bpld_mom2_lbl 42100 `"France"', add
+label define bpld_mom2_lbl 42110 `"Alsace-Lorraine"', add
+label define bpld_mom2_lbl 42111 `"Alsace"', add
+label define bpld_mom2_lbl 42112 `"Lorraine"', add
+label define bpld_mom2_lbl 42200 `"Liechtenstein"', add
+label define bpld_mom2_lbl 42300 `"Luxembourg"', add
+label define bpld_mom2_lbl 42400 `"Monaco"', add
+label define bpld_mom2_lbl 42500 `"Netherlands"', add
+label define bpld_mom2_lbl 42600 `"Switzerland"', add
+label define bpld_mom2_lbl 42900 `"Western Europe, ns"', add
+label define bpld_mom2_lbl 43000 `"Albania"', add
+label define bpld_mom2_lbl 43100 `"Andorra"', add
+label define bpld_mom2_lbl 43200 `"Gibraltar"', add
+label define bpld_mom2_lbl 43300 `"Greece"', add
+label define bpld_mom2_lbl 43310 `"Dodecanese Islands"', add
+label define bpld_mom2_lbl 43320 `"Turkey Greece"', add
+label define bpld_mom2_lbl 43330 `"Macedonia"', add
+label define bpld_mom2_lbl 43400 `"Italy"', add
+label define bpld_mom2_lbl 43500 `"Malta"', add
+label define bpld_mom2_lbl 43600 `"Portugal"', add
+label define bpld_mom2_lbl 43610 `"Azores"', add
+label define bpld_mom2_lbl 43620 `"Madeira Islands"', add
+label define bpld_mom2_lbl 43630 `"Cape Verde Islands"', add
+label define bpld_mom2_lbl 43640 `"St. Miguel"', add
+label define bpld_mom2_lbl 43700 `"San Marino"', add
+label define bpld_mom2_lbl 43800 `"Spain"', add
+label define bpld_mom2_lbl 43900 `"Vatican City"', add
+label define bpld_mom2_lbl 44000 `"Southern Europe, ns"', add
+label define bpld_mom2_lbl 45000 `"Austria"', add
+label define bpld_mom2_lbl 45010 `"Austria-Hungary"', add
+label define bpld_mom2_lbl 45020 `"Austria-Graz"', add
+label define bpld_mom2_lbl 45030 `"Austria-Linz"', add
+label define bpld_mom2_lbl 45040 `"Austria-Salzburg"', add
+label define bpld_mom2_lbl 45050 `"Austria-Tyrol"', add
+label define bpld_mom2_lbl 45060 `"Austria-Vienna"', add
+label define bpld_mom2_lbl 45070 `"Austria-Kaernsten"', add
+label define bpld_mom2_lbl 45080 `"Austria-Neustadt"', add
+label define bpld_mom2_lbl 45100 `"Bulgaria"', add
+label define bpld_mom2_lbl 45200 `"Czechoslovakia"', add
+label define bpld_mom2_lbl 45210 `"Bohemia"', add
+label define bpld_mom2_lbl 45211 `"Bohemia-Moravia"', add
+label define bpld_mom2_lbl 45212 `"Slovakia"', add
+label define bpld_mom2_lbl 45213 `"Czech Republic"', add
+label define bpld_mom2_lbl 45300 `"Germany"', add
+label define bpld_mom2_lbl 45301 `"Berlin"', add
+label define bpld_mom2_lbl 45302 `"West Berlin"', add
+label define bpld_mom2_lbl 45303 `"East Berlin"', add
+label define bpld_mom2_lbl 45310 `"West Germany"', add
+label define bpld_mom2_lbl 45311 `"Baden"', add
+label define bpld_mom2_lbl 45312 `"Bavaria"', add
+label define bpld_mom2_lbl 45313 `"Braunschweig"', add
+label define bpld_mom2_lbl 45314 `"Bremen"', add
+label define bpld_mom2_lbl 45315 `"Hamburg"', add
+label define bpld_mom2_lbl 45316 `"Hanover"', add
+label define bpld_mom2_lbl 45317 `"Hessen"', add
+label define bpld_mom2_lbl 45318 `"Hesse-Nassau"', add
+label define bpld_mom2_lbl 45319 `"Lippe"', add
+label define bpld_mom2_lbl 45320 `"Lubeck"', add
+label define bpld_mom2_lbl 45321 `"Oldenburg"', add
+label define bpld_mom2_lbl 45322 `"Rheinland"', add
+label define bpld_mom2_lbl 45323 `"Schaumburg-Lippe"', add
+label define bpld_mom2_lbl 45324 `"Schleswig"', add
+label define bpld_mom2_lbl 45325 `"Sigmaringen"', add
+label define bpld_mom2_lbl 45326 `"Schwarzburg"', add
+label define bpld_mom2_lbl 45327 `"Westphalia"', add
+label define bpld_mom2_lbl 45328 `"Wurttemberg"', add
+label define bpld_mom2_lbl 45329 `"Waldeck"', add
+label define bpld_mom2_lbl 45330 `"Wittenberg"', add
+label define bpld_mom2_lbl 45331 `"Frankfurt"', add
+label define bpld_mom2_lbl 45332 `"Saarland"', add
+label define bpld_mom2_lbl 45333 `"Nordrhein-Westfalen"', add
+label define bpld_mom2_lbl 45340 `"East Germany"', add
+label define bpld_mom2_lbl 45341 `"Anhalt"', add
+label define bpld_mom2_lbl 45342 `"Brandenburg"', add
+label define bpld_mom2_lbl 45344 `"Kingdom of Saxony"', add
+label define bpld_mom2_lbl 45345 `"Mecklenburg"', add
+label define bpld_mom2_lbl 45346 `"Saxony"', add
+label define bpld_mom2_lbl 45347 `"Thuringian States"', add
+label define bpld_mom2_lbl 45348 `"Sachsen-Meiningen"', add
+label define bpld_mom2_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define bpld_mom2_lbl 45350 `"Probable Saxony"', add
+label define bpld_mom2_lbl 45351 `"Schwerin"', add
+label define bpld_mom2_lbl 45352 `"Strelitz"', add
+label define bpld_mom2_lbl 45353 `"Probably Thuringian States"', add
+label define bpld_mom2_lbl 45360 `"Prussia, nec"', add
+label define bpld_mom2_lbl 45361 `"Hohenzollern"', add
+label define bpld_mom2_lbl 45362 `"Niedersachsen"', add
+label define bpld_mom2_lbl 45400 `"Hungary"', add
+label define bpld_mom2_lbl 45500 `"Poland"', add
+label define bpld_mom2_lbl 45510 `"Austrian Poland"', add
+label define bpld_mom2_lbl 45511 `"Galicia"', add
+label define bpld_mom2_lbl 45520 `"German Poland"', add
+label define bpld_mom2_lbl 45521 `"East Prussia"', add
+label define bpld_mom2_lbl 45522 `"Pomerania"', add
+label define bpld_mom2_lbl 45523 `"Posen"', add
+label define bpld_mom2_lbl 45524 `"Prussian Poland"', add
+label define bpld_mom2_lbl 45525 `"Silesia"', add
+label define bpld_mom2_lbl 45526 `"West Prussia"', add
+label define bpld_mom2_lbl 45530 `"Russian Poland"', add
+label define bpld_mom2_lbl 45600 `"Romania"', add
+label define bpld_mom2_lbl 45610 `"Transylvania"', add
+label define bpld_mom2_lbl 45700 `"Yugoslavia"', add
+label define bpld_mom2_lbl 45710 `"Croatia"', add
+label define bpld_mom2_lbl 45720 `"Montenegro"', add
+label define bpld_mom2_lbl 45730 `"Serbia"', add
+label define bpld_mom2_lbl 45740 `"Bosnia"', add
+label define bpld_mom2_lbl 45750 `"Dalmatia"', add
+label define bpld_mom2_lbl 45760 `"Slovonia"', add
+label define bpld_mom2_lbl 45770 `"Carniola"', add
+label define bpld_mom2_lbl 45780 `"Slovenia"', add
+label define bpld_mom2_lbl 45790 `"Kosovo"', add
+label define bpld_mom2_lbl 45800 `"Central Europe, ns"', add
+label define bpld_mom2_lbl 45900 `"Eastern Europe, ns"', add
+label define bpld_mom2_lbl 46000 `"Estonia"', add
+label define bpld_mom2_lbl 46100 `"Latvia"', add
+label define bpld_mom2_lbl 46200 `"Lithuania"', add
+label define bpld_mom2_lbl 46300 `"Baltic States, ns"', add
+label define bpld_mom2_lbl 46500 `"Other USSR/Russia"', add
+label define bpld_mom2_lbl 46510 `"Byelorussia"', add
+label define bpld_mom2_lbl 46520 `"Moldavia"', add
+label define bpld_mom2_lbl 46521 `"Bessarabia"', add
+label define bpld_mom2_lbl 46530 `"Ukraine"', add
+label define bpld_mom2_lbl 46540 `"Armenia"', add
+label define bpld_mom2_lbl 46541 `"Azerbaijan"', add
+label define bpld_mom2_lbl 46542 `"Republic of Georgia"', add
+label define bpld_mom2_lbl 46543 `"Kazakhstan"', add
+label define bpld_mom2_lbl 46544 `"Kirghizia"', add
+label define bpld_mom2_lbl 46545 `"Tadzhik"', add
+label define bpld_mom2_lbl 46546 `"Turkmenistan"', add
+label define bpld_mom2_lbl 46547 `"Uzbekistan"', add
+label define bpld_mom2_lbl 46548 `"Siberia"', add
+label define bpld_mom2_lbl 46590 `"USSR, ns"', add
+label define bpld_mom2_lbl 49900 `"Europe, ns."', add
+label define bpld_mom2_lbl 50000 `"China"', add
+label define bpld_mom2_lbl 50010 `"Hong Kong"', add
+label define bpld_mom2_lbl 50020 `"Macau"', add
+label define bpld_mom2_lbl 50030 `"Mongolia"', add
+label define bpld_mom2_lbl 50040 `"Taiwan"', add
+label define bpld_mom2_lbl 50100 `"Japan"', add
+label define bpld_mom2_lbl 50200 `"Korea"', add
+label define bpld_mom2_lbl 50210 `"North Korea"', add
+label define bpld_mom2_lbl 50220 `"South Korea"', add
+label define bpld_mom2_lbl 50900 `"East Asia, ns"', add
+label define bpld_mom2_lbl 51000 `"Brunei"', add
+label define bpld_mom2_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define bpld_mom2_lbl 51200 `"Indonesia"', add
+label define bpld_mom2_lbl 51210 `"East Indies"', add
+label define bpld_mom2_lbl 51220 `"East Timor"', add
+label define bpld_mom2_lbl 51300 `"Laos"', add
+label define bpld_mom2_lbl 51400 `"Malaysia"', add
+label define bpld_mom2_lbl 51500 `"Philippines"', add
+label define bpld_mom2_lbl 51600 `"Singapore"', add
+label define bpld_mom2_lbl 51700 `"Thailand"', add
+label define bpld_mom2_lbl 51800 `"Vietnam"', add
+label define bpld_mom2_lbl 51900 `"Southeast Asia, ns"', add
+label define bpld_mom2_lbl 51910 `"Indochina, ns"', add
+label define bpld_mom2_lbl 52000 `"Afghanistan"', add
+label define bpld_mom2_lbl 52100 `"India"', add
+label define bpld_mom2_lbl 52110 `"Bangladesh"', add
+label define bpld_mom2_lbl 52120 `"Bhutan"', add
+label define bpld_mom2_lbl 52130 `"Burma (Myanmar)"', add
+label define bpld_mom2_lbl 52140 `"Pakistan"', add
+label define bpld_mom2_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define bpld_mom2_lbl 52200 `"Iran"', add
+label define bpld_mom2_lbl 52300 `"Maldives"', add
+label define bpld_mom2_lbl 52400 `"Nepal"', add
+label define bpld_mom2_lbl 53000 `"Bahrain"', add
+label define bpld_mom2_lbl 53100 `"Cyprus"', add
+label define bpld_mom2_lbl 53200 `"Iraq"', add
+label define bpld_mom2_lbl 53210 `"Mesopotamia"', add
+label define bpld_mom2_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define bpld_mom2_lbl 53400 `"Israel/Palestine"', add
+label define bpld_mom2_lbl 53410 `"Gaza Strip"', add
+label define bpld_mom2_lbl 53420 `"Palestine"', add
+label define bpld_mom2_lbl 53430 `"West Bank"', add
+label define bpld_mom2_lbl 53440 `"Israel"', add
+label define bpld_mom2_lbl 53500 `"Jordan"', add
+label define bpld_mom2_lbl 53600 `"Kuwait"', add
+label define bpld_mom2_lbl 53700 `"Lebanon"', add
+label define bpld_mom2_lbl 53800 `"Oman"', add
+label define bpld_mom2_lbl 53900 `"Qatar"', add
+label define bpld_mom2_lbl 54000 `"Saudi Arabia"', add
+label define bpld_mom2_lbl 54100 `"Syria"', add
+label define bpld_mom2_lbl 54200 `"Turkey"', add
+label define bpld_mom2_lbl 54210 `"European Turkey"', add
+label define bpld_mom2_lbl 54220 `"Asian Turkey"', add
+label define bpld_mom2_lbl 54300 `"United Arab Emirates"', add
+label define bpld_mom2_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define bpld_mom2_lbl 54500 `"Yemen, PDR (South)"', add
+label define bpld_mom2_lbl 54600 `"Persian Gulf States, ns"', add
+label define bpld_mom2_lbl 54700 `"Middle East, ns"', add
+label define bpld_mom2_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define bpld_mom2_lbl 54900 `"Asia Minor, ns"', add
+label define bpld_mom2_lbl 55000 `"South Asia, nec"', add
+label define bpld_mom2_lbl 59900 `"Asia, nec/ns"', add
+label define bpld_mom2_lbl 60000 `"Africa"', add
+label define bpld_mom2_lbl 60010 `"Northern Africa"', add
+label define bpld_mom2_lbl 60011 `"Algeria"', add
+label define bpld_mom2_lbl 60012 `"Egypt/United Arab Rep."', add
+label define bpld_mom2_lbl 60013 `"Libya"', add
+label define bpld_mom2_lbl 60014 `"Morocco"', add
+label define bpld_mom2_lbl 60015 `"Sudan"', add
+label define bpld_mom2_lbl 60016 `"Tunisia"', add
+label define bpld_mom2_lbl 60017 `"Western Sahara"', add
+label define bpld_mom2_lbl 60019 `"North Africa, ns"', add
+label define bpld_mom2_lbl 60020 `"Benin"', add
+label define bpld_mom2_lbl 60021 `"Burkina Faso"', add
+label define bpld_mom2_lbl 60022 `"Gambia"', add
+label define bpld_mom2_lbl 60023 `"Ghana"', add
+label define bpld_mom2_lbl 60024 `"Guinea"', add
+label define bpld_mom2_lbl 60025 `"Guinea-Bissau"', add
+label define bpld_mom2_lbl 60026 `"Ivory Coast"', add
+label define bpld_mom2_lbl 60027 `"Liberia"', add
+label define bpld_mom2_lbl 60028 `"Mali"', add
+label define bpld_mom2_lbl 60029 `"Mauritania"', add
+label define bpld_mom2_lbl 60030 `"Niger"', add
+label define bpld_mom2_lbl 60031 `"Nigeria"', add
+label define bpld_mom2_lbl 60032 `"Senegal"', add
+label define bpld_mom2_lbl 60033 `"Sierra Leone"', add
+label define bpld_mom2_lbl 60034 `"Togo"', add
+label define bpld_mom2_lbl 60038 `"Western Africa, ns"', add
+label define bpld_mom2_lbl 60039 `"French West Africa, ns"', add
+label define bpld_mom2_lbl 60040 `"British Indian Ocean Territory"', add
+label define bpld_mom2_lbl 60041 `"Burundi"', add
+label define bpld_mom2_lbl 60042 `"Comoros"', add
+label define bpld_mom2_lbl 60043 `"Djibouti"', add
+label define bpld_mom2_lbl 60044 `"Ethiopia"', add
+label define bpld_mom2_lbl 60045 `"Kenya"', add
+label define bpld_mom2_lbl 60046 `"Madagascar"', add
+label define bpld_mom2_lbl 60047 `"Malawi"', add
+label define bpld_mom2_lbl 60048 `"Mauritius"', add
+label define bpld_mom2_lbl 60049 `"Mozambique"', add
+label define bpld_mom2_lbl 60050 `"Reunion"', add
+label define bpld_mom2_lbl 60051 `"Rwanda"', add
+label define bpld_mom2_lbl 60052 `"Seychelles"', add
+label define bpld_mom2_lbl 60053 `"Somalia"', add
+label define bpld_mom2_lbl 60054 `"Tanzania"', add
+label define bpld_mom2_lbl 60055 `"Uganda"', add
+label define bpld_mom2_lbl 60056 `"Zambia"', add
+label define bpld_mom2_lbl 60057 `"Zimbabwe"', add
+label define bpld_mom2_lbl 60058 `"Bassas de India"', add
+label define bpld_mom2_lbl 60059 `"Europa"', add
+label define bpld_mom2_lbl 60060 `"Gloriosos"', add
+label define bpld_mom2_lbl 60061 `"Juan de Nova"', add
+label define bpld_mom2_lbl 60062 `"Mayotte"', add
+label define bpld_mom2_lbl 60063 `"Tromelin"', add
+label define bpld_mom2_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define bpld_mom2_lbl 60065 `"Eritrea"', add
+label define bpld_mom2_lbl 60066 `"South Sudan"', add
+label define bpld_mom2_lbl 60070 `"Central Africa"', add
+label define bpld_mom2_lbl 60071 `"Angola"', add
+label define bpld_mom2_lbl 60072 `"Cameroon"', add
+label define bpld_mom2_lbl 60073 `"Central African Republic"', add
+label define bpld_mom2_lbl 60074 `"Chad"', add
+label define bpld_mom2_lbl 60075 `"Congo"', add
+label define bpld_mom2_lbl 60076 `"Equatorial Guinea"', add
+label define bpld_mom2_lbl 60077 `"Gabon"', add
+label define bpld_mom2_lbl 60078 `"Sao Tome and Principe"', add
+label define bpld_mom2_lbl 60079 `"Zaire"', add
+label define bpld_mom2_lbl 60080 `"Central Africa, ns"', add
+label define bpld_mom2_lbl 60081 `"Equatorial Africa, ns"', add
+label define bpld_mom2_lbl 60082 `"French Equatorial Africa, ns"', add
+label define bpld_mom2_lbl 60090 `"Southern Africa"', add
+label define bpld_mom2_lbl 60091 `"Botswana"', add
+label define bpld_mom2_lbl 60092 `"Lesotho"', add
+label define bpld_mom2_lbl 60093 `"Namibia"', add
+label define bpld_mom2_lbl 60094 `"South Africa (Union of)"', add
+label define bpld_mom2_lbl 60095 `"Swaziland"', add
+label define bpld_mom2_lbl 60096 `"Southern Africa, ns"', add
+label define bpld_mom2_lbl 60099 `"Africa, ns/nec"', add
+label define bpld_mom2_lbl 70000 `"Australia and New Zealand"', add
+label define bpld_mom2_lbl 70010 `"Australia"', add
+label define bpld_mom2_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define bpld_mom2_lbl 70012 `"Coral Sea Islands Territory"', add
+label define bpld_mom2_lbl 70013 `"Christmas Island"', add
+label define bpld_mom2_lbl 70014 `"Cocos Islands"', add
+label define bpld_mom2_lbl 70020 `"New Zealand"', add
+label define bpld_mom2_lbl 71000 `"Pacific Islands"', add
+label define bpld_mom2_lbl 71010 `"New Caledonia"', add
+label define bpld_mom2_lbl 71012 `"Papua New Guinea"', add
+label define bpld_mom2_lbl 71013 `"Solomon Islands"', add
+label define bpld_mom2_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define bpld_mom2_lbl 71015 `"Fiji"', add
+label define bpld_mom2_lbl 71016 `"Melanesia, ns"', add
+label define bpld_mom2_lbl 71017 `"Norfolk Islands"', add
+label define bpld_mom2_lbl 71018 `"Niue"', add
+label define bpld_mom2_lbl 71020 `"Cook Islands"', add
+label define bpld_mom2_lbl 71022 `"French Polynesia"', add
+label define bpld_mom2_lbl 71023 `"Tonga"', add
+label define bpld_mom2_lbl 71024 `"Wallis and Futuna Islands"', add
+label define bpld_mom2_lbl 71025 `"Western Samoa"', add
+label define bpld_mom2_lbl 71026 `"Pitcairn Island"', add
+label define bpld_mom2_lbl 71027 `"Tokelau"', add
+label define bpld_mom2_lbl 71028 `"Tuvalu"', add
+label define bpld_mom2_lbl 71029 `"Polynesia, ns"', add
+label define bpld_mom2_lbl 71032 `"Kiribati"', add
+label define bpld_mom2_lbl 71033 `"Canton and Enderbury"', add
+label define bpld_mom2_lbl 71034 `"Nauru"', add
+label define bpld_mom2_lbl 71039 `"Micronesia, ns"', add
+label define bpld_mom2_lbl 71040 `"US Pacific Trust Territories"', add
+label define bpld_mom2_lbl 71041 `"Marshall Islands"', add
+label define bpld_mom2_lbl 71042 `"Micronesia"', add
+label define bpld_mom2_lbl 71043 `"Kosrae"', add
+label define bpld_mom2_lbl 71044 `"Pohnpei"', add
+label define bpld_mom2_lbl 71045 `"Truk"', add
+label define bpld_mom2_lbl 71046 `"Yap"', add
+label define bpld_mom2_lbl 71047 `"Northern Mariana Islands"', add
+label define bpld_mom2_lbl 71048 `"Palau"', add
+label define bpld_mom2_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define bpld_mom2_lbl 71050 `"Clipperton Island"', add
+label define bpld_mom2_lbl 71090 `"Oceania, ns/nec"', add
+label define bpld_mom2_lbl 80000 `"Antarctica, ns/nec"', add
+label define bpld_mom2_lbl 80010 `"Bouvet Islands"', add
+label define bpld_mom2_lbl 80020 `"British Antarctic Terr."', add
+label define bpld_mom2_lbl 80030 `"Dronning Maud Land"', add
+label define bpld_mom2_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define bpld_mom2_lbl 80050 `"Heard and McDonald Islands"', add
+label define bpld_mom2_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define bpld_mom2_lbl 90010 `"Abroad, ns"', add
+label define bpld_mom2_lbl 90011 `"Abroad (US citizen)"', add
+label define bpld_mom2_lbl 90020 `"At sea"', add
+label define bpld_mom2_lbl 90021 `"At sea (US citizen)"', add
+label define bpld_mom2_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define bpld_mom2_lbl 95000 `"Other n.e.c."', add
+label define bpld_mom2_lbl 99900 `"Missing/blank"', add
+label values bpld_mom2 bpld_mom2_lbl
+
+label define bpld_pop2_lbl 00100 `"Alabama"'
+label define bpld_pop2_lbl 00200 `"Alaska"', add
+label define bpld_pop2_lbl 00400 `"Arizona"', add
+label define bpld_pop2_lbl 00500 `"Arkansas"', add
+label define bpld_pop2_lbl 00600 `"California"', add
+label define bpld_pop2_lbl 00800 `"Colorado"', add
+label define bpld_pop2_lbl 00900 `"Connecticut"', add
+label define bpld_pop2_lbl 01000 `"Delaware"', add
+label define bpld_pop2_lbl 01100 `"District of Columbia"', add
+label define bpld_pop2_lbl 01200 `"Florida"', add
+label define bpld_pop2_lbl 01300 `"Georgia"', add
+label define bpld_pop2_lbl 01500 `"Hawaii"', add
+label define bpld_pop2_lbl 01600 `"Idaho"', add
+label define bpld_pop2_lbl 01610 `"Idaho Territory"', add
+label define bpld_pop2_lbl 01700 `"Illinois"', add
+label define bpld_pop2_lbl 01800 `"Indiana"', add
+label define bpld_pop2_lbl 01900 `"Iowa"', add
+label define bpld_pop2_lbl 02000 `"Kansas"', add
+label define bpld_pop2_lbl 02100 `"Kentucky"', add
+label define bpld_pop2_lbl 02200 `"Louisiana"', add
+label define bpld_pop2_lbl 02300 `"Maine"', add
+label define bpld_pop2_lbl 02400 `"Maryland"', add
+label define bpld_pop2_lbl 02500 `"Massachusetts"', add
+label define bpld_pop2_lbl 02600 `"Michigan"', add
+label define bpld_pop2_lbl 02700 `"Minnesota"', add
+label define bpld_pop2_lbl 02800 `"Mississippi"', add
+label define bpld_pop2_lbl 02900 `"Missouri"', add
+label define bpld_pop2_lbl 03000 `"Montana"', add
+label define bpld_pop2_lbl 03100 `"Nebraska"', add
+label define bpld_pop2_lbl 03200 `"Nevada"', add
+label define bpld_pop2_lbl 03300 `"New Hampshire"', add
+label define bpld_pop2_lbl 03400 `"New Jersey"', add
+label define bpld_pop2_lbl 03500 `"New Mexico"', add
+label define bpld_pop2_lbl 03510 `"New Mexico Territory"', add
+label define bpld_pop2_lbl 03600 `"New York"', add
+label define bpld_pop2_lbl 03700 `"North Carolina"', add
+label define bpld_pop2_lbl 03800 `"North Dakota"', add
+label define bpld_pop2_lbl 03900 `"Ohio"', add
+label define bpld_pop2_lbl 04000 `"Oklahoma"', add
+label define bpld_pop2_lbl 04010 `"Indian Territory"', add
+label define bpld_pop2_lbl 04100 `"Oregon"', add
+label define bpld_pop2_lbl 04200 `"Pennsylvania"', add
+label define bpld_pop2_lbl 04400 `"Rhode Island"', add
+label define bpld_pop2_lbl 04500 `"South Carolina"', add
+label define bpld_pop2_lbl 04600 `"South Dakota"', add
+label define bpld_pop2_lbl 04610 `"Dakota Territory"', add
+label define bpld_pop2_lbl 04700 `"Tennessee"', add
+label define bpld_pop2_lbl 04800 `"Texas"', add
+label define bpld_pop2_lbl 04900 `"Utah"', add
+label define bpld_pop2_lbl 04910 `"Utah Territory"', add
+label define bpld_pop2_lbl 05000 `"Vermont"', add
+label define bpld_pop2_lbl 05100 `"Virginia"', add
+label define bpld_pop2_lbl 05300 `"Washington"', add
+label define bpld_pop2_lbl 05400 `"West Virginia"', add
+label define bpld_pop2_lbl 05500 `"Wisconsin"', add
+label define bpld_pop2_lbl 05600 `"Wyoming"', add
+label define bpld_pop2_lbl 05610 `"Wyoming Territory"', add
+label define bpld_pop2_lbl 09000 `"Native American"', add
+label define bpld_pop2_lbl 09900 `"United States, ns"', add
+label define bpld_pop2_lbl 10000 `"American Samoa"', add
+label define bpld_pop2_lbl 10010 `"Samoa, 1940-1950"', add
+label define bpld_pop2_lbl 10500 `"Guam"', add
+label define bpld_pop2_lbl 11000 `"Puerto Rico"', add
+label define bpld_pop2_lbl 11500 `"U.S. Virgin Islands"', add
+label define bpld_pop2_lbl 11510 `"St. Croix"', add
+label define bpld_pop2_lbl 11520 `"St. John"', add
+label define bpld_pop2_lbl 11530 `"St. Thomas"', add
+label define bpld_pop2_lbl 12000 `"Other US Possessions:"', add
+label define bpld_pop2_lbl 12010 `"Johnston Atoll"', add
+label define bpld_pop2_lbl 12020 `"Midway Islands"', add
+label define bpld_pop2_lbl 12030 `"Wake Island"', add
+label define bpld_pop2_lbl 12040 `"Other US Caribbean Islands"', add
+label define bpld_pop2_lbl 12041 `"Navassa Island"', add
+label define bpld_pop2_lbl 12050 `"Other US Pacific Islands"', add
+label define bpld_pop2_lbl 12051 `"Baker Island"', add
+label define bpld_pop2_lbl 12052 `"Howland Island"', add
+label define bpld_pop2_lbl 12053 `"Jarvis Island"', add
+label define bpld_pop2_lbl 12054 `"Kingman Reef"', add
+label define bpld_pop2_lbl 12055 `"Palmyra Atoll"', add
+label define bpld_pop2_lbl 12056 `"Canton and Enderbury Island"', add
+label define bpld_pop2_lbl 12090 `"US outlying areas, ns"', add
+label define bpld_pop2_lbl 12091 `"US possessions, ns"', add
+label define bpld_pop2_lbl 12092 `"US territory, ns"', add
+label define bpld_pop2_lbl 15000 `"Canada"', add
+label define bpld_pop2_lbl 15010 `"English Canada"', add
+label define bpld_pop2_lbl 15011 `"British Columbia"', add
+label define bpld_pop2_lbl 15013 `"Alberta"', add
+label define bpld_pop2_lbl 15015 `"Saskatchewan"', add
+label define bpld_pop2_lbl 15017 `"Northwest"', add
+label define bpld_pop2_lbl 15019 `"Ruperts Land"', add
+label define bpld_pop2_lbl 15020 `"Manitoba"', add
+label define bpld_pop2_lbl 15021 `"Red River"', add
+label define bpld_pop2_lbl 15030 `"Ontario/Upper Canada"', add
+label define bpld_pop2_lbl 15031 `"Upper Canada"', add
+label define bpld_pop2_lbl 15032 `"Canada West"', add
+label define bpld_pop2_lbl 15040 `"New Brunswick"', add
+label define bpld_pop2_lbl 15050 `"Nova Scotia"', add
+label define bpld_pop2_lbl 15051 `"Cape Breton"', add
+label define bpld_pop2_lbl 15052 `"Halifax"', add
+label define bpld_pop2_lbl 15060 `"Prince Edward Island"', add
+label define bpld_pop2_lbl 15070 `"Newfoundland"', add
+label define bpld_pop2_lbl 15080 `"French Canada"', add
+label define bpld_pop2_lbl 15081 `"Quebec"', add
+label define bpld_pop2_lbl 15082 `"Lower Canada"', add
+label define bpld_pop2_lbl 15083 `"Canada East"', add
+label define bpld_pop2_lbl 15500 `"St. Pierre and Miquelon"', add
+label define bpld_pop2_lbl 16000 `"Atlantic Islands"', add
+label define bpld_pop2_lbl 16010 `"Bermuda"', add
+label define bpld_pop2_lbl 16020 `"Cape Verde"', add
+label define bpld_pop2_lbl 16030 `"Falkland Islands"', add
+label define bpld_pop2_lbl 16040 `"Greenland"', add
+label define bpld_pop2_lbl 16050 `"St. Helena and Ascension"', add
+label define bpld_pop2_lbl 16060 `"Canary Islands"', add
+label define bpld_pop2_lbl 19900 `"North America, ns"', add
+label define bpld_pop2_lbl 20000 `"Mexico"', add
+label define bpld_pop2_lbl 21000 `"Central America"', add
+label define bpld_pop2_lbl 21010 `"Belize/British Honduras"', add
+label define bpld_pop2_lbl 21020 `"Costa Rica"', add
+label define bpld_pop2_lbl 21030 `"El Salvador"', add
+label define bpld_pop2_lbl 21040 `"Guatemala"', add
+label define bpld_pop2_lbl 21050 `"Honduras"', add
+label define bpld_pop2_lbl 21060 `"Nicaragua"', add
+label define bpld_pop2_lbl 21070 `"Panama"', add
+label define bpld_pop2_lbl 21071 `"Canal Zone"', add
+label define bpld_pop2_lbl 21090 `"Central America, ns"', add
+label define bpld_pop2_lbl 25000 `"Cuba"', add
+label define bpld_pop2_lbl 26000 `"West Indies"', add
+label define bpld_pop2_lbl 26010 `"Dominican Republic"', add
+label define bpld_pop2_lbl 26020 `"Haiti"', add
+label define bpld_pop2_lbl 26030 `"Jamaica"', add
+label define bpld_pop2_lbl 26040 `"British West Indies"', add
+label define bpld_pop2_lbl 26041 `"Anguilla"', add
+label define bpld_pop2_lbl 26042 `"Antigua-Barbuda"', add
+label define bpld_pop2_lbl 26043 `"Bahamas"', add
+label define bpld_pop2_lbl 26044 `"Barbados"', add
+label define bpld_pop2_lbl 26045 `"British Virgin Islands"', add
+label define bpld_pop2_lbl 26046 `"Anegada"', add
+label define bpld_pop2_lbl 26047 `"Cooper"', add
+label define bpld_pop2_lbl 26048 `"Jost Van Dyke"', add
+label define bpld_pop2_lbl 26049 `"Peter"', add
+label define bpld_pop2_lbl 26050 `"Tortola"', add
+label define bpld_pop2_lbl 26051 `"Virgin Gorda"', add
+label define bpld_pop2_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define bpld_pop2_lbl 26053 `"Cayman Islands"', add
+label define bpld_pop2_lbl 26054 `"Dominica"', add
+label define bpld_pop2_lbl 26055 `"Grenada"', add
+label define bpld_pop2_lbl 26056 `"Montserrat"', add
+label define bpld_pop2_lbl 26057 `"St. Kitts-Nevis"', add
+label define bpld_pop2_lbl 26058 `"St. Lucia"', add
+label define bpld_pop2_lbl 26059 `"St. Vincent"', add
+label define bpld_pop2_lbl 26060 `"Trinidad and Tobago"', add
+label define bpld_pop2_lbl 26061 `"Turks and Caicos"', add
+label define bpld_pop2_lbl 26069 `"Br. Virgin Islands, ns"', add
+label define bpld_pop2_lbl 26070 `"Other West Indies"', add
+label define bpld_pop2_lbl 26071 `"Aruba"', add
+label define bpld_pop2_lbl 26072 `"Netherlands Antilles"', add
+label define bpld_pop2_lbl 26073 `"Bonaire"', add
+label define bpld_pop2_lbl 26074 `"Curacao"', add
+label define bpld_pop2_lbl 26075 `"Dutch St. Maarten"', add
+label define bpld_pop2_lbl 26076 `"Saba"', add
+label define bpld_pop2_lbl 26077 `"St. Eustatius"', add
+label define bpld_pop2_lbl 26079 `"Dutch Caribbean, ns"', add
+label define bpld_pop2_lbl 26080 `"French St. Maarten"', add
+label define bpld_pop2_lbl 26081 `"Guadeloupe"', add
+label define bpld_pop2_lbl 26082 `"Martinique"', add
+label define bpld_pop2_lbl 26083 `"St. Barthelemy"', add
+label define bpld_pop2_lbl 26089 `"French Caribbean, ns"', add
+label define bpld_pop2_lbl 26090 `"Antilles, ns"', add
+label define bpld_pop2_lbl 26091 `"Caribbean, ns"', add
+label define bpld_pop2_lbl 26092 `"Latin America, ns"', add
+label define bpld_pop2_lbl 26093 `"Leeward Islands, ns"', add
+label define bpld_pop2_lbl 26094 `"West Indies, ns"', add
+label define bpld_pop2_lbl 26095 `"Windward Islands, ns"', add
+label define bpld_pop2_lbl 29900 `"Americas, ns"', add
+label define bpld_pop2_lbl 30000 `"South America"', add
+label define bpld_pop2_lbl 30005 `"Argentina"', add
+label define bpld_pop2_lbl 30010 `"Bolivia"', add
+label define bpld_pop2_lbl 30015 `"Brazil"', add
+label define bpld_pop2_lbl 30020 `"Chile"', add
+label define bpld_pop2_lbl 30025 `"Colombia"', add
+label define bpld_pop2_lbl 30030 `"Ecuador"', add
+label define bpld_pop2_lbl 30035 `"French Guiana"', add
+label define bpld_pop2_lbl 30040 `"Guyana/British Guiana"', add
+label define bpld_pop2_lbl 30045 `"Paraguay"', add
+label define bpld_pop2_lbl 30050 `"Peru"', add
+label define bpld_pop2_lbl 30055 `"Suriname"', add
+label define bpld_pop2_lbl 30060 `"Uruguay"', add
+label define bpld_pop2_lbl 30065 `"Venezuela"', add
+label define bpld_pop2_lbl 30090 `"South America, ns"', add
+label define bpld_pop2_lbl 30091 `"South and Central America, n.s."', add
+label define bpld_pop2_lbl 40000 `"Denmark"', add
+label define bpld_pop2_lbl 40010 `"Faeroe Islands"', add
+label define bpld_pop2_lbl 40100 `"Finland"', add
+label define bpld_pop2_lbl 40200 `"Iceland"', add
+label define bpld_pop2_lbl 40300 `"Lapland, ns"', add
+label define bpld_pop2_lbl 40400 `"Norway"', add
+label define bpld_pop2_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define bpld_pop2_lbl 40411 `"Svalbard"', add
+label define bpld_pop2_lbl 40412 `"Jan Meyen"', add
+label define bpld_pop2_lbl 40500 `"Sweden"', add
+label define bpld_pop2_lbl 41000 `"England"', add
+label define bpld_pop2_lbl 41010 `"Channel Islands"', add
+label define bpld_pop2_lbl 41011 `"Guernsey"', add
+label define bpld_pop2_lbl 41012 `"Jersey"', add
+label define bpld_pop2_lbl 41020 `"Isle of Man"', add
+label define bpld_pop2_lbl 41100 `"Scotland"', add
+label define bpld_pop2_lbl 41200 `"Wales"', add
+label define bpld_pop2_lbl 41300 `"United Kingdom, ns"', add
+label define bpld_pop2_lbl 41400 `"Ireland"', add
+label define bpld_pop2_lbl 41410 `"Northern Ireland"', add
+label define bpld_pop2_lbl 41900 `"Northern Europe, ns"', add
+label define bpld_pop2_lbl 42000 `"Belgium"', add
+label define bpld_pop2_lbl 42100 `"France"', add
+label define bpld_pop2_lbl 42110 `"Alsace-Lorraine"', add
+label define bpld_pop2_lbl 42111 `"Alsace"', add
+label define bpld_pop2_lbl 42112 `"Lorraine"', add
+label define bpld_pop2_lbl 42200 `"Liechtenstein"', add
+label define bpld_pop2_lbl 42300 `"Luxembourg"', add
+label define bpld_pop2_lbl 42400 `"Monaco"', add
+label define bpld_pop2_lbl 42500 `"Netherlands"', add
+label define bpld_pop2_lbl 42600 `"Switzerland"', add
+label define bpld_pop2_lbl 42900 `"Western Europe, ns"', add
+label define bpld_pop2_lbl 43000 `"Albania"', add
+label define bpld_pop2_lbl 43100 `"Andorra"', add
+label define bpld_pop2_lbl 43200 `"Gibraltar"', add
+label define bpld_pop2_lbl 43300 `"Greece"', add
+label define bpld_pop2_lbl 43310 `"Dodecanese Islands"', add
+label define bpld_pop2_lbl 43320 `"Turkey Greece"', add
+label define bpld_pop2_lbl 43330 `"Macedonia"', add
+label define bpld_pop2_lbl 43400 `"Italy"', add
+label define bpld_pop2_lbl 43500 `"Malta"', add
+label define bpld_pop2_lbl 43600 `"Portugal"', add
+label define bpld_pop2_lbl 43610 `"Azores"', add
+label define bpld_pop2_lbl 43620 `"Madeira Islands"', add
+label define bpld_pop2_lbl 43630 `"Cape Verde Islands"', add
+label define bpld_pop2_lbl 43640 `"St. Miguel"', add
+label define bpld_pop2_lbl 43700 `"San Marino"', add
+label define bpld_pop2_lbl 43800 `"Spain"', add
+label define bpld_pop2_lbl 43900 `"Vatican City"', add
+label define bpld_pop2_lbl 44000 `"Southern Europe, ns"', add
+label define bpld_pop2_lbl 45000 `"Austria"', add
+label define bpld_pop2_lbl 45010 `"Austria-Hungary"', add
+label define bpld_pop2_lbl 45020 `"Austria-Graz"', add
+label define bpld_pop2_lbl 45030 `"Austria-Linz"', add
+label define bpld_pop2_lbl 45040 `"Austria-Salzburg"', add
+label define bpld_pop2_lbl 45050 `"Austria-Tyrol"', add
+label define bpld_pop2_lbl 45060 `"Austria-Vienna"', add
+label define bpld_pop2_lbl 45070 `"Austria-Kaernsten"', add
+label define bpld_pop2_lbl 45080 `"Austria-Neustadt"', add
+label define bpld_pop2_lbl 45100 `"Bulgaria"', add
+label define bpld_pop2_lbl 45200 `"Czechoslovakia"', add
+label define bpld_pop2_lbl 45210 `"Bohemia"', add
+label define bpld_pop2_lbl 45211 `"Bohemia-Moravia"', add
+label define bpld_pop2_lbl 45212 `"Slovakia"', add
+label define bpld_pop2_lbl 45213 `"Czech Republic"', add
+label define bpld_pop2_lbl 45300 `"Germany"', add
+label define bpld_pop2_lbl 45301 `"Berlin"', add
+label define bpld_pop2_lbl 45302 `"West Berlin"', add
+label define bpld_pop2_lbl 45303 `"East Berlin"', add
+label define bpld_pop2_lbl 45310 `"West Germany"', add
+label define bpld_pop2_lbl 45311 `"Baden"', add
+label define bpld_pop2_lbl 45312 `"Bavaria"', add
+label define bpld_pop2_lbl 45313 `"Braunschweig"', add
+label define bpld_pop2_lbl 45314 `"Bremen"', add
+label define bpld_pop2_lbl 45315 `"Hamburg"', add
+label define bpld_pop2_lbl 45316 `"Hanover"', add
+label define bpld_pop2_lbl 45317 `"Hessen"', add
+label define bpld_pop2_lbl 45318 `"Hesse-Nassau"', add
+label define bpld_pop2_lbl 45319 `"Lippe"', add
+label define bpld_pop2_lbl 45320 `"Lubeck"', add
+label define bpld_pop2_lbl 45321 `"Oldenburg"', add
+label define bpld_pop2_lbl 45322 `"Rheinland"', add
+label define bpld_pop2_lbl 45323 `"Schaumburg-Lippe"', add
+label define bpld_pop2_lbl 45324 `"Schleswig"', add
+label define bpld_pop2_lbl 45325 `"Sigmaringen"', add
+label define bpld_pop2_lbl 45326 `"Schwarzburg"', add
+label define bpld_pop2_lbl 45327 `"Westphalia"', add
+label define bpld_pop2_lbl 45328 `"Wurttemberg"', add
+label define bpld_pop2_lbl 45329 `"Waldeck"', add
+label define bpld_pop2_lbl 45330 `"Wittenberg"', add
+label define bpld_pop2_lbl 45331 `"Frankfurt"', add
+label define bpld_pop2_lbl 45332 `"Saarland"', add
+label define bpld_pop2_lbl 45333 `"Nordrhein-Westfalen"', add
+label define bpld_pop2_lbl 45340 `"East Germany"', add
+label define bpld_pop2_lbl 45341 `"Anhalt"', add
+label define bpld_pop2_lbl 45342 `"Brandenburg"', add
+label define bpld_pop2_lbl 45344 `"Kingdom of Saxony"', add
+label define bpld_pop2_lbl 45345 `"Mecklenburg"', add
+label define bpld_pop2_lbl 45346 `"Saxony"', add
+label define bpld_pop2_lbl 45347 `"Thuringian States"', add
+label define bpld_pop2_lbl 45348 `"Sachsen-Meiningen"', add
+label define bpld_pop2_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define bpld_pop2_lbl 45350 `"Probable Saxony"', add
+label define bpld_pop2_lbl 45351 `"Schwerin"', add
+label define bpld_pop2_lbl 45352 `"Strelitz"', add
+label define bpld_pop2_lbl 45353 `"Probably Thuringian States"', add
+label define bpld_pop2_lbl 45360 `"Prussia, nec"', add
+label define bpld_pop2_lbl 45361 `"Hohenzollern"', add
+label define bpld_pop2_lbl 45362 `"Niedersachsen"', add
+label define bpld_pop2_lbl 45400 `"Hungary"', add
+label define bpld_pop2_lbl 45500 `"Poland"', add
+label define bpld_pop2_lbl 45510 `"Austrian Poland"', add
+label define bpld_pop2_lbl 45511 `"Galicia"', add
+label define bpld_pop2_lbl 45520 `"German Poland"', add
+label define bpld_pop2_lbl 45521 `"East Prussia"', add
+label define bpld_pop2_lbl 45522 `"Pomerania"', add
+label define bpld_pop2_lbl 45523 `"Posen"', add
+label define bpld_pop2_lbl 45524 `"Prussian Poland"', add
+label define bpld_pop2_lbl 45525 `"Silesia"', add
+label define bpld_pop2_lbl 45526 `"West Prussia"', add
+label define bpld_pop2_lbl 45530 `"Russian Poland"', add
+label define bpld_pop2_lbl 45600 `"Romania"', add
+label define bpld_pop2_lbl 45610 `"Transylvania"', add
+label define bpld_pop2_lbl 45700 `"Yugoslavia"', add
+label define bpld_pop2_lbl 45710 `"Croatia"', add
+label define bpld_pop2_lbl 45720 `"Montenegro"', add
+label define bpld_pop2_lbl 45730 `"Serbia"', add
+label define bpld_pop2_lbl 45740 `"Bosnia"', add
+label define bpld_pop2_lbl 45750 `"Dalmatia"', add
+label define bpld_pop2_lbl 45760 `"Slovonia"', add
+label define bpld_pop2_lbl 45770 `"Carniola"', add
+label define bpld_pop2_lbl 45780 `"Slovenia"', add
+label define bpld_pop2_lbl 45790 `"Kosovo"', add
+label define bpld_pop2_lbl 45800 `"Central Europe, ns"', add
+label define bpld_pop2_lbl 45900 `"Eastern Europe, ns"', add
+label define bpld_pop2_lbl 46000 `"Estonia"', add
+label define bpld_pop2_lbl 46100 `"Latvia"', add
+label define bpld_pop2_lbl 46200 `"Lithuania"', add
+label define bpld_pop2_lbl 46300 `"Baltic States, ns"', add
+label define bpld_pop2_lbl 46500 `"Other USSR/Russia"', add
+label define bpld_pop2_lbl 46510 `"Byelorussia"', add
+label define bpld_pop2_lbl 46520 `"Moldavia"', add
+label define bpld_pop2_lbl 46521 `"Bessarabia"', add
+label define bpld_pop2_lbl 46530 `"Ukraine"', add
+label define bpld_pop2_lbl 46540 `"Armenia"', add
+label define bpld_pop2_lbl 46541 `"Azerbaijan"', add
+label define bpld_pop2_lbl 46542 `"Republic of Georgia"', add
+label define bpld_pop2_lbl 46543 `"Kazakhstan"', add
+label define bpld_pop2_lbl 46544 `"Kirghizia"', add
+label define bpld_pop2_lbl 46545 `"Tadzhik"', add
+label define bpld_pop2_lbl 46546 `"Turkmenistan"', add
+label define bpld_pop2_lbl 46547 `"Uzbekistan"', add
+label define bpld_pop2_lbl 46548 `"Siberia"', add
+label define bpld_pop2_lbl 46590 `"USSR, ns"', add
+label define bpld_pop2_lbl 49900 `"Europe, ns."', add
+label define bpld_pop2_lbl 50000 `"China"', add
+label define bpld_pop2_lbl 50010 `"Hong Kong"', add
+label define bpld_pop2_lbl 50020 `"Macau"', add
+label define bpld_pop2_lbl 50030 `"Mongolia"', add
+label define bpld_pop2_lbl 50040 `"Taiwan"', add
+label define bpld_pop2_lbl 50100 `"Japan"', add
+label define bpld_pop2_lbl 50200 `"Korea"', add
+label define bpld_pop2_lbl 50210 `"North Korea"', add
+label define bpld_pop2_lbl 50220 `"South Korea"', add
+label define bpld_pop2_lbl 50900 `"East Asia, ns"', add
+label define bpld_pop2_lbl 51000 `"Brunei"', add
+label define bpld_pop2_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define bpld_pop2_lbl 51200 `"Indonesia"', add
+label define bpld_pop2_lbl 51210 `"East Indies"', add
+label define bpld_pop2_lbl 51220 `"East Timor"', add
+label define bpld_pop2_lbl 51300 `"Laos"', add
+label define bpld_pop2_lbl 51400 `"Malaysia"', add
+label define bpld_pop2_lbl 51500 `"Philippines"', add
+label define bpld_pop2_lbl 51600 `"Singapore"', add
+label define bpld_pop2_lbl 51700 `"Thailand"', add
+label define bpld_pop2_lbl 51800 `"Vietnam"', add
+label define bpld_pop2_lbl 51900 `"Southeast Asia, ns"', add
+label define bpld_pop2_lbl 51910 `"Indochina, ns"', add
+label define bpld_pop2_lbl 52000 `"Afghanistan"', add
+label define bpld_pop2_lbl 52100 `"India"', add
+label define bpld_pop2_lbl 52110 `"Bangladesh"', add
+label define bpld_pop2_lbl 52120 `"Bhutan"', add
+label define bpld_pop2_lbl 52130 `"Burma (Myanmar)"', add
+label define bpld_pop2_lbl 52140 `"Pakistan"', add
+label define bpld_pop2_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define bpld_pop2_lbl 52200 `"Iran"', add
+label define bpld_pop2_lbl 52300 `"Maldives"', add
+label define bpld_pop2_lbl 52400 `"Nepal"', add
+label define bpld_pop2_lbl 53000 `"Bahrain"', add
+label define bpld_pop2_lbl 53100 `"Cyprus"', add
+label define bpld_pop2_lbl 53200 `"Iraq"', add
+label define bpld_pop2_lbl 53210 `"Mesopotamia"', add
+label define bpld_pop2_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define bpld_pop2_lbl 53400 `"Israel/Palestine"', add
+label define bpld_pop2_lbl 53410 `"Gaza Strip"', add
+label define bpld_pop2_lbl 53420 `"Palestine"', add
+label define bpld_pop2_lbl 53430 `"West Bank"', add
+label define bpld_pop2_lbl 53440 `"Israel"', add
+label define bpld_pop2_lbl 53500 `"Jordan"', add
+label define bpld_pop2_lbl 53600 `"Kuwait"', add
+label define bpld_pop2_lbl 53700 `"Lebanon"', add
+label define bpld_pop2_lbl 53800 `"Oman"', add
+label define bpld_pop2_lbl 53900 `"Qatar"', add
+label define bpld_pop2_lbl 54000 `"Saudi Arabia"', add
+label define bpld_pop2_lbl 54100 `"Syria"', add
+label define bpld_pop2_lbl 54200 `"Turkey"', add
+label define bpld_pop2_lbl 54210 `"European Turkey"', add
+label define bpld_pop2_lbl 54220 `"Asian Turkey"', add
+label define bpld_pop2_lbl 54300 `"United Arab Emirates"', add
+label define bpld_pop2_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define bpld_pop2_lbl 54500 `"Yemen, PDR (South)"', add
+label define bpld_pop2_lbl 54600 `"Persian Gulf States, ns"', add
+label define bpld_pop2_lbl 54700 `"Middle East, ns"', add
+label define bpld_pop2_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define bpld_pop2_lbl 54900 `"Asia Minor, ns"', add
+label define bpld_pop2_lbl 55000 `"South Asia, nec"', add
+label define bpld_pop2_lbl 59900 `"Asia, nec/ns"', add
+label define bpld_pop2_lbl 60000 `"Africa"', add
+label define bpld_pop2_lbl 60010 `"Northern Africa"', add
+label define bpld_pop2_lbl 60011 `"Algeria"', add
+label define bpld_pop2_lbl 60012 `"Egypt/United Arab Rep."', add
+label define bpld_pop2_lbl 60013 `"Libya"', add
+label define bpld_pop2_lbl 60014 `"Morocco"', add
+label define bpld_pop2_lbl 60015 `"Sudan"', add
+label define bpld_pop2_lbl 60016 `"Tunisia"', add
+label define bpld_pop2_lbl 60017 `"Western Sahara"', add
+label define bpld_pop2_lbl 60019 `"North Africa, ns"', add
+label define bpld_pop2_lbl 60020 `"Benin"', add
+label define bpld_pop2_lbl 60021 `"Burkina Faso"', add
+label define bpld_pop2_lbl 60022 `"Gambia"', add
+label define bpld_pop2_lbl 60023 `"Ghana"', add
+label define bpld_pop2_lbl 60024 `"Guinea"', add
+label define bpld_pop2_lbl 60025 `"Guinea-Bissau"', add
+label define bpld_pop2_lbl 60026 `"Ivory Coast"', add
+label define bpld_pop2_lbl 60027 `"Liberia"', add
+label define bpld_pop2_lbl 60028 `"Mali"', add
+label define bpld_pop2_lbl 60029 `"Mauritania"', add
+label define bpld_pop2_lbl 60030 `"Niger"', add
+label define bpld_pop2_lbl 60031 `"Nigeria"', add
+label define bpld_pop2_lbl 60032 `"Senegal"', add
+label define bpld_pop2_lbl 60033 `"Sierra Leone"', add
+label define bpld_pop2_lbl 60034 `"Togo"', add
+label define bpld_pop2_lbl 60038 `"Western Africa, ns"', add
+label define bpld_pop2_lbl 60039 `"French West Africa, ns"', add
+label define bpld_pop2_lbl 60040 `"British Indian Ocean Territory"', add
+label define bpld_pop2_lbl 60041 `"Burundi"', add
+label define bpld_pop2_lbl 60042 `"Comoros"', add
+label define bpld_pop2_lbl 60043 `"Djibouti"', add
+label define bpld_pop2_lbl 60044 `"Ethiopia"', add
+label define bpld_pop2_lbl 60045 `"Kenya"', add
+label define bpld_pop2_lbl 60046 `"Madagascar"', add
+label define bpld_pop2_lbl 60047 `"Malawi"', add
+label define bpld_pop2_lbl 60048 `"Mauritius"', add
+label define bpld_pop2_lbl 60049 `"Mozambique"', add
+label define bpld_pop2_lbl 60050 `"Reunion"', add
+label define bpld_pop2_lbl 60051 `"Rwanda"', add
+label define bpld_pop2_lbl 60052 `"Seychelles"', add
+label define bpld_pop2_lbl 60053 `"Somalia"', add
+label define bpld_pop2_lbl 60054 `"Tanzania"', add
+label define bpld_pop2_lbl 60055 `"Uganda"', add
+label define bpld_pop2_lbl 60056 `"Zambia"', add
+label define bpld_pop2_lbl 60057 `"Zimbabwe"', add
+label define bpld_pop2_lbl 60058 `"Bassas de India"', add
+label define bpld_pop2_lbl 60059 `"Europa"', add
+label define bpld_pop2_lbl 60060 `"Gloriosos"', add
+label define bpld_pop2_lbl 60061 `"Juan de Nova"', add
+label define bpld_pop2_lbl 60062 `"Mayotte"', add
+label define bpld_pop2_lbl 60063 `"Tromelin"', add
+label define bpld_pop2_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define bpld_pop2_lbl 60065 `"Eritrea"', add
+label define bpld_pop2_lbl 60066 `"South Sudan"', add
+label define bpld_pop2_lbl 60070 `"Central Africa"', add
+label define bpld_pop2_lbl 60071 `"Angola"', add
+label define bpld_pop2_lbl 60072 `"Cameroon"', add
+label define bpld_pop2_lbl 60073 `"Central African Republic"', add
+label define bpld_pop2_lbl 60074 `"Chad"', add
+label define bpld_pop2_lbl 60075 `"Congo"', add
+label define bpld_pop2_lbl 60076 `"Equatorial Guinea"', add
+label define bpld_pop2_lbl 60077 `"Gabon"', add
+label define bpld_pop2_lbl 60078 `"Sao Tome and Principe"', add
+label define bpld_pop2_lbl 60079 `"Zaire"', add
+label define bpld_pop2_lbl 60080 `"Central Africa, ns"', add
+label define bpld_pop2_lbl 60081 `"Equatorial Africa, ns"', add
+label define bpld_pop2_lbl 60082 `"French Equatorial Africa, ns"', add
+label define bpld_pop2_lbl 60090 `"Southern Africa"', add
+label define bpld_pop2_lbl 60091 `"Botswana"', add
+label define bpld_pop2_lbl 60092 `"Lesotho"', add
+label define bpld_pop2_lbl 60093 `"Namibia"', add
+label define bpld_pop2_lbl 60094 `"South Africa (Union of)"', add
+label define bpld_pop2_lbl 60095 `"Swaziland"', add
+label define bpld_pop2_lbl 60096 `"Southern Africa, ns"', add
+label define bpld_pop2_lbl 60099 `"Africa, ns/nec"', add
+label define bpld_pop2_lbl 70000 `"Australia and New Zealand"', add
+label define bpld_pop2_lbl 70010 `"Australia"', add
+label define bpld_pop2_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define bpld_pop2_lbl 70012 `"Coral Sea Islands Territory"', add
+label define bpld_pop2_lbl 70013 `"Christmas Island"', add
+label define bpld_pop2_lbl 70014 `"Cocos Islands"', add
+label define bpld_pop2_lbl 70020 `"New Zealand"', add
+label define bpld_pop2_lbl 71000 `"Pacific Islands"', add
+label define bpld_pop2_lbl 71010 `"New Caledonia"', add
+label define bpld_pop2_lbl 71012 `"Papua New Guinea"', add
+label define bpld_pop2_lbl 71013 `"Solomon Islands"', add
+label define bpld_pop2_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define bpld_pop2_lbl 71015 `"Fiji"', add
+label define bpld_pop2_lbl 71016 `"Melanesia, ns"', add
+label define bpld_pop2_lbl 71017 `"Norfolk Islands"', add
+label define bpld_pop2_lbl 71018 `"Niue"', add
+label define bpld_pop2_lbl 71020 `"Cook Islands"', add
+label define bpld_pop2_lbl 71022 `"French Polynesia"', add
+label define bpld_pop2_lbl 71023 `"Tonga"', add
+label define bpld_pop2_lbl 71024 `"Wallis and Futuna Islands"', add
+label define bpld_pop2_lbl 71025 `"Western Samoa"', add
+label define bpld_pop2_lbl 71026 `"Pitcairn Island"', add
+label define bpld_pop2_lbl 71027 `"Tokelau"', add
+label define bpld_pop2_lbl 71028 `"Tuvalu"', add
+label define bpld_pop2_lbl 71029 `"Polynesia, ns"', add
+label define bpld_pop2_lbl 71032 `"Kiribati"', add
+label define bpld_pop2_lbl 71033 `"Canton and Enderbury"', add
+label define bpld_pop2_lbl 71034 `"Nauru"', add
+label define bpld_pop2_lbl 71039 `"Micronesia, ns"', add
+label define bpld_pop2_lbl 71040 `"US Pacific Trust Territories"', add
+label define bpld_pop2_lbl 71041 `"Marshall Islands"', add
+label define bpld_pop2_lbl 71042 `"Micronesia"', add
+label define bpld_pop2_lbl 71043 `"Kosrae"', add
+label define bpld_pop2_lbl 71044 `"Pohnpei"', add
+label define bpld_pop2_lbl 71045 `"Truk"', add
+label define bpld_pop2_lbl 71046 `"Yap"', add
+label define bpld_pop2_lbl 71047 `"Northern Mariana Islands"', add
+label define bpld_pop2_lbl 71048 `"Palau"', add
+label define bpld_pop2_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define bpld_pop2_lbl 71050 `"Clipperton Island"', add
+label define bpld_pop2_lbl 71090 `"Oceania, ns/nec"', add
+label define bpld_pop2_lbl 80000 `"Antarctica, ns/nec"', add
+label define bpld_pop2_lbl 80010 `"Bouvet Islands"', add
+label define bpld_pop2_lbl 80020 `"British Antarctic Terr."', add
+label define bpld_pop2_lbl 80030 `"Dronning Maud Land"', add
+label define bpld_pop2_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define bpld_pop2_lbl 80050 `"Heard and McDonald Islands"', add
+label define bpld_pop2_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define bpld_pop2_lbl 90010 `"Abroad, ns"', add
+label define bpld_pop2_lbl 90011 `"Abroad (US citizen)"', add
+label define bpld_pop2_lbl 90020 `"At sea"', add
+label define bpld_pop2_lbl 90021 `"At sea (US citizen)"', add
+label define bpld_pop2_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define bpld_pop2_lbl 95000 `"Other n.e.c."', add
+label define bpld_pop2_lbl 99900 `"Missing/blank"', add
+label values bpld_pop2 bpld_pop2_lbl
+
 label define mbpl_head_lbl 000 `"Not Applicable"'
 label define mbpl_head_lbl 001 `"Alabama"', add
 label define mbpl_head_lbl 002 `"Alaska"', add
@@ -7396,6 +13306,338 @@ label define mbpl_head_lbl 997 `"Unknown"', add
 label define mbpl_head_lbl 999 `"Missing/blank"', add
 label values mbpl_head mbpl_head_lbl
 
+label define mbpl_mom_lbl 000 `"Not Applicable"'
+label define mbpl_mom_lbl 001 `"Alabama"', add
+label define mbpl_mom_lbl 002 `"Alaska"', add
+label define mbpl_mom_lbl 004 `"Arizona"', add
+label define mbpl_mom_lbl 005 `"Arkansas"', add
+label define mbpl_mom_lbl 006 `"California"', add
+label define mbpl_mom_lbl 008 `"Colorado"', add
+label define mbpl_mom_lbl 009 `"Connecticut"', add
+label define mbpl_mom_lbl 010 `"Delaware"', add
+label define mbpl_mom_lbl 011 `"District of Columbia"', add
+label define mbpl_mom_lbl 012 `"Florida"', add
+label define mbpl_mom_lbl 013 `"Georgia"', add
+label define mbpl_mom_lbl 015 `"Hawaii"', add
+label define mbpl_mom_lbl 016 `"Idaho"', add
+label define mbpl_mom_lbl 017 `"Illinois"', add
+label define mbpl_mom_lbl 018 `"Indiana"', add
+label define mbpl_mom_lbl 019 `"Iowa"', add
+label define mbpl_mom_lbl 020 `"Kansas"', add
+label define mbpl_mom_lbl 021 `"Kentucky"', add
+label define mbpl_mom_lbl 022 `"Louisiana"', add
+label define mbpl_mom_lbl 023 `"Maine"', add
+label define mbpl_mom_lbl 024 `"Maryland"', add
+label define mbpl_mom_lbl 025 `"Massachusetts"', add
+label define mbpl_mom_lbl 026 `"Michigan"', add
+label define mbpl_mom_lbl 027 `"Minnesota"', add
+label define mbpl_mom_lbl 028 `"Mississippi"', add
+label define mbpl_mom_lbl 029 `"Missouri"', add
+label define mbpl_mom_lbl 030 `"Montana"', add
+label define mbpl_mom_lbl 031 `"Nebraska"', add
+label define mbpl_mom_lbl 032 `"Nevada"', add
+label define mbpl_mom_lbl 033 `"New Hampshire"', add
+label define mbpl_mom_lbl 034 `"New Jersey"', add
+label define mbpl_mom_lbl 035 `"New Mexico"', add
+label define mbpl_mom_lbl 036 `"New York"', add
+label define mbpl_mom_lbl 037 `"North Carolina"', add
+label define mbpl_mom_lbl 038 `"North Dakota"', add
+label define mbpl_mom_lbl 039 `"Ohio"', add
+label define mbpl_mom_lbl 040 `"Oklahoma"', add
+label define mbpl_mom_lbl 041 `"Oregon"', add
+label define mbpl_mom_lbl 042 `"Pennsylvania"', add
+label define mbpl_mom_lbl 044 `"Rhode Island"', add
+label define mbpl_mom_lbl 045 `"South Carolina"', add
+label define mbpl_mom_lbl 046 `"South Dakota"', add
+label define mbpl_mom_lbl 047 `"Tennessee"', add
+label define mbpl_mom_lbl 048 `"Texas"', add
+label define mbpl_mom_lbl 049 `"Utah"', add
+label define mbpl_mom_lbl 050 `"Vermont"', add
+label define mbpl_mom_lbl 051 `"Virginia"', add
+label define mbpl_mom_lbl 053 `"Washington"', add
+label define mbpl_mom_lbl 054 `"West Virginia"', add
+label define mbpl_mom_lbl 055 `"Wisconsin"', add
+label define mbpl_mom_lbl 056 `"Wyoming"', add
+label define mbpl_mom_lbl 090 `"Native American"', add
+label define mbpl_mom_lbl 099 `"United States, ns"', add
+label define mbpl_mom_lbl 100 `"American Samoa"', add
+label define mbpl_mom_lbl 105 `"Guam"', add
+label define mbpl_mom_lbl 110 `"Puerto Rico"', add
+label define mbpl_mom_lbl 115 `"U.S. Virgin Islands"', add
+label define mbpl_mom_lbl 120 `"Other US Possessions"', add
+label define mbpl_mom_lbl 150 `"Canada"', add
+label define mbpl_mom_lbl 155 `"St. Pierre and Miquelon"', add
+label define mbpl_mom_lbl 160 `"Atlantic Islands"', add
+label define mbpl_mom_lbl 199 `"North America, n.s."', add
+label define mbpl_mom_lbl 200 `"Mexico"', add
+label define mbpl_mom_lbl 210 `"Central America"', add
+label define mbpl_mom_lbl 250 `"Cuba"', add
+label define mbpl_mom_lbl 260 `"West Indies"', add
+label define mbpl_mom_lbl 299 `"Americas, n.s."', add
+label define mbpl_mom_lbl 300 `"SOUTH AMERICA"', add
+label define mbpl_mom_lbl 400 `"Denmark"', add
+label define mbpl_mom_lbl 401 `"Finland"', add
+label define mbpl_mom_lbl 402 `"Iceland"', add
+label define mbpl_mom_lbl 403 `"Lapland, n.s."', add
+label define mbpl_mom_lbl 404 `"Norway"', add
+label define mbpl_mom_lbl 405 `"Sweden"', add
+label define mbpl_mom_lbl 410 `"England"', add
+label define mbpl_mom_lbl 411 `"Scotland"', add
+label define mbpl_mom_lbl 412 `"Wales"', add
+label define mbpl_mom_lbl 413 `"United Kingdom, ns"', add
+label define mbpl_mom_lbl 414 `"Ireland"', add
+label define mbpl_mom_lbl 419 `"Northern Europe, ns"', add
+label define mbpl_mom_lbl 420 `"Belgium"', add
+label define mbpl_mom_lbl 421 `"France"', add
+label define mbpl_mom_lbl 422 `"Liechtenstein"', add
+label define mbpl_mom_lbl 423 `"Luxembourg"', add
+label define mbpl_mom_lbl 424 `"Monaco"', add
+label define mbpl_mom_lbl 425 `"Netherlands"', add
+label define mbpl_mom_lbl 426 `"Switzerland"', add
+label define mbpl_mom_lbl 429 `"Western Europe, ns"', add
+label define mbpl_mom_lbl 430 `"Albania"', add
+label define mbpl_mom_lbl 431 `"Andorra"', add
+label define mbpl_mom_lbl 432 `"Gibraltar"', add
+label define mbpl_mom_lbl 433 `"Greece"', add
+label define mbpl_mom_lbl 434 `"Italy"', add
+label define mbpl_mom_lbl 435 `"Malta"', add
+label define mbpl_mom_lbl 436 `"Portugal"', add
+label define mbpl_mom_lbl 437 `"San Marino"', add
+label define mbpl_mom_lbl 438 `"Spain"', add
+label define mbpl_mom_lbl 439 `"Vatican City"', add
+label define mbpl_mom_lbl 440 `"Southern Europe, n.s."', add
+label define mbpl_mom_lbl 450 `"Austria"', add
+label define mbpl_mom_lbl 451 `"Bulgaria"', add
+label define mbpl_mom_lbl 452 `"Czechoslovakia"', add
+label define mbpl_mom_lbl 453 `"Germany"', add
+label define mbpl_mom_lbl 454 `"Hungary"', add
+label define mbpl_mom_lbl 455 `"Poland"', add
+label define mbpl_mom_lbl 456 `"Romania"', add
+label define mbpl_mom_lbl 457 `"Yugoslavia"', add
+label define mbpl_mom_lbl 458 `"Central Europe, ns"', add
+label define mbpl_mom_lbl 459 `"Eastern Europe, n.s."', add
+label define mbpl_mom_lbl 460 `"Estonia"', add
+label define mbpl_mom_lbl 461 `"Latvia"', add
+label define mbpl_mom_lbl 462 `"Lithuania"', add
+label define mbpl_mom_lbl 463 `"Baltic States, ns"', add
+label define mbpl_mom_lbl 465 `"Other USSR/Russia"', add
+label define mbpl_mom_lbl 499 `"Europe, nec/ns"', add
+label define mbpl_mom_lbl 500 `"China"', add
+label define mbpl_mom_lbl 501 `"Japan"', add
+label define mbpl_mom_lbl 502 `"Korea"', add
+label define mbpl_mom_lbl 509 `"East Asia, n.s."', add
+label define mbpl_mom_lbl 510 `"Brunei"', add
+label define mbpl_mom_lbl 511 `"Cambodia (Kampuchea)"', add
+label define mbpl_mom_lbl 512 `"Indonesia"', add
+label define mbpl_mom_lbl 513 `"Laos"', add
+label define mbpl_mom_lbl 514 `"Malaysia"', add
+label define mbpl_mom_lbl 515 `"Philippines"', add
+label define mbpl_mom_lbl 516 `"Singapore"', add
+label define mbpl_mom_lbl 517 `"Thailand"', add
+label define mbpl_mom_lbl 518 `"Vietnam"', add
+label define mbpl_mom_lbl 519 `"Southeast Asia, ns"', add
+label define mbpl_mom_lbl 520 `"Afghanistan"', add
+label define mbpl_mom_lbl 521 `"India"', add
+label define mbpl_mom_lbl 522 `"Iran"', add
+label define mbpl_mom_lbl 523 `"Maldives"', add
+label define mbpl_mom_lbl 524 `"Nepal"', add
+label define mbpl_mom_lbl 530 `"Bahrain"', add
+label define mbpl_mom_lbl 531 `"Cyprus"', add
+label define mbpl_mom_lbl 532 `"Iraq"', add
+label define mbpl_mom_lbl 533 `"Iraq/Saudi Arabia"', add
+label define mbpl_mom_lbl 534 `"Israel/Palestine"', add
+label define mbpl_mom_lbl 535 `"Jordan"', add
+label define mbpl_mom_lbl 536 `"Kuwait"', add
+label define mbpl_mom_lbl 537 `"Lebanon"', add
+label define mbpl_mom_lbl 538 `"Oman"', add
+label define mbpl_mom_lbl 539 `"Qatar"', add
+label define mbpl_mom_lbl 540 `"Saudi Arabia"', add
+label define mbpl_mom_lbl 541 `"Syria"', add
+label define mbpl_mom_lbl 542 `"Turkey"', add
+label define mbpl_mom_lbl 543 `"United Arab Emirates"', add
+label define mbpl_mom_lbl 544 `"Yemen Arab Republic (North)"', add
+label define mbpl_mom_lbl 545 `"Yemen, PDR (South)"', add
+label define mbpl_mom_lbl 546 `"Persian Gulf States, n.s."', add
+label define mbpl_mom_lbl 547 `"Middle East, n.s."', add
+label define mbpl_mom_lbl 548 `"Southwest Asia, nec/ns"', add
+label define mbpl_mom_lbl 549 `"Asia Minor, n.s."', add
+label define mbpl_mom_lbl 550 `"South Asia, n.e.c."', add
+label define mbpl_mom_lbl 599 `"Asia, nec/ns"', add
+label define mbpl_mom_lbl 600 `"AFRICA"', add
+label define mbpl_mom_lbl 700 `"Australia and New Zealand"', add
+label define mbpl_mom_lbl 710 `"Pacific Islands"', add
+label define mbpl_mom_lbl 900 `"Abroad (unknown) or at sea"', add
+label define mbpl_mom_lbl 950 `"Other n.e.c."', add
+label define mbpl_mom_lbl 997 `"Unknown"', add
+label define mbpl_mom_lbl 999 `"Missing/blank"', add
+label values mbpl_mom mbpl_mom_lbl
+
+label define mbpl_pop_lbl 000 `"Not Applicable"'
+label define mbpl_pop_lbl 001 `"Alabama"', add
+label define mbpl_pop_lbl 002 `"Alaska"', add
+label define mbpl_pop_lbl 004 `"Arizona"', add
+label define mbpl_pop_lbl 005 `"Arkansas"', add
+label define mbpl_pop_lbl 006 `"California"', add
+label define mbpl_pop_lbl 008 `"Colorado"', add
+label define mbpl_pop_lbl 009 `"Connecticut"', add
+label define mbpl_pop_lbl 010 `"Delaware"', add
+label define mbpl_pop_lbl 011 `"District of Columbia"', add
+label define mbpl_pop_lbl 012 `"Florida"', add
+label define mbpl_pop_lbl 013 `"Georgia"', add
+label define mbpl_pop_lbl 015 `"Hawaii"', add
+label define mbpl_pop_lbl 016 `"Idaho"', add
+label define mbpl_pop_lbl 017 `"Illinois"', add
+label define mbpl_pop_lbl 018 `"Indiana"', add
+label define mbpl_pop_lbl 019 `"Iowa"', add
+label define mbpl_pop_lbl 020 `"Kansas"', add
+label define mbpl_pop_lbl 021 `"Kentucky"', add
+label define mbpl_pop_lbl 022 `"Louisiana"', add
+label define mbpl_pop_lbl 023 `"Maine"', add
+label define mbpl_pop_lbl 024 `"Maryland"', add
+label define mbpl_pop_lbl 025 `"Massachusetts"', add
+label define mbpl_pop_lbl 026 `"Michigan"', add
+label define mbpl_pop_lbl 027 `"Minnesota"', add
+label define mbpl_pop_lbl 028 `"Mississippi"', add
+label define mbpl_pop_lbl 029 `"Missouri"', add
+label define mbpl_pop_lbl 030 `"Montana"', add
+label define mbpl_pop_lbl 031 `"Nebraska"', add
+label define mbpl_pop_lbl 032 `"Nevada"', add
+label define mbpl_pop_lbl 033 `"New Hampshire"', add
+label define mbpl_pop_lbl 034 `"New Jersey"', add
+label define mbpl_pop_lbl 035 `"New Mexico"', add
+label define mbpl_pop_lbl 036 `"New York"', add
+label define mbpl_pop_lbl 037 `"North Carolina"', add
+label define mbpl_pop_lbl 038 `"North Dakota"', add
+label define mbpl_pop_lbl 039 `"Ohio"', add
+label define mbpl_pop_lbl 040 `"Oklahoma"', add
+label define mbpl_pop_lbl 041 `"Oregon"', add
+label define mbpl_pop_lbl 042 `"Pennsylvania"', add
+label define mbpl_pop_lbl 044 `"Rhode Island"', add
+label define mbpl_pop_lbl 045 `"South Carolina"', add
+label define mbpl_pop_lbl 046 `"South Dakota"', add
+label define mbpl_pop_lbl 047 `"Tennessee"', add
+label define mbpl_pop_lbl 048 `"Texas"', add
+label define mbpl_pop_lbl 049 `"Utah"', add
+label define mbpl_pop_lbl 050 `"Vermont"', add
+label define mbpl_pop_lbl 051 `"Virginia"', add
+label define mbpl_pop_lbl 053 `"Washington"', add
+label define mbpl_pop_lbl 054 `"West Virginia"', add
+label define mbpl_pop_lbl 055 `"Wisconsin"', add
+label define mbpl_pop_lbl 056 `"Wyoming"', add
+label define mbpl_pop_lbl 090 `"Native American"', add
+label define mbpl_pop_lbl 099 `"United States, ns"', add
+label define mbpl_pop_lbl 100 `"American Samoa"', add
+label define mbpl_pop_lbl 105 `"Guam"', add
+label define mbpl_pop_lbl 110 `"Puerto Rico"', add
+label define mbpl_pop_lbl 115 `"U.S. Virgin Islands"', add
+label define mbpl_pop_lbl 120 `"Other US Possessions"', add
+label define mbpl_pop_lbl 150 `"Canada"', add
+label define mbpl_pop_lbl 155 `"St. Pierre and Miquelon"', add
+label define mbpl_pop_lbl 160 `"Atlantic Islands"', add
+label define mbpl_pop_lbl 199 `"North America, n.s."', add
+label define mbpl_pop_lbl 200 `"Mexico"', add
+label define mbpl_pop_lbl 210 `"Central America"', add
+label define mbpl_pop_lbl 250 `"Cuba"', add
+label define mbpl_pop_lbl 260 `"West Indies"', add
+label define mbpl_pop_lbl 299 `"Americas, n.s."', add
+label define mbpl_pop_lbl 300 `"SOUTH AMERICA"', add
+label define mbpl_pop_lbl 400 `"Denmark"', add
+label define mbpl_pop_lbl 401 `"Finland"', add
+label define mbpl_pop_lbl 402 `"Iceland"', add
+label define mbpl_pop_lbl 403 `"Lapland, n.s."', add
+label define mbpl_pop_lbl 404 `"Norway"', add
+label define mbpl_pop_lbl 405 `"Sweden"', add
+label define mbpl_pop_lbl 410 `"England"', add
+label define mbpl_pop_lbl 411 `"Scotland"', add
+label define mbpl_pop_lbl 412 `"Wales"', add
+label define mbpl_pop_lbl 413 `"United Kingdom, ns"', add
+label define mbpl_pop_lbl 414 `"Ireland"', add
+label define mbpl_pop_lbl 419 `"Northern Europe, ns"', add
+label define mbpl_pop_lbl 420 `"Belgium"', add
+label define mbpl_pop_lbl 421 `"France"', add
+label define mbpl_pop_lbl 422 `"Liechtenstein"', add
+label define mbpl_pop_lbl 423 `"Luxembourg"', add
+label define mbpl_pop_lbl 424 `"Monaco"', add
+label define mbpl_pop_lbl 425 `"Netherlands"', add
+label define mbpl_pop_lbl 426 `"Switzerland"', add
+label define mbpl_pop_lbl 429 `"Western Europe, ns"', add
+label define mbpl_pop_lbl 430 `"Albania"', add
+label define mbpl_pop_lbl 431 `"Andorra"', add
+label define mbpl_pop_lbl 432 `"Gibraltar"', add
+label define mbpl_pop_lbl 433 `"Greece"', add
+label define mbpl_pop_lbl 434 `"Italy"', add
+label define mbpl_pop_lbl 435 `"Malta"', add
+label define mbpl_pop_lbl 436 `"Portugal"', add
+label define mbpl_pop_lbl 437 `"San Marino"', add
+label define mbpl_pop_lbl 438 `"Spain"', add
+label define mbpl_pop_lbl 439 `"Vatican City"', add
+label define mbpl_pop_lbl 440 `"Southern Europe, n.s."', add
+label define mbpl_pop_lbl 450 `"Austria"', add
+label define mbpl_pop_lbl 451 `"Bulgaria"', add
+label define mbpl_pop_lbl 452 `"Czechoslovakia"', add
+label define mbpl_pop_lbl 453 `"Germany"', add
+label define mbpl_pop_lbl 454 `"Hungary"', add
+label define mbpl_pop_lbl 455 `"Poland"', add
+label define mbpl_pop_lbl 456 `"Romania"', add
+label define mbpl_pop_lbl 457 `"Yugoslavia"', add
+label define mbpl_pop_lbl 458 `"Central Europe, ns"', add
+label define mbpl_pop_lbl 459 `"Eastern Europe, n.s."', add
+label define mbpl_pop_lbl 460 `"Estonia"', add
+label define mbpl_pop_lbl 461 `"Latvia"', add
+label define mbpl_pop_lbl 462 `"Lithuania"', add
+label define mbpl_pop_lbl 463 `"Baltic States, ns"', add
+label define mbpl_pop_lbl 465 `"Other USSR/Russia"', add
+label define mbpl_pop_lbl 499 `"Europe, nec/ns"', add
+label define mbpl_pop_lbl 500 `"China"', add
+label define mbpl_pop_lbl 501 `"Japan"', add
+label define mbpl_pop_lbl 502 `"Korea"', add
+label define mbpl_pop_lbl 509 `"East Asia, n.s."', add
+label define mbpl_pop_lbl 510 `"Brunei"', add
+label define mbpl_pop_lbl 511 `"Cambodia (Kampuchea)"', add
+label define mbpl_pop_lbl 512 `"Indonesia"', add
+label define mbpl_pop_lbl 513 `"Laos"', add
+label define mbpl_pop_lbl 514 `"Malaysia"', add
+label define mbpl_pop_lbl 515 `"Philippines"', add
+label define mbpl_pop_lbl 516 `"Singapore"', add
+label define mbpl_pop_lbl 517 `"Thailand"', add
+label define mbpl_pop_lbl 518 `"Vietnam"', add
+label define mbpl_pop_lbl 519 `"Southeast Asia, ns"', add
+label define mbpl_pop_lbl 520 `"Afghanistan"', add
+label define mbpl_pop_lbl 521 `"India"', add
+label define mbpl_pop_lbl 522 `"Iran"', add
+label define mbpl_pop_lbl 523 `"Maldives"', add
+label define mbpl_pop_lbl 524 `"Nepal"', add
+label define mbpl_pop_lbl 530 `"Bahrain"', add
+label define mbpl_pop_lbl 531 `"Cyprus"', add
+label define mbpl_pop_lbl 532 `"Iraq"', add
+label define mbpl_pop_lbl 533 `"Iraq/Saudi Arabia"', add
+label define mbpl_pop_lbl 534 `"Israel/Palestine"', add
+label define mbpl_pop_lbl 535 `"Jordan"', add
+label define mbpl_pop_lbl 536 `"Kuwait"', add
+label define mbpl_pop_lbl 537 `"Lebanon"', add
+label define mbpl_pop_lbl 538 `"Oman"', add
+label define mbpl_pop_lbl 539 `"Qatar"', add
+label define mbpl_pop_lbl 540 `"Saudi Arabia"', add
+label define mbpl_pop_lbl 541 `"Syria"', add
+label define mbpl_pop_lbl 542 `"Turkey"', add
+label define mbpl_pop_lbl 543 `"United Arab Emirates"', add
+label define mbpl_pop_lbl 544 `"Yemen Arab Republic (North)"', add
+label define mbpl_pop_lbl 545 `"Yemen, PDR (South)"', add
+label define mbpl_pop_lbl 546 `"Persian Gulf States, n.s."', add
+label define mbpl_pop_lbl 547 `"Middle East, n.s."', add
+label define mbpl_pop_lbl 548 `"Southwest Asia, nec/ns"', add
+label define mbpl_pop_lbl 549 `"Asia Minor, n.s."', add
+label define mbpl_pop_lbl 550 `"South Asia, n.e.c."', add
+label define mbpl_pop_lbl 599 `"Asia, nec/ns"', add
+label define mbpl_pop_lbl 600 `"AFRICA"', add
+label define mbpl_pop_lbl 700 `"Australia and New Zealand"', add
+label define mbpl_pop_lbl 710 `"Pacific Islands"', add
+label define mbpl_pop_lbl 900 `"Abroad (unknown) or at sea"', add
+label define mbpl_pop_lbl 950 `"Other n.e.c."', add
+label define mbpl_pop_lbl 997 `"Unknown"', add
+label define mbpl_pop_lbl 999 `"Missing/blank"', add
+label values mbpl_pop mbpl_pop_lbl
+
 label define mbpl_sp_lbl 000 `"Not Applicable"'
 label define mbpl_sp_lbl 001 `"Alabama"', add
 label define mbpl_sp_lbl 002 `"Alaska"', add
@@ -7561,6 +13803,338 @@ label define mbpl_sp_lbl 950 `"Other n.e.c."', add
 label define mbpl_sp_lbl 997 `"Unknown"', add
 label define mbpl_sp_lbl 999 `"Missing/blank"', add
 label values mbpl_sp mbpl_sp_lbl
+
+label define mbpl_mom2_lbl 000 `"Not Applicable"'
+label define mbpl_mom2_lbl 001 `"Alabama"', add
+label define mbpl_mom2_lbl 002 `"Alaska"', add
+label define mbpl_mom2_lbl 004 `"Arizona"', add
+label define mbpl_mom2_lbl 005 `"Arkansas"', add
+label define mbpl_mom2_lbl 006 `"California"', add
+label define mbpl_mom2_lbl 008 `"Colorado"', add
+label define mbpl_mom2_lbl 009 `"Connecticut"', add
+label define mbpl_mom2_lbl 010 `"Delaware"', add
+label define mbpl_mom2_lbl 011 `"District of Columbia"', add
+label define mbpl_mom2_lbl 012 `"Florida"', add
+label define mbpl_mom2_lbl 013 `"Georgia"', add
+label define mbpl_mom2_lbl 015 `"Hawaii"', add
+label define mbpl_mom2_lbl 016 `"Idaho"', add
+label define mbpl_mom2_lbl 017 `"Illinois"', add
+label define mbpl_mom2_lbl 018 `"Indiana"', add
+label define mbpl_mom2_lbl 019 `"Iowa"', add
+label define mbpl_mom2_lbl 020 `"Kansas"', add
+label define mbpl_mom2_lbl 021 `"Kentucky"', add
+label define mbpl_mom2_lbl 022 `"Louisiana"', add
+label define mbpl_mom2_lbl 023 `"Maine"', add
+label define mbpl_mom2_lbl 024 `"Maryland"', add
+label define mbpl_mom2_lbl 025 `"Massachusetts"', add
+label define mbpl_mom2_lbl 026 `"Michigan"', add
+label define mbpl_mom2_lbl 027 `"Minnesota"', add
+label define mbpl_mom2_lbl 028 `"Mississippi"', add
+label define mbpl_mom2_lbl 029 `"Missouri"', add
+label define mbpl_mom2_lbl 030 `"Montana"', add
+label define mbpl_mom2_lbl 031 `"Nebraska"', add
+label define mbpl_mom2_lbl 032 `"Nevada"', add
+label define mbpl_mom2_lbl 033 `"New Hampshire"', add
+label define mbpl_mom2_lbl 034 `"New Jersey"', add
+label define mbpl_mom2_lbl 035 `"New Mexico"', add
+label define mbpl_mom2_lbl 036 `"New York"', add
+label define mbpl_mom2_lbl 037 `"North Carolina"', add
+label define mbpl_mom2_lbl 038 `"North Dakota"', add
+label define mbpl_mom2_lbl 039 `"Ohio"', add
+label define mbpl_mom2_lbl 040 `"Oklahoma"', add
+label define mbpl_mom2_lbl 041 `"Oregon"', add
+label define mbpl_mom2_lbl 042 `"Pennsylvania"', add
+label define mbpl_mom2_lbl 044 `"Rhode Island"', add
+label define mbpl_mom2_lbl 045 `"South Carolina"', add
+label define mbpl_mom2_lbl 046 `"South Dakota"', add
+label define mbpl_mom2_lbl 047 `"Tennessee"', add
+label define mbpl_mom2_lbl 048 `"Texas"', add
+label define mbpl_mom2_lbl 049 `"Utah"', add
+label define mbpl_mom2_lbl 050 `"Vermont"', add
+label define mbpl_mom2_lbl 051 `"Virginia"', add
+label define mbpl_mom2_lbl 053 `"Washington"', add
+label define mbpl_mom2_lbl 054 `"West Virginia"', add
+label define mbpl_mom2_lbl 055 `"Wisconsin"', add
+label define mbpl_mom2_lbl 056 `"Wyoming"', add
+label define mbpl_mom2_lbl 090 `"Native American"', add
+label define mbpl_mom2_lbl 099 `"United States, ns"', add
+label define mbpl_mom2_lbl 100 `"American Samoa"', add
+label define mbpl_mom2_lbl 105 `"Guam"', add
+label define mbpl_mom2_lbl 110 `"Puerto Rico"', add
+label define mbpl_mom2_lbl 115 `"U.S. Virgin Islands"', add
+label define mbpl_mom2_lbl 120 `"Other US Possessions"', add
+label define mbpl_mom2_lbl 150 `"Canada"', add
+label define mbpl_mom2_lbl 155 `"St. Pierre and Miquelon"', add
+label define mbpl_mom2_lbl 160 `"Atlantic Islands"', add
+label define mbpl_mom2_lbl 199 `"North America, n.s."', add
+label define mbpl_mom2_lbl 200 `"Mexico"', add
+label define mbpl_mom2_lbl 210 `"Central America"', add
+label define mbpl_mom2_lbl 250 `"Cuba"', add
+label define mbpl_mom2_lbl 260 `"West Indies"', add
+label define mbpl_mom2_lbl 299 `"Americas, n.s."', add
+label define mbpl_mom2_lbl 300 `"SOUTH AMERICA"', add
+label define mbpl_mom2_lbl 400 `"Denmark"', add
+label define mbpl_mom2_lbl 401 `"Finland"', add
+label define mbpl_mom2_lbl 402 `"Iceland"', add
+label define mbpl_mom2_lbl 403 `"Lapland, n.s."', add
+label define mbpl_mom2_lbl 404 `"Norway"', add
+label define mbpl_mom2_lbl 405 `"Sweden"', add
+label define mbpl_mom2_lbl 410 `"England"', add
+label define mbpl_mom2_lbl 411 `"Scotland"', add
+label define mbpl_mom2_lbl 412 `"Wales"', add
+label define mbpl_mom2_lbl 413 `"United Kingdom, ns"', add
+label define mbpl_mom2_lbl 414 `"Ireland"', add
+label define mbpl_mom2_lbl 419 `"Northern Europe, ns"', add
+label define mbpl_mom2_lbl 420 `"Belgium"', add
+label define mbpl_mom2_lbl 421 `"France"', add
+label define mbpl_mom2_lbl 422 `"Liechtenstein"', add
+label define mbpl_mom2_lbl 423 `"Luxembourg"', add
+label define mbpl_mom2_lbl 424 `"Monaco"', add
+label define mbpl_mom2_lbl 425 `"Netherlands"', add
+label define mbpl_mom2_lbl 426 `"Switzerland"', add
+label define mbpl_mom2_lbl 429 `"Western Europe, ns"', add
+label define mbpl_mom2_lbl 430 `"Albania"', add
+label define mbpl_mom2_lbl 431 `"Andorra"', add
+label define mbpl_mom2_lbl 432 `"Gibraltar"', add
+label define mbpl_mom2_lbl 433 `"Greece"', add
+label define mbpl_mom2_lbl 434 `"Italy"', add
+label define mbpl_mom2_lbl 435 `"Malta"', add
+label define mbpl_mom2_lbl 436 `"Portugal"', add
+label define mbpl_mom2_lbl 437 `"San Marino"', add
+label define mbpl_mom2_lbl 438 `"Spain"', add
+label define mbpl_mom2_lbl 439 `"Vatican City"', add
+label define mbpl_mom2_lbl 440 `"Southern Europe, n.s."', add
+label define mbpl_mom2_lbl 450 `"Austria"', add
+label define mbpl_mom2_lbl 451 `"Bulgaria"', add
+label define mbpl_mom2_lbl 452 `"Czechoslovakia"', add
+label define mbpl_mom2_lbl 453 `"Germany"', add
+label define mbpl_mom2_lbl 454 `"Hungary"', add
+label define mbpl_mom2_lbl 455 `"Poland"', add
+label define mbpl_mom2_lbl 456 `"Romania"', add
+label define mbpl_mom2_lbl 457 `"Yugoslavia"', add
+label define mbpl_mom2_lbl 458 `"Central Europe, ns"', add
+label define mbpl_mom2_lbl 459 `"Eastern Europe, n.s."', add
+label define mbpl_mom2_lbl 460 `"Estonia"', add
+label define mbpl_mom2_lbl 461 `"Latvia"', add
+label define mbpl_mom2_lbl 462 `"Lithuania"', add
+label define mbpl_mom2_lbl 463 `"Baltic States, ns"', add
+label define mbpl_mom2_lbl 465 `"Other USSR/Russia"', add
+label define mbpl_mom2_lbl 499 `"Europe, nec/ns"', add
+label define mbpl_mom2_lbl 500 `"China"', add
+label define mbpl_mom2_lbl 501 `"Japan"', add
+label define mbpl_mom2_lbl 502 `"Korea"', add
+label define mbpl_mom2_lbl 509 `"East Asia, n.s."', add
+label define mbpl_mom2_lbl 510 `"Brunei"', add
+label define mbpl_mom2_lbl 511 `"Cambodia (Kampuchea)"', add
+label define mbpl_mom2_lbl 512 `"Indonesia"', add
+label define mbpl_mom2_lbl 513 `"Laos"', add
+label define mbpl_mom2_lbl 514 `"Malaysia"', add
+label define mbpl_mom2_lbl 515 `"Philippines"', add
+label define mbpl_mom2_lbl 516 `"Singapore"', add
+label define mbpl_mom2_lbl 517 `"Thailand"', add
+label define mbpl_mom2_lbl 518 `"Vietnam"', add
+label define mbpl_mom2_lbl 519 `"Southeast Asia, ns"', add
+label define mbpl_mom2_lbl 520 `"Afghanistan"', add
+label define mbpl_mom2_lbl 521 `"India"', add
+label define mbpl_mom2_lbl 522 `"Iran"', add
+label define mbpl_mom2_lbl 523 `"Maldives"', add
+label define mbpl_mom2_lbl 524 `"Nepal"', add
+label define mbpl_mom2_lbl 530 `"Bahrain"', add
+label define mbpl_mom2_lbl 531 `"Cyprus"', add
+label define mbpl_mom2_lbl 532 `"Iraq"', add
+label define mbpl_mom2_lbl 533 `"Iraq/Saudi Arabia"', add
+label define mbpl_mom2_lbl 534 `"Israel/Palestine"', add
+label define mbpl_mom2_lbl 535 `"Jordan"', add
+label define mbpl_mom2_lbl 536 `"Kuwait"', add
+label define mbpl_mom2_lbl 537 `"Lebanon"', add
+label define mbpl_mom2_lbl 538 `"Oman"', add
+label define mbpl_mom2_lbl 539 `"Qatar"', add
+label define mbpl_mom2_lbl 540 `"Saudi Arabia"', add
+label define mbpl_mom2_lbl 541 `"Syria"', add
+label define mbpl_mom2_lbl 542 `"Turkey"', add
+label define mbpl_mom2_lbl 543 `"United Arab Emirates"', add
+label define mbpl_mom2_lbl 544 `"Yemen Arab Republic (North)"', add
+label define mbpl_mom2_lbl 545 `"Yemen, PDR (South)"', add
+label define mbpl_mom2_lbl 546 `"Persian Gulf States, n.s."', add
+label define mbpl_mom2_lbl 547 `"Middle East, n.s."', add
+label define mbpl_mom2_lbl 548 `"Southwest Asia, nec/ns"', add
+label define mbpl_mom2_lbl 549 `"Asia Minor, n.s."', add
+label define mbpl_mom2_lbl 550 `"South Asia, n.e.c."', add
+label define mbpl_mom2_lbl 599 `"Asia, nec/ns"', add
+label define mbpl_mom2_lbl 600 `"AFRICA"', add
+label define mbpl_mom2_lbl 700 `"Australia and New Zealand"', add
+label define mbpl_mom2_lbl 710 `"Pacific Islands"', add
+label define mbpl_mom2_lbl 900 `"Abroad (unknown) or at sea"', add
+label define mbpl_mom2_lbl 950 `"Other n.e.c."', add
+label define mbpl_mom2_lbl 997 `"Unknown"', add
+label define mbpl_mom2_lbl 999 `"Missing/blank"', add
+label values mbpl_mom2 mbpl_mom2_lbl
+
+label define mbpl_pop2_lbl 000 `"Not Applicable"'
+label define mbpl_pop2_lbl 001 `"Alabama"', add
+label define mbpl_pop2_lbl 002 `"Alaska"', add
+label define mbpl_pop2_lbl 004 `"Arizona"', add
+label define mbpl_pop2_lbl 005 `"Arkansas"', add
+label define mbpl_pop2_lbl 006 `"California"', add
+label define mbpl_pop2_lbl 008 `"Colorado"', add
+label define mbpl_pop2_lbl 009 `"Connecticut"', add
+label define mbpl_pop2_lbl 010 `"Delaware"', add
+label define mbpl_pop2_lbl 011 `"District of Columbia"', add
+label define mbpl_pop2_lbl 012 `"Florida"', add
+label define mbpl_pop2_lbl 013 `"Georgia"', add
+label define mbpl_pop2_lbl 015 `"Hawaii"', add
+label define mbpl_pop2_lbl 016 `"Idaho"', add
+label define mbpl_pop2_lbl 017 `"Illinois"', add
+label define mbpl_pop2_lbl 018 `"Indiana"', add
+label define mbpl_pop2_lbl 019 `"Iowa"', add
+label define mbpl_pop2_lbl 020 `"Kansas"', add
+label define mbpl_pop2_lbl 021 `"Kentucky"', add
+label define mbpl_pop2_lbl 022 `"Louisiana"', add
+label define mbpl_pop2_lbl 023 `"Maine"', add
+label define mbpl_pop2_lbl 024 `"Maryland"', add
+label define mbpl_pop2_lbl 025 `"Massachusetts"', add
+label define mbpl_pop2_lbl 026 `"Michigan"', add
+label define mbpl_pop2_lbl 027 `"Minnesota"', add
+label define mbpl_pop2_lbl 028 `"Mississippi"', add
+label define mbpl_pop2_lbl 029 `"Missouri"', add
+label define mbpl_pop2_lbl 030 `"Montana"', add
+label define mbpl_pop2_lbl 031 `"Nebraska"', add
+label define mbpl_pop2_lbl 032 `"Nevada"', add
+label define mbpl_pop2_lbl 033 `"New Hampshire"', add
+label define mbpl_pop2_lbl 034 `"New Jersey"', add
+label define mbpl_pop2_lbl 035 `"New Mexico"', add
+label define mbpl_pop2_lbl 036 `"New York"', add
+label define mbpl_pop2_lbl 037 `"North Carolina"', add
+label define mbpl_pop2_lbl 038 `"North Dakota"', add
+label define mbpl_pop2_lbl 039 `"Ohio"', add
+label define mbpl_pop2_lbl 040 `"Oklahoma"', add
+label define mbpl_pop2_lbl 041 `"Oregon"', add
+label define mbpl_pop2_lbl 042 `"Pennsylvania"', add
+label define mbpl_pop2_lbl 044 `"Rhode Island"', add
+label define mbpl_pop2_lbl 045 `"South Carolina"', add
+label define mbpl_pop2_lbl 046 `"South Dakota"', add
+label define mbpl_pop2_lbl 047 `"Tennessee"', add
+label define mbpl_pop2_lbl 048 `"Texas"', add
+label define mbpl_pop2_lbl 049 `"Utah"', add
+label define mbpl_pop2_lbl 050 `"Vermont"', add
+label define mbpl_pop2_lbl 051 `"Virginia"', add
+label define mbpl_pop2_lbl 053 `"Washington"', add
+label define mbpl_pop2_lbl 054 `"West Virginia"', add
+label define mbpl_pop2_lbl 055 `"Wisconsin"', add
+label define mbpl_pop2_lbl 056 `"Wyoming"', add
+label define mbpl_pop2_lbl 090 `"Native American"', add
+label define mbpl_pop2_lbl 099 `"United States, ns"', add
+label define mbpl_pop2_lbl 100 `"American Samoa"', add
+label define mbpl_pop2_lbl 105 `"Guam"', add
+label define mbpl_pop2_lbl 110 `"Puerto Rico"', add
+label define mbpl_pop2_lbl 115 `"U.S. Virgin Islands"', add
+label define mbpl_pop2_lbl 120 `"Other US Possessions"', add
+label define mbpl_pop2_lbl 150 `"Canada"', add
+label define mbpl_pop2_lbl 155 `"St. Pierre and Miquelon"', add
+label define mbpl_pop2_lbl 160 `"Atlantic Islands"', add
+label define mbpl_pop2_lbl 199 `"North America, n.s."', add
+label define mbpl_pop2_lbl 200 `"Mexico"', add
+label define mbpl_pop2_lbl 210 `"Central America"', add
+label define mbpl_pop2_lbl 250 `"Cuba"', add
+label define mbpl_pop2_lbl 260 `"West Indies"', add
+label define mbpl_pop2_lbl 299 `"Americas, n.s."', add
+label define mbpl_pop2_lbl 300 `"SOUTH AMERICA"', add
+label define mbpl_pop2_lbl 400 `"Denmark"', add
+label define mbpl_pop2_lbl 401 `"Finland"', add
+label define mbpl_pop2_lbl 402 `"Iceland"', add
+label define mbpl_pop2_lbl 403 `"Lapland, n.s."', add
+label define mbpl_pop2_lbl 404 `"Norway"', add
+label define mbpl_pop2_lbl 405 `"Sweden"', add
+label define mbpl_pop2_lbl 410 `"England"', add
+label define mbpl_pop2_lbl 411 `"Scotland"', add
+label define mbpl_pop2_lbl 412 `"Wales"', add
+label define mbpl_pop2_lbl 413 `"United Kingdom, ns"', add
+label define mbpl_pop2_lbl 414 `"Ireland"', add
+label define mbpl_pop2_lbl 419 `"Northern Europe, ns"', add
+label define mbpl_pop2_lbl 420 `"Belgium"', add
+label define mbpl_pop2_lbl 421 `"France"', add
+label define mbpl_pop2_lbl 422 `"Liechtenstein"', add
+label define mbpl_pop2_lbl 423 `"Luxembourg"', add
+label define mbpl_pop2_lbl 424 `"Monaco"', add
+label define mbpl_pop2_lbl 425 `"Netherlands"', add
+label define mbpl_pop2_lbl 426 `"Switzerland"', add
+label define mbpl_pop2_lbl 429 `"Western Europe, ns"', add
+label define mbpl_pop2_lbl 430 `"Albania"', add
+label define mbpl_pop2_lbl 431 `"Andorra"', add
+label define mbpl_pop2_lbl 432 `"Gibraltar"', add
+label define mbpl_pop2_lbl 433 `"Greece"', add
+label define mbpl_pop2_lbl 434 `"Italy"', add
+label define mbpl_pop2_lbl 435 `"Malta"', add
+label define mbpl_pop2_lbl 436 `"Portugal"', add
+label define mbpl_pop2_lbl 437 `"San Marino"', add
+label define mbpl_pop2_lbl 438 `"Spain"', add
+label define mbpl_pop2_lbl 439 `"Vatican City"', add
+label define mbpl_pop2_lbl 440 `"Southern Europe, n.s."', add
+label define mbpl_pop2_lbl 450 `"Austria"', add
+label define mbpl_pop2_lbl 451 `"Bulgaria"', add
+label define mbpl_pop2_lbl 452 `"Czechoslovakia"', add
+label define mbpl_pop2_lbl 453 `"Germany"', add
+label define mbpl_pop2_lbl 454 `"Hungary"', add
+label define mbpl_pop2_lbl 455 `"Poland"', add
+label define mbpl_pop2_lbl 456 `"Romania"', add
+label define mbpl_pop2_lbl 457 `"Yugoslavia"', add
+label define mbpl_pop2_lbl 458 `"Central Europe, ns"', add
+label define mbpl_pop2_lbl 459 `"Eastern Europe, n.s."', add
+label define mbpl_pop2_lbl 460 `"Estonia"', add
+label define mbpl_pop2_lbl 461 `"Latvia"', add
+label define mbpl_pop2_lbl 462 `"Lithuania"', add
+label define mbpl_pop2_lbl 463 `"Baltic States, ns"', add
+label define mbpl_pop2_lbl 465 `"Other USSR/Russia"', add
+label define mbpl_pop2_lbl 499 `"Europe, nec/ns"', add
+label define mbpl_pop2_lbl 500 `"China"', add
+label define mbpl_pop2_lbl 501 `"Japan"', add
+label define mbpl_pop2_lbl 502 `"Korea"', add
+label define mbpl_pop2_lbl 509 `"East Asia, n.s."', add
+label define mbpl_pop2_lbl 510 `"Brunei"', add
+label define mbpl_pop2_lbl 511 `"Cambodia (Kampuchea)"', add
+label define mbpl_pop2_lbl 512 `"Indonesia"', add
+label define mbpl_pop2_lbl 513 `"Laos"', add
+label define mbpl_pop2_lbl 514 `"Malaysia"', add
+label define mbpl_pop2_lbl 515 `"Philippines"', add
+label define mbpl_pop2_lbl 516 `"Singapore"', add
+label define mbpl_pop2_lbl 517 `"Thailand"', add
+label define mbpl_pop2_lbl 518 `"Vietnam"', add
+label define mbpl_pop2_lbl 519 `"Southeast Asia, ns"', add
+label define mbpl_pop2_lbl 520 `"Afghanistan"', add
+label define mbpl_pop2_lbl 521 `"India"', add
+label define mbpl_pop2_lbl 522 `"Iran"', add
+label define mbpl_pop2_lbl 523 `"Maldives"', add
+label define mbpl_pop2_lbl 524 `"Nepal"', add
+label define mbpl_pop2_lbl 530 `"Bahrain"', add
+label define mbpl_pop2_lbl 531 `"Cyprus"', add
+label define mbpl_pop2_lbl 532 `"Iraq"', add
+label define mbpl_pop2_lbl 533 `"Iraq/Saudi Arabia"', add
+label define mbpl_pop2_lbl 534 `"Israel/Palestine"', add
+label define mbpl_pop2_lbl 535 `"Jordan"', add
+label define mbpl_pop2_lbl 536 `"Kuwait"', add
+label define mbpl_pop2_lbl 537 `"Lebanon"', add
+label define mbpl_pop2_lbl 538 `"Oman"', add
+label define mbpl_pop2_lbl 539 `"Qatar"', add
+label define mbpl_pop2_lbl 540 `"Saudi Arabia"', add
+label define mbpl_pop2_lbl 541 `"Syria"', add
+label define mbpl_pop2_lbl 542 `"Turkey"', add
+label define mbpl_pop2_lbl 543 `"United Arab Emirates"', add
+label define mbpl_pop2_lbl 544 `"Yemen Arab Republic (North)"', add
+label define mbpl_pop2_lbl 545 `"Yemen, PDR (South)"', add
+label define mbpl_pop2_lbl 546 `"Persian Gulf States, n.s."', add
+label define mbpl_pop2_lbl 547 `"Middle East, n.s."', add
+label define mbpl_pop2_lbl 548 `"Southwest Asia, nec/ns"', add
+label define mbpl_pop2_lbl 549 `"Asia Minor, n.s."', add
+label define mbpl_pop2_lbl 550 `"South Asia, n.e.c."', add
+label define mbpl_pop2_lbl 599 `"Asia, nec/ns"', add
+label define mbpl_pop2_lbl 600 `"AFRICA"', add
+label define mbpl_pop2_lbl 700 `"Australia and New Zealand"', add
+label define mbpl_pop2_lbl 710 `"Pacific Islands"', add
+label define mbpl_pop2_lbl 900 `"Abroad (unknown) or at sea"', add
+label define mbpl_pop2_lbl 950 `"Other n.e.c."', add
+label define mbpl_pop2_lbl 997 `"Unknown"', add
+label define mbpl_pop2_lbl 999 `"Missing/blank"', add
+label values mbpl_pop2 mbpl_pop2_lbl
 
 label define mbpld_head_lbl 00000 `"Not Applicable"'
 label define mbpld_head_lbl 00100 `"Alabama"', add
@@ -8101,6 +14675,1084 @@ label define mbpld_head_lbl 99700 `"Unknown"', add
 label define mbpld_head_lbl 99900 `"Missing/blank"', add
 label values mbpld_head mbpld_head_lbl
 
+label define mbpld_mom_lbl 00000 `"Not Applicable"'
+label define mbpld_mom_lbl 00100 `"Alabama"', add
+label define mbpld_mom_lbl 00200 `"Alaska"', add
+label define mbpld_mom_lbl 00400 `"Arizona"', add
+label define mbpld_mom_lbl 00500 `"Arkansas"', add
+label define mbpld_mom_lbl 00600 `"California"', add
+label define mbpld_mom_lbl 00800 `"Colorado"', add
+label define mbpld_mom_lbl 00900 `"Connecticut"', add
+label define mbpld_mom_lbl 01000 `"Delaware"', add
+label define mbpld_mom_lbl 01100 `"District of Columbia"', add
+label define mbpld_mom_lbl 01200 `"Florida"', add
+label define mbpld_mom_lbl 01300 `"Georgia"', add
+label define mbpld_mom_lbl 01500 `"Hawaii"', add
+label define mbpld_mom_lbl 01600 `"Idaho"', add
+label define mbpld_mom_lbl 01610 `"Idaho Territory"', add
+label define mbpld_mom_lbl 01700 `"Illinois"', add
+label define mbpld_mom_lbl 01800 `"Indiana"', add
+label define mbpld_mom_lbl 01900 `"Iowa"', add
+label define mbpld_mom_lbl 02000 `"Kansas"', add
+label define mbpld_mom_lbl 02100 `"Kentucky"', add
+label define mbpld_mom_lbl 02200 `"Louisiana"', add
+label define mbpld_mom_lbl 02300 `"Maine"', add
+label define mbpld_mom_lbl 02400 `"Maryland"', add
+label define mbpld_mom_lbl 02500 `"Massachusetts"', add
+label define mbpld_mom_lbl 02600 `"Michigan"', add
+label define mbpld_mom_lbl 02700 `"Minnesota"', add
+label define mbpld_mom_lbl 02800 `"Mississippi"', add
+label define mbpld_mom_lbl 02900 `"Missouri"', add
+label define mbpld_mom_lbl 03000 `"Montana"', add
+label define mbpld_mom_lbl 03100 `"Nebraska"', add
+label define mbpld_mom_lbl 03200 `"Nevada"', add
+label define mbpld_mom_lbl 03300 `"New Hampshire"', add
+label define mbpld_mom_lbl 03400 `"New Jersey"', add
+label define mbpld_mom_lbl 03500 `"New Mexico"', add
+label define mbpld_mom_lbl 03510 `"New Mexico Territory"', add
+label define mbpld_mom_lbl 03600 `"New York"', add
+label define mbpld_mom_lbl 03700 `"North Carolina"', add
+label define mbpld_mom_lbl 03800 `"North Dakota"', add
+label define mbpld_mom_lbl 03900 `"Ohio"', add
+label define mbpld_mom_lbl 04000 `"Oklahoma"', add
+label define mbpld_mom_lbl 04010 `"Indian Territory"', add
+label define mbpld_mom_lbl 04100 `"Oregon"', add
+label define mbpld_mom_lbl 04200 `"Pennsylvania"', add
+label define mbpld_mom_lbl 04400 `"Rhode Island"', add
+label define mbpld_mom_lbl 04500 `"South Carolina"', add
+label define mbpld_mom_lbl 04600 `"South Dakota"', add
+label define mbpld_mom_lbl 04610 `"Dakota Territory"', add
+label define mbpld_mom_lbl 04700 `"Tennessee"', add
+label define mbpld_mom_lbl 04800 `"Texas"', add
+label define mbpld_mom_lbl 04900 `"Utah"', add
+label define mbpld_mom_lbl 04910 `"Utah Territory"', add
+label define mbpld_mom_lbl 05000 `"Vermont"', add
+label define mbpld_mom_lbl 05100 `"Virginia"', add
+label define mbpld_mom_lbl 05300 `"Washington"', add
+label define mbpld_mom_lbl 05400 `"West Virginia"', add
+label define mbpld_mom_lbl 05500 `"Wisconsin"', add
+label define mbpld_mom_lbl 05600 `"Wyoming"', add
+label define mbpld_mom_lbl 05610 `"Wyoming Territory"', add
+label define mbpld_mom_lbl 09000 `"Native American"', add
+label define mbpld_mom_lbl 09900 `"United States, n.s."', add
+label define mbpld_mom_lbl 10000 `"American Samoa"', add
+label define mbpld_mom_lbl 10010 `"Samoa, 1940-1950"', add
+label define mbpld_mom_lbl 10500 `"Guam"', add
+label define mbpld_mom_lbl 11000 `"Puerto Rico"', add
+label define mbpld_mom_lbl 11500 `"U.S. Virgin Islands"', add
+label define mbpld_mom_lbl 11510 `"St. Croix"', add
+label define mbpld_mom_lbl 11520 `"St. John"', add
+label define mbpld_mom_lbl 11530 `"St. Thomas"', add
+label define mbpld_mom_lbl 12000 `"Other US Possessions"', add
+label define mbpld_mom_lbl 12010 `"Johnston Atoll"', add
+label define mbpld_mom_lbl 12020 `"Midway Islands"', add
+label define mbpld_mom_lbl 12030 `"Wake Island"', add
+label define mbpld_mom_lbl 12040 `"Other US Caribbean Islands"', add
+label define mbpld_mom_lbl 12041 `"Navassa Island"', add
+label define mbpld_mom_lbl 12050 `"Other US Pacific Is."', add
+label define mbpld_mom_lbl 12051 `"Baker Island"', add
+label define mbpld_mom_lbl 12052 `"Howland Island"', add
+label define mbpld_mom_lbl 12053 `"Jarvis Island"', add
+label define mbpld_mom_lbl 12054 `"Kingman Reef"', add
+label define mbpld_mom_lbl 12055 `"Palmyra Atoll"', add
+label define mbpld_mom_lbl 12056 `"Canton and Enderbury Island"', add
+label define mbpld_mom_lbl 12090 `"US outlying areas, ns"', add
+label define mbpld_mom_lbl 12091 `"US Possessions, n.s."', add
+label define mbpld_mom_lbl 12092 `"US territory, ns"', add
+label define mbpld_mom_lbl 15000 `"Canada"', add
+label define mbpld_mom_lbl 15010 `"English Canada"', add
+label define mbpld_mom_lbl 15011 `"British Columbia"', add
+label define mbpld_mom_lbl 15013 `"Alberta"', add
+label define mbpld_mom_lbl 15015 `"Saskatchewan"', add
+label define mbpld_mom_lbl 15017 `"Northwest"', add
+label define mbpld_mom_lbl 15019 `"Ruperts Land"', add
+label define mbpld_mom_lbl 15020 `"Manitoba"', add
+label define mbpld_mom_lbl 15021 `"Red River"', add
+label define mbpld_mom_lbl 15030 `"Ontario/Upper Canada"', add
+label define mbpld_mom_lbl 15031 `"Upper Canada"', add
+label define mbpld_mom_lbl 15032 `"Canada West"', add
+label define mbpld_mom_lbl 15040 `"New Brunswick"', add
+label define mbpld_mom_lbl 15050 `"Nova Scotia"', add
+label define mbpld_mom_lbl 15051 `"Cape Breton"', add
+label define mbpld_mom_lbl 15052 `"Halifax"', add
+label define mbpld_mom_lbl 15060 `"Prince Edward Island"', add
+label define mbpld_mom_lbl 15070 `"Newfoundland"', add
+label define mbpld_mom_lbl 15080 `"French Canada"', add
+label define mbpld_mom_lbl 15081 `"Quebec"', add
+label define mbpld_mom_lbl 15082 `"Lower Canada"', add
+label define mbpld_mom_lbl 15083 `"Canada East"', add
+label define mbpld_mom_lbl 15500 `"St. Pierre and Miquelon"', add
+label define mbpld_mom_lbl 16000 `"Atlantic Islands"', add
+label define mbpld_mom_lbl 16010 `"Bermuda"', add
+label define mbpld_mom_lbl 16020 `"Cape Verde"', add
+label define mbpld_mom_lbl 16030 `"Falkland Islands"', add
+label define mbpld_mom_lbl 16040 `"Greenland"', add
+label define mbpld_mom_lbl 16050 `"St. Helena and Ascension"', add
+label define mbpld_mom_lbl 16060 `"Canary Islands"', add
+label define mbpld_mom_lbl 19900 `"North America, n.s."', add
+label define mbpld_mom_lbl 20000 `"Mexico"', add
+label define mbpld_mom_lbl 21000 `"Central America"', add
+label define mbpld_mom_lbl 21010 `"Belize/British Honduras"', add
+label define mbpld_mom_lbl 21020 `"Costa Rica"', add
+label define mbpld_mom_lbl 21030 `"El Salvador"', add
+label define mbpld_mom_lbl 21040 `"Guatemala"', add
+label define mbpld_mom_lbl 21050 `"Honduras"', add
+label define mbpld_mom_lbl 21060 `"Nicaragua"', add
+label define mbpld_mom_lbl 21070 `"Panama"', add
+label define mbpld_mom_lbl 21071 `"Canal Zone"', add
+label define mbpld_mom_lbl 21090 `"Central America, ns"', add
+label define mbpld_mom_lbl 25000 `"Cuba"', add
+label define mbpld_mom_lbl 26000 `"West Indies"', add
+label define mbpld_mom_lbl 26010 `"Dominican Republic"', add
+label define mbpld_mom_lbl 26020 `"Haiti"', add
+label define mbpld_mom_lbl 26030 `"Jamaica"', add
+label define mbpld_mom_lbl 26040 `"British West Indies"', add
+label define mbpld_mom_lbl 26041 `"Anguilla"', add
+label define mbpld_mom_lbl 26042 `"Antigua-Barbuda"', add
+label define mbpld_mom_lbl 26043 `"Bahamas"', add
+label define mbpld_mom_lbl 26044 `"Barbados"', add
+label define mbpld_mom_lbl 26045 `"British Virgin Islands"', add
+label define mbpld_mom_lbl 26046 `"Anegada"', add
+label define mbpld_mom_lbl 26047 `"Cooper"', add
+label define mbpld_mom_lbl 26048 `"Jost Van Dyke"', add
+label define mbpld_mom_lbl 26049 `"Peter"', add
+label define mbpld_mom_lbl 26050 `"Tortola"', add
+label define mbpld_mom_lbl 26051 `"Virgin Gorda"', add
+label define mbpld_mom_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define mbpld_mom_lbl 26053 `"Cayman Isles"', add
+label define mbpld_mom_lbl 26054 `"Dominica"', add
+label define mbpld_mom_lbl 26055 `"Grenada"', add
+label define mbpld_mom_lbl 26056 `"Montserrat"', add
+label define mbpld_mom_lbl 26057 `"St. Kitts-Nevis"', add
+label define mbpld_mom_lbl 26058 `"St. Lucia"', add
+label define mbpld_mom_lbl 26059 `"St. Vincent"', add
+label define mbpld_mom_lbl 26060 `"Trinidad and Tobago"', add
+label define mbpld_mom_lbl 26061 `"Turks and Caicos"', add
+label define mbpld_mom_lbl 26069 `"British West Indies, ns"', add
+label define mbpld_mom_lbl 26070 `"Other West Indies"', add
+label define mbpld_mom_lbl 26071 `"Aruba"', add
+label define mbpld_mom_lbl 26072 `"Netherlands Antilles"', add
+label define mbpld_mom_lbl 26073 `"Bonaire"', add
+label define mbpld_mom_lbl 26074 `"Curacao"', add
+label define mbpld_mom_lbl 26075 `"Dutch St. Maarten"', add
+label define mbpld_mom_lbl 26076 `"Saba"', add
+label define mbpld_mom_lbl 26077 `"St. Eustatius"', add
+label define mbpld_mom_lbl 26079 `"Dutch Caribbean, ns"', add
+label define mbpld_mom_lbl 26080 `"French St. Maarten"', add
+label define mbpld_mom_lbl 26081 `"Guadeloupe"', add
+label define mbpld_mom_lbl 26082 `"Martinique"', add
+label define mbpld_mom_lbl 26083 `"St. Barthelemy"', add
+label define mbpld_mom_lbl 26089 `"French Caribbean, ns"', add
+label define mbpld_mom_lbl 26090 `"Antilles, n.s."', add
+label define mbpld_mom_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define mbpld_mom_lbl 26092 `"Latin America, ns"', add
+label define mbpld_mom_lbl 26093 `"Leeward Islands, n.s."', add
+label define mbpld_mom_lbl 26094 `"West Indies, ns"', add
+label define mbpld_mom_lbl 26095 `"Winward Islands"', add
+label define mbpld_mom_lbl 29900 `"Americas, ns"', add
+label define mbpld_mom_lbl 30000 `"SOUTH AMERICA"', add
+label define mbpld_mom_lbl 30005 `"Argentina"', add
+label define mbpld_mom_lbl 30010 `"Bolivia"', add
+label define mbpld_mom_lbl 30015 `"Brazil"', add
+label define mbpld_mom_lbl 30020 `"Chile"', add
+label define mbpld_mom_lbl 30025 `"Colombia"', add
+label define mbpld_mom_lbl 30030 `"Ecuador"', add
+label define mbpld_mom_lbl 30035 `"French Guiana"', add
+label define mbpld_mom_lbl 30040 `"Guyana/British Guiana"', add
+label define mbpld_mom_lbl 30045 `"Paraguay"', add
+label define mbpld_mom_lbl 30050 `"Peru"', add
+label define mbpld_mom_lbl 30055 `"Suriname"', add
+label define mbpld_mom_lbl 30060 `"Uruguay"', add
+label define mbpld_mom_lbl 30065 `"Venezuela"', add
+label define mbpld_mom_lbl 30090 `"South America, n.s."', add
+label define mbpld_mom_lbl 30091 `"South and Central America, n.s."', add
+label define mbpld_mom_lbl 40000 `"Denmark"', add
+label define mbpld_mom_lbl 40010 `"Faroe Islands"', add
+label define mbpld_mom_lbl 40100 `"Finland"', add
+label define mbpld_mom_lbl 40200 `"Iceland"', add
+label define mbpld_mom_lbl 40300 `"Lapland, ns"', add
+label define mbpld_mom_lbl 40400 `"Norway"', add
+label define mbpld_mom_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define mbpld_mom_lbl 40411 `"Svalbard"', add
+label define mbpld_mom_lbl 40412 `"Jan Meyen"', add
+label define mbpld_mom_lbl 40500 `"Sweden"', add
+label define mbpld_mom_lbl 41000 `"England"', add
+label define mbpld_mom_lbl 41010 `"Channel Islands"', add
+label define mbpld_mom_lbl 41011 `"Guernsey"', add
+label define mbpld_mom_lbl 41012 `"Jersey"', add
+label define mbpld_mom_lbl 41020 `"Isle of Man"', add
+label define mbpld_mom_lbl 41100 `"Scotland"', add
+label define mbpld_mom_lbl 41200 `"Wales"', add
+label define mbpld_mom_lbl 41300 `"United Kingdom, n.s."', add
+label define mbpld_mom_lbl 41400 `"Ireland"', add
+label define mbpld_mom_lbl 41410 `"Northern Ireland"', add
+label define mbpld_mom_lbl 41900 `"Northern Europe, ns"', add
+label define mbpld_mom_lbl 42000 `"Belgium"', add
+label define mbpld_mom_lbl 42100 `"France"', add
+label define mbpld_mom_lbl 42110 `"Alsace-Lorraine"', add
+label define mbpld_mom_lbl 42111 `"Alsace"', add
+label define mbpld_mom_lbl 42112 `"Lorraine"', add
+label define mbpld_mom_lbl 42200 `"Liechtenstein"', add
+label define mbpld_mom_lbl 42300 `"Luxembourg"', add
+label define mbpld_mom_lbl 42400 `"Monaco"', add
+label define mbpld_mom_lbl 42500 `"Netherlands"', add
+label define mbpld_mom_lbl 42600 `"Switzerland"', add
+label define mbpld_mom_lbl 42900 `"Western Euproe, ns"', add
+label define mbpld_mom_lbl 43000 `"Albania"', add
+label define mbpld_mom_lbl 43100 `"Andorra"', add
+label define mbpld_mom_lbl 43200 `"Gibraltar"', add
+label define mbpld_mom_lbl 43300 `"Greece"', add
+label define mbpld_mom_lbl 43310 `"Dodecanese Islands"', add
+label define mbpld_mom_lbl 43320 `"Turkey Greece"', add
+label define mbpld_mom_lbl 43330 `"Macedonia"', add
+label define mbpld_mom_lbl 43400 `"Italy"', add
+label define mbpld_mom_lbl 43500 `"Malta"', add
+label define mbpld_mom_lbl 43600 `"Portugal"', add
+label define mbpld_mom_lbl 43610 `"Azores"', add
+label define mbpld_mom_lbl 43620 `"Madeira Islands"', add
+label define mbpld_mom_lbl 43630 `"Cape Verde Islands"', add
+label define mbpld_mom_lbl 43640 `"St. Miguel"', add
+label define mbpld_mom_lbl 43700 `"San Marino"', add
+label define mbpld_mom_lbl 43800 `"Spain"', add
+label define mbpld_mom_lbl 43900 `"Vatican City"', add
+label define mbpld_mom_lbl 44000 `"Southern Europe, ns"', add
+label define mbpld_mom_lbl 45000 `"Austria"', add
+label define mbpld_mom_lbl 45010 `"Austria-Hungary"', add
+label define mbpld_mom_lbl 45020 `"Austria-Graz"', add
+label define mbpld_mom_lbl 45030 `"Austria-Linz"', add
+label define mbpld_mom_lbl 45040 `"Austria-Salzburg"', add
+label define mbpld_mom_lbl 45050 `"Austria-Tyrol"', add
+label define mbpld_mom_lbl 45060 `"Austria-Vienna"', add
+label define mbpld_mom_lbl 45070 `"Austria-Kaernten"', add
+label define mbpld_mom_lbl 45080 `"Austria-Neustadt"', add
+label define mbpld_mom_lbl 45100 `"Bulgaria"', add
+label define mbpld_mom_lbl 45200 `"Czechoslovakia"', add
+label define mbpld_mom_lbl 45210 `"Bohemia"', add
+label define mbpld_mom_lbl 45211 `"Bohemia-Moravia"', add
+label define mbpld_mom_lbl 45212 `"Slovakia"', add
+label define mbpld_mom_lbl 45213 `"Czech Republic"', add
+label define mbpld_mom_lbl 45300 `"Germany"', add
+label define mbpld_mom_lbl 45301 `"Berlin"', add
+label define mbpld_mom_lbl 45310 `"West Germany"', add
+label define mbpld_mom_lbl 45311 `"Baden"', add
+label define mbpld_mom_lbl 45312 `"Bavaria"', add
+label define mbpld_mom_lbl 45313 `"Bremen"', add
+label define mbpld_mom_lbl 45314 `"Braunschweig"', add
+label define mbpld_mom_lbl 45315 `"Hamburg"', add
+label define mbpld_mom_lbl 45316 `"Hanover"', add
+label define mbpld_mom_lbl 45317 `"Hessen"', add
+label define mbpld_mom_lbl 45318 `"Hesse-Nassau"', add
+label define mbpld_mom_lbl 45319 `"Holstein"', add
+label define mbpld_mom_lbl 45320 `"Lippe"', add
+label define mbpld_mom_lbl 45321 `"Lubeck"', add
+label define mbpld_mom_lbl 45322 `"Oldenburg"', add
+label define mbpld_mom_lbl 45323 `"Rheinland"', add
+label define mbpld_mom_lbl 45324 `"Schleswig"', add
+label define mbpld_mom_lbl 45325 `"Schleswig-Holstein"', add
+label define mbpld_mom_lbl 45326 `"Schwarzburg"', add
+label define mbpld_mom_lbl 45327 `"Waldeck"', add
+label define mbpld_mom_lbl 45328 `"West Berlin"', add
+label define mbpld_mom_lbl 45329 `"Westphalia"', add
+label define mbpld_mom_lbl 45330 `"Wurttemberg"', add
+label define mbpld_mom_lbl 45331 `"Frankfurt"', add
+label define mbpld_mom_lbl 45332 `"Saarland"', add
+label define mbpld_mom_lbl 45333 `"Nordrhein-Westfalen"', add
+label define mbpld_mom_lbl 45340 `"East Germany"', add
+label define mbpld_mom_lbl 45341 `"Anhalt"', add
+label define mbpld_mom_lbl 45342 `"Brandenburg"', add
+label define mbpld_mom_lbl 45343 `"East Berlin"', add
+label define mbpld_mom_lbl 45344 `"Mecklenburg"', add
+label define mbpld_mom_lbl 45345 `"Sachsen-Altenburg"', add
+label define mbpld_mom_lbl 45346 `"Sachsen-Coburg"', add
+label define mbpld_mom_lbl 45347 `"Sachsen-Gotha"', add
+label define mbpld_mom_lbl 45348 `"Sachsen-Meiningen"', add
+label define mbpld_mom_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define mbpld_mom_lbl 45350 `"Saxony"', add
+label define mbpld_mom_lbl 45351 `"Schwerin"', add
+label define mbpld_mom_lbl 45352 `"Strelitz"', add
+label define mbpld_mom_lbl 45353 `"Thuringian States"', add
+label define mbpld_mom_lbl 45360 `"Prussia, n.e.c."', add
+label define mbpld_mom_lbl 45361 `"Hohenzollern"', add
+label define mbpld_mom_lbl 45362 `"Niedersachsen"', add
+label define mbpld_mom_lbl 45400 `"Hungary"', add
+label define mbpld_mom_lbl 45500 `"Poland"', add
+label define mbpld_mom_lbl 45510 `"Austrian Poland"', add
+label define mbpld_mom_lbl 45511 `"Galicia"', add
+label define mbpld_mom_lbl 45520 `"German Poland"', add
+label define mbpld_mom_lbl 45521 `"East Prussia"', add
+label define mbpld_mom_lbl 45522 `"Pomerania"', add
+label define mbpld_mom_lbl 45523 `"Posen"', add
+label define mbpld_mom_lbl 45524 `"Prussian Poland"', add
+label define mbpld_mom_lbl 45525 `"Silesia"', add
+label define mbpld_mom_lbl 45526 `"West Prussia"', add
+label define mbpld_mom_lbl 45530 `"Russian Poland"', add
+label define mbpld_mom_lbl 45600 `"Romania"', add
+label define mbpld_mom_lbl 45610 `"Transylvania"', add
+label define mbpld_mom_lbl 45700 `"Yugoslavia"', add
+label define mbpld_mom_lbl 45710 `"Croatia"', add
+label define mbpld_mom_lbl 45720 `"Montenegro"', add
+label define mbpld_mom_lbl 45730 `"Serbia"', add
+label define mbpld_mom_lbl 45740 `"Bosnia"', add
+label define mbpld_mom_lbl 45750 `"Dalmatia"', add
+label define mbpld_mom_lbl 45760 `"Slovonia"', add
+label define mbpld_mom_lbl 45770 `"Carniola"', add
+label define mbpld_mom_lbl 45780 `"Slovenia"', add
+label define mbpld_mom_lbl 45790 `"Kosovo"', add
+label define mbpld_mom_lbl 45800 `"Central Europe, n.s."', add
+label define mbpld_mom_lbl 45900 `"Eastern Europe, n.s."', add
+label define mbpld_mom_lbl 46000 `"Estonia"', add
+label define mbpld_mom_lbl 46100 `"Latvia"', add
+label define mbpld_mom_lbl 46200 `"Lithuania"', add
+label define mbpld_mom_lbl 46300 `"Baltic States, ns"', add
+label define mbpld_mom_lbl 46500 `"Other USSR/Russia"', add
+label define mbpld_mom_lbl 46510 `"Byelorussia"', add
+label define mbpld_mom_lbl 46520 `"Moldavia"', add
+label define mbpld_mom_lbl 46521 `"Bessarabia"', add
+label define mbpld_mom_lbl 46530 `"Ukraine"', add
+label define mbpld_mom_lbl 46540 `"Armenia"', add
+label define mbpld_mom_lbl 46541 `"Azerbaijan"', add
+label define mbpld_mom_lbl 46542 `"Republic of Georgia"', add
+label define mbpld_mom_lbl 46543 `"Kazakhstan"', add
+label define mbpld_mom_lbl 46544 `"Kirghizia"', add
+label define mbpld_mom_lbl 46545 `"Tadzhik"', add
+label define mbpld_mom_lbl 46546 `"Turkmenistan"', add
+label define mbpld_mom_lbl 46547 `"Uzbekistan"', add
+label define mbpld_mom_lbl 46548 `"Siberia"', add
+label define mbpld_mom_lbl 46590 `"USSR, ns"', add
+label define mbpld_mom_lbl 49900 `"Europe, n.e.c./n.s."', add
+label define mbpld_mom_lbl 50000 `"China"', add
+label define mbpld_mom_lbl 50010 `"Hong Kong"', add
+label define mbpld_mom_lbl 50020 `"Macau"', add
+label define mbpld_mom_lbl 50030 `"Mongolia"', add
+label define mbpld_mom_lbl 50040 `"Taiwan"', add
+label define mbpld_mom_lbl 50100 `"Japan"', add
+label define mbpld_mom_lbl 50200 `"Korea"', add
+label define mbpld_mom_lbl 50210 `"North Korea"', add
+label define mbpld_mom_lbl 50220 `"South Korea"', add
+label define mbpld_mom_lbl 50900 `"East Asia, n.s."', add
+label define mbpld_mom_lbl 51000 `"Brunei"', add
+label define mbpld_mom_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define mbpld_mom_lbl 51200 `"Indonesia"', add
+label define mbpld_mom_lbl 51210 `"East Indies"', add
+label define mbpld_mom_lbl 51220 `"East Timor"', add
+label define mbpld_mom_lbl 51300 `"Laos"', add
+label define mbpld_mom_lbl 51400 `"Malaysia"', add
+label define mbpld_mom_lbl 51500 `"Philippines"', add
+label define mbpld_mom_lbl 51600 `"Singapore"', add
+label define mbpld_mom_lbl 51700 `"Thailand"', add
+label define mbpld_mom_lbl 51800 `"Vietnam"', add
+label define mbpld_mom_lbl 51900 `"Southeast Asia, ns"', add
+label define mbpld_mom_lbl 51910 `"Indochina, ns"', add
+label define mbpld_mom_lbl 52000 `"Afghanistan"', add
+label define mbpld_mom_lbl 52100 `"India"', add
+label define mbpld_mom_lbl 52110 `"Bangladesh"', add
+label define mbpld_mom_lbl 52120 `"Bhutan"', add
+label define mbpld_mom_lbl 52130 `"Burma (Myanmar)"', add
+label define mbpld_mom_lbl 52140 `"Pakistan"', add
+label define mbpld_mom_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define mbpld_mom_lbl 52200 `"Iran"', add
+label define mbpld_mom_lbl 52300 `"Maldives"', add
+label define mbpld_mom_lbl 52400 `"Nepal"', add
+label define mbpld_mom_lbl 53000 `"Bahrain"', add
+label define mbpld_mom_lbl 53100 `"Cyprus"', add
+label define mbpld_mom_lbl 53200 `"Iraq"', add
+label define mbpld_mom_lbl 53210 `"Mesopotamia"', add
+label define mbpld_mom_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define mbpld_mom_lbl 53400 `"Israel/Palestine"', add
+label define mbpld_mom_lbl 53420 `"Palestine"', add
+label define mbpld_mom_lbl 53430 `"West Bank"', add
+label define mbpld_mom_lbl 53440 `"Israel"', add
+label define mbpld_mom_lbl 53410 `"Gaza Strip"', add
+label define mbpld_mom_lbl 53500 `"Jordan"', add
+label define mbpld_mom_lbl 53600 `"Kuwait"', add
+label define mbpld_mom_lbl 53700 `"Lebanon"', add
+label define mbpld_mom_lbl 53800 `"Oman"', add
+label define mbpld_mom_lbl 53900 `"Qatar"', add
+label define mbpld_mom_lbl 54000 `"Saudi Arabia"', add
+label define mbpld_mom_lbl 54100 `"Syria"', add
+label define mbpld_mom_lbl 54200 `"Turkey"', add
+label define mbpld_mom_lbl 54210 `"European Turkey"', add
+label define mbpld_mom_lbl 54220 `"Asian Turkey"', add
+label define mbpld_mom_lbl 54300 `"United Arab Emirates"', add
+label define mbpld_mom_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define mbpld_mom_lbl 54500 `"Yemen, PDR (South)"', add
+label define mbpld_mom_lbl 54600 `"Persian Gulf States, ns"', add
+label define mbpld_mom_lbl 54700 `"Middle East, n.s."', add
+label define mbpld_mom_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define mbpld_mom_lbl 54900 `"Asia Minor, n.s."', add
+label define mbpld_mom_lbl 55000 `"South Asia, n.e.c."', add
+label define mbpld_mom_lbl 59900 `"Asia, nec/ns"', add
+label define mbpld_mom_lbl 60000 `"AFRICA"', add
+label define mbpld_mom_lbl 60010 `"Northern Africa"', add
+label define mbpld_mom_lbl 60011 `"Algeria"', add
+label define mbpld_mom_lbl 60012 `"Egypt/United Arab Rep."', add
+label define mbpld_mom_lbl 60013 `"Libya"', add
+label define mbpld_mom_lbl 60014 `"Morocco"', add
+label define mbpld_mom_lbl 60015 `"Sudan"', add
+label define mbpld_mom_lbl 60016 `"Tunisia"', add
+label define mbpld_mom_lbl 60017 `"Western Sahara"', add
+label define mbpld_mom_lbl 60019 `"North Africa, ns"', add
+label define mbpld_mom_lbl 60020 `"Benin"', add
+label define mbpld_mom_lbl 60021 `"Burkina Faso"', add
+label define mbpld_mom_lbl 60022 `"Gambia"', add
+label define mbpld_mom_lbl 60023 `"Ghana"', add
+label define mbpld_mom_lbl 60024 `"Guinea"', add
+label define mbpld_mom_lbl 60025 `"Guinea-Bissau"', add
+label define mbpld_mom_lbl 60026 `"Ivory Coast"', add
+label define mbpld_mom_lbl 60027 `"Liberia"', add
+label define mbpld_mom_lbl 60028 `"Mali"', add
+label define mbpld_mom_lbl 60029 `"Mauritania"', add
+label define mbpld_mom_lbl 60030 `"Niger"', add
+label define mbpld_mom_lbl 60031 `"Nigeria"', add
+label define mbpld_mom_lbl 60032 `"Senegal"', add
+label define mbpld_mom_lbl 60033 `"Sierra Leone"', add
+label define mbpld_mom_lbl 60034 `"Togo"', add
+label define mbpld_mom_lbl 60038 `"Western Africa, n.s."', add
+label define mbpld_mom_lbl 60039 `"French West Africa, ns"', add
+label define mbpld_mom_lbl 60040 `"British Indian Ocean Territory"', add
+label define mbpld_mom_lbl 60041 `"Burundi"', add
+label define mbpld_mom_lbl 60042 `"Comoros"', add
+label define mbpld_mom_lbl 60043 `"Djibouti"', add
+label define mbpld_mom_lbl 60044 `"Ethiopia"', add
+label define mbpld_mom_lbl 60045 `"Kenya"', add
+label define mbpld_mom_lbl 60046 `"Madagascar"', add
+label define mbpld_mom_lbl 60047 `"Malawi"', add
+label define mbpld_mom_lbl 60048 `"Mauritius"', add
+label define mbpld_mom_lbl 60049 `"Mozambique"', add
+label define mbpld_mom_lbl 60050 `"Reunion"', add
+label define mbpld_mom_lbl 60051 `"Rwanda"', add
+label define mbpld_mom_lbl 60052 `"Seychelles"', add
+label define mbpld_mom_lbl 60053 `"Somalia"', add
+label define mbpld_mom_lbl 60054 `"Tanzania"', add
+label define mbpld_mom_lbl 60055 `"Uganda"', add
+label define mbpld_mom_lbl 60056 `"Zambia"', add
+label define mbpld_mom_lbl 60057 `"Zimbabwe"', add
+label define mbpld_mom_lbl 60058 `"Bassas de India"', add
+label define mbpld_mom_lbl 60059 `"Europa"', add
+label define mbpld_mom_lbl 60060 `"Gloriosos"', add
+label define mbpld_mom_lbl 60061 `"Juan de Nova"', add
+label define mbpld_mom_lbl 60062 `"Mayotte"', add
+label define mbpld_mom_lbl 60063 `"Tromelin"', add
+label define mbpld_mom_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define mbpld_mom_lbl 60065 `"Eritrea"', add
+label define mbpld_mom_lbl 60070 `"Central Africa"', add
+label define mbpld_mom_lbl 60071 `"Angola"', add
+label define mbpld_mom_lbl 60072 `"Cameroon"', add
+label define mbpld_mom_lbl 60073 `"Central African Republic"', add
+label define mbpld_mom_lbl 60074 `"Chad"', add
+label define mbpld_mom_lbl 60075 `"Congo"', add
+label define mbpld_mom_lbl 60076 `"Equatorial Guinea"', add
+label define mbpld_mom_lbl 60077 `"Gabon"', add
+label define mbpld_mom_lbl 60078 `"Sao Tome and Principe"', add
+label define mbpld_mom_lbl 60079 `"Zaire"', add
+label define mbpld_mom_lbl 60080 `"Central Africa, ns"', add
+label define mbpld_mom_lbl 60081 `"Equatorial Africa, ns"', add
+label define mbpld_mom_lbl 60082 `"French Equatorial Africa, ns"', add
+label define mbpld_mom_lbl 60090 `"Southern Africa"', add
+label define mbpld_mom_lbl 60091 `"Botswana"', add
+label define mbpld_mom_lbl 60092 `"Lesotho"', add
+label define mbpld_mom_lbl 60093 `"Namibia"', add
+label define mbpld_mom_lbl 60094 `"South Africa (Union of)"', add
+label define mbpld_mom_lbl 60095 `"Swaziland"', add
+label define mbpld_mom_lbl 60096 `"Southern Africa, n.s."', add
+label define mbpld_mom_lbl 60099 `"Africa, ns/nec"', add
+label define mbpld_mom_lbl 70000 `"Australia and New Zealand"', add
+label define mbpld_mom_lbl 70010 `"Australia"', add
+label define mbpld_mom_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define mbpld_mom_lbl 70012 `"Coral Sea Islands Territory"', add
+label define mbpld_mom_lbl 70013 `"Christmas Island"', add
+label define mbpld_mom_lbl 70014 `"Cocos Islands"', add
+label define mbpld_mom_lbl 70020 `"New Zealand"', add
+label define mbpld_mom_lbl 71000 `"Pacific Islands"', add
+label define mbpld_mom_lbl 71010 `"New Caledonia"', add
+label define mbpld_mom_lbl 71012 `"Papua New Guinea"', add
+label define mbpld_mom_lbl 71013 `"Solomon Islands"', add
+label define mbpld_mom_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define mbpld_mom_lbl 71016 `"Melanesia, ns"', add
+label define mbpld_mom_lbl 71017 `"Norfolk Islands"', add
+label define mbpld_mom_lbl 71018 `"Niue"', add
+label define mbpld_mom_lbl 71020 `"Cook Islands"', add
+label define mbpld_mom_lbl 71021 `"Fiji"', add
+label define mbpld_mom_lbl 71022 `"French Polynesia"', add
+label define mbpld_mom_lbl 71023 `"Tonga"', add
+label define mbpld_mom_lbl 71024 `"Wallis and Futuna Islands"', add
+label define mbpld_mom_lbl 71025 `"Western Samoa"', add
+label define mbpld_mom_lbl 71026 `"Pitcairn Island"', add
+label define mbpld_mom_lbl 71027 `"Tokelau"', add
+label define mbpld_mom_lbl 71028 `"Tuvalu"', add
+label define mbpld_mom_lbl 71029 `"Polynesia, n.s."', add
+label define mbpld_mom_lbl 71032 `"Kiribati"', add
+label define mbpld_mom_lbl 71033 `"Canton and Enderbury"', add
+label define mbpld_mom_lbl 71034 `"Nauru"', add
+label define mbpld_mom_lbl 71039 `"Micronesia, ns"', add
+label define mbpld_mom_lbl 71040 `"US Pacific Trust Territories"', add
+label define mbpld_mom_lbl 71041 `"Marshall Islands"', add
+label define mbpld_mom_lbl 71042 `"Micronesia"', add
+label define mbpld_mom_lbl 71043 `"Kosrae"', add
+label define mbpld_mom_lbl 71044 `"Pohnpei"', add
+label define mbpld_mom_lbl 71045 `"Truk"', add
+label define mbpld_mom_lbl 71046 `"Yap"', add
+label define mbpld_mom_lbl 71047 `"Northern Mariana Islands"', add
+label define mbpld_mom_lbl 71048 `"Palau"', add
+label define mbpld_mom_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define mbpld_mom_lbl 71050 `"Clipperton Island"', add
+label define mbpld_mom_lbl 71090 `"Oceania, ns/nec"', add
+label define mbpld_mom_lbl 80000 `"Antarctica, ns/nec"', add
+label define mbpld_mom_lbl 80010 `"Bouvet Islands"', add
+label define mbpld_mom_lbl 80020 `"British Antarctic Terr."', add
+label define mbpld_mom_lbl 80030 `"Dronning Maud Land"', add
+label define mbpld_mom_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define mbpld_mom_lbl 80050 `"Heard and McDonald Islands"', add
+label define mbpld_mom_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define mbpld_mom_lbl 90010 `"Abroad, ns"', add
+label define mbpld_mom_lbl 90011 `"Abroad (US citizen)"', add
+label define mbpld_mom_lbl 90020 `"At sea"', add
+label define mbpld_mom_lbl 90021 `"At sea (US citizen)"', add
+label define mbpld_mom_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define mbpld_mom_lbl 95000 `"Other n.e.c."', add
+label define mbpld_mom_lbl 99700 `"Unknown"', add
+label define mbpld_mom_lbl 99900 `"Missing/blank"', add
+label values mbpld_mom mbpld_mom_lbl
+
+label define mbpld_pop_lbl 00000 `"Not Applicable"'
+label define mbpld_pop_lbl 00100 `"Alabama"', add
+label define mbpld_pop_lbl 00200 `"Alaska"', add
+label define mbpld_pop_lbl 00400 `"Arizona"', add
+label define mbpld_pop_lbl 00500 `"Arkansas"', add
+label define mbpld_pop_lbl 00600 `"California"', add
+label define mbpld_pop_lbl 00800 `"Colorado"', add
+label define mbpld_pop_lbl 00900 `"Connecticut"', add
+label define mbpld_pop_lbl 01000 `"Delaware"', add
+label define mbpld_pop_lbl 01100 `"District of Columbia"', add
+label define mbpld_pop_lbl 01200 `"Florida"', add
+label define mbpld_pop_lbl 01300 `"Georgia"', add
+label define mbpld_pop_lbl 01500 `"Hawaii"', add
+label define mbpld_pop_lbl 01600 `"Idaho"', add
+label define mbpld_pop_lbl 01610 `"Idaho Territory"', add
+label define mbpld_pop_lbl 01700 `"Illinois"', add
+label define mbpld_pop_lbl 01800 `"Indiana"', add
+label define mbpld_pop_lbl 01900 `"Iowa"', add
+label define mbpld_pop_lbl 02000 `"Kansas"', add
+label define mbpld_pop_lbl 02100 `"Kentucky"', add
+label define mbpld_pop_lbl 02200 `"Louisiana"', add
+label define mbpld_pop_lbl 02300 `"Maine"', add
+label define mbpld_pop_lbl 02400 `"Maryland"', add
+label define mbpld_pop_lbl 02500 `"Massachusetts"', add
+label define mbpld_pop_lbl 02600 `"Michigan"', add
+label define mbpld_pop_lbl 02700 `"Minnesota"', add
+label define mbpld_pop_lbl 02800 `"Mississippi"', add
+label define mbpld_pop_lbl 02900 `"Missouri"', add
+label define mbpld_pop_lbl 03000 `"Montana"', add
+label define mbpld_pop_lbl 03100 `"Nebraska"', add
+label define mbpld_pop_lbl 03200 `"Nevada"', add
+label define mbpld_pop_lbl 03300 `"New Hampshire"', add
+label define mbpld_pop_lbl 03400 `"New Jersey"', add
+label define mbpld_pop_lbl 03500 `"New Mexico"', add
+label define mbpld_pop_lbl 03510 `"New Mexico Territory"', add
+label define mbpld_pop_lbl 03600 `"New York"', add
+label define mbpld_pop_lbl 03700 `"North Carolina"', add
+label define mbpld_pop_lbl 03800 `"North Dakota"', add
+label define mbpld_pop_lbl 03900 `"Ohio"', add
+label define mbpld_pop_lbl 04000 `"Oklahoma"', add
+label define mbpld_pop_lbl 04010 `"Indian Territory"', add
+label define mbpld_pop_lbl 04100 `"Oregon"', add
+label define mbpld_pop_lbl 04200 `"Pennsylvania"', add
+label define mbpld_pop_lbl 04400 `"Rhode Island"', add
+label define mbpld_pop_lbl 04500 `"South Carolina"', add
+label define mbpld_pop_lbl 04600 `"South Dakota"', add
+label define mbpld_pop_lbl 04610 `"Dakota Territory"', add
+label define mbpld_pop_lbl 04700 `"Tennessee"', add
+label define mbpld_pop_lbl 04800 `"Texas"', add
+label define mbpld_pop_lbl 04900 `"Utah"', add
+label define mbpld_pop_lbl 04910 `"Utah Territory"', add
+label define mbpld_pop_lbl 05000 `"Vermont"', add
+label define mbpld_pop_lbl 05100 `"Virginia"', add
+label define mbpld_pop_lbl 05300 `"Washington"', add
+label define mbpld_pop_lbl 05400 `"West Virginia"', add
+label define mbpld_pop_lbl 05500 `"Wisconsin"', add
+label define mbpld_pop_lbl 05600 `"Wyoming"', add
+label define mbpld_pop_lbl 05610 `"Wyoming Territory"', add
+label define mbpld_pop_lbl 09000 `"Native American"', add
+label define mbpld_pop_lbl 09900 `"United States, n.s."', add
+label define mbpld_pop_lbl 10000 `"American Samoa"', add
+label define mbpld_pop_lbl 10010 `"Samoa, 1940-1950"', add
+label define mbpld_pop_lbl 10500 `"Guam"', add
+label define mbpld_pop_lbl 11000 `"Puerto Rico"', add
+label define mbpld_pop_lbl 11500 `"U.S. Virgin Islands"', add
+label define mbpld_pop_lbl 11510 `"St. Croix"', add
+label define mbpld_pop_lbl 11520 `"St. John"', add
+label define mbpld_pop_lbl 11530 `"St. Thomas"', add
+label define mbpld_pop_lbl 12000 `"Other US Possessions"', add
+label define mbpld_pop_lbl 12010 `"Johnston Atoll"', add
+label define mbpld_pop_lbl 12020 `"Midway Islands"', add
+label define mbpld_pop_lbl 12030 `"Wake Island"', add
+label define mbpld_pop_lbl 12040 `"Other US Caribbean Islands"', add
+label define mbpld_pop_lbl 12041 `"Navassa Island"', add
+label define mbpld_pop_lbl 12050 `"Other US Pacific Is."', add
+label define mbpld_pop_lbl 12051 `"Baker Island"', add
+label define mbpld_pop_lbl 12052 `"Howland Island"', add
+label define mbpld_pop_lbl 12053 `"Jarvis Island"', add
+label define mbpld_pop_lbl 12054 `"Kingman Reef"', add
+label define mbpld_pop_lbl 12055 `"Palmyra Atoll"', add
+label define mbpld_pop_lbl 12056 `"Canton and Enderbury Island"', add
+label define mbpld_pop_lbl 12090 `"US outlying areas, ns"', add
+label define mbpld_pop_lbl 12091 `"US Possessions, n.s."', add
+label define mbpld_pop_lbl 12092 `"US territory, ns"', add
+label define mbpld_pop_lbl 15000 `"Canada"', add
+label define mbpld_pop_lbl 15010 `"English Canada"', add
+label define mbpld_pop_lbl 15011 `"British Columbia"', add
+label define mbpld_pop_lbl 15013 `"Alberta"', add
+label define mbpld_pop_lbl 15015 `"Saskatchewan"', add
+label define mbpld_pop_lbl 15017 `"Northwest"', add
+label define mbpld_pop_lbl 15019 `"Ruperts Land"', add
+label define mbpld_pop_lbl 15020 `"Manitoba"', add
+label define mbpld_pop_lbl 15021 `"Red River"', add
+label define mbpld_pop_lbl 15030 `"Ontario/Upper Canada"', add
+label define mbpld_pop_lbl 15031 `"Upper Canada"', add
+label define mbpld_pop_lbl 15032 `"Canada West"', add
+label define mbpld_pop_lbl 15040 `"New Brunswick"', add
+label define mbpld_pop_lbl 15050 `"Nova Scotia"', add
+label define mbpld_pop_lbl 15051 `"Cape Breton"', add
+label define mbpld_pop_lbl 15052 `"Halifax"', add
+label define mbpld_pop_lbl 15060 `"Prince Edward Island"', add
+label define mbpld_pop_lbl 15070 `"Newfoundland"', add
+label define mbpld_pop_lbl 15080 `"French Canada"', add
+label define mbpld_pop_lbl 15081 `"Quebec"', add
+label define mbpld_pop_lbl 15082 `"Lower Canada"', add
+label define mbpld_pop_lbl 15083 `"Canada East"', add
+label define mbpld_pop_lbl 15500 `"St. Pierre and Miquelon"', add
+label define mbpld_pop_lbl 16000 `"Atlantic Islands"', add
+label define mbpld_pop_lbl 16010 `"Bermuda"', add
+label define mbpld_pop_lbl 16020 `"Cape Verde"', add
+label define mbpld_pop_lbl 16030 `"Falkland Islands"', add
+label define mbpld_pop_lbl 16040 `"Greenland"', add
+label define mbpld_pop_lbl 16050 `"St. Helena and Ascension"', add
+label define mbpld_pop_lbl 16060 `"Canary Islands"', add
+label define mbpld_pop_lbl 19900 `"North America, n.s."', add
+label define mbpld_pop_lbl 20000 `"Mexico"', add
+label define mbpld_pop_lbl 21000 `"Central America"', add
+label define mbpld_pop_lbl 21010 `"Belize/British Honduras"', add
+label define mbpld_pop_lbl 21020 `"Costa Rica"', add
+label define mbpld_pop_lbl 21030 `"El Salvador"', add
+label define mbpld_pop_lbl 21040 `"Guatemala"', add
+label define mbpld_pop_lbl 21050 `"Honduras"', add
+label define mbpld_pop_lbl 21060 `"Nicaragua"', add
+label define mbpld_pop_lbl 21070 `"Panama"', add
+label define mbpld_pop_lbl 21071 `"Canal Zone"', add
+label define mbpld_pop_lbl 21090 `"Central America, ns"', add
+label define mbpld_pop_lbl 25000 `"Cuba"', add
+label define mbpld_pop_lbl 26000 `"West Indies"', add
+label define mbpld_pop_lbl 26010 `"Dominican Republic"', add
+label define mbpld_pop_lbl 26020 `"Haiti"', add
+label define mbpld_pop_lbl 26030 `"Jamaica"', add
+label define mbpld_pop_lbl 26040 `"British West Indies"', add
+label define mbpld_pop_lbl 26041 `"Anguilla"', add
+label define mbpld_pop_lbl 26042 `"Antigua-Barbuda"', add
+label define mbpld_pop_lbl 26043 `"Bahamas"', add
+label define mbpld_pop_lbl 26044 `"Barbados"', add
+label define mbpld_pop_lbl 26045 `"British Virgin Islands"', add
+label define mbpld_pop_lbl 26046 `"Anegada"', add
+label define mbpld_pop_lbl 26047 `"Cooper"', add
+label define mbpld_pop_lbl 26048 `"Jost Van Dyke"', add
+label define mbpld_pop_lbl 26049 `"Peter"', add
+label define mbpld_pop_lbl 26050 `"Tortola"', add
+label define mbpld_pop_lbl 26051 `"Virgin Gorda"', add
+label define mbpld_pop_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define mbpld_pop_lbl 26053 `"Cayman Isles"', add
+label define mbpld_pop_lbl 26054 `"Dominica"', add
+label define mbpld_pop_lbl 26055 `"Grenada"', add
+label define mbpld_pop_lbl 26056 `"Montserrat"', add
+label define mbpld_pop_lbl 26057 `"St. Kitts-Nevis"', add
+label define mbpld_pop_lbl 26058 `"St. Lucia"', add
+label define mbpld_pop_lbl 26059 `"St. Vincent"', add
+label define mbpld_pop_lbl 26060 `"Trinidad and Tobago"', add
+label define mbpld_pop_lbl 26061 `"Turks and Caicos"', add
+label define mbpld_pop_lbl 26069 `"British West Indies, ns"', add
+label define mbpld_pop_lbl 26070 `"Other West Indies"', add
+label define mbpld_pop_lbl 26071 `"Aruba"', add
+label define mbpld_pop_lbl 26072 `"Netherlands Antilles"', add
+label define mbpld_pop_lbl 26073 `"Bonaire"', add
+label define mbpld_pop_lbl 26074 `"Curacao"', add
+label define mbpld_pop_lbl 26075 `"Dutch St. Maarten"', add
+label define mbpld_pop_lbl 26076 `"Saba"', add
+label define mbpld_pop_lbl 26077 `"St. Eustatius"', add
+label define mbpld_pop_lbl 26079 `"Dutch Caribbean, ns"', add
+label define mbpld_pop_lbl 26080 `"French St. Maarten"', add
+label define mbpld_pop_lbl 26081 `"Guadeloupe"', add
+label define mbpld_pop_lbl 26082 `"Martinique"', add
+label define mbpld_pop_lbl 26083 `"St. Barthelemy"', add
+label define mbpld_pop_lbl 26089 `"French Caribbean, ns"', add
+label define mbpld_pop_lbl 26090 `"Antilles, n.s."', add
+label define mbpld_pop_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define mbpld_pop_lbl 26092 `"Latin America, ns"', add
+label define mbpld_pop_lbl 26093 `"Leeward Islands, n.s."', add
+label define mbpld_pop_lbl 26094 `"West Indies, ns"', add
+label define mbpld_pop_lbl 26095 `"Winward Islands"', add
+label define mbpld_pop_lbl 29900 `"Americas, ns"', add
+label define mbpld_pop_lbl 30000 `"SOUTH AMERICA"', add
+label define mbpld_pop_lbl 30005 `"Argentina"', add
+label define mbpld_pop_lbl 30010 `"Bolivia"', add
+label define mbpld_pop_lbl 30015 `"Brazil"', add
+label define mbpld_pop_lbl 30020 `"Chile"', add
+label define mbpld_pop_lbl 30025 `"Colombia"', add
+label define mbpld_pop_lbl 30030 `"Ecuador"', add
+label define mbpld_pop_lbl 30035 `"French Guiana"', add
+label define mbpld_pop_lbl 30040 `"Guyana/British Guiana"', add
+label define mbpld_pop_lbl 30045 `"Paraguay"', add
+label define mbpld_pop_lbl 30050 `"Peru"', add
+label define mbpld_pop_lbl 30055 `"Suriname"', add
+label define mbpld_pop_lbl 30060 `"Uruguay"', add
+label define mbpld_pop_lbl 30065 `"Venezuela"', add
+label define mbpld_pop_lbl 30090 `"South America, n.s."', add
+label define mbpld_pop_lbl 30091 `"South and Central America, n.s."', add
+label define mbpld_pop_lbl 40000 `"Denmark"', add
+label define mbpld_pop_lbl 40010 `"Faroe Islands"', add
+label define mbpld_pop_lbl 40100 `"Finland"', add
+label define mbpld_pop_lbl 40200 `"Iceland"', add
+label define mbpld_pop_lbl 40300 `"Lapland, ns"', add
+label define mbpld_pop_lbl 40400 `"Norway"', add
+label define mbpld_pop_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define mbpld_pop_lbl 40411 `"Svalbard"', add
+label define mbpld_pop_lbl 40412 `"Jan Meyen"', add
+label define mbpld_pop_lbl 40500 `"Sweden"', add
+label define mbpld_pop_lbl 41000 `"England"', add
+label define mbpld_pop_lbl 41010 `"Channel Islands"', add
+label define mbpld_pop_lbl 41011 `"Guernsey"', add
+label define mbpld_pop_lbl 41012 `"Jersey"', add
+label define mbpld_pop_lbl 41020 `"Isle of Man"', add
+label define mbpld_pop_lbl 41100 `"Scotland"', add
+label define mbpld_pop_lbl 41200 `"Wales"', add
+label define mbpld_pop_lbl 41300 `"United Kingdom, n.s."', add
+label define mbpld_pop_lbl 41400 `"Ireland"', add
+label define mbpld_pop_lbl 41410 `"Northern Ireland"', add
+label define mbpld_pop_lbl 41900 `"Northern Europe, ns"', add
+label define mbpld_pop_lbl 42000 `"Belgium"', add
+label define mbpld_pop_lbl 42100 `"France"', add
+label define mbpld_pop_lbl 42110 `"Alsace-Lorraine"', add
+label define mbpld_pop_lbl 42111 `"Alsace"', add
+label define mbpld_pop_lbl 42112 `"Lorraine"', add
+label define mbpld_pop_lbl 42200 `"Liechtenstein"', add
+label define mbpld_pop_lbl 42300 `"Luxembourg"', add
+label define mbpld_pop_lbl 42400 `"Monaco"', add
+label define mbpld_pop_lbl 42500 `"Netherlands"', add
+label define mbpld_pop_lbl 42600 `"Switzerland"', add
+label define mbpld_pop_lbl 42900 `"Western Euproe, ns"', add
+label define mbpld_pop_lbl 43000 `"Albania"', add
+label define mbpld_pop_lbl 43100 `"Andorra"', add
+label define mbpld_pop_lbl 43200 `"Gibraltar"', add
+label define mbpld_pop_lbl 43300 `"Greece"', add
+label define mbpld_pop_lbl 43310 `"Dodecanese Islands"', add
+label define mbpld_pop_lbl 43320 `"Turkey Greece"', add
+label define mbpld_pop_lbl 43330 `"Macedonia"', add
+label define mbpld_pop_lbl 43400 `"Italy"', add
+label define mbpld_pop_lbl 43500 `"Malta"', add
+label define mbpld_pop_lbl 43600 `"Portugal"', add
+label define mbpld_pop_lbl 43610 `"Azores"', add
+label define mbpld_pop_lbl 43620 `"Madeira Islands"', add
+label define mbpld_pop_lbl 43630 `"Cape Verde Islands"', add
+label define mbpld_pop_lbl 43640 `"St. Miguel"', add
+label define mbpld_pop_lbl 43700 `"San Marino"', add
+label define mbpld_pop_lbl 43800 `"Spain"', add
+label define mbpld_pop_lbl 43900 `"Vatican City"', add
+label define mbpld_pop_lbl 44000 `"Southern Europe, ns"', add
+label define mbpld_pop_lbl 45000 `"Austria"', add
+label define mbpld_pop_lbl 45010 `"Austria-Hungary"', add
+label define mbpld_pop_lbl 45020 `"Austria-Graz"', add
+label define mbpld_pop_lbl 45030 `"Austria-Linz"', add
+label define mbpld_pop_lbl 45040 `"Austria-Salzburg"', add
+label define mbpld_pop_lbl 45050 `"Austria-Tyrol"', add
+label define mbpld_pop_lbl 45060 `"Austria-Vienna"', add
+label define mbpld_pop_lbl 45070 `"Austria-Kaernten"', add
+label define mbpld_pop_lbl 45080 `"Austria-Neustadt"', add
+label define mbpld_pop_lbl 45100 `"Bulgaria"', add
+label define mbpld_pop_lbl 45200 `"Czechoslovakia"', add
+label define mbpld_pop_lbl 45210 `"Bohemia"', add
+label define mbpld_pop_lbl 45211 `"Bohemia-Moravia"', add
+label define mbpld_pop_lbl 45212 `"Slovakia"', add
+label define mbpld_pop_lbl 45213 `"Czech Republic"', add
+label define mbpld_pop_lbl 45300 `"Germany"', add
+label define mbpld_pop_lbl 45301 `"Berlin"', add
+label define mbpld_pop_lbl 45310 `"West Germany"', add
+label define mbpld_pop_lbl 45311 `"Baden"', add
+label define mbpld_pop_lbl 45312 `"Bavaria"', add
+label define mbpld_pop_lbl 45313 `"Bremen"', add
+label define mbpld_pop_lbl 45314 `"Braunschweig"', add
+label define mbpld_pop_lbl 45315 `"Hamburg"', add
+label define mbpld_pop_lbl 45316 `"Hanover"', add
+label define mbpld_pop_lbl 45317 `"Hessen"', add
+label define mbpld_pop_lbl 45318 `"Hesse-Nassau"', add
+label define mbpld_pop_lbl 45319 `"Holstein"', add
+label define mbpld_pop_lbl 45320 `"Lippe"', add
+label define mbpld_pop_lbl 45321 `"Lubeck"', add
+label define mbpld_pop_lbl 45322 `"Oldenburg"', add
+label define mbpld_pop_lbl 45323 `"Rheinland"', add
+label define mbpld_pop_lbl 45324 `"Schleswig"', add
+label define mbpld_pop_lbl 45325 `"Schleswig-Holstein"', add
+label define mbpld_pop_lbl 45326 `"Schwarzburg"', add
+label define mbpld_pop_lbl 45327 `"Waldeck"', add
+label define mbpld_pop_lbl 45328 `"West Berlin"', add
+label define mbpld_pop_lbl 45329 `"Westphalia"', add
+label define mbpld_pop_lbl 45330 `"Wurttemberg"', add
+label define mbpld_pop_lbl 45331 `"Frankfurt"', add
+label define mbpld_pop_lbl 45332 `"Saarland"', add
+label define mbpld_pop_lbl 45333 `"Nordrhein-Westfalen"', add
+label define mbpld_pop_lbl 45340 `"East Germany"', add
+label define mbpld_pop_lbl 45341 `"Anhalt"', add
+label define mbpld_pop_lbl 45342 `"Brandenburg"', add
+label define mbpld_pop_lbl 45343 `"East Berlin"', add
+label define mbpld_pop_lbl 45344 `"Mecklenburg"', add
+label define mbpld_pop_lbl 45345 `"Sachsen-Altenburg"', add
+label define mbpld_pop_lbl 45346 `"Sachsen-Coburg"', add
+label define mbpld_pop_lbl 45347 `"Sachsen-Gotha"', add
+label define mbpld_pop_lbl 45348 `"Sachsen-Meiningen"', add
+label define mbpld_pop_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define mbpld_pop_lbl 45350 `"Saxony"', add
+label define mbpld_pop_lbl 45351 `"Schwerin"', add
+label define mbpld_pop_lbl 45352 `"Strelitz"', add
+label define mbpld_pop_lbl 45353 `"Thuringian States"', add
+label define mbpld_pop_lbl 45360 `"Prussia, n.e.c."', add
+label define mbpld_pop_lbl 45361 `"Hohenzollern"', add
+label define mbpld_pop_lbl 45362 `"Niedersachsen"', add
+label define mbpld_pop_lbl 45400 `"Hungary"', add
+label define mbpld_pop_lbl 45500 `"Poland"', add
+label define mbpld_pop_lbl 45510 `"Austrian Poland"', add
+label define mbpld_pop_lbl 45511 `"Galicia"', add
+label define mbpld_pop_lbl 45520 `"German Poland"', add
+label define mbpld_pop_lbl 45521 `"East Prussia"', add
+label define mbpld_pop_lbl 45522 `"Pomerania"', add
+label define mbpld_pop_lbl 45523 `"Posen"', add
+label define mbpld_pop_lbl 45524 `"Prussian Poland"', add
+label define mbpld_pop_lbl 45525 `"Silesia"', add
+label define mbpld_pop_lbl 45526 `"West Prussia"', add
+label define mbpld_pop_lbl 45530 `"Russian Poland"', add
+label define mbpld_pop_lbl 45600 `"Romania"', add
+label define mbpld_pop_lbl 45610 `"Transylvania"', add
+label define mbpld_pop_lbl 45700 `"Yugoslavia"', add
+label define mbpld_pop_lbl 45710 `"Croatia"', add
+label define mbpld_pop_lbl 45720 `"Montenegro"', add
+label define mbpld_pop_lbl 45730 `"Serbia"', add
+label define mbpld_pop_lbl 45740 `"Bosnia"', add
+label define mbpld_pop_lbl 45750 `"Dalmatia"', add
+label define mbpld_pop_lbl 45760 `"Slovonia"', add
+label define mbpld_pop_lbl 45770 `"Carniola"', add
+label define mbpld_pop_lbl 45780 `"Slovenia"', add
+label define mbpld_pop_lbl 45790 `"Kosovo"', add
+label define mbpld_pop_lbl 45800 `"Central Europe, n.s."', add
+label define mbpld_pop_lbl 45900 `"Eastern Europe, n.s."', add
+label define mbpld_pop_lbl 46000 `"Estonia"', add
+label define mbpld_pop_lbl 46100 `"Latvia"', add
+label define mbpld_pop_lbl 46200 `"Lithuania"', add
+label define mbpld_pop_lbl 46300 `"Baltic States, ns"', add
+label define mbpld_pop_lbl 46500 `"Other USSR/Russia"', add
+label define mbpld_pop_lbl 46510 `"Byelorussia"', add
+label define mbpld_pop_lbl 46520 `"Moldavia"', add
+label define mbpld_pop_lbl 46521 `"Bessarabia"', add
+label define mbpld_pop_lbl 46530 `"Ukraine"', add
+label define mbpld_pop_lbl 46540 `"Armenia"', add
+label define mbpld_pop_lbl 46541 `"Azerbaijan"', add
+label define mbpld_pop_lbl 46542 `"Republic of Georgia"', add
+label define mbpld_pop_lbl 46543 `"Kazakhstan"', add
+label define mbpld_pop_lbl 46544 `"Kirghizia"', add
+label define mbpld_pop_lbl 46545 `"Tadzhik"', add
+label define mbpld_pop_lbl 46546 `"Turkmenistan"', add
+label define mbpld_pop_lbl 46547 `"Uzbekistan"', add
+label define mbpld_pop_lbl 46548 `"Siberia"', add
+label define mbpld_pop_lbl 46590 `"USSR, ns"', add
+label define mbpld_pop_lbl 49900 `"Europe, n.e.c./n.s."', add
+label define mbpld_pop_lbl 50000 `"China"', add
+label define mbpld_pop_lbl 50010 `"Hong Kong"', add
+label define mbpld_pop_lbl 50020 `"Macau"', add
+label define mbpld_pop_lbl 50030 `"Mongolia"', add
+label define mbpld_pop_lbl 50040 `"Taiwan"', add
+label define mbpld_pop_lbl 50100 `"Japan"', add
+label define mbpld_pop_lbl 50200 `"Korea"', add
+label define mbpld_pop_lbl 50210 `"North Korea"', add
+label define mbpld_pop_lbl 50220 `"South Korea"', add
+label define mbpld_pop_lbl 50900 `"East Asia, n.s."', add
+label define mbpld_pop_lbl 51000 `"Brunei"', add
+label define mbpld_pop_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define mbpld_pop_lbl 51200 `"Indonesia"', add
+label define mbpld_pop_lbl 51210 `"East Indies"', add
+label define mbpld_pop_lbl 51220 `"East Timor"', add
+label define mbpld_pop_lbl 51300 `"Laos"', add
+label define mbpld_pop_lbl 51400 `"Malaysia"', add
+label define mbpld_pop_lbl 51500 `"Philippines"', add
+label define mbpld_pop_lbl 51600 `"Singapore"', add
+label define mbpld_pop_lbl 51700 `"Thailand"', add
+label define mbpld_pop_lbl 51800 `"Vietnam"', add
+label define mbpld_pop_lbl 51900 `"Southeast Asia, ns"', add
+label define mbpld_pop_lbl 51910 `"Indochina, ns"', add
+label define mbpld_pop_lbl 52000 `"Afghanistan"', add
+label define mbpld_pop_lbl 52100 `"India"', add
+label define mbpld_pop_lbl 52110 `"Bangladesh"', add
+label define mbpld_pop_lbl 52120 `"Bhutan"', add
+label define mbpld_pop_lbl 52130 `"Burma (Myanmar)"', add
+label define mbpld_pop_lbl 52140 `"Pakistan"', add
+label define mbpld_pop_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define mbpld_pop_lbl 52200 `"Iran"', add
+label define mbpld_pop_lbl 52300 `"Maldives"', add
+label define mbpld_pop_lbl 52400 `"Nepal"', add
+label define mbpld_pop_lbl 53000 `"Bahrain"', add
+label define mbpld_pop_lbl 53100 `"Cyprus"', add
+label define mbpld_pop_lbl 53200 `"Iraq"', add
+label define mbpld_pop_lbl 53210 `"Mesopotamia"', add
+label define mbpld_pop_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define mbpld_pop_lbl 53400 `"Israel/Palestine"', add
+label define mbpld_pop_lbl 53420 `"Palestine"', add
+label define mbpld_pop_lbl 53430 `"West Bank"', add
+label define mbpld_pop_lbl 53440 `"Israel"', add
+label define mbpld_pop_lbl 53410 `"Gaza Strip"', add
+label define mbpld_pop_lbl 53500 `"Jordan"', add
+label define mbpld_pop_lbl 53600 `"Kuwait"', add
+label define mbpld_pop_lbl 53700 `"Lebanon"', add
+label define mbpld_pop_lbl 53800 `"Oman"', add
+label define mbpld_pop_lbl 53900 `"Qatar"', add
+label define mbpld_pop_lbl 54000 `"Saudi Arabia"', add
+label define mbpld_pop_lbl 54100 `"Syria"', add
+label define mbpld_pop_lbl 54200 `"Turkey"', add
+label define mbpld_pop_lbl 54210 `"European Turkey"', add
+label define mbpld_pop_lbl 54220 `"Asian Turkey"', add
+label define mbpld_pop_lbl 54300 `"United Arab Emirates"', add
+label define mbpld_pop_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define mbpld_pop_lbl 54500 `"Yemen, PDR (South)"', add
+label define mbpld_pop_lbl 54600 `"Persian Gulf States, ns"', add
+label define mbpld_pop_lbl 54700 `"Middle East, n.s."', add
+label define mbpld_pop_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define mbpld_pop_lbl 54900 `"Asia Minor, n.s."', add
+label define mbpld_pop_lbl 55000 `"South Asia, n.e.c."', add
+label define mbpld_pop_lbl 59900 `"Asia, nec/ns"', add
+label define mbpld_pop_lbl 60000 `"AFRICA"', add
+label define mbpld_pop_lbl 60010 `"Northern Africa"', add
+label define mbpld_pop_lbl 60011 `"Algeria"', add
+label define mbpld_pop_lbl 60012 `"Egypt/United Arab Rep."', add
+label define mbpld_pop_lbl 60013 `"Libya"', add
+label define mbpld_pop_lbl 60014 `"Morocco"', add
+label define mbpld_pop_lbl 60015 `"Sudan"', add
+label define mbpld_pop_lbl 60016 `"Tunisia"', add
+label define mbpld_pop_lbl 60017 `"Western Sahara"', add
+label define mbpld_pop_lbl 60019 `"North Africa, ns"', add
+label define mbpld_pop_lbl 60020 `"Benin"', add
+label define mbpld_pop_lbl 60021 `"Burkina Faso"', add
+label define mbpld_pop_lbl 60022 `"Gambia"', add
+label define mbpld_pop_lbl 60023 `"Ghana"', add
+label define mbpld_pop_lbl 60024 `"Guinea"', add
+label define mbpld_pop_lbl 60025 `"Guinea-Bissau"', add
+label define mbpld_pop_lbl 60026 `"Ivory Coast"', add
+label define mbpld_pop_lbl 60027 `"Liberia"', add
+label define mbpld_pop_lbl 60028 `"Mali"', add
+label define mbpld_pop_lbl 60029 `"Mauritania"', add
+label define mbpld_pop_lbl 60030 `"Niger"', add
+label define mbpld_pop_lbl 60031 `"Nigeria"', add
+label define mbpld_pop_lbl 60032 `"Senegal"', add
+label define mbpld_pop_lbl 60033 `"Sierra Leone"', add
+label define mbpld_pop_lbl 60034 `"Togo"', add
+label define mbpld_pop_lbl 60038 `"Western Africa, n.s."', add
+label define mbpld_pop_lbl 60039 `"French West Africa, ns"', add
+label define mbpld_pop_lbl 60040 `"British Indian Ocean Territory"', add
+label define mbpld_pop_lbl 60041 `"Burundi"', add
+label define mbpld_pop_lbl 60042 `"Comoros"', add
+label define mbpld_pop_lbl 60043 `"Djibouti"', add
+label define mbpld_pop_lbl 60044 `"Ethiopia"', add
+label define mbpld_pop_lbl 60045 `"Kenya"', add
+label define mbpld_pop_lbl 60046 `"Madagascar"', add
+label define mbpld_pop_lbl 60047 `"Malawi"', add
+label define mbpld_pop_lbl 60048 `"Mauritius"', add
+label define mbpld_pop_lbl 60049 `"Mozambique"', add
+label define mbpld_pop_lbl 60050 `"Reunion"', add
+label define mbpld_pop_lbl 60051 `"Rwanda"', add
+label define mbpld_pop_lbl 60052 `"Seychelles"', add
+label define mbpld_pop_lbl 60053 `"Somalia"', add
+label define mbpld_pop_lbl 60054 `"Tanzania"', add
+label define mbpld_pop_lbl 60055 `"Uganda"', add
+label define mbpld_pop_lbl 60056 `"Zambia"', add
+label define mbpld_pop_lbl 60057 `"Zimbabwe"', add
+label define mbpld_pop_lbl 60058 `"Bassas de India"', add
+label define mbpld_pop_lbl 60059 `"Europa"', add
+label define mbpld_pop_lbl 60060 `"Gloriosos"', add
+label define mbpld_pop_lbl 60061 `"Juan de Nova"', add
+label define mbpld_pop_lbl 60062 `"Mayotte"', add
+label define mbpld_pop_lbl 60063 `"Tromelin"', add
+label define mbpld_pop_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define mbpld_pop_lbl 60065 `"Eritrea"', add
+label define mbpld_pop_lbl 60070 `"Central Africa"', add
+label define mbpld_pop_lbl 60071 `"Angola"', add
+label define mbpld_pop_lbl 60072 `"Cameroon"', add
+label define mbpld_pop_lbl 60073 `"Central African Republic"', add
+label define mbpld_pop_lbl 60074 `"Chad"', add
+label define mbpld_pop_lbl 60075 `"Congo"', add
+label define mbpld_pop_lbl 60076 `"Equatorial Guinea"', add
+label define mbpld_pop_lbl 60077 `"Gabon"', add
+label define mbpld_pop_lbl 60078 `"Sao Tome and Principe"', add
+label define mbpld_pop_lbl 60079 `"Zaire"', add
+label define mbpld_pop_lbl 60080 `"Central Africa, ns"', add
+label define mbpld_pop_lbl 60081 `"Equatorial Africa, ns"', add
+label define mbpld_pop_lbl 60082 `"French Equatorial Africa, ns"', add
+label define mbpld_pop_lbl 60090 `"Southern Africa"', add
+label define mbpld_pop_lbl 60091 `"Botswana"', add
+label define mbpld_pop_lbl 60092 `"Lesotho"', add
+label define mbpld_pop_lbl 60093 `"Namibia"', add
+label define mbpld_pop_lbl 60094 `"South Africa (Union of)"', add
+label define mbpld_pop_lbl 60095 `"Swaziland"', add
+label define mbpld_pop_lbl 60096 `"Southern Africa, n.s."', add
+label define mbpld_pop_lbl 60099 `"Africa, ns/nec"', add
+label define mbpld_pop_lbl 70000 `"Australia and New Zealand"', add
+label define mbpld_pop_lbl 70010 `"Australia"', add
+label define mbpld_pop_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define mbpld_pop_lbl 70012 `"Coral Sea Islands Territory"', add
+label define mbpld_pop_lbl 70013 `"Christmas Island"', add
+label define mbpld_pop_lbl 70014 `"Cocos Islands"', add
+label define mbpld_pop_lbl 70020 `"New Zealand"', add
+label define mbpld_pop_lbl 71000 `"Pacific Islands"', add
+label define mbpld_pop_lbl 71010 `"New Caledonia"', add
+label define mbpld_pop_lbl 71012 `"Papua New Guinea"', add
+label define mbpld_pop_lbl 71013 `"Solomon Islands"', add
+label define mbpld_pop_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define mbpld_pop_lbl 71016 `"Melanesia, ns"', add
+label define mbpld_pop_lbl 71017 `"Norfolk Islands"', add
+label define mbpld_pop_lbl 71018 `"Niue"', add
+label define mbpld_pop_lbl 71020 `"Cook Islands"', add
+label define mbpld_pop_lbl 71021 `"Fiji"', add
+label define mbpld_pop_lbl 71022 `"French Polynesia"', add
+label define mbpld_pop_lbl 71023 `"Tonga"', add
+label define mbpld_pop_lbl 71024 `"Wallis and Futuna Islands"', add
+label define mbpld_pop_lbl 71025 `"Western Samoa"', add
+label define mbpld_pop_lbl 71026 `"Pitcairn Island"', add
+label define mbpld_pop_lbl 71027 `"Tokelau"', add
+label define mbpld_pop_lbl 71028 `"Tuvalu"', add
+label define mbpld_pop_lbl 71029 `"Polynesia, n.s."', add
+label define mbpld_pop_lbl 71032 `"Kiribati"', add
+label define mbpld_pop_lbl 71033 `"Canton and Enderbury"', add
+label define mbpld_pop_lbl 71034 `"Nauru"', add
+label define mbpld_pop_lbl 71039 `"Micronesia, ns"', add
+label define mbpld_pop_lbl 71040 `"US Pacific Trust Territories"', add
+label define mbpld_pop_lbl 71041 `"Marshall Islands"', add
+label define mbpld_pop_lbl 71042 `"Micronesia"', add
+label define mbpld_pop_lbl 71043 `"Kosrae"', add
+label define mbpld_pop_lbl 71044 `"Pohnpei"', add
+label define mbpld_pop_lbl 71045 `"Truk"', add
+label define mbpld_pop_lbl 71046 `"Yap"', add
+label define mbpld_pop_lbl 71047 `"Northern Mariana Islands"', add
+label define mbpld_pop_lbl 71048 `"Palau"', add
+label define mbpld_pop_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define mbpld_pop_lbl 71050 `"Clipperton Island"', add
+label define mbpld_pop_lbl 71090 `"Oceania, ns/nec"', add
+label define mbpld_pop_lbl 80000 `"Antarctica, ns/nec"', add
+label define mbpld_pop_lbl 80010 `"Bouvet Islands"', add
+label define mbpld_pop_lbl 80020 `"British Antarctic Terr."', add
+label define mbpld_pop_lbl 80030 `"Dronning Maud Land"', add
+label define mbpld_pop_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define mbpld_pop_lbl 80050 `"Heard and McDonald Islands"', add
+label define mbpld_pop_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define mbpld_pop_lbl 90010 `"Abroad, ns"', add
+label define mbpld_pop_lbl 90011 `"Abroad (US citizen)"', add
+label define mbpld_pop_lbl 90020 `"At sea"', add
+label define mbpld_pop_lbl 90021 `"At sea (US citizen)"', add
+label define mbpld_pop_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define mbpld_pop_lbl 95000 `"Other n.e.c."', add
+label define mbpld_pop_lbl 99700 `"Unknown"', add
+label define mbpld_pop_lbl 99900 `"Missing/blank"', add
+label values mbpld_pop mbpld_pop_lbl
+
 label define mbpld_sp_lbl 00000 `"Not Applicable"'
 label define mbpld_sp_lbl 00100 `"Alabama"', add
 label define mbpld_sp_lbl 00200 `"Alaska"', add
@@ -8640,6 +16292,1084 @@ label define mbpld_sp_lbl 99700 `"Unknown"', add
 label define mbpld_sp_lbl 99900 `"Missing/blank"', add
 label values mbpld_sp mbpld_sp_lbl
 
+label define mbpld_mom2_lbl 00000 `"Not Applicable"'
+label define mbpld_mom2_lbl 00100 `"Alabama"', add
+label define mbpld_mom2_lbl 00200 `"Alaska"', add
+label define mbpld_mom2_lbl 00400 `"Arizona"', add
+label define mbpld_mom2_lbl 00500 `"Arkansas"', add
+label define mbpld_mom2_lbl 00600 `"California"', add
+label define mbpld_mom2_lbl 00800 `"Colorado"', add
+label define mbpld_mom2_lbl 00900 `"Connecticut"', add
+label define mbpld_mom2_lbl 01000 `"Delaware"', add
+label define mbpld_mom2_lbl 01100 `"District of Columbia"', add
+label define mbpld_mom2_lbl 01200 `"Florida"', add
+label define mbpld_mom2_lbl 01300 `"Georgia"', add
+label define mbpld_mom2_lbl 01500 `"Hawaii"', add
+label define mbpld_mom2_lbl 01600 `"Idaho"', add
+label define mbpld_mom2_lbl 01610 `"Idaho Territory"', add
+label define mbpld_mom2_lbl 01700 `"Illinois"', add
+label define mbpld_mom2_lbl 01800 `"Indiana"', add
+label define mbpld_mom2_lbl 01900 `"Iowa"', add
+label define mbpld_mom2_lbl 02000 `"Kansas"', add
+label define mbpld_mom2_lbl 02100 `"Kentucky"', add
+label define mbpld_mom2_lbl 02200 `"Louisiana"', add
+label define mbpld_mom2_lbl 02300 `"Maine"', add
+label define mbpld_mom2_lbl 02400 `"Maryland"', add
+label define mbpld_mom2_lbl 02500 `"Massachusetts"', add
+label define mbpld_mom2_lbl 02600 `"Michigan"', add
+label define mbpld_mom2_lbl 02700 `"Minnesota"', add
+label define mbpld_mom2_lbl 02800 `"Mississippi"', add
+label define mbpld_mom2_lbl 02900 `"Missouri"', add
+label define mbpld_mom2_lbl 03000 `"Montana"', add
+label define mbpld_mom2_lbl 03100 `"Nebraska"', add
+label define mbpld_mom2_lbl 03200 `"Nevada"', add
+label define mbpld_mom2_lbl 03300 `"New Hampshire"', add
+label define mbpld_mom2_lbl 03400 `"New Jersey"', add
+label define mbpld_mom2_lbl 03500 `"New Mexico"', add
+label define mbpld_mom2_lbl 03510 `"New Mexico Territory"', add
+label define mbpld_mom2_lbl 03600 `"New York"', add
+label define mbpld_mom2_lbl 03700 `"North Carolina"', add
+label define mbpld_mom2_lbl 03800 `"North Dakota"', add
+label define mbpld_mom2_lbl 03900 `"Ohio"', add
+label define mbpld_mom2_lbl 04000 `"Oklahoma"', add
+label define mbpld_mom2_lbl 04010 `"Indian Territory"', add
+label define mbpld_mom2_lbl 04100 `"Oregon"', add
+label define mbpld_mom2_lbl 04200 `"Pennsylvania"', add
+label define mbpld_mom2_lbl 04400 `"Rhode Island"', add
+label define mbpld_mom2_lbl 04500 `"South Carolina"', add
+label define mbpld_mom2_lbl 04600 `"South Dakota"', add
+label define mbpld_mom2_lbl 04610 `"Dakota Territory"', add
+label define mbpld_mom2_lbl 04700 `"Tennessee"', add
+label define mbpld_mom2_lbl 04800 `"Texas"', add
+label define mbpld_mom2_lbl 04900 `"Utah"', add
+label define mbpld_mom2_lbl 04910 `"Utah Territory"', add
+label define mbpld_mom2_lbl 05000 `"Vermont"', add
+label define mbpld_mom2_lbl 05100 `"Virginia"', add
+label define mbpld_mom2_lbl 05300 `"Washington"', add
+label define mbpld_mom2_lbl 05400 `"West Virginia"', add
+label define mbpld_mom2_lbl 05500 `"Wisconsin"', add
+label define mbpld_mom2_lbl 05600 `"Wyoming"', add
+label define mbpld_mom2_lbl 05610 `"Wyoming Territory"', add
+label define mbpld_mom2_lbl 09000 `"Native American"', add
+label define mbpld_mom2_lbl 09900 `"United States, n.s."', add
+label define mbpld_mom2_lbl 10000 `"American Samoa"', add
+label define mbpld_mom2_lbl 10010 `"Samoa, 1940-1950"', add
+label define mbpld_mom2_lbl 10500 `"Guam"', add
+label define mbpld_mom2_lbl 11000 `"Puerto Rico"', add
+label define mbpld_mom2_lbl 11500 `"U.S. Virgin Islands"', add
+label define mbpld_mom2_lbl 11510 `"St. Croix"', add
+label define mbpld_mom2_lbl 11520 `"St. John"', add
+label define mbpld_mom2_lbl 11530 `"St. Thomas"', add
+label define mbpld_mom2_lbl 12000 `"Other US Possessions"', add
+label define mbpld_mom2_lbl 12010 `"Johnston Atoll"', add
+label define mbpld_mom2_lbl 12020 `"Midway Islands"', add
+label define mbpld_mom2_lbl 12030 `"Wake Island"', add
+label define mbpld_mom2_lbl 12040 `"Other US Caribbean Islands"', add
+label define mbpld_mom2_lbl 12041 `"Navassa Island"', add
+label define mbpld_mom2_lbl 12050 `"Other US Pacific Is."', add
+label define mbpld_mom2_lbl 12051 `"Baker Island"', add
+label define mbpld_mom2_lbl 12052 `"Howland Island"', add
+label define mbpld_mom2_lbl 12053 `"Jarvis Island"', add
+label define mbpld_mom2_lbl 12054 `"Kingman Reef"', add
+label define mbpld_mom2_lbl 12055 `"Palmyra Atoll"', add
+label define mbpld_mom2_lbl 12056 `"Canton and Enderbury Island"', add
+label define mbpld_mom2_lbl 12090 `"US outlying areas, ns"', add
+label define mbpld_mom2_lbl 12091 `"US Possessions, n.s."', add
+label define mbpld_mom2_lbl 12092 `"US territory, ns"', add
+label define mbpld_mom2_lbl 15000 `"Canada"', add
+label define mbpld_mom2_lbl 15010 `"English Canada"', add
+label define mbpld_mom2_lbl 15011 `"British Columbia"', add
+label define mbpld_mom2_lbl 15013 `"Alberta"', add
+label define mbpld_mom2_lbl 15015 `"Saskatchewan"', add
+label define mbpld_mom2_lbl 15017 `"Northwest"', add
+label define mbpld_mom2_lbl 15019 `"Ruperts Land"', add
+label define mbpld_mom2_lbl 15020 `"Manitoba"', add
+label define mbpld_mom2_lbl 15021 `"Red River"', add
+label define mbpld_mom2_lbl 15030 `"Ontario/Upper Canada"', add
+label define mbpld_mom2_lbl 15031 `"Upper Canada"', add
+label define mbpld_mom2_lbl 15032 `"Canada West"', add
+label define mbpld_mom2_lbl 15040 `"New Brunswick"', add
+label define mbpld_mom2_lbl 15050 `"Nova Scotia"', add
+label define mbpld_mom2_lbl 15051 `"Cape Breton"', add
+label define mbpld_mom2_lbl 15052 `"Halifax"', add
+label define mbpld_mom2_lbl 15060 `"Prince Edward Island"', add
+label define mbpld_mom2_lbl 15070 `"Newfoundland"', add
+label define mbpld_mom2_lbl 15080 `"French Canada"', add
+label define mbpld_mom2_lbl 15081 `"Quebec"', add
+label define mbpld_mom2_lbl 15082 `"Lower Canada"', add
+label define mbpld_mom2_lbl 15083 `"Canada East"', add
+label define mbpld_mom2_lbl 15500 `"St. Pierre and Miquelon"', add
+label define mbpld_mom2_lbl 16000 `"Atlantic Islands"', add
+label define mbpld_mom2_lbl 16010 `"Bermuda"', add
+label define mbpld_mom2_lbl 16020 `"Cape Verde"', add
+label define mbpld_mom2_lbl 16030 `"Falkland Islands"', add
+label define mbpld_mom2_lbl 16040 `"Greenland"', add
+label define mbpld_mom2_lbl 16050 `"St. Helena and Ascension"', add
+label define mbpld_mom2_lbl 16060 `"Canary Islands"', add
+label define mbpld_mom2_lbl 19900 `"North America, n.s."', add
+label define mbpld_mom2_lbl 20000 `"Mexico"', add
+label define mbpld_mom2_lbl 21000 `"Central America"', add
+label define mbpld_mom2_lbl 21010 `"Belize/British Honduras"', add
+label define mbpld_mom2_lbl 21020 `"Costa Rica"', add
+label define mbpld_mom2_lbl 21030 `"El Salvador"', add
+label define mbpld_mom2_lbl 21040 `"Guatemala"', add
+label define mbpld_mom2_lbl 21050 `"Honduras"', add
+label define mbpld_mom2_lbl 21060 `"Nicaragua"', add
+label define mbpld_mom2_lbl 21070 `"Panama"', add
+label define mbpld_mom2_lbl 21071 `"Canal Zone"', add
+label define mbpld_mom2_lbl 21090 `"Central America, ns"', add
+label define mbpld_mom2_lbl 25000 `"Cuba"', add
+label define mbpld_mom2_lbl 26000 `"West Indies"', add
+label define mbpld_mom2_lbl 26010 `"Dominican Republic"', add
+label define mbpld_mom2_lbl 26020 `"Haiti"', add
+label define mbpld_mom2_lbl 26030 `"Jamaica"', add
+label define mbpld_mom2_lbl 26040 `"British West Indies"', add
+label define mbpld_mom2_lbl 26041 `"Anguilla"', add
+label define mbpld_mom2_lbl 26042 `"Antigua-Barbuda"', add
+label define mbpld_mom2_lbl 26043 `"Bahamas"', add
+label define mbpld_mom2_lbl 26044 `"Barbados"', add
+label define mbpld_mom2_lbl 26045 `"British Virgin Islands"', add
+label define mbpld_mom2_lbl 26046 `"Anegada"', add
+label define mbpld_mom2_lbl 26047 `"Cooper"', add
+label define mbpld_mom2_lbl 26048 `"Jost Van Dyke"', add
+label define mbpld_mom2_lbl 26049 `"Peter"', add
+label define mbpld_mom2_lbl 26050 `"Tortola"', add
+label define mbpld_mom2_lbl 26051 `"Virgin Gorda"', add
+label define mbpld_mom2_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define mbpld_mom2_lbl 26053 `"Cayman Isles"', add
+label define mbpld_mom2_lbl 26054 `"Dominica"', add
+label define mbpld_mom2_lbl 26055 `"Grenada"', add
+label define mbpld_mom2_lbl 26056 `"Montserrat"', add
+label define mbpld_mom2_lbl 26057 `"St. Kitts-Nevis"', add
+label define mbpld_mom2_lbl 26058 `"St. Lucia"', add
+label define mbpld_mom2_lbl 26059 `"St. Vincent"', add
+label define mbpld_mom2_lbl 26060 `"Trinidad and Tobago"', add
+label define mbpld_mom2_lbl 26061 `"Turks and Caicos"', add
+label define mbpld_mom2_lbl 26069 `"British West Indies, ns"', add
+label define mbpld_mom2_lbl 26070 `"Other West Indies"', add
+label define mbpld_mom2_lbl 26071 `"Aruba"', add
+label define mbpld_mom2_lbl 26072 `"Netherlands Antilles"', add
+label define mbpld_mom2_lbl 26073 `"Bonaire"', add
+label define mbpld_mom2_lbl 26074 `"Curacao"', add
+label define mbpld_mom2_lbl 26075 `"Dutch St. Maarten"', add
+label define mbpld_mom2_lbl 26076 `"Saba"', add
+label define mbpld_mom2_lbl 26077 `"St. Eustatius"', add
+label define mbpld_mom2_lbl 26079 `"Dutch Caribbean, ns"', add
+label define mbpld_mom2_lbl 26080 `"French St. Maarten"', add
+label define mbpld_mom2_lbl 26081 `"Guadeloupe"', add
+label define mbpld_mom2_lbl 26082 `"Martinique"', add
+label define mbpld_mom2_lbl 26083 `"St. Barthelemy"', add
+label define mbpld_mom2_lbl 26089 `"French Caribbean, ns"', add
+label define mbpld_mom2_lbl 26090 `"Antilles, n.s."', add
+label define mbpld_mom2_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define mbpld_mom2_lbl 26092 `"Latin America, ns"', add
+label define mbpld_mom2_lbl 26093 `"Leeward Islands, n.s."', add
+label define mbpld_mom2_lbl 26094 `"West Indies, ns"', add
+label define mbpld_mom2_lbl 26095 `"Winward Islands"', add
+label define mbpld_mom2_lbl 29900 `"Americas, ns"', add
+label define mbpld_mom2_lbl 30000 `"SOUTH AMERICA"', add
+label define mbpld_mom2_lbl 30005 `"Argentina"', add
+label define mbpld_mom2_lbl 30010 `"Bolivia"', add
+label define mbpld_mom2_lbl 30015 `"Brazil"', add
+label define mbpld_mom2_lbl 30020 `"Chile"', add
+label define mbpld_mom2_lbl 30025 `"Colombia"', add
+label define mbpld_mom2_lbl 30030 `"Ecuador"', add
+label define mbpld_mom2_lbl 30035 `"French Guiana"', add
+label define mbpld_mom2_lbl 30040 `"Guyana/British Guiana"', add
+label define mbpld_mom2_lbl 30045 `"Paraguay"', add
+label define mbpld_mom2_lbl 30050 `"Peru"', add
+label define mbpld_mom2_lbl 30055 `"Suriname"', add
+label define mbpld_mom2_lbl 30060 `"Uruguay"', add
+label define mbpld_mom2_lbl 30065 `"Venezuela"', add
+label define mbpld_mom2_lbl 30090 `"South America, n.s."', add
+label define mbpld_mom2_lbl 30091 `"South and Central America, n.s."', add
+label define mbpld_mom2_lbl 40000 `"Denmark"', add
+label define mbpld_mom2_lbl 40010 `"Faroe Islands"', add
+label define mbpld_mom2_lbl 40100 `"Finland"', add
+label define mbpld_mom2_lbl 40200 `"Iceland"', add
+label define mbpld_mom2_lbl 40300 `"Lapland, ns"', add
+label define mbpld_mom2_lbl 40400 `"Norway"', add
+label define mbpld_mom2_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define mbpld_mom2_lbl 40411 `"Svalbard"', add
+label define mbpld_mom2_lbl 40412 `"Jan Meyen"', add
+label define mbpld_mom2_lbl 40500 `"Sweden"', add
+label define mbpld_mom2_lbl 41000 `"England"', add
+label define mbpld_mom2_lbl 41010 `"Channel Islands"', add
+label define mbpld_mom2_lbl 41011 `"Guernsey"', add
+label define mbpld_mom2_lbl 41012 `"Jersey"', add
+label define mbpld_mom2_lbl 41020 `"Isle of Man"', add
+label define mbpld_mom2_lbl 41100 `"Scotland"', add
+label define mbpld_mom2_lbl 41200 `"Wales"', add
+label define mbpld_mom2_lbl 41300 `"United Kingdom, n.s."', add
+label define mbpld_mom2_lbl 41400 `"Ireland"', add
+label define mbpld_mom2_lbl 41410 `"Northern Ireland"', add
+label define mbpld_mom2_lbl 41900 `"Northern Europe, ns"', add
+label define mbpld_mom2_lbl 42000 `"Belgium"', add
+label define mbpld_mom2_lbl 42100 `"France"', add
+label define mbpld_mom2_lbl 42110 `"Alsace-Lorraine"', add
+label define mbpld_mom2_lbl 42111 `"Alsace"', add
+label define mbpld_mom2_lbl 42112 `"Lorraine"', add
+label define mbpld_mom2_lbl 42200 `"Liechtenstein"', add
+label define mbpld_mom2_lbl 42300 `"Luxembourg"', add
+label define mbpld_mom2_lbl 42400 `"Monaco"', add
+label define mbpld_mom2_lbl 42500 `"Netherlands"', add
+label define mbpld_mom2_lbl 42600 `"Switzerland"', add
+label define mbpld_mom2_lbl 42900 `"Western Euproe, ns"', add
+label define mbpld_mom2_lbl 43000 `"Albania"', add
+label define mbpld_mom2_lbl 43100 `"Andorra"', add
+label define mbpld_mom2_lbl 43200 `"Gibraltar"', add
+label define mbpld_mom2_lbl 43300 `"Greece"', add
+label define mbpld_mom2_lbl 43310 `"Dodecanese Islands"', add
+label define mbpld_mom2_lbl 43320 `"Turkey Greece"', add
+label define mbpld_mom2_lbl 43330 `"Macedonia"', add
+label define mbpld_mom2_lbl 43400 `"Italy"', add
+label define mbpld_mom2_lbl 43500 `"Malta"', add
+label define mbpld_mom2_lbl 43600 `"Portugal"', add
+label define mbpld_mom2_lbl 43610 `"Azores"', add
+label define mbpld_mom2_lbl 43620 `"Madeira Islands"', add
+label define mbpld_mom2_lbl 43630 `"Cape Verde Islands"', add
+label define mbpld_mom2_lbl 43640 `"St. Miguel"', add
+label define mbpld_mom2_lbl 43700 `"San Marino"', add
+label define mbpld_mom2_lbl 43800 `"Spain"', add
+label define mbpld_mom2_lbl 43900 `"Vatican City"', add
+label define mbpld_mom2_lbl 44000 `"Southern Europe, ns"', add
+label define mbpld_mom2_lbl 45000 `"Austria"', add
+label define mbpld_mom2_lbl 45010 `"Austria-Hungary"', add
+label define mbpld_mom2_lbl 45020 `"Austria-Graz"', add
+label define mbpld_mom2_lbl 45030 `"Austria-Linz"', add
+label define mbpld_mom2_lbl 45040 `"Austria-Salzburg"', add
+label define mbpld_mom2_lbl 45050 `"Austria-Tyrol"', add
+label define mbpld_mom2_lbl 45060 `"Austria-Vienna"', add
+label define mbpld_mom2_lbl 45070 `"Austria-Kaernten"', add
+label define mbpld_mom2_lbl 45080 `"Austria-Neustadt"', add
+label define mbpld_mom2_lbl 45100 `"Bulgaria"', add
+label define mbpld_mom2_lbl 45200 `"Czechoslovakia"', add
+label define mbpld_mom2_lbl 45210 `"Bohemia"', add
+label define mbpld_mom2_lbl 45211 `"Bohemia-Moravia"', add
+label define mbpld_mom2_lbl 45212 `"Slovakia"', add
+label define mbpld_mom2_lbl 45213 `"Czech Republic"', add
+label define mbpld_mom2_lbl 45300 `"Germany"', add
+label define mbpld_mom2_lbl 45301 `"Berlin"', add
+label define mbpld_mom2_lbl 45310 `"West Germany"', add
+label define mbpld_mom2_lbl 45311 `"Baden"', add
+label define mbpld_mom2_lbl 45312 `"Bavaria"', add
+label define mbpld_mom2_lbl 45313 `"Bremen"', add
+label define mbpld_mom2_lbl 45314 `"Braunschweig"', add
+label define mbpld_mom2_lbl 45315 `"Hamburg"', add
+label define mbpld_mom2_lbl 45316 `"Hanover"', add
+label define mbpld_mom2_lbl 45317 `"Hessen"', add
+label define mbpld_mom2_lbl 45318 `"Hesse-Nassau"', add
+label define mbpld_mom2_lbl 45319 `"Holstein"', add
+label define mbpld_mom2_lbl 45320 `"Lippe"', add
+label define mbpld_mom2_lbl 45321 `"Lubeck"', add
+label define mbpld_mom2_lbl 45322 `"Oldenburg"', add
+label define mbpld_mom2_lbl 45323 `"Rheinland"', add
+label define mbpld_mom2_lbl 45324 `"Schleswig"', add
+label define mbpld_mom2_lbl 45325 `"Schleswig-Holstein"', add
+label define mbpld_mom2_lbl 45326 `"Schwarzburg"', add
+label define mbpld_mom2_lbl 45327 `"Waldeck"', add
+label define mbpld_mom2_lbl 45328 `"West Berlin"', add
+label define mbpld_mom2_lbl 45329 `"Westphalia"', add
+label define mbpld_mom2_lbl 45330 `"Wurttemberg"', add
+label define mbpld_mom2_lbl 45331 `"Frankfurt"', add
+label define mbpld_mom2_lbl 45332 `"Saarland"', add
+label define mbpld_mom2_lbl 45333 `"Nordrhein-Westfalen"', add
+label define mbpld_mom2_lbl 45340 `"East Germany"', add
+label define mbpld_mom2_lbl 45341 `"Anhalt"', add
+label define mbpld_mom2_lbl 45342 `"Brandenburg"', add
+label define mbpld_mom2_lbl 45343 `"East Berlin"', add
+label define mbpld_mom2_lbl 45344 `"Mecklenburg"', add
+label define mbpld_mom2_lbl 45345 `"Sachsen-Altenburg"', add
+label define mbpld_mom2_lbl 45346 `"Sachsen-Coburg"', add
+label define mbpld_mom2_lbl 45347 `"Sachsen-Gotha"', add
+label define mbpld_mom2_lbl 45348 `"Sachsen-Meiningen"', add
+label define mbpld_mom2_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define mbpld_mom2_lbl 45350 `"Saxony"', add
+label define mbpld_mom2_lbl 45351 `"Schwerin"', add
+label define mbpld_mom2_lbl 45352 `"Strelitz"', add
+label define mbpld_mom2_lbl 45353 `"Thuringian States"', add
+label define mbpld_mom2_lbl 45360 `"Prussia, n.e.c."', add
+label define mbpld_mom2_lbl 45361 `"Hohenzollern"', add
+label define mbpld_mom2_lbl 45362 `"Niedersachsen"', add
+label define mbpld_mom2_lbl 45400 `"Hungary"', add
+label define mbpld_mom2_lbl 45500 `"Poland"', add
+label define mbpld_mom2_lbl 45510 `"Austrian Poland"', add
+label define mbpld_mom2_lbl 45511 `"Galicia"', add
+label define mbpld_mom2_lbl 45520 `"German Poland"', add
+label define mbpld_mom2_lbl 45521 `"East Prussia"', add
+label define mbpld_mom2_lbl 45522 `"Pomerania"', add
+label define mbpld_mom2_lbl 45523 `"Posen"', add
+label define mbpld_mom2_lbl 45524 `"Prussian Poland"', add
+label define mbpld_mom2_lbl 45525 `"Silesia"', add
+label define mbpld_mom2_lbl 45526 `"West Prussia"', add
+label define mbpld_mom2_lbl 45530 `"Russian Poland"', add
+label define mbpld_mom2_lbl 45600 `"Romania"', add
+label define mbpld_mom2_lbl 45610 `"Transylvania"', add
+label define mbpld_mom2_lbl 45700 `"Yugoslavia"', add
+label define mbpld_mom2_lbl 45710 `"Croatia"', add
+label define mbpld_mom2_lbl 45720 `"Montenegro"', add
+label define mbpld_mom2_lbl 45730 `"Serbia"', add
+label define mbpld_mom2_lbl 45740 `"Bosnia"', add
+label define mbpld_mom2_lbl 45750 `"Dalmatia"', add
+label define mbpld_mom2_lbl 45760 `"Slovonia"', add
+label define mbpld_mom2_lbl 45770 `"Carniola"', add
+label define mbpld_mom2_lbl 45780 `"Slovenia"', add
+label define mbpld_mom2_lbl 45790 `"Kosovo"', add
+label define mbpld_mom2_lbl 45800 `"Central Europe, n.s."', add
+label define mbpld_mom2_lbl 45900 `"Eastern Europe, n.s."', add
+label define mbpld_mom2_lbl 46000 `"Estonia"', add
+label define mbpld_mom2_lbl 46100 `"Latvia"', add
+label define mbpld_mom2_lbl 46200 `"Lithuania"', add
+label define mbpld_mom2_lbl 46300 `"Baltic States, ns"', add
+label define mbpld_mom2_lbl 46500 `"Other USSR/Russia"', add
+label define mbpld_mom2_lbl 46510 `"Byelorussia"', add
+label define mbpld_mom2_lbl 46520 `"Moldavia"', add
+label define mbpld_mom2_lbl 46521 `"Bessarabia"', add
+label define mbpld_mom2_lbl 46530 `"Ukraine"', add
+label define mbpld_mom2_lbl 46540 `"Armenia"', add
+label define mbpld_mom2_lbl 46541 `"Azerbaijan"', add
+label define mbpld_mom2_lbl 46542 `"Republic of Georgia"', add
+label define mbpld_mom2_lbl 46543 `"Kazakhstan"', add
+label define mbpld_mom2_lbl 46544 `"Kirghizia"', add
+label define mbpld_mom2_lbl 46545 `"Tadzhik"', add
+label define mbpld_mom2_lbl 46546 `"Turkmenistan"', add
+label define mbpld_mom2_lbl 46547 `"Uzbekistan"', add
+label define mbpld_mom2_lbl 46548 `"Siberia"', add
+label define mbpld_mom2_lbl 46590 `"USSR, ns"', add
+label define mbpld_mom2_lbl 49900 `"Europe, n.e.c./n.s."', add
+label define mbpld_mom2_lbl 50000 `"China"', add
+label define mbpld_mom2_lbl 50010 `"Hong Kong"', add
+label define mbpld_mom2_lbl 50020 `"Macau"', add
+label define mbpld_mom2_lbl 50030 `"Mongolia"', add
+label define mbpld_mom2_lbl 50040 `"Taiwan"', add
+label define mbpld_mom2_lbl 50100 `"Japan"', add
+label define mbpld_mom2_lbl 50200 `"Korea"', add
+label define mbpld_mom2_lbl 50210 `"North Korea"', add
+label define mbpld_mom2_lbl 50220 `"South Korea"', add
+label define mbpld_mom2_lbl 50900 `"East Asia, n.s."', add
+label define mbpld_mom2_lbl 51000 `"Brunei"', add
+label define mbpld_mom2_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define mbpld_mom2_lbl 51200 `"Indonesia"', add
+label define mbpld_mom2_lbl 51210 `"East Indies"', add
+label define mbpld_mom2_lbl 51220 `"East Timor"', add
+label define mbpld_mom2_lbl 51300 `"Laos"', add
+label define mbpld_mom2_lbl 51400 `"Malaysia"', add
+label define mbpld_mom2_lbl 51500 `"Philippines"', add
+label define mbpld_mom2_lbl 51600 `"Singapore"', add
+label define mbpld_mom2_lbl 51700 `"Thailand"', add
+label define mbpld_mom2_lbl 51800 `"Vietnam"', add
+label define mbpld_mom2_lbl 51900 `"Southeast Asia, ns"', add
+label define mbpld_mom2_lbl 51910 `"Indochina, ns"', add
+label define mbpld_mom2_lbl 52000 `"Afghanistan"', add
+label define mbpld_mom2_lbl 52100 `"India"', add
+label define mbpld_mom2_lbl 52110 `"Bangladesh"', add
+label define mbpld_mom2_lbl 52120 `"Bhutan"', add
+label define mbpld_mom2_lbl 52130 `"Burma (Myanmar)"', add
+label define mbpld_mom2_lbl 52140 `"Pakistan"', add
+label define mbpld_mom2_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define mbpld_mom2_lbl 52200 `"Iran"', add
+label define mbpld_mom2_lbl 52300 `"Maldives"', add
+label define mbpld_mom2_lbl 52400 `"Nepal"', add
+label define mbpld_mom2_lbl 53000 `"Bahrain"', add
+label define mbpld_mom2_lbl 53100 `"Cyprus"', add
+label define mbpld_mom2_lbl 53200 `"Iraq"', add
+label define mbpld_mom2_lbl 53210 `"Mesopotamia"', add
+label define mbpld_mom2_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define mbpld_mom2_lbl 53400 `"Israel/Palestine"', add
+label define mbpld_mom2_lbl 53420 `"Palestine"', add
+label define mbpld_mom2_lbl 53430 `"West Bank"', add
+label define mbpld_mom2_lbl 53440 `"Israel"', add
+label define mbpld_mom2_lbl 53410 `"Gaza Strip"', add
+label define mbpld_mom2_lbl 53500 `"Jordan"', add
+label define mbpld_mom2_lbl 53600 `"Kuwait"', add
+label define mbpld_mom2_lbl 53700 `"Lebanon"', add
+label define mbpld_mom2_lbl 53800 `"Oman"', add
+label define mbpld_mom2_lbl 53900 `"Qatar"', add
+label define mbpld_mom2_lbl 54000 `"Saudi Arabia"', add
+label define mbpld_mom2_lbl 54100 `"Syria"', add
+label define mbpld_mom2_lbl 54200 `"Turkey"', add
+label define mbpld_mom2_lbl 54210 `"European Turkey"', add
+label define mbpld_mom2_lbl 54220 `"Asian Turkey"', add
+label define mbpld_mom2_lbl 54300 `"United Arab Emirates"', add
+label define mbpld_mom2_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define mbpld_mom2_lbl 54500 `"Yemen, PDR (South)"', add
+label define mbpld_mom2_lbl 54600 `"Persian Gulf States, ns"', add
+label define mbpld_mom2_lbl 54700 `"Middle East, n.s."', add
+label define mbpld_mom2_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define mbpld_mom2_lbl 54900 `"Asia Minor, n.s."', add
+label define mbpld_mom2_lbl 55000 `"South Asia, n.e.c."', add
+label define mbpld_mom2_lbl 59900 `"Asia, nec/ns"', add
+label define mbpld_mom2_lbl 60000 `"AFRICA"', add
+label define mbpld_mom2_lbl 60010 `"Northern Africa"', add
+label define mbpld_mom2_lbl 60011 `"Algeria"', add
+label define mbpld_mom2_lbl 60012 `"Egypt/United Arab Rep."', add
+label define mbpld_mom2_lbl 60013 `"Libya"', add
+label define mbpld_mom2_lbl 60014 `"Morocco"', add
+label define mbpld_mom2_lbl 60015 `"Sudan"', add
+label define mbpld_mom2_lbl 60016 `"Tunisia"', add
+label define mbpld_mom2_lbl 60017 `"Western Sahara"', add
+label define mbpld_mom2_lbl 60019 `"North Africa, ns"', add
+label define mbpld_mom2_lbl 60020 `"Benin"', add
+label define mbpld_mom2_lbl 60021 `"Burkina Faso"', add
+label define mbpld_mom2_lbl 60022 `"Gambia"', add
+label define mbpld_mom2_lbl 60023 `"Ghana"', add
+label define mbpld_mom2_lbl 60024 `"Guinea"', add
+label define mbpld_mom2_lbl 60025 `"Guinea-Bissau"', add
+label define mbpld_mom2_lbl 60026 `"Ivory Coast"', add
+label define mbpld_mom2_lbl 60027 `"Liberia"', add
+label define mbpld_mom2_lbl 60028 `"Mali"', add
+label define mbpld_mom2_lbl 60029 `"Mauritania"', add
+label define mbpld_mom2_lbl 60030 `"Niger"', add
+label define mbpld_mom2_lbl 60031 `"Nigeria"', add
+label define mbpld_mom2_lbl 60032 `"Senegal"', add
+label define mbpld_mom2_lbl 60033 `"Sierra Leone"', add
+label define mbpld_mom2_lbl 60034 `"Togo"', add
+label define mbpld_mom2_lbl 60038 `"Western Africa, n.s."', add
+label define mbpld_mom2_lbl 60039 `"French West Africa, ns"', add
+label define mbpld_mom2_lbl 60040 `"British Indian Ocean Territory"', add
+label define mbpld_mom2_lbl 60041 `"Burundi"', add
+label define mbpld_mom2_lbl 60042 `"Comoros"', add
+label define mbpld_mom2_lbl 60043 `"Djibouti"', add
+label define mbpld_mom2_lbl 60044 `"Ethiopia"', add
+label define mbpld_mom2_lbl 60045 `"Kenya"', add
+label define mbpld_mom2_lbl 60046 `"Madagascar"', add
+label define mbpld_mom2_lbl 60047 `"Malawi"', add
+label define mbpld_mom2_lbl 60048 `"Mauritius"', add
+label define mbpld_mom2_lbl 60049 `"Mozambique"', add
+label define mbpld_mom2_lbl 60050 `"Reunion"', add
+label define mbpld_mom2_lbl 60051 `"Rwanda"', add
+label define mbpld_mom2_lbl 60052 `"Seychelles"', add
+label define mbpld_mom2_lbl 60053 `"Somalia"', add
+label define mbpld_mom2_lbl 60054 `"Tanzania"', add
+label define mbpld_mom2_lbl 60055 `"Uganda"', add
+label define mbpld_mom2_lbl 60056 `"Zambia"', add
+label define mbpld_mom2_lbl 60057 `"Zimbabwe"', add
+label define mbpld_mom2_lbl 60058 `"Bassas de India"', add
+label define mbpld_mom2_lbl 60059 `"Europa"', add
+label define mbpld_mom2_lbl 60060 `"Gloriosos"', add
+label define mbpld_mom2_lbl 60061 `"Juan de Nova"', add
+label define mbpld_mom2_lbl 60062 `"Mayotte"', add
+label define mbpld_mom2_lbl 60063 `"Tromelin"', add
+label define mbpld_mom2_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define mbpld_mom2_lbl 60065 `"Eritrea"', add
+label define mbpld_mom2_lbl 60070 `"Central Africa"', add
+label define mbpld_mom2_lbl 60071 `"Angola"', add
+label define mbpld_mom2_lbl 60072 `"Cameroon"', add
+label define mbpld_mom2_lbl 60073 `"Central African Republic"', add
+label define mbpld_mom2_lbl 60074 `"Chad"', add
+label define mbpld_mom2_lbl 60075 `"Congo"', add
+label define mbpld_mom2_lbl 60076 `"Equatorial Guinea"', add
+label define mbpld_mom2_lbl 60077 `"Gabon"', add
+label define mbpld_mom2_lbl 60078 `"Sao Tome and Principe"', add
+label define mbpld_mom2_lbl 60079 `"Zaire"', add
+label define mbpld_mom2_lbl 60080 `"Central Africa, ns"', add
+label define mbpld_mom2_lbl 60081 `"Equatorial Africa, ns"', add
+label define mbpld_mom2_lbl 60082 `"French Equatorial Africa, ns"', add
+label define mbpld_mom2_lbl 60090 `"Southern Africa"', add
+label define mbpld_mom2_lbl 60091 `"Botswana"', add
+label define mbpld_mom2_lbl 60092 `"Lesotho"', add
+label define mbpld_mom2_lbl 60093 `"Namibia"', add
+label define mbpld_mom2_lbl 60094 `"South Africa (Union of)"', add
+label define mbpld_mom2_lbl 60095 `"Swaziland"', add
+label define mbpld_mom2_lbl 60096 `"Southern Africa, n.s."', add
+label define mbpld_mom2_lbl 60099 `"Africa, ns/nec"', add
+label define mbpld_mom2_lbl 70000 `"Australia and New Zealand"', add
+label define mbpld_mom2_lbl 70010 `"Australia"', add
+label define mbpld_mom2_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define mbpld_mom2_lbl 70012 `"Coral Sea Islands Territory"', add
+label define mbpld_mom2_lbl 70013 `"Christmas Island"', add
+label define mbpld_mom2_lbl 70014 `"Cocos Islands"', add
+label define mbpld_mom2_lbl 70020 `"New Zealand"', add
+label define mbpld_mom2_lbl 71000 `"Pacific Islands"', add
+label define mbpld_mom2_lbl 71010 `"New Caledonia"', add
+label define mbpld_mom2_lbl 71012 `"Papua New Guinea"', add
+label define mbpld_mom2_lbl 71013 `"Solomon Islands"', add
+label define mbpld_mom2_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define mbpld_mom2_lbl 71016 `"Melanesia, ns"', add
+label define mbpld_mom2_lbl 71017 `"Norfolk Islands"', add
+label define mbpld_mom2_lbl 71018 `"Niue"', add
+label define mbpld_mom2_lbl 71020 `"Cook Islands"', add
+label define mbpld_mom2_lbl 71021 `"Fiji"', add
+label define mbpld_mom2_lbl 71022 `"French Polynesia"', add
+label define mbpld_mom2_lbl 71023 `"Tonga"', add
+label define mbpld_mom2_lbl 71024 `"Wallis and Futuna Islands"', add
+label define mbpld_mom2_lbl 71025 `"Western Samoa"', add
+label define mbpld_mom2_lbl 71026 `"Pitcairn Island"', add
+label define mbpld_mom2_lbl 71027 `"Tokelau"', add
+label define mbpld_mom2_lbl 71028 `"Tuvalu"', add
+label define mbpld_mom2_lbl 71029 `"Polynesia, n.s."', add
+label define mbpld_mom2_lbl 71032 `"Kiribati"', add
+label define mbpld_mom2_lbl 71033 `"Canton and Enderbury"', add
+label define mbpld_mom2_lbl 71034 `"Nauru"', add
+label define mbpld_mom2_lbl 71039 `"Micronesia, ns"', add
+label define mbpld_mom2_lbl 71040 `"US Pacific Trust Territories"', add
+label define mbpld_mom2_lbl 71041 `"Marshall Islands"', add
+label define mbpld_mom2_lbl 71042 `"Micronesia"', add
+label define mbpld_mom2_lbl 71043 `"Kosrae"', add
+label define mbpld_mom2_lbl 71044 `"Pohnpei"', add
+label define mbpld_mom2_lbl 71045 `"Truk"', add
+label define mbpld_mom2_lbl 71046 `"Yap"', add
+label define mbpld_mom2_lbl 71047 `"Northern Mariana Islands"', add
+label define mbpld_mom2_lbl 71048 `"Palau"', add
+label define mbpld_mom2_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define mbpld_mom2_lbl 71050 `"Clipperton Island"', add
+label define mbpld_mom2_lbl 71090 `"Oceania, ns/nec"', add
+label define mbpld_mom2_lbl 80000 `"Antarctica, ns/nec"', add
+label define mbpld_mom2_lbl 80010 `"Bouvet Islands"', add
+label define mbpld_mom2_lbl 80020 `"British Antarctic Terr."', add
+label define mbpld_mom2_lbl 80030 `"Dronning Maud Land"', add
+label define mbpld_mom2_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define mbpld_mom2_lbl 80050 `"Heard and McDonald Islands"', add
+label define mbpld_mom2_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define mbpld_mom2_lbl 90010 `"Abroad, ns"', add
+label define mbpld_mom2_lbl 90011 `"Abroad (US citizen)"', add
+label define mbpld_mom2_lbl 90020 `"At sea"', add
+label define mbpld_mom2_lbl 90021 `"At sea (US citizen)"', add
+label define mbpld_mom2_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define mbpld_mom2_lbl 95000 `"Other n.e.c."', add
+label define mbpld_mom2_lbl 99700 `"Unknown"', add
+label define mbpld_mom2_lbl 99900 `"Missing/blank"', add
+label values mbpld_mom2 mbpld_mom2_lbl
+
+label define mbpld_pop2_lbl 00000 `"Not Applicable"'
+label define mbpld_pop2_lbl 00100 `"Alabama"', add
+label define mbpld_pop2_lbl 00200 `"Alaska"', add
+label define mbpld_pop2_lbl 00400 `"Arizona"', add
+label define mbpld_pop2_lbl 00500 `"Arkansas"', add
+label define mbpld_pop2_lbl 00600 `"California"', add
+label define mbpld_pop2_lbl 00800 `"Colorado"', add
+label define mbpld_pop2_lbl 00900 `"Connecticut"', add
+label define mbpld_pop2_lbl 01000 `"Delaware"', add
+label define mbpld_pop2_lbl 01100 `"District of Columbia"', add
+label define mbpld_pop2_lbl 01200 `"Florida"', add
+label define mbpld_pop2_lbl 01300 `"Georgia"', add
+label define mbpld_pop2_lbl 01500 `"Hawaii"', add
+label define mbpld_pop2_lbl 01600 `"Idaho"', add
+label define mbpld_pop2_lbl 01610 `"Idaho Territory"', add
+label define mbpld_pop2_lbl 01700 `"Illinois"', add
+label define mbpld_pop2_lbl 01800 `"Indiana"', add
+label define mbpld_pop2_lbl 01900 `"Iowa"', add
+label define mbpld_pop2_lbl 02000 `"Kansas"', add
+label define mbpld_pop2_lbl 02100 `"Kentucky"', add
+label define mbpld_pop2_lbl 02200 `"Louisiana"', add
+label define mbpld_pop2_lbl 02300 `"Maine"', add
+label define mbpld_pop2_lbl 02400 `"Maryland"', add
+label define mbpld_pop2_lbl 02500 `"Massachusetts"', add
+label define mbpld_pop2_lbl 02600 `"Michigan"', add
+label define mbpld_pop2_lbl 02700 `"Minnesota"', add
+label define mbpld_pop2_lbl 02800 `"Mississippi"', add
+label define mbpld_pop2_lbl 02900 `"Missouri"', add
+label define mbpld_pop2_lbl 03000 `"Montana"', add
+label define mbpld_pop2_lbl 03100 `"Nebraska"', add
+label define mbpld_pop2_lbl 03200 `"Nevada"', add
+label define mbpld_pop2_lbl 03300 `"New Hampshire"', add
+label define mbpld_pop2_lbl 03400 `"New Jersey"', add
+label define mbpld_pop2_lbl 03500 `"New Mexico"', add
+label define mbpld_pop2_lbl 03510 `"New Mexico Territory"', add
+label define mbpld_pop2_lbl 03600 `"New York"', add
+label define mbpld_pop2_lbl 03700 `"North Carolina"', add
+label define mbpld_pop2_lbl 03800 `"North Dakota"', add
+label define mbpld_pop2_lbl 03900 `"Ohio"', add
+label define mbpld_pop2_lbl 04000 `"Oklahoma"', add
+label define mbpld_pop2_lbl 04010 `"Indian Territory"', add
+label define mbpld_pop2_lbl 04100 `"Oregon"', add
+label define mbpld_pop2_lbl 04200 `"Pennsylvania"', add
+label define mbpld_pop2_lbl 04400 `"Rhode Island"', add
+label define mbpld_pop2_lbl 04500 `"South Carolina"', add
+label define mbpld_pop2_lbl 04600 `"South Dakota"', add
+label define mbpld_pop2_lbl 04610 `"Dakota Territory"', add
+label define mbpld_pop2_lbl 04700 `"Tennessee"', add
+label define mbpld_pop2_lbl 04800 `"Texas"', add
+label define mbpld_pop2_lbl 04900 `"Utah"', add
+label define mbpld_pop2_lbl 04910 `"Utah Territory"', add
+label define mbpld_pop2_lbl 05000 `"Vermont"', add
+label define mbpld_pop2_lbl 05100 `"Virginia"', add
+label define mbpld_pop2_lbl 05300 `"Washington"', add
+label define mbpld_pop2_lbl 05400 `"West Virginia"', add
+label define mbpld_pop2_lbl 05500 `"Wisconsin"', add
+label define mbpld_pop2_lbl 05600 `"Wyoming"', add
+label define mbpld_pop2_lbl 05610 `"Wyoming Territory"', add
+label define mbpld_pop2_lbl 09000 `"Native American"', add
+label define mbpld_pop2_lbl 09900 `"United States, n.s."', add
+label define mbpld_pop2_lbl 10000 `"American Samoa"', add
+label define mbpld_pop2_lbl 10010 `"Samoa, 1940-1950"', add
+label define mbpld_pop2_lbl 10500 `"Guam"', add
+label define mbpld_pop2_lbl 11000 `"Puerto Rico"', add
+label define mbpld_pop2_lbl 11500 `"U.S. Virgin Islands"', add
+label define mbpld_pop2_lbl 11510 `"St. Croix"', add
+label define mbpld_pop2_lbl 11520 `"St. John"', add
+label define mbpld_pop2_lbl 11530 `"St. Thomas"', add
+label define mbpld_pop2_lbl 12000 `"Other US Possessions"', add
+label define mbpld_pop2_lbl 12010 `"Johnston Atoll"', add
+label define mbpld_pop2_lbl 12020 `"Midway Islands"', add
+label define mbpld_pop2_lbl 12030 `"Wake Island"', add
+label define mbpld_pop2_lbl 12040 `"Other US Caribbean Islands"', add
+label define mbpld_pop2_lbl 12041 `"Navassa Island"', add
+label define mbpld_pop2_lbl 12050 `"Other US Pacific Is."', add
+label define mbpld_pop2_lbl 12051 `"Baker Island"', add
+label define mbpld_pop2_lbl 12052 `"Howland Island"', add
+label define mbpld_pop2_lbl 12053 `"Jarvis Island"', add
+label define mbpld_pop2_lbl 12054 `"Kingman Reef"', add
+label define mbpld_pop2_lbl 12055 `"Palmyra Atoll"', add
+label define mbpld_pop2_lbl 12056 `"Canton and Enderbury Island"', add
+label define mbpld_pop2_lbl 12090 `"US outlying areas, ns"', add
+label define mbpld_pop2_lbl 12091 `"US Possessions, n.s."', add
+label define mbpld_pop2_lbl 12092 `"US territory, ns"', add
+label define mbpld_pop2_lbl 15000 `"Canada"', add
+label define mbpld_pop2_lbl 15010 `"English Canada"', add
+label define mbpld_pop2_lbl 15011 `"British Columbia"', add
+label define mbpld_pop2_lbl 15013 `"Alberta"', add
+label define mbpld_pop2_lbl 15015 `"Saskatchewan"', add
+label define mbpld_pop2_lbl 15017 `"Northwest"', add
+label define mbpld_pop2_lbl 15019 `"Ruperts Land"', add
+label define mbpld_pop2_lbl 15020 `"Manitoba"', add
+label define mbpld_pop2_lbl 15021 `"Red River"', add
+label define mbpld_pop2_lbl 15030 `"Ontario/Upper Canada"', add
+label define mbpld_pop2_lbl 15031 `"Upper Canada"', add
+label define mbpld_pop2_lbl 15032 `"Canada West"', add
+label define mbpld_pop2_lbl 15040 `"New Brunswick"', add
+label define mbpld_pop2_lbl 15050 `"Nova Scotia"', add
+label define mbpld_pop2_lbl 15051 `"Cape Breton"', add
+label define mbpld_pop2_lbl 15052 `"Halifax"', add
+label define mbpld_pop2_lbl 15060 `"Prince Edward Island"', add
+label define mbpld_pop2_lbl 15070 `"Newfoundland"', add
+label define mbpld_pop2_lbl 15080 `"French Canada"', add
+label define mbpld_pop2_lbl 15081 `"Quebec"', add
+label define mbpld_pop2_lbl 15082 `"Lower Canada"', add
+label define mbpld_pop2_lbl 15083 `"Canada East"', add
+label define mbpld_pop2_lbl 15500 `"St. Pierre and Miquelon"', add
+label define mbpld_pop2_lbl 16000 `"Atlantic Islands"', add
+label define mbpld_pop2_lbl 16010 `"Bermuda"', add
+label define mbpld_pop2_lbl 16020 `"Cape Verde"', add
+label define mbpld_pop2_lbl 16030 `"Falkland Islands"', add
+label define mbpld_pop2_lbl 16040 `"Greenland"', add
+label define mbpld_pop2_lbl 16050 `"St. Helena and Ascension"', add
+label define mbpld_pop2_lbl 16060 `"Canary Islands"', add
+label define mbpld_pop2_lbl 19900 `"North America, n.s."', add
+label define mbpld_pop2_lbl 20000 `"Mexico"', add
+label define mbpld_pop2_lbl 21000 `"Central America"', add
+label define mbpld_pop2_lbl 21010 `"Belize/British Honduras"', add
+label define mbpld_pop2_lbl 21020 `"Costa Rica"', add
+label define mbpld_pop2_lbl 21030 `"El Salvador"', add
+label define mbpld_pop2_lbl 21040 `"Guatemala"', add
+label define mbpld_pop2_lbl 21050 `"Honduras"', add
+label define mbpld_pop2_lbl 21060 `"Nicaragua"', add
+label define mbpld_pop2_lbl 21070 `"Panama"', add
+label define mbpld_pop2_lbl 21071 `"Canal Zone"', add
+label define mbpld_pop2_lbl 21090 `"Central America, ns"', add
+label define mbpld_pop2_lbl 25000 `"Cuba"', add
+label define mbpld_pop2_lbl 26000 `"West Indies"', add
+label define mbpld_pop2_lbl 26010 `"Dominican Republic"', add
+label define mbpld_pop2_lbl 26020 `"Haiti"', add
+label define mbpld_pop2_lbl 26030 `"Jamaica"', add
+label define mbpld_pop2_lbl 26040 `"British West Indies"', add
+label define mbpld_pop2_lbl 26041 `"Anguilla"', add
+label define mbpld_pop2_lbl 26042 `"Antigua-Barbuda"', add
+label define mbpld_pop2_lbl 26043 `"Bahamas"', add
+label define mbpld_pop2_lbl 26044 `"Barbados"', add
+label define mbpld_pop2_lbl 26045 `"British Virgin Islands"', add
+label define mbpld_pop2_lbl 26046 `"Anegada"', add
+label define mbpld_pop2_lbl 26047 `"Cooper"', add
+label define mbpld_pop2_lbl 26048 `"Jost Van Dyke"', add
+label define mbpld_pop2_lbl 26049 `"Peter"', add
+label define mbpld_pop2_lbl 26050 `"Tortola"', add
+label define mbpld_pop2_lbl 26051 `"Virgin Gorda"', add
+label define mbpld_pop2_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define mbpld_pop2_lbl 26053 `"Cayman Isles"', add
+label define mbpld_pop2_lbl 26054 `"Dominica"', add
+label define mbpld_pop2_lbl 26055 `"Grenada"', add
+label define mbpld_pop2_lbl 26056 `"Montserrat"', add
+label define mbpld_pop2_lbl 26057 `"St. Kitts-Nevis"', add
+label define mbpld_pop2_lbl 26058 `"St. Lucia"', add
+label define mbpld_pop2_lbl 26059 `"St. Vincent"', add
+label define mbpld_pop2_lbl 26060 `"Trinidad and Tobago"', add
+label define mbpld_pop2_lbl 26061 `"Turks and Caicos"', add
+label define mbpld_pop2_lbl 26069 `"British West Indies, ns"', add
+label define mbpld_pop2_lbl 26070 `"Other West Indies"', add
+label define mbpld_pop2_lbl 26071 `"Aruba"', add
+label define mbpld_pop2_lbl 26072 `"Netherlands Antilles"', add
+label define mbpld_pop2_lbl 26073 `"Bonaire"', add
+label define mbpld_pop2_lbl 26074 `"Curacao"', add
+label define mbpld_pop2_lbl 26075 `"Dutch St. Maarten"', add
+label define mbpld_pop2_lbl 26076 `"Saba"', add
+label define mbpld_pop2_lbl 26077 `"St. Eustatius"', add
+label define mbpld_pop2_lbl 26079 `"Dutch Caribbean, ns"', add
+label define mbpld_pop2_lbl 26080 `"French St. Maarten"', add
+label define mbpld_pop2_lbl 26081 `"Guadeloupe"', add
+label define mbpld_pop2_lbl 26082 `"Martinique"', add
+label define mbpld_pop2_lbl 26083 `"St. Barthelemy"', add
+label define mbpld_pop2_lbl 26089 `"French Caribbean, ns"', add
+label define mbpld_pop2_lbl 26090 `"Antilles, n.s."', add
+label define mbpld_pop2_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define mbpld_pop2_lbl 26092 `"Latin America, ns"', add
+label define mbpld_pop2_lbl 26093 `"Leeward Islands, n.s."', add
+label define mbpld_pop2_lbl 26094 `"West Indies, ns"', add
+label define mbpld_pop2_lbl 26095 `"Winward Islands"', add
+label define mbpld_pop2_lbl 29900 `"Americas, ns"', add
+label define mbpld_pop2_lbl 30000 `"SOUTH AMERICA"', add
+label define mbpld_pop2_lbl 30005 `"Argentina"', add
+label define mbpld_pop2_lbl 30010 `"Bolivia"', add
+label define mbpld_pop2_lbl 30015 `"Brazil"', add
+label define mbpld_pop2_lbl 30020 `"Chile"', add
+label define mbpld_pop2_lbl 30025 `"Colombia"', add
+label define mbpld_pop2_lbl 30030 `"Ecuador"', add
+label define mbpld_pop2_lbl 30035 `"French Guiana"', add
+label define mbpld_pop2_lbl 30040 `"Guyana/British Guiana"', add
+label define mbpld_pop2_lbl 30045 `"Paraguay"', add
+label define mbpld_pop2_lbl 30050 `"Peru"', add
+label define mbpld_pop2_lbl 30055 `"Suriname"', add
+label define mbpld_pop2_lbl 30060 `"Uruguay"', add
+label define mbpld_pop2_lbl 30065 `"Venezuela"', add
+label define mbpld_pop2_lbl 30090 `"South America, n.s."', add
+label define mbpld_pop2_lbl 30091 `"South and Central America, n.s."', add
+label define mbpld_pop2_lbl 40000 `"Denmark"', add
+label define mbpld_pop2_lbl 40010 `"Faroe Islands"', add
+label define mbpld_pop2_lbl 40100 `"Finland"', add
+label define mbpld_pop2_lbl 40200 `"Iceland"', add
+label define mbpld_pop2_lbl 40300 `"Lapland, ns"', add
+label define mbpld_pop2_lbl 40400 `"Norway"', add
+label define mbpld_pop2_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define mbpld_pop2_lbl 40411 `"Svalbard"', add
+label define mbpld_pop2_lbl 40412 `"Jan Meyen"', add
+label define mbpld_pop2_lbl 40500 `"Sweden"', add
+label define mbpld_pop2_lbl 41000 `"England"', add
+label define mbpld_pop2_lbl 41010 `"Channel Islands"', add
+label define mbpld_pop2_lbl 41011 `"Guernsey"', add
+label define mbpld_pop2_lbl 41012 `"Jersey"', add
+label define mbpld_pop2_lbl 41020 `"Isle of Man"', add
+label define mbpld_pop2_lbl 41100 `"Scotland"', add
+label define mbpld_pop2_lbl 41200 `"Wales"', add
+label define mbpld_pop2_lbl 41300 `"United Kingdom, n.s."', add
+label define mbpld_pop2_lbl 41400 `"Ireland"', add
+label define mbpld_pop2_lbl 41410 `"Northern Ireland"', add
+label define mbpld_pop2_lbl 41900 `"Northern Europe, ns"', add
+label define mbpld_pop2_lbl 42000 `"Belgium"', add
+label define mbpld_pop2_lbl 42100 `"France"', add
+label define mbpld_pop2_lbl 42110 `"Alsace-Lorraine"', add
+label define mbpld_pop2_lbl 42111 `"Alsace"', add
+label define mbpld_pop2_lbl 42112 `"Lorraine"', add
+label define mbpld_pop2_lbl 42200 `"Liechtenstein"', add
+label define mbpld_pop2_lbl 42300 `"Luxembourg"', add
+label define mbpld_pop2_lbl 42400 `"Monaco"', add
+label define mbpld_pop2_lbl 42500 `"Netherlands"', add
+label define mbpld_pop2_lbl 42600 `"Switzerland"', add
+label define mbpld_pop2_lbl 42900 `"Western Euproe, ns"', add
+label define mbpld_pop2_lbl 43000 `"Albania"', add
+label define mbpld_pop2_lbl 43100 `"Andorra"', add
+label define mbpld_pop2_lbl 43200 `"Gibraltar"', add
+label define mbpld_pop2_lbl 43300 `"Greece"', add
+label define mbpld_pop2_lbl 43310 `"Dodecanese Islands"', add
+label define mbpld_pop2_lbl 43320 `"Turkey Greece"', add
+label define mbpld_pop2_lbl 43330 `"Macedonia"', add
+label define mbpld_pop2_lbl 43400 `"Italy"', add
+label define mbpld_pop2_lbl 43500 `"Malta"', add
+label define mbpld_pop2_lbl 43600 `"Portugal"', add
+label define mbpld_pop2_lbl 43610 `"Azores"', add
+label define mbpld_pop2_lbl 43620 `"Madeira Islands"', add
+label define mbpld_pop2_lbl 43630 `"Cape Verde Islands"', add
+label define mbpld_pop2_lbl 43640 `"St. Miguel"', add
+label define mbpld_pop2_lbl 43700 `"San Marino"', add
+label define mbpld_pop2_lbl 43800 `"Spain"', add
+label define mbpld_pop2_lbl 43900 `"Vatican City"', add
+label define mbpld_pop2_lbl 44000 `"Southern Europe, ns"', add
+label define mbpld_pop2_lbl 45000 `"Austria"', add
+label define mbpld_pop2_lbl 45010 `"Austria-Hungary"', add
+label define mbpld_pop2_lbl 45020 `"Austria-Graz"', add
+label define mbpld_pop2_lbl 45030 `"Austria-Linz"', add
+label define mbpld_pop2_lbl 45040 `"Austria-Salzburg"', add
+label define mbpld_pop2_lbl 45050 `"Austria-Tyrol"', add
+label define mbpld_pop2_lbl 45060 `"Austria-Vienna"', add
+label define mbpld_pop2_lbl 45070 `"Austria-Kaernten"', add
+label define mbpld_pop2_lbl 45080 `"Austria-Neustadt"', add
+label define mbpld_pop2_lbl 45100 `"Bulgaria"', add
+label define mbpld_pop2_lbl 45200 `"Czechoslovakia"', add
+label define mbpld_pop2_lbl 45210 `"Bohemia"', add
+label define mbpld_pop2_lbl 45211 `"Bohemia-Moravia"', add
+label define mbpld_pop2_lbl 45212 `"Slovakia"', add
+label define mbpld_pop2_lbl 45213 `"Czech Republic"', add
+label define mbpld_pop2_lbl 45300 `"Germany"', add
+label define mbpld_pop2_lbl 45301 `"Berlin"', add
+label define mbpld_pop2_lbl 45310 `"West Germany"', add
+label define mbpld_pop2_lbl 45311 `"Baden"', add
+label define mbpld_pop2_lbl 45312 `"Bavaria"', add
+label define mbpld_pop2_lbl 45313 `"Bremen"', add
+label define mbpld_pop2_lbl 45314 `"Braunschweig"', add
+label define mbpld_pop2_lbl 45315 `"Hamburg"', add
+label define mbpld_pop2_lbl 45316 `"Hanover"', add
+label define mbpld_pop2_lbl 45317 `"Hessen"', add
+label define mbpld_pop2_lbl 45318 `"Hesse-Nassau"', add
+label define mbpld_pop2_lbl 45319 `"Holstein"', add
+label define mbpld_pop2_lbl 45320 `"Lippe"', add
+label define mbpld_pop2_lbl 45321 `"Lubeck"', add
+label define mbpld_pop2_lbl 45322 `"Oldenburg"', add
+label define mbpld_pop2_lbl 45323 `"Rheinland"', add
+label define mbpld_pop2_lbl 45324 `"Schleswig"', add
+label define mbpld_pop2_lbl 45325 `"Schleswig-Holstein"', add
+label define mbpld_pop2_lbl 45326 `"Schwarzburg"', add
+label define mbpld_pop2_lbl 45327 `"Waldeck"', add
+label define mbpld_pop2_lbl 45328 `"West Berlin"', add
+label define mbpld_pop2_lbl 45329 `"Westphalia"', add
+label define mbpld_pop2_lbl 45330 `"Wurttemberg"', add
+label define mbpld_pop2_lbl 45331 `"Frankfurt"', add
+label define mbpld_pop2_lbl 45332 `"Saarland"', add
+label define mbpld_pop2_lbl 45333 `"Nordrhein-Westfalen"', add
+label define mbpld_pop2_lbl 45340 `"East Germany"', add
+label define mbpld_pop2_lbl 45341 `"Anhalt"', add
+label define mbpld_pop2_lbl 45342 `"Brandenburg"', add
+label define mbpld_pop2_lbl 45343 `"East Berlin"', add
+label define mbpld_pop2_lbl 45344 `"Mecklenburg"', add
+label define mbpld_pop2_lbl 45345 `"Sachsen-Altenburg"', add
+label define mbpld_pop2_lbl 45346 `"Sachsen-Coburg"', add
+label define mbpld_pop2_lbl 45347 `"Sachsen-Gotha"', add
+label define mbpld_pop2_lbl 45348 `"Sachsen-Meiningen"', add
+label define mbpld_pop2_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define mbpld_pop2_lbl 45350 `"Saxony"', add
+label define mbpld_pop2_lbl 45351 `"Schwerin"', add
+label define mbpld_pop2_lbl 45352 `"Strelitz"', add
+label define mbpld_pop2_lbl 45353 `"Thuringian States"', add
+label define mbpld_pop2_lbl 45360 `"Prussia, n.e.c."', add
+label define mbpld_pop2_lbl 45361 `"Hohenzollern"', add
+label define mbpld_pop2_lbl 45362 `"Niedersachsen"', add
+label define mbpld_pop2_lbl 45400 `"Hungary"', add
+label define mbpld_pop2_lbl 45500 `"Poland"', add
+label define mbpld_pop2_lbl 45510 `"Austrian Poland"', add
+label define mbpld_pop2_lbl 45511 `"Galicia"', add
+label define mbpld_pop2_lbl 45520 `"German Poland"', add
+label define mbpld_pop2_lbl 45521 `"East Prussia"', add
+label define mbpld_pop2_lbl 45522 `"Pomerania"', add
+label define mbpld_pop2_lbl 45523 `"Posen"', add
+label define mbpld_pop2_lbl 45524 `"Prussian Poland"', add
+label define mbpld_pop2_lbl 45525 `"Silesia"', add
+label define mbpld_pop2_lbl 45526 `"West Prussia"', add
+label define mbpld_pop2_lbl 45530 `"Russian Poland"', add
+label define mbpld_pop2_lbl 45600 `"Romania"', add
+label define mbpld_pop2_lbl 45610 `"Transylvania"', add
+label define mbpld_pop2_lbl 45700 `"Yugoslavia"', add
+label define mbpld_pop2_lbl 45710 `"Croatia"', add
+label define mbpld_pop2_lbl 45720 `"Montenegro"', add
+label define mbpld_pop2_lbl 45730 `"Serbia"', add
+label define mbpld_pop2_lbl 45740 `"Bosnia"', add
+label define mbpld_pop2_lbl 45750 `"Dalmatia"', add
+label define mbpld_pop2_lbl 45760 `"Slovonia"', add
+label define mbpld_pop2_lbl 45770 `"Carniola"', add
+label define mbpld_pop2_lbl 45780 `"Slovenia"', add
+label define mbpld_pop2_lbl 45790 `"Kosovo"', add
+label define mbpld_pop2_lbl 45800 `"Central Europe, n.s."', add
+label define mbpld_pop2_lbl 45900 `"Eastern Europe, n.s."', add
+label define mbpld_pop2_lbl 46000 `"Estonia"', add
+label define mbpld_pop2_lbl 46100 `"Latvia"', add
+label define mbpld_pop2_lbl 46200 `"Lithuania"', add
+label define mbpld_pop2_lbl 46300 `"Baltic States, ns"', add
+label define mbpld_pop2_lbl 46500 `"Other USSR/Russia"', add
+label define mbpld_pop2_lbl 46510 `"Byelorussia"', add
+label define mbpld_pop2_lbl 46520 `"Moldavia"', add
+label define mbpld_pop2_lbl 46521 `"Bessarabia"', add
+label define mbpld_pop2_lbl 46530 `"Ukraine"', add
+label define mbpld_pop2_lbl 46540 `"Armenia"', add
+label define mbpld_pop2_lbl 46541 `"Azerbaijan"', add
+label define mbpld_pop2_lbl 46542 `"Republic of Georgia"', add
+label define mbpld_pop2_lbl 46543 `"Kazakhstan"', add
+label define mbpld_pop2_lbl 46544 `"Kirghizia"', add
+label define mbpld_pop2_lbl 46545 `"Tadzhik"', add
+label define mbpld_pop2_lbl 46546 `"Turkmenistan"', add
+label define mbpld_pop2_lbl 46547 `"Uzbekistan"', add
+label define mbpld_pop2_lbl 46548 `"Siberia"', add
+label define mbpld_pop2_lbl 46590 `"USSR, ns"', add
+label define mbpld_pop2_lbl 49900 `"Europe, n.e.c./n.s."', add
+label define mbpld_pop2_lbl 50000 `"China"', add
+label define mbpld_pop2_lbl 50010 `"Hong Kong"', add
+label define mbpld_pop2_lbl 50020 `"Macau"', add
+label define mbpld_pop2_lbl 50030 `"Mongolia"', add
+label define mbpld_pop2_lbl 50040 `"Taiwan"', add
+label define mbpld_pop2_lbl 50100 `"Japan"', add
+label define mbpld_pop2_lbl 50200 `"Korea"', add
+label define mbpld_pop2_lbl 50210 `"North Korea"', add
+label define mbpld_pop2_lbl 50220 `"South Korea"', add
+label define mbpld_pop2_lbl 50900 `"East Asia, n.s."', add
+label define mbpld_pop2_lbl 51000 `"Brunei"', add
+label define mbpld_pop2_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define mbpld_pop2_lbl 51200 `"Indonesia"', add
+label define mbpld_pop2_lbl 51210 `"East Indies"', add
+label define mbpld_pop2_lbl 51220 `"East Timor"', add
+label define mbpld_pop2_lbl 51300 `"Laos"', add
+label define mbpld_pop2_lbl 51400 `"Malaysia"', add
+label define mbpld_pop2_lbl 51500 `"Philippines"', add
+label define mbpld_pop2_lbl 51600 `"Singapore"', add
+label define mbpld_pop2_lbl 51700 `"Thailand"', add
+label define mbpld_pop2_lbl 51800 `"Vietnam"', add
+label define mbpld_pop2_lbl 51900 `"Southeast Asia, ns"', add
+label define mbpld_pop2_lbl 51910 `"Indochina, ns"', add
+label define mbpld_pop2_lbl 52000 `"Afghanistan"', add
+label define mbpld_pop2_lbl 52100 `"India"', add
+label define mbpld_pop2_lbl 52110 `"Bangladesh"', add
+label define mbpld_pop2_lbl 52120 `"Bhutan"', add
+label define mbpld_pop2_lbl 52130 `"Burma (Myanmar)"', add
+label define mbpld_pop2_lbl 52140 `"Pakistan"', add
+label define mbpld_pop2_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define mbpld_pop2_lbl 52200 `"Iran"', add
+label define mbpld_pop2_lbl 52300 `"Maldives"', add
+label define mbpld_pop2_lbl 52400 `"Nepal"', add
+label define mbpld_pop2_lbl 53000 `"Bahrain"', add
+label define mbpld_pop2_lbl 53100 `"Cyprus"', add
+label define mbpld_pop2_lbl 53200 `"Iraq"', add
+label define mbpld_pop2_lbl 53210 `"Mesopotamia"', add
+label define mbpld_pop2_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define mbpld_pop2_lbl 53400 `"Israel/Palestine"', add
+label define mbpld_pop2_lbl 53420 `"Palestine"', add
+label define mbpld_pop2_lbl 53430 `"West Bank"', add
+label define mbpld_pop2_lbl 53440 `"Israel"', add
+label define mbpld_pop2_lbl 53410 `"Gaza Strip"', add
+label define mbpld_pop2_lbl 53500 `"Jordan"', add
+label define mbpld_pop2_lbl 53600 `"Kuwait"', add
+label define mbpld_pop2_lbl 53700 `"Lebanon"', add
+label define mbpld_pop2_lbl 53800 `"Oman"', add
+label define mbpld_pop2_lbl 53900 `"Qatar"', add
+label define mbpld_pop2_lbl 54000 `"Saudi Arabia"', add
+label define mbpld_pop2_lbl 54100 `"Syria"', add
+label define mbpld_pop2_lbl 54200 `"Turkey"', add
+label define mbpld_pop2_lbl 54210 `"European Turkey"', add
+label define mbpld_pop2_lbl 54220 `"Asian Turkey"', add
+label define mbpld_pop2_lbl 54300 `"United Arab Emirates"', add
+label define mbpld_pop2_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define mbpld_pop2_lbl 54500 `"Yemen, PDR (South)"', add
+label define mbpld_pop2_lbl 54600 `"Persian Gulf States, ns"', add
+label define mbpld_pop2_lbl 54700 `"Middle East, n.s."', add
+label define mbpld_pop2_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define mbpld_pop2_lbl 54900 `"Asia Minor, n.s."', add
+label define mbpld_pop2_lbl 55000 `"South Asia, n.e.c."', add
+label define mbpld_pop2_lbl 59900 `"Asia, nec/ns"', add
+label define mbpld_pop2_lbl 60000 `"AFRICA"', add
+label define mbpld_pop2_lbl 60010 `"Northern Africa"', add
+label define mbpld_pop2_lbl 60011 `"Algeria"', add
+label define mbpld_pop2_lbl 60012 `"Egypt/United Arab Rep."', add
+label define mbpld_pop2_lbl 60013 `"Libya"', add
+label define mbpld_pop2_lbl 60014 `"Morocco"', add
+label define mbpld_pop2_lbl 60015 `"Sudan"', add
+label define mbpld_pop2_lbl 60016 `"Tunisia"', add
+label define mbpld_pop2_lbl 60017 `"Western Sahara"', add
+label define mbpld_pop2_lbl 60019 `"North Africa, ns"', add
+label define mbpld_pop2_lbl 60020 `"Benin"', add
+label define mbpld_pop2_lbl 60021 `"Burkina Faso"', add
+label define mbpld_pop2_lbl 60022 `"Gambia"', add
+label define mbpld_pop2_lbl 60023 `"Ghana"', add
+label define mbpld_pop2_lbl 60024 `"Guinea"', add
+label define mbpld_pop2_lbl 60025 `"Guinea-Bissau"', add
+label define mbpld_pop2_lbl 60026 `"Ivory Coast"', add
+label define mbpld_pop2_lbl 60027 `"Liberia"', add
+label define mbpld_pop2_lbl 60028 `"Mali"', add
+label define mbpld_pop2_lbl 60029 `"Mauritania"', add
+label define mbpld_pop2_lbl 60030 `"Niger"', add
+label define mbpld_pop2_lbl 60031 `"Nigeria"', add
+label define mbpld_pop2_lbl 60032 `"Senegal"', add
+label define mbpld_pop2_lbl 60033 `"Sierra Leone"', add
+label define mbpld_pop2_lbl 60034 `"Togo"', add
+label define mbpld_pop2_lbl 60038 `"Western Africa, n.s."', add
+label define mbpld_pop2_lbl 60039 `"French West Africa, ns"', add
+label define mbpld_pop2_lbl 60040 `"British Indian Ocean Territory"', add
+label define mbpld_pop2_lbl 60041 `"Burundi"', add
+label define mbpld_pop2_lbl 60042 `"Comoros"', add
+label define mbpld_pop2_lbl 60043 `"Djibouti"', add
+label define mbpld_pop2_lbl 60044 `"Ethiopia"', add
+label define mbpld_pop2_lbl 60045 `"Kenya"', add
+label define mbpld_pop2_lbl 60046 `"Madagascar"', add
+label define mbpld_pop2_lbl 60047 `"Malawi"', add
+label define mbpld_pop2_lbl 60048 `"Mauritius"', add
+label define mbpld_pop2_lbl 60049 `"Mozambique"', add
+label define mbpld_pop2_lbl 60050 `"Reunion"', add
+label define mbpld_pop2_lbl 60051 `"Rwanda"', add
+label define mbpld_pop2_lbl 60052 `"Seychelles"', add
+label define mbpld_pop2_lbl 60053 `"Somalia"', add
+label define mbpld_pop2_lbl 60054 `"Tanzania"', add
+label define mbpld_pop2_lbl 60055 `"Uganda"', add
+label define mbpld_pop2_lbl 60056 `"Zambia"', add
+label define mbpld_pop2_lbl 60057 `"Zimbabwe"', add
+label define mbpld_pop2_lbl 60058 `"Bassas de India"', add
+label define mbpld_pop2_lbl 60059 `"Europa"', add
+label define mbpld_pop2_lbl 60060 `"Gloriosos"', add
+label define mbpld_pop2_lbl 60061 `"Juan de Nova"', add
+label define mbpld_pop2_lbl 60062 `"Mayotte"', add
+label define mbpld_pop2_lbl 60063 `"Tromelin"', add
+label define mbpld_pop2_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define mbpld_pop2_lbl 60065 `"Eritrea"', add
+label define mbpld_pop2_lbl 60070 `"Central Africa"', add
+label define mbpld_pop2_lbl 60071 `"Angola"', add
+label define mbpld_pop2_lbl 60072 `"Cameroon"', add
+label define mbpld_pop2_lbl 60073 `"Central African Republic"', add
+label define mbpld_pop2_lbl 60074 `"Chad"', add
+label define mbpld_pop2_lbl 60075 `"Congo"', add
+label define mbpld_pop2_lbl 60076 `"Equatorial Guinea"', add
+label define mbpld_pop2_lbl 60077 `"Gabon"', add
+label define mbpld_pop2_lbl 60078 `"Sao Tome and Principe"', add
+label define mbpld_pop2_lbl 60079 `"Zaire"', add
+label define mbpld_pop2_lbl 60080 `"Central Africa, ns"', add
+label define mbpld_pop2_lbl 60081 `"Equatorial Africa, ns"', add
+label define mbpld_pop2_lbl 60082 `"French Equatorial Africa, ns"', add
+label define mbpld_pop2_lbl 60090 `"Southern Africa"', add
+label define mbpld_pop2_lbl 60091 `"Botswana"', add
+label define mbpld_pop2_lbl 60092 `"Lesotho"', add
+label define mbpld_pop2_lbl 60093 `"Namibia"', add
+label define mbpld_pop2_lbl 60094 `"South Africa (Union of)"', add
+label define mbpld_pop2_lbl 60095 `"Swaziland"', add
+label define mbpld_pop2_lbl 60096 `"Southern Africa, n.s."', add
+label define mbpld_pop2_lbl 60099 `"Africa, ns/nec"', add
+label define mbpld_pop2_lbl 70000 `"Australia and New Zealand"', add
+label define mbpld_pop2_lbl 70010 `"Australia"', add
+label define mbpld_pop2_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define mbpld_pop2_lbl 70012 `"Coral Sea Islands Territory"', add
+label define mbpld_pop2_lbl 70013 `"Christmas Island"', add
+label define mbpld_pop2_lbl 70014 `"Cocos Islands"', add
+label define mbpld_pop2_lbl 70020 `"New Zealand"', add
+label define mbpld_pop2_lbl 71000 `"Pacific Islands"', add
+label define mbpld_pop2_lbl 71010 `"New Caledonia"', add
+label define mbpld_pop2_lbl 71012 `"Papua New Guinea"', add
+label define mbpld_pop2_lbl 71013 `"Solomon Islands"', add
+label define mbpld_pop2_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define mbpld_pop2_lbl 71016 `"Melanesia, ns"', add
+label define mbpld_pop2_lbl 71017 `"Norfolk Islands"', add
+label define mbpld_pop2_lbl 71018 `"Niue"', add
+label define mbpld_pop2_lbl 71020 `"Cook Islands"', add
+label define mbpld_pop2_lbl 71021 `"Fiji"', add
+label define mbpld_pop2_lbl 71022 `"French Polynesia"', add
+label define mbpld_pop2_lbl 71023 `"Tonga"', add
+label define mbpld_pop2_lbl 71024 `"Wallis and Futuna Islands"', add
+label define mbpld_pop2_lbl 71025 `"Western Samoa"', add
+label define mbpld_pop2_lbl 71026 `"Pitcairn Island"', add
+label define mbpld_pop2_lbl 71027 `"Tokelau"', add
+label define mbpld_pop2_lbl 71028 `"Tuvalu"', add
+label define mbpld_pop2_lbl 71029 `"Polynesia, n.s."', add
+label define mbpld_pop2_lbl 71032 `"Kiribati"', add
+label define mbpld_pop2_lbl 71033 `"Canton and Enderbury"', add
+label define mbpld_pop2_lbl 71034 `"Nauru"', add
+label define mbpld_pop2_lbl 71039 `"Micronesia, ns"', add
+label define mbpld_pop2_lbl 71040 `"US Pacific Trust Territories"', add
+label define mbpld_pop2_lbl 71041 `"Marshall Islands"', add
+label define mbpld_pop2_lbl 71042 `"Micronesia"', add
+label define mbpld_pop2_lbl 71043 `"Kosrae"', add
+label define mbpld_pop2_lbl 71044 `"Pohnpei"', add
+label define mbpld_pop2_lbl 71045 `"Truk"', add
+label define mbpld_pop2_lbl 71046 `"Yap"', add
+label define mbpld_pop2_lbl 71047 `"Northern Mariana Islands"', add
+label define mbpld_pop2_lbl 71048 `"Palau"', add
+label define mbpld_pop2_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define mbpld_pop2_lbl 71050 `"Clipperton Island"', add
+label define mbpld_pop2_lbl 71090 `"Oceania, ns/nec"', add
+label define mbpld_pop2_lbl 80000 `"Antarctica, ns/nec"', add
+label define mbpld_pop2_lbl 80010 `"Bouvet Islands"', add
+label define mbpld_pop2_lbl 80020 `"British Antarctic Terr."', add
+label define mbpld_pop2_lbl 80030 `"Dronning Maud Land"', add
+label define mbpld_pop2_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define mbpld_pop2_lbl 80050 `"Heard and McDonald Islands"', add
+label define mbpld_pop2_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define mbpld_pop2_lbl 90010 `"Abroad, ns"', add
+label define mbpld_pop2_lbl 90011 `"Abroad (US citizen)"', add
+label define mbpld_pop2_lbl 90020 `"At sea"', add
+label define mbpld_pop2_lbl 90021 `"At sea (US citizen)"', add
+label define mbpld_pop2_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define mbpld_pop2_lbl 95000 `"Other n.e.c."', add
+label define mbpld_pop2_lbl 99700 `"Unknown"', add
+label define mbpld_pop2_lbl 99900 `"Missing/blank"', add
+label values mbpld_pop2 mbpld_pop2_lbl
+
 label define fbpl_head_lbl 000 `"Not Applicable"'
 label define fbpl_head_lbl 001 `"Alabama"', add
 label define fbpl_head_lbl 002 `"Alaska"', add
@@ -8743,7 +17473,7 @@ label define fbpl_head_lbl 439 `"Vatican City"', add
 label define fbpl_head_lbl 440 `"Southern Europe, n.s."', add
 label define fbpl_head_lbl 450 `"Austria"', add
 label define fbpl_head_lbl 451 `"Bulgaria"', add
-label define fbpl_head_lbl 452 `"Czechsolovakia"', add
+label define fbpl_head_lbl 452 `"Czechoslovakia"', add
 label define fbpl_head_lbl 453 `"Germany"', add
 label define fbpl_head_lbl 454 `"Hungary"', add
 label define fbpl_head_lbl 455 `"Poland"', add
@@ -8806,6 +17536,340 @@ label define fbpl_head_lbl 997 `"Unknown"', add
 label define fbpl_head_lbl 998 `"Illegible"', add
 label define fbpl_head_lbl 999 `"Missing/blank"', add
 label values fbpl_head fbpl_head_lbl
+
+label define fbpl_mom_lbl 000 `"Not Applicable"'
+label define fbpl_mom_lbl 001 `"Alabama"', add
+label define fbpl_mom_lbl 002 `"Alaska"', add
+label define fbpl_mom_lbl 004 `"Arizona"', add
+label define fbpl_mom_lbl 005 `"Arkansas"', add
+label define fbpl_mom_lbl 006 `"California"', add
+label define fbpl_mom_lbl 008 `"Colorado"', add
+label define fbpl_mom_lbl 009 `"Connecticut"', add
+label define fbpl_mom_lbl 010 `"Delaware"', add
+label define fbpl_mom_lbl 011 `"District of Columbia"', add
+label define fbpl_mom_lbl 012 `"Florida"', add
+label define fbpl_mom_lbl 013 `"Georgia"', add
+label define fbpl_mom_lbl 015 `"Hawaii"', add
+label define fbpl_mom_lbl 016 `"Idaho"', add
+label define fbpl_mom_lbl 017 `"Illinois"', add
+label define fbpl_mom_lbl 018 `"Indiana"', add
+label define fbpl_mom_lbl 019 `"Iowa"', add
+label define fbpl_mom_lbl 020 `"Kansas"', add
+label define fbpl_mom_lbl 021 `"Kentucky"', add
+label define fbpl_mom_lbl 022 `"Louisiana"', add
+label define fbpl_mom_lbl 023 `"Maine"', add
+label define fbpl_mom_lbl 024 `"Maryland"', add
+label define fbpl_mom_lbl 025 `"Massachusetts"', add
+label define fbpl_mom_lbl 026 `"Michigan"', add
+label define fbpl_mom_lbl 027 `"Minnesota"', add
+label define fbpl_mom_lbl 028 `"Mississippi"', add
+label define fbpl_mom_lbl 029 `"Missouri"', add
+label define fbpl_mom_lbl 030 `"Montana"', add
+label define fbpl_mom_lbl 031 `"Nebraska"', add
+label define fbpl_mom_lbl 032 `"Nevada"', add
+label define fbpl_mom_lbl 033 `"New Hampshire"', add
+label define fbpl_mom_lbl 034 `"New Jersey"', add
+label define fbpl_mom_lbl 035 `"New Mexico"', add
+label define fbpl_mom_lbl 036 `"New York"', add
+label define fbpl_mom_lbl 037 `"North Carolina"', add
+label define fbpl_mom_lbl 038 `"North Dakota"', add
+label define fbpl_mom_lbl 039 `"Ohio"', add
+label define fbpl_mom_lbl 040 `"Oklahoma"', add
+label define fbpl_mom_lbl 041 `"Oregon"', add
+label define fbpl_mom_lbl 042 `"Pennsylvania"', add
+label define fbpl_mom_lbl 044 `"Rhode Island"', add
+label define fbpl_mom_lbl 045 `"South Carolina"', add
+label define fbpl_mom_lbl 046 `"South Dakota"', add
+label define fbpl_mom_lbl 047 `"Tennessee"', add
+label define fbpl_mom_lbl 048 `"Texas"', add
+label define fbpl_mom_lbl 049 `"Utah"', add
+label define fbpl_mom_lbl 050 `"Vermont"', add
+label define fbpl_mom_lbl 051 `"Virginia"', add
+label define fbpl_mom_lbl 053 `"Washington"', add
+label define fbpl_mom_lbl 054 `"West Virginia"', add
+label define fbpl_mom_lbl 055 `"Wisconsin"', add
+label define fbpl_mom_lbl 056 `"Wyoming"', add
+label define fbpl_mom_lbl 090 `"Native American"', add
+label define fbpl_mom_lbl 099 `"United States, ns"', add
+label define fbpl_mom_lbl 100 `"American Samoa"', add
+label define fbpl_mom_lbl 105 `"Guam"', add
+label define fbpl_mom_lbl 110 `"Puerto Rico"', add
+label define fbpl_mom_lbl 115 `"US Virgin Islands"', add
+label define fbpl_mom_lbl 120 `"Other US Possessions"', add
+label define fbpl_mom_lbl 150 `"Canada"', add
+label define fbpl_mom_lbl 155 `"St Pierre and Miquelon"', add
+label define fbpl_mom_lbl 160 `"Atlantic Islands"', add
+label define fbpl_mom_lbl 199 `"North America, n.s."', add
+label define fbpl_mom_lbl 200 `"Mexico"', add
+label define fbpl_mom_lbl 210 `"Central America"', add
+label define fbpl_mom_lbl 250 `"Cuba"', add
+label define fbpl_mom_lbl 260 `"West Indies"', add
+label define fbpl_mom_lbl 299 `"Americas, n.s."', add
+label define fbpl_mom_lbl 300 `"SOUTH AMERICA"', add
+label define fbpl_mom_lbl 400 `"Denmark"', add
+label define fbpl_mom_lbl 401 `"Finland"', add
+label define fbpl_mom_lbl 402 `"Iceland"', add
+label define fbpl_mom_lbl 403 `"Lapland, n.s."', add
+label define fbpl_mom_lbl 404 `"Norway"', add
+label define fbpl_mom_lbl 405 `"Sweden"', add
+label define fbpl_mom_lbl 406 `"Svalbard"', add
+label define fbpl_mom_lbl 410 `"England"', add
+label define fbpl_mom_lbl 411 `"Scotland"', add
+label define fbpl_mom_lbl 412 `"Wales"', add
+label define fbpl_mom_lbl 413 `"United Kingdom, ns"', add
+label define fbpl_mom_lbl 414 `"Ireland"', add
+label define fbpl_mom_lbl 419 `"Northern Europe, ns"', add
+label define fbpl_mom_lbl 420 `"Belgium"', add
+label define fbpl_mom_lbl 421 `"France"', add
+label define fbpl_mom_lbl 422 `"Liechtenstein"', add
+label define fbpl_mom_lbl 423 `"Luxembourg"', add
+label define fbpl_mom_lbl 424 `"Monaco"', add
+label define fbpl_mom_lbl 425 `"Netherlands"', add
+label define fbpl_mom_lbl 426 `"Switzerland"', add
+label define fbpl_mom_lbl 429 `"Western Europe, ns"', add
+label define fbpl_mom_lbl 430 `"Albania"', add
+label define fbpl_mom_lbl 431 `"Andorra"', add
+label define fbpl_mom_lbl 432 `"Gibraltar"', add
+label define fbpl_mom_lbl 433 `"Greece"', add
+label define fbpl_mom_lbl 434 `"Italy"', add
+label define fbpl_mom_lbl 435 `"Malta"', add
+label define fbpl_mom_lbl 436 `"Portugal"', add
+label define fbpl_mom_lbl 437 `"San Marino"', add
+label define fbpl_mom_lbl 438 `"Spain"', add
+label define fbpl_mom_lbl 439 `"Vatican City"', add
+label define fbpl_mom_lbl 440 `"Southern Europe, n.s."', add
+label define fbpl_mom_lbl 450 `"Austria"', add
+label define fbpl_mom_lbl 451 `"Bulgaria"', add
+label define fbpl_mom_lbl 452 `"Czechoslovakia"', add
+label define fbpl_mom_lbl 453 `"Germany"', add
+label define fbpl_mom_lbl 454 `"Hungary"', add
+label define fbpl_mom_lbl 455 `"Poland"', add
+label define fbpl_mom_lbl 456 `"Romania"', add
+label define fbpl_mom_lbl 457 `"Yugoslavia"', add
+label define fbpl_mom_lbl 458 `"Central Europe, ns"', add
+label define fbpl_mom_lbl 459 `"Eastern Europe, ns"', add
+label define fbpl_mom_lbl 460 `"Estonia"', add
+label define fbpl_mom_lbl 461 `"Latvia"', add
+label define fbpl_mom_lbl 462 `"Lithuania"', add
+label define fbpl_mom_lbl 463 `"Baltic States, ns"', add
+label define fbpl_mom_lbl 465 `"Other USSR/Russia"', add
+label define fbpl_mom_lbl 499 `"Europe, nec/ns"', add
+label define fbpl_mom_lbl 500 `"China"', add
+label define fbpl_mom_lbl 501 `"Japan"', add
+label define fbpl_mom_lbl 502 `"Korea"', add
+label define fbpl_mom_lbl 510 `"Brunei"', add
+label define fbpl_mom_lbl 511 `"Cambodia (Kampuchea)"', add
+label define fbpl_mom_lbl 512 `"Indonesia"', add
+label define fbpl_mom_lbl 513 `"Laos"', add
+label define fbpl_mom_lbl 514 `"Malaysia"', add
+label define fbpl_mom_lbl 515 `"Philippines"', add
+label define fbpl_mom_lbl 516 `"Singapore"', add
+label define fbpl_mom_lbl 517 `"Thailand"', add
+label define fbpl_mom_lbl 518 `"Vietnam"', add
+label define fbpl_mom_lbl 519 `"Southeast Asia, ns"', add
+label define fbpl_mom_lbl 520 `"Afghanistan"', add
+label define fbpl_mom_lbl 521 `"India"', add
+label define fbpl_mom_lbl 522 `"Iran"', add
+label define fbpl_mom_lbl 523 `"Maldives"', add
+label define fbpl_mom_lbl 524 `"Nepal"', add
+label define fbpl_mom_lbl 530 `"Bahrain"', add
+label define fbpl_mom_lbl 531 `"Cyprus"', add
+label define fbpl_mom_lbl 532 `"Iraq"', add
+label define fbpl_mom_lbl 533 `"Iraq/Saudi Arabia"', add
+label define fbpl_mom_lbl 534 `"Israel/Palestine"', add
+label define fbpl_mom_lbl 535 `"Jordan"', add
+label define fbpl_mom_lbl 536 `"Kuwait"', add
+label define fbpl_mom_lbl 537 `"Lebanon"', add
+label define fbpl_mom_lbl 538 `"Oman"', add
+label define fbpl_mom_lbl 539 `"Qatar"', add
+label define fbpl_mom_lbl 540 `"Saudi Arabia"', add
+label define fbpl_mom_lbl 541 `"Syria"', add
+label define fbpl_mom_lbl 542 `"Turkey"', add
+label define fbpl_mom_lbl 543 `"United Arab Emirates"', add
+label define fbpl_mom_lbl 544 `"Yemen Arab Republic (North)"', add
+label define fbpl_mom_lbl 545 `"Yemen, PDR (South)"', add
+label define fbpl_mom_lbl 546 `"Persian Gulf States, n.s."', add
+label define fbpl_mom_lbl 547 `"Middle East, ns"', add
+label define fbpl_mom_lbl 548 `"Southwest Asia, nec/ns"', add
+label define fbpl_mom_lbl 549 `"Asia Minor, n.s."', add
+label define fbpl_mom_lbl 550 `"South Asia, n.e.c."', add
+label define fbpl_mom_lbl 599 `"Asia, nec/ns"', add
+label define fbpl_mom_lbl 600 `"AFRICA"', add
+label define fbpl_mom_lbl 700 `"Australia and New Zealand"', add
+label define fbpl_mom_lbl 710 `"Pacific Islands"', add
+label define fbpl_mom_lbl 900 `"Abroad (unknown) or at sea"', add
+label define fbpl_mom_lbl 950 `"Other n.e.c."', add
+label define fbpl_mom_lbl 997 `"Unknown"', add
+label define fbpl_mom_lbl 998 `"Illegible"', add
+label define fbpl_mom_lbl 999 `"Missing/blank"', add
+label values fbpl_mom fbpl_mom_lbl
+
+label define fbpl_pop_lbl 000 `"Not Applicable"'
+label define fbpl_pop_lbl 001 `"Alabama"', add
+label define fbpl_pop_lbl 002 `"Alaska"', add
+label define fbpl_pop_lbl 004 `"Arizona"', add
+label define fbpl_pop_lbl 005 `"Arkansas"', add
+label define fbpl_pop_lbl 006 `"California"', add
+label define fbpl_pop_lbl 008 `"Colorado"', add
+label define fbpl_pop_lbl 009 `"Connecticut"', add
+label define fbpl_pop_lbl 010 `"Delaware"', add
+label define fbpl_pop_lbl 011 `"District of Columbia"', add
+label define fbpl_pop_lbl 012 `"Florida"', add
+label define fbpl_pop_lbl 013 `"Georgia"', add
+label define fbpl_pop_lbl 015 `"Hawaii"', add
+label define fbpl_pop_lbl 016 `"Idaho"', add
+label define fbpl_pop_lbl 017 `"Illinois"', add
+label define fbpl_pop_lbl 018 `"Indiana"', add
+label define fbpl_pop_lbl 019 `"Iowa"', add
+label define fbpl_pop_lbl 020 `"Kansas"', add
+label define fbpl_pop_lbl 021 `"Kentucky"', add
+label define fbpl_pop_lbl 022 `"Louisiana"', add
+label define fbpl_pop_lbl 023 `"Maine"', add
+label define fbpl_pop_lbl 024 `"Maryland"', add
+label define fbpl_pop_lbl 025 `"Massachusetts"', add
+label define fbpl_pop_lbl 026 `"Michigan"', add
+label define fbpl_pop_lbl 027 `"Minnesota"', add
+label define fbpl_pop_lbl 028 `"Mississippi"', add
+label define fbpl_pop_lbl 029 `"Missouri"', add
+label define fbpl_pop_lbl 030 `"Montana"', add
+label define fbpl_pop_lbl 031 `"Nebraska"', add
+label define fbpl_pop_lbl 032 `"Nevada"', add
+label define fbpl_pop_lbl 033 `"New Hampshire"', add
+label define fbpl_pop_lbl 034 `"New Jersey"', add
+label define fbpl_pop_lbl 035 `"New Mexico"', add
+label define fbpl_pop_lbl 036 `"New York"', add
+label define fbpl_pop_lbl 037 `"North Carolina"', add
+label define fbpl_pop_lbl 038 `"North Dakota"', add
+label define fbpl_pop_lbl 039 `"Ohio"', add
+label define fbpl_pop_lbl 040 `"Oklahoma"', add
+label define fbpl_pop_lbl 041 `"Oregon"', add
+label define fbpl_pop_lbl 042 `"Pennsylvania"', add
+label define fbpl_pop_lbl 044 `"Rhode Island"', add
+label define fbpl_pop_lbl 045 `"South Carolina"', add
+label define fbpl_pop_lbl 046 `"South Dakota"', add
+label define fbpl_pop_lbl 047 `"Tennessee"', add
+label define fbpl_pop_lbl 048 `"Texas"', add
+label define fbpl_pop_lbl 049 `"Utah"', add
+label define fbpl_pop_lbl 050 `"Vermont"', add
+label define fbpl_pop_lbl 051 `"Virginia"', add
+label define fbpl_pop_lbl 053 `"Washington"', add
+label define fbpl_pop_lbl 054 `"West Virginia"', add
+label define fbpl_pop_lbl 055 `"Wisconsin"', add
+label define fbpl_pop_lbl 056 `"Wyoming"', add
+label define fbpl_pop_lbl 090 `"Native American"', add
+label define fbpl_pop_lbl 099 `"United States, ns"', add
+label define fbpl_pop_lbl 100 `"American Samoa"', add
+label define fbpl_pop_lbl 105 `"Guam"', add
+label define fbpl_pop_lbl 110 `"Puerto Rico"', add
+label define fbpl_pop_lbl 115 `"US Virgin Islands"', add
+label define fbpl_pop_lbl 120 `"Other US Possessions"', add
+label define fbpl_pop_lbl 150 `"Canada"', add
+label define fbpl_pop_lbl 155 `"St Pierre and Miquelon"', add
+label define fbpl_pop_lbl 160 `"Atlantic Islands"', add
+label define fbpl_pop_lbl 199 `"North America, n.s."', add
+label define fbpl_pop_lbl 200 `"Mexico"', add
+label define fbpl_pop_lbl 210 `"Central America"', add
+label define fbpl_pop_lbl 250 `"Cuba"', add
+label define fbpl_pop_lbl 260 `"West Indies"', add
+label define fbpl_pop_lbl 299 `"Americas, n.s."', add
+label define fbpl_pop_lbl 300 `"SOUTH AMERICA"', add
+label define fbpl_pop_lbl 400 `"Denmark"', add
+label define fbpl_pop_lbl 401 `"Finland"', add
+label define fbpl_pop_lbl 402 `"Iceland"', add
+label define fbpl_pop_lbl 403 `"Lapland, n.s."', add
+label define fbpl_pop_lbl 404 `"Norway"', add
+label define fbpl_pop_lbl 405 `"Sweden"', add
+label define fbpl_pop_lbl 406 `"Svalbard"', add
+label define fbpl_pop_lbl 410 `"England"', add
+label define fbpl_pop_lbl 411 `"Scotland"', add
+label define fbpl_pop_lbl 412 `"Wales"', add
+label define fbpl_pop_lbl 413 `"United Kingdom, ns"', add
+label define fbpl_pop_lbl 414 `"Ireland"', add
+label define fbpl_pop_lbl 419 `"Northern Europe, ns"', add
+label define fbpl_pop_lbl 420 `"Belgium"', add
+label define fbpl_pop_lbl 421 `"France"', add
+label define fbpl_pop_lbl 422 `"Liechtenstein"', add
+label define fbpl_pop_lbl 423 `"Luxembourg"', add
+label define fbpl_pop_lbl 424 `"Monaco"', add
+label define fbpl_pop_lbl 425 `"Netherlands"', add
+label define fbpl_pop_lbl 426 `"Switzerland"', add
+label define fbpl_pop_lbl 429 `"Western Europe, ns"', add
+label define fbpl_pop_lbl 430 `"Albania"', add
+label define fbpl_pop_lbl 431 `"Andorra"', add
+label define fbpl_pop_lbl 432 `"Gibraltar"', add
+label define fbpl_pop_lbl 433 `"Greece"', add
+label define fbpl_pop_lbl 434 `"Italy"', add
+label define fbpl_pop_lbl 435 `"Malta"', add
+label define fbpl_pop_lbl 436 `"Portugal"', add
+label define fbpl_pop_lbl 437 `"San Marino"', add
+label define fbpl_pop_lbl 438 `"Spain"', add
+label define fbpl_pop_lbl 439 `"Vatican City"', add
+label define fbpl_pop_lbl 440 `"Southern Europe, n.s."', add
+label define fbpl_pop_lbl 450 `"Austria"', add
+label define fbpl_pop_lbl 451 `"Bulgaria"', add
+label define fbpl_pop_lbl 452 `"Czechoslovakia"', add
+label define fbpl_pop_lbl 453 `"Germany"', add
+label define fbpl_pop_lbl 454 `"Hungary"', add
+label define fbpl_pop_lbl 455 `"Poland"', add
+label define fbpl_pop_lbl 456 `"Romania"', add
+label define fbpl_pop_lbl 457 `"Yugoslavia"', add
+label define fbpl_pop_lbl 458 `"Central Europe, ns"', add
+label define fbpl_pop_lbl 459 `"Eastern Europe, ns"', add
+label define fbpl_pop_lbl 460 `"Estonia"', add
+label define fbpl_pop_lbl 461 `"Latvia"', add
+label define fbpl_pop_lbl 462 `"Lithuania"', add
+label define fbpl_pop_lbl 463 `"Baltic States, ns"', add
+label define fbpl_pop_lbl 465 `"Other USSR/Russia"', add
+label define fbpl_pop_lbl 499 `"Europe, nec/ns"', add
+label define fbpl_pop_lbl 500 `"China"', add
+label define fbpl_pop_lbl 501 `"Japan"', add
+label define fbpl_pop_lbl 502 `"Korea"', add
+label define fbpl_pop_lbl 510 `"Brunei"', add
+label define fbpl_pop_lbl 511 `"Cambodia (Kampuchea)"', add
+label define fbpl_pop_lbl 512 `"Indonesia"', add
+label define fbpl_pop_lbl 513 `"Laos"', add
+label define fbpl_pop_lbl 514 `"Malaysia"', add
+label define fbpl_pop_lbl 515 `"Philippines"', add
+label define fbpl_pop_lbl 516 `"Singapore"', add
+label define fbpl_pop_lbl 517 `"Thailand"', add
+label define fbpl_pop_lbl 518 `"Vietnam"', add
+label define fbpl_pop_lbl 519 `"Southeast Asia, ns"', add
+label define fbpl_pop_lbl 520 `"Afghanistan"', add
+label define fbpl_pop_lbl 521 `"India"', add
+label define fbpl_pop_lbl 522 `"Iran"', add
+label define fbpl_pop_lbl 523 `"Maldives"', add
+label define fbpl_pop_lbl 524 `"Nepal"', add
+label define fbpl_pop_lbl 530 `"Bahrain"', add
+label define fbpl_pop_lbl 531 `"Cyprus"', add
+label define fbpl_pop_lbl 532 `"Iraq"', add
+label define fbpl_pop_lbl 533 `"Iraq/Saudi Arabia"', add
+label define fbpl_pop_lbl 534 `"Israel/Palestine"', add
+label define fbpl_pop_lbl 535 `"Jordan"', add
+label define fbpl_pop_lbl 536 `"Kuwait"', add
+label define fbpl_pop_lbl 537 `"Lebanon"', add
+label define fbpl_pop_lbl 538 `"Oman"', add
+label define fbpl_pop_lbl 539 `"Qatar"', add
+label define fbpl_pop_lbl 540 `"Saudi Arabia"', add
+label define fbpl_pop_lbl 541 `"Syria"', add
+label define fbpl_pop_lbl 542 `"Turkey"', add
+label define fbpl_pop_lbl 543 `"United Arab Emirates"', add
+label define fbpl_pop_lbl 544 `"Yemen Arab Republic (North)"', add
+label define fbpl_pop_lbl 545 `"Yemen, PDR (South)"', add
+label define fbpl_pop_lbl 546 `"Persian Gulf States, n.s."', add
+label define fbpl_pop_lbl 547 `"Middle East, ns"', add
+label define fbpl_pop_lbl 548 `"Southwest Asia, nec/ns"', add
+label define fbpl_pop_lbl 549 `"Asia Minor, n.s."', add
+label define fbpl_pop_lbl 550 `"South Asia, n.e.c."', add
+label define fbpl_pop_lbl 599 `"Asia, nec/ns"', add
+label define fbpl_pop_lbl 600 `"AFRICA"', add
+label define fbpl_pop_lbl 700 `"Australia and New Zealand"', add
+label define fbpl_pop_lbl 710 `"Pacific Islands"', add
+label define fbpl_pop_lbl 900 `"Abroad (unknown) or at sea"', add
+label define fbpl_pop_lbl 950 `"Other n.e.c."', add
+label define fbpl_pop_lbl 997 `"Unknown"', add
+label define fbpl_pop_lbl 998 `"Illegible"', add
+label define fbpl_pop_lbl 999 `"Missing/blank"', add
+label values fbpl_pop fbpl_pop_lbl
 
 label define fbpl_sp_lbl 000 `"Not Applicable"'
 label define fbpl_sp_lbl 001 `"Alabama"', add
@@ -8910,7 +17974,7 @@ label define fbpl_sp_lbl 439 `"Vatican City"', add
 label define fbpl_sp_lbl 440 `"Southern Europe, n.s."', add
 label define fbpl_sp_lbl 450 `"Austria"', add
 label define fbpl_sp_lbl 451 `"Bulgaria"', add
-label define fbpl_sp_lbl 452 `"Czechsolovakia"', add
+label define fbpl_sp_lbl 452 `"Czechoslovakia"', add
 label define fbpl_sp_lbl 453 `"Germany"', add
 label define fbpl_sp_lbl 454 `"Hungary"', add
 label define fbpl_sp_lbl 455 `"Poland"', add
@@ -8973,6 +18037,340 @@ label define fbpl_sp_lbl 997 `"Unknown"', add
 label define fbpl_sp_lbl 998 `"Illegible"', add
 label define fbpl_sp_lbl 999 `"Missing/blank"', add
 label values fbpl_sp fbpl_sp_lbl
+
+label define fbpl_mom2_lbl 000 `"Not Applicable"'
+label define fbpl_mom2_lbl 001 `"Alabama"', add
+label define fbpl_mom2_lbl 002 `"Alaska"', add
+label define fbpl_mom2_lbl 004 `"Arizona"', add
+label define fbpl_mom2_lbl 005 `"Arkansas"', add
+label define fbpl_mom2_lbl 006 `"California"', add
+label define fbpl_mom2_lbl 008 `"Colorado"', add
+label define fbpl_mom2_lbl 009 `"Connecticut"', add
+label define fbpl_mom2_lbl 010 `"Delaware"', add
+label define fbpl_mom2_lbl 011 `"District of Columbia"', add
+label define fbpl_mom2_lbl 012 `"Florida"', add
+label define fbpl_mom2_lbl 013 `"Georgia"', add
+label define fbpl_mom2_lbl 015 `"Hawaii"', add
+label define fbpl_mom2_lbl 016 `"Idaho"', add
+label define fbpl_mom2_lbl 017 `"Illinois"', add
+label define fbpl_mom2_lbl 018 `"Indiana"', add
+label define fbpl_mom2_lbl 019 `"Iowa"', add
+label define fbpl_mom2_lbl 020 `"Kansas"', add
+label define fbpl_mom2_lbl 021 `"Kentucky"', add
+label define fbpl_mom2_lbl 022 `"Louisiana"', add
+label define fbpl_mom2_lbl 023 `"Maine"', add
+label define fbpl_mom2_lbl 024 `"Maryland"', add
+label define fbpl_mom2_lbl 025 `"Massachusetts"', add
+label define fbpl_mom2_lbl 026 `"Michigan"', add
+label define fbpl_mom2_lbl 027 `"Minnesota"', add
+label define fbpl_mom2_lbl 028 `"Mississippi"', add
+label define fbpl_mom2_lbl 029 `"Missouri"', add
+label define fbpl_mom2_lbl 030 `"Montana"', add
+label define fbpl_mom2_lbl 031 `"Nebraska"', add
+label define fbpl_mom2_lbl 032 `"Nevada"', add
+label define fbpl_mom2_lbl 033 `"New Hampshire"', add
+label define fbpl_mom2_lbl 034 `"New Jersey"', add
+label define fbpl_mom2_lbl 035 `"New Mexico"', add
+label define fbpl_mom2_lbl 036 `"New York"', add
+label define fbpl_mom2_lbl 037 `"North Carolina"', add
+label define fbpl_mom2_lbl 038 `"North Dakota"', add
+label define fbpl_mom2_lbl 039 `"Ohio"', add
+label define fbpl_mom2_lbl 040 `"Oklahoma"', add
+label define fbpl_mom2_lbl 041 `"Oregon"', add
+label define fbpl_mom2_lbl 042 `"Pennsylvania"', add
+label define fbpl_mom2_lbl 044 `"Rhode Island"', add
+label define fbpl_mom2_lbl 045 `"South Carolina"', add
+label define fbpl_mom2_lbl 046 `"South Dakota"', add
+label define fbpl_mom2_lbl 047 `"Tennessee"', add
+label define fbpl_mom2_lbl 048 `"Texas"', add
+label define fbpl_mom2_lbl 049 `"Utah"', add
+label define fbpl_mom2_lbl 050 `"Vermont"', add
+label define fbpl_mom2_lbl 051 `"Virginia"', add
+label define fbpl_mom2_lbl 053 `"Washington"', add
+label define fbpl_mom2_lbl 054 `"West Virginia"', add
+label define fbpl_mom2_lbl 055 `"Wisconsin"', add
+label define fbpl_mom2_lbl 056 `"Wyoming"', add
+label define fbpl_mom2_lbl 090 `"Native American"', add
+label define fbpl_mom2_lbl 099 `"United States, ns"', add
+label define fbpl_mom2_lbl 100 `"American Samoa"', add
+label define fbpl_mom2_lbl 105 `"Guam"', add
+label define fbpl_mom2_lbl 110 `"Puerto Rico"', add
+label define fbpl_mom2_lbl 115 `"US Virgin Islands"', add
+label define fbpl_mom2_lbl 120 `"Other US Possessions"', add
+label define fbpl_mom2_lbl 150 `"Canada"', add
+label define fbpl_mom2_lbl 155 `"St Pierre and Miquelon"', add
+label define fbpl_mom2_lbl 160 `"Atlantic Islands"', add
+label define fbpl_mom2_lbl 199 `"North America, n.s."', add
+label define fbpl_mom2_lbl 200 `"Mexico"', add
+label define fbpl_mom2_lbl 210 `"Central America"', add
+label define fbpl_mom2_lbl 250 `"Cuba"', add
+label define fbpl_mom2_lbl 260 `"West Indies"', add
+label define fbpl_mom2_lbl 299 `"Americas, n.s."', add
+label define fbpl_mom2_lbl 300 `"SOUTH AMERICA"', add
+label define fbpl_mom2_lbl 400 `"Denmark"', add
+label define fbpl_mom2_lbl 401 `"Finland"', add
+label define fbpl_mom2_lbl 402 `"Iceland"', add
+label define fbpl_mom2_lbl 403 `"Lapland, n.s."', add
+label define fbpl_mom2_lbl 404 `"Norway"', add
+label define fbpl_mom2_lbl 405 `"Sweden"', add
+label define fbpl_mom2_lbl 406 `"Svalbard"', add
+label define fbpl_mom2_lbl 410 `"England"', add
+label define fbpl_mom2_lbl 411 `"Scotland"', add
+label define fbpl_mom2_lbl 412 `"Wales"', add
+label define fbpl_mom2_lbl 413 `"United Kingdom, ns"', add
+label define fbpl_mom2_lbl 414 `"Ireland"', add
+label define fbpl_mom2_lbl 419 `"Northern Europe, ns"', add
+label define fbpl_mom2_lbl 420 `"Belgium"', add
+label define fbpl_mom2_lbl 421 `"France"', add
+label define fbpl_mom2_lbl 422 `"Liechtenstein"', add
+label define fbpl_mom2_lbl 423 `"Luxembourg"', add
+label define fbpl_mom2_lbl 424 `"Monaco"', add
+label define fbpl_mom2_lbl 425 `"Netherlands"', add
+label define fbpl_mom2_lbl 426 `"Switzerland"', add
+label define fbpl_mom2_lbl 429 `"Western Europe, ns"', add
+label define fbpl_mom2_lbl 430 `"Albania"', add
+label define fbpl_mom2_lbl 431 `"Andorra"', add
+label define fbpl_mom2_lbl 432 `"Gibraltar"', add
+label define fbpl_mom2_lbl 433 `"Greece"', add
+label define fbpl_mom2_lbl 434 `"Italy"', add
+label define fbpl_mom2_lbl 435 `"Malta"', add
+label define fbpl_mom2_lbl 436 `"Portugal"', add
+label define fbpl_mom2_lbl 437 `"San Marino"', add
+label define fbpl_mom2_lbl 438 `"Spain"', add
+label define fbpl_mom2_lbl 439 `"Vatican City"', add
+label define fbpl_mom2_lbl 440 `"Southern Europe, n.s."', add
+label define fbpl_mom2_lbl 450 `"Austria"', add
+label define fbpl_mom2_lbl 451 `"Bulgaria"', add
+label define fbpl_mom2_lbl 452 `"Czechoslovakia"', add
+label define fbpl_mom2_lbl 453 `"Germany"', add
+label define fbpl_mom2_lbl 454 `"Hungary"', add
+label define fbpl_mom2_lbl 455 `"Poland"', add
+label define fbpl_mom2_lbl 456 `"Romania"', add
+label define fbpl_mom2_lbl 457 `"Yugoslavia"', add
+label define fbpl_mom2_lbl 458 `"Central Europe, ns"', add
+label define fbpl_mom2_lbl 459 `"Eastern Europe, ns"', add
+label define fbpl_mom2_lbl 460 `"Estonia"', add
+label define fbpl_mom2_lbl 461 `"Latvia"', add
+label define fbpl_mom2_lbl 462 `"Lithuania"', add
+label define fbpl_mom2_lbl 463 `"Baltic States, ns"', add
+label define fbpl_mom2_lbl 465 `"Other USSR/Russia"', add
+label define fbpl_mom2_lbl 499 `"Europe, nec/ns"', add
+label define fbpl_mom2_lbl 500 `"China"', add
+label define fbpl_mom2_lbl 501 `"Japan"', add
+label define fbpl_mom2_lbl 502 `"Korea"', add
+label define fbpl_mom2_lbl 510 `"Brunei"', add
+label define fbpl_mom2_lbl 511 `"Cambodia (Kampuchea)"', add
+label define fbpl_mom2_lbl 512 `"Indonesia"', add
+label define fbpl_mom2_lbl 513 `"Laos"', add
+label define fbpl_mom2_lbl 514 `"Malaysia"', add
+label define fbpl_mom2_lbl 515 `"Philippines"', add
+label define fbpl_mom2_lbl 516 `"Singapore"', add
+label define fbpl_mom2_lbl 517 `"Thailand"', add
+label define fbpl_mom2_lbl 518 `"Vietnam"', add
+label define fbpl_mom2_lbl 519 `"Southeast Asia, ns"', add
+label define fbpl_mom2_lbl 520 `"Afghanistan"', add
+label define fbpl_mom2_lbl 521 `"India"', add
+label define fbpl_mom2_lbl 522 `"Iran"', add
+label define fbpl_mom2_lbl 523 `"Maldives"', add
+label define fbpl_mom2_lbl 524 `"Nepal"', add
+label define fbpl_mom2_lbl 530 `"Bahrain"', add
+label define fbpl_mom2_lbl 531 `"Cyprus"', add
+label define fbpl_mom2_lbl 532 `"Iraq"', add
+label define fbpl_mom2_lbl 533 `"Iraq/Saudi Arabia"', add
+label define fbpl_mom2_lbl 534 `"Israel/Palestine"', add
+label define fbpl_mom2_lbl 535 `"Jordan"', add
+label define fbpl_mom2_lbl 536 `"Kuwait"', add
+label define fbpl_mom2_lbl 537 `"Lebanon"', add
+label define fbpl_mom2_lbl 538 `"Oman"', add
+label define fbpl_mom2_lbl 539 `"Qatar"', add
+label define fbpl_mom2_lbl 540 `"Saudi Arabia"', add
+label define fbpl_mom2_lbl 541 `"Syria"', add
+label define fbpl_mom2_lbl 542 `"Turkey"', add
+label define fbpl_mom2_lbl 543 `"United Arab Emirates"', add
+label define fbpl_mom2_lbl 544 `"Yemen Arab Republic (North)"', add
+label define fbpl_mom2_lbl 545 `"Yemen, PDR (South)"', add
+label define fbpl_mom2_lbl 546 `"Persian Gulf States, n.s."', add
+label define fbpl_mom2_lbl 547 `"Middle East, ns"', add
+label define fbpl_mom2_lbl 548 `"Southwest Asia, nec/ns"', add
+label define fbpl_mom2_lbl 549 `"Asia Minor, n.s."', add
+label define fbpl_mom2_lbl 550 `"South Asia, n.e.c."', add
+label define fbpl_mom2_lbl 599 `"Asia, nec/ns"', add
+label define fbpl_mom2_lbl 600 `"AFRICA"', add
+label define fbpl_mom2_lbl 700 `"Australia and New Zealand"', add
+label define fbpl_mom2_lbl 710 `"Pacific Islands"', add
+label define fbpl_mom2_lbl 900 `"Abroad (unknown) or at sea"', add
+label define fbpl_mom2_lbl 950 `"Other n.e.c."', add
+label define fbpl_mom2_lbl 997 `"Unknown"', add
+label define fbpl_mom2_lbl 998 `"Illegible"', add
+label define fbpl_mom2_lbl 999 `"Missing/blank"', add
+label values fbpl_mom2 fbpl_mom2_lbl
+
+label define fbpl_pop2_lbl 000 `"Not Applicable"'
+label define fbpl_pop2_lbl 001 `"Alabama"', add
+label define fbpl_pop2_lbl 002 `"Alaska"', add
+label define fbpl_pop2_lbl 004 `"Arizona"', add
+label define fbpl_pop2_lbl 005 `"Arkansas"', add
+label define fbpl_pop2_lbl 006 `"California"', add
+label define fbpl_pop2_lbl 008 `"Colorado"', add
+label define fbpl_pop2_lbl 009 `"Connecticut"', add
+label define fbpl_pop2_lbl 010 `"Delaware"', add
+label define fbpl_pop2_lbl 011 `"District of Columbia"', add
+label define fbpl_pop2_lbl 012 `"Florida"', add
+label define fbpl_pop2_lbl 013 `"Georgia"', add
+label define fbpl_pop2_lbl 015 `"Hawaii"', add
+label define fbpl_pop2_lbl 016 `"Idaho"', add
+label define fbpl_pop2_lbl 017 `"Illinois"', add
+label define fbpl_pop2_lbl 018 `"Indiana"', add
+label define fbpl_pop2_lbl 019 `"Iowa"', add
+label define fbpl_pop2_lbl 020 `"Kansas"', add
+label define fbpl_pop2_lbl 021 `"Kentucky"', add
+label define fbpl_pop2_lbl 022 `"Louisiana"', add
+label define fbpl_pop2_lbl 023 `"Maine"', add
+label define fbpl_pop2_lbl 024 `"Maryland"', add
+label define fbpl_pop2_lbl 025 `"Massachusetts"', add
+label define fbpl_pop2_lbl 026 `"Michigan"', add
+label define fbpl_pop2_lbl 027 `"Minnesota"', add
+label define fbpl_pop2_lbl 028 `"Mississippi"', add
+label define fbpl_pop2_lbl 029 `"Missouri"', add
+label define fbpl_pop2_lbl 030 `"Montana"', add
+label define fbpl_pop2_lbl 031 `"Nebraska"', add
+label define fbpl_pop2_lbl 032 `"Nevada"', add
+label define fbpl_pop2_lbl 033 `"New Hampshire"', add
+label define fbpl_pop2_lbl 034 `"New Jersey"', add
+label define fbpl_pop2_lbl 035 `"New Mexico"', add
+label define fbpl_pop2_lbl 036 `"New York"', add
+label define fbpl_pop2_lbl 037 `"North Carolina"', add
+label define fbpl_pop2_lbl 038 `"North Dakota"', add
+label define fbpl_pop2_lbl 039 `"Ohio"', add
+label define fbpl_pop2_lbl 040 `"Oklahoma"', add
+label define fbpl_pop2_lbl 041 `"Oregon"', add
+label define fbpl_pop2_lbl 042 `"Pennsylvania"', add
+label define fbpl_pop2_lbl 044 `"Rhode Island"', add
+label define fbpl_pop2_lbl 045 `"South Carolina"', add
+label define fbpl_pop2_lbl 046 `"South Dakota"', add
+label define fbpl_pop2_lbl 047 `"Tennessee"', add
+label define fbpl_pop2_lbl 048 `"Texas"', add
+label define fbpl_pop2_lbl 049 `"Utah"', add
+label define fbpl_pop2_lbl 050 `"Vermont"', add
+label define fbpl_pop2_lbl 051 `"Virginia"', add
+label define fbpl_pop2_lbl 053 `"Washington"', add
+label define fbpl_pop2_lbl 054 `"West Virginia"', add
+label define fbpl_pop2_lbl 055 `"Wisconsin"', add
+label define fbpl_pop2_lbl 056 `"Wyoming"', add
+label define fbpl_pop2_lbl 090 `"Native American"', add
+label define fbpl_pop2_lbl 099 `"United States, ns"', add
+label define fbpl_pop2_lbl 100 `"American Samoa"', add
+label define fbpl_pop2_lbl 105 `"Guam"', add
+label define fbpl_pop2_lbl 110 `"Puerto Rico"', add
+label define fbpl_pop2_lbl 115 `"US Virgin Islands"', add
+label define fbpl_pop2_lbl 120 `"Other US Possessions"', add
+label define fbpl_pop2_lbl 150 `"Canada"', add
+label define fbpl_pop2_lbl 155 `"St Pierre and Miquelon"', add
+label define fbpl_pop2_lbl 160 `"Atlantic Islands"', add
+label define fbpl_pop2_lbl 199 `"North America, n.s."', add
+label define fbpl_pop2_lbl 200 `"Mexico"', add
+label define fbpl_pop2_lbl 210 `"Central America"', add
+label define fbpl_pop2_lbl 250 `"Cuba"', add
+label define fbpl_pop2_lbl 260 `"West Indies"', add
+label define fbpl_pop2_lbl 299 `"Americas, n.s."', add
+label define fbpl_pop2_lbl 300 `"SOUTH AMERICA"', add
+label define fbpl_pop2_lbl 400 `"Denmark"', add
+label define fbpl_pop2_lbl 401 `"Finland"', add
+label define fbpl_pop2_lbl 402 `"Iceland"', add
+label define fbpl_pop2_lbl 403 `"Lapland, n.s."', add
+label define fbpl_pop2_lbl 404 `"Norway"', add
+label define fbpl_pop2_lbl 405 `"Sweden"', add
+label define fbpl_pop2_lbl 406 `"Svalbard"', add
+label define fbpl_pop2_lbl 410 `"England"', add
+label define fbpl_pop2_lbl 411 `"Scotland"', add
+label define fbpl_pop2_lbl 412 `"Wales"', add
+label define fbpl_pop2_lbl 413 `"United Kingdom, ns"', add
+label define fbpl_pop2_lbl 414 `"Ireland"', add
+label define fbpl_pop2_lbl 419 `"Northern Europe, ns"', add
+label define fbpl_pop2_lbl 420 `"Belgium"', add
+label define fbpl_pop2_lbl 421 `"France"', add
+label define fbpl_pop2_lbl 422 `"Liechtenstein"', add
+label define fbpl_pop2_lbl 423 `"Luxembourg"', add
+label define fbpl_pop2_lbl 424 `"Monaco"', add
+label define fbpl_pop2_lbl 425 `"Netherlands"', add
+label define fbpl_pop2_lbl 426 `"Switzerland"', add
+label define fbpl_pop2_lbl 429 `"Western Europe, ns"', add
+label define fbpl_pop2_lbl 430 `"Albania"', add
+label define fbpl_pop2_lbl 431 `"Andorra"', add
+label define fbpl_pop2_lbl 432 `"Gibraltar"', add
+label define fbpl_pop2_lbl 433 `"Greece"', add
+label define fbpl_pop2_lbl 434 `"Italy"', add
+label define fbpl_pop2_lbl 435 `"Malta"', add
+label define fbpl_pop2_lbl 436 `"Portugal"', add
+label define fbpl_pop2_lbl 437 `"San Marino"', add
+label define fbpl_pop2_lbl 438 `"Spain"', add
+label define fbpl_pop2_lbl 439 `"Vatican City"', add
+label define fbpl_pop2_lbl 440 `"Southern Europe, n.s."', add
+label define fbpl_pop2_lbl 450 `"Austria"', add
+label define fbpl_pop2_lbl 451 `"Bulgaria"', add
+label define fbpl_pop2_lbl 452 `"Czechoslovakia"', add
+label define fbpl_pop2_lbl 453 `"Germany"', add
+label define fbpl_pop2_lbl 454 `"Hungary"', add
+label define fbpl_pop2_lbl 455 `"Poland"', add
+label define fbpl_pop2_lbl 456 `"Romania"', add
+label define fbpl_pop2_lbl 457 `"Yugoslavia"', add
+label define fbpl_pop2_lbl 458 `"Central Europe, ns"', add
+label define fbpl_pop2_lbl 459 `"Eastern Europe, ns"', add
+label define fbpl_pop2_lbl 460 `"Estonia"', add
+label define fbpl_pop2_lbl 461 `"Latvia"', add
+label define fbpl_pop2_lbl 462 `"Lithuania"', add
+label define fbpl_pop2_lbl 463 `"Baltic States, ns"', add
+label define fbpl_pop2_lbl 465 `"Other USSR/Russia"', add
+label define fbpl_pop2_lbl 499 `"Europe, nec/ns"', add
+label define fbpl_pop2_lbl 500 `"China"', add
+label define fbpl_pop2_lbl 501 `"Japan"', add
+label define fbpl_pop2_lbl 502 `"Korea"', add
+label define fbpl_pop2_lbl 510 `"Brunei"', add
+label define fbpl_pop2_lbl 511 `"Cambodia (Kampuchea)"', add
+label define fbpl_pop2_lbl 512 `"Indonesia"', add
+label define fbpl_pop2_lbl 513 `"Laos"', add
+label define fbpl_pop2_lbl 514 `"Malaysia"', add
+label define fbpl_pop2_lbl 515 `"Philippines"', add
+label define fbpl_pop2_lbl 516 `"Singapore"', add
+label define fbpl_pop2_lbl 517 `"Thailand"', add
+label define fbpl_pop2_lbl 518 `"Vietnam"', add
+label define fbpl_pop2_lbl 519 `"Southeast Asia, ns"', add
+label define fbpl_pop2_lbl 520 `"Afghanistan"', add
+label define fbpl_pop2_lbl 521 `"India"', add
+label define fbpl_pop2_lbl 522 `"Iran"', add
+label define fbpl_pop2_lbl 523 `"Maldives"', add
+label define fbpl_pop2_lbl 524 `"Nepal"', add
+label define fbpl_pop2_lbl 530 `"Bahrain"', add
+label define fbpl_pop2_lbl 531 `"Cyprus"', add
+label define fbpl_pop2_lbl 532 `"Iraq"', add
+label define fbpl_pop2_lbl 533 `"Iraq/Saudi Arabia"', add
+label define fbpl_pop2_lbl 534 `"Israel/Palestine"', add
+label define fbpl_pop2_lbl 535 `"Jordan"', add
+label define fbpl_pop2_lbl 536 `"Kuwait"', add
+label define fbpl_pop2_lbl 537 `"Lebanon"', add
+label define fbpl_pop2_lbl 538 `"Oman"', add
+label define fbpl_pop2_lbl 539 `"Qatar"', add
+label define fbpl_pop2_lbl 540 `"Saudi Arabia"', add
+label define fbpl_pop2_lbl 541 `"Syria"', add
+label define fbpl_pop2_lbl 542 `"Turkey"', add
+label define fbpl_pop2_lbl 543 `"United Arab Emirates"', add
+label define fbpl_pop2_lbl 544 `"Yemen Arab Republic (North)"', add
+label define fbpl_pop2_lbl 545 `"Yemen, PDR (South)"', add
+label define fbpl_pop2_lbl 546 `"Persian Gulf States, n.s."', add
+label define fbpl_pop2_lbl 547 `"Middle East, ns"', add
+label define fbpl_pop2_lbl 548 `"Southwest Asia, nec/ns"', add
+label define fbpl_pop2_lbl 549 `"Asia Minor, n.s."', add
+label define fbpl_pop2_lbl 550 `"South Asia, n.e.c."', add
+label define fbpl_pop2_lbl 599 `"Asia, nec/ns"', add
+label define fbpl_pop2_lbl 600 `"AFRICA"', add
+label define fbpl_pop2_lbl 700 `"Australia and New Zealand"', add
+label define fbpl_pop2_lbl 710 `"Pacific Islands"', add
+label define fbpl_pop2_lbl 900 `"Abroad (unknown) or at sea"', add
+label define fbpl_pop2_lbl 950 `"Other n.e.c."', add
+label define fbpl_pop2_lbl 997 `"Unknown"', add
+label define fbpl_pop2_lbl 998 `"Illegible"', add
+label define fbpl_pop2_lbl 999 `"Missing/blank"', add
+label values fbpl_pop2 fbpl_pop2_lbl
 
 label define fbpld_head_lbl 00000 `"Not Applicable"'
 label define fbpld_head_lbl 00100 `"Alabama"', add
@@ -9226,7 +18624,7 @@ label define fbpld_head_lbl 45060 `"Austria-Vienna"', add
 label define fbpld_head_lbl 45070 `"Austria-Kaernsten"', add
 label define fbpld_head_lbl 45080 `"Austria-Neustadt"', add
 label define fbpld_head_lbl 45100 `"Bulgaria"', add
-label define fbpld_head_lbl 45200 `"Czechsolovakia"', add
+label define fbpld_head_lbl 45200 `"Czechoslovakia"', add
 label define fbpld_head_lbl 45210 `"Bohemia"', add
 label define fbpld_head_lbl 45211 `"Bohemia-Moravia"', add
 label define fbpld_head_lbl 45212 `"Slovakia"', add
@@ -9515,6 +18913,1088 @@ label define fbpld_head_lbl 99800 `"Illegible"', add
 label define fbpld_head_lbl 99900 `"Missing/blank"', add
 label values fbpld_head fbpld_head_lbl
 
+label define fbpld_mom_lbl 00000 `"Not Applicable"'
+label define fbpld_mom_lbl 00100 `"Alabama"', add
+label define fbpld_mom_lbl 00200 `"Alaska"', add
+label define fbpld_mom_lbl 00400 `"Arizona"', add
+label define fbpld_mom_lbl 00500 `"Arkansas"', add
+label define fbpld_mom_lbl 00600 `"California"', add
+label define fbpld_mom_lbl 00800 `"Colorado"', add
+label define fbpld_mom_lbl 00900 `"Connecticut"', add
+label define fbpld_mom_lbl 01000 `"Delaware"', add
+label define fbpld_mom_lbl 01100 `"District of Columbia"', add
+label define fbpld_mom_lbl 01200 `"Florida"', add
+label define fbpld_mom_lbl 01300 `"Georgia"', add
+label define fbpld_mom_lbl 01500 `"Hawaii"', add
+label define fbpld_mom_lbl 01600 `"Idaho"', add
+label define fbpld_mom_lbl 01610 `"Idaho Territory"', add
+label define fbpld_mom_lbl 01700 `"Illinois"', add
+label define fbpld_mom_lbl 01800 `"Indiana"', add
+label define fbpld_mom_lbl 01900 `"Iowa"', add
+label define fbpld_mom_lbl 02000 `"Kansas"', add
+label define fbpld_mom_lbl 02100 `"Kentucky"', add
+label define fbpld_mom_lbl 02200 `"Louisiana"', add
+label define fbpld_mom_lbl 02300 `"Maine"', add
+label define fbpld_mom_lbl 02400 `"Maryland"', add
+label define fbpld_mom_lbl 02500 `"Massachusetts"', add
+label define fbpld_mom_lbl 02600 `"Michigan"', add
+label define fbpld_mom_lbl 02700 `"Minnesota"', add
+label define fbpld_mom_lbl 02800 `"Mississippi"', add
+label define fbpld_mom_lbl 02900 `"Missouri"', add
+label define fbpld_mom_lbl 03000 `"Montana"', add
+label define fbpld_mom_lbl 03100 `"Nebraska"', add
+label define fbpld_mom_lbl 03200 `"Nevada"', add
+label define fbpld_mom_lbl 03300 `"New Hampshire"', add
+label define fbpld_mom_lbl 03400 `"New Jersey"', add
+label define fbpld_mom_lbl 03500 `"New Mexico"', add
+label define fbpld_mom_lbl 03510 `"New Mexico Territory"', add
+label define fbpld_mom_lbl 03600 `"New York"', add
+label define fbpld_mom_lbl 03700 `"North Carolina"', add
+label define fbpld_mom_lbl 03800 `"North Dakota"', add
+label define fbpld_mom_lbl 03900 `"Ohio"', add
+label define fbpld_mom_lbl 04000 `"Oklahoma"', add
+label define fbpld_mom_lbl 04010 `"Indian Territory"', add
+label define fbpld_mom_lbl 04100 `"Oregon"', add
+label define fbpld_mom_lbl 04200 `"Pennsylvania"', add
+label define fbpld_mom_lbl 04400 `"Rhode Island"', add
+label define fbpld_mom_lbl 04500 `"South Carolina"', add
+label define fbpld_mom_lbl 04600 `"South Dakota"', add
+label define fbpld_mom_lbl 04610 `"Dakota Territory"', add
+label define fbpld_mom_lbl 04700 `"Tennessee"', add
+label define fbpld_mom_lbl 04800 `"Texas"', add
+label define fbpld_mom_lbl 04900 `"Utah"', add
+label define fbpld_mom_lbl 04910 `"Utah Territory"', add
+label define fbpld_mom_lbl 05000 `"Vermont"', add
+label define fbpld_mom_lbl 05100 `"Virginia"', add
+label define fbpld_mom_lbl 05300 `"Washington"', add
+label define fbpld_mom_lbl 05400 `"West Virginia"', add
+label define fbpld_mom_lbl 05500 `"Wisconsin"', add
+label define fbpld_mom_lbl 05600 `"Wyoming"', add
+label define fbpld_mom_lbl 05610 `"Wyoming Territory"', add
+label define fbpld_mom_lbl 09000 `"Native American"', add
+label define fbpld_mom_lbl 09900 `"United States, ns"', add
+label define fbpld_mom_lbl 10000 `"American Samoa"', add
+label define fbpld_mom_lbl 10010 `"Samoa, 1940-1950"', add
+label define fbpld_mom_lbl 10500 `"Guam"', add
+label define fbpld_mom_lbl 11000 `"Puerto Rico"', add
+label define fbpld_mom_lbl 11500 `"US Virgin Islands"', add
+label define fbpld_mom_lbl 11510 `"St Croix"', add
+label define fbpld_mom_lbl 11520 `"St. John"', add
+label define fbpld_mom_lbl 11530 `"St Thomas"', add
+label define fbpld_mom_lbl 12000 `"Other US Possessions"', add
+label define fbpld_mom_lbl 12010 `"Johnston Atoll"', add
+label define fbpld_mom_lbl 12020 `"Midway Islands"', add
+label define fbpld_mom_lbl 12030 `"Wake Island"', add
+label define fbpld_mom_lbl 12040 `"Other US Caribbean Islands"', add
+label define fbpld_mom_lbl 12041 `"Navassa Island"', add
+label define fbpld_mom_lbl 12050 `"Other US Pacific Is."', add
+label define fbpld_mom_lbl 12051 `"Baker Island"', add
+label define fbpld_mom_lbl 12052 `"Howland Island"', add
+label define fbpld_mom_lbl 12053 `"Jarvis Island"', add
+label define fbpld_mom_lbl 12054 `"Kingman Reef"', add
+label define fbpld_mom_lbl 12055 `"Palmyra Atoll"', add
+label define fbpld_mom_lbl 12056 `"Canton and Enderbury Island"', add
+label define fbpld_mom_lbl 12090 `"US outlying areas, ns"', add
+label define fbpld_mom_lbl 12091 `"US Possessions, ns"', add
+label define fbpld_mom_lbl 12092 `"US territory, ns"', add
+label define fbpld_mom_lbl 15000 `"Canada"', add
+label define fbpld_mom_lbl 15010 `"English Canada"', add
+label define fbpld_mom_lbl 15011 `"British Columbia"', add
+label define fbpld_mom_lbl 15013 `"Alberta"', add
+label define fbpld_mom_lbl 15015 `"Saskatchewan"', add
+label define fbpld_mom_lbl 15017 `"Northwest"', add
+label define fbpld_mom_lbl 15019 `"Ruperts Land"', add
+label define fbpld_mom_lbl 15020 `"Manitoba"', add
+label define fbpld_mom_lbl 15021 `"Red River"', add
+label define fbpld_mom_lbl 15030 `"Ontario/Upper Canada"', add
+label define fbpld_mom_lbl 15031 `"Upper Canada"', add
+label define fbpld_mom_lbl 15032 `"Canada West"', add
+label define fbpld_mom_lbl 15040 `"New Brunswick"', add
+label define fbpld_mom_lbl 15042 `"Canada West"', add
+label define fbpld_mom_lbl 15050 `"Nova Scotia"', add
+label define fbpld_mom_lbl 15051 `"Cape Breton"', add
+label define fbpld_mom_lbl 15052 `"Halifax"', add
+label define fbpld_mom_lbl 15060 `"Prince Edward Island"', add
+label define fbpld_mom_lbl 15070 `"Newfoundland"', add
+label define fbpld_mom_lbl 15080 `"French Canada"', add
+label define fbpld_mom_lbl 15081 `"Quebec"', add
+label define fbpld_mom_lbl 15082 `"Lower Canada"', add
+label define fbpld_mom_lbl 15083 `"Canada East"', add
+label define fbpld_mom_lbl 15500 `"St Pierre and Miquelon"', add
+label define fbpld_mom_lbl 16000 `"Atlantic Islands"', add
+label define fbpld_mom_lbl 16010 `"Bermuda"', add
+label define fbpld_mom_lbl 16020 `"Cape Verde"', add
+label define fbpld_mom_lbl 16030 `"Falkland Islands"', add
+label define fbpld_mom_lbl 16040 `"Greenland"', add
+label define fbpld_mom_lbl 16050 `"St Helena and Ascension"', add
+label define fbpld_mom_lbl 16060 `"Canary Islands"', add
+label define fbpld_mom_lbl 19900 `"North America, n.s."', add
+label define fbpld_mom_lbl 20000 `"Mexico"', add
+label define fbpld_mom_lbl 21000 `"Central America"', add
+label define fbpld_mom_lbl 21010 `"Belize/British Honduras"', add
+label define fbpld_mom_lbl 21020 `"Costa Rica"', add
+label define fbpld_mom_lbl 21030 `"El Salvador"', add
+label define fbpld_mom_lbl 21040 `"Guatemala"', add
+label define fbpld_mom_lbl 21050 `"Honduras"', add
+label define fbpld_mom_lbl 21060 `"Nicaragua"', add
+label define fbpld_mom_lbl 21070 `"Panama"', add
+label define fbpld_mom_lbl 21071 `"Canal Zone"', add
+label define fbpld_mom_lbl 21090 `"Central America, ns"', add
+label define fbpld_mom_lbl 25000 `"Cuba"', add
+label define fbpld_mom_lbl 26000 `"West Indies"', add
+label define fbpld_mom_lbl 26010 `"Dominican Republic"', add
+label define fbpld_mom_lbl 26020 `"Haiti"', add
+label define fbpld_mom_lbl 26030 `"Jamaica"', add
+label define fbpld_mom_lbl 26040 `"British West Indies"', add
+label define fbpld_mom_lbl 26041 `"Anguilla"', add
+label define fbpld_mom_lbl 26042 `"Antigua-Barbuda"', add
+label define fbpld_mom_lbl 26043 `"Bahamas"', add
+label define fbpld_mom_lbl 26044 `"Barbados"', add
+label define fbpld_mom_lbl 26045 `"British Virgin Islands"', add
+label define fbpld_mom_lbl 26046 `"Anegada"', add
+label define fbpld_mom_lbl 26047 `"Cooper"', add
+label define fbpld_mom_lbl 26048 `"Jost Van Dyke"', add
+label define fbpld_mom_lbl 26049 `"Peter"', add
+label define fbpld_mom_lbl 26050 `"Tortola"', add
+label define fbpld_mom_lbl 26051 `"Virgin Gorda"', add
+label define fbpld_mom_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define fbpld_mom_lbl 26053 `"Cayman Islands"', add
+label define fbpld_mom_lbl 26054 `"Dominica"', add
+label define fbpld_mom_lbl 26055 `"Grenada"', add
+label define fbpld_mom_lbl 26056 `"Montserrat"', add
+label define fbpld_mom_lbl 26057 `"St Kitts-Nevis"', add
+label define fbpld_mom_lbl 26058 `"St Lucia"', add
+label define fbpld_mom_lbl 26059 `"St Vincent"', add
+label define fbpld_mom_lbl 26060 `"Trinidad and Tobago"', add
+label define fbpld_mom_lbl 26061 `"Turks and Caicos"', add
+label define fbpld_mom_lbl 26069 `"British West Indies, ns"', add
+label define fbpld_mom_lbl 26070 `"Other West Indies"', add
+label define fbpld_mom_lbl 26071 `"Aruba"', add
+label define fbpld_mom_lbl 26072 `"Netherlands Antilles"', add
+label define fbpld_mom_lbl 26073 `"Bonaire"', add
+label define fbpld_mom_lbl 26074 `"Curacao"', add
+label define fbpld_mom_lbl 26075 `"Dutch St. Maarten"', add
+label define fbpld_mom_lbl 26076 `"Saba"', add
+label define fbpld_mom_lbl 26077 `"St. Eustatius"', add
+label define fbpld_mom_lbl 26079 `"Dutch Caribbean, ns"', add
+label define fbpld_mom_lbl 26080 `"French St Maarten"', add
+label define fbpld_mom_lbl 26081 `"Guadeloupe"', add
+label define fbpld_mom_lbl 26082 `"Martinique"', add
+label define fbpld_mom_lbl 26083 `"St. Barthelemy"', add
+label define fbpld_mom_lbl 26089 `"French Caribbean, ns"', add
+label define fbpld_mom_lbl 26090 `"Antilles, n.s."', add
+label define fbpld_mom_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define fbpld_mom_lbl 26092 `"Latin America, ns"', add
+label define fbpld_mom_lbl 26093 `"Leeward Islands, ns"', add
+label define fbpld_mom_lbl 26094 `"West Indies, ns"', add
+label define fbpld_mom_lbl 26095 `"Winward Islands"', add
+label define fbpld_mom_lbl 29900 `"Americas, ns"', add
+label define fbpld_mom_lbl 30000 `"South America"', add
+label define fbpld_mom_lbl 30005 `"Argentina"', add
+label define fbpld_mom_lbl 30010 `"Bolivia"', add
+label define fbpld_mom_lbl 30015 `"Brazil"', add
+label define fbpld_mom_lbl 30020 `"Chile"', add
+label define fbpld_mom_lbl 30025 `"Colombia"', add
+label define fbpld_mom_lbl 30030 `"Ecuador"', add
+label define fbpld_mom_lbl 30035 `"French Guiana"', add
+label define fbpld_mom_lbl 30040 `"Guyana/British Guiana"', add
+label define fbpld_mom_lbl 30045 `"Paraguay"', add
+label define fbpld_mom_lbl 30050 `"Peru"', add
+label define fbpld_mom_lbl 30055 `"Suriname"', add
+label define fbpld_mom_lbl 30060 `"Uruguay"', add
+label define fbpld_mom_lbl 30065 `"Venezuela"', add
+label define fbpld_mom_lbl 30090 `"South America, ns"', add
+label define fbpld_mom_lbl 30091 `"South and Central America, n.s."', add
+label define fbpld_mom_lbl 40000 `"Denmark"', add
+label define fbpld_mom_lbl 40010 `"Faroe Islands"', add
+label define fbpld_mom_lbl 40100 `"Finland"', add
+label define fbpld_mom_lbl 40200 `"Iceland"', add
+label define fbpld_mom_lbl 40300 `"Lapland, ns"', add
+label define fbpld_mom_lbl 40400 `"Norway"', add
+label define fbpld_mom_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define fbpld_mom_lbl 40412 `"Jan Meyen"', add
+label define fbpld_mom_lbl 40500 `"Sweden"', add
+label define fbpld_mom_lbl 40600 `"Svalbard"', add
+label define fbpld_mom_lbl 41000 `"England"', add
+label define fbpld_mom_lbl 41010 `"Channel Islands"', add
+label define fbpld_mom_lbl 41011 `"Guernsey"', add
+label define fbpld_mom_lbl 41012 `"Jersey"', add
+label define fbpld_mom_lbl 41020 `"Isle of Man"', add
+label define fbpld_mom_lbl 41100 `"Scotland"', add
+label define fbpld_mom_lbl 41200 `"Wales"', add
+label define fbpld_mom_lbl 41300 `"United Kingdom, ns"', add
+label define fbpld_mom_lbl 41400 `"Ireland"', add
+label define fbpld_mom_lbl 41410 `"Northern Ireland"', add
+label define fbpld_mom_lbl 41900 `"Northern Europe, ns"', add
+label define fbpld_mom_lbl 42000 `"Belgium"', add
+label define fbpld_mom_lbl 42100 `"France"', add
+label define fbpld_mom_lbl 42110 `"Alsace-Lorraine"', add
+label define fbpld_mom_lbl 42111 `"Alsace"', add
+label define fbpld_mom_lbl 42112 `"Lorraine"', add
+label define fbpld_mom_lbl 42200 `"Liechtenstein"', add
+label define fbpld_mom_lbl 42300 `"Luxembourg"', add
+label define fbpld_mom_lbl 42400 `"Monaco"', add
+label define fbpld_mom_lbl 42500 `"Netherlands"', add
+label define fbpld_mom_lbl 42600 `"Switzerland"', add
+label define fbpld_mom_lbl 42900 `"Western Europe, ns"', add
+label define fbpld_mom_lbl 43000 `"Albania"', add
+label define fbpld_mom_lbl 43100 `"Andorra"', add
+label define fbpld_mom_lbl 43200 `"Gibraltar"', add
+label define fbpld_mom_lbl 43300 `"Greece"', add
+label define fbpld_mom_lbl 43310 `"Dodecanese Islands"', add
+label define fbpld_mom_lbl 43320 `"Turkey Greece"', add
+label define fbpld_mom_lbl 43330 `"Macedonia"', add
+label define fbpld_mom_lbl 43400 `"Italy"', add
+label define fbpld_mom_lbl 43500 `"Malta"', add
+label define fbpld_mom_lbl 43600 `"Portugal"', add
+label define fbpld_mom_lbl 43610 `"Azores"', add
+label define fbpld_mom_lbl 43620 `"Madeira Islands"', add
+label define fbpld_mom_lbl 43630 `"Cape Verde Islands"', add
+label define fbpld_mom_lbl 43640 `"St Miguel"', add
+label define fbpld_mom_lbl 43700 `"San Marino"', add
+label define fbpld_mom_lbl 43800 `"Spain"', add
+label define fbpld_mom_lbl 43900 `"Vatican City"', add
+label define fbpld_mom_lbl 44000 `"Southern Europe, ns"', add
+label define fbpld_mom_lbl 45000 `"Austria"', add
+label define fbpld_mom_lbl 45010 `"Austria-Hungary"', add
+label define fbpld_mom_lbl 45020 `"Austria-Graz"', add
+label define fbpld_mom_lbl 45030 `"Austria-Linz"', add
+label define fbpld_mom_lbl 45040 `"Austria-Salzburg"', add
+label define fbpld_mom_lbl 45050 `"Austria-Tyrol"', add
+label define fbpld_mom_lbl 45060 `"Austria-Vienna"', add
+label define fbpld_mom_lbl 45070 `"Austria-Kaernsten"', add
+label define fbpld_mom_lbl 45080 `"Austria-Neustadt"', add
+label define fbpld_mom_lbl 45100 `"Bulgaria"', add
+label define fbpld_mom_lbl 45200 `"Czechoslovakia"', add
+label define fbpld_mom_lbl 45210 `"Bohemia"', add
+label define fbpld_mom_lbl 45211 `"Bohemia-Moravia"', add
+label define fbpld_mom_lbl 45212 `"Slovakia"', add
+label define fbpld_mom_lbl 45213 `"Czech Republic"', add
+label define fbpld_mom_lbl 45300 `"Germany"', add
+label define fbpld_mom_lbl 45301 `"Berlin"', add
+label define fbpld_mom_lbl 45310 `"West Germany"', add
+label define fbpld_mom_lbl 45311 `"Baden"', add
+label define fbpld_mom_lbl 45312 `"Bavaria"', add
+label define fbpld_mom_lbl 45313 `"Bremen"', add
+label define fbpld_mom_lbl 45314 `"Braunschweig"', add
+label define fbpld_mom_lbl 45315 `"Hamburg"', add
+label define fbpld_mom_lbl 45316 `"Hanover"', add
+label define fbpld_mom_lbl 45317 `"Hessen"', add
+label define fbpld_mom_lbl 45318 `"Hesse-Nassau"', add
+label define fbpld_mom_lbl 45319 `"Holstein"', add
+label define fbpld_mom_lbl 45320 `"Lippe"', add
+label define fbpld_mom_lbl 45321 `"Lubeck"', add
+label define fbpld_mom_lbl 45322 `"Oldenburg"', add
+label define fbpld_mom_lbl 45323 `"Rheinland"', add
+label define fbpld_mom_lbl 45324 `"Schleswig"', add
+label define fbpld_mom_lbl 45325 `"Schleswig-Holstein"', add
+label define fbpld_mom_lbl 45326 `"Schwarzburg"', add
+label define fbpld_mom_lbl 45327 `"Waldeck"', add
+label define fbpld_mom_lbl 45328 `"West Berlin"', add
+label define fbpld_mom_lbl 45329 `"Westphalia"', add
+label define fbpld_mom_lbl 45330 `"Wurttemberg"', add
+label define fbpld_mom_lbl 45331 `"Frankfurt"', add
+label define fbpld_mom_lbl 45332 `"Saarland"', add
+label define fbpld_mom_lbl 45333 `"Nordrhein-Westfalen"', add
+label define fbpld_mom_lbl 45340 `"East Germany"', add
+label define fbpld_mom_lbl 45341 `"Anhalt"', add
+label define fbpld_mom_lbl 45342 `"Brandenburg"', add
+label define fbpld_mom_lbl 45343 `"East Berlin"', add
+label define fbpld_mom_lbl 45344 `"Mecklenburg"', add
+label define fbpld_mom_lbl 45345 `"Sachsen-Altenburg"', add
+label define fbpld_mom_lbl 45346 `"Sachsen-Coburg"', add
+label define fbpld_mom_lbl 45347 `"Sachsen-Gotha"', add
+label define fbpld_mom_lbl 45348 `"Sachsen-Meiningen"', add
+label define fbpld_mom_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define fbpld_mom_lbl 45350 `"Saxony"', add
+label define fbpld_mom_lbl 45351 `"Schwerin"', add
+label define fbpld_mom_lbl 45352 `"Strelitz"', add
+label define fbpld_mom_lbl 45353 `"Thuringian States"', add
+label define fbpld_mom_lbl 45360 `"Prussia, nec"', add
+label define fbpld_mom_lbl 45361 `"Hohenzollern"', add
+label define fbpld_mom_lbl 45362 `"Niedersachsen"', add
+label define fbpld_mom_lbl 45400 `"Hungary"', add
+label define fbpld_mom_lbl 45500 `"Poland"', add
+label define fbpld_mom_lbl 45510 `"Austrian Poland"', add
+label define fbpld_mom_lbl 45511 `"Galicia"', add
+label define fbpld_mom_lbl 45520 `"German Poland"', add
+label define fbpld_mom_lbl 45521 `"East Prussia"', add
+label define fbpld_mom_lbl 45522 `"Pomerania"', add
+label define fbpld_mom_lbl 45523 `"Posen"', add
+label define fbpld_mom_lbl 45524 `"Prussian Poland"', add
+label define fbpld_mom_lbl 45525 `"Silesia"', add
+label define fbpld_mom_lbl 45526 `"West Prussia"', add
+label define fbpld_mom_lbl 45530 `"Russian Poland"', add
+label define fbpld_mom_lbl 45600 `"Romania"', add
+label define fbpld_mom_lbl 45610 `"Transylvania"', add
+label define fbpld_mom_lbl 45700 `"Yugoslavia"', add
+label define fbpld_mom_lbl 45710 `"Croatia"', add
+label define fbpld_mom_lbl 45720 `"Montenegro"', add
+label define fbpld_mom_lbl 45730 `"Serbia"', add
+label define fbpld_mom_lbl 45740 `"Bosnia"', add
+label define fbpld_mom_lbl 45750 `"Dalmatia"', add
+label define fbpld_mom_lbl 45760 `"Slovonia"', add
+label define fbpld_mom_lbl 45770 `"Carniola"', add
+label define fbpld_mom_lbl 45780 `"Slovenia"', add
+label define fbpld_mom_lbl 45790 `"Kosovo"', add
+label define fbpld_mom_lbl 45800 `"Central Europe, ns"', add
+label define fbpld_mom_lbl 45900 `"Eastern Europe, ns"', add
+label define fbpld_mom_lbl 46000 `"Estonia"', add
+label define fbpld_mom_lbl 46100 `"Latvia"', add
+label define fbpld_mom_lbl 46200 `"Lithuania"', add
+label define fbpld_mom_lbl 46300 `"Baltic States, ns"', add
+label define fbpld_mom_lbl 46500 `"Other USSR/Russia"', add
+label define fbpld_mom_lbl 46510 `"Byelorussia"', add
+label define fbpld_mom_lbl 46520 `"Moldavia"', add
+label define fbpld_mom_lbl 46521 `"Bessarabia"', add
+label define fbpld_mom_lbl 46530 `"Ukraine"', add
+label define fbpld_mom_lbl 46540 `"Armenia"', add
+label define fbpld_mom_lbl 46541 `"Azerbaijan"', add
+label define fbpld_mom_lbl 46542 `"Republic of Georgia"', add
+label define fbpld_mom_lbl 46543 `"Kazakhstan"', add
+label define fbpld_mom_lbl 46544 `"Kirghizia"', add
+label define fbpld_mom_lbl 46545 `"Tadzhik"', add
+label define fbpld_mom_lbl 46546 `"Turkmenistan"', add
+label define fbpld_mom_lbl 46547 `"Uzbekistan"', add
+label define fbpld_mom_lbl 46548 `"Siberia"', add
+label define fbpld_mom_lbl 46590 `"USSR, ns"', add
+label define fbpld_mom_lbl 49900 `"Europe, nec/ns"', add
+label define fbpld_mom_lbl 50000 `"China"', add
+label define fbpld_mom_lbl 50010 `"Hong Kong"', add
+label define fbpld_mom_lbl 50020 `"Macau"', add
+label define fbpld_mom_lbl 50030 `"Mongolia"', add
+label define fbpld_mom_lbl 50040 `"Taiwan"', add
+label define fbpld_mom_lbl 50100 `"Japan"', add
+label define fbpld_mom_lbl 50200 `"Korea"', add
+label define fbpld_mom_lbl 50210 `"North Korea"', add
+label define fbpld_mom_lbl 50220 `"South Korea"', add
+label define fbpld_mom_lbl 50900 `"East Asia, n.s."', add
+label define fbpld_mom_lbl 51000 `"Brunei"', add
+label define fbpld_mom_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define fbpld_mom_lbl 51200 `"Indonesia"', add
+label define fbpld_mom_lbl 51210 `"East Indies"', add
+label define fbpld_mom_lbl 51220 `"East Timor"', add
+label define fbpld_mom_lbl 51300 `"Laos"', add
+label define fbpld_mom_lbl 51400 `"Malaysia"', add
+label define fbpld_mom_lbl 51500 `"Philippines"', add
+label define fbpld_mom_lbl 51600 `"Singapore"', add
+label define fbpld_mom_lbl 51700 `"Thailand"', add
+label define fbpld_mom_lbl 51800 `"Vietnam"', add
+label define fbpld_mom_lbl 51900 `"Southeast Asia, ns"', add
+label define fbpld_mom_lbl 51910 `"Indochina, ns"', add
+label define fbpld_mom_lbl 52000 `"Afghanistan"', add
+label define fbpld_mom_lbl 52100 `"India"', add
+label define fbpld_mom_lbl 52110 `"Bangladesh"', add
+label define fbpld_mom_lbl 52120 `"Bhutan"', add
+label define fbpld_mom_lbl 52130 `"Burma (Myanmar)"', add
+label define fbpld_mom_lbl 52140 `"Pakistan"', add
+label define fbpld_mom_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define fbpld_mom_lbl 52200 `"Iran"', add
+label define fbpld_mom_lbl 52300 `"Maldives"', add
+label define fbpld_mom_lbl 52400 `"Nepal"', add
+label define fbpld_mom_lbl 53000 `"Bahrain"', add
+label define fbpld_mom_lbl 53100 `"Cyprus"', add
+label define fbpld_mom_lbl 53200 `"Iraq"', add
+label define fbpld_mom_lbl 53210 `"Mesopotamia"', add
+label define fbpld_mom_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define fbpld_mom_lbl 53400 `"Israel/Palestine"', add
+label define fbpld_mom_lbl 53410 `"Gaza Strip"', add
+label define fbpld_mom_lbl 53420 `"Palestine"', add
+label define fbpld_mom_lbl 53430 `"West Bank"', add
+label define fbpld_mom_lbl 53440 `"Israel"', add
+label define fbpld_mom_lbl 53500 `"Jordan"', add
+label define fbpld_mom_lbl 53600 `"Kuwait"', add
+label define fbpld_mom_lbl 53700 `"Lebanon"', add
+label define fbpld_mom_lbl 53800 `"Oman"', add
+label define fbpld_mom_lbl 53900 `"Qatar"', add
+label define fbpld_mom_lbl 54000 `"Saudi Arabia"', add
+label define fbpld_mom_lbl 54100 `"Syria"', add
+label define fbpld_mom_lbl 54200 `"Turkey"', add
+label define fbpld_mom_lbl 54210 `"European Turkey"', add
+label define fbpld_mom_lbl 54220 `"Asian Turkey"', add
+label define fbpld_mom_lbl 54300 `"United Arab Emirates"', add
+label define fbpld_mom_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define fbpld_mom_lbl 54500 `"Yemen, PDR (South)"', add
+label define fbpld_mom_lbl 54600 `"Persian Gulf States, ns"', add
+label define fbpld_mom_lbl 54700 `"Middle East, ns"', add
+label define fbpld_mom_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define fbpld_mom_lbl 54900 `"Asia Minor, ns"', add
+label define fbpld_mom_lbl 55000 `"South Asia, n.e.c."', add
+label define fbpld_mom_lbl 59900 `"Asia, nec/ns"', add
+label define fbpld_mom_lbl 60000 `"Africa"', add
+label define fbpld_mom_lbl 60010 `"Northern Africa"', add
+label define fbpld_mom_lbl 60011 `"Algeria"', add
+label define fbpld_mom_lbl 60012 `"Egypt/United Arab Rep"', add
+label define fbpld_mom_lbl 60013 `"Libya"', add
+label define fbpld_mom_lbl 60014 `"Morocco"', add
+label define fbpld_mom_lbl 60015 `"Sudan"', add
+label define fbpld_mom_lbl 60016 `"Tunisia"', add
+label define fbpld_mom_lbl 60017 `"Western Sahara"', add
+label define fbpld_mom_lbl 60019 `"North Africa, ns"', add
+label define fbpld_mom_lbl 60020 `"Benin"', add
+label define fbpld_mom_lbl 60021 `"Burkina Faso"', add
+label define fbpld_mom_lbl 60022 `"Gambia"', add
+label define fbpld_mom_lbl 60023 `"Ghana"', add
+label define fbpld_mom_lbl 60024 `"Guinea"', add
+label define fbpld_mom_lbl 60025 `"Guinea-Bissau"', add
+label define fbpld_mom_lbl 60026 `"Ivory Coast"', add
+label define fbpld_mom_lbl 60027 `"Liberia"', add
+label define fbpld_mom_lbl 60028 `"Mali"', add
+label define fbpld_mom_lbl 60029 `"Mauritania"', add
+label define fbpld_mom_lbl 60030 `"Niger"', add
+label define fbpld_mom_lbl 60031 `"Nigeria"', add
+label define fbpld_mom_lbl 60032 `"Senegal"', add
+label define fbpld_mom_lbl 60033 `"Sierra Leone"', add
+label define fbpld_mom_lbl 60034 `"Togo"', add
+label define fbpld_mom_lbl 60038 `"Western Africa, n.s."', add
+label define fbpld_mom_lbl 60039 `"French West Africa, ns"', add
+label define fbpld_mom_lbl 60040 `"British Indian Ocean Territory"', add
+label define fbpld_mom_lbl 60041 `"Burundi"', add
+label define fbpld_mom_lbl 60042 `"Comoros"', add
+label define fbpld_mom_lbl 60043 `"Djibouti"', add
+label define fbpld_mom_lbl 60044 `"Ethiopia"', add
+label define fbpld_mom_lbl 60045 `"Kenya"', add
+label define fbpld_mom_lbl 60046 `"Madagascar"', add
+label define fbpld_mom_lbl 60047 `"Malawi"', add
+label define fbpld_mom_lbl 60048 `"Mauritius"', add
+label define fbpld_mom_lbl 60049 `"Mozambique"', add
+label define fbpld_mom_lbl 60050 `"Reunion"', add
+label define fbpld_mom_lbl 60051 `"Rwanda"', add
+label define fbpld_mom_lbl 60052 `"Seychelles"', add
+label define fbpld_mom_lbl 60053 `"Somalia"', add
+label define fbpld_mom_lbl 60054 `"Tanzania"', add
+label define fbpld_mom_lbl 60055 `"Uganda"', add
+label define fbpld_mom_lbl 60056 `"Zambia"', add
+label define fbpld_mom_lbl 60057 `"Zimbabwe"', add
+label define fbpld_mom_lbl 60058 `"Bassas de India"', add
+label define fbpld_mom_lbl 60059 `"Europa"', add
+label define fbpld_mom_lbl 60060 `"Gloriosos"', add
+label define fbpld_mom_lbl 60061 `"Juan de Nova"', add
+label define fbpld_mom_lbl 60062 `"Mayotte"', add
+label define fbpld_mom_lbl 60063 `"Tromelin"', add
+label define fbpld_mom_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define fbpld_mom_lbl 60065 `"Eritrea"', add
+label define fbpld_mom_lbl 60070 `"Central Africa"', add
+label define fbpld_mom_lbl 60071 `"Angola"', add
+label define fbpld_mom_lbl 60072 `"Cameroon"', add
+label define fbpld_mom_lbl 60073 `"Central African Republic"', add
+label define fbpld_mom_lbl 60074 `"Chad"', add
+label define fbpld_mom_lbl 60075 `"Congo"', add
+label define fbpld_mom_lbl 60076 `"Equatorial Guinea"', add
+label define fbpld_mom_lbl 60077 `"Gabon"', add
+label define fbpld_mom_lbl 60078 `"Sao Tome and Principe"', add
+label define fbpld_mom_lbl 60079 `"Zaire"', add
+label define fbpld_mom_lbl 60080 `"Central Africa, ns"', add
+label define fbpld_mom_lbl 60081 `"Equatorial Africa, ns"', add
+label define fbpld_mom_lbl 60082 `"French Equatorial Africa, ns"', add
+label define fbpld_mom_lbl 60090 `"Southern Africa"', add
+label define fbpld_mom_lbl 60091 `"Botswana"', add
+label define fbpld_mom_lbl 60092 `"Lesotho"', add
+label define fbpld_mom_lbl 60093 `"Namibia"', add
+label define fbpld_mom_lbl 60094 `"South Africa (Union of)"', add
+label define fbpld_mom_lbl 60095 `"Swaziland"', add
+label define fbpld_mom_lbl 60096 `"Southern Africa, n.s."', add
+label define fbpld_mom_lbl 60099 `"Africa, ns/nec"', add
+label define fbpld_mom_lbl 70000 `"Australia and New Zealand"', add
+label define fbpld_mom_lbl 70010 `"Australia"', add
+label define fbpld_mom_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define fbpld_mom_lbl 70012 `"Coral Sea Islands Territory"', add
+label define fbpld_mom_lbl 70013 `"Christmas Island"', add
+label define fbpld_mom_lbl 70014 `"Cocos Islands"', add
+label define fbpld_mom_lbl 70020 `"New Zealand"', add
+label define fbpld_mom_lbl 71000 `"Pacific Islands"', add
+label define fbpld_mom_lbl 71010 `"New Caledonia"', add
+label define fbpld_mom_lbl 71012 `"Papua New Guinea"', add
+label define fbpld_mom_lbl 71013 `"Solomon Islands"', add
+label define fbpld_mom_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define fbpld_mom_lbl 71016 `"Melanesia, ns"', add
+label define fbpld_mom_lbl 71017 `"Norfolk Islands"', add
+label define fbpld_mom_lbl 71018 `"Niue"', add
+label define fbpld_mom_lbl 71020 `"Cook Islands"', add
+label define fbpld_mom_lbl 71021 `"Fiji"', add
+label define fbpld_mom_lbl 71022 `"French Polynesia"', add
+label define fbpld_mom_lbl 71023 `"Tonga"', add
+label define fbpld_mom_lbl 71024 `"Wallis and Futuna Islands"', add
+label define fbpld_mom_lbl 71025 `"Western Samoa"', add
+label define fbpld_mom_lbl 71026 `"Pitcairn Island"', add
+label define fbpld_mom_lbl 71027 `"Tokelau"', add
+label define fbpld_mom_lbl 71028 `"Tuvalu"', add
+label define fbpld_mom_lbl 71029 `"Polynesia, n.s."', add
+label define fbpld_mom_lbl 71032 `"Kiribati"', add
+label define fbpld_mom_lbl 71033 `"Canton and Enderbury"', add
+label define fbpld_mom_lbl 71034 `"Nauru"', add
+label define fbpld_mom_lbl 71039 `"Micronesia, ns"', add
+label define fbpld_mom_lbl 71040 `"US Pacific Trust Territories"', add
+label define fbpld_mom_lbl 71041 `"Marshall Islands"', add
+label define fbpld_mom_lbl 71042 `"Micronesia"', add
+label define fbpld_mom_lbl 71043 `"Kosrae"', add
+label define fbpld_mom_lbl 71044 `"Pohnpei"', add
+label define fbpld_mom_lbl 71045 `"Truk"', add
+label define fbpld_mom_lbl 71046 `"Yap"', add
+label define fbpld_mom_lbl 71047 `"Northern Mariana Islands"', add
+label define fbpld_mom_lbl 71048 `"Palau"', add
+label define fbpld_mom_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define fbpld_mom_lbl 71050 `"Clipperton Island"', add
+label define fbpld_mom_lbl 71090 `"Oceania, ns/nec"', add
+label define fbpld_mom_lbl 80000 `"Antarctica, ns/nec"', add
+label define fbpld_mom_lbl 80010 `"Bouvet Islands"', add
+label define fbpld_mom_lbl 80020 `"British Antarctic Terr."', add
+label define fbpld_mom_lbl 80030 `"Dronning Maud Land"', add
+label define fbpld_mom_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define fbpld_mom_lbl 80050 `"Heard and McDonald Islands"', add
+label define fbpld_mom_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define fbpld_mom_lbl 90010 `"Abroad, ns"', add
+label define fbpld_mom_lbl 90011 `"Abroad (US citizen)"', add
+label define fbpld_mom_lbl 90020 `"At sea"', add
+label define fbpld_mom_lbl 90021 `"At sea (US citizen)"', add
+label define fbpld_mom_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define fbpld_mom_lbl 95000 `"Other n.e.c."', add
+label define fbpld_mom_lbl 99700 `"Unknown"', add
+label define fbpld_mom_lbl 99800 `"Illegible"', add
+label define fbpld_mom_lbl 99900 `"Missing/blank"', add
+label values fbpld_mom fbpld_mom_lbl
+
+label define fbpld_pop_lbl 00000 `"Not Applicable"'
+label define fbpld_pop_lbl 00100 `"Alabama"', add
+label define fbpld_pop_lbl 00200 `"Alaska"', add
+label define fbpld_pop_lbl 00400 `"Arizona"', add
+label define fbpld_pop_lbl 00500 `"Arkansas"', add
+label define fbpld_pop_lbl 00600 `"California"', add
+label define fbpld_pop_lbl 00800 `"Colorado"', add
+label define fbpld_pop_lbl 00900 `"Connecticut"', add
+label define fbpld_pop_lbl 01000 `"Delaware"', add
+label define fbpld_pop_lbl 01100 `"District of Columbia"', add
+label define fbpld_pop_lbl 01200 `"Florida"', add
+label define fbpld_pop_lbl 01300 `"Georgia"', add
+label define fbpld_pop_lbl 01500 `"Hawaii"', add
+label define fbpld_pop_lbl 01600 `"Idaho"', add
+label define fbpld_pop_lbl 01610 `"Idaho Territory"', add
+label define fbpld_pop_lbl 01700 `"Illinois"', add
+label define fbpld_pop_lbl 01800 `"Indiana"', add
+label define fbpld_pop_lbl 01900 `"Iowa"', add
+label define fbpld_pop_lbl 02000 `"Kansas"', add
+label define fbpld_pop_lbl 02100 `"Kentucky"', add
+label define fbpld_pop_lbl 02200 `"Louisiana"', add
+label define fbpld_pop_lbl 02300 `"Maine"', add
+label define fbpld_pop_lbl 02400 `"Maryland"', add
+label define fbpld_pop_lbl 02500 `"Massachusetts"', add
+label define fbpld_pop_lbl 02600 `"Michigan"', add
+label define fbpld_pop_lbl 02700 `"Minnesota"', add
+label define fbpld_pop_lbl 02800 `"Mississippi"', add
+label define fbpld_pop_lbl 02900 `"Missouri"', add
+label define fbpld_pop_lbl 03000 `"Montana"', add
+label define fbpld_pop_lbl 03100 `"Nebraska"', add
+label define fbpld_pop_lbl 03200 `"Nevada"', add
+label define fbpld_pop_lbl 03300 `"New Hampshire"', add
+label define fbpld_pop_lbl 03400 `"New Jersey"', add
+label define fbpld_pop_lbl 03500 `"New Mexico"', add
+label define fbpld_pop_lbl 03510 `"New Mexico Territory"', add
+label define fbpld_pop_lbl 03600 `"New York"', add
+label define fbpld_pop_lbl 03700 `"North Carolina"', add
+label define fbpld_pop_lbl 03800 `"North Dakota"', add
+label define fbpld_pop_lbl 03900 `"Ohio"', add
+label define fbpld_pop_lbl 04000 `"Oklahoma"', add
+label define fbpld_pop_lbl 04010 `"Indian Territory"', add
+label define fbpld_pop_lbl 04100 `"Oregon"', add
+label define fbpld_pop_lbl 04200 `"Pennsylvania"', add
+label define fbpld_pop_lbl 04400 `"Rhode Island"', add
+label define fbpld_pop_lbl 04500 `"South Carolina"', add
+label define fbpld_pop_lbl 04600 `"South Dakota"', add
+label define fbpld_pop_lbl 04610 `"Dakota Territory"', add
+label define fbpld_pop_lbl 04700 `"Tennessee"', add
+label define fbpld_pop_lbl 04800 `"Texas"', add
+label define fbpld_pop_lbl 04900 `"Utah"', add
+label define fbpld_pop_lbl 04910 `"Utah Territory"', add
+label define fbpld_pop_lbl 05000 `"Vermont"', add
+label define fbpld_pop_lbl 05100 `"Virginia"', add
+label define fbpld_pop_lbl 05300 `"Washington"', add
+label define fbpld_pop_lbl 05400 `"West Virginia"', add
+label define fbpld_pop_lbl 05500 `"Wisconsin"', add
+label define fbpld_pop_lbl 05600 `"Wyoming"', add
+label define fbpld_pop_lbl 05610 `"Wyoming Territory"', add
+label define fbpld_pop_lbl 09000 `"Native American"', add
+label define fbpld_pop_lbl 09900 `"United States, ns"', add
+label define fbpld_pop_lbl 10000 `"American Samoa"', add
+label define fbpld_pop_lbl 10010 `"Samoa, 1940-1950"', add
+label define fbpld_pop_lbl 10500 `"Guam"', add
+label define fbpld_pop_lbl 11000 `"Puerto Rico"', add
+label define fbpld_pop_lbl 11500 `"US Virgin Islands"', add
+label define fbpld_pop_lbl 11510 `"St Croix"', add
+label define fbpld_pop_lbl 11520 `"St. John"', add
+label define fbpld_pop_lbl 11530 `"St Thomas"', add
+label define fbpld_pop_lbl 12000 `"Other US Possessions"', add
+label define fbpld_pop_lbl 12010 `"Johnston Atoll"', add
+label define fbpld_pop_lbl 12020 `"Midway Islands"', add
+label define fbpld_pop_lbl 12030 `"Wake Island"', add
+label define fbpld_pop_lbl 12040 `"Other US Caribbean Islands"', add
+label define fbpld_pop_lbl 12041 `"Navassa Island"', add
+label define fbpld_pop_lbl 12050 `"Other US Pacific Is."', add
+label define fbpld_pop_lbl 12051 `"Baker Island"', add
+label define fbpld_pop_lbl 12052 `"Howland Island"', add
+label define fbpld_pop_lbl 12053 `"Jarvis Island"', add
+label define fbpld_pop_lbl 12054 `"Kingman Reef"', add
+label define fbpld_pop_lbl 12055 `"Palmyra Atoll"', add
+label define fbpld_pop_lbl 12056 `"Canton and Enderbury Island"', add
+label define fbpld_pop_lbl 12090 `"US outlying areas, ns"', add
+label define fbpld_pop_lbl 12091 `"US Possessions, ns"', add
+label define fbpld_pop_lbl 12092 `"US territory, ns"', add
+label define fbpld_pop_lbl 15000 `"Canada"', add
+label define fbpld_pop_lbl 15010 `"English Canada"', add
+label define fbpld_pop_lbl 15011 `"British Columbia"', add
+label define fbpld_pop_lbl 15013 `"Alberta"', add
+label define fbpld_pop_lbl 15015 `"Saskatchewan"', add
+label define fbpld_pop_lbl 15017 `"Northwest"', add
+label define fbpld_pop_lbl 15019 `"Ruperts Land"', add
+label define fbpld_pop_lbl 15020 `"Manitoba"', add
+label define fbpld_pop_lbl 15021 `"Red River"', add
+label define fbpld_pop_lbl 15030 `"Ontario/Upper Canada"', add
+label define fbpld_pop_lbl 15031 `"Upper Canada"', add
+label define fbpld_pop_lbl 15032 `"Canada West"', add
+label define fbpld_pop_lbl 15040 `"New Brunswick"', add
+label define fbpld_pop_lbl 15042 `"Canada West"', add
+label define fbpld_pop_lbl 15050 `"Nova Scotia"', add
+label define fbpld_pop_lbl 15051 `"Cape Breton"', add
+label define fbpld_pop_lbl 15052 `"Halifax"', add
+label define fbpld_pop_lbl 15060 `"Prince Edward Island"', add
+label define fbpld_pop_lbl 15070 `"Newfoundland"', add
+label define fbpld_pop_lbl 15080 `"French Canada"', add
+label define fbpld_pop_lbl 15081 `"Quebec"', add
+label define fbpld_pop_lbl 15082 `"Lower Canada"', add
+label define fbpld_pop_lbl 15083 `"Canada East"', add
+label define fbpld_pop_lbl 15500 `"St Pierre and Miquelon"', add
+label define fbpld_pop_lbl 16000 `"Atlantic Islands"', add
+label define fbpld_pop_lbl 16010 `"Bermuda"', add
+label define fbpld_pop_lbl 16020 `"Cape Verde"', add
+label define fbpld_pop_lbl 16030 `"Falkland Islands"', add
+label define fbpld_pop_lbl 16040 `"Greenland"', add
+label define fbpld_pop_lbl 16050 `"St Helena and Ascension"', add
+label define fbpld_pop_lbl 16060 `"Canary Islands"', add
+label define fbpld_pop_lbl 19900 `"North America, n.s."', add
+label define fbpld_pop_lbl 20000 `"Mexico"', add
+label define fbpld_pop_lbl 21000 `"Central America"', add
+label define fbpld_pop_lbl 21010 `"Belize/British Honduras"', add
+label define fbpld_pop_lbl 21020 `"Costa Rica"', add
+label define fbpld_pop_lbl 21030 `"El Salvador"', add
+label define fbpld_pop_lbl 21040 `"Guatemala"', add
+label define fbpld_pop_lbl 21050 `"Honduras"', add
+label define fbpld_pop_lbl 21060 `"Nicaragua"', add
+label define fbpld_pop_lbl 21070 `"Panama"', add
+label define fbpld_pop_lbl 21071 `"Canal Zone"', add
+label define fbpld_pop_lbl 21090 `"Central America, ns"', add
+label define fbpld_pop_lbl 25000 `"Cuba"', add
+label define fbpld_pop_lbl 26000 `"West Indies"', add
+label define fbpld_pop_lbl 26010 `"Dominican Republic"', add
+label define fbpld_pop_lbl 26020 `"Haiti"', add
+label define fbpld_pop_lbl 26030 `"Jamaica"', add
+label define fbpld_pop_lbl 26040 `"British West Indies"', add
+label define fbpld_pop_lbl 26041 `"Anguilla"', add
+label define fbpld_pop_lbl 26042 `"Antigua-Barbuda"', add
+label define fbpld_pop_lbl 26043 `"Bahamas"', add
+label define fbpld_pop_lbl 26044 `"Barbados"', add
+label define fbpld_pop_lbl 26045 `"British Virgin Islands"', add
+label define fbpld_pop_lbl 26046 `"Anegada"', add
+label define fbpld_pop_lbl 26047 `"Cooper"', add
+label define fbpld_pop_lbl 26048 `"Jost Van Dyke"', add
+label define fbpld_pop_lbl 26049 `"Peter"', add
+label define fbpld_pop_lbl 26050 `"Tortola"', add
+label define fbpld_pop_lbl 26051 `"Virgin Gorda"', add
+label define fbpld_pop_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define fbpld_pop_lbl 26053 `"Cayman Islands"', add
+label define fbpld_pop_lbl 26054 `"Dominica"', add
+label define fbpld_pop_lbl 26055 `"Grenada"', add
+label define fbpld_pop_lbl 26056 `"Montserrat"', add
+label define fbpld_pop_lbl 26057 `"St Kitts-Nevis"', add
+label define fbpld_pop_lbl 26058 `"St Lucia"', add
+label define fbpld_pop_lbl 26059 `"St Vincent"', add
+label define fbpld_pop_lbl 26060 `"Trinidad and Tobago"', add
+label define fbpld_pop_lbl 26061 `"Turks and Caicos"', add
+label define fbpld_pop_lbl 26069 `"British West Indies, ns"', add
+label define fbpld_pop_lbl 26070 `"Other West Indies"', add
+label define fbpld_pop_lbl 26071 `"Aruba"', add
+label define fbpld_pop_lbl 26072 `"Netherlands Antilles"', add
+label define fbpld_pop_lbl 26073 `"Bonaire"', add
+label define fbpld_pop_lbl 26074 `"Curacao"', add
+label define fbpld_pop_lbl 26075 `"Dutch St. Maarten"', add
+label define fbpld_pop_lbl 26076 `"Saba"', add
+label define fbpld_pop_lbl 26077 `"St. Eustatius"', add
+label define fbpld_pop_lbl 26079 `"Dutch Caribbean, ns"', add
+label define fbpld_pop_lbl 26080 `"French St Maarten"', add
+label define fbpld_pop_lbl 26081 `"Guadeloupe"', add
+label define fbpld_pop_lbl 26082 `"Martinique"', add
+label define fbpld_pop_lbl 26083 `"St. Barthelemy"', add
+label define fbpld_pop_lbl 26089 `"French Caribbean, ns"', add
+label define fbpld_pop_lbl 26090 `"Antilles, n.s."', add
+label define fbpld_pop_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define fbpld_pop_lbl 26092 `"Latin America, ns"', add
+label define fbpld_pop_lbl 26093 `"Leeward Islands, ns"', add
+label define fbpld_pop_lbl 26094 `"West Indies, ns"', add
+label define fbpld_pop_lbl 26095 `"Winward Islands"', add
+label define fbpld_pop_lbl 29900 `"Americas, ns"', add
+label define fbpld_pop_lbl 30000 `"South America"', add
+label define fbpld_pop_lbl 30005 `"Argentina"', add
+label define fbpld_pop_lbl 30010 `"Bolivia"', add
+label define fbpld_pop_lbl 30015 `"Brazil"', add
+label define fbpld_pop_lbl 30020 `"Chile"', add
+label define fbpld_pop_lbl 30025 `"Colombia"', add
+label define fbpld_pop_lbl 30030 `"Ecuador"', add
+label define fbpld_pop_lbl 30035 `"French Guiana"', add
+label define fbpld_pop_lbl 30040 `"Guyana/British Guiana"', add
+label define fbpld_pop_lbl 30045 `"Paraguay"', add
+label define fbpld_pop_lbl 30050 `"Peru"', add
+label define fbpld_pop_lbl 30055 `"Suriname"', add
+label define fbpld_pop_lbl 30060 `"Uruguay"', add
+label define fbpld_pop_lbl 30065 `"Venezuela"', add
+label define fbpld_pop_lbl 30090 `"South America, ns"', add
+label define fbpld_pop_lbl 30091 `"South and Central America, n.s."', add
+label define fbpld_pop_lbl 40000 `"Denmark"', add
+label define fbpld_pop_lbl 40010 `"Faroe Islands"', add
+label define fbpld_pop_lbl 40100 `"Finland"', add
+label define fbpld_pop_lbl 40200 `"Iceland"', add
+label define fbpld_pop_lbl 40300 `"Lapland, ns"', add
+label define fbpld_pop_lbl 40400 `"Norway"', add
+label define fbpld_pop_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define fbpld_pop_lbl 40412 `"Jan Meyen"', add
+label define fbpld_pop_lbl 40500 `"Sweden"', add
+label define fbpld_pop_lbl 40600 `"Svalbard"', add
+label define fbpld_pop_lbl 41000 `"England"', add
+label define fbpld_pop_lbl 41010 `"Channel Islands"', add
+label define fbpld_pop_lbl 41011 `"Guernsey"', add
+label define fbpld_pop_lbl 41012 `"Jersey"', add
+label define fbpld_pop_lbl 41020 `"Isle of Man"', add
+label define fbpld_pop_lbl 41100 `"Scotland"', add
+label define fbpld_pop_lbl 41200 `"Wales"', add
+label define fbpld_pop_lbl 41300 `"United Kingdom, ns"', add
+label define fbpld_pop_lbl 41400 `"Ireland"', add
+label define fbpld_pop_lbl 41410 `"Northern Ireland"', add
+label define fbpld_pop_lbl 41900 `"Northern Europe, ns"', add
+label define fbpld_pop_lbl 42000 `"Belgium"', add
+label define fbpld_pop_lbl 42100 `"France"', add
+label define fbpld_pop_lbl 42110 `"Alsace-Lorraine"', add
+label define fbpld_pop_lbl 42111 `"Alsace"', add
+label define fbpld_pop_lbl 42112 `"Lorraine"', add
+label define fbpld_pop_lbl 42200 `"Liechtenstein"', add
+label define fbpld_pop_lbl 42300 `"Luxembourg"', add
+label define fbpld_pop_lbl 42400 `"Monaco"', add
+label define fbpld_pop_lbl 42500 `"Netherlands"', add
+label define fbpld_pop_lbl 42600 `"Switzerland"', add
+label define fbpld_pop_lbl 42900 `"Western Europe, ns"', add
+label define fbpld_pop_lbl 43000 `"Albania"', add
+label define fbpld_pop_lbl 43100 `"Andorra"', add
+label define fbpld_pop_lbl 43200 `"Gibraltar"', add
+label define fbpld_pop_lbl 43300 `"Greece"', add
+label define fbpld_pop_lbl 43310 `"Dodecanese Islands"', add
+label define fbpld_pop_lbl 43320 `"Turkey Greece"', add
+label define fbpld_pop_lbl 43330 `"Macedonia"', add
+label define fbpld_pop_lbl 43400 `"Italy"', add
+label define fbpld_pop_lbl 43500 `"Malta"', add
+label define fbpld_pop_lbl 43600 `"Portugal"', add
+label define fbpld_pop_lbl 43610 `"Azores"', add
+label define fbpld_pop_lbl 43620 `"Madeira Islands"', add
+label define fbpld_pop_lbl 43630 `"Cape Verde Islands"', add
+label define fbpld_pop_lbl 43640 `"St Miguel"', add
+label define fbpld_pop_lbl 43700 `"San Marino"', add
+label define fbpld_pop_lbl 43800 `"Spain"', add
+label define fbpld_pop_lbl 43900 `"Vatican City"', add
+label define fbpld_pop_lbl 44000 `"Southern Europe, ns"', add
+label define fbpld_pop_lbl 45000 `"Austria"', add
+label define fbpld_pop_lbl 45010 `"Austria-Hungary"', add
+label define fbpld_pop_lbl 45020 `"Austria-Graz"', add
+label define fbpld_pop_lbl 45030 `"Austria-Linz"', add
+label define fbpld_pop_lbl 45040 `"Austria-Salzburg"', add
+label define fbpld_pop_lbl 45050 `"Austria-Tyrol"', add
+label define fbpld_pop_lbl 45060 `"Austria-Vienna"', add
+label define fbpld_pop_lbl 45070 `"Austria-Kaernsten"', add
+label define fbpld_pop_lbl 45080 `"Austria-Neustadt"', add
+label define fbpld_pop_lbl 45100 `"Bulgaria"', add
+label define fbpld_pop_lbl 45200 `"Czechoslovakia"', add
+label define fbpld_pop_lbl 45210 `"Bohemia"', add
+label define fbpld_pop_lbl 45211 `"Bohemia-Moravia"', add
+label define fbpld_pop_lbl 45212 `"Slovakia"', add
+label define fbpld_pop_lbl 45213 `"Czech Republic"', add
+label define fbpld_pop_lbl 45300 `"Germany"', add
+label define fbpld_pop_lbl 45301 `"Berlin"', add
+label define fbpld_pop_lbl 45310 `"West Germany"', add
+label define fbpld_pop_lbl 45311 `"Baden"', add
+label define fbpld_pop_lbl 45312 `"Bavaria"', add
+label define fbpld_pop_lbl 45313 `"Bremen"', add
+label define fbpld_pop_lbl 45314 `"Braunschweig"', add
+label define fbpld_pop_lbl 45315 `"Hamburg"', add
+label define fbpld_pop_lbl 45316 `"Hanover"', add
+label define fbpld_pop_lbl 45317 `"Hessen"', add
+label define fbpld_pop_lbl 45318 `"Hesse-Nassau"', add
+label define fbpld_pop_lbl 45319 `"Holstein"', add
+label define fbpld_pop_lbl 45320 `"Lippe"', add
+label define fbpld_pop_lbl 45321 `"Lubeck"', add
+label define fbpld_pop_lbl 45322 `"Oldenburg"', add
+label define fbpld_pop_lbl 45323 `"Rheinland"', add
+label define fbpld_pop_lbl 45324 `"Schleswig"', add
+label define fbpld_pop_lbl 45325 `"Schleswig-Holstein"', add
+label define fbpld_pop_lbl 45326 `"Schwarzburg"', add
+label define fbpld_pop_lbl 45327 `"Waldeck"', add
+label define fbpld_pop_lbl 45328 `"West Berlin"', add
+label define fbpld_pop_lbl 45329 `"Westphalia"', add
+label define fbpld_pop_lbl 45330 `"Wurttemberg"', add
+label define fbpld_pop_lbl 45331 `"Frankfurt"', add
+label define fbpld_pop_lbl 45332 `"Saarland"', add
+label define fbpld_pop_lbl 45333 `"Nordrhein-Westfalen"', add
+label define fbpld_pop_lbl 45340 `"East Germany"', add
+label define fbpld_pop_lbl 45341 `"Anhalt"', add
+label define fbpld_pop_lbl 45342 `"Brandenburg"', add
+label define fbpld_pop_lbl 45343 `"East Berlin"', add
+label define fbpld_pop_lbl 45344 `"Mecklenburg"', add
+label define fbpld_pop_lbl 45345 `"Sachsen-Altenburg"', add
+label define fbpld_pop_lbl 45346 `"Sachsen-Coburg"', add
+label define fbpld_pop_lbl 45347 `"Sachsen-Gotha"', add
+label define fbpld_pop_lbl 45348 `"Sachsen-Meiningen"', add
+label define fbpld_pop_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define fbpld_pop_lbl 45350 `"Saxony"', add
+label define fbpld_pop_lbl 45351 `"Schwerin"', add
+label define fbpld_pop_lbl 45352 `"Strelitz"', add
+label define fbpld_pop_lbl 45353 `"Thuringian States"', add
+label define fbpld_pop_lbl 45360 `"Prussia, nec"', add
+label define fbpld_pop_lbl 45361 `"Hohenzollern"', add
+label define fbpld_pop_lbl 45362 `"Niedersachsen"', add
+label define fbpld_pop_lbl 45400 `"Hungary"', add
+label define fbpld_pop_lbl 45500 `"Poland"', add
+label define fbpld_pop_lbl 45510 `"Austrian Poland"', add
+label define fbpld_pop_lbl 45511 `"Galicia"', add
+label define fbpld_pop_lbl 45520 `"German Poland"', add
+label define fbpld_pop_lbl 45521 `"East Prussia"', add
+label define fbpld_pop_lbl 45522 `"Pomerania"', add
+label define fbpld_pop_lbl 45523 `"Posen"', add
+label define fbpld_pop_lbl 45524 `"Prussian Poland"', add
+label define fbpld_pop_lbl 45525 `"Silesia"', add
+label define fbpld_pop_lbl 45526 `"West Prussia"', add
+label define fbpld_pop_lbl 45530 `"Russian Poland"', add
+label define fbpld_pop_lbl 45600 `"Romania"', add
+label define fbpld_pop_lbl 45610 `"Transylvania"', add
+label define fbpld_pop_lbl 45700 `"Yugoslavia"', add
+label define fbpld_pop_lbl 45710 `"Croatia"', add
+label define fbpld_pop_lbl 45720 `"Montenegro"', add
+label define fbpld_pop_lbl 45730 `"Serbia"', add
+label define fbpld_pop_lbl 45740 `"Bosnia"', add
+label define fbpld_pop_lbl 45750 `"Dalmatia"', add
+label define fbpld_pop_lbl 45760 `"Slovonia"', add
+label define fbpld_pop_lbl 45770 `"Carniola"', add
+label define fbpld_pop_lbl 45780 `"Slovenia"', add
+label define fbpld_pop_lbl 45790 `"Kosovo"', add
+label define fbpld_pop_lbl 45800 `"Central Europe, ns"', add
+label define fbpld_pop_lbl 45900 `"Eastern Europe, ns"', add
+label define fbpld_pop_lbl 46000 `"Estonia"', add
+label define fbpld_pop_lbl 46100 `"Latvia"', add
+label define fbpld_pop_lbl 46200 `"Lithuania"', add
+label define fbpld_pop_lbl 46300 `"Baltic States, ns"', add
+label define fbpld_pop_lbl 46500 `"Other USSR/Russia"', add
+label define fbpld_pop_lbl 46510 `"Byelorussia"', add
+label define fbpld_pop_lbl 46520 `"Moldavia"', add
+label define fbpld_pop_lbl 46521 `"Bessarabia"', add
+label define fbpld_pop_lbl 46530 `"Ukraine"', add
+label define fbpld_pop_lbl 46540 `"Armenia"', add
+label define fbpld_pop_lbl 46541 `"Azerbaijan"', add
+label define fbpld_pop_lbl 46542 `"Republic of Georgia"', add
+label define fbpld_pop_lbl 46543 `"Kazakhstan"', add
+label define fbpld_pop_lbl 46544 `"Kirghizia"', add
+label define fbpld_pop_lbl 46545 `"Tadzhik"', add
+label define fbpld_pop_lbl 46546 `"Turkmenistan"', add
+label define fbpld_pop_lbl 46547 `"Uzbekistan"', add
+label define fbpld_pop_lbl 46548 `"Siberia"', add
+label define fbpld_pop_lbl 46590 `"USSR, ns"', add
+label define fbpld_pop_lbl 49900 `"Europe, nec/ns"', add
+label define fbpld_pop_lbl 50000 `"China"', add
+label define fbpld_pop_lbl 50010 `"Hong Kong"', add
+label define fbpld_pop_lbl 50020 `"Macau"', add
+label define fbpld_pop_lbl 50030 `"Mongolia"', add
+label define fbpld_pop_lbl 50040 `"Taiwan"', add
+label define fbpld_pop_lbl 50100 `"Japan"', add
+label define fbpld_pop_lbl 50200 `"Korea"', add
+label define fbpld_pop_lbl 50210 `"North Korea"', add
+label define fbpld_pop_lbl 50220 `"South Korea"', add
+label define fbpld_pop_lbl 50900 `"East Asia, n.s."', add
+label define fbpld_pop_lbl 51000 `"Brunei"', add
+label define fbpld_pop_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define fbpld_pop_lbl 51200 `"Indonesia"', add
+label define fbpld_pop_lbl 51210 `"East Indies"', add
+label define fbpld_pop_lbl 51220 `"East Timor"', add
+label define fbpld_pop_lbl 51300 `"Laos"', add
+label define fbpld_pop_lbl 51400 `"Malaysia"', add
+label define fbpld_pop_lbl 51500 `"Philippines"', add
+label define fbpld_pop_lbl 51600 `"Singapore"', add
+label define fbpld_pop_lbl 51700 `"Thailand"', add
+label define fbpld_pop_lbl 51800 `"Vietnam"', add
+label define fbpld_pop_lbl 51900 `"Southeast Asia, ns"', add
+label define fbpld_pop_lbl 51910 `"Indochina, ns"', add
+label define fbpld_pop_lbl 52000 `"Afghanistan"', add
+label define fbpld_pop_lbl 52100 `"India"', add
+label define fbpld_pop_lbl 52110 `"Bangladesh"', add
+label define fbpld_pop_lbl 52120 `"Bhutan"', add
+label define fbpld_pop_lbl 52130 `"Burma (Myanmar)"', add
+label define fbpld_pop_lbl 52140 `"Pakistan"', add
+label define fbpld_pop_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define fbpld_pop_lbl 52200 `"Iran"', add
+label define fbpld_pop_lbl 52300 `"Maldives"', add
+label define fbpld_pop_lbl 52400 `"Nepal"', add
+label define fbpld_pop_lbl 53000 `"Bahrain"', add
+label define fbpld_pop_lbl 53100 `"Cyprus"', add
+label define fbpld_pop_lbl 53200 `"Iraq"', add
+label define fbpld_pop_lbl 53210 `"Mesopotamia"', add
+label define fbpld_pop_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define fbpld_pop_lbl 53400 `"Israel/Palestine"', add
+label define fbpld_pop_lbl 53410 `"Gaza Strip"', add
+label define fbpld_pop_lbl 53420 `"Palestine"', add
+label define fbpld_pop_lbl 53430 `"West Bank"', add
+label define fbpld_pop_lbl 53440 `"Israel"', add
+label define fbpld_pop_lbl 53500 `"Jordan"', add
+label define fbpld_pop_lbl 53600 `"Kuwait"', add
+label define fbpld_pop_lbl 53700 `"Lebanon"', add
+label define fbpld_pop_lbl 53800 `"Oman"', add
+label define fbpld_pop_lbl 53900 `"Qatar"', add
+label define fbpld_pop_lbl 54000 `"Saudi Arabia"', add
+label define fbpld_pop_lbl 54100 `"Syria"', add
+label define fbpld_pop_lbl 54200 `"Turkey"', add
+label define fbpld_pop_lbl 54210 `"European Turkey"', add
+label define fbpld_pop_lbl 54220 `"Asian Turkey"', add
+label define fbpld_pop_lbl 54300 `"United Arab Emirates"', add
+label define fbpld_pop_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define fbpld_pop_lbl 54500 `"Yemen, PDR (South)"', add
+label define fbpld_pop_lbl 54600 `"Persian Gulf States, ns"', add
+label define fbpld_pop_lbl 54700 `"Middle East, ns"', add
+label define fbpld_pop_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define fbpld_pop_lbl 54900 `"Asia Minor, ns"', add
+label define fbpld_pop_lbl 55000 `"South Asia, n.e.c."', add
+label define fbpld_pop_lbl 59900 `"Asia, nec/ns"', add
+label define fbpld_pop_lbl 60000 `"Africa"', add
+label define fbpld_pop_lbl 60010 `"Northern Africa"', add
+label define fbpld_pop_lbl 60011 `"Algeria"', add
+label define fbpld_pop_lbl 60012 `"Egypt/United Arab Rep"', add
+label define fbpld_pop_lbl 60013 `"Libya"', add
+label define fbpld_pop_lbl 60014 `"Morocco"', add
+label define fbpld_pop_lbl 60015 `"Sudan"', add
+label define fbpld_pop_lbl 60016 `"Tunisia"', add
+label define fbpld_pop_lbl 60017 `"Western Sahara"', add
+label define fbpld_pop_lbl 60019 `"North Africa, ns"', add
+label define fbpld_pop_lbl 60020 `"Benin"', add
+label define fbpld_pop_lbl 60021 `"Burkina Faso"', add
+label define fbpld_pop_lbl 60022 `"Gambia"', add
+label define fbpld_pop_lbl 60023 `"Ghana"', add
+label define fbpld_pop_lbl 60024 `"Guinea"', add
+label define fbpld_pop_lbl 60025 `"Guinea-Bissau"', add
+label define fbpld_pop_lbl 60026 `"Ivory Coast"', add
+label define fbpld_pop_lbl 60027 `"Liberia"', add
+label define fbpld_pop_lbl 60028 `"Mali"', add
+label define fbpld_pop_lbl 60029 `"Mauritania"', add
+label define fbpld_pop_lbl 60030 `"Niger"', add
+label define fbpld_pop_lbl 60031 `"Nigeria"', add
+label define fbpld_pop_lbl 60032 `"Senegal"', add
+label define fbpld_pop_lbl 60033 `"Sierra Leone"', add
+label define fbpld_pop_lbl 60034 `"Togo"', add
+label define fbpld_pop_lbl 60038 `"Western Africa, n.s."', add
+label define fbpld_pop_lbl 60039 `"French West Africa, ns"', add
+label define fbpld_pop_lbl 60040 `"British Indian Ocean Territory"', add
+label define fbpld_pop_lbl 60041 `"Burundi"', add
+label define fbpld_pop_lbl 60042 `"Comoros"', add
+label define fbpld_pop_lbl 60043 `"Djibouti"', add
+label define fbpld_pop_lbl 60044 `"Ethiopia"', add
+label define fbpld_pop_lbl 60045 `"Kenya"', add
+label define fbpld_pop_lbl 60046 `"Madagascar"', add
+label define fbpld_pop_lbl 60047 `"Malawi"', add
+label define fbpld_pop_lbl 60048 `"Mauritius"', add
+label define fbpld_pop_lbl 60049 `"Mozambique"', add
+label define fbpld_pop_lbl 60050 `"Reunion"', add
+label define fbpld_pop_lbl 60051 `"Rwanda"', add
+label define fbpld_pop_lbl 60052 `"Seychelles"', add
+label define fbpld_pop_lbl 60053 `"Somalia"', add
+label define fbpld_pop_lbl 60054 `"Tanzania"', add
+label define fbpld_pop_lbl 60055 `"Uganda"', add
+label define fbpld_pop_lbl 60056 `"Zambia"', add
+label define fbpld_pop_lbl 60057 `"Zimbabwe"', add
+label define fbpld_pop_lbl 60058 `"Bassas de India"', add
+label define fbpld_pop_lbl 60059 `"Europa"', add
+label define fbpld_pop_lbl 60060 `"Gloriosos"', add
+label define fbpld_pop_lbl 60061 `"Juan de Nova"', add
+label define fbpld_pop_lbl 60062 `"Mayotte"', add
+label define fbpld_pop_lbl 60063 `"Tromelin"', add
+label define fbpld_pop_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define fbpld_pop_lbl 60065 `"Eritrea"', add
+label define fbpld_pop_lbl 60070 `"Central Africa"', add
+label define fbpld_pop_lbl 60071 `"Angola"', add
+label define fbpld_pop_lbl 60072 `"Cameroon"', add
+label define fbpld_pop_lbl 60073 `"Central African Republic"', add
+label define fbpld_pop_lbl 60074 `"Chad"', add
+label define fbpld_pop_lbl 60075 `"Congo"', add
+label define fbpld_pop_lbl 60076 `"Equatorial Guinea"', add
+label define fbpld_pop_lbl 60077 `"Gabon"', add
+label define fbpld_pop_lbl 60078 `"Sao Tome and Principe"', add
+label define fbpld_pop_lbl 60079 `"Zaire"', add
+label define fbpld_pop_lbl 60080 `"Central Africa, ns"', add
+label define fbpld_pop_lbl 60081 `"Equatorial Africa, ns"', add
+label define fbpld_pop_lbl 60082 `"French Equatorial Africa, ns"', add
+label define fbpld_pop_lbl 60090 `"Southern Africa"', add
+label define fbpld_pop_lbl 60091 `"Botswana"', add
+label define fbpld_pop_lbl 60092 `"Lesotho"', add
+label define fbpld_pop_lbl 60093 `"Namibia"', add
+label define fbpld_pop_lbl 60094 `"South Africa (Union of)"', add
+label define fbpld_pop_lbl 60095 `"Swaziland"', add
+label define fbpld_pop_lbl 60096 `"Southern Africa, n.s."', add
+label define fbpld_pop_lbl 60099 `"Africa, ns/nec"', add
+label define fbpld_pop_lbl 70000 `"Australia and New Zealand"', add
+label define fbpld_pop_lbl 70010 `"Australia"', add
+label define fbpld_pop_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define fbpld_pop_lbl 70012 `"Coral Sea Islands Territory"', add
+label define fbpld_pop_lbl 70013 `"Christmas Island"', add
+label define fbpld_pop_lbl 70014 `"Cocos Islands"', add
+label define fbpld_pop_lbl 70020 `"New Zealand"', add
+label define fbpld_pop_lbl 71000 `"Pacific Islands"', add
+label define fbpld_pop_lbl 71010 `"New Caledonia"', add
+label define fbpld_pop_lbl 71012 `"Papua New Guinea"', add
+label define fbpld_pop_lbl 71013 `"Solomon Islands"', add
+label define fbpld_pop_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define fbpld_pop_lbl 71016 `"Melanesia, ns"', add
+label define fbpld_pop_lbl 71017 `"Norfolk Islands"', add
+label define fbpld_pop_lbl 71018 `"Niue"', add
+label define fbpld_pop_lbl 71020 `"Cook Islands"', add
+label define fbpld_pop_lbl 71021 `"Fiji"', add
+label define fbpld_pop_lbl 71022 `"French Polynesia"', add
+label define fbpld_pop_lbl 71023 `"Tonga"', add
+label define fbpld_pop_lbl 71024 `"Wallis and Futuna Islands"', add
+label define fbpld_pop_lbl 71025 `"Western Samoa"', add
+label define fbpld_pop_lbl 71026 `"Pitcairn Island"', add
+label define fbpld_pop_lbl 71027 `"Tokelau"', add
+label define fbpld_pop_lbl 71028 `"Tuvalu"', add
+label define fbpld_pop_lbl 71029 `"Polynesia, n.s."', add
+label define fbpld_pop_lbl 71032 `"Kiribati"', add
+label define fbpld_pop_lbl 71033 `"Canton and Enderbury"', add
+label define fbpld_pop_lbl 71034 `"Nauru"', add
+label define fbpld_pop_lbl 71039 `"Micronesia, ns"', add
+label define fbpld_pop_lbl 71040 `"US Pacific Trust Territories"', add
+label define fbpld_pop_lbl 71041 `"Marshall Islands"', add
+label define fbpld_pop_lbl 71042 `"Micronesia"', add
+label define fbpld_pop_lbl 71043 `"Kosrae"', add
+label define fbpld_pop_lbl 71044 `"Pohnpei"', add
+label define fbpld_pop_lbl 71045 `"Truk"', add
+label define fbpld_pop_lbl 71046 `"Yap"', add
+label define fbpld_pop_lbl 71047 `"Northern Mariana Islands"', add
+label define fbpld_pop_lbl 71048 `"Palau"', add
+label define fbpld_pop_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define fbpld_pop_lbl 71050 `"Clipperton Island"', add
+label define fbpld_pop_lbl 71090 `"Oceania, ns/nec"', add
+label define fbpld_pop_lbl 80000 `"Antarctica, ns/nec"', add
+label define fbpld_pop_lbl 80010 `"Bouvet Islands"', add
+label define fbpld_pop_lbl 80020 `"British Antarctic Terr."', add
+label define fbpld_pop_lbl 80030 `"Dronning Maud Land"', add
+label define fbpld_pop_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define fbpld_pop_lbl 80050 `"Heard and McDonald Islands"', add
+label define fbpld_pop_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define fbpld_pop_lbl 90010 `"Abroad, ns"', add
+label define fbpld_pop_lbl 90011 `"Abroad (US citizen)"', add
+label define fbpld_pop_lbl 90020 `"At sea"', add
+label define fbpld_pop_lbl 90021 `"At sea (US citizen)"', add
+label define fbpld_pop_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define fbpld_pop_lbl 95000 `"Other n.e.c."', add
+label define fbpld_pop_lbl 99700 `"Unknown"', add
+label define fbpld_pop_lbl 99800 `"Illegible"', add
+label define fbpld_pop_lbl 99900 `"Missing/blank"', add
+label values fbpld_pop fbpld_pop_lbl
+
 label define fbpld_sp_lbl 00000 `"Not Applicable"'
 label define fbpld_sp_lbl 00100 `"Alabama"', add
 label define fbpld_sp_lbl 00200 `"Alaska"', add
@@ -9767,7 +20247,7 @@ label define fbpld_sp_lbl 45060 `"Austria-Vienna"', add
 label define fbpld_sp_lbl 45070 `"Austria-Kaernsten"', add
 label define fbpld_sp_lbl 45080 `"Austria-Neustadt"', add
 label define fbpld_sp_lbl 45100 `"Bulgaria"', add
-label define fbpld_sp_lbl 45200 `"Czechsolovakia"', add
+label define fbpld_sp_lbl 45200 `"Czechoslovakia"', add
 label define fbpld_sp_lbl 45210 `"Bohemia"', add
 label define fbpld_sp_lbl 45211 `"Bohemia-Moravia"', add
 label define fbpld_sp_lbl 45212 `"Slovakia"', add
@@ -10056,13 +20536,1117 @@ label define fbpld_sp_lbl 99800 `"Illegible"', add
 label define fbpld_sp_lbl 99900 `"Missing/blank"', add
 label values fbpld_sp fbpld_sp_lbl
 
+label define fbpld_mom2_lbl 00000 `"Not Applicable"'
+label define fbpld_mom2_lbl 00100 `"Alabama"', add
+label define fbpld_mom2_lbl 00200 `"Alaska"', add
+label define fbpld_mom2_lbl 00400 `"Arizona"', add
+label define fbpld_mom2_lbl 00500 `"Arkansas"', add
+label define fbpld_mom2_lbl 00600 `"California"', add
+label define fbpld_mom2_lbl 00800 `"Colorado"', add
+label define fbpld_mom2_lbl 00900 `"Connecticut"', add
+label define fbpld_mom2_lbl 01000 `"Delaware"', add
+label define fbpld_mom2_lbl 01100 `"District of Columbia"', add
+label define fbpld_mom2_lbl 01200 `"Florida"', add
+label define fbpld_mom2_lbl 01300 `"Georgia"', add
+label define fbpld_mom2_lbl 01500 `"Hawaii"', add
+label define fbpld_mom2_lbl 01600 `"Idaho"', add
+label define fbpld_mom2_lbl 01610 `"Idaho Territory"', add
+label define fbpld_mom2_lbl 01700 `"Illinois"', add
+label define fbpld_mom2_lbl 01800 `"Indiana"', add
+label define fbpld_mom2_lbl 01900 `"Iowa"', add
+label define fbpld_mom2_lbl 02000 `"Kansas"', add
+label define fbpld_mom2_lbl 02100 `"Kentucky"', add
+label define fbpld_mom2_lbl 02200 `"Louisiana"', add
+label define fbpld_mom2_lbl 02300 `"Maine"', add
+label define fbpld_mom2_lbl 02400 `"Maryland"', add
+label define fbpld_mom2_lbl 02500 `"Massachusetts"', add
+label define fbpld_mom2_lbl 02600 `"Michigan"', add
+label define fbpld_mom2_lbl 02700 `"Minnesota"', add
+label define fbpld_mom2_lbl 02800 `"Mississippi"', add
+label define fbpld_mom2_lbl 02900 `"Missouri"', add
+label define fbpld_mom2_lbl 03000 `"Montana"', add
+label define fbpld_mom2_lbl 03100 `"Nebraska"', add
+label define fbpld_mom2_lbl 03200 `"Nevada"', add
+label define fbpld_mom2_lbl 03300 `"New Hampshire"', add
+label define fbpld_mom2_lbl 03400 `"New Jersey"', add
+label define fbpld_mom2_lbl 03500 `"New Mexico"', add
+label define fbpld_mom2_lbl 03510 `"New Mexico Territory"', add
+label define fbpld_mom2_lbl 03600 `"New York"', add
+label define fbpld_mom2_lbl 03700 `"North Carolina"', add
+label define fbpld_mom2_lbl 03800 `"North Dakota"', add
+label define fbpld_mom2_lbl 03900 `"Ohio"', add
+label define fbpld_mom2_lbl 04000 `"Oklahoma"', add
+label define fbpld_mom2_lbl 04010 `"Indian Territory"', add
+label define fbpld_mom2_lbl 04100 `"Oregon"', add
+label define fbpld_mom2_lbl 04200 `"Pennsylvania"', add
+label define fbpld_mom2_lbl 04400 `"Rhode Island"', add
+label define fbpld_mom2_lbl 04500 `"South Carolina"', add
+label define fbpld_mom2_lbl 04600 `"South Dakota"', add
+label define fbpld_mom2_lbl 04610 `"Dakota Territory"', add
+label define fbpld_mom2_lbl 04700 `"Tennessee"', add
+label define fbpld_mom2_lbl 04800 `"Texas"', add
+label define fbpld_mom2_lbl 04900 `"Utah"', add
+label define fbpld_mom2_lbl 04910 `"Utah Territory"', add
+label define fbpld_mom2_lbl 05000 `"Vermont"', add
+label define fbpld_mom2_lbl 05100 `"Virginia"', add
+label define fbpld_mom2_lbl 05300 `"Washington"', add
+label define fbpld_mom2_lbl 05400 `"West Virginia"', add
+label define fbpld_mom2_lbl 05500 `"Wisconsin"', add
+label define fbpld_mom2_lbl 05600 `"Wyoming"', add
+label define fbpld_mom2_lbl 05610 `"Wyoming Territory"', add
+label define fbpld_mom2_lbl 09000 `"Native American"', add
+label define fbpld_mom2_lbl 09900 `"United States, ns"', add
+label define fbpld_mom2_lbl 10000 `"American Samoa"', add
+label define fbpld_mom2_lbl 10010 `"Samoa, 1940-1950"', add
+label define fbpld_mom2_lbl 10500 `"Guam"', add
+label define fbpld_mom2_lbl 11000 `"Puerto Rico"', add
+label define fbpld_mom2_lbl 11500 `"US Virgin Islands"', add
+label define fbpld_mom2_lbl 11510 `"St Croix"', add
+label define fbpld_mom2_lbl 11520 `"St. John"', add
+label define fbpld_mom2_lbl 11530 `"St Thomas"', add
+label define fbpld_mom2_lbl 12000 `"Other US Possessions"', add
+label define fbpld_mom2_lbl 12010 `"Johnston Atoll"', add
+label define fbpld_mom2_lbl 12020 `"Midway Islands"', add
+label define fbpld_mom2_lbl 12030 `"Wake Island"', add
+label define fbpld_mom2_lbl 12040 `"Other US Caribbean Islands"', add
+label define fbpld_mom2_lbl 12041 `"Navassa Island"', add
+label define fbpld_mom2_lbl 12050 `"Other US Pacific Is."', add
+label define fbpld_mom2_lbl 12051 `"Baker Island"', add
+label define fbpld_mom2_lbl 12052 `"Howland Island"', add
+label define fbpld_mom2_lbl 12053 `"Jarvis Island"', add
+label define fbpld_mom2_lbl 12054 `"Kingman Reef"', add
+label define fbpld_mom2_lbl 12055 `"Palmyra Atoll"', add
+label define fbpld_mom2_lbl 12056 `"Canton and Enderbury Island"', add
+label define fbpld_mom2_lbl 12090 `"US outlying areas, ns"', add
+label define fbpld_mom2_lbl 12091 `"US Possessions, ns"', add
+label define fbpld_mom2_lbl 12092 `"US territory, ns"', add
+label define fbpld_mom2_lbl 15000 `"Canada"', add
+label define fbpld_mom2_lbl 15010 `"English Canada"', add
+label define fbpld_mom2_lbl 15011 `"British Columbia"', add
+label define fbpld_mom2_lbl 15013 `"Alberta"', add
+label define fbpld_mom2_lbl 15015 `"Saskatchewan"', add
+label define fbpld_mom2_lbl 15017 `"Northwest"', add
+label define fbpld_mom2_lbl 15019 `"Ruperts Land"', add
+label define fbpld_mom2_lbl 15020 `"Manitoba"', add
+label define fbpld_mom2_lbl 15021 `"Red River"', add
+label define fbpld_mom2_lbl 15030 `"Ontario/Upper Canada"', add
+label define fbpld_mom2_lbl 15031 `"Upper Canada"', add
+label define fbpld_mom2_lbl 15032 `"Canada West"', add
+label define fbpld_mom2_lbl 15040 `"New Brunswick"', add
+label define fbpld_mom2_lbl 15042 `"Canada West"', add
+label define fbpld_mom2_lbl 15050 `"Nova Scotia"', add
+label define fbpld_mom2_lbl 15051 `"Cape Breton"', add
+label define fbpld_mom2_lbl 15052 `"Halifax"', add
+label define fbpld_mom2_lbl 15060 `"Prince Edward Island"', add
+label define fbpld_mom2_lbl 15070 `"Newfoundland"', add
+label define fbpld_mom2_lbl 15080 `"French Canada"', add
+label define fbpld_mom2_lbl 15081 `"Quebec"', add
+label define fbpld_mom2_lbl 15082 `"Lower Canada"', add
+label define fbpld_mom2_lbl 15083 `"Canada East"', add
+label define fbpld_mom2_lbl 15500 `"St Pierre and Miquelon"', add
+label define fbpld_mom2_lbl 16000 `"Atlantic Islands"', add
+label define fbpld_mom2_lbl 16010 `"Bermuda"', add
+label define fbpld_mom2_lbl 16020 `"Cape Verde"', add
+label define fbpld_mom2_lbl 16030 `"Falkland Islands"', add
+label define fbpld_mom2_lbl 16040 `"Greenland"', add
+label define fbpld_mom2_lbl 16050 `"St Helena and Ascension"', add
+label define fbpld_mom2_lbl 16060 `"Canary Islands"', add
+label define fbpld_mom2_lbl 19900 `"North America, n.s."', add
+label define fbpld_mom2_lbl 20000 `"Mexico"', add
+label define fbpld_mom2_lbl 21000 `"Central America"', add
+label define fbpld_mom2_lbl 21010 `"Belize/British Honduras"', add
+label define fbpld_mom2_lbl 21020 `"Costa Rica"', add
+label define fbpld_mom2_lbl 21030 `"El Salvador"', add
+label define fbpld_mom2_lbl 21040 `"Guatemala"', add
+label define fbpld_mom2_lbl 21050 `"Honduras"', add
+label define fbpld_mom2_lbl 21060 `"Nicaragua"', add
+label define fbpld_mom2_lbl 21070 `"Panama"', add
+label define fbpld_mom2_lbl 21071 `"Canal Zone"', add
+label define fbpld_mom2_lbl 21090 `"Central America, ns"', add
+label define fbpld_mom2_lbl 25000 `"Cuba"', add
+label define fbpld_mom2_lbl 26000 `"West Indies"', add
+label define fbpld_mom2_lbl 26010 `"Dominican Republic"', add
+label define fbpld_mom2_lbl 26020 `"Haiti"', add
+label define fbpld_mom2_lbl 26030 `"Jamaica"', add
+label define fbpld_mom2_lbl 26040 `"British West Indies"', add
+label define fbpld_mom2_lbl 26041 `"Anguilla"', add
+label define fbpld_mom2_lbl 26042 `"Antigua-Barbuda"', add
+label define fbpld_mom2_lbl 26043 `"Bahamas"', add
+label define fbpld_mom2_lbl 26044 `"Barbados"', add
+label define fbpld_mom2_lbl 26045 `"British Virgin Islands"', add
+label define fbpld_mom2_lbl 26046 `"Anegada"', add
+label define fbpld_mom2_lbl 26047 `"Cooper"', add
+label define fbpld_mom2_lbl 26048 `"Jost Van Dyke"', add
+label define fbpld_mom2_lbl 26049 `"Peter"', add
+label define fbpld_mom2_lbl 26050 `"Tortola"', add
+label define fbpld_mom2_lbl 26051 `"Virgin Gorda"', add
+label define fbpld_mom2_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define fbpld_mom2_lbl 26053 `"Cayman Islands"', add
+label define fbpld_mom2_lbl 26054 `"Dominica"', add
+label define fbpld_mom2_lbl 26055 `"Grenada"', add
+label define fbpld_mom2_lbl 26056 `"Montserrat"', add
+label define fbpld_mom2_lbl 26057 `"St Kitts-Nevis"', add
+label define fbpld_mom2_lbl 26058 `"St Lucia"', add
+label define fbpld_mom2_lbl 26059 `"St Vincent"', add
+label define fbpld_mom2_lbl 26060 `"Trinidad and Tobago"', add
+label define fbpld_mom2_lbl 26061 `"Turks and Caicos"', add
+label define fbpld_mom2_lbl 26069 `"British West Indies, ns"', add
+label define fbpld_mom2_lbl 26070 `"Other West Indies"', add
+label define fbpld_mom2_lbl 26071 `"Aruba"', add
+label define fbpld_mom2_lbl 26072 `"Netherlands Antilles"', add
+label define fbpld_mom2_lbl 26073 `"Bonaire"', add
+label define fbpld_mom2_lbl 26074 `"Curacao"', add
+label define fbpld_mom2_lbl 26075 `"Dutch St. Maarten"', add
+label define fbpld_mom2_lbl 26076 `"Saba"', add
+label define fbpld_mom2_lbl 26077 `"St. Eustatius"', add
+label define fbpld_mom2_lbl 26079 `"Dutch Caribbean, ns"', add
+label define fbpld_mom2_lbl 26080 `"French St Maarten"', add
+label define fbpld_mom2_lbl 26081 `"Guadeloupe"', add
+label define fbpld_mom2_lbl 26082 `"Martinique"', add
+label define fbpld_mom2_lbl 26083 `"St. Barthelemy"', add
+label define fbpld_mom2_lbl 26089 `"French Caribbean, ns"', add
+label define fbpld_mom2_lbl 26090 `"Antilles, n.s."', add
+label define fbpld_mom2_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define fbpld_mom2_lbl 26092 `"Latin America, ns"', add
+label define fbpld_mom2_lbl 26093 `"Leeward Islands, ns"', add
+label define fbpld_mom2_lbl 26094 `"West Indies, ns"', add
+label define fbpld_mom2_lbl 26095 `"Winward Islands"', add
+label define fbpld_mom2_lbl 29900 `"Americas, ns"', add
+label define fbpld_mom2_lbl 30000 `"South America"', add
+label define fbpld_mom2_lbl 30005 `"Argentina"', add
+label define fbpld_mom2_lbl 30010 `"Bolivia"', add
+label define fbpld_mom2_lbl 30015 `"Brazil"', add
+label define fbpld_mom2_lbl 30020 `"Chile"', add
+label define fbpld_mom2_lbl 30025 `"Colombia"', add
+label define fbpld_mom2_lbl 30030 `"Ecuador"', add
+label define fbpld_mom2_lbl 30035 `"French Guiana"', add
+label define fbpld_mom2_lbl 30040 `"Guyana/British Guiana"', add
+label define fbpld_mom2_lbl 30045 `"Paraguay"', add
+label define fbpld_mom2_lbl 30050 `"Peru"', add
+label define fbpld_mom2_lbl 30055 `"Suriname"', add
+label define fbpld_mom2_lbl 30060 `"Uruguay"', add
+label define fbpld_mom2_lbl 30065 `"Venezuela"', add
+label define fbpld_mom2_lbl 30090 `"South America, ns"', add
+label define fbpld_mom2_lbl 30091 `"South and Central America, n.s."', add
+label define fbpld_mom2_lbl 40000 `"Denmark"', add
+label define fbpld_mom2_lbl 40010 `"Faroe Islands"', add
+label define fbpld_mom2_lbl 40100 `"Finland"', add
+label define fbpld_mom2_lbl 40200 `"Iceland"', add
+label define fbpld_mom2_lbl 40300 `"Lapland, ns"', add
+label define fbpld_mom2_lbl 40400 `"Norway"', add
+label define fbpld_mom2_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define fbpld_mom2_lbl 40412 `"Jan Meyen"', add
+label define fbpld_mom2_lbl 40500 `"Sweden"', add
+label define fbpld_mom2_lbl 40600 `"Svalbard"', add
+label define fbpld_mom2_lbl 41000 `"England"', add
+label define fbpld_mom2_lbl 41010 `"Channel Islands"', add
+label define fbpld_mom2_lbl 41011 `"Guernsey"', add
+label define fbpld_mom2_lbl 41012 `"Jersey"', add
+label define fbpld_mom2_lbl 41020 `"Isle of Man"', add
+label define fbpld_mom2_lbl 41100 `"Scotland"', add
+label define fbpld_mom2_lbl 41200 `"Wales"', add
+label define fbpld_mom2_lbl 41300 `"United Kingdom, ns"', add
+label define fbpld_mom2_lbl 41400 `"Ireland"', add
+label define fbpld_mom2_lbl 41410 `"Northern Ireland"', add
+label define fbpld_mom2_lbl 41900 `"Northern Europe, ns"', add
+label define fbpld_mom2_lbl 42000 `"Belgium"', add
+label define fbpld_mom2_lbl 42100 `"France"', add
+label define fbpld_mom2_lbl 42110 `"Alsace-Lorraine"', add
+label define fbpld_mom2_lbl 42111 `"Alsace"', add
+label define fbpld_mom2_lbl 42112 `"Lorraine"', add
+label define fbpld_mom2_lbl 42200 `"Liechtenstein"', add
+label define fbpld_mom2_lbl 42300 `"Luxembourg"', add
+label define fbpld_mom2_lbl 42400 `"Monaco"', add
+label define fbpld_mom2_lbl 42500 `"Netherlands"', add
+label define fbpld_mom2_lbl 42600 `"Switzerland"', add
+label define fbpld_mom2_lbl 42900 `"Western Europe, ns"', add
+label define fbpld_mom2_lbl 43000 `"Albania"', add
+label define fbpld_mom2_lbl 43100 `"Andorra"', add
+label define fbpld_mom2_lbl 43200 `"Gibraltar"', add
+label define fbpld_mom2_lbl 43300 `"Greece"', add
+label define fbpld_mom2_lbl 43310 `"Dodecanese Islands"', add
+label define fbpld_mom2_lbl 43320 `"Turkey Greece"', add
+label define fbpld_mom2_lbl 43330 `"Macedonia"', add
+label define fbpld_mom2_lbl 43400 `"Italy"', add
+label define fbpld_mom2_lbl 43500 `"Malta"', add
+label define fbpld_mom2_lbl 43600 `"Portugal"', add
+label define fbpld_mom2_lbl 43610 `"Azores"', add
+label define fbpld_mom2_lbl 43620 `"Madeira Islands"', add
+label define fbpld_mom2_lbl 43630 `"Cape Verde Islands"', add
+label define fbpld_mom2_lbl 43640 `"St Miguel"', add
+label define fbpld_mom2_lbl 43700 `"San Marino"', add
+label define fbpld_mom2_lbl 43800 `"Spain"', add
+label define fbpld_mom2_lbl 43900 `"Vatican City"', add
+label define fbpld_mom2_lbl 44000 `"Southern Europe, ns"', add
+label define fbpld_mom2_lbl 45000 `"Austria"', add
+label define fbpld_mom2_lbl 45010 `"Austria-Hungary"', add
+label define fbpld_mom2_lbl 45020 `"Austria-Graz"', add
+label define fbpld_mom2_lbl 45030 `"Austria-Linz"', add
+label define fbpld_mom2_lbl 45040 `"Austria-Salzburg"', add
+label define fbpld_mom2_lbl 45050 `"Austria-Tyrol"', add
+label define fbpld_mom2_lbl 45060 `"Austria-Vienna"', add
+label define fbpld_mom2_lbl 45070 `"Austria-Kaernsten"', add
+label define fbpld_mom2_lbl 45080 `"Austria-Neustadt"', add
+label define fbpld_mom2_lbl 45100 `"Bulgaria"', add
+label define fbpld_mom2_lbl 45200 `"Czechoslovakia"', add
+label define fbpld_mom2_lbl 45210 `"Bohemia"', add
+label define fbpld_mom2_lbl 45211 `"Bohemia-Moravia"', add
+label define fbpld_mom2_lbl 45212 `"Slovakia"', add
+label define fbpld_mom2_lbl 45213 `"Czech Republic"', add
+label define fbpld_mom2_lbl 45300 `"Germany"', add
+label define fbpld_mom2_lbl 45301 `"Berlin"', add
+label define fbpld_mom2_lbl 45310 `"West Germany"', add
+label define fbpld_mom2_lbl 45311 `"Baden"', add
+label define fbpld_mom2_lbl 45312 `"Bavaria"', add
+label define fbpld_mom2_lbl 45313 `"Bremen"', add
+label define fbpld_mom2_lbl 45314 `"Braunschweig"', add
+label define fbpld_mom2_lbl 45315 `"Hamburg"', add
+label define fbpld_mom2_lbl 45316 `"Hanover"', add
+label define fbpld_mom2_lbl 45317 `"Hessen"', add
+label define fbpld_mom2_lbl 45318 `"Hesse-Nassau"', add
+label define fbpld_mom2_lbl 45319 `"Holstein"', add
+label define fbpld_mom2_lbl 45320 `"Lippe"', add
+label define fbpld_mom2_lbl 45321 `"Lubeck"', add
+label define fbpld_mom2_lbl 45322 `"Oldenburg"', add
+label define fbpld_mom2_lbl 45323 `"Rheinland"', add
+label define fbpld_mom2_lbl 45324 `"Schleswig"', add
+label define fbpld_mom2_lbl 45325 `"Schleswig-Holstein"', add
+label define fbpld_mom2_lbl 45326 `"Schwarzburg"', add
+label define fbpld_mom2_lbl 45327 `"Waldeck"', add
+label define fbpld_mom2_lbl 45328 `"West Berlin"', add
+label define fbpld_mom2_lbl 45329 `"Westphalia"', add
+label define fbpld_mom2_lbl 45330 `"Wurttemberg"', add
+label define fbpld_mom2_lbl 45331 `"Frankfurt"', add
+label define fbpld_mom2_lbl 45332 `"Saarland"', add
+label define fbpld_mom2_lbl 45333 `"Nordrhein-Westfalen"', add
+label define fbpld_mom2_lbl 45340 `"East Germany"', add
+label define fbpld_mom2_lbl 45341 `"Anhalt"', add
+label define fbpld_mom2_lbl 45342 `"Brandenburg"', add
+label define fbpld_mom2_lbl 45343 `"East Berlin"', add
+label define fbpld_mom2_lbl 45344 `"Mecklenburg"', add
+label define fbpld_mom2_lbl 45345 `"Sachsen-Altenburg"', add
+label define fbpld_mom2_lbl 45346 `"Sachsen-Coburg"', add
+label define fbpld_mom2_lbl 45347 `"Sachsen-Gotha"', add
+label define fbpld_mom2_lbl 45348 `"Sachsen-Meiningen"', add
+label define fbpld_mom2_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define fbpld_mom2_lbl 45350 `"Saxony"', add
+label define fbpld_mom2_lbl 45351 `"Schwerin"', add
+label define fbpld_mom2_lbl 45352 `"Strelitz"', add
+label define fbpld_mom2_lbl 45353 `"Thuringian States"', add
+label define fbpld_mom2_lbl 45360 `"Prussia, nec"', add
+label define fbpld_mom2_lbl 45361 `"Hohenzollern"', add
+label define fbpld_mom2_lbl 45362 `"Niedersachsen"', add
+label define fbpld_mom2_lbl 45400 `"Hungary"', add
+label define fbpld_mom2_lbl 45500 `"Poland"', add
+label define fbpld_mom2_lbl 45510 `"Austrian Poland"', add
+label define fbpld_mom2_lbl 45511 `"Galicia"', add
+label define fbpld_mom2_lbl 45520 `"German Poland"', add
+label define fbpld_mom2_lbl 45521 `"East Prussia"', add
+label define fbpld_mom2_lbl 45522 `"Pomerania"', add
+label define fbpld_mom2_lbl 45523 `"Posen"', add
+label define fbpld_mom2_lbl 45524 `"Prussian Poland"', add
+label define fbpld_mom2_lbl 45525 `"Silesia"', add
+label define fbpld_mom2_lbl 45526 `"West Prussia"', add
+label define fbpld_mom2_lbl 45530 `"Russian Poland"', add
+label define fbpld_mom2_lbl 45600 `"Romania"', add
+label define fbpld_mom2_lbl 45610 `"Transylvania"', add
+label define fbpld_mom2_lbl 45700 `"Yugoslavia"', add
+label define fbpld_mom2_lbl 45710 `"Croatia"', add
+label define fbpld_mom2_lbl 45720 `"Montenegro"', add
+label define fbpld_mom2_lbl 45730 `"Serbia"', add
+label define fbpld_mom2_lbl 45740 `"Bosnia"', add
+label define fbpld_mom2_lbl 45750 `"Dalmatia"', add
+label define fbpld_mom2_lbl 45760 `"Slovonia"', add
+label define fbpld_mom2_lbl 45770 `"Carniola"', add
+label define fbpld_mom2_lbl 45780 `"Slovenia"', add
+label define fbpld_mom2_lbl 45790 `"Kosovo"', add
+label define fbpld_mom2_lbl 45800 `"Central Europe, ns"', add
+label define fbpld_mom2_lbl 45900 `"Eastern Europe, ns"', add
+label define fbpld_mom2_lbl 46000 `"Estonia"', add
+label define fbpld_mom2_lbl 46100 `"Latvia"', add
+label define fbpld_mom2_lbl 46200 `"Lithuania"', add
+label define fbpld_mom2_lbl 46300 `"Baltic States, ns"', add
+label define fbpld_mom2_lbl 46500 `"Other USSR/Russia"', add
+label define fbpld_mom2_lbl 46510 `"Byelorussia"', add
+label define fbpld_mom2_lbl 46520 `"Moldavia"', add
+label define fbpld_mom2_lbl 46521 `"Bessarabia"', add
+label define fbpld_mom2_lbl 46530 `"Ukraine"', add
+label define fbpld_mom2_lbl 46540 `"Armenia"', add
+label define fbpld_mom2_lbl 46541 `"Azerbaijan"', add
+label define fbpld_mom2_lbl 46542 `"Republic of Georgia"', add
+label define fbpld_mom2_lbl 46543 `"Kazakhstan"', add
+label define fbpld_mom2_lbl 46544 `"Kirghizia"', add
+label define fbpld_mom2_lbl 46545 `"Tadzhik"', add
+label define fbpld_mom2_lbl 46546 `"Turkmenistan"', add
+label define fbpld_mom2_lbl 46547 `"Uzbekistan"', add
+label define fbpld_mom2_lbl 46548 `"Siberia"', add
+label define fbpld_mom2_lbl 46590 `"USSR, ns"', add
+label define fbpld_mom2_lbl 49900 `"Europe, nec/ns"', add
+label define fbpld_mom2_lbl 50000 `"China"', add
+label define fbpld_mom2_lbl 50010 `"Hong Kong"', add
+label define fbpld_mom2_lbl 50020 `"Macau"', add
+label define fbpld_mom2_lbl 50030 `"Mongolia"', add
+label define fbpld_mom2_lbl 50040 `"Taiwan"', add
+label define fbpld_mom2_lbl 50100 `"Japan"', add
+label define fbpld_mom2_lbl 50200 `"Korea"', add
+label define fbpld_mom2_lbl 50210 `"North Korea"', add
+label define fbpld_mom2_lbl 50220 `"South Korea"', add
+label define fbpld_mom2_lbl 50900 `"East Asia, n.s."', add
+label define fbpld_mom2_lbl 51000 `"Brunei"', add
+label define fbpld_mom2_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define fbpld_mom2_lbl 51200 `"Indonesia"', add
+label define fbpld_mom2_lbl 51210 `"East Indies"', add
+label define fbpld_mom2_lbl 51220 `"East Timor"', add
+label define fbpld_mom2_lbl 51300 `"Laos"', add
+label define fbpld_mom2_lbl 51400 `"Malaysia"', add
+label define fbpld_mom2_lbl 51500 `"Philippines"', add
+label define fbpld_mom2_lbl 51600 `"Singapore"', add
+label define fbpld_mom2_lbl 51700 `"Thailand"', add
+label define fbpld_mom2_lbl 51800 `"Vietnam"', add
+label define fbpld_mom2_lbl 51900 `"Southeast Asia, ns"', add
+label define fbpld_mom2_lbl 51910 `"Indochina, ns"', add
+label define fbpld_mom2_lbl 52000 `"Afghanistan"', add
+label define fbpld_mom2_lbl 52100 `"India"', add
+label define fbpld_mom2_lbl 52110 `"Bangladesh"', add
+label define fbpld_mom2_lbl 52120 `"Bhutan"', add
+label define fbpld_mom2_lbl 52130 `"Burma (Myanmar)"', add
+label define fbpld_mom2_lbl 52140 `"Pakistan"', add
+label define fbpld_mom2_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define fbpld_mom2_lbl 52200 `"Iran"', add
+label define fbpld_mom2_lbl 52300 `"Maldives"', add
+label define fbpld_mom2_lbl 52400 `"Nepal"', add
+label define fbpld_mom2_lbl 53000 `"Bahrain"', add
+label define fbpld_mom2_lbl 53100 `"Cyprus"', add
+label define fbpld_mom2_lbl 53200 `"Iraq"', add
+label define fbpld_mom2_lbl 53210 `"Mesopotamia"', add
+label define fbpld_mom2_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define fbpld_mom2_lbl 53400 `"Israel/Palestine"', add
+label define fbpld_mom2_lbl 53410 `"Gaza Strip"', add
+label define fbpld_mom2_lbl 53420 `"Palestine"', add
+label define fbpld_mom2_lbl 53430 `"West Bank"', add
+label define fbpld_mom2_lbl 53440 `"Israel"', add
+label define fbpld_mom2_lbl 53500 `"Jordan"', add
+label define fbpld_mom2_lbl 53600 `"Kuwait"', add
+label define fbpld_mom2_lbl 53700 `"Lebanon"', add
+label define fbpld_mom2_lbl 53800 `"Oman"', add
+label define fbpld_mom2_lbl 53900 `"Qatar"', add
+label define fbpld_mom2_lbl 54000 `"Saudi Arabia"', add
+label define fbpld_mom2_lbl 54100 `"Syria"', add
+label define fbpld_mom2_lbl 54200 `"Turkey"', add
+label define fbpld_mom2_lbl 54210 `"European Turkey"', add
+label define fbpld_mom2_lbl 54220 `"Asian Turkey"', add
+label define fbpld_mom2_lbl 54300 `"United Arab Emirates"', add
+label define fbpld_mom2_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define fbpld_mom2_lbl 54500 `"Yemen, PDR (South)"', add
+label define fbpld_mom2_lbl 54600 `"Persian Gulf States, ns"', add
+label define fbpld_mom2_lbl 54700 `"Middle East, ns"', add
+label define fbpld_mom2_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define fbpld_mom2_lbl 54900 `"Asia Minor, ns"', add
+label define fbpld_mom2_lbl 55000 `"South Asia, n.e.c."', add
+label define fbpld_mom2_lbl 59900 `"Asia, nec/ns"', add
+label define fbpld_mom2_lbl 60000 `"Africa"', add
+label define fbpld_mom2_lbl 60010 `"Northern Africa"', add
+label define fbpld_mom2_lbl 60011 `"Algeria"', add
+label define fbpld_mom2_lbl 60012 `"Egypt/United Arab Rep"', add
+label define fbpld_mom2_lbl 60013 `"Libya"', add
+label define fbpld_mom2_lbl 60014 `"Morocco"', add
+label define fbpld_mom2_lbl 60015 `"Sudan"', add
+label define fbpld_mom2_lbl 60016 `"Tunisia"', add
+label define fbpld_mom2_lbl 60017 `"Western Sahara"', add
+label define fbpld_mom2_lbl 60019 `"North Africa, ns"', add
+label define fbpld_mom2_lbl 60020 `"Benin"', add
+label define fbpld_mom2_lbl 60021 `"Burkina Faso"', add
+label define fbpld_mom2_lbl 60022 `"Gambia"', add
+label define fbpld_mom2_lbl 60023 `"Ghana"', add
+label define fbpld_mom2_lbl 60024 `"Guinea"', add
+label define fbpld_mom2_lbl 60025 `"Guinea-Bissau"', add
+label define fbpld_mom2_lbl 60026 `"Ivory Coast"', add
+label define fbpld_mom2_lbl 60027 `"Liberia"', add
+label define fbpld_mom2_lbl 60028 `"Mali"', add
+label define fbpld_mom2_lbl 60029 `"Mauritania"', add
+label define fbpld_mom2_lbl 60030 `"Niger"', add
+label define fbpld_mom2_lbl 60031 `"Nigeria"', add
+label define fbpld_mom2_lbl 60032 `"Senegal"', add
+label define fbpld_mom2_lbl 60033 `"Sierra Leone"', add
+label define fbpld_mom2_lbl 60034 `"Togo"', add
+label define fbpld_mom2_lbl 60038 `"Western Africa, n.s."', add
+label define fbpld_mom2_lbl 60039 `"French West Africa, ns"', add
+label define fbpld_mom2_lbl 60040 `"British Indian Ocean Territory"', add
+label define fbpld_mom2_lbl 60041 `"Burundi"', add
+label define fbpld_mom2_lbl 60042 `"Comoros"', add
+label define fbpld_mom2_lbl 60043 `"Djibouti"', add
+label define fbpld_mom2_lbl 60044 `"Ethiopia"', add
+label define fbpld_mom2_lbl 60045 `"Kenya"', add
+label define fbpld_mom2_lbl 60046 `"Madagascar"', add
+label define fbpld_mom2_lbl 60047 `"Malawi"', add
+label define fbpld_mom2_lbl 60048 `"Mauritius"', add
+label define fbpld_mom2_lbl 60049 `"Mozambique"', add
+label define fbpld_mom2_lbl 60050 `"Reunion"', add
+label define fbpld_mom2_lbl 60051 `"Rwanda"', add
+label define fbpld_mom2_lbl 60052 `"Seychelles"', add
+label define fbpld_mom2_lbl 60053 `"Somalia"', add
+label define fbpld_mom2_lbl 60054 `"Tanzania"', add
+label define fbpld_mom2_lbl 60055 `"Uganda"', add
+label define fbpld_mom2_lbl 60056 `"Zambia"', add
+label define fbpld_mom2_lbl 60057 `"Zimbabwe"', add
+label define fbpld_mom2_lbl 60058 `"Bassas de India"', add
+label define fbpld_mom2_lbl 60059 `"Europa"', add
+label define fbpld_mom2_lbl 60060 `"Gloriosos"', add
+label define fbpld_mom2_lbl 60061 `"Juan de Nova"', add
+label define fbpld_mom2_lbl 60062 `"Mayotte"', add
+label define fbpld_mom2_lbl 60063 `"Tromelin"', add
+label define fbpld_mom2_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define fbpld_mom2_lbl 60065 `"Eritrea"', add
+label define fbpld_mom2_lbl 60070 `"Central Africa"', add
+label define fbpld_mom2_lbl 60071 `"Angola"', add
+label define fbpld_mom2_lbl 60072 `"Cameroon"', add
+label define fbpld_mom2_lbl 60073 `"Central African Republic"', add
+label define fbpld_mom2_lbl 60074 `"Chad"', add
+label define fbpld_mom2_lbl 60075 `"Congo"', add
+label define fbpld_mom2_lbl 60076 `"Equatorial Guinea"', add
+label define fbpld_mom2_lbl 60077 `"Gabon"', add
+label define fbpld_mom2_lbl 60078 `"Sao Tome and Principe"', add
+label define fbpld_mom2_lbl 60079 `"Zaire"', add
+label define fbpld_mom2_lbl 60080 `"Central Africa, ns"', add
+label define fbpld_mom2_lbl 60081 `"Equatorial Africa, ns"', add
+label define fbpld_mom2_lbl 60082 `"French Equatorial Africa, ns"', add
+label define fbpld_mom2_lbl 60090 `"Southern Africa"', add
+label define fbpld_mom2_lbl 60091 `"Botswana"', add
+label define fbpld_mom2_lbl 60092 `"Lesotho"', add
+label define fbpld_mom2_lbl 60093 `"Namibia"', add
+label define fbpld_mom2_lbl 60094 `"South Africa (Union of)"', add
+label define fbpld_mom2_lbl 60095 `"Swaziland"', add
+label define fbpld_mom2_lbl 60096 `"Southern Africa, n.s."', add
+label define fbpld_mom2_lbl 60099 `"Africa, ns/nec"', add
+label define fbpld_mom2_lbl 70000 `"Australia and New Zealand"', add
+label define fbpld_mom2_lbl 70010 `"Australia"', add
+label define fbpld_mom2_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define fbpld_mom2_lbl 70012 `"Coral Sea Islands Territory"', add
+label define fbpld_mom2_lbl 70013 `"Christmas Island"', add
+label define fbpld_mom2_lbl 70014 `"Cocos Islands"', add
+label define fbpld_mom2_lbl 70020 `"New Zealand"', add
+label define fbpld_mom2_lbl 71000 `"Pacific Islands"', add
+label define fbpld_mom2_lbl 71010 `"New Caledonia"', add
+label define fbpld_mom2_lbl 71012 `"Papua New Guinea"', add
+label define fbpld_mom2_lbl 71013 `"Solomon Islands"', add
+label define fbpld_mom2_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define fbpld_mom2_lbl 71016 `"Melanesia, ns"', add
+label define fbpld_mom2_lbl 71017 `"Norfolk Islands"', add
+label define fbpld_mom2_lbl 71018 `"Niue"', add
+label define fbpld_mom2_lbl 71020 `"Cook Islands"', add
+label define fbpld_mom2_lbl 71021 `"Fiji"', add
+label define fbpld_mom2_lbl 71022 `"French Polynesia"', add
+label define fbpld_mom2_lbl 71023 `"Tonga"', add
+label define fbpld_mom2_lbl 71024 `"Wallis and Futuna Islands"', add
+label define fbpld_mom2_lbl 71025 `"Western Samoa"', add
+label define fbpld_mom2_lbl 71026 `"Pitcairn Island"', add
+label define fbpld_mom2_lbl 71027 `"Tokelau"', add
+label define fbpld_mom2_lbl 71028 `"Tuvalu"', add
+label define fbpld_mom2_lbl 71029 `"Polynesia, n.s."', add
+label define fbpld_mom2_lbl 71032 `"Kiribati"', add
+label define fbpld_mom2_lbl 71033 `"Canton and Enderbury"', add
+label define fbpld_mom2_lbl 71034 `"Nauru"', add
+label define fbpld_mom2_lbl 71039 `"Micronesia, ns"', add
+label define fbpld_mom2_lbl 71040 `"US Pacific Trust Territories"', add
+label define fbpld_mom2_lbl 71041 `"Marshall Islands"', add
+label define fbpld_mom2_lbl 71042 `"Micronesia"', add
+label define fbpld_mom2_lbl 71043 `"Kosrae"', add
+label define fbpld_mom2_lbl 71044 `"Pohnpei"', add
+label define fbpld_mom2_lbl 71045 `"Truk"', add
+label define fbpld_mom2_lbl 71046 `"Yap"', add
+label define fbpld_mom2_lbl 71047 `"Northern Mariana Islands"', add
+label define fbpld_mom2_lbl 71048 `"Palau"', add
+label define fbpld_mom2_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define fbpld_mom2_lbl 71050 `"Clipperton Island"', add
+label define fbpld_mom2_lbl 71090 `"Oceania, ns/nec"', add
+label define fbpld_mom2_lbl 80000 `"Antarctica, ns/nec"', add
+label define fbpld_mom2_lbl 80010 `"Bouvet Islands"', add
+label define fbpld_mom2_lbl 80020 `"British Antarctic Terr."', add
+label define fbpld_mom2_lbl 80030 `"Dronning Maud Land"', add
+label define fbpld_mom2_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define fbpld_mom2_lbl 80050 `"Heard and McDonald Islands"', add
+label define fbpld_mom2_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define fbpld_mom2_lbl 90010 `"Abroad, ns"', add
+label define fbpld_mom2_lbl 90011 `"Abroad (US citizen)"', add
+label define fbpld_mom2_lbl 90020 `"At sea"', add
+label define fbpld_mom2_lbl 90021 `"At sea (US citizen)"', add
+label define fbpld_mom2_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define fbpld_mom2_lbl 95000 `"Other n.e.c."', add
+label define fbpld_mom2_lbl 99700 `"Unknown"', add
+label define fbpld_mom2_lbl 99800 `"Illegible"', add
+label define fbpld_mom2_lbl 99900 `"Missing/blank"', add
+label values fbpld_mom2 fbpld_mom2_lbl
+
+label define fbpld_pop2_lbl 00000 `"Not Applicable"'
+label define fbpld_pop2_lbl 00100 `"Alabama"', add
+label define fbpld_pop2_lbl 00200 `"Alaska"', add
+label define fbpld_pop2_lbl 00400 `"Arizona"', add
+label define fbpld_pop2_lbl 00500 `"Arkansas"', add
+label define fbpld_pop2_lbl 00600 `"California"', add
+label define fbpld_pop2_lbl 00800 `"Colorado"', add
+label define fbpld_pop2_lbl 00900 `"Connecticut"', add
+label define fbpld_pop2_lbl 01000 `"Delaware"', add
+label define fbpld_pop2_lbl 01100 `"District of Columbia"', add
+label define fbpld_pop2_lbl 01200 `"Florida"', add
+label define fbpld_pop2_lbl 01300 `"Georgia"', add
+label define fbpld_pop2_lbl 01500 `"Hawaii"', add
+label define fbpld_pop2_lbl 01600 `"Idaho"', add
+label define fbpld_pop2_lbl 01610 `"Idaho Territory"', add
+label define fbpld_pop2_lbl 01700 `"Illinois"', add
+label define fbpld_pop2_lbl 01800 `"Indiana"', add
+label define fbpld_pop2_lbl 01900 `"Iowa"', add
+label define fbpld_pop2_lbl 02000 `"Kansas"', add
+label define fbpld_pop2_lbl 02100 `"Kentucky"', add
+label define fbpld_pop2_lbl 02200 `"Louisiana"', add
+label define fbpld_pop2_lbl 02300 `"Maine"', add
+label define fbpld_pop2_lbl 02400 `"Maryland"', add
+label define fbpld_pop2_lbl 02500 `"Massachusetts"', add
+label define fbpld_pop2_lbl 02600 `"Michigan"', add
+label define fbpld_pop2_lbl 02700 `"Minnesota"', add
+label define fbpld_pop2_lbl 02800 `"Mississippi"', add
+label define fbpld_pop2_lbl 02900 `"Missouri"', add
+label define fbpld_pop2_lbl 03000 `"Montana"', add
+label define fbpld_pop2_lbl 03100 `"Nebraska"', add
+label define fbpld_pop2_lbl 03200 `"Nevada"', add
+label define fbpld_pop2_lbl 03300 `"New Hampshire"', add
+label define fbpld_pop2_lbl 03400 `"New Jersey"', add
+label define fbpld_pop2_lbl 03500 `"New Mexico"', add
+label define fbpld_pop2_lbl 03510 `"New Mexico Territory"', add
+label define fbpld_pop2_lbl 03600 `"New York"', add
+label define fbpld_pop2_lbl 03700 `"North Carolina"', add
+label define fbpld_pop2_lbl 03800 `"North Dakota"', add
+label define fbpld_pop2_lbl 03900 `"Ohio"', add
+label define fbpld_pop2_lbl 04000 `"Oklahoma"', add
+label define fbpld_pop2_lbl 04010 `"Indian Territory"', add
+label define fbpld_pop2_lbl 04100 `"Oregon"', add
+label define fbpld_pop2_lbl 04200 `"Pennsylvania"', add
+label define fbpld_pop2_lbl 04400 `"Rhode Island"', add
+label define fbpld_pop2_lbl 04500 `"South Carolina"', add
+label define fbpld_pop2_lbl 04600 `"South Dakota"', add
+label define fbpld_pop2_lbl 04610 `"Dakota Territory"', add
+label define fbpld_pop2_lbl 04700 `"Tennessee"', add
+label define fbpld_pop2_lbl 04800 `"Texas"', add
+label define fbpld_pop2_lbl 04900 `"Utah"', add
+label define fbpld_pop2_lbl 04910 `"Utah Territory"', add
+label define fbpld_pop2_lbl 05000 `"Vermont"', add
+label define fbpld_pop2_lbl 05100 `"Virginia"', add
+label define fbpld_pop2_lbl 05300 `"Washington"', add
+label define fbpld_pop2_lbl 05400 `"West Virginia"', add
+label define fbpld_pop2_lbl 05500 `"Wisconsin"', add
+label define fbpld_pop2_lbl 05600 `"Wyoming"', add
+label define fbpld_pop2_lbl 05610 `"Wyoming Territory"', add
+label define fbpld_pop2_lbl 09000 `"Native American"', add
+label define fbpld_pop2_lbl 09900 `"United States, ns"', add
+label define fbpld_pop2_lbl 10000 `"American Samoa"', add
+label define fbpld_pop2_lbl 10010 `"Samoa, 1940-1950"', add
+label define fbpld_pop2_lbl 10500 `"Guam"', add
+label define fbpld_pop2_lbl 11000 `"Puerto Rico"', add
+label define fbpld_pop2_lbl 11500 `"US Virgin Islands"', add
+label define fbpld_pop2_lbl 11510 `"St Croix"', add
+label define fbpld_pop2_lbl 11520 `"St. John"', add
+label define fbpld_pop2_lbl 11530 `"St Thomas"', add
+label define fbpld_pop2_lbl 12000 `"Other US Possessions"', add
+label define fbpld_pop2_lbl 12010 `"Johnston Atoll"', add
+label define fbpld_pop2_lbl 12020 `"Midway Islands"', add
+label define fbpld_pop2_lbl 12030 `"Wake Island"', add
+label define fbpld_pop2_lbl 12040 `"Other US Caribbean Islands"', add
+label define fbpld_pop2_lbl 12041 `"Navassa Island"', add
+label define fbpld_pop2_lbl 12050 `"Other US Pacific Is."', add
+label define fbpld_pop2_lbl 12051 `"Baker Island"', add
+label define fbpld_pop2_lbl 12052 `"Howland Island"', add
+label define fbpld_pop2_lbl 12053 `"Jarvis Island"', add
+label define fbpld_pop2_lbl 12054 `"Kingman Reef"', add
+label define fbpld_pop2_lbl 12055 `"Palmyra Atoll"', add
+label define fbpld_pop2_lbl 12056 `"Canton and Enderbury Island"', add
+label define fbpld_pop2_lbl 12090 `"US outlying areas, ns"', add
+label define fbpld_pop2_lbl 12091 `"US Possessions, ns"', add
+label define fbpld_pop2_lbl 12092 `"US territory, ns"', add
+label define fbpld_pop2_lbl 15000 `"Canada"', add
+label define fbpld_pop2_lbl 15010 `"English Canada"', add
+label define fbpld_pop2_lbl 15011 `"British Columbia"', add
+label define fbpld_pop2_lbl 15013 `"Alberta"', add
+label define fbpld_pop2_lbl 15015 `"Saskatchewan"', add
+label define fbpld_pop2_lbl 15017 `"Northwest"', add
+label define fbpld_pop2_lbl 15019 `"Ruperts Land"', add
+label define fbpld_pop2_lbl 15020 `"Manitoba"', add
+label define fbpld_pop2_lbl 15021 `"Red River"', add
+label define fbpld_pop2_lbl 15030 `"Ontario/Upper Canada"', add
+label define fbpld_pop2_lbl 15031 `"Upper Canada"', add
+label define fbpld_pop2_lbl 15032 `"Canada West"', add
+label define fbpld_pop2_lbl 15040 `"New Brunswick"', add
+label define fbpld_pop2_lbl 15042 `"Canada West"', add
+label define fbpld_pop2_lbl 15050 `"Nova Scotia"', add
+label define fbpld_pop2_lbl 15051 `"Cape Breton"', add
+label define fbpld_pop2_lbl 15052 `"Halifax"', add
+label define fbpld_pop2_lbl 15060 `"Prince Edward Island"', add
+label define fbpld_pop2_lbl 15070 `"Newfoundland"', add
+label define fbpld_pop2_lbl 15080 `"French Canada"', add
+label define fbpld_pop2_lbl 15081 `"Quebec"', add
+label define fbpld_pop2_lbl 15082 `"Lower Canada"', add
+label define fbpld_pop2_lbl 15083 `"Canada East"', add
+label define fbpld_pop2_lbl 15500 `"St Pierre and Miquelon"', add
+label define fbpld_pop2_lbl 16000 `"Atlantic Islands"', add
+label define fbpld_pop2_lbl 16010 `"Bermuda"', add
+label define fbpld_pop2_lbl 16020 `"Cape Verde"', add
+label define fbpld_pop2_lbl 16030 `"Falkland Islands"', add
+label define fbpld_pop2_lbl 16040 `"Greenland"', add
+label define fbpld_pop2_lbl 16050 `"St Helena and Ascension"', add
+label define fbpld_pop2_lbl 16060 `"Canary Islands"', add
+label define fbpld_pop2_lbl 19900 `"North America, n.s."', add
+label define fbpld_pop2_lbl 20000 `"Mexico"', add
+label define fbpld_pop2_lbl 21000 `"Central America"', add
+label define fbpld_pop2_lbl 21010 `"Belize/British Honduras"', add
+label define fbpld_pop2_lbl 21020 `"Costa Rica"', add
+label define fbpld_pop2_lbl 21030 `"El Salvador"', add
+label define fbpld_pop2_lbl 21040 `"Guatemala"', add
+label define fbpld_pop2_lbl 21050 `"Honduras"', add
+label define fbpld_pop2_lbl 21060 `"Nicaragua"', add
+label define fbpld_pop2_lbl 21070 `"Panama"', add
+label define fbpld_pop2_lbl 21071 `"Canal Zone"', add
+label define fbpld_pop2_lbl 21090 `"Central America, ns"', add
+label define fbpld_pop2_lbl 25000 `"Cuba"', add
+label define fbpld_pop2_lbl 26000 `"West Indies"', add
+label define fbpld_pop2_lbl 26010 `"Dominican Republic"', add
+label define fbpld_pop2_lbl 26020 `"Haiti"', add
+label define fbpld_pop2_lbl 26030 `"Jamaica"', add
+label define fbpld_pop2_lbl 26040 `"British West Indies"', add
+label define fbpld_pop2_lbl 26041 `"Anguilla"', add
+label define fbpld_pop2_lbl 26042 `"Antigua-Barbuda"', add
+label define fbpld_pop2_lbl 26043 `"Bahamas"', add
+label define fbpld_pop2_lbl 26044 `"Barbados"', add
+label define fbpld_pop2_lbl 26045 `"British Virgin Islands"', add
+label define fbpld_pop2_lbl 26046 `"Anegada"', add
+label define fbpld_pop2_lbl 26047 `"Cooper"', add
+label define fbpld_pop2_lbl 26048 `"Jost Van Dyke"', add
+label define fbpld_pop2_lbl 26049 `"Peter"', add
+label define fbpld_pop2_lbl 26050 `"Tortola"', add
+label define fbpld_pop2_lbl 26051 `"Virgin Gorda"', add
+label define fbpld_pop2_lbl 26052 `"Br. Virgin Islands, ns"', add
+label define fbpld_pop2_lbl 26053 `"Cayman Islands"', add
+label define fbpld_pop2_lbl 26054 `"Dominica"', add
+label define fbpld_pop2_lbl 26055 `"Grenada"', add
+label define fbpld_pop2_lbl 26056 `"Montserrat"', add
+label define fbpld_pop2_lbl 26057 `"St Kitts-Nevis"', add
+label define fbpld_pop2_lbl 26058 `"St Lucia"', add
+label define fbpld_pop2_lbl 26059 `"St Vincent"', add
+label define fbpld_pop2_lbl 26060 `"Trinidad and Tobago"', add
+label define fbpld_pop2_lbl 26061 `"Turks and Caicos"', add
+label define fbpld_pop2_lbl 26069 `"British West Indies, ns"', add
+label define fbpld_pop2_lbl 26070 `"Other West Indies"', add
+label define fbpld_pop2_lbl 26071 `"Aruba"', add
+label define fbpld_pop2_lbl 26072 `"Netherlands Antilles"', add
+label define fbpld_pop2_lbl 26073 `"Bonaire"', add
+label define fbpld_pop2_lbl 26074 `"Curacao"', add
+label define fbpld_pop2_lbl 26075 `"Dutch St. Maarten"', add
+label define fbpld_pop2_lbl 26076 `"Saba"', add
+label define fbpld_pop2_lbl 26077 `"St. Eustatius"', add
+label define fbpld_pop2_lbl 26079 `"Dutch Caribbean, ns"', add
+label define fbpld_pop2_lbl 26080 `"French St Maarten"', add
+label define fbpld_pop2_lbl 26081 `"Guadeloupe"', add
+label define fbpld_pop2_lbl 26082 `"Martinique"', add
+label define fbpld_pop2_lbl 26083 `"St. Barthelemy"', add
+label define fbpld_pop2_lbl 26089 `"French Caribbean, ns"', add
+label define fbpld_pop2_lbl 26090 `"Antilles, n.s."', add
+label define fbpld_pop2_lbl 26091 `"Caribbean, n.s. / n.e.c."', add
+label define fbpld_pop2_lbl 26092 `"Latin America, ns"', add
+label define fbpld_pop2_lbl 26093 `"Leeward Islands, ns"', add
+label define fbpld_pop2_lbl 26094 `"West Indies, ns"', add
+label define fbpld_pop2_lbl 26095 `"Winward Islands"', add
+label define fbpld_pop2_lbl 29900 `"Americas, ns"', add
+label define fbpld_pop2_lbl 30000 `"South America"', add
+label define fbpld_pop2_lbl 30005 `"Argentina"', add
+label define fbpld_pop2_lbl 30010 `"Bolivia"', add
+label define fbpld_pop2_lbl 30015 `"Brazil"', add
+label define fbpld_pop2_lbl 30020 `"Chile"', add
+label define fbpld_pop2_lbl 30025 `"Colombia"', add
+label define fbpld_pop2_lbl 30030 `"Ecuador"', add
+label define fbpld_pop2_lbl 30035 `"French Guiana"', add
+label define fbpld_pop2_lbl 30040 `"Guyana/British Guiana"', add
+label define fbpld_pop2_lbl 30045 `"Paraguay"', add
+label define fbpld_pop2_lbl 30050 `"Peru"', add
+label define fbpld_pop2_lbl 30055 `"Suriname"', add
+label define fbpld_pop2_lbl 30060 `"Uruguay"', add
+label define fbpld_pop2_lbl 30065 `"Venezuela"', add
+label define fbpld_pop2_lbl 30090 `"South America, ns"', add
+label define fbpld_pop2_lbl 30091 `"South and Central America, n.s."', add
+label define fbpld_pop2_lbl 40000 `"Denmark"', add
+label define fbpld_pop2_lbl 40010 `"Faroe Islands"', add
+label define fbpld_pop2_lbl 40100 `"Finland"', add
+label define fbpld_pop2_lbl 40200 `"Iceland"', add
+label define fbpld_pop2_lbl 40300 `"Lapland, ns"', add
+label define fbpld_pop2_lbl 40400 `"Norway"', add
+label define fbpld_pop2_lbl 40410 `"Svalbard and Jan Meyen"', add
+label define fbpld_pop2_lbl 40412 `"Jan Meyen"', add
+label define fbpld_pop2_lbl 40500 `"Sweden"', add
+label define fbpld_pop2_lbl 40600 `"Svalbard"', add
+label define fbpld_pop2_lbl 41000 `"England"', add
+label define fbpld_pop2_lbl 41010 `"Channel Islands"', add
+label define fbpld_pop2_lbl 41011 `"Guernsey"', add
+label define fbpld_pop2_lbl 41012 `"Jersey"', add
+label define fbpld_pop2_lbl 41020 `"Isle of Man"', add
+label define fbpld_pop2_lbl 41100 `"Scotland"', add
+label define fbpld_pop2_lbl 41200 `"Wales"', add
+label define fbpld_pop2_lbl 41300 `"United Kingdom, ns"', add
+label define fbpld_pop2_lbl 41400 `"Ireland"', add
+label define fbpld_pop2_lbl 41410 `"Northern Ireland"', add
+label define fbpld_pop2_lbl 41900 `"Northern Europe, ns"', add
+label define fbpld_pop2_lbl 42000 `"Belgium"', add
+label define fbpld_pop2_lbl 42100 `"France"', add
+label define fbpld_pop2_lbl 42110 `"Alsace-Lorraine"', add
+label define fbpld_pop2_lbl 42111 `"Alsace"', add
+label define fbpld_pop2_lbl 42112 `"Lorraine"', add
+label define fbpld_pop2_lbl 42200 `"Liechtenstein"', add
+label define fbpld_pop2_lbl 42300 `"Luxembourg"', add
+label define fbpld_pop2_lbl 42400 `"Monaco"', add
+label define fbpld_pop2_lbl 42500 `"Netherlands"', add
+label define fbpld_pop2_lbl 42600 `"Switzerland"', add
+label define fbpld_pop2_lbl 42900 `"Western Europe, ns"', add
+label define fbpld_pop2_lbl 43000 `"Albania"', add
+label define fbpld_pop2_lbl 43100 `"Andorra"', add
+label define fbpld_pop2_lbl 43200 `"Gibraltar"', add
+label define fbpld_pop2_lbl 43300 `"Greece"', add
+label define fbpld_pop2_lbl 43310 `"Dodecanese Islands"', add
+label define fbpld_pop2_lbl 43320 `"Turkey Greece"', add
+label define fbpld_pop2_lbl 43330 `"Macedonia"', add
+label define fbpld_pop2_lbl 43400 `"Italy"', add
+label define fbpld_pop2_lbl 43500 `"Malta"', add
+label define fbpld_pop2_lbl 43600 `"Portugal"', add
+label define fbpld_pop2_lbl 43610 `"Azores"', add
+label define fbpld_pop2_lbl 43620 `"Madeira Islands"', add
+label define fbpld_pop2_lbl 43630 `"Cape Verde Islands"', add
+label define fbpld_pop2_lbl 43640 `"St Miguel"', add
+label define fbpld_pop2_lbl 43700 `"San Marino"', add
+label define fbpld_pop2_lbl 43800 `"Spain"', add
+label define fbpld_pop2_lbl 43900 `"Vatican City"', add
+label define fbpld_pop2_lbl 44000 `"Southern Europe, ns"', add
+label define fbpld_pop2_lbl 45000 `"Austria"', add
+label define fbpld_pop2_lbl 45010 `"Austria-Hungary"', add
+label define fbpld_pop2_lbl 45020 `"Austria-Graz"', add
+label define fbpld_pop2_lbl 45030 `"Austria-Linz"', add
+label define fbpld_pop2_lbl 45040 `"Austria-Salzburg"', add
+label define fbpld_pop2_lbl 45050 `"Austria-Tyrol"', add
+label define fbpld_pop2_lbl 45060 `"Austria-Vienna"', add
+label define fbpld_pop2_lbl 45070 `"Austria-Kaernsten"', add
+label define fbpld_pop2_lbl 45080 `"Austria-Neustadt"', add
+label define fbpld_pop2_lbl 45100 `"Bulgaria"', add
+label define fbpld_pop2_lbl 45200 `"Czechoslovakia"', add
+label define fbpld_pop2_lbl 45210 `"Bohemia"', add
+label define fbpld_pop2_lbl 45211 `"Bohemia-Moravia"', add
+label define fbpld_pop2_lbl 45212 `"Slovakia"', add
+label define fbpld_pop2_lbl 45213 `"Czech Republic"', add
+label define fbpld_pop2_lbl 45300 `"Germany"', add
+label define fbpld_pop2_lbl 45301 `"Berlin"', add
+label define fbpld_pop2_lbl 45310 `"West Germany"', add
+label define fbpld_pop2_lbl 45311 `"Baden"', add
+label define fbpld_pop2_lbl 45312 `"Bavaria"', add
+label define fbpld_pop2_lbl 45313 `"Bremen"', add
+label define fbpld_pop2_lbl 45314 `"Braunschweig"', add
+label define fbpld_pop2_lbl 45315 `"Hamburg"', add
+label define fbpld_pop2_lbl 45316 `"Hanover"', add
+label define fbpld_pop2_lbl 45317 `"Hessen"', add
+label define fbpld_pop2_lbl 45318 `"Hesse-Nassau"', add
+label define fbpld_pop2_lbl 45319 `"Holstein"', add
+label define fbpld_pop2_lbl 45320 `"Lippe"', add
+label define fbpld_pop2_lbl 45321 `"Lubeck"', add
+label define fbpld_pop2_lbl 45322 `"Oldenburg"', add
+label define fbpld_pop2_lbl 45323 `"Rheinland"', add
+label define fbpld_pop2_lbl 45324 `"Schleswig"', add
+label define fbpld_pop2_lbl 45325 `"Schleswig-Holstein"', add
+label define fbpld_pop2_lbl 45326 `"Schwarzburg"', add
+label define fbpld_pop2_lbl 45327 `"Waldeck"', add
+label define fbpld_pop2_lbl 45328 `"West Berlin"', add
+label define fbpld_pop2_lbl 45329 `"Westphalia"', add
+label define fbpld_pop2_lbl 45330 `"Wurttemberg"', add
+label define fbpld_pop2_lbl 45331 `"Frankfurt"', add
+label define fbpld_pop2_lbl 45332 `"Saarland"', add
+label define fbpld_pop2_lbl 45333 `"Nordrhein-Westfalen"', add
+label define fbpld_pop2_lbl 45340 `"East Germany"', add
+label define fbpld_pop2_lbl 45341 `"Anhalt"', add
+label define fbpld_pop2_lbl 45342 `"Brandenburg"', add
+label define fbpld_pop2_lbl 45343 `"East Berlin"', add
+label define fbpld_pop2_lbl 45344 `"Mecklenburg"', add
+label define fbpld_pop2_lbl 45345 `"Sachsen-Altenburg"', add
+label define fbpld_pop2_lbl 45346 `"Sachsen-Coburg"', add
+label define fbpld_pop2_lbl 45347 `"Sachsen-Gotha"', add
+label define fbpld_pop2_lbl 45348 `"Sachsen-Meiningen"', add
+label define fbpld_pop2_lbl 45349 `"Sachsen-Weimar-Eisenach"', add
+label define fbpld_pop2_lbl 45350 `"Saxony"', add
+label define fbpld_pop2_lbl 45351 `"Schwerin"', add
+label define fbpld_pop2_lbl 45352 `"Strelitz"', add
+label define fbpld_pop2_lbl 45353 `"Thuringian States"', add
+label define fbpld_pop2_lbl 45360 `"Prussia, nec"', add
+label define fbpld_pop2_lbl 45361 `"Hohenzollern"', add
+label define fbpld_pop2_lbl 45362 `"Niedersachsen"', add
+label define fbpld_pop2_lbl 45400 `"Hungary"', add
+label define fbpld_pop2_lbl 45500 `"Poland"', add
+label define fbpld_pop2_lbl 45510 `"Austrian Poland"', add
+label define fbpld_pop2_lbl 45511 `"Galicia"', add
+label define fbpld_pop2_lbl 45520 `"German Poland"', add
+label define fbpld_pop2_lbl 45521 `"East Prussia"', add
+label define fbpld_pop2_lbl 45522 `"Pomerania"', add
+label define fbpld_pop2_lbl 45523 `"Posen"', add
+label define fbpld_pop2_lbl 45524 `"Prussian Poland"', add
+label define fbpld_pop2_lbl 45525 `"Silesia"', add
+label define fbpld_pop2_lbl 45526 `"West Prussia"', add
+label define fbpld_pop2_lbl 45530 `"Russian Poland"', add
+label define fbpld_pop2_lbl 45600 `"Romania"', add
+label define fbpld_pop2_lbl 45610 `"Transylvania"', add
+label define fbpld_pop2_lbl 45700 `"Yugoslavia"', add
+label define fbpld_pop2_lbl 45710 `"Croatia"', add
+label define fbpld_pop2_lbl 45720 `"Montenegro"', add
+label define fbpld_pop2_lbl 45730 `"Serbia"', add
+label define fbpld_pop2_lbl 45740 `"Bosnia"', add
+label define fbpld_pop2_lbl 45750 `"Dalmatia"', add
+label define fbpld_pop2_lbl 45760 `"Slovonia"', add
+label define fbpld_pop2_lbl 45770 `"Carniola"', add
+label define fbpld_pop2_lbl 45780 `"Slovenia"', add
+label define fbpld_pop2_lbl 45790 `"Kosovo"', add
+label define fbpld_pop2_lbl 45800 `"Central Europe, ns"', add
+label define fbpld_pop2_lbl 45900 `"Eastern Europe, ns"', add
+label define fbpld_pop2_lbl 46000 `"Estonia"', add
+label define fbpld_pop2_lbl 46100 `"Latvia"', add
+label define fbpld_pop2_lbl 46200 `"Lithuania"', add
+label define fbpld_pop2_lbl 46300 `"Baltic States, ns"', add
+label define fbpld_pop2_lbl 46500 `"Other USSR/Russia"', add
+label define fbpld_pop2_lbl 46510 `"Byelorussia"', add
+label define fbpld_pop2_lbl 46520 `"Moldavia"', add
+label define fbpld_pop2_lbl 46521 `"Bessarabia"', add
+label define fbpld_pop2_lbl 46530 `"Ukraine"', add
+label define fbpld_pop2_lbl 46540 `"Armenia"', add
+label define fbpld_pop2_lbl 46541 `"Azerbaijan"', add
+label define fbpld_pop2_lbl 46542 `"Republic of Georgia"', add
+label define fbpld_pop2_lbl 46543 `"Kazakhstan"', add
+label define fbpld_pop2_lbl 46544 `"Kirghizia"', add
+label define fbpld_pop2_lbl 46545 `"Tadzhik"', add
+label define fbpld_pop2_lbl 46546 `"Turkmenistan"', add
+label define fbpld_pop2_lbl 46547 `"Uzbekistan"', add
+label define fbpld_pop2_lbl 46548 `"Siberia"', add
+label define fbpld_pop2_lbl 46590 `"USSR, ns"', add
+label define fbpld_pop2_lbl 49900 `"Europe, nec/ns"', add
+label define fbpld_pop2_lbl 50000 `"China"', add
+label define fbpld_pop2_lbl 50010 `"Hong Kong"', add
+label define fbpld_pop2_lbl 50020 `"Macau"', add
+label define fbpld_pop2_lbl 50030 `"Mongolia"', add
+label define fbpld_pop2_lbl 50040 `"Taiwan"', add
+label define fbpld_pop2_lbl 50100 `"Japan"', add
+label define fbpld_pop2_lbl 50200 `"Korea"', add
+label define fbpld_pop2_lbl 50210 `"North Korea"', add
+label define fbpld_pop2_lbl 50220 `"South Korea"', add
+label define fbpld_pop2_lbl 50900 `"East Asia, n.s."', add
+label define fbpld_pop2_lbl 51000 `"Brunei"', add
+label define fbpld_pop2_lbl 51100 `"Cambodia (Kampuchea)"', add
+label define fbpld_pop2_lbl 51200 `"Indonesia"', add
+label define fbpld_pop2_lbl 51210 `"East Indies"', add
+label define fbpld_pop2_lbl 51220 `"East Timor"', add
+label define fbpld_pop2_lbl 51300 `"Laos"', add
+label define fbpld_pop2_lbl 51400 `"Malaysia"', add
+label define fbpld_pop2_lbl 51500 `"Philippines"', add
+label define fbpld_pop2_lbl 51600 `"Singapore"', add
+label define fbpld_pop2_lbl 51700 `"Thailand"', add
+label define fbpld_pop2_lbl 51800 `"Vietnam"', add
+label define fbpld_pop2_lbl 51900 `"Southeast Asia, ns"', add
+label define fbpld_pop2_lbl 51910 `"Indochina, ns"', add
+label define fbpld_pop2_lbl 52000 `"Afghanistan"', add
+label define fbpld_pop2_lbl 52100 `"India"', add
+label define fbpld_pop2_lbl 52110 `"Bangladesh"', add
+label define fbpld_pop2_lbl 52120 `"Bhutan"', add
+label define fbpld_pop2_lbl 52130 `"Burma (Myanmar)"', add
+label define fbpld_pop2_lbl 52140 `"Pakistan"', add
+label define fbpld_pop2_lbl 52150 `"Sri Lanka (Ceylon)"', add
+label define fbpld_pop2_lbl 52200 `"Iran"', add
+label define fbpld_pop2_lbl 52300 `"Maldives"', add
+label define fbpld_pop2_lbl 52400 `"Nepal"', add
+label define fbpld_pop2_lbl 53000 `"Bahrain"', add
+label define fbpld_pop2_lbl 53100 `"Cyprus"', add
+label define fbpld_pop2_lbl 53200 `"Iraq"', add
+label define fbpld_pop2_lbl 53210 `"Mesopotamia"', add
+label define fbpld_pop2_lbl 53300 `"Iraq/Saudi Arabia"', add
+label define fbpld_pop2_lbl 53400 `"Israel/Palestine"', add
+label define fbpld_pop2_lbl 53410 `"Gaza Strip"', add
+label define fbpld_pop2_lbl 53420 `"Palestine"', add
+label define fbpld_pop2_lbl 53430 `"West Bank"', add
+label define fbpld_pop2_lbl 53440 `"Israel"', add
+label define fbpld_pop2_lbl 53500 `"Jordan"', add
+label define fbpld_pop2_lbl 53600 `"Kuwait"', add
+label define fbpld_pop2_lbl 53700 `"Lebanon"', add
+label define fbpld_pop2_lbl 53800 `"Oman"', add
+label define fbpld_pop2_lbl 53900 `"Qatar"', add
+label define fbpld_pop2_lbl 54000 `"Saudi Arabia"', add
+label define fbpld_pop2_lbl 54100 `"Syria"', add
+label define fbpld_pop2_lbl 54200 `"Turkey"', add
+label define fbpld_pop2_lbl 54210 `"European Turkey"', add
+label define fbpld_pop2_lbl 54220 `"Asian Turkey"', add
+label define fbpld_pop2_lbl 54300 `"United Arab Emirates"', add
+label define fbpld_pop2_lbl 54400 `"Yemen Arab Republic (North)"', add
+label define fbpld_pop2_lbl 54500 `"Yemen, PDR (South)"', add
+label define fbpld_pop2_lbl 54600 `"Persian Gulf States, ns"', add
+label define fbpld_pop2_lbl 54700 `"Middle East, ns"', add
+label define fbpld_pop2_lbl 54800 `"Southwest Asia, nec/ns"', add
+label define fbpld_pop2_lbl 54900 `"Asia Minor, ns"', add
+label define fbpld_pop2_lbl 55000 `"South Asia, n.e.c."', add
+label define fbpld_pop2_lbl 59900 `"Asia, nec/ns"', add
+label define fbpld_pop2_lbl 60000 `"Africa"', add
+label define fbpld_pop2_lbl 60010 `"Northern Africa"', add
+label define fbpld_pop2_lbl 60011 `"Algeria"', add
+label define fbpld_pop2_lbl 60012 `"Egypt/United Arab Rep"', add
+label define fbpld_pop2_lbl 60013 `"Libya"', add
+label define fbpld_pop2_lbl 60014 `"Morocco"', add
+label define fbpld_pop2_lbl 60015 `"Sudan"', add
+label define fbpld_pop2_lbl 60016 `"Tunisia"', add
+label define fbpld_pop2_lbl 60017 `"Western Sahara"', add
+label define fbpld_pop2_lbl 60019 `"North Africa, ns"', add
+label define fbpld_pop2_lbl 60020 `"Benin"', add
+label define fbpld_pop2_lbl 60021 `"Burkina Faso"', add
+label define fbpld_pop2_lbl 60022 `"Gambia"', add
+label define fbpld_pop2_lbl 60023 `"Ghana"', add
+label define fbpld_pop2_lbl 60024 `"Guinea"', add
+label define fbpld_pop2_lbl 60025 `"Guinea-Bissau"', add
+label define fbpld_pop2_lbl 60026 `"Ivory Coast"', add
+label define fbpld_pop2_lbl 60027 `"Liberia"', add
+label define fbpld_pop2_lbl 60028 `"Mali"', add
+label define fbpld_pop2_lbl 60029 `"Mauritania"', add
+label define fbpld_pop2_lbl 60030 `"Niger"', add
+label define fbpld_pop2_lbl 60031 `"Nigeria"', add
+label define fbpld_pop2_lbl 60032 `"Senegal"', add
+label define fbpld_pop2_lbl 60033 `"Sierra Leone"', add
+label define fbpld_pop2_lbl 60034 `"Togo"', add
+label define fbpld_pop2_lbl 60038 `"Western Africa, n.s."', add
+label define fbpld_pop2_lbl 60039 `"French West Africa, ns"', add
+label define fbpld_pop2_lbl 60040 `"British Indian Ocean Territory"', add
+label define fbpld_pop2_lbl 60041 `"Burundi"', add
+label define fbpld_pop2_lbl 60042 `"Comoros"', add
+label define fbpld_pop2_lbl 60043 `"Djibouti"', add
+label define fbpld_pop2_lbl 60044 `"Ethiopia"', add
+label define fbpld_pop2_lbl 60045 `"Kenya"', add
+label define fbpld_pop2_lbl 60046 `"Madagascar"', add
+label define fbpld_pop2_lbl 60047 `"Malawi"', add
+label define fbpld_pop2_lbl 60048 `"Mauritius"', add
+label define fbpld_pop2_lbl 60049 `"Mozambique"', add
+label define fbpld_pop2_lbl 60050 `"Reunion"', add
+label define fbpld_pop2_lbl 60051 `"Rwanda"', add
+label define fbpld_pop2_lbl 60052 `"Seychelles"', add
+label define fbpld_pop2_lbl 60053 `"Somalia"', add
+label define fbpld_pop2_lbl 60054 `"Tanzania"', add
+label define fbpld_pop2_lbl 60055 `"Uganda"', add
+label define fbpld_pop2_lbl 60056 `"Zambia"', add
+label define fbpld_pop2_lbl 60057 `"Zimbabwe"', add
+label define fbpld_pop2_lbl 60058 `"Bassas de India"', add
+label define fbpld_pop2_lbl 60059 `"Europa"', add
+label define fbpld_pop2_lbl 60060 `"Gloriosos"', add
+label define fbpld_pop2_lbl 60061 `"Juan de Nova"', add
+label define fbpld_pop2_lbl 60062 `"Mayotte"', add
+label define fbpld_pop2_lbl 60063 `"Tromelin"', add
+label define fbpld_pop2_lbl 60064 `"Eastern Africa, nec/ns"', add
+label define fbpld_pop2_lbl 60065 `"Eritrea"', add
+label define fbpld_pop2_lbl 60070 `"Central Africa"', add
+label define fbpld_pop2_lbl 60071 `"Angola"', add
+label define fbpld_pop2_lbl 60072 `"Cameroon"', add
+label define fbpld_pop2_lbl 60073 `"Central African Republic"', add
+label define fbpld_pop2_lbl 60074 `"Chad"', add
+label define fbpld_pop2_lbl 60075 `"Congo"', add
+label define fbpld_pop2_lbl 60076 `"Equatorial Guinea"', add
+label define fbpld_pop2_lbl 60077 `"Gabon"', add
+label define fbpld_pop2_lbl 60078 `"Sao Tome and Principe"', add
+label define fbpld_pop2_lbl 60079 `"Zaire"', add
+label define fbpld_pop2_lbl 60080 `"Central Africa, ns"', add
+label define fbpld_pop2_lbl 60081 `"Equatorial Africa, ns"', add
+label define fbpld_pop2_lbl 60082 `"French Equatorial Africa, ns"', add
+label define fbpld_pop2_lbl 60090 `"Southern Africa"', add
+label define fbpld_pop2_lbl 60091 `"Botswana"', add
+label define fbpld_pop2_lbl 60092 `"Lesotho"', add
+label define fbpld_pop2_lbl 60093 `"Namibia"', add
+label define fbpld_pop2_lbl 60094 `"South Africa (Union of)"', add
+label define fbpld_pop2_lbl 60095 `"Swaziland"', add
+label define fbpld_pop2_lbl 60096 `"Southern Africa, n.s."', add
+label define fbpld_pop2_lbl 60099 `"Africa, ns/nec"', add
+label define fbpld_pop2_lbl 70000 `"Australia and New Zealand"', add
+label define fbpld_pop2_lbl 70010 `"Australia"', add
+label define fbpld_pop2_lbl 70011 `"Ashmore and Cartier Islands"', add
+label define fbpld_pop2_lbl 70012 `"Coral Sea Islands Territory"', add
+label define fbpld_pop2_lbl 70013 `"Christmas Island"', add
+label define fbpld_pop2_lbl 70014 `"Cocos Islands"', add
+label define fbpld_pop2_lbl 70020 `"New Zealand"', add
+label define fbpld_pop2_lbl 71000 `"Pacific Islands"', add
+label define fbpld_pop2_lbl 71010 `"New Caledonia"', add
+label define fbpld_pop2_lbl 71012 `"Papua New Guinea"', add
+label define fbpld_pop2_lbl 71013 `"Solomon Islands"', add
+label define fbpld_pop2_lbl 71014 `"Vanuatu (New Hebrides)"', add
+label define fbpld_pop2_lbl 71016 `"Melanesia, ns"', add
+label define fbpld_pop2_lbl 71017 `"Norfolk Islands"', add
+label define fbpld_pop2_lbl 71018 `"Niue"', add
+label define fbpld_pop2_lbl 71020 `"Cook Islands"', add
+label define fbpld_pop2_lbl 71021 `"Fiji"', add
+label define fbpld_pop2_lbl 71022 `"French Polynesia"', add
+label define fbpld_pop2_lbl 71023 `"Tonga"', add
+label define fbpld_pop2_lbl 71024 `"Wallis and Futuna Islands"', add
+label define fbpld_pop2_lbl 71025 `"Western Samoa"', add
+label define fbpld_pop2_lbl 71026 `"Pitcairn Island"', add
+label define fbpld_pop2_lbl 71027 `"Tokelau"', add
+label define fbpld_pop2_lbl 71028 `"Tuvalu"', add
+label define fbpld_pop2_lbl 71029 `"Polynesia, n.s."', add
+label define fbpld_pop2_lbl 71032 `"Kiribati"', add
+label define fbpld_pop2_lbl 71033 `"Canton and Enderbury"', add
+label define fbpld_pop2_lbl 71034 `"Nauru"', add
+label define fbpld_pop2_lbl 71039 `"Micronesia, ns"', add
+label define fbpld_pop2_lbl 71040 `"US Pacific Trust Territories"', add
+label define fbpld_pop2_lbl 71041 `"Marshall Islands"', add
+label define fbpld_pop2_lbl 71042 `"Micronesia"', add
+label define fbpld_pop2_lbl 71043 `"Kosrae"', add
+label define fbpld_pop2_lbl 71044 `"Pohnpei"', add
+label define fbpld_pop2_lbl 71045 `"Truk"', add
+label define fbpld_pop2_lbl 71046 `"Yap"', add
+label define fbpld_pop2_lbl 71047 `"Northern Mariana Islands"', add
+label define fbpld_pop2_lbl 71048 `"Palau"', add
+label define fbpld_pop2_lbl 71049 `"Pacific Trust Terr, ns"', add
+label define fbpld_pop2_lbl 71050 `"Clipperton Island"', add
+label define fbpld_pop2_lbl 71090 `"Oceania, ns/nec"', add
+label define fbpld_pop2_lbl 80000 `"Antarctica, ns/nec"', add
+label define fbpld_pop2_lbl 80010 `"Bouvet Islands"', add
+label define fbpld_pop2_lbl 80020 `"British Antarctic Terr."', add
+label define fbpld_pop2_lbl 80030 `"Dronning Maud Land"', add
+label define fbpld_pop2_lbl 80040 `"French Southern and Antarctic Lands"', add
+label define fbpld_pop2_lbl 80050 `"Heard and McDonald Islands"', add
+label define fbpld_pop2_lbl 90000 `"Abroad (unknown) or at sea"', add
+label define fbpld_pop2_lbl 90010 `"Abroad, ns"', add
+label define fbpld_pop2_lbl 90011 `"Abroad (US citizen)"', add
+label define fbpld_pop2_lbl 90020 `"At sea"', add
+label define fbpld_pop2_lbl 90021 `"At sea (US citizen)"', add
+label define fbpld_pop2_lbl 90022 `"At sea or abroad (U.S. citizen)"', add
+label define fbpld_pop2_lbl 95000 `"Other n.e.c."', add
+label define fbpld_pop2_lbl 99700 `"Unknown"', add
+label define fbpld_pop2_lbl 99800 `"Illegible"', add
+label define fbpld_pop2_lbl 99900 `"Missing/blank"', add
+label values fbpld_pop2 fbpld_pop2_lbl
+
 label define citizen_head_lbl 0 `"N/A"'
 label define citizen_head_lbl 1 `"Born abroad of American parents"', add
 label define citizen_head_lbl 2 `"Naturalized citizen"', add
 label define citizen_head_lbl 3 `"Not a citizen"', add
 label define citizen_head_lbl 4 `"Not a citizen, but has received first papers"', add
 label define citizen_head_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_head_lbl 8 `"Illegible"', add
+label define citizen_head_lbl 9 `"Missing/blank"', add
 label values citizen_head citizen_head_lbl
+
+label define citizen_mom_lbl 0 `"N/A"'
+label define citizen_mom_lbl 1 `"Born abroad of American parents"', add
+label define citizen_mom_lbl 2 `"Naturalized citizen"', add
+label define citizen_mom_lbl 3 `"Not a citizen"', add
+label define citizen_mom_lbl 4 `"Not a citizen, but has received first papers"', add
+label define citizen_mom_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_mom_lbl 8 `"Illegible"', add
+label define citizen_mom_lbl 9 `"Missing/blank"', add
+label values citizen_mom citizen_mom_lbl
+
+label define citizen_pop_lbl 0 `"N/A"'
+label define citizen_pop_lbl 1 `"Born abroad of American parents"', add
+label define citizen_pop_lbl 2 `"Naturalized citizen"', add
+label define citizen_pop_lbl 3 `"Not a citizen"', add
+label define citizen_pop_lbl 4 `"Not a citizen, but has received first papers"', add
+label define citizen_pop_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_pop_lbl 8 `"Illegible"', add
+label define citizen_pop_lbl 9 `"Missing/blank"', add
+label values citizen_pop citizen_pop_lbl
 
 label define citizen_sp_lbl 0 `"N/A"'
 label define citizen_sp_lbl 1 `"Born abroad of American parents"', add
@@ -10070,7 +21654,29 @@ label define citizen_sp_lbl 2 `"Naturalized citizen"', add
 label define citizen_sp_lbl 3 `"Not a citizen"', add
 label define citizen_sp_lbl 4 `"Not a citizen, but has received first papers"', add
 label define citizen_sp_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_sp_lbl 8 `"Illegible"', add
+label define citizen_sp_lbl 9 `"Missing/blank"', add
 label values citizen_sp citizen_sp_lbl
+
+label define citizen_mom2_lbl 0 `"N/A"'
+label define citizen_mom2_lbl 1 `"Born abroad of American parents"', add
+label define citizen_mom2_lbl 2 `"Naturalized citizen"', add
+label define citizen_mom2_lbl 3 `"Not a citizen"', add
+label define citizen_mom2_lbl 4 `"Not a citizen, but has received first papers"', add
+label define citizen_mom2_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_mom2_lbl 8 `"Illegible"', add
+label define citizen_mom2_lbl 9 `"Missing/blank"', add
+label values citizen_mom2 citizen_mom2_lbl
+
+label define citizen_pop2_lbl 0 `"N/A"'
+label define citizen_pop2_lbl 1 `"Born abroad of American parents"', add
+label define citizen_pop2_lbl 2 `"Naturalized citizen"', add
+label define citizen_pop2_lbl 3 `"Not a citizen"', add
+label define citizen_pop2_lbl 4 `"Not a citizen, but has received first papers"', add
+label define citizen_pop2_lbl 5 `"Foreign born, citizenship status not reported"', add
+label define citizen_pop2_lbl 8 `"Illegible"', add
+label define citizen_pop2_lbl 9 `"Missing/blank"', add
+label values citizen_pop2 citizen_pop2_lbl
 
 label define higrade_head_lbl 00 `"N/A  (or None, 1980)"'
 label define higrade_head_lbl 01 `"None"', add
@@ -10098,6 +21704,58 @@ label define higrade_head_lbl 22 `"7th year"', add
 label define higrade_head_lbl 23 `"8th year or more"', add
 label values higrade_head higrade_head_lbl
 
+label define higrade_mom_lbl 00 `"N/A  (or None, 1980)"'
+label define higrade_mom_lbl 01 `"None"', add
+label define higrade_mom_lbl 02 `"Nursery school"', add
+label define higrade_mom_lbl 03 `"Kindergarten"', add
+label define higrade_mom_lbl 04 `"1st grade"', add
+label define higrade_mom_lbl 05 `"2nd grade"', add
+label define higrade_mom_lbl 06 `"3rd grade"', add
+label define higrade_mom_lbl 07 `"4th grade"', add
+label define higrade_mom_lbl 08 `"5th grade"', add
+label define higrade_mom_lbl 09 `"6th grade"', add
+label define higrade_mom_lbl 10 `"7th grade"', add
+label define higrade_mom_lbl 11 `"8th grade"', add
+label define higrade_mom_lbl 12 `"9th grade"', add
+label define higrade_mom_lbl 13 `"10th grade"', add
+label define higrade_mom_lbl 14 `"11th grade"', add
+label define higrade_mom_lbl 15 `"12th grade"', add
+label define higrade_mom_lbl 16 `"1st year"', add
+label define higrade_mom_lbl 17 `"2nd year"', add
+label define higrade_mom_lbl 18 `"3rd year"', add
+label define higrade_mom_lbl 19 `"4th year"', add
+label define higrade_mom_lbl 20 `"5th year or more (40-50)"', add
+label define higrade_mom_lbl 21 `"6th year or more (60,70)"', add
+label define higrade_mom_lbl 22 `"7th year"', add
+label define higrade_mom_lbl 23 `"8th year or more"', add
+label values higrade_mom higrade_mom_lbl
+
+label define higrade_pop_lbl 00 `"N/A  (or None, 1980)"'
+label define higrade_pop_lbl 01 `"None"', add
+label define higrade_pop_lbl 02 `"Nursery school"', add
+label define higrade_pop_lbl 03 `"Kindergarten"', add
+label define higrade_pop_lbl 04 `"1st grade"', add
+label define higrade_pop_lbl 05 `"2nd grade"', add
+label define higrade_pop_lbl 06 `"3rd grade"', add
+label define higrade_pop_lbl 07 `"4th grade"', add
+label define higrade_pop_lbl 08 `"5th grade"', add
+label define higrade_pop_lbl 09 `"6th grade"', add
+label define higrade_pop_lbl 10 `"7th grade"', add
+label define higrade_pop_lbl 11 `"8th grade"', add
+label define higrade_pop_lbl 12 `"9th grade"', add
+label define higrade_pop_lbl 13 `"10th grade"', add
+label define higrade_pop_lbl 14 `"11th grade"', add
+label define higrade_pop_lbl 15 `"12th grade"', add
+label define higrade_pop_lbl 16 `"1st year"', add
+label define higrade_pop_lbl 17 `"2nd year"', add
+label define higrade_pop_lbl 18 `"3rd year"', add
+label define higrade_pop_lbl 19 `"4th year"', add
+label define higrade_pop_lbl 20 `"5th year or more (40-50)"', add
+label define higrade_pop_lbl 21 `"6th year or more (60,70)"', add
+label define higrade_pop_lbl 22 `"7th year"', add
+label define higrade_pop_lbl 23 `"8th year or more"', add
+label values higrade_pop higrade_pop_lbl
+
 label define higrade_sp_lbl 00 `"N/A  (or None, 1980)"'
 label define higrade_sp_lbl 01 `"None"', add
 label define higrade_sp_lbl 02 `"Nursery school"', add
@@ -10123,6 +21781,58 @@ label define higrade_sp_lbl 21 `"6th year or more (60,70)"', add
 label define higrade_sp_lbl 22 `"7th year"', add
 label define higrade_sp_lbl 23 `"8th year or more"', add
 label values higrade_sp higrade_sp_lbl
+
+label define higrade_mom2_lbl 00 `"N/A  (or None, 1980)"'
+label define higrade_mom2_lbl 01 `"None"', add
+label define higrade_mom2_lbl 02 `"Nursery school"', add
+label define higrade_mom2_lbl 03 `"Kindergarten"', add
+label define higrade_mom2_lbl 04 `"1st grade"', add
+label define higrade_mom2_lbl 05 `"2nd grade"', add
+label define higrade_mom2_lbl 06 `"3rd grade"', add
+label define higrade_mom2_lbl 07 `"4th grade"', add
+label define higrade_mom2_lbl 08 `"5th grade"', add
+label define higrade_mom2_lbl 09 `"6th grade"', add
+label define higrade_mom2_lbl 10 `"7th grade"', add
+label define higrade_mom2_lbl 11 `"8th grade"', add
+label define higrade_mom2_lbl 12 `"9th grade"', add
+label define higrade_mom2_lbl 13 `"10th grade"', add
+label define higrade_mom2_lbl 14 `"11th grade"', add
+label define higrade_mom2_lbl 15 `"12th grade"', add
+label define higrade_mom2_lbl 16 `"1st year"', add
+label define higrade_mom2_lbl 17 `"2nd year"', add
+label define higrade_mom2_lbl 18 `"3rd year"', add
+label define higrade_mom2_lbl 19 `"4th year"', add
+label define higrade_mom2_lbl 20 `"5th year or more (40-50)"', add
+label define higrade_mom2_lbl 21 `"6th year or more (60,70)"', add
+label define higrade_mom2_lbl 22 `"7th year"', add
+label define higrade_mom2_lbl 23 `"8th year or more"', add
+label values higrade_mom2 higrade_mom2_lbl
+
+label define higrade_pop2_lbl 00 `"N/A  (or None, 1980)"'
+label define higrade_pop2_lbl 01 `"None"', add
+label define higrade_pop2_lbl 02 `"Nursery school"', add
+label define higrade_pop2_lbl 03 `"Kindergarten"', add
+label define higrade_pop2_lbl 04 `"1st grade"', add
+label define higrade_pop2_lbl 05 `"2nd grade"', add
+label define higrade_pop2_lbl 06 `"3rd grade"', add
+label define higrade_pop2_lbl 07 `"4th grade"', add
+label define higrade_pop2_lbl 08 `"5th grade"', add
+label define higrade_pop2_lbl 09 `"6th grade"', add
+label define higrade_pop2_lbl 10 `"7th grade"', add
+label define higrade_pop2_lbl 11 `"8th grade"', add
+label define higrade_pop2_lbl 12 `"9th grade"', add
+label define higrade_pop2_lbl 13 `"10th grade"', add
+label define higrade_pop2_lbl 14 `"11th grade"', add
+label define higrade_pop2_lbl 15 `"12th grade"', add
+label define higrade_pop2_lbl 16 `"1st year"', add
+label define higrade_pop2_lbl 17 `"2nd year"', add
+label define higrade_pop2_lbl 18 `"3rd year"', add
+label define higrade_pop2_lbl 19 `"4th year"', add
+label define higrade_pop2_lbl 20 `"5th year or more (40-50)"', add
+label define higrade_pop2_lbl 21 `"6th year or more (60,70)"', add
+label define higrade_pop2_lbl 22 `"7th year"', add
+label define higrade_pop2_lbl 23 `"8th year or more"', add
+label values higrade_pop2 higrade_pop2_lbl
 
 label define higraded_head_lbl 000 `"N/A"'
 label define higraded_head_lbl 010 `"None"', add
@@ -10195,6 +21905,148 @@ label define higraded_head_lbl 230 `"8th year or more of college"', add
 label define higraded_head_lbl 999 `"Missing"', add
 label values higraded_head higraded_head_lbl
 
+label define higraded_mom_lbl 000 `"N/A"'
+label define higraded_mom_lbl 010 `"None"', add
+label define higraded_mom_lbl 011 `"Did not finish nurs sch"', add
+label define higraded_mom_lbl 012 `"Attending nurs sch"', add
+label define higraded_mom_lbl 020 `"Nursery school"', add
+label define higraded_mom_lbl 021 `"Did not finish kindergart"', add
+label define higraded_mom_lbl 022 `"Attending kindergarten"', add
+label define higraded_mom_lbl 030 `"Kindergarten"', add
+label define higraded_mom_lbl 031 `"Did not finish 1st grade"', add
+label define higraded_mom_lbl 032 `"Attending 1st grade"', add
+label define higraded_mom_lbl 040 `"1st grade"', add
+label define higraded_mom_lbl 041 `"Did not finish 2nd grade"', add
+label define higraded_mom_lbl 042 `"Attending 2nd grade"', add
+label define higraded_mom_lbl 050 `"2nd grade"', add
+label define higraded_mom_lbl 051 `"Did not finish 3rd grade"', add
+label define higraded_mom_lbl 052 `"Attending 3rd grade"', add
+label define higraded_mom_lbl 060 `"3rd grade"', add
+label define higraded_mom_lbl 061 `"Did not finish 4th grade"', add
+label define higraded_mom_lbl 062 `"Attending 4th grade"', add
+label define higraded_mom_lbl 070 `"4th grade"', add
+label define higraded_mom_lbl 071 `"Did not finish 5th grade"', add
+label define higraded_mom_lbl 072 `"Attending 5th grade"', add
+label define higraded_mom_lbl 080 `"5th grade"', add
+label define higraded_mom_lbl 081 `"Did not finish 6th grade"', add
+label define higraded_mom_lbl 082 `"Attending 6th grade"', add
+label define higraded_mom_lbl 090 `"6th grade"', add
+label define higraded_mom_lbl 091 `"Did not finish 7th grade"', add
+label define higraded_mom_lbl 092 `"Attending 7th grade"', add
+label define higraded_mom_lbl 100 `"7th grade"', add
+label define higraded_mom_lbl 101 `"Did not finish 8th grade"', add
+label define higraded_mom_lbl 102 `"Attending 8th grade"', add
+label define higraded_mom_lbl 110 `"8th grade"', add
+label define higraded_mom_lbl 111 `"Did not finish 9th grade"', add
+label define higraded_mom_lbl 112 `"Attending 9th grade"', add
+label define higraded_mom_lbl 120 `"9th grade"', add
+label define higraded_mom_lbl 121 `"Did not finish 10th grade"', add
+label define higraded_mom_lbl 122 `"Attending 10th grade"', add
+label define higraded_mom_lbl 130 `"10th grade"', add
+label define higraded_mom_lbl 131 `"Did not finish 11th grade"', add
+label define higraded_mom_lbl 132 `"Attending 11th grade"', add
+label define higraded_mom_lbl 140 `"11th grade"', add
+label define higraded_mom_lbl 141 `"Did not finish 12th grade"', add
+label define higraded_mom_lbl 142 `"Attending 12th grade"', add
+label define higraded_mom_lbl 150 `"12th grade"', add
+label define higraded_mom_lbl 151 `"Did not finish 1st year college"', add
+label define higraded_mom_lbl 152 `"Attending 1st yesr college"', add
+label define higraded_mom_lbl 160 `"1st year of college"', add
+label define higraded_mom_lbl 161 `"Did not finish 2nd year of college"', add
+label define higraded_mom_lbl 162 `"Attending 2nd year of college"', add
+label define higraded_mom_lbl 170 `"2nd year of college"', add
+label define higraded_mom_lbl 171 `"Did not finish 3rd year of college"', add
+label define higraded_mom_lbl 172 `"Attending 3rd year of college"', add
+label define higraded_mom_lbl 180 `"3rd year of college"', add
+label define higraded_mom_lbl 181 `"Did not finish 4th year of college"', add
+label define higraded_mom_lbl 182 `"Attending 4th year of college"', add
+label define higraded_mom_lbl 190 `"4th year of college"', add
+label define higraded_mom_lbl 191 `"Did not finish 5th year of college"', add
+label define higraded_mom_lbl 192 `"Attending 5th year of college"', add
+label define higraded_mom_lbl 200 `"5th year or more of college (1940, 50)"', add
+label define higraded_mom_lbl 201 `"Did not finish 6th year of college"', add
+label define higraded_mom_lbl 202 `"Attending 6th year of college"', add
+label define higraded_mom_lbl 210 `"6th year or more of college (1960,70)"', add
+label define higraded_mom_lbl 211 `"Did not finish 7th year of college"', add
+label define higraded_mom_lbl 212 `"Attending 7th year of college"', add
+label define higraded_mom_lbl 220 `"7th year of college"', add
+label define higraded_mom_lbl 221 `"Did not finish 8th year of college"', add
+label define higraded_mom_lbl 222 `"Attending 8th year of college"', add
+label define higraded_mom_lbl 230 `"8th year or more of college"', add
+label define higraded_mom_lbl 999 `"Missing"', add
+label values higraded_mom higraded_mom_lbl
+
+label define higraded_pop_lbl 000 `"N/A"'
+label define higraded_pop_lbl 010 `"None"', add
+label define higraded_pop_lbl 011 `"Did not finish nurs sch"', add
+label define higraded_pop_lbl 012 `"Attending nurs sch"', add
+label define higraded_pop_lbl 020 `"Nursery school"', add
+label define higraded_pop_lbl 021 `"Did not finish kindergart"', add
+label define higraded_pop_lbl 022 `"Attending kindergarten"', add
+label define higraded_pop_lbl 030 `"Kindergarten"', add
+label define higraded_pop_lbl 031 `"Did not finish 1st grade"', add
+label define higraded_pop_lbl 032 `"Attending 1st grade"', add
+label define higraded_pop_lbl 040 `"1st grade"', add
+label define higraded_pop_lbl 041 `"Did not finish 2nd grade"', add
+label define higraded_pop_lbl 042 `"Attending 2nd grade"', add
+label define higraded_pop_lbl 050 `"2nd grade"', add
+label define higraded_pop_lbl 051 `"Did not finish 3rd grade"', add
+label define higraded_pop_lbl 052 `"Attending 3rd grade"', add
+label define higraded_pop_lbl 060 `"3rd grade"', add
+label define higraded_pop_lbl 061 `"Did not finish 4th grade"', add
+label define higraded_pop_lbl 062 `"Attending 4th grade"', add
+label define higraded_pop_lbl 070 `"4th grade"', add
+label define higraded_pop_lbl 071 `"Did not finish 5th grade"', add
+label define higraded_pop_lbl 072 `"Attending 5th grade"', add
+label define higraded_pop_lbl 080 `"5th grade"', add
+label define higraded_pop_lbl 081 `"Did not finish 6th grade"', add
+label define higraded_pop_lbl 082 `"Attending 6th grade"', add
+label define higraded_pop_lbl 090 `"6th grade"', add
+label define higraded_pop_lbl 091 `"Did not finish 7th grade"', add
+label define higraded_pop_lbl 092 `"Attending 7th grade"', add
+label define higraded_pop_lbl 100 `"7th grade"', add
+label define higraded_pop_lbl 101 `"Did not finish 8th grade"', add
+label define higraded_pop_lbl 102 `"Attending 8th grade"', add
+label define higraded_pop_lbl 110 `"8th grade"', add
+label define higraded_pop_lbl 111 `"Did not finish 9th grade"', add
+label define higraded_pop_lbl 112 `"Attending 9th grade"', add
+label define higraded_pop_lbl 120 `"9th grade"', add
+label define higraded_pop_lbl 121 `"Did not finish 10th grade"', add
+label define higraded_pop_lbl 122 `"Attending 10th grade"', add
+label define higraded_pop_lbl 130 `"10th grade"', add
+label define higraded_pop_lbl 131 `"Did not finish 11th grade"', add
+label define higraded_pop_lbl 132 `"Attending 11th grade"', add
+label define higraded_pop_lbl 140 `"11th grade"', add
+label define higraded_pop_lbl 141 `"Did not finish 12th grade"', add
+label define higraded_pop_lbl 142 `"Attending 12th grade"', add
+label define higraded_pop_lbl 150 `"12th grade"', add
+label define higraded_pop_lbl 151 `"Did not finish 1st year college"', add
+label define higraded_pop_lbl 152 `"Attending 1st yesr college"', add
+label define higraded_pop_lbl 160 `"1st year of college"', add
+label define higraded_pop_lbl 161 `"Did not finish 2nd year of college"', add
+label define higraded_pop_lbl 162 `"Attending 2nd year of college"', add
+label define higraded_pop_lbl 170 `"2nd year of college"', add
+label define higraded_pop_lbl 171 `"Did not finish 3rd year of college"', add
+label define higraded_pop_lbl 172 `"Attending 3rd year of college"', add
+label define higraded_pop_lbl 180 `"3rd year of college"', add
+label define higraded_pop_lbl 181 `"Did not finish 4th year of college"', add
+label define higraded_pop_lbl 182 `"Attending 4th year of college"', add
+label define higraded_pop_lbl 190 `"4th year of college"', add
+label define higraded_pop_lbl 191 `"Did not finish 5th year of college"', add
+label define higraded_pop_lbl 192 `"Attending 5th year of college"', add
+label define higraded_pop_lbl 200 `"5th year or more of college (1940, 50)"', add
+label define higraded_pop_lbl 201 `"Did not finish 6th year of college"', add
+label define higraded_pop_lbl 202 `"Attending 6th year of college"', add
+label define higraded_pop_lbl 210 `"6th year or more of college (1960,70)"', add
+label define higraded_pop_lbl 211 `"Did not finish 7th year of college"', add
+label define higraded_pop_lbl 212 `"Attending 7th year of college"', add
+label define higraded_pop_lbl 220 `"7th year of college"', add
+label define higraded_pop_lbl 221 `"Did not finish 8th year of college"', add
+label define higraded_pop_lbl 222 `"Attending 8th year of college"', add
+label define higraded_pop_lbl 230 `"8th year or more of college"', add
+label define higraded_pop_lbl 999 `"Missing"', add
+label values higraded_pop higraded_pop_lbl
+
 label define higraded_sp_lbl 000 `"N/A"'
 label define higraded_sp_lbl 010 `"None"', add
 label define higraded_sp_lbl 011 `"Did not finish nurs sch"', add
@@ -10266,6 +22118,148 @@ label define higraded_sp_lbl 230 `"8th year or more of college"', add
 label define higraded_sp_lbl 999 `"Missing"', add
 label values higraded_sp higraded_sp_lbl
 
+label define higraded_mom2_lbl 000 `"N/A"'
+label define higraded_mom2_lbl 010 `"None"', add
+label define higraded_mom2_lbl 011 `"Did not finish nurs sch"', add
+label define higraded_mom2_lbl 012 `"Attending nurs sch"', add
+label define higraded_mom2_lbl 020 `"Nursery school"', add
+label define higraded_mom2_lbl 021 `"Did not finish kindergart"', add
+label define higraded_mom2_lbl 022 `"Attending kindergarten"', add
+label define higraded_mom2_lbl 030 `"Kindergarten"', add
+label define higraded_mom2_lbl 031 `"Did not finish 1st grade"', add
+label define higraded_mom2_lbl 032 `"Attending 1st grade"', add
+label define higraded_mom2_lbl 040 `"1st grade"', add
+label define higraded_mom2_lbl 041 `"Did not finish 2nd grade"', add
+label define higraded_mom2_lbl 042 `"Attending 2nd grade"', add
+label define higraded_mom2_lbl 050 `"2nd grade"', add
+label define higraded_mom2_lbl 051 `"Did not finish 3rd grade"', add
+label define higraded_mom2_lbl 052 `"Attending 3rd grade"', add
+label define higraded_mom2_lbl 060 `"3rd grade"', add
+label define higraded_mom2_lbl 061 `"Did not finish 4th grade"', add
+label define higraded_mom2_lbl 062 `"Attending 4th grade"', add
+label define higraded_mom2_lbl 070 `"4th grade"', add
+label define higraded_mom2_lbl 071 `"Did not finish 5th grade"', add
+label define higraded_mom2_lbl 072 `"Attending 5th grade"', add
+label define higraded_mom2_lbl 080 `"5th grade"', add
+label define higraded_mom2_lbl 081 `"Did not finish 6th grade"', add
+label define higraded_mom2_lbl 082 `"Attending 6th grade"', add
+label define higraded_mom2_lbl 090 `"6th grade"', add
+label define higraded_mom2_lbl 091 `"Did not finish 7th grade"', add
+label define higraded_mom2_lbl 092 `"Attending 7th grade"', add
+label define higraded_mom2_lbl 100 `"7th grade"', add
+label define higraded_mom2_lbl 101 `"Did not finish 8th grade"', add
+label define higraded_mom2_lbl 102 `"Attending 8th grade"', add
+label define higraded_mom2_lbl 110 `"8th grade"', add
+label define higraded_mom2_lbl 111 `"Did not finish 9th grade"', add
+label define higraded_mom2_lbl 112 `"Attending 9th grade"', add
+label define higraded_mom2_lbl 120 `"9th grade"', add
+label define higraded_mom2_lbl 121 `"Did not finish 10th grade"', add
+label define higraded_mom2_lbl 122 `"Attending 10th grade"', add
+label define higraded_mom2_lbl 130 `"10th grade"', add
+label define higraded_mom2_lbl 131 `"Did not finish 11th grade"', add
+label define higraded_mom2_lbl 132 `"Attending 11th grade"', add
+label define higraded_mom2_lbl 140 `"11th grade"', add
+label define higraded_mom2_lbl 141 `"Did not finish 12th grade"', add
+label define higraded_mom2_lbl 142 `"Attending 12th grade"', add
+label define higraded_mom2_lbl 150 `"12th grade"', add
+label define higraded_mom2_lbl 151 `"Did not finish 1st year college"', add
+label define higraded_mom2_lbl 152 `"Attending 1st yesr college"', add
+label define higraded_mom2_lbl 160 `"1st year of college"', add
+label define higraded_mom2_lbl 161 `"Did not finish 2nd year of college"', add
+label define higraded_mom2_lbl 162 `"Attending 2nd year of college"', add
+label define higraded_mom2_lbl 170 `"2nd year of college"', add
+label define higraded_mom2_lbl 171 `"Did not finish 3rd year of college"', add
+label define higraded_mom2_lbl 172 `"Attending 3rd year of college"', add
+label define higraded_mom2_lbl 180 `"3rd year of college"', add
+label define higraded_mom2_lbl 181 `"Did not finish 4th year of college"', add
+label define higraded_mom2_lbl 182 `"Attending 4th year of college"', add
+label define higraded_mom2_lbl 190 `"4th year of college"', add
+label define higraded_mom2_lbl 191 `"Did not finish 5th year of college"', add
+label define higraded_mom2_lbl 192 `"Attending 5th year of college"', add
+label define higraded_mom2_lbl 200 `"5th year or more of college (1940, 50)"', add
+label define higraded_mom2_lbl 201 `"Did not finish 6th year of college"', add
+label define higraded_mom2_lbl 202 `"Attending 6th year of college"', add
+label define higraded_mom2_lbl 210 `"6th year or more of college (1960,70)"', add
+label define higraded_mom2_lbl 211 `"Did not finish 7th year of college"', add
+label define higraded_mom2_lbl 212 `"Attending 7th year of college"', add
+label define higraded_mom2_lbl 220 `"7th year of college"', add
+label define higraded_mom2_lbl 221 `"Did not finish 8th year of college"', add
+label define higraded_mom2_lbl 222 `"Attending 8th year of college"', add
+label define higraded_mom2_lbl 230 `"8th year or more of college"', add
+label define higraded_mom2_lbl 999 `"Missing"', add
+label values higraded_mom2 higraded_mom2_lbl
+
+label define higraded_pop2_lbl 000 `"N/A"'
+label define higraded_pop2_lbl 010 `"None"', add
+label define higraded_pop2_lbl 011 `"Did not finish nurs sch"', add
+label define higraded_pop2_lbl 012 `"Attending nurs sch"', add
+label define higraded_pop2_lbl 020 `"Nursery school"', add
+label define higraded_pop2_lbl 021 `"Did not finish kindergart"', add
+label define higraded_pop2_lbl 022 `"Attending kindergarten"', add
+label define higraded_pop2_lbl 030 `"Kindergarten"', add
+label define higraded_pop2_lbl 031 `"Did not finish 1st grade"', add
+label define higraded_pop2_lbl 032 `"Attending 1st grade"', add
+label define higraded_pop2_lbl 040 `"1st grade"', add
+label define higraded_pop2_lbl 041 `"Did not finish 2nd grade"', add
+label define higraded_pop2_lbl 042 `"Attending 2nd grade"', add
+label define higraded_pop2_lbl 050 `"2nd grade"', add
+label define higraded_pop2_lbl 051 `"Did not finish 3rd grade"', add
+label define higraded_pop2_lbl 052 `"Attending 3rd grade"', add
+label define higraded_pop2_lbl 060 `"3rd grade"', add
+label define higraded_pop2_lbl 061 `"Did not finish 4th grade"', add
+label define higraded_pop2_lbl 062 `"Attending 4th grade"', add
+label define higraded_pop2_lbl 070 `"4th grade"', add
+label define higraded_pop2_lbl 071 `"Did not finish 5th grade"', add
+label define higraded_pop2_lbl 072 `"Attending 5th grade"', add
+label define higraded_pop2_lbl 080 `"5th grade"', add
+label define higraded_pop2_lbl 081 `"Did not finish 6th grade"', add
+label define higraded_pop2_lbl 082 `"Attending 6th grade"', add
+label define higraded_pop2_lbl 090 `"6th grade"', add
+label define higraded_pop2_lbl 091 `"Did not finish 7th grade"', add
+label define higraded_pop2_lbl 092 `"Attending 7th grade"', add
+label define higraded_pop2_lbl 100 `"7th grade"', add
+label define higraded_pop2_lbl 101 `"Did not finish 8th grade"', add
+label define higraded_pop2_lbl 102 `"Attending 8th grade"', add
+label define higraded_pop2_lbl 110 `"8th grade"', add
+label define higraded_pop2_lbl 111 `"Did not finish 9th grade"', add
+label define higraded_pop2_lbl 112 `"Attending 9th grade"', add
+label define higraded_pop2_lbl 120 `"9th grade"', add
+label define higraded_pop2_lbl 121 `"Did not finish 10th grade"', add
+label define higraded_pop2_lbl 122 `"Attending 10th grade"', add
+label define higraded_pop2_lbl 130 `"10th grade"', add
+label define higraded_pop2_lbl 131 `"Did not finish 11th grade"', add
+label define higraded_pop2_lbl 132 `"Attending 11th grade"', add
+label define higraded_pop2_lbl 140 `"11th grade"', add
+label define higraded_pop2_lbl 141 `"Did not finish 12th grade"', add
+label define higraded_pop2_lbl 142 `"Attending 12th grade"', add
+label define higraded_pop2_lbl 150 `"12th grade"', add
+label define higraded_pop2_lbl 151 `"Did not finish 1st year college"', add
+label define higraded_pop2_lbl 152 `"Attending 1st yesr college"', add
+label define higraded_pop2_lbl 160 `"1st year of college"', add
+label define higraded_pop2_lbl 161 `"Did not finish 2nd year of college"', add
+label define higraded_pop2_lbl 162 `"Attending 2nd year of college"', add
+label define higraded_pop2_lbl 170 `"2nd year of college"', add
+label define higraded_pop2_lbl 171 `"Did not finish 3rd year of college"', add
+label define higraded_pop2_lbl 172 `"Attending 3rd year of college"', add
+label define higraded_pop2_lbl 180 `"3rd year of college"', add
+label define higraded_pop2_lbl 181 `"Did not finish 4th year of college"', add
+label define higraded_pop2_lbl 182 `"Attending 4th year of college"', add
+label define higraded_pop2_lbl 190 `"4th year of college"', add
+label define higraded_pop2_lbl 191 `"Did not finish 5th year of college"', add
+label define higraded_pop2_lbl 192 `"Attending 5th year of college"', add
+label define higraded_pop2_lbl 200 `"5th year or more of college (1940, 50)"', add
+label define higraded_pop2_lbl 201 `"Did not finish 6th year of college"', add
+label define higraded_pop2_lbl 202 `"Attending 6th year of college"', add
+label define higraded_pop2_lbl 210 `"6th year or more of college (1960,70)"', add
+label define higraded_pop2_lbl 211 `"Did not finish 7th year of college"', add
+label define higraded_pop2_lbl 212 `"Attending 7th year of college"', add
+label define higraded_pop2_lbl 220 `"7th year of college"', add
+label define higraded_pop2_lbl 221 `"Did not finish 8th year of college"', add
+label define higraded_pop2_lbl 222 `"Attending 8th year of college"', add
+label define higraded_pop2_lbl 230 `"8th year or more of college"', add
+label define higraded_pop2_lbl 999 `"Missing"', add
+label values higraded_pop2 higraded_pop2_lbl
+
 label define educ_head_lbl 00 `"N/A or no schooling"'
 label define educ_head_lbl 01 `"Nursery school to grade 4"', add
 label define educ_head_lbl 02 `"Grade 5, 6, 7, or 8"', add
@@ -10280,6 +22274,34 @@ label define educ_head_lbl 10 `"4 years of college"', add
 label define educ_head_lbl 11 `"5+ years of college"', add
 label values educ_head educ_head_lbl
 
+label define educ_mom_lbl 00 `"N/A or no schooling"'
+label define educ_mom_lbl 01 `"Nursery school to grade 4"', add
+label define educ_mom_lbl 02 `"Grade 5, 6, 7, or 8"', add
+label define educ_mom_lbl 03 `"Grade 9"', add
+label define educ_mom_lbl 04 `"Grade 10"', add
+label define educ_mom_lbl 05 `"Grade 11"', add
+label define educ_mom_lbl 06 `"Grade 12"', add
+label define educ_mom_lbl 07 `"1 year of college"', add
+label define educ_mom_lbl 08 `"2 years of college"', add
+label define educ_mom_lbl 09 `"3 years of college"', add
+label define educ_mom_lbl 10 `"4 years of college"', add
+label define educ_mom_lbl 11 `"5+ years of college"', add
+label values educ_mom educ_mom_lbl
+
+label define educ_pop_lbl 00 `"N/A or no schooling"'
+label define educ_pop_lbl 01 `"Nursery school to grade 4"', add
+label define educ_pop_lbl 02 `"Grade 5, 6, 7, or 8"', add
+label define educ_pop_lbl 03 `"Grade 9"', add
+label define educ_pop_lbl 04 `"Grade 10"', add
+label define educ_pop_lbl 05 `"Grade 11"', add
+label define educ_pop_lbl 06 `"Grade 12"', add
+label define educ_pop_lbl 07 `"1 year of college"', add
+label define educ_pop_lbl 08 `"2 years of college"', add
+label define educ_pop_lbl 09 `"3 years of college"', add
+label define educ_pop_lbl 10 `"4 years of college"', add
+label define educ_pop_lbl 11 `"5+ years of college"', add
+label values educ_pop educ_pop_lbl
+
 label define educ_sp_lbl 00 `"N/A or no schooling"'
 label define educ_sp_lbl 01 `"Nursery school to grade 4"', add
 label define educ_sp_lbl 02 `"Grade 5, 6, 7, or 8"', add
@@ -10293,6 +22315,34 @@ label define educ_sp_lbl 09 `"3 years of college"', add
 label define educ_sp_lbl 10 `"4 years of college"', add
 label define educ_sp_lbl 11 `"5+ years of college"', add
 label values educ_sp educ_sp_lbl
+
+label define educ_mom2_lbl 00 `"N/A or no schooling"'
+label define educ_mom2_lbl 01 `"Nursery school to grade 4"', add
+label define educ_mom2_lbl 02 `"Grade 5, 6, 7, or 8"', add
+label define educ_mom2_lbl 03 `"Grade 9"', add
+label define educ_mom2_lbl 04 `"Grade 10"', add
+label define educ_mom2_lbl 05 `"Grade 11"', add
+label define educ_mom2_lbl 06 `"Grade 12"', add
+label define educ_mom2_lbl 07 `"1 year of college"', add
+label define educ_mom2_lbl 08 `"2 years of college"', add
+label define educ_mom2_lbl 09 `"3 years of college"', add
+label define educ_mom2_lbl 10 `"4 years of college"', add
+label define educ_mom2_lbl 11 `"5+ years of college"', add
+label values educ_mom2 educ_mom2_lbl
+
+label define educ_pop2_lbl 00 `"N/A or no schooling"'
+label define educ_pop2_lbl 01 `"Nursery school to grade 4"', add
+label define educ_pop2_lbl 02 `"Grade 5, 6, 7, or 8"', add
+label define educ_pop2_lbl 03 `"Grade 9"', add
+label define educ_pop2_lbl 04 `"Grade 10"', add
+label define educ_pop2_lbl 05 `"Grade 11"', add
+label define educ_pop2_lbl 06 `"Grade 12"', add
+label define educ_pop2_lbl 07 `"1 year of college"', add
+label define educ_pop2_lbl 08 `"2 years of college"', add
+label define educ_pop2_lbl 09 `"3 years of college"', add
+label define educ_pop2_lbl 10 `"4 years of college"', add
+label define educ_pop2_lbl 11 `"5+ years of college"', add
+label values educ_pop2 educ_pop2_lbl
 
 label define educd_head_lbl 000 `"N/A or no schooling"'
 label define educd_head_lbl 001 `"N/A"', add
@@ -10340,6 +22390,98 @@ label define educd_head_lbl 116 `"Doctoral degree"', add
 label define educd_head_lbl 999 `"Missing"', add
 label values educd_head educd_head_lbl
 
+label define educd_mom_lbl 000 `"N/A or no schooling"'
+label define educd_mom_lbl 001 `"N/A"', add
+label define educd_mom_lbl 002 `"No schooling completed"', add
+label define educd_mom_lbl 010 `"Nursery school to grade 4"', add
+label define educd_mom_lbl 011 `"Nursery school, preschool"', add
+label define educd_mom_lbl 012 `"Kindergarten"', add
+label define educd_mom_lbl 013 `"Grade 1, 2, 3, or 4"', add
+label define educd_mom_lbl 014 `"Grade 1"', add
+label define educd_mom_lbl 015 `"Grade 2"', add
+label define educd_mom_lbl 016 `"Grade 3"', add
+label define educd_mom_lbl 017 `"Grade 4"', add
+label define educd_mom_lbl 020 `"Grade 5, 6, 7, or 8"', add
+label define educd_mom_lbl 021 `"Grade 5 or 6"', add
+label define educd_mom_lbl 022 `"Grade 5"', add
+label define educd_mom_lbl 023 `"Grade 6"', add
+label define educd_mom_lbl 024 `"Grade 7 or 8"', add
+label define educd_mom_lbl 025 `"Grade 7"', add
+label define educd_mom_lbl 026 `"Grade 8"', add
+label define educd_mom_lbl 030 `"Grade 9"', add
+label define educd_mom_lbl 040 `"Grade 10"', add
+label define educd_mom_lbl 050 `"Grade 11"', add
+label define educd_mom_lbl 060 `"Grade 12"', add
+label define educd_mom_lbl 061 `"12th grade, no diploma"', add
+label define educd_mom_lbl 062 `"High school graduate or GED"', add
+label define educd_mom_lbl 063 `"Regular high school diploma"', add
+label define educd_mom_lbl 064 `"GED or alternative credential"', add
+label define educd_mom_lbl 065 `"Some college, but less than 1 year"', add
+label define educd_mom_lbl 070 `"1 year of college"', add
+label define educd_mom_lbl 071 `"1 or more years of college credit, no degree"', add
+label define educd_mom_lbl 080 `"2 years of college"', add
+label define educd_mom_lbl 081 `"Associate's degree, type not specified"', add
+label define educd_mom_lbl 082 `"Associate's degree, occupational program"', add
+label define educd_mom_lbl 083 `"Associate's degree, academic program"', add
+label define educd_mom_lbl 090 `"3 years of college"', add
+label define educd_mom_lbl 100 `"4 years of college"', add
+label define educd_mom_lbl 101 `"Bachelor's degree"', add
+label define educd_mom_lbl 110 `"5+ years of college"', add
+label define educd_mom_lbl 111 `"6 years of college (6+ in 1960-1970)"', add
+label define educd_mom_lbl 112 `"7 years of college"', add
+label define educd_mom_lbl 113 `"8+ years of college"', add
+label define educd_mom_lbl 114 `"Master's degree"', add
+label define educd_mom_lbl 115 `"Professional degree beyond a bachelor's degree"', add
+label define educd_mom_lbl 116 `"Doctoral degree"', add
+label define educd_mom_lbl 999 `"Missing"', add
+label values educd_mom educd_mom_lbl
+
+label define educd_pop_lbl 000 `"N/A or no schooling"'
+label define educd_pop_lbl 001 `"N/A"', add
+label define educd_pop_lbl 002 `"No schooling completed"', add
+label define educd_pop_lbl 010 `"Nursery school to grade 4"', add
+label define educd_pop_lbl 011 `"Nursery school, preschool"', add
+label define educd_pop_lbl 012 `"Kindergarten"', add
+label define educd_pop_lbl 013 `"Grade 1, 2, 3, or 4"', add
+label define educd_pop_lbl 014 `"Grade 1"', add
+label define educd_pop_lbl 015 `"Grade 2"', add
+label define educd_pop_lbl 016 `"Grade 3"', add
+label define educd_pop_lbl 017 `"Grade 4"', add
+label define educd_pop_lbl 020 `"Grade 5, 6, 7, or 8"', add
+label define educd_pop_lbl 021 `"Grade 5 or 6"', add
+label define educd_pop_lbl 022 `"Grade 5"', add
+label define educd_pop_lbl 023 `"Grade 6"', add
+label define educd_pop_lbl 024 `"Grade 7 or 8"', add
+label define educd_pop_lbl 025 `"Grade 7"', add
+label define educd_pop_lbl 026 `"Grade 8"', add
+label define educd_pop_lbl 030 `"Grade 9"', add
+label define educd_pop_lbl 040 `"Grade 10"', add
+label define educd_pop_lbl 050 `"Grade 11"', add
+label define educd_pop_lbl 060 `"Grade 12"', add
+label define educd_pop_lbl 061 `"12th grade, no diploma"', add
+label define educd_pop_lbl 062 `"High school graduate or GED"', add
+label define educd_pop_lbl 063 `"Regular high school diploma"', add
+label define educd_pop_lbl 064 `"GED or alternative credential"', add
+label define educd_pop_lbl 065 `"Some college, but less than 1 year"', add
+label define educd_pop_lbl 070 `"1 year of college"', add
+label define educd_pop_lbl 071 `"1 or more years of college credit, no degree"', add
+label define educd_pop_lbl 080 `"2 years of college"', add
+label define educd_pop_lbl 081 `"Associate's degree, type not specified"', add
+label define educd_pop_lbl 082 `"Associate's degree, occupational program"', add
+label define educd_pop_lbl 083 `"Associate's degree, academic program"', add
+label define educd_pop_lbl 090 `"3 years of college"', add
+label define educd_pop_lbl 100 `"4 years of college"', add
+label define educd_pop_lbl 101 `"Bachelor's degree"', add
+label define educd_pop_lbl 110 `"5+ years of college"', add
+label define educd_pop_lbl 111 `"6 years of college (6+ in 1960-1970)"', add
+label define educd_pop_lbl 112 `"7 years of college"', add
+label define educd_pop_lbl 113 `"8+ years of college"', add
+label define educd_pop_lbl 114 `"Master's degree"', add
+label define educd_pop_lbl 115 `"Professional degree beyond a bachelor's degree"', add
+label define educd_pop_lbl 116 `"Doctoral degree"', add
+label define educd_pop_lbl 999 `"Missing"', add
+label values educd_pop educd_pop_lbl
+
 label define educd_sp_lbl 000 `"N/A or no schooling"'
 label define educd_sp_lbl 001 `"N/A"', add
 label define educd_sp_lbl 002 `"No schooling completed"', add
@@ -10386,6 +22528,98 @@ label define educd_sp_lbl 116 `"Doctoral degree"', add
 label define educd_sp_lbl 999 `"Missing"', add
 label values educd_sp educd_sp_lbl
 
+label define educd_mom2_lbl 000 `"N/A or no schooling"'
+label define educd_mom2_lbl 001 `"N/A"', add
+label define educd_mom2_lbl 002 `"No schooling completed"', add
+label define educd_mom2_lbl 010 `"Nursery school to grade 4"', add
+label define educd_mom2_lbl 011 `"Nursery school, preschool"', add
+label define educd_mom2_lbl 012 `"Kindergarten"', add
+label define educd_mom2_lbl 013 `"Grade 1, 2, 3, or 4"', add
+label define educd_mom2_lbl 014 `"Grade 1"', add
+label define educd_mom2_lbl 015 `"Grade 2"', add
+label define educd_mom2_lbl 016 `"Grade 3"', add
+label define educd_mom2_lbl 017 `"Grade 4"', add
+label define educd_mom2_lbl 020 `"Grade 5, 6, 7, or 8"', add
+label define educd_mom2_lbl 021 `"Grade 5 or 6"', add
+label define educd_mom2_lbl 022 `"Grade 5"', add
+label define educd_mom2_lbl 023 `"Grade 6"', add
+label define educd_mom2_lbl 024 `"Grade 7 or 8"', add
+label define educd_mom2_lbl 025 `"Grade 7"', add
+label define educd_mom2_lbl 026 `"Grade 8"', add
+label define educd_mom2_lbl 030 `"Grade 9"', add
+label define educd_mom2_lbl 040 `"Grade 10"', add
+label define educd_mom2_lbl 050 `"Grade 11"', add
+label define educd_mom2_lbl 060 `"Grade 12"', add
+label define educd_mom2_lbl 061 `"12th grade, no diploma"', add
+label define educd_mom2_lbl 062 `"High school graduate or GED"', add
+label define educd_mom2_lbl 063 `"Regular high school diploma"', add
+label define educd_mom2_lbl 064 `"GED or alternative credential"', add
+label define educd_mom2_lbl 065 `"Some college, but less than 1 year"', add
+label define educd_mom2_lbl 070 `"1 year of college"', add
+label define educd_mom2_lbl 071 `"1 or more years of college credit, no degree"', add
+label define educd_mom2_lbl 080 `"2 years of college"', add
+label define educd_mom2_lbl 081 `"Associate's degree, type not specified"', add
+label define educd_mom2_lbl 082 `"Associate's degree, occupational program"', add
+label define educd_mom2_lbl 083 `"Associate's degree, academic program"', add
+label define educd_mom2_lbl 090 `"3 years of college"', add
+label define educd_mom2_lbl 100 `"4 years of college"', add
+label define educd_mom2_lbl 101 `"Bachelor's degree"', add
+label define educd_mom2_lbl 110 `"5+ years of college"', add
+label define educd_mom2_lbl 111 `"6 years of college (6+ in 1960-1970)"', add
+label define educd_mom2_lbl 112 `"7 years of college"', add
+label define educd_mom2_lbl 113 `"8+ years of college"', add
+label define educd_mom2_lbl 114 `"Master's degree"', add
+label define educd_mom2_lbl 115 `"Professional degree beyond a bachelor's degree"', add
+label define educd_mom2_lbl 116 `"Doctoral degree"', add
+label define educd_mom2_lbl 999 `"Missing"', add
+label values educd_mom2 educd_mom2_lbl
+
+label define educd_pop2_lbl 000 `"N/A or no schooling"'
+label define educd_pop2_lbl 001 `"N/A"', add
+label define educd_pop2_lbl 002 `"No schooling completed"', add
+label define educd_pop2_lbl 010 `"Nursery school to grade 4"', add
+label define educd_pop2_lbl 011 `"Nursery school, preschool"', add
+label define educd_pop2_lbl 012 `"Kindergarten"', add
+label define educd_pop2_lbl 013 `"Grade 1, 2, 3, or 4"', add
+label define educd_pop2_lbl 014 `"Grade 1"', add
+label define educd_pop2_lbl 015 `"Grade 2"', add
+label define educd_pop2_lbl 016 `"Grade 3"', add
+label define educd_pop2_lbl 017 `"Grade 4"', add
+label define educd_pop2_lbl 020 `"Grade 5, 6, 7, or 8"', add
+label define educd_pop2_lbl 021 `"Grade 5 or 6"', add
+label define educd_pop2_lbl 022 `"Grade 5"', add
+label define educd_pop2_lbl 023 `"Grade 6"', add
+label define educd_pop2_lbl 024 `"Grade 7 or 8"', add
+label define educd_pop2_lbl 025 `"Grade 7"', add
+label define educd_pop2_lbl 026 `"Grade 8"', add
+label define educd_pop2_lbl 030 `"Grade 9"', add
+label define educd_pop2_lbl 040 `"Grade 10"', add
+label define educd_pop2_lbl 050 `"Grade 11"', add
+label define educd_pop2_lbl 060 `"Grade 12"', add
+label define educd_pop2_lbl 061 `"12th grade, no diploma"', add
+label define educd_pop2_lbl 062 `"High school graduate or GED"', add
+label define educd_pop2_lbl 063 `"Regular high school diploma"', add
+label define educd_pop2_lbl 064 `"GED or alternative credential"', add
+label define educd_pop2_lbl 065 `"Some college, but less than 1 year"', add
+label define educd_pop2_lbl 070 `"1 year of college"', add
+label define educd_pop2_lbl 071 `"1 or more years of college credit, no degree"', add
+label define educd_pop2_lbl 080 `"2 years of college"', add
+label define educd_pop2_lbl 081 `"Associate's degree, type not specified"', add
+label define educd_pop2_lbl 082 `"Associate's degree, occupational program"', add
+label define educd_pop2_lbl 083 `"Associate's degree, academic program"', add
+label define educd_pop2_lbl 090 `"3 years of college"', add
+label define educd_pop2_lbl 100 `"4 years of college"', add
+label define educd_pop2_lbl 101 `"Bachelor's degree"', add
+label define educd_pop2_lbl 110 `"5+ years of college"', add
+label define educd_pop2_lbl 111 `"6 years of college (6+ in 1960-1970)"', add
+label define educd_pop2_lbl 112 `"7 years of college"', add
+label define educd_pop2_lbl 113 `"8+ years of college"', add
+label define educd_pop2_lbl 114 `"Master's degree"', add
+label define educd_pop2_lbl 115 `"Professional degree beyond a bachelor's degree"', add
+label define educd_pop2_lbl 116 `"Doctoral degree"', add
+label define educd_pop2_lbl 999 `"Missing"', add
+label values educd_pop2 educd_pop2_lbl
+
 label define gradeatt_head_lbl 0 `"N/A"'
 label define gradeatt_head_lbl 1 `"Nursery school/preschool"', add
 label define gradeatt_head_lbl 2 `"Kindergarten"', add
@@ -10396,6 +22630,26 @@ label define gradeatt_head_lbl 6 `"College undergraduate"', add
 label define gradeatt_head_lbl 7 `"Graduate or professional school"', add
 label values gradeatt_head gradeatt_head_lbl
 
+label define gradeatt_mom_lbl 0 `"N/A"'
+label define gradeatt_mom_lbl 1 `"Nursery school/preschool"', add
+label define gradeatt_mom_lbl 2 `"Kindergarten"', add
+label define gradeatt_mom_lbl 3 `"Grade 1 to grade 4"', add
+label define gradeatt_mom_lbl 4 `"Grade 5 to grade 8"', add
+label define gradeatt_mom_lbl 5 `"Grade 9 to grade 12"', add
+label define gradeatt_mom_lbl 6 `"College undergraduate"', add
+label define gradeatt_mom_lbl 7 `"Graduate or professional school"', add
+label values gradeatt_mom gradeatt_mom_lbl
+
+label define gradeatt_pop_lbl 0 `"N/A"'
+label define gradeatt_pop_lbl 1 `"Nursery school/preschool"', add
+label define gradeatt_pop_lbl 2 `"Kindergarten"', add
+label define gradeatt_pop_lbl 3 `"Grade 1 to grade 4"', add
+label define gradeatt_pop_lbl 4 `"Grade 5 to grade 8"', add
+label define gradeatt_pop_lbl 5 `"Grade 9 to grade 12"', add
+label define gradeatt_pop_lbl 6 `"College undergraduate"', add
+label define gradeatt_pop_lbl 7 `"Graduate or professional school"', add
+label values gradeatt_pop gradeatt_pop_lbl
+
 label define gradeatt_sp_lbl 0 `"N/A"'
 label define gradeatt_sp_lbl 1 `"Nursery school/preschool"', add
 label define gradeatt_sp_lbl 2 `"Kindergarten"', add
@@ -10405,6 +22659,26 @@ label define gradeatt_sp_lbl 5 `"Grade 9 to grade 12"', add
 label define gradeatt_sp_lbl 6 `"College undergraduate"', add
 label define gradeatt_sp_lbl 7 `"Graduate or professional school"', add
 label values gradeatt_sp gradeatt_sp_lbl
+
+label define gradeatt_mom2_lbl 0 `"N/A"'
+label define gradeatt_mom2_lbl 1 `"Nursery school/preschool"', add
+label define gradeatt_mom2_lbl 2 `"Kindergarten"', add
+label define gradeatt_mom2_lbl 3 `"Grade 1 to grade 4"', add
+label define gradeatt_mom2_lbl 4 `"Grade 5 to grade 8"', add
+label define gradeatt_mom2_lbl 5 `"Grade 9 to grade 12"', add
+label define gradeatt_mom2_lbl 6 `"College undergraduate"', add
+label define gradeatt_mom2_lbl 7 `"Graduate or professional school"', add
+label values gradeatt_mom2 gradeatt_mom2_lbl
+
+label define gradeatt_pop2_lbl 0 `"N/A"'
+label define gradeatt_pop2_lbl 1 `"Nursery school/preschool"', add
+label define gradeatt_pop2_lbl 2 `"Kindergarten"', add
+label define gradeatt_pop2_lbl 3 `"Grade 1 to grade 4"', add
+label define gradeatt_pop2_lbl 4 `"Grade 5 to grade 8"', add
+label define gradeatt_pop2_lbl 5 `"Grade 9 to grade 12"', add
+label define gradeatt_pop2_lbl 6 `"College undergraduate"', add
+label define gradeatt_pop2_lbl 7 `"Graduate or professional school"', add
+label values gradeatt_pop2 gradeatt_pop2_lbl
 
 label define gradeattd_head_lbl 00 `"N/A"'
 label define gradeattd_head_lbl 10 `"Nursery school/preschool"', add
@@ -10436,6 +22710,66 @@ label define gradeattd_head_lbl 73 `"Seventh year of college"', add
 label define gradeattd_head_lbl 74 `"Eighth year of college"', add
 label values gradeattd_head gradeattd_head_lbl
 
+label define gradeattd_mom_lbl 00 `"N/A"'
+label define gradeattd_mom_lbl 10 `"Nursery school/preschool"', add
+label define gradeattd_mom_lbl 20 `"Kindergarten"', add
+label define gradeattd_mom_lbl 30 `"Grade 1 to grade 4"', add
+label define gradeattd_mom_lbl 31 `"Grade 1"', add
+label define gradeattd_mom_lbl 32 `"Grade 2"', add
+label define gradeattd_mom_lbl 33 `"Grade 3"', add
+label define gradeattd_mom_lbl 34 `"Grade 4"', add
+label define gradeattd_mom_lbl 40 `"Grade 5 to grade 8"', add
+label define gradeattd_mom_lbl 41 `"Grade 5"', add
+label define gradeattd_mom_lbl 42 `"Grade 6"', add
+label define gradeattd_mom_lbl 43 `"Grade 7"', add
+label define gradeattd_mom_lbl 44 `"Grade 8"', add
+label define gradeattd_mom_lbl 50 `"Grade 9 to grade 12"', add
+label define gradeattd_mom_lbl 51 `"Grade 9"', add
+label define gradeattd_mom_lbl 52 `"Grade 10"', add
+label define gradeattd_mom_lbl 53 `"Grade 11"', add
+label define gradeattd_mom_lbl 54 `"Grade 12"', add
+label define gradeattd_mom_lbl 60 `"College undergraduate"', add
+label define gradeattd_mom_lbl 61 `"First year of college"', add
+label define gradeattd_mom_lbl 62 `"Second year of college"', add
+label define gradeattd_mom_lbl 63 `"Third year of college"', add
+label define gradeattd_mom_lbl 64 `"Fourth year of college"', add
+label define gradeattd_mom_lbl 70 `"Graduate or professional school"', add
+label define gradeattd_mom_lbl 71 `"Fifth year of college"', add
+label define gradeattd_mom_lbl 72 `"Sixth year of college"', add
+label define gradeattd_mom_lbl 73 `"Seventh year of college"', add
+label define gradeattd_mom_lbl 74 `"Eighth year of college"', add
+label values gradeattd_mom gradeattd_mom_lbl
+
+label define gradeattd_pop_lbl 00 `"N/A"'
+label define gradeattd_pop_lbl 10 `"Nursery school/preschool"', add
+label define gradeattd_pop_lbl 20 `"Kindergarten"', add
+label define gradeattd_pop_lbl 30 `"Grade 1 to grade 4"', add
+label define gradeattd_pop_lbl 31 `"Grade 1"', add
+label define gradeattd_pop_lbl 32 `"Grade 2"', add
+label define gradeattd_pop_lbl 33 `"Grade 3"', add
+label define gradeattd_pop_lbl 34 `"Grade 4"', add
+label define gradeattd_pop_lbl 40 `"Grade 5 to grade 8"', add
+label define gradeattd_pop_lbl 41 `"Grade 5"', add
+label define gradeattd_pop_lbl 42 `"Grade 6"', add
+label define gradeattd_pop_lbl 43 `"Grade 7"', add
+label define gradeattd_pop_lbl 44 `"Grade 8"', add
+label define gradeattd_pop_lbl 50 `"Grade 9 to grade 12"', add
+label define gradeattd_pop_lbl 51 `"Grade 9"', add
+label define gradeattd_pop_lbl 52 `"Grade 10"', add
+label define gradeattd_pop_lbl 53 `"Grade 11"', add
+label define gradeattd_pop_lbl 54 `"Grade 12"', add
+label define gradeattd_pop_lbl 60 `"College undergraduate"', add
+label define gradeattd_pop_lbl 61 `"First year of college"', add
+label define gradeattd_pop_lbl 62 `"Second year of college"', add
+label define gradeattd_pop_lbl 63 `"Third year of college"', add
+label define gradeattd_pop_lbl 64 `"Fourth year of college"', add
+label define gradeattd_pop_lbl 70 `"Graduate or professional school"', add
+label define gradeattd_pop_lbl 71 `"Fifth year of college"', add
+label define gradeattd_pop_lbl 72 `"Sixth year of college"', add
+label define gradeattd_pop_lbl 73 `"Seventh year of college"', add
+label define gradeattd_pop_lbl 74 `"Eighth year of college"', add
+label values gradeattd_pop gradeattd_pop_lbl
+
 label define gradeattd_sp_lbl 00 `"N/A"'
 label define gradeattd_sp_lbl 10 `"Nursery school/preschool"', add
 label define gradeattd_sp_lbl 20 `"Kindergarten"', add
@@ -10466,4 +22800,100 @@ label define gradeattd_sp_lbl 73 `"Seventh year of college"', add
 label define gradeattd_sp_lbl 74 `"Eighth year of college"', add
 label values gradeattd_sp gradeattd_sp_lbl
 
-save "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets\\SyntheticParentsData.dta", replace
+label define gradeattd_mom2_lbl 00 `"N/A"'
+label define gradeattd_mom2_lbl 10 `"Nursery school/preschool"', add
+label define gradeattd_mom2_lbl 20 `"Kindergarten"', add
+label define gradeattd_mom2_lbl 30 `"Grade 1 to grade 4"', add
+label define gradeattd_mom2_lbl 31 `"Grade 1"', add
+label define gradeattd_mom2_lbl 32 `"Grade 2"', add
+label define gradeattd_mom2_lbl 33 `"Grade 3"', add
+label define gradeattd_mom2_lbl 34 `"Grade 4"', add
+label define gradeattd_mom2_lbl 40 `"Grade 5 to grade 8"', add
+label define gradeattd_mom2_lbl 41 `"Grade 5"', add
+label define gradeattd_mom2_lbl 42 `"Grade 6"', add
+label define gradeattd_mom2_lbl 43 `"Grade 7"', add
+label define gradeattd_mom2_lbl 44 `"Grade 8"', add
+label define gradeattd_mom2_lbl 50 `"Grade 9 to grade 12"', add
+label define gradeattd_mom2_lbl 51 `"Grade 9"', add
+label define gradeattd_mom2_lbl 52 `"Grade 10"', add
+label define gradeattd_mom2_lbl 53 `"Grade 11"', add
+label define gradeattd_mom2_lbl 54 `"Grade 12"', add
+label define gradeattd_mom2_lbl 60 `"College undergraduate"', add
+label define gradeattd_mom2_lbl 61 `"First year of college"', add
+label define gradeattd_mom2_lbl 62 `"Second year of college"', add
+label define gradeattd_mom2_lbl 63 `"Third year of college"', add
+label define gradeattd_mom2_lbl 64 `"Fourth year of college"', add
+label define gradeattd_mom2_lbl 70 `"Graduate or professional school"', add
+label define gradeattd_mom2_lbl 71 `"Fifth year of college"', add
+label define gradeattd_mom2_lbl 72 `"Sixth year of college"', add
+label define gradeattd_mom2_lbl 73 `"Seventh year of college"', add
+label define gradeattd_mom2_lbl 74 `"Eighth year of college"', add
+label values gradeattd_mom2 gradeattd_mom2_lbl
+
+label define gradeattd_pop2_lbl 00 `"N/A"'
+label define gradeattd_pop2_lbl 10 `"Nursery school/preschool"', add
+label define gradeattd_pop2_lbl 20 `"Kindergarten"', add
+label define gradeattd_pop2_lbl 30 `"Grade 1 to grade 4"', add
+label define gradeattd_pop2_lbl 31 `"Grade 1"', add
+label define gradeattd_pop2_lbl 32 `"Grade 2"', add
+label define gradeattd_pop2_lbl 33 `"Grade 3"', add
+label define gradeattd_pop2_lbl 34 `"Grade 4"', add
+label define gradeattd_pop2_lbl 40 `"Grade 5 to grade 8"', add
+label define gradeattd_pop2_lbl 41 `"Grade 5"', add
+label define gradeattd_pop2_lbl 42 `"Grade 6"', add
+label define gradeattd_pop2_lbl 43 `"Grade 7"', add
+label define gradeattd_pop2_lbl 44 `"Grade 8"', add
+label define gradeattd_pop2_lbl 50 `"Grade 9 to grade 12"', add
+label define gradeattd_pop2_lbl 51 `"Grade 9"', add
+label define gradeattd_pop2_lbl 52 `"Grade 10"', add
+label define gradeattd_pop2_lbl 53 `"Grade 11"', add
+label define gradeattd_pop2_lbl 54 `"Grade 12"', add
+label define gradeattd_pop2_lbl 60 `"College undergraduate"', add
+label define gradeattd_pop2_lbl 61 `"First year of college"', add
+label define gradeattd_pop2_lbl 62 `"Second year of college"', add
+label define gradeattd_pop2_lbl 63 `"Third year of college"', add
+label define gradeattd_pop2_lbl 64 `"Fourth year of college"', add
+label define gradeattd_pop2_lbl 70 `"Graduate or professional school"', add
+label define gradeattd_pop2_lbl 71 `"Fifth year of college"', add
+label define gradeattd_pop2_lbl 72 `"Sixth year of college"', add
+label define gradeattd_pop2_lbl 73 `"Seventh year of college"', add
+label define gradeattd_pop2_lbl 74 `"Eighth year of college"', add
+label values gradeattd_pop2 gradeattd_pop2_lbl
+
+label define incwage_head_lbl 999998 `"Missing"'
+label define incwage_head_lbl 999999 `"N/A"', add
+label define incwage_head_lbl 010000 `"010000"', add
+label define incwage_head_lbl 000000 `"000000"', add
+label values incwage_head incwage_head_lbl
+
+label define incwage_mom_lbl 999998 `"Missing"'
+label define incwage_mom_lbl 999999 `"N/A"', add
+label define incwage_mom_lbl 010000 `"010000"', add
+label define incwage_mom_lbl 000000 `"000000"', add
+label values incwage_mom incwage_mom_lbl
+
+label define incwage_pop_lbl 999998 `"Missing"'
+label define incwage_pop_lbl 999999 `"N/A"', add
+label define incwage_pop_lbl 010000 `"010000"', add
+label define incwage_pop_lbl 000000 `"000000"', add
+label values incwage_pop incwage_pop_lbl
+
+label define incwage_sp_lbl 999998 `"Missing"'
+label define incwage_sp_lbl 999999 `"N/A"', add
+label define incwage_sp_lbl 010000 `"010000"', add
+label define incwage_sp_lbl 000000 `"000000"', add
+label values incwage_sp incwage_sp_lbl
+
+label define incwage_mom2_lbl 999998 `"Missing"'
+label define incwage_mom2_lbl 999999 `"N/A"', add
+label define incwage_mom2_lbl 010000 `"010000"', add
+label define incwage_mom2_lbl 000000 `"000000"', add
+label values incwage_mom2 incwage_mom2_lbl
+
+label define incwage_pop2_lbl 999998 `"Missing"'
+label define incwage_pop2_lbl 999999 `"N/A"', add
+label define incwage_pop2_lbl 010000 `"010000"', add
+label define incwage_pop2_lbl 000000 `"000000"', add
+label values incwage_pop2 incwage_pop2_lbl
+
+save "ACS.dta", replace
