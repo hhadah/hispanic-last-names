@@ -57,7 +57,7 @@ drop if year < 1994 | year > 2019
 gen cohort = year - age
 
 * keep 1960 to 1970 cohorts
-keep if cohort >= 1970 & cohort <= 1990
+keep if cohort >= 1950 & cohort <= 2000
 
 * keep 25 to 55 year old
 keep if age < 41 & age > 24

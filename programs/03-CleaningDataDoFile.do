@@ -15,7 +15,7 @@ clear all
 
 #delimit;
 
-global wd 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names";
+global wd 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets/";
 
 
 /*
@@ -58,7 +58,7 @@ gen YOB = year - age;
 keep if age_mom>=25 & age_mom <=40;
 keep if age_pop>=25 & age_pop <=40;
 keep if YOB >= 1950 & YOB <= 2000;
-
+keep if age < 18;
 /*
 keep 25<age<40
 
@@ -154,33 +154,67 @@ in the US or Spanish speaking
 countries and drop missing values
 */
 #delimit;
+keep if 						(bpld_mom  <=  12092 	| /*USA */
+								 bpld_mom  ==  11000 	| /* Puerto Rico */
+								 bpld_mom  ==  20000 	| /* Mexico */
+								 bpld_mom  ==  30025 	| /* Colombia */
+								 /* bpld_mom  ==  54800 	|  Spain */
+								 bpld_mom  ==  30005 	| /* Argentina */
+								 bpld_mom  ==  30050 	| /* Colombia */
+								 bpld_mom  ==  30065 	| /* Venzuela */
+								 bpld_mom  ==  30020 	| /* Chile */
+								 bpld_mom  ==  30030 	| /* Ecuador */
+								 bpld_mom  ==  21040 	| /* Guatemala */
+								 bpld_mom  ==  25000 	| /* Cuba */
+								 bpld_mom  ==  30010 	| /* Bolivia */
+								 bpld_mom  ==  26010 	| /* Dominican Republic */
+								 bpld_mom  ==  21050 	| /* Honduras */
+								 bpld_mom  ==  30070 	| /* Paraguay */
+								 bpld_mom  ==  21030 	| /* El Salvador */
+								 bpld_mom  ==  21060 	| /* Nicaragua */
+								 bpld_mom  ==  21020	| /* Costa Rica */
+								 bpld_mom  ==  21070	| /* Panama */
+								 bpld_mom  ==  30060	| /* Uruguay */
+								 bpld_mom  ==  29900	| /* Americas */
+								 bpld_mom  ==  30000)	& /* South America */
+								(bpld_pop  <=  9900 	| /*USA */
+								 bpld_pop  ==  11000 	| /* Puerto Rico */
+								 bpld_pop  ==  20000 	| /* Mexico */
+								 bpld_pop  ==  30025 	| /* Colombia */
+								 /* bpld_pop  ==  54800 	| Spain */
+								 bpld_pop  ==  30005 	| /* Argentina */
+								 bpld_pop  ==  30050 	| /* Colombia */
+								 bpld_pop  ==  30065 	| /* Venzuela */
+								 bpld_pop  ==  30020 	| /* Chile */
+								 bpld_pop  ==  30030 	| /* Ecuador */
+								 bpld_pop  ==  21040 	| /* Guatemala */
+								 bpld_pop  ==  25000 	| /* Cuba */
+								 bpld_pop  ==  30010 	| /* Bolivia */
+								 bpld_pop  ==  26010 	| /* Dominican Republic */
+								 bpld_pop  ==  21050 	| /* Honduras */
+								 bpld_pop  ==  30070 	| /* Paraguay */
+								 bpld_pop  ==  21030 	| /* El Salvador */
+								 bpld_pop  ==  21060 	| /* Nicaragua */
+								 bpld_pop  ==  21020	| /* Costa Rica */
+								 bpld_pop  ==  21070	| /* Panama */
+								 bpld_pop  ==  30060	| /* Uruguay */
+								 bpld_pop  ==  30000)	  /* South America */;
+drop if bpl_mom == 0 | bpl_pop == 0;
+/*
+#delimit;
 keep if (bpl_mom 				== 200 | /* Mexico*/
 		bpl_mom 				== 210 | /* Central America*/
 		bpl_mom 				== 250 | /* Cuba*/
 		bpl_mom 				== 299 | /* Americas n.s. */
 		bpl_mom 				== 300 | /* South America*/
-		bpl_mom 				<= 99) &	 /* American States */
+		bpl_mom 				<= 120) &	 /* American States */
 		(bpl_pop 			== 200 | /* Mexico*/
 		bpl_pop 			== 210 | /* Central America*/
 		bpl_pop 			== 250 | /* Cuba*/
 		bpl_pop 			== 299 | /* Americas n.s. */
 		bpl_pop 			== 300 | /* South America*/
-		bpl_pop 			<= 99);	 /* American States */
+		bpl_pop 			<= 120);	 /* American States */
 drop if bpl_mom == 0 | bpl_pop == 0;
-/*
-keep if (fbpl_mom 				== 200 | /* Mexico*/
-		fbpl_mom 				== 210 | /* Central America*/
-		fbpl_mom 				== 250 | /* Cuba*/
-		fbpl_mom 				== 299 | /* Americas n.s. */
-		fbpl_mom 				== 300 | /* South America*/
-		fbpl_mom 				<= 99) &	 /* American States */
-		(fbpl_pop 			== 200 | /* Mexico*/
-		fbpl_pop 			== 210 | /* Central America*/
-		fbpl_pop 			== 250 | /* Cuba*/
-		fbpl_pop 			== 299 | /* Americas n.s. */
-		fbpl_pop 			== 300 | /* South America*/
-		fbpl_pop 			<= 99);	 /* American States */
-drop if fbpl_mom == 0 | fbpl_pop == 0;
 */
 /*
 Set global important variables
@@ -844,7 +878,7 @@ Husband_ftotval Wife_ftotval Husband_inctot Wife_inctot Husband_incwage
 Wife_incwage cpi99 region stateicp statefip countyicp countyfip urban metro city
 HusbandAge WifeAge HusbandYOB WifeYOB LAHusband LAWife CoupleType Husband_ed_level 
 Wife_ed_level Wife_fbpl Husband_fbpl Hispanic_Husband Hispanic_Wife age year YOB
-bpl bpl_mom bpl_pop fbpl fbpl_mom fbpl_pop mbpl mbpl_mom mbpl_pop;
+bpl bpl_mom bpl_pop fbpl fbpl_mom fbpl_pop mbpl mbpl_mom mbpl_pop bpld bpld_mom bpld_pop;
 
 /*
 Save full parent's data
