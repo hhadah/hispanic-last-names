@@ -154,51 +154,55 @@ in the US or Spanish speaking
 countries and drop missing values
 */
 #delimit;
-keep if 						(bpld_mom  <=  12092 	| /*USA */
-								 bpld_mom  ==  11000 	| /* Puerto Rico */
-								 bpld_mom  ==  20000 	| /* Mexico */
-								 bpld_mom  ==  30025 	| /* Colombia */
-								 /* bpld_mom  ==  54800 	|  Spain */
-								 bpld_mom  ==  30005 	| /* Argentina */
-								 bpld_mom  ==  30050 	| /* Colombia */
-								 bpld_mom  ==  30065 	| /* Venzuela */
-								 bpld_mom  ==  30020 	| /* Chile */
-								 bpld_mom  ==  30030 	| /* Ecuador */
-								 bpld_mom  ==  21040 	| /* Guatemala */
-								 bpld_mom  ==  25000 	| /* Cuba */
-								 bpld_mom  ==  30010 	| /* Bolivia */
-								 bpld_mom  ==  26010 	| /* Dominican Republic */
-								 bpld_mom  ==  21050 	| /* Honduras */
-								 bpld_mom  ==  30070 	| /* Paraguay */
-								 bpld_mom  ==  21030 	| /* El Salvador */
-								 bpld_mom  ==  21060 	| /* Nicaragua */
-								 bpld_mom  ==  21020	| /* Costa Rica */
-								 bpld_mom  ==  21070	| /* Panama */
-								 bpld_mom  ==  30060	| /* Uruguay */
-								 bpld_mom  ==  29900	| /* Americas */
-								 bpld_mom  ==  30000)	& /* South America */
-								(bpld_pop  <=  9900 	| /*USA */
-								 bpld_pop  ==  11000 	| /* Puerto Rico */
-								 bpld_pop  ==  20000 	| /* Mexico */
-								 bpld_pop  ==  30025 	| /* Colombia */
-								 /* bpld_pop  ==  54800 	| Spain */
-								 bpld_pop  ==  30005 	| /* Argentina */
-								 bpld_pop  ==  30050 	| /* Colombia */
-								 bpld_pop  ==  30065 	| /* Venzuela */
-								 bpld_pop  ==  30020 	| /* Chile */
-								 bpld_pop  ==  30030 	| /* Ecuador */
-								 bpld_pop  ==  21040 	| /* Guatemala */
-								 bpld_pop  ==  25000 	| /* Cuba */
-								 bpld_pop  ==  30010 	| /* Bolivia */
-								 bpld_pop  ==  26010 	| /* Dominican Republic */
-								 bpld_pop  ==  21050 	| /* Honduras */
-								 bpld_pop  ==  30070 	| /* Paraguay */
-								 bpld_pop  ==  21030 	| /* El Salvador */
-								 bpld_pop  ==  21060 	| /* Nicaragua */
-								 bpld_pop  ==  21020	| /* Costa Rica */
-								 bpld_pop  ==  21070	| /* Panama */
-								 bpld_pop  ==  30060	| /* Uruguay */
-								 bpld_pop  ==  30000)	  /* South America */;
+keep if   (bpld_mom  <= 12092 | /* USA */
+           bpld_mom  == 11000 | /* Puerto Rico */
+           bpld_mom  == 30005 | /* Argentina */
+           bpld_mom  == 30010 | /* Bolivia */
+		   bpld_mom  == 30015 | /* Brazil */
+           bpld_mom  == 30020 | /* Chile */
+           bpld_mom  == 30025 | /* Colombia */
+           bpld_mom  == 26010 | /* Dominican Republic */
+           bpld_mom  == 30030 | /* Ecuador */
+           bpld_mom  == 21020 | /* Costa Rica */
+           bpld_mom  == 21030 | /* El Salvador */
+           bpld_mom  == 21040 | /* Guatemala */
+           bpld_mom  == 21050 | /* Honduras */
+           bpld_mom  == 25000 | /* Cuba */
+           bpld_mom  == 20000 | /* Mexico */
+           bpld_mom  == 21060 | /* Nicaragua */
+           bpld_mom  == 21070 | /* Panama */
+           bpld_mom  == 30050 | /* Peru */
+           bpld_mom  == 30060 | /* Uruguay */
+           bpld_mom  == 30065 | /* Venezuela */
+           bpld_mom  == 43800 | /* Spain */
+           bpld_mom  == 29900 | /* Americas */
+		   bpld_mom  == 21000 | /* Cental America */
+           bpld_mom  == 30000) & /* South America */
+          (bpld_pop  <= 12092 | /* USA */
+           bpld_pop  == 11000 | /* Puerto Rico */
+           bpld_pop  == 30005 | /* Argentina */
+           bpld_pop  == 30010 | /* Bolivia */
+		   bpld_pop  == 30015 | /*  Brazil */
+           bpld_pop  == 30020 | /* Chile */
+           bpld_pop  == 30025 | /* Colombia */
+           bpld_pop  == 26010 | /* Dominican Republic */
+           bpld_pop  == 30030 | /* Ecuador */
+           bpld_pop  == 21020 | /* Costa Rica */
+           bpld_pop  == 21030 | /* El Salvador */
+           bpld_pop  == 21040 | /* Guatemala */
+           bpld_pop  == 21050 | /* Honduras */
+           bpld_pop  == 25000 | /* Cuba */
+           bpld_pop  == 20000 | /* Mexico */
+           bpld_pop  == 21060 | /* Nicaragua */
+           bpld_pop  == 21070 | /* Panama */
+           bpld_pop  == 30050 | /* Peru */
+           bpld_pop  == 30060 | /* Uruguay */
+           bpld_pop  == 30065 | /* Venezuela */
+           bpld_pop  == 43800 | /* Spain */
+           bpld_pop  == 29900 | /* Americas */
+		   bpld_pop  == 21000 | /* Cental America */
+           bpld_pop  == 30000);  /* South America */
+
 drop if bpl_mom == 0 | bpl_pop == 0;
 /*
 #delimit;
@@ -279,17 +283,17 @@ gen 		LAWife 					= .;
 label var	LAHusband 				"=1 if husband's father was born in Latin America";
 label var 	LAWife 					"=1 if Wife's father was born in Latin America";
 
-replace 	LAHusband				= 1			if bpl_mom 		> 99 	& 	sex_mom 		== 1;
-replace 	LAHusband				= 1			if bpl_pop 	> 99 	& 	sex_pop 	== 1;
+replace 	LAHusband				= 1			if (bpld_mom 		> 12092 	| 	bpld_mom 			== 11000) 	&	sex_mom 		== 1;
+replace 	LAHusband				= 1			if (bpld_pop 		> 12092 	| 	bpld_pop 			== 11000) 	&	sex_pop 		== 1;
 
-replace 	LAHusband				= 0			if bpl_mom 		<= 99	&	sex_mom 		== 1;
-replace 	LAHusband				= 0			if bpl_pop 	<= 99	& 	sex_pop 	== 1;
+replace 	LAHusband				= 0			if (bpld_mom 		<= 12092	& 	bpld_mom 			!= 11000) &		sex_mom 		== 1;
+replace 	LAHusband				= 0			if (bpld_pop 		<= 12092	& 	bpld_pop 			!= 11000) & 	sex_pop 		== 1;
 
-replace 	LAWife					= 1			if bpl_mom 		> 99	& 	sex_mom 		== 2;
-replace 	LAWife					= 1			if bpl_pop 	> 99	& 	sex_pop 	== 2;
-
-replace 	LAWife					= 0			if bpl_mom 		<= 99	& 	sex_mom 		== 2;
-replace 	LAWife					= 0			if bpl_pop 	<= 99	& 	sex_pop 	== 2;
+replace 	LAWife					= 1			if (bpld_mom 		> 12092 	| 	bpld_mom 			== 11000) & 	sex_mom 		== 2;
+replace 	LAWife					= 1			if (bpld_pop 		> 12092 	| 	bpld_pop 			== 11000) &	sex_pop 		== 2;
+                                                   
+replace 	LAWife					= 0			if (bpld_mom 		<= 12092	& 	bpld_mom 			!= 11000) & 	sex_mom 		== 2;
+replace 	LAWife					= 0			if (bpld_pop 		<= 12092	& 	bpld_pop 			!= 11000) & 	sex_pop 		== 2;
 
 drop if LAHusband == .;
 drop if LAWife	  == .;

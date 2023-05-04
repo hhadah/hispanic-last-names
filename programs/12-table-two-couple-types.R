@@ -100,6 +100,20 @@ Table_cols <- cbind(first_col, second_col,  third_col, fourth_col, fifth_col)
 Table_cols <-  Table_cols |> 
   row_to_names(row_number = 1)
 
+knitr::kable(Table_cols, "html", align = "lcccc",
+             booktabs = T,
+             escape = F,
+             caption = "Couples' Type \\label{tab:mat2}") %>%
+  column_spec(1, bold = T) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "HOLD_position")) |> 
+  footnote(number = c("Source: 1970-1990 Census",
+                      "The sample includes Whites, who are married, and are between the ages 25 and 40. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White if she/he was born in the United States."),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  )
+
 knitr::kable(Table_cols, "latex", align = "lcccc",
              booktabs = T,
              escape = F,
