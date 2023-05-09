@@ -166,7 +166,7 @@ pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
 row5 <- c(
-  "Total Household seducation (Total Years)",
+  "Total Household education (Total Years)",
   paste0("\\specialcell{", 
          sprintf("%0.2f",round(TotalEducation[4,2], digits = 2)),  
          "\\\\",
@@ -362,7 +362,7 @@ knitr::kable(Table_rows, "html", align = "lcccccc",
                 "HOLD_position"
               #   "repeat_header"
                 )) |> 
-  footnote(number = c("Source: The 1950-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+  footnote(number = c("Source: The 1960-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
                       "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
@@ -382,7 +382,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 "HOLD_position"
               #   "repeat_header"
                 )) |> 
-  footnote(number = c("Source: The 1950-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+  footnote(number = c("Source: The 1960-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
                       "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T

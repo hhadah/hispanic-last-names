@@ -119,7 +119,7 @@ Identifying discrimination is difficult because of factors that affect labor mar
 
 This study utilizes a method developed by \citet{rubinstein2014pride}. I compare children from inter-ethnic marriages. More precisely, I compare children of Hispanic fathers and White mothers (henceforth HW) to children of White fathers and Hispanic mothers (henceforth  WH). This approach stems from the fact that marriages are not random. Couples match on several observable characteristics like income, schooling, socio-economic background, etc. \citep{averettBetterWorseRelationship2008, averettEconomicRealityBeauty1996, beckerTheoryMarriagePart1973, beckerTheoryMarriagePart1974, beckerTreatiseFamily1993, browningCollectiveUnitaryModels2006, chiapporiFatterAttractionAnthropometric2012}. Children of HW and WH marriages have more similar observable characteristics than children of endogamous/homogamous marriages--- i.e., White fathers-White mothers and Hispanic fathers-Hispanic mothers. Moreover, children from a Hispanic father and White mother household will have a Hispanic last name from their fathers, enabling the investigation of how ethnic signals, such as having a Hispanic last name, affect annual log earnings.
 
-Using the Current Population Survey (CPS) from 1994 to 2019 and the 1970 to 1990 US censuses, I estimate the effect of having a Hispanic last name on labor market outcomes. In other words, I approximate the variation in labor market perception of ethnic signals, in this case having a Hispanic last name, on annual log earnings. I also study the effect of identifying as Hispanic on labor market outcomes. 
+Using the Current Population Survey (CPS) from 1994 to 2019 and the 1960 to 2000 US censuses, I estimate the effect of having a Hispanic last name on labor market outcomes. In other words, I approximate the variation in labor market perception of ethnic signals, in this case having a Hispanic last name, on annual log earnings. I also study the effect of identifying as Hispanic on labor market outcomes. 
 
 I find that while men born to Hispanic father-White mothers earn less than men born to White father-Hispanic mothers, this gap is entirely explained by educational differences. Thus, I do not find a significant effect of having a Hispanic last name. Finally, I find that men identifying as Hispanic earn significantly less than those who do not, even when I control for ancestry and education.
 
@@ -132,13 +132,13 @@ The rest of the paper is organized as follows. Section \ref{sec:data} provides a
 
 \section{Data}\label{sec:data}
 
-I use two datasets:  the Integrated Public Use Microdata Series (IPUMS) Current Population Survey (CPS) Annual Social and Economic (ASEC) \citep{cps2019} and the 1970 to 1990 US censuses \citep{acs2019}. 
+I use two datasets:  the Integrated Public Use Microdata Series (IPUMS) Current Population Survey (CPS) Annual Social and Economic (ASEC) \citep{cps2019} and the 1960 to 2000 US censuses \citep{acs2019}. 
 
-I use the CPS data set to study the effect of having a Hispanic last name on a person's labor market outcomes. I take advantage of the fact that the CPS asks parents' place of birth, ethnicity, and race. The data spans the period between 1994--- the earliest sample to ask about a parent's place of birth--- to 2019. Moreover, since the CPS does not provide data on parents' characteristics, essential to determine the family background, I use the census to construct synthetic parents. The census offers a larger sample of potential parents. Similar to the CPS, the 1970 to 1990 censuses ask about the person's place of birth and the individual's race and ethnicity. I employ this information to construct "synthetic parents" using a method developed by \citet{rubinstein2014pride}. I construct the synthetic parents by linking husbands and wives in the census data to each other. I assume that parents have children between the ages of 25 and 40. I then link these synthetic parents using the year they were surveyed to the year of birth of the "children" in the CPS sample.
+I use the CPS data set to study the effect of having a Hispanic last name on a person's labor market outcomes. I take advantage of the fact that the CPS asks parents' place of birth, ethnicity, and race. The data spans the period between 1994--- the earliest sample to ask about a parent's place of birth--- to 2019. Moreover, since the CPS does not provide data on parents' characteristics, essential to determine the family background, I use the census to construct synthetic parents. The census offers a larger sample of potential parents. Similar to the CPS, the 1960 to 2000 censuses ask about the person's place of birth and the individual's race and ethnicity. I employ this information to construct "synthetic parents" using a method developed by \citet{rubinstein2014pride}. I construct the synthetic parents by linking husbands and wives in the census data to each other. I assume that parents have children between the ages of 25 and 40. I then link these synthetic parents using the birth year of child, and place of birth of parents to the year of birth of the "children" and the palce of birth of parents in the CPS sample.
 
 \subsection{Children of the four parental types}
 
-I use the CPS for my primary analysis of the effect of having a Hispanic last name on earnings. I restrict my sample to Whites, United States-born citizens aged 25 to 40 and born between 1970 to 1990. Taking advantage of data on parents' place of birth, I divide the sample into four groups depending on their parent's ethnicity. Mothers or fathers are Hispanic if they were born in a Spanish-speaking country and Puerto Rico, and White if they were born in the United States.\footnote{The list of Spanish Speaking countries include: Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador, El Salvador, Guatemala, Equatorial Guinea, Honduras, Mexico, Nicaragua, Panama, Paraguay, Peru, Spain, Uruguay, Venezuela.} Therefore, an observation can be the product of four types of parents: 
+I use the CPS for my primary analysis of the effect of having a Hispanic last name on earnings. I restrict my sample to Whites, United States-born citizens aged 25 to 40 and born between 1960 to 2000. Taking advantage of data on parents' place of birth, I divide the sample into four groups depending on their parent's ethnicity. Mothers or fathers are Hispanic if they were born in a Spanish-speaking country and Puerto Rico, and White if they were born in the United States.\footnote{The list of Spanish Speaking countries include: Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador, El Salvador, Guatemala, Equatorial Guinea, Honduras, Mexico, Nicaragua, Panama, Paraguay, Peru, Spain, Uruguay, Venezuela.} Therefore, an observation can be the product of four types of parents: 
 \begin{enumerate}
 \item White father and White mother (hereafter WW) 
 \item White father and Hispanic mother (hereafter WH)
@@ -146,38 +146,38 @@ I use the CPS for my primary analysis of the effect of having a Hispanic last na
 \item Hispanic father and Hispanic mother (hereafter HH).
 \end{enumerate}
 
-The distribution of the four types of children is presented in figure \ref{fig:dist} and table \ref{tab:mat1}. The majority of the sample (95.14\%) is WW children. The second biggest group is HH, which constitutes 3.36\% of the sample. Inter-ethnic children, WH and HW, make up 1.78\% of the sample with 60,147 observations. Even though WH and HW are only 1.78\% of the sample, I have plenty of observations to carry out an analysis. The summary statistics for the children of the four types of marriages are presented in table \ref{tab:c&p1}. Children of WW marriages (column 1) do better on every measure while children of HH parents (column 4) do worse than other children on every measure. 
+The distribution of the four types of children is presented in figure \ref{fig:dist} and table \ref{tab:mat1}. The majority of the sample (95.96\%) is WW children. The second biggest group is HH, which constitutes 2.69\% of the sample. Inter-ethnic children, WH and HW, make up 1.35\% of the sample with 90,325 observations. Even though WH and HW are only 1.35\% of the sample, I have plenty of observations to carry out an analysis. The summary statistics for the children of the four types of marriages are presented in table \ref{tab:c&p1}. Children of WW marriages (column 1) do better on every measure while children of HH parents (column 4) do worse than other children on every measure. 
 
-On the one hand, WW children are more educated, with approximately 14 years of education for men and women. WW children have an unemployment rate of 5\% for men and 4\% for women. They have log hourly earnings of 2.48 for men and 2.33 for women. Also, their annual log earnings are 10.25 for men and 9.46 for women.
+On the one hand, WW children are more educated, with approximately 14 years of education for men and women. WW children have an unemployment rate of 4\% for men and women. They have log hourly earnings of 2.51 for men and 2.32 for women. Also, their annual log earnings are 10.29 for men and 9.43 for women.
 
-On the other hand, children of HH marriages have an average of 12.1 and 13.27 years of education for men and women, respectively. HH men and women have an unemployment rate of 7\% and 6\%. Their annual log earnings are 10.01 and 9.53 for men and women, respectively. 
+On the other hand, children of HH marriages have an average of 12.9 and 13.24 years of education for men and women, respectively. HH men and women have an unemployment rate of 7\% and 6\%. Their annual log earnings are 10.01 and 9.53 for men and women, respectively. 
 
 Inter-ethnic children, WH and HW, have lower educational attainment and income than WW children, but they are better than HH children. Also, WH and HW are comparable, unlike WW and HH children. These two groups are important to the analysis. Children of HW are going to be the treatment group. HW children have a Hispanic father with a Hispanic last names. At the same time, the WH children have White fathers with a non-Hispanic, or White, last names. Summary statistics of these two groups, table \ref{tab:c&p1} columns (2) and (3) can show that they are different from the children of non-inter-ethnic marriages. 
 
 
-WH children have an average of 13.58 and 13.87 years of education for men and women. The unemployment rate for men is 6\% and for women 5\%. HW men and women obtained 13.21 and 13.42 years of schooling. Men's unemployment rate is 8\% and women's 7\%.
+WH children have an average of 13.58 and 13.79 years of education for men and women. The unemployment rate for men and women is 5\%. HW men and women obtained 13.22 and 13.42 years of schooling. Men's unemployment rate is 7\% and women's 6\%.
 
-In panel C of table \ref{tab:c&p1}, I present the rates at which members of each group self-identify as Hispanic. \footnote{Hispanic self-identification is observed when an individual notes that they are Hispanic on the CPS questionnaire} The vast majority of HH children, 97\%, identify as Hispanic. There is considerable attrition in Hispanic identification of inter-ethnic children. Among WH children, 81\% of men and 85\% of women identify as Hispanic. Among HW children, 88\% of men and 87\% of women identify as Hispanic. These results align with the findings of a substantial body of literature that noted this attrition among children of immigrants, especially those coming from inter-ethnic marriages \citep{duncan2017complexity, duncan2018identifying, duncan2020new, antman2020ethnic}. Finally, a small portion of WW children, 5\% of men and 6\% of women, identified as Hispanic. These 6\% of WW children are most likely third generation--- or higher--- children of immigrants. For my analysis, I dropped the WW observations who identify as Hispanic when I compare with non-Hispanic Whites.
+In panel C of table \ref{tab:c&p1}, I present the rates at which members of each group self-identify as Hispanic. \footnote{Hispanic self-identification is observed when an individual notes that they are Hispanic on the CPS questionnaire} The vast majority of HH children, 96\% for men and 97\% for women, identify as Hispanic. There is considerable attrition in Hispanic identification of inter-ethnic children. Among WH children, 74\% of men and 78\% of women identify as Hispanic. Among HW children, 83\% of men and 82\% of women identify as Hispanic. These results align with the findings of a substantial body of literature that noted this attrition among children of immigrants, especially those coming from inter-ethnic marriages \citep{duncan2017complexity, duncan2018identifying, duncan2020new, antman2020ethnic}. Finally, a small portion of WW children, 4\% of men and 5\% of women, identified as Hispanic. These 5\% of WW children are most likely third generation--- or higher--- children of immigrants. For my analysis, I dropped the WW observations who identify as Hispanic when I compare with non-Hispanic Whites.
 
-In columns (5) and (6), I calculate the differences in means between HH-WW (column 5) and HW-WH (column 6). Overall, HH children do worse than WW children. HH has one year less of education compared to WW, and are 2 percentage points less likely to be employed. HH men earn 7\% less than WW men, and HH women make 2\% less than WW women. Therefore, these two groups, HH and WW, are different on many observable qualities.
+In columns (5) and (6), I calculate the differences in means between HH-WW (column 5) and HW-WH (column 6). Overall, HH children do worse than WW children. HH has one year less of education compared to WW, and are 2 percentage points more likely to be unemployed. HH men earn 9\% less than WW men, and HH women make 2\% less than WW women. Therefore, these two groups, HH and WW, are different on many observable qualities.
 
-The differentials between WH and HW are not as severe as the ones between HH and WW. HW children are still worse off than WH but are much better than HH. HW men attain 0.36 fewer years of education than WH men. HW women achieve 0.46 fewer years of schooling than WH women. HW children are 2 percentage points less likely to be employed. HW men earn 4\% less annual earnings as WH men, and HW women earn 7\% less. These differences show that HW and WH children are different from children of endogamous/homogamous marriages and, thus, are more comparable.
+The differentials between WH and HW are not as severe as the ones between HH and WW. HW children are still worse off than WH but are much better than HH. HW men attain 0.36 fewer years of education than WH men. HW women achieve 0.37 fewer years of schooling than WH women. HW children are 1 percentage points more likely to be unemployed. HW men earn 1\% less annual earnings as WH men, and HW women earn 3\% less. These differences show that HW and WH children are different from children of endogamous/homogamous marriages and, thus, are more comparable.
 
 In table \ref{tab:c&p2}, I present the summary statistics for the four types and limit the sample to those that only identify as Hispanic.\footnote{Limiting the sample to those who identify as Hispanic only affects WH, HW, and HH. Members of the WW group are not affected by this restriction.} The same pattern discussed above between HH--WW and HW--WH persists. The one difference is that those who identify as Hispanic do slightly worse.
  
 \subsection{Synthetic parents}
 
-Using the 1970 to 1990 censuses, I constructed a data set of synthetic parents. The sample includes married White men and women. Even though the census asks a person whether they are Hispanic or not, I took advantage of the questions on place of birth to create a proxy for ethnicity. I consider a Hispanic person as White and born in a Spanish-speaking country. Consequently, Whites in the sample are people who are White and native-born. Using the information provided in the census, I can link husbands and wives with each other. I assume that parents have children between the ages of 25 and 40. Therefore, my sample consists of married White men and women that were born in the 1930 to 1965 cohorts\footnote{The construction of "synthetic parents" follows the method used by \citet{rubinstein2014pride}.}.
+Using the 1960 to 2000 censuses, I constructed a data set of synthetic parents. The sample includes married White men and women. Even though the census asks a person whether they are Hispanic or not, I took advantage of the questions on place of birth to create a proxy for ethnicity. I consider a Hispanic person as White and born in a Spanish-speaking country. Consequently, Whites in the sample are people who are White and native-born. Using the information provided in the census, I can link husbands and wives with each other. I assume that parents have children between the ages of 25 and 40. Therefore, my sample consists of married White men and women with children that were born in the 1920 to 1975 cohorts\footnote{The construction of "synthetic parents" follows the method used by \citet{rubinstein2014pride}.}.
 
-I show the distribution of the four types of couples in table \ref{tab:mat2}. White husbands and White wives (WW) make up the majority of couples in the sample, 97\% (1,286,731 couples). Hispanic husbands and wives (HH) are the second largest group making up 2\% (20,911 couples)of all couples. White husbands and Hispanic wives (WH) couples are less than 1\% (7,178 couples) of the sample and Hispanic husbands and White wives (HW) are also less than 1\% (7,606 couples). 
-
-
-I present the summary statistics of the four types of synthetic parents in table \ref{tab:synth}. WW couples have higher education, 13.05 years for husbands and 12.74 for wives. As a household, WW couples have 25.78 years of schooling. Husbands in HH marriages have 8.93 years of education, while women have 8.6 years of schooling. As a household, HH couples have 17.54 years of education.
-
-WH husbands have 12.32 years of education, while wives have an average of 11.03 years. WH household attained a total of 23.35 years of schooling in total. HW husbands and wives obtained 10.65 and 11.54 years of education, respectively. HW household attained a total of 22.19 years of schooling in total.
+I show the distribution of the four types of couples in table \ref{tab:mat2}. White husbands and White wives (WW) make up the majority of couples in the sample, 96\% (5,141,737 couples). Hispanic husbands and wives (HH) are the second largest group making up 2\% (119,749 couples) of all couples. White husbands and Hispanic wives (WH) couples are less 1\% (33,097 couples) of the sample and Hispanic husbands and White wives (HW) are also 1\% (37,847 couples). 
 
 
-In columns 5 and 6 of table \ref{tab:synth}, I report the differences in means between HH-WW households and HW-WH households. An HH Hispanic husband attained 4.11 fewer years of education than a WW husband. While an HH wife acquired 4.13 fewer years of schooling than a White WW wife. The total educational difference between HH and WW households equals 8.25 years of education. The educational differences between HW and WH are less severe than those between HH and WW. A Hispanic husband in intermarriage attained 1.67 fewer years of schooling than a White husband in intermarriage. A White wife in intermarriage attained 0.51 years of education, more than a Hispanic wife in intermarriage. The difference in total years of education between HW and WH households is 1.16, which is an 85\% decrease from the HH--WW gap. These differences show that couples that intermarry are better and different than those that do not.
+I present the summary statistics of the four types of synthetic parents in table \ref{tab:synth}. WW couples have higher education, 12.75 years for husbands and 12.47 for wives. As a household, WW couples have 25.22 years of schooling. Additionally, the log total family income for a WW household is 10.72 and have 3.77 children. Husbands in HH marriages have 8.64 years of education, while women have 8.49 years of schooling. As a household, HH couples have 17.13 years of education, log total family income of 10.27, and have 4.23 children.
+
+WH husbands have 11.77 years of education, while wives have an average of 10.40 years. WH household attained a total of 22.17 years of schooling in total, a log total family income of 10.55, and 3.98 children. HW husbands and wives obtained 10.25 and 11.11 years of education, respectively. HW household attained a total of 21.36 years of schooling in total, a log total family income of 10.46, and 4.15 children.
+
+
+In columns 5 and 6 of table \ref{tab:synth}, I report the differences in means between HH-WW households and HW-WH households. An HH Hispanic husband attained 4.11 fewer years of education than a WW husband. While an HH wife acquired 3.98 fewer years of schooling than a White WW wife. The total educational difference between HH and WW households equals 8.09 years of education. The educational differences between HW and WH are less severe than those between HH and WW. A Hispanic husband in intermarriage attained 1.52 fewer years of schooling than a White husband in intermarriage. A White wife in intermarriage attained 0.70 years of education, more than a Hispanic wife in intermarriage. The difference in total years of education between HW and WH households is 0.81, which is an 90\% decrease from the HH--WW gap. The total family income of an HH household is 45\% lower than a WW household, while the total family income of an HW household is 10\% lower than a WH household. These differences show that couples that intermarry are better and different than those that do not.
 
 
 %In table \ref{tab:p1} columns five and six, I provide the  HH-WW and HW-WH gaps. WW couples are more educated and earn more than HH couples. Also, WH husbands are more educated and earn more than HW husbands. In comparison, WH wives are more educated than HW wives. Even though White husbands in intermarriages are more educated and earn more than husbands in HW marriages, they are more comparable to each other than the non-intermarriage couples.
@@ -217,7 +217,7 @@ I find that an inter-ethnic person with a Spanish-sounding last names earns less
 
 I provide the results to the estimation of equation \ref{eq:1a} in table \ref{tab:lastnamereg}. The sample in this analysis includes full-time, full-year, and wage and salary men, and I control for hours worked and age and include year fixed effects (FE). I also restrict the sample to children of HW and WH (omitted) parents. Column one in table \ref{tab:lastnamereg} is the results without controlling for education. Overall, an inter-ethnic with a Hispanic last name earns 6 percentage points less than an inter-ethnic with a White last name. This gap, however, could be entirely explained by educational differences. An inter-ethnic with a Hispanic last name earns 6 percentage points less than an inter-ethnic with a White last name, but the result is statistically insignificant.
 
-I provide the results to the estimation of equation \ref{eq:iden} in table \ref{tab:identreg}. The sample in this analysis includes full-time, full-year, and wage and salary men, and I control for hours worked and age and include year fixed effects (FE). I also restrict the sample to children of HW and WH parents. The omitted group is children of WH parents that do not identify as Hispanic. Column one in table \ref{tab:identreg} is the results without controlling for education. Overall, an inter-ethnic that identifies as Hispanic earns 11 percentage points less than an inter-ethnic that does not. This gap, however, could be entirely explained by educational differences. An inter-ethnic that identifies as Hispanic---i.e. $HW_{ist} + HW_{ist} \cdot Hispanic_i$---earns 6 percentage points less than an inter-ethnic that does not, but the result is statistically insignificant.
+I provide the results to the estimation of equation \ref{eq:iden} in table \ref{tab:identreg}. The sample in this analysis includes full-time, full-year, and wage and salary men, and I control for hours worked and age and include year fixed effects (FE). I also restrict the sample to children of HW and WH parents. The omitted group is children of WH parents that do not identify as Hispanic. Column one in table \ref{tab:identreg} is the results without controlling for education. Overall, an inter-ethnic that identifies as Hispanic earns 13 percentage points less than an inter-ethnic that does not. This gap, however, could be entirely explained by educational differences. An inter-ethnic that identifies as Hispanic---i.e. $HW_{ist} + HW_{ist} \cdot Hispanic_i$---earns 6 percentage points less than an inter-ethnic that does not, but the result could be entirely explained by educational differences.
 
 
 \section{Conclusion}\label{sec:con1}
@@ -277,66 +277,9 @@ I compare the children of inter-ethnic marriages to study the labor market impac
 
 \input{tables/tab01-observations-by-parents}
 
-% \begin{table}[H]
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%   \begin{adjustbox}{max width=\textwidth}
-%   \begin{threeparttable}
-% \caption{\textsc{Number of children from the different types of parents.}}\label{tab:mat1}
-% \footnotesize
-% \begin{tabular}{cccccccccccccc}
-% \hline 
-%  &  &  & \multicolumn{10}{c}{Perent's Type} & \tabularnewline
-% \cline{4-13} 
-%  &  &  & White Father &  &  & White Father &  &  & Hispanic father &  &  & Hispanic father & \tabularnewline
-%  &  &  & White Mother &  &  & Hispanic Mother &  &  & White Mother &  &  & Hispanic Mother & \tabularnewline
-% \hline 
-%  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
-%  & Number &  & 3,828,024 &  &  & 24,306 &  &  & 35,841 &  &  & 135,300 & \tabularnewline
-%  & (\%) &  & (95.14\%) &  &  & (0.89\%) &  &  & (0.89\%) &  &  & (3.36\%) & \tabularnewline
-%  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
-% \hline 
-% \end{tabular}
-%  \begin{tablenotes}
-%    \item [\textit{Notes.}] The data is restricted to people interviewed between 1994 and 2019, also White, married, and between the ages of 18 and 65. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if both her parents were born in a Spanish-speaking country. A parent is White if born parents were born in the United States.
-%   \end{tablenotes}
-%   \end{threeparttable}
-%   \end{adjustbox}
-% \end{table}
-
 \newpage
 
 \input{tables/tab02-observations-by-couple}
-
-% \begin{table}[H]
-% \begin{adjustbox}{max width=\textwidth}
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%   \begin{threeparttable}
-% \caption{\textsc{Parents' types}}\label{tab:mat2}
-% \footnotesize
-% \begin{tabular}{cccccccccccccc}
-% \hline 
-%  &  &  & \multicolumn{10}{c}{Couples' Type} & \tabularnewline
-% \cline{4-13} 
-%  &  &  & White Husband &  &  & White Husband &  &  & Hispanic Husband &  &  & Hispanic Husband & \tabularnewline
-%  &  &  & White Wife &  &  & Hispanic Wife &  &  & White Wife &  &  & Hispanic Wife & \tabularnewline
-% \hline 
-%  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
-%  & Number &  & 1,198,446 &  &  & 3,819 &  &  & 3,413 &  &  & 6,920 & \tabularnewline
-%  & (\%) &  & (98.83\%) &  &  & (0.31\%) &  &  & (0.28\%) &  &  & (0.57\%) & \tabularnewline
-%  &  &  &  &  &  &  &  &  &  &  &  &  & \tabularnewline
-% \hline 
-% \end{tabular}
-
-%   \begin{tablenotes}
-%     \item [\textit{Notes.}] The data is restricted to people interviewed in 1970 and 1960 and also White and married. I identify the ethnicity of a person through their place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States.
-%     \item [\textit{Notes.}] The table includes information on the proportion of the four types of synthetic parents that I have constructed.
-%   \end{tablenotes}
-%   \end{threeparttable}
-% \end{adjustbox}
-% \end{table}
-
 
 \newpage
 
@@ -346,278 +289,20 @@ I compare the children of inter-ethnic marriages to study the labor market impac
 
 \input{tables/tab03a-summary-stats}
 
-% \newpage
-
-% \begin{table}[H]
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%   \begin{adjustbox}{max width=\textwidth}
-%   \begin{threeparttable}
-% \caption{\textsc{Children's outcome using parent's place of birth}}\label{tab:c&p1}
-% \footnotesize
-% \begin{tabular}{llccccccccr@{\extracolsep{0pt}.}l}
-% \toprule 
-%  &  & \multicolumn{4}{c}{Father's and Mother's Ethnicities} &  & \multicolumn{5}{c}{Differences}\tabularnewline
-% \cmidrule{3-6} \cmidrule{8-12} 
-%  &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% Variables &  & White Father & White Father & Hispanic Father & Hispanic Father &  & HH - WW &  & HW-WH & \multicolumn{2}{c}{}\tabularnewline
-%  &  & White Mother & Hispanic Mother & White Mother & Hispanic Mother &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (WW) & (WH) & (HW) & (HH) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (i) & (ii) & (iii) & (iv) &  & (v) &  & (vi) & \multicolumn{2}{c}{}\tabularnewline
-% \midrule
-% \textbf{Parent's Panel:} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% Husband's education (total years) &  & 12.727 & 11.847 & 10.286 & 8.949 &  & -3.779{*}{*}{*} &  & -1.560{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.616) & (3.658) & (4.602) & (4.422) &  & (0.018) &  & (0.041) & \multicolumn{2}{c}{}\tabularnewline
-% Wife's education (total years) &  & 12.467 & 10.462 & 11.188 & 8.590 &  & -3.876{*}{*}{*} &  & 0.726{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.182) & (4.139) & (3.394) & (4.120) &  & (0.015) &  & (0.035) & \multicolumn{2}{c}{}\tabularnewline
-% Total Household education (years) &  & 25.194 & 22.308 & 21.473 & 17.539 &  & -7.655{*}{*}{*} &  & -0.835{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (4.300) & (7.034) & (7.202) & (7.836) &  & (0.029) &  & (0.068) & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{Panel A:} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{age and education} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% man's Education &  & 13.861 & 13.366 & 13.072 & 12.898 &  & -0.962{*}{*}{*} &  & -0.294{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.421) & (2.317) & (2.270) & (2.356) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% woman's Education &  & 14.200 & 13.741 & 13.270 & 13.204 &  & -0.996{*}{*}{*} &  & -0.471{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.424) & (2.467) & (2.342) & (2.453) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{Panel B: Employment \& Earnings} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% men' employment rate &  & 0.952 & 0.945 & 0.927 & 0.931 &  & -0.021{*}{*}{*} &  & -0.018{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.215) & (0.227) & (0.260) & (0.254) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% women' employment rate &  & 0.956 & 0.950 & 0.931 & 0.936 &  & -0.020{*}{*}{*} &  & -0.019{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.205) & (0.218) & (0.253) & (0.244) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% men' log hourly earnings &  & 2.557 & 2.524 & 2.468 & 2.505 &  & -0.041{*}{*}{*} &  & -0.056{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.399) & (0.421) & (0.423) & (0.401) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% women' log hourly earnings &  & 2.435 & 2.444 & 2.385 & 2.389 &  & -0.016{*}{*} &  & -0.061{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.415) & (0.426) & (0.375) & (0.376) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% men' log annual earnings &  & 10.529 & 10.435 & 10.386 & 10.365 &  & -0.164{*}{*}{*} &  & -0.049 & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.703) & (0.637) & (0.872) & (0.622) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% women' log annual earnings &  & 10.297 & 10.262 & 10.159 & 10.175 &  & -0.123{*}{*}{*} &  & -0.103{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.633) & (0.613) & (0.541) & (0.650) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{Panel D: Identity} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% Proportion of men &  & 0.060 & 0.821 & 0.879 & 0.969 &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% identifying as Hispanic &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% Proportion of women &  & 0.059 & 0.850 & 0.859 & 0.970 &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% identifying as Hispanic &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-%  &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \bottomrule
-% \end{tabular}
-%   \begin{tablenotes}
-%    \item [\textit{Notes.}] The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States.
-%    \item [\textit{Notes.}] In each column, I present the average statistics of the different types of people based on the ethnicities of their parents. In column one, I show the summary statistics of children of White fathers and White mothers. In column two, I present the summary statistics of children of White fathers and Hispanic mothers. In column three, I show the summary statistics of children of Hispanic fathers and White mothers. In column four, I present the summary statistics of children of Hispanic fathers and mothers.
-%    \item [\textit{Notes.}] Columns five and six have data on the HH--WW gaps (column five) and the HW--WH gaps (column six).
-
-%   \end{tablenotes}
-%   \end{threeparttable}
-%   \end{adjustbox}
-% \end{table}
-
 \newpage
 
 \input{tables/tab04-summary-stats}
-
-% \begin{table}[H]
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%   \begin{adjustbox}{max width=\textwidth}
-%   \begin{threeparttable}
-% \caption{\textsc{Children's outcomes using parent's place of birth only for those that identify as Hispanic}}\label{tab:c&p2}
-% \footnotesize
-% \begin{tabular}{llccccccccr@{\extracolsep{0pt}.}l}
-% \hline 
-%  &  & \multicolumn{4}{c}{Father's and Mother's Ethnicities} &  & \multicolumn{5}{c}{Differences}\tabularnewline
-% \cline{3-6} \cline{8-12} 
-%  &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% Variables &  & White Father & White Father & Hispanic Father & Hispanic Father &  & HH - WW &  & HW-WH & \multicolumn{2}{c}{}\tabularnewline
-%  &  & White Mother & Hispanic Mother & White Mother & Hispanic Mother &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (WW) & (WH) & (HW) & (HH) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (i) & (ii) & (iii) & (iv) &  & (v) &  & (vi) & \multicolumn{2}{c}{}\tabularnewline
-% \hline 
-% \textbf{Parent's Panel:} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% Husband's education (total years) &  & 11.856 & 10.211 & 9.665 & 8.427 &  & -3.429{*}{*}{*} &  & -0.546{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.922) & (3.876) & (4.095) & (4.228) &  & (0.035) &  & (0.079) & \multicolumn{2}{c}{}\tabularnewline
-% Wife's education (total years) &  & 11.793 & 9.556 & 9.791 & 8.137 &  & -3.656{*}{*}{*} &  & 0.235{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.329) & (3.751) & (3.524) & (3.899) &  & (0.028) &  & (0.063) & \multicolumn{2}{c}{}\tabularnewline
-% Total Household education (years) &  & 23.650 & 19.767 & 19.456 & 16.564 &  & -7.085{*}{*}{*} &  & -0.311{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (4.716) & (6.843) & (6.896) & (7.338) &  & (0.057) &  & (0.128) & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{Panel A:} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{age and education} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% man's Education &  & 13.861 & 13.237 & 13.008 & 12.874 &  & -0.986{*}{*}{*} &  & -0.230{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.421) & (2.313) & (2.217) & (2.347) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% woman's Education &  & 14.200 & 13.603 & 13.133 & 13.182 &  & -1.018{*}{*}{*} &  & -0.470{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (2.424) & (2.391) & (2.325) & (2.453) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \textbf{Panel D: Employment \& Earnings} &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% men' employment rate &  & 0.952 & 0.943 & 0.925 & 0.930 &  & -0.021{*}{*}{*} &  & -0.018{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.215) & (0.232) & (0.264) & (0.254) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% women' employment rate &  & 0.956 & 0.948 & 0.928 & 0.936 &  & -0.020{*}{*}{*} &  & -0.020{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.205) & (0.222) & (0.258) & (0.245) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% men' log hourly earnings &  & 2.501 & 2.470 & 2.408 & 2.460 &  & -0.041{*}{*}{*} &  & -0.062{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.454) & (0.458) & (0.463) & (0.434) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% women' log hourly earnings &  & 2.339 & 2.358 & 2.288 & 2.322 &  & -0.017{*}{*} &  & -0.071{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.494) & (0.499) & (0.464) & (0.423) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% men' log annual earnings &  & 10.529 & 10.414 & 10.394 & 10.364 &  & -0.165{*}{*}{*} &  & -0.020 & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.703) & (0.610) & (0.704) & (0.625) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% women' log annual earnings &  & 10.297 & 10.240 & 10.136 & 10.172 &  & -0.126{*}{*}{*} &  & -0.104{*}{*}{*} & \multicolumn{2}{c}{}\tabularnewline
-%  &  & (0.634) & (0.635) & (0.537) & (0.652) &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-%  &  &  &  &  &  &  &  &  &  & \multicolumn{2}{c}{}\tabularnewline
-% \hline 
-% \end{tabular}
-%   \begin{tablenotes}
-%    \item [\textit{Notes.}] The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States.
-%    \item [\textit{Notes.}] In each column, I present the average statistics of those that identify as Hispanic by the different types of people based on the ethnicities of their parents. In column one, I present the summary statistics of children of White fathers and White mothers. In column two, I show the summary statistics of children of White fathers and Hispanic mothers identifying as Hispanic. In column three, I present the summary statistics of children of Hispanic fathers and White mothers that identify as Hispanic. In column four, I show the summary statistics of children of Hispanic fathers and Hispanic mothers that identify as Hispanic.
-%    \item [\textit{Notes.}] Columns five and six have data on the HH--WW gaps (column five) and the HW--WH gaps (column six).
-
-%   \end{tablenotes}
-%   \end{threeparttable}
-%   \end{adjustbox}
-% \end{table}
 
 \newpage
 
 \input{tables/tab05-regression}
 
-% \begin{table}[H]
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%     \begin{adjustbox}{max width=\textwidth}
-%   \begin{threeparttable}
-% \caption{\textsc{Effect of having a Hispanic last name}}\label{tab:lastnamereg}
-% \footnotesize
-
-% \begin{tabular}{llcccc}
-% \toprule 
-%  &  &  &  &  & \tabularnewline
-% Variables &  & Log annual earnings &  & Log annual earnings & \tabularnewline
-% \midrule
-
-% $WH_{ist}$ &  & -0.088{*}{*}{*} &  & -0.044{*}{*}{*} & \tabularnewline
-%  &  & (0.018) &  & (0.017) & \tabularnewline
-%  &  &  &  &  & \tabularnewline
-% $HW_{ist}$ &  & -0.141{*}{*}{*} &  & -0.059{*}{*}{*} & \tabularnewline
-%  &  & (0.015) &  & (0.014) & \tabularnewline
-%  &  &  &  &  & \tabularnewline
-% $HH_{ist}$ &  & -0.161{*}{*}{*} &  & -0.058{*}{*}{*} & \tabularnewline
-%  &  & (0.008) &  & (0.007) & \tabularnewline
-%  &  &  &  &  & \tabularnewline
-% \midrule
-% $HW_{ist}$ - $WH_{ist}$ &  & -0.053{*}{*} &  & -0.016 & \tabularnewline
-%  &  & (0.024) &  & (0.022) & \tabularnewline
-%  &  &  &  &  & \tabularnewline
-% \midrule
-% \textit{Controlling for:} &  &  &  &  & \tabularnewline
-% Education &  & No &  & Yes & \tabularnewline
-% Hours worked &  & Yes &  & Yes & \tabularnewline
-% Age &  & Yes &  & Yes & \tabularnewline
-% Year FE &  & Yes &  & Yes & \tabularnewline
-% \bottomrule
-% \end{tabular}
-
-
-%   \begin{tablenotes}
-%    \item [\textit{Notes.}] This table includes the estimation results of equation \ref{eq:1a}.
-%    \item [\textit{Notes.}] The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH).
-%    \item [\textit{Notes.}] The sample is restricted to men working full-time full-year and are waged and salaried workers.
-%     \item [\textit{Notes.}] Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.
-%   \end{tablenotes}
-%   \end{threeparttable}
-%   \end{adjustbox}
-% \end{table}
-
 \newpage
 
 \input{tables/tab06-regression}
 
-% \begin{table}[H]
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%     \begin{adjustbox}{max width=\textwidth}
-%   \begin{threeparttable}
-% \caption{\textsc{Last name effect}}\label{tab:identreg}
-% \footnotesize
-
-% \begin{tabular}{lccccc}
-% \hline 
-%  &  & Log annual earnings &  & Log annual earnings & \tabularnewline
-% Variables &  &  &  &  & \tabularnewline
-% \hline 
-%  &  &  &  &  & \tabularnewline
-% $WH_{ist}\times Hispanic_{ist}$ &  & -0.134{*}{*} &  & -0.064 & \tabularnewline
-%  &  & (0.053) &  & (0.049) & \tabularnewline
-% $HW_{ist}\times Hispanic_{ist}$ &  & -0.164{*}{*}{*} &  & -0.108{*}{*} & \tabularnewline
-%  &  & (0.052) &  & (0.048) & \tabularnewline
-% $HH_{ist}\times Hispanic_{ist}$ &  & -0.106{*}{*} &  & -0.062 & \tabularnewline
-%  &  & (0.049) &  & (0.045) & \tabularnewline
-% $WH_{ist}$ &  & 0.027 &  & 0.011 & \tabularnewline
-%  &  & (0.048) &  & (0.045) & \tabularnewline
-% $HW_{ist}$ &  & 0.007 &  & 0.038 & \tabularnewline
-%  &  & (0.050) &  & (0.046) & \tabularnewline
-% $HH_{ist}$ &  & -0.057 &  & 0.003 & \tabularnewline
-%  &  & (0.057) &  & (0.044) & \tabularnewline
-% \hline 
-% $HW_{ist}\times Hispanic_{ist}$ - $WH_{ist}\times Hispanic_{ist}$ &  & -0.030 &  & -0.043 & \tabularnewline
-%  &  & (0.074) &  & (0.068) & \tabularnewline
-% \hline 
-% \textit{Controlling for:} &  &  &  &  & \tabularnewline
-% Education &  & No &  & Yes & \tabularnewline
-% Hours worked &  & Yes &  & Yes & \tabularnewline
-% Age &  & Yes &  & Yes & \tabularnewline
-% Year FE &  & Yes &  & Yes & \tabularnewline
-% \hline 
-% \end{tabular}
-
-
-%   \begin{tablenotes}
-%    \item [\textit{Notes.}] This table includes the estimation results of equation \ref{eq:iden}.
-%    \item [\textit{Notes.}] The four groups stand for White Husband White Wife (WW), White Husband Hispanic Wife (WH), Hispanic Husband White (HW), and Hispanic Husband Hispanic Wife (HH). $Hispanic_{ist}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.
-%    \item [\textit{Notes.}] The sample is restricted to men working full-time full-year and are waged and salaried workers.
-%     \item [\textit{Notes.}] Column one has the regression results when controlling for hours worked, age, and years of fixed effects. Column two has the results after controlling for education.
-%   \end{tablenotes}
-%   \end{threeparttable}
-%   \end{adjustbox}
-% \end{table}
-
-
-% \begin{table}[H]
-%   \centering
-%   \renewcommand*\TPTnoteLabel[1]{\parbox[b]{3em}{\hfill#1\,}}
-%     \begin{adjustbox}{max width=\textwidth}
-%   \begin{threeparttable}
-% \caption{\textsc{Hsiapnic--White earnings gap using Hispanic variable only}}\label{tab:hispwhitegap}
-% \footnotesize
-
-% \begin{tabular}{lccccc}
-% \hline 
-%  &  &  &  &  & \tabularnewline
-% Variables &  & Log annual earnings &  & Log annual earnings & \tabularnewline
-% \hline 
-% $Hispanic_{ist}$ &  & -0.156{*}{*}{*} &  & -0.060{*}{*}{*} & \tabularnewline
-%  &  & (0.006) &  & (0.006) & \tabularnewline
-% \textit{Controlling for:} &  &  &  &  & \tabularnewline
-% Education &  & No &  & Yes & \tabularnewline
-% Hours worked &  & Yes &  & Yes & \tabularnewline
-% Age &  & Yes &  & Yes & \tabularnewline
-% Year FE &  & Yes &  & Yes & \tabularnewline
-% \hline 
-% \end{tabular}
-
-
-%   \begin{tablenotes}
-%    \item [\textit{Notes.}] This table includes the estimation results of equation \ref{eq:naive}.
-%    \item [\textit{Notes.}] $Hispanic_{ist}$ is a dummy variable equal to one if a person identifies as Hispanic and zero otherwise.
-%    \item [\textit{Notes.}] The sample is restricted to men working full time full-year and are waged and salaried workers.
-%     \item [\textit{Notes.}] Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.
-%   \end{tablenotes}
-%   \end{threeparttable}
-%   \end{adjustbox}
-% \end{table}
-
 
 \end{appendices}
-
-%\begin{table}[!htbp]
-%\caption{T-tests across  groups by several variables} \label{tab:table8}
-%\resizebox{0.95\textwidth}{!}{
-%	  \estauto{sumstat_parents2.tex}{8}{c}
-%	  }
-%\small{Note:  *** p$<$0.01, ** p$<$0.05, * p$<$0.10.}  
-%\end{table}
 
 \end{document}
 
