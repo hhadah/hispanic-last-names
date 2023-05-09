@@ -11,7 +11,7 @@ clear
 cls
 ********************************************************************************
 * Global directories
-global wd "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets"
+global wd "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets"
 * set working dirrectory
 cd "$wd"
 
@@ -57,7 +57,7 @@ drop if year < 1994 | year > 2019
 gen cohort = year - age
 
 * keep 1960 to 1970 cohorts
-keep if cohort >= 1950 & cohort <= 2000
+// keep if cohort >= 1950 & cohort <= 2000
 
 * keep 25 to 55 year old
 keep if age < 41 & age > 24

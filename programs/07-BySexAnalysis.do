@@ -11,7 +11,7 @@ clear
 cls
 ********************************************************************************
 * Global directories
-global wd "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets"
+global wd "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets"
 
 * set working dirrectory
 cd "$wd"
@@ -265,50 +265,54 @@ keep if race == 100
 
 * keep relevent parents' place of birth
 #delimit;
-keep if 						(mbpl  ==  9900 		| /*USA */
-								mbpl  ==  11000 	| /* Puerto Rico */
-								mbpl  ==  20000 	| /* Mexico */
-								mbpl  ==  30025 	| /* Colombia */
-								mbpl  ==  54800 	| /* Spain */
-								mbpl  ==  30005 	| /* Argentina */
-								mbpl  ==  30050 	| /* Colombia */
-								mbpl  ==  30065 	| /* Venzuela */
-								mbpl  ==  30020 	| /* Chile */
-								mbpl  ==  30030 	| /* Ecuador */
-								mbpl  ==  21040 	| /* Guatemala */
-								mbpl  ==  25000 	| /* Cuba */
-								mbpl  ==  30010 	| /* Bolivia */
-								mbpl  ==  26010 	| /* Dominican Republic */
-								mbpl  ==  21050 	| /* Honduras */
-								mbpl  ==  30070 	| /* Paraguay */
-								mbpl  ==  21030 	| /* El Salvador */
-								mbpl  ==  21060 	| /* Nicaragua */
-								mbpl  ==  21020		| /* Costa Rica */
-								mbpl  ==  21070		| /* Panama */
-								mbpl  ==  30060		| /* Uruguay */
-								mbpl  ==  30000)	& /* South America */
-								(fbpl  ==  9900 	| /*USA */
-								fbpl  ==  11000 	| /* Puerto Rico */
-								fbpl  ==  20000 	| /* Mexico */
-								fbpl  ==  30025 	| /* Colombia */
-								fbpl  ==  54800 	| /* Spain */
-								fbpl  ==  30005 	| /* Argentina */
-								fbpl  ==  30050 	| /* Colombia */
-								fbpl  ==  30065 	| /* Venzuela */
-								fbpl  ==  30020 	| /* Chile */
-								fbpl  ==  30030 	| /* Ecuador */
-								fbpl  ==  21040 	| /* Guatemala */
-								fbpl  ==  25000 	| /* Cuba */
-								fbpl  ==  30010 	| /* Bolivia */
-								fbpl  ==  26010 	| /* Dominican Republic */
-								fbpl  ==  21050 	| /* Honduras */
-								fbpl  ==  30070 	| /* Paraguay */
-								fbpl  ==  21030 	| /* El Salvador */
-								fbpl  ==  21060 	| /* Nicaragua */
-								fbpl  ==  21020		| /* Costa Rica */
-								fbpl  ==  21070		| /* Panama */
-								fbpl  ==  30060		| /* Uruguay */
-								fbpl  ==  30000)	  /* South America */;
+keep if   (mbpl  ==  9900 | /* USA */
+           mbpl  == 11000 | /* Puerto Rico */
+           mbpl  == 30005 | /* Argentina */
+           mbpl  == 30010 | /* Bolivia */
+		   mbpl  == 30015 | /* Brazil */
+           mbpl  == 30020 | /* Chile */
+           mbpl  == 30025 | /* Colombia */
+           mbpl  == 26010 | /* Dominican Republic */
+           mbpl  == 30030 | /* Ecuador */
+           mbpl  == 21020 | /* Costa Rica */
+           mbpl  == 21030 | /* El Salvador */
+           mbpl  == 21040 | /* Guatemala */
+           mbpl  == 21050 | /* Honduras */
+           mbpl  == 25000 | /* Cuba */
+           mbpl  == 20000 | /* Mexico */
+           mbpl  == 21060 | /* Nicaragua */
+           mbpl  == 21070 | /* Panama */
+           mbpl  == 30050 | /* Peru */
+           mbpl  == 30060 | /* Uruguay */
+           mbpl  == 30065 | /* Venezuela */
+           mbpl  == 43800 | /* Spain */
+           mbpl  == 29900 | /* Americas */
+		   mbpl  == 21000 | /* Cental America */
+           mbpl  == 30000) & /* South America */
+          (fbpl  ==  9900 | /* USA */
+           fbpl  == 11000 | /* Puerto Rico */
+           fbpl  == 30005 | /* Argentina */
+           fbpl  == 30010 | /* Bolivia */
+		   fbpl  == 30015 | /*  Brazil */
+           fbpl  == 30020 | /* Chile */
+           fbpl  == 30025 | /* Colombia */
+           fbpl  == 26010 | /* Dominican Republic */
+           fbpl  == 30030 | /* Ecuador */
+           fbpl  == 21020 | /* Costa Rica */
+           fbpl  == 21030 | /* El Salvador */
+           fbpl  == 21040 | /* Guatemala */
+           fbpl  == 21050 | /* Honduras */
+           fbpl  == 25000 | /* Cuba */
+           fbpl  == 20000 | /* Mexico */
+           fbpl  == 21060 | /* Nicaragua */
+           fbpl  == 21070 | /* Panama */
+           fbpl  == 30050 | /* Peru */
+           fbpl  == 30060 | /* Uruguay */
+           fbpl  == 30065 | /* Venezuela */
+           fbpl  == 43800 | /* Spain */
+           fbpl  == 29900 | /* Americas */
+		   fbpl  == 21000 | /* Cental America */
+           fbpl  == 30000);  /* South America */
 					
 #delimit cr
 /*
@@ -348,54 +352,58 @@ label var LA_father "father born in Latin America"
 ********************************************************************************
 * LA_mother
 #delimit;
-replace LA_mother = 1 			if					  /* fbpl  ==  9900 	| USA */
-								mbpl  ==  11000 	| /* Puerto Rico */
-								mbpl  ==  20000 	| /* Mexico */
-								mbpl  ==  30025 	| /* Colombia */
-								mbpl  ==  54800 	| /* Spain */
-								mbpl  ==  30005 	| /* Argentina */
-								mbpl  ==  30050 	| /* Colombia */
-								mbpl  ==  30065 	| /* Venzuela */
-								mbpl  ==  30020 	| /* Chile */
-								mbpl  ==  30030 	| /* Ecuador */
-								mbpl  ==  21040 	| /* Guatemala */
-								mbpl  ==  25000 	| /* Cuba */
-								mbpl  ==  30010 	| /* Bolivia */
-								mbpl  ==  26010 	| /* Dominican Republic */
-								mbpl  ==  21050 	| /* Honduras */
-								mbpl  ==  30070 	| /* Paraguay */
-								mbpl  ==  21030 	| /* El Salvador */
-								mbpl  ==  21060 	| /* Nicaragua */
-								mbpl  ==  21020		| /* Costa Rica */
-								mbpl  ==  21070		| /* Panama */
-								mbpl  ==  30060		| /* Uruguay */
-								mbpl  ==  30000	  	  /* South America */;
+replace LA_mother = 1 			if	 /* mbpl  ==  9900 	| USA */
+										mbpl  == 11000 | /* Puerto Rico */
+										mbpl  == 30005 | /* Argentina */
+										mbpl  == 30010 | /* Bolivia */
+										mbpl  == 30015 | /* Brazil */
+										mbpl  == 30020 | /* Chile */
+										mbpl  == 30025 | /* Colombia */
+										mbpl  == 26010 | /* Dominican Republic */
+										mbpl  == 30030 | /* Ecuador */
+										mbpl  == 21020 | /* Costa Rica */
+										mbpl  == 21030 | /* El Salvador */
+										mbpl  == 21040 | /* Guatemala */
+										mbpl  == 21050 | /* Honduras */
+										mbpl  == 25000 | /* Cuba */
+										mbpl  == 20000 | /* Mexico */
+										mbpl  == 21060 | /* Nicaragua */
+										mbpl  == 21070 | /* Panama */
+										mbpl  == 30050 | /* Peru */
+										mbpl  == 30060 | /* Uruguay */
+										mbpl  == 30065 | /* Venezuela */
+										mbpl  == 43800 | /* Spain */
+										mbpl  == 29900 | /* Americas */
+										mbpl  == 21000 | /* Cental America */
+										mbpl  == 30000   /* South America */;
 /*
 ********************************************************************************
 * LA_father
 */
-replace LA_father = 1 			if 					  /* fbpl  ==  9900 	| USA */
-								fbpl  ==  11000 	| /* Puerto Rico */
-								fbpl  ==  20000 	| /* Mexico */
-								fbpl  ==  30025 	| /* Colombia */
-								fbpl  ==  54800 	| /* Spain */
-								fbpl  ==  30005 	| /* Argentina */
-								fbpl  ==  30050 	| /* Colombia */
-								fbpl  ==  30065 	| /* Venzuela */
-								fbpl  ==  30020 	| /* Chile */
-								fbpl  ==  30030 	| /* Ecuador */
-								fbpl  ==  21040 	| /* Guatemala */
-								fbpl  ==  25000 	| /* Cuba */
-								fbpl  ==  30010 	| /* Bolivia */
-								fbpl  ==  26010 	| /* Dominican Republic */
-								fbpl  ==  21050 	| /* Honduras */
-								fbpl  ==  30070 	| /* Paraguay */
-								fbpl  ==  21030 	| /* El Salvador */
-								fbpl  ==  21060 	| /* Nicaragua */
-								fbpl  ==  21020	| /* Costa Rica */
-								fbpl  ==  21070	| /* Panama */
-								fbpl  ==  30060	| /* Uruguay */
-								fbpl  ==  30000	  /* South America */;
+replace LA_father = 1 			if	 /* fbpl  ==  9900 	| USA */
+										fbpl  == 11000 | /* Puerto Rico */
+										fbpl  == 30005 | /* Argentina */
+										fbpl  == 30010 | /* Bolivia */
+										fbpl  == 30015 | /* Brazil */
+										fbpl  == 30020 | /* Chile */
+										fbpl  == 30025 | /* Colombia */
+										fbpl  == 26010 | /* Dominican Republic */
+										fbpl  == 30030 | /* Ecuador */
+										fbpl  == 21020 | /* Costa Rica */
+										fbpl  == 21030 | /* El Salvador */
+										fbpl  == 21040 | /* Guatemala */
+										fbpl  == 21050 | /* Honduras */
+										fbpl  == 25000 | /* Cuba */
+										fbpl  == 20000 | /* Mexico */
+										fbpl  == 21060 | /* Nicaragua */
+										fbpl  == 21070 | /* Panama */
+										fbpl  == 30050 | /* Peru */
+										fbpl  == 30060 | /* Uruguay */
+										fbpl  == 30065 | /* Venezuela */
+										fbpl  == 43800 | /* Spain */
+										fbpl  == 29900 | /* Americas */
+										fbpl  == 21000 | /* Cental America */
+										fbpl  == 30000   /* South America */;
 #delimit cr
 
 /*
@@ -482,7 +490,7 @@ clear all
 cls
 
 * global wd
-global wd "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets"
+global wd "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets"
 * set working dirrectory
 cd "$wd"
 

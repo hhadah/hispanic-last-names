@@ -3,12 +3,31 @@
 
 # date: January 19th, 2023
 
-IndividualData <- read_dta(file.path(datasets,"BySexAnalysisData.dta")) |> 
+# open data, filter to only have the relevant data
+# and impute empty parental charachtersitcs with mean
+IndividualData <- read_csv(file.path(datasets,"CPS_synth.csv")) |> 
   mutate(Education = as.numeric(Education)) |> 
-  filter((WW == 1 & Hispanic_ID == 0) | WH == 1 | HW == 1 | HH == 1)
-
+  filter((WW == 1 & Hispanic_ID == 0) | WH == 1 | HW == 1 | HH == 1) |> 
+  mutate(HusbandEducation = case_when(!is.na(HusbandEducation) ~ HusbandEducation,
+                                       is.na(HusbandEducation) ~ mean(HusbandEducation, na.rm = TRUE)),
+         WifeEducation = case_when(!is.na(WifeEducation) ~ WifeEducation,
+                                    is.na(WifeEducation) ~ mean(WifeEducation, na.rm = TRUE)),
+         Husband_ftotval = case_when(!is.na(Husband_ftotval) ~ Husband_ftotval,
+                                       is.na(Husband_ftotval) ~ mean(Husband_ftotval, na.rm = TRUE)),
+                                )
+# create a total education variable
+# and a income quintile variable
+# and education quintile variable
+IndividualData  <- IndividualData  |> 
+  mutate(TotalHHEducation = HusbandEducation + WifeEducation,
+         IncomeQuint      = cut(Husband_ftotval, breaks = quantile(Husband_ftotval, probs = c(0, 0.2, 0.4, 0.6, 0.8, 1), na.rm = TRUE), include.lowest = TRUE)
+          )
+IndividualData  <- IndividualData  |> 
+  mutate(EducationQuint      = cut(TotalHHEducation, breaks = quantile(TotalHHEducation, probs = c(0, 0.2, 0.4, 0.6, 0.8, 1), na.rm = TRUE), include.lowest = TRUE)
+          )
 ParentDummies <- c("HW", "uhrsworkly")
-              
+
+ParentControls  <- c("IncomeQuint", "EducationQuint")
 # By generation
 reg1 <- list(
   "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW, vcov = ~statefip,
@@ -22,9 +41,20 @@ reg1 <- list(
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
+                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] | year + age + educ + statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
 )
+
+# feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls], vcov = ~statefip,
+#                                                             data = IndividualData |> 
+#                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
+
+# feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] | year + age + statefip, vcov = ~statefip,
+#                                                             data = IndividualData |> 
+#                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
 
 # calculate means to add
 # as a row
@@ -60,23 +90,28 @@ reg1 <- list(
 # row_diff <- as.data.frame(row_diff)
 # attr(row_diff, 'position') <- c(7:8)
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
-dim(controling_for) <- c(1,5)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
+dim(controling_for) <- c(1,6)
 
-hoursworked <-  c("Hours Worked", " ", "X","X", "X")
-dim(hoursworked) <- c(1,5)
+hoursworked <-  c("Hours Worked", " ", "X","X", "X", "X")
+parentalback <-  c("Parental Background", " ", " "," ", " ", "X")
+
+dim(hoursworked) <- c(1,6)
+dim(parentalback) <- c(1,6)
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
+parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
-  hoursworked)
+  hoursworked,
+  parentalback)
 
 attr(all_row, 'position') <- c(#7:8, 
-                              5:6)
+                              5:6, 11)
 
 cm <- c("WH"          = "$WH_{ist}$",
         "HW"          = "$HW_{ist}$",

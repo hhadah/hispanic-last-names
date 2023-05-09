@@ -1,7 +1,7 @@
 * NOTE: You need to set the Stata working directory to the path
 * where the data file is located.
 
-cd "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\raw"
+cd "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/raw"
 
 * NOTE: You need to set the Stata working directory to the path
 * where the data file is located.
@@ -4340,4 +4340,4 @@ label values fullpart_sp fullpart_sp_lbl
 
 
 
-save "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets\\FullData", replace
+save "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets/FullData", replace

@@ -56,8 +56,27 @@ DATA <- read_dta(file.path(datasets,"ParentDataFull.dta")) |>
            								 bpld_pop  == 30000  ~ "South America"))
 CrossTable(DATA$BirthPlaceMom)
 # create variables for parents' outcomes
+
+DATA  |> 
+	    group_by(CoupleType) |>
+    	summarise(
+              # Husband is foreign born
+              LAHusband             = weighted.mean(LAHusband, weights = Husband_wt, na.rm = TRUE),
+              # Wife is foreign born
+              LAWife                = weighted.mean(LAWife, weights = Wife_wt, na.rm = TRUE),
+              # Husband education
+              HusbandEducation      = weighted.mean(HusbandEducation, weights = Husband_wt, na.rm = TRUE),
+              # Wife education
+              WifeEducation         = weighted.mean(WifeEducation, weights = Wife_wt, na.rm = TRUE),
+              # Husband income
+              Husband_ftotval       = weighted.mean(Husband_ftotval, weights = Husband_wt, na.rm = TRUE),
+              # Fertility
+              Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
+              )
+
 ParentData  <-  DATA  |> 
-    group_by(YOB, CoupleType, BirthPlaceMom, BirthPlaceDad) |>
+    group_by(YOB, CoupleType, BirthPlaceMom, BirthPlaceDad
+	) |>
     summarise(
               # Husband is foreign born
               LAHusband             = weighted.mean(LAHusband, weights = Husband_wt, na.rm = TRUE),
@@ -73,7 +92,6 @@ ParentData  <-  DATA  |>
               Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
               )|>
 	na.omit()
-CrossTable(ParentData$CoupleType)
 
 DATA  |> 
 	    group_by(CoupleType) |>
@@ -88,4 +106,6 @@ DATA  |>
               Fertility             = mean(Fertility, na.rm = TRUE)
               )
 
-
+table(ParentData$YOB)
+# save data
+write.csv(ParentData, file.path(datasets_git,"ParentData.csv"))

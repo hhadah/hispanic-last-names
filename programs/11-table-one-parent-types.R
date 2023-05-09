@@ -5,7 +5,7 @@
 
 # date: January 19th, 2023
 
-DATA <- read_dta(file.path(datasets,"BySexAnalysisData.dta"))
+DATA <- read_csv(file.path(datasets,"CPS_synth.csv"))
 
 # all observations
 
@@ -99,6 +99,7 @@ Table_cols <- cbind(first_col, second_col,  third_col, fourth_col, fifth_col)
 Table_cols <-  Table_cols |> 
   row_to_names(row_number = 1)
 
+
 knitr::kable(Table_cols, "latex", align = "lcccc",
              booktabs = T,
              escape = F,
@@ -134,3 +135,41 @@ knitr::kable(Table_cols, "latex", align = "lcccc",
   ) |> 
   add_header_above(c(" " = 1, "Parental Type" = 4)) |> 
   save_kable(file.path(dissertation_wd,"tables/tab01-observations-by-parents.tex"))
+
+# Pie chat
+
+# Calculate total number of observations
+ALL <- nrow(DATA)
+
+# Create dataframe with labels and values
+labels <- c("White-White", "Hispanic-White", "White-Hispanic", "Hispanic-Hispanic")
+values <- c(as.numeric(WW[1,1]), as.numeric(HW[1,1]), as.numeric(WH[1,1]), as.numeric(HH[1,1]))
+percentages <- round(values/ALL * 100, digits = 2)
+
+df <- data.frame(value = percentages,
+                 num = values,
+                 group = labels)
+
+df2 <- df %>% 
+  mutate(csum = rev(cumsum(rev(value))), 
+         pos = csum - value/2)
+
+# Create pie chart with percentages and total number of observations
+ggplot(df, aes(x = "" , y = value, fill = fct_inorder(group))) +
+  geom_col(width = 1, color = 1) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = cbbPalette[2:5]) +
+  labs(title = "Types of Parents", 
+       subtitle = paste0("Total observations: ", format(ALL, big.mark = ",")), 
+       fill = "Type of Parents") +
+  theme_void(base_family = "LM Roman 10") +
+  theme(text = element_text(family = "LM Roman 10")) +
+  geom_label_repel(data = df2,
+                   aes(y = pos, label = paste0(format(num, big.mark = ","), "(",value, "%)")),
+                   size = 2, nudge_x =0.9 , show.legend = FALSE,
+                  #  fill = "transparent",
+                   color = "black",
+                   segment.color = "transparent",
+                   segment.size = 0.5,
+                   segment.alpha = 0.7,
+                   radius = 1.2)

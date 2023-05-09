@@ -58,7 +58,7 @@ gen YOB = year - age;
 keep if age_mom>=25 & age_mom <=40;
 keep if age_pop>=25 & age_pop <=40;
 keep if YOB >= 1950 & YOB <= 2000;
-keep if age < 18;
+keep if age <= 10;
 /*
 keep 25<age<40
 

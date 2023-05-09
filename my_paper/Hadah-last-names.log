@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  18 APR 2023 09:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  8 MAY 2023 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1555,20 +1555,20 @@ LaTeX Font Info:    Font shape `T1/fnc/m/it' will be
 (Font)              scaled to size 10.18341pt on input line 7.
  [13] [14]) [15]
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
-(Font)              scaled to size 9.29993pt on input line 246.
+(Font)              scaled to size 9.29993pt on input line 243.
 LaTeX Font Info:    Font shape `T1/fnc/b/sc' will be
-(Font)              scaled to size 9.29993pt on input line 246.
-<interracialovertime.png, id=303, 1330.9725pt x 887.315pt>
+(Font)              scaled to size 9.29993pt on input line 243.
+<interracialovertime.png, id=304, 1330.9725pt x 887.315pt>
 File: interracialovertime.png Graphic file (type png)
 <use interracialovertime.png>
-Package pdftex.def Info: interracialovertime.png  used on input line 247.
+Package pdftex.def Info: interracialovertime.png  used on input line 244.
 (pdftex.def)             Requested size: 469.75502pt x 313.16444pt.
 
 [16 <./interracialovertime.png>]
-<PirChart2.png, id=311, 1437.87187pt x 958.58125pt>
+<PirChart2.png, id=312, 1437.87187pt x 958.58125pt>
 File: PirChart2.png Graphic file (type png)
 <use PirChart2.png>
-Package pdftex.def Info: PirChart2.png  used on input line 257.
+Package pdftex.def Info: PirChart2.png  used on input line 254.
 (pdftex.def)             Requested size: 469.75502pt x 313.17342pt.
  [17 <./PirChart2.png>] [18]
 (./tables/tab01-observations-by-parents.tex) [19]
@@ -1602,21 +1602,25 @@ LaTeX Font Warning: Font shape `T1/fnc/m/scit' undefined
 
 [25
 
-] [26] [27]) (./tables/tab05-regression.tex) [28
+] [26] [27]) (./tables/tab05-regression.tex
+Overfull \hbox (17.23355pt too wide) in paragraph at lines 6--34
+ [] 
+ []
 
-]
-(./tables/tab06-regression.tex) [29] (./Hadah-last-names.aux)
+) [28
+
+] (./tables/tab06-regression.tex) [29] (./Hadah-last-names.aux)
 Package rerunfilecheck Info: File `Hadah-last-names.out' has not changed.
 (rerunfilecheck)             Checksum: 73FBA7DBD99849ACEAFB0495BA642905;2220.
  ) 
 Here is how much of TeX's memory you used:
  35352 strings out of 478287
  708770 string characters out of 5846751
- 968790 words of memory out of 5000000
+ 968808 words of memory out of 5000000
  52765 multiletter control sequences out of 15000+600000
  555369 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,17n,93p,1586b,1147s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 85i,17n,93p,1573b,1147s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/
 texlive/2021/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/t
@@ -1626,7 +1630,7 @@ mf-dist/fonts/type1/urw/ncntrsbk/uncbi8a.pfb></usr/local/texlive/2021/texmf-dis
 t/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/ncntrsbk/uncri8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb>
-Output written on Hadah-last-names.pdf (29 pages, 414091 bytes).
+Output written on Hadah-last-names.pdf (29 pages, 414249 bytes).
 PDF statistics:
  437 PDF objects out of 1000 (max. 8388607)
  382 compressed objects within 4 object streams

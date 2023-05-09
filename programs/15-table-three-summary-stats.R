@@ -2,14 +2,11 @@
 
 # table three
 
-library(Hmisc)
 
 # date: January 19th, 2023
 
-IndividualData <- read_dta(file.path(datasets,"BySexAnalysisData.dta")) |> 
+IndividualData <- read_csv(file.path(datasets,"CPS_synth.csv")) |> 
   mutate(Education = as.numeric(Education))
-ParentData     <- read_dta(file.path(datasets,"ParentDataFull.dta")) |> 
-  mutate(Tot_ed = HusbandEducation + WifeEducation)
 
 row1 <- c("Variables", 
           "\\specialcell{White \\\\ White \\\\ (WW) \\\\ (1)}",
@@ -46,31 +43,31 @@ differences2 <- test2$estimate
 row7 <- c(
   "Men’s education (Total Years)",
   paste0("\\specialcell{", 
-         round(ManEducation[4,2], digits = 2), 
+         sprintf("%.2f", round(ManEducation[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(ManEducation[4,3], digits = 2),
+         sprintf("%.2f", round(ManEducation[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(ManEducation[3,2], digits = 2), 
+         sprintf("%.2f", round(ManEducation[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(ManEducation[3,3], digits = 2),
+         sprintf("%.2f", round(ManEducation[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(ManEducation[2,2], digits = 2), 
+         sprintf("%.2f", round(ManEducation[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(ManEducation[2,3], digits = 2),
+         sprintf("%.2f", round(ManEducation[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(ManEducation[1,2], digits = 2), 
+         sprintf("%.2f", round(ManEducation[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(ManEducation[1,3], digits = 2),
+         sprintf("%.2f", round(ManEducation[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
@@ -78,15 +75,15 @@ row7 <- c(
          symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences2[[1]], digits = 2), 
+         sprintf("%.2f", round(differences2[[1]], digits = 2)), 
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -111,47 +108,47 @@ differences2 <- test2$estimate
 row8 <- c(
   "Women’s education (Total Years)",
   paste0("\\specialcell{", 
-         round(WomanEducation[4,2], digits = 2), 
+         sprintf("%.2f", round(WomanEducation[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(WomanEducation[4,3], digits = 2),
+         sprintf("%.2f", round(WomanEducation[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(WomanEducation[3,2], digits = 2), 
+         sprintf("%.2f", round(WomanEducation[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(WomanEducation[3,3], digits = 2),
+         sprintf("%.2f", round(WomanEducation[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(WomanEducation[2,2], digits = 2), 
+         sprintf("%.2f", round(WomanEducation[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(WomanEducation[2,3], digits = 2),
+         sprintf("%.2f", round(WomanEducation[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(WomanEducation[1,2], digits = 2), 
+         sprintf("%.2f", round(WomanEducation[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(WomanEducation[1,3], digits = 2),
+         sprintf("%.2f", round(WomanEducation[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f", round(differences1[[1]], digits = 2)), 
          symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences2[[1]], digits = 2), 
+         sprintf("%.2f", round(differences2[[1]], digits = 2)), 
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -186,31 +183,31 @@ differences2 <- test2$estimate
 row10 <- c(
   "Men’s Unemployment Rate",
   paste0("\\specialcell{", 
-         round(1-ManEmployed[4,2], digits = 2), 
+         sprintf("%.2f", round(1-ManEmployed[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-ManEmployed[4,3], digits = 2),
+         sprintf("%.2f", round(1-ManEmployed[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(1-ManEmployed[3,2], digits = 2), 
+         sprintf("%.2f", round(1-ManEmployed[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-ManEmployed[3,3], digits = 2),
+         sprintf("%.2f", round(1-ManEmployed[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(1-ManEmployed[2,2], digits = 2), 
+         sprintf("%.2f", round(1-ManEmployed[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-ManEmployed[2,3], digits = 2),
+         sprintf("%.2f", round(1-ManEmployed[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(1-ManEmployed[1,2], digits = 2), 
+         sprintf("%.2f", round(1-ManEmployed[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-ManEmployed[1,3], digits = 2),
+         sprintf("%.2f", round(1-ManEmployed[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
@@ -222,7 +219,7 @@ row10 <- c(
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences2[[1]], digits = 2), 
+         sprintf("%.2f", round(differences2[[1]], digits = 2)), 
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
@@ -251,31 +248,31 @@ differences2 <- test2$estimate
 row11 <- c(
   "Women’s Unemployment Rate",
   paste0("\\specialcell{", 
-         round(1-WomanEmployed[4,2], digits = 2), 
+         sprintf("%.2f", round(1-WomanEmployed[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-WomanEmployed[4,3], digits = 2),
+         sprintf("%.2f", round(1-WomanEmployed[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(1-WomanEmployed[3,2], digits = 2), 
+         sprintf("%.2f", round(1-WomanEmployed[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(WomanEmployed[3,3], digits = 2),
+         sprintf("%.2f", round(WomanEmployed[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(1-WomanEmployed[2,2], digits = 2), 
+         sprintf("%.2f", round(1-WomanEmployed[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-WomanEmployed[2,3], digits = 2),
+         sprintf("%.2f", round(1-WomanEmployed[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(1-WomanEmployed[1,2], digits = 2), 
+         sprintf("%.2f", round(1-WomanEmployed[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(1-WomanEmployed[1,3], digits = 2),
+         sprintf("%.2f", round(1-WomanEmployed[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
@@ -287,7 +284,7 @@ row11 <- c(
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences2[[1]], digits = 2), 
+         sprintf("%.2f", round(differences2[[1]], digits = 2)), 
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
@@ -318,39 +315,39 @@ differences2 <- test2$estimate
 row12 <- c(
   "Men’s Log Hourly Earnings",
   paste0("\\specialcell{", 
-         round(Manlnhourwage_1999[4,2], digits = 2), 
+         sprintf("%.2f", round(Manlnhourwage_1999[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlnhourwage_1999[4,3], digits = 2),
+         sprintf("%.2f", round(Manlnhourwage_1999[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Manlnhourwage_1999[3,2], digits = 2), 
+         sprintf("%.2f", round(Manlnhourwage_1999[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlnhourwage_1999[3,3], digits = 2),
+         sprintf("%.2f", round(Manlnhourwage_1999[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Manlnhourwage_1999[2,2], digits = 2), 
+         sprintf("%.2f", round(Manlnhourwage_1999[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlnhourwage_1999[2,3], digits = 2),
+         sprintf("%.2f", round(Manlnhourwage_1999[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Manlnhourwage_1999[1,2], digits = 2), 
+         sprintf("%.2f", round(Manlnhourwage_1999[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlnhourwage_1999[1,3], digits = 2),
+         sprintf("%.2f", round(Manlnhourwage_1999[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f", round(differences1[[1]], digits = 2)), 
          symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
@@ -358,7 +355,7 @@ row12 <- c(
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -383,47 +380,47 @@ differences2 <- test2$estimate
 row13 <- c(
   "Women’s Log Hourly Earnings",
   paste0("\\specialcell{", 
-         round(Womanlnhourwage_1999[4,2], digits = 2), 
+         sprintf("%.2f", round(Womanlnhourwage_1999[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlnhourwage_1999[4,3], digits = 2),
+         sprintf("%.2f", round(Womanlnhourwage_1999[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Womanlnhourwage_1999[3,2], digits = 2), 
+         sprintf("%.2f", round(Womanlnhourwage_1999[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlnhourwage_1999[3,3], digits = 2),
+         sprintf("%.2f", round(Womanlnhourwage_1999[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Womanlnhourwage_1999[2,2], digits = 2), 
+         sprintf("%.2f", round(Womanlnhourwage_1999[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlnhourwage_1999[2,3], digits = 2),
+         sprintf("%.2f", round(Womanlnhourwage_1999[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Womanlnhourwage_1999[1,2], digits = 2), 
+         sprintf("%.2f", round(Womanlnhourwage_1999[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlnhourwage_1999[1,3], digits = 2),
+         sprintf("%.2f", round(Womanlnhourwage_1999[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f", round(differences1[[1]], digits = 2)), 
          symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences2[[1]], digits = 2), 
+         sprintf("%.2f", round(differences2[[1]], digits = 2)), 
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -453,39 +450,39 @@ differences2 <- test2$estimate
 row14 <- c(
   "Men’s Log Annual Earnings",
   paste0("\\specialcell{", 
-         round(Manlninctot_1999[4,2], digits = 2), 
+         sprintf("%.2f", round(Manlninctot_1999[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlninctot_1999[4,3], digits = 2),
+         sprintf("%.2f", round(Manlninctot_1999[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Manlninctot_1999[3,2], digits = 2), 
+         sprintf("%.2f", round(Manlninctot_1999[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlninctot_1999[3,3], digits = 2),
+         sprintf("%.2f", round(Manlninctot_1999[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Manlninctot_1999[2,2], digits = 2), 
+         sprintf("%.2f", round(Manlninctot_1999[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlninctot_1999[2,3], digits = 2),
+         sprintf("%.2f", round(Manlninctot_1999[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Manlninctot_1999[1,2], digits = 2), 
+         sprintf("%.2f", round(Manlninctot_1999[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Manlninctot_1999[1,3], digits = 2),
+         sprintf("%.2f", round(Manlninctot_1999[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f", round(differences1[[1]], digits = 2)), 
          symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
@@ -493,7 +490,7 @@ row14 <- c(
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -518,47 +515,47 @@ differences2 <- test2$estimate
 row15 <- c(
   "Women’s Log Annual Earnings",
   paste0("\\specialcell{", 
-         round(Womanlninctot_1999[4,2], digits = 2), 
+         sprintf("%.2f", round(Womanlninctot_1999[4,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlninctot_1999[4,3], digits = 2),
+         sprintf("%.2f", round(Womanlninctot_1999[4,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Womanlninctot_1999[3,2], digits = 2), 
+         sprintf("%.2f", round(Womanlninctot_1999[3,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlninctot_1999[3,3], digits = 2),
+         sprintf("%.2f", round(Womanlninctot_1999[3,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Womanlninctot_1999[2,2], digits = 2), 
+         sprintf("%.2f", round(Womanlninctot_1999[2,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlninctot_1999[2,3], digits = 2),
+         sprintf("%.2f", round(Womanlninctot_1999[2,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(Womanlninctot_1999[1,2], digits = 2), 
+         sprintf("%.2f", round(Womanlninctot_1999[1,2], digits = 2)), 
          "\\\\",
          "(",
-         round(Womanlninctot_1999[1,3], digits = 2),
+         sprintf("%.2f", round(Womanlninctot_1999[1,3], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences1[[1]], digits = 2), 
+         sprintf("%.2f", round(differences1[[1]], digits = 2)), 
          symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues1[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues1[[1]], digits = 2)),
          ")}"
   ),
   paste0("\\specialcell{", 
-         round(differences2[[1]], digits = 2), 
+         sprintf("%.2f", round(differences2[[1]], digits = 2)), 
          symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
          "\\\\",
          "(",
-         round(pvalues2[[1]], digits = 2),
+         sprintf("%.2f", round(pvalues2[[1]], digits = 2)),
          ")}"
   )
 )
@@ -582,19 +579,19 @@ ManHispanic <- IndividualData |>
 row17 <- c(
   "Men",
   paste0("\\specialcell{", 
-         round(ManHispanic[4,2], digits = 2), 
+         sprintf("%.2f", round(ManHispanic[4,2], digits = 2)), 
          "}"
   ),
   paste0("\\specialcell{", 
-         round(ManHispanic[3,2], digits = 2), 
+         sprintf("%.2f", round(ManHispanic[3,2], digits = 2)), 
          "}"
   ),
   paste0("\\specialcell{", 
-         round(ManHispanic[2,2], digits = 2), 
+         sprintf("%.2f", round(ManHispanic[2,2], digits = 2)), 
          "}"
   ),
   paste0("\\specialcell{", 
-         round(ManHispanic[1,2], digits = 2), 
+         sprintf("%.2f", round(ManHispanic[1,2], digits = 2)), 
          "}"
   ),
   " ",
@@ -610,19 +607,19 @@ WomanHispanic <- IndividualData |>
 row18 <- c(
   "Women",
   paste0("\\specialcell{", 
-         round(WomanHispanic[4,2], digits = 2), 
+         sprintf("%.2f", round(WomanHispanic[4,2], digits = 2)), 
          "}"
   ),
   paste0("\\specialcell{", 
-         round(WomanHispanic[3,2], digits = 2), 
+         sprintf("%.2f", round(WomanHispanic[3,2], digits = 2)), 
          "}"
   ),
   paste0("\\specialcell{", 
-         round(WomanHispanic[2,2], digits = 2),
+         sprintf("%.2f", round(WomanHispanic[2,2], digits = 2)),
          "}"
   ),
   paste0("\\specialcell{", 
-         round(WomanHispanic[1,2], digits = 2), 
+         sprintf("%.2f", round(WomanHispanic[1,2], digits = 2)), 
          "}"),
   " ",
   " "
@@ -653,7 +650,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 "repeat_header"
                 ),
                 repeat_header_continued = "\\textit{(Continued on Next Page...)}") |> 
-  footnote(number = c("Source: The 1970-1990 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+  footnote(number = c("Source: The 1950-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
                       "The data is restricted to native-born United States citizens who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
@@ -669,3 +666,29 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
   save_kable(file.path(tables_wd,"tab03b-summary-stats.tex")) |> 
   save_kable(file.path(thesis_tabs,"tab03b-summary-stats.tex"))  |> 
   save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03b-summary-stats.tex"))
+
+
+knitr::kable(Table_rows, "html", align = "lcccccc",
+             booktabs = T,
+             escape = F,
+             longtable = T, 
+             caption = "Summary statistics of children's outcomes using parent's place of birth \\label{tab:c&p1}") |>
+  kable_classic(full_width = F) |>
+  kable_styling(#bootstrap_options = c("hover", "condensed"), 
+                latex_options = c(#"scale_down", 
+                "HOLD_position",
+                "repeat_header"
+                ),
+                repeat_header_continued = "\\textit{(Continued on Next Page...)}") |> 
+  footnote(number = c("Source: The 1950-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+                      "The data is restricted to native-born United States citizens who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  ) |> 
+  add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
+                     "Differences" = 2)) |> 
+  column_spec(1, width = "5cm") |> 
+  row_spec(c(1,4,11), bold = T) |> 
+  add_indent(c(2:3)) |>
+  add_indent(c(5:10)) |>
+  add_indent(c(12:13))

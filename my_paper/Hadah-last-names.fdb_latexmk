@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Hadah-last-names"] 1681829006 "Hadah-last-names.aux" "Hadah-last-names.bbl" "Hadah-last-names" 1681829049
+["bibtex Hadah-last-names"] 1683543874 "Hadah-last-names.aux" "Hadah-last-names.bbl" "Hadah-last-names" 1683589391
   "./chicago-bib.bst" 1616018038 37366 45205f43c7252fc042dda3578dbe7344 ""
-  "Hadah-last-names.aux" 1681829049 11945 90c9cd14649a82ccc27ebe243e30b9cb "pdflatex"
+  "Hadah-last-names.aux" 1683589391 11980 8ecfbe7c603a5f1c88311e69bcd37a19 "pdflatex"
   "HispanicDiscriminationMarriageMarket.bib" 1663709266 300403 6b7cd259117b627f4548e4fcfab9688a ""
   (generated)
   "Hadah-last-names.bbl"
   "Hadah-last-names.blg"
-["pdflatex"] 1681829047 "Hadah-last-names.tex" "Hadah-last-names.pdf" "Hadah-last-names" 1681829049
+["pdflatex"] 1683589390 "Hadah-last-names.tex" "Hadah-last-names.pdf" "Hadah-last-names" 1683589391
   "/Users/hhadah/Library/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1643922251 2796795 9b37e65f83922863af74fc947fc5804c ""
   "/Users/hhadah/Library/texmf/tex/latex/multicol.sty" 1084240224 25928 526edd03c609ff2cdc4805a41441008e ""
   "/Users/hhadah/Library/texmf/tex/latex/setspace.sty" 1130857036 22518 969fcbccb9feb6c080f52825bb5fe1e1 ""
@@ -267,19 +267,19 @@
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1621028613 40042 fe981136cbb5f3715ab1b0e46e3d3892 ""
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1643922253 4379201 718a59215bccc89d4f89ee72c554b0e8 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "Hadah-last-names.aux" 1681829049 11945 90c9cd14649a82ccc27ebe243e30b9cb "pdflatex"
-  "Hadah-last-names.bbl" 1681829006 11050 e634ff4823b393dcd355ae02b1d498b8 "bibtex Hadah-last-names"
-  "Hadah-last-names.out" 1681829049 2220 73fba7dbd99849aceafb0495ba642905 "pdflatex"
-  "Hadah-last-names.tex" 1681829046 51566 540ff7a8e65ccb96622e1ab84b6a6c4f ""
+  "Hadah-last-names.aux" 1683589391 11980 8ecfbe7c603a5f1c88311e69bcd37a19 "pdflatex"
+  "Hadah-last-names.bbl" 1683543875 11050 e634ff4823b393dcd355ae02b1d498b8 "bibtex Hadah-last-names"
+  "Hadah-last-names.out" 1683589391 2220 73fba7dbd99849aceafb0495ba642905 "pdflatex"
+  "Hadah-last-names.tex" 1683589389 51332 f79679954e414cc732ef2fb8460b2951 ""
   "PirChart2.png" 1620750998 279447 ccf8e10bc6197fb02bd40302f00e218e ""
   "interracialovertime.png" 1607465163 211989 66a48fc3048d39396ad462b1ccefebf9 ""
-  "tables/tab01-observations-by-parents.tex" 1681581519 1092 edafbf8677c17445c16b11fcb81c3fde ""
-  "tables/tab02-observations-by-couple.tex" 1681581549 1036 3b629bb34c08beaecc8869d29c193543 ""
-  "tables/tab03a-summary-stats.tex" 1681736872 2139 64a29b66d9ec3411c17b992db1fcb73d ""
-  "tables/tab03b-summary-stats.tex" 1681738454 4196 2968188338c5849bfb2116e7796811f1 ""
-  "tables/tab04-summary-stats.tex" 1681738255 3907 b5140b04b2f9777b2a62107bdf68771a ""
-  "tables/tab05-regression.tex" 1681740234 1627 8a8151086fcbe2389fa3a9df0b28641f ""
-  "tables/tab06-regression.tex" 1681740409 2065 024d04a8ae707f574a6ff5669596b178 ""
+  "tables/tab01-observations-by-parents.tex" 1683509865 1095 1d6052dbeba7020e7daeaca09a657895 ""
+  "tables/tab02-observations-by-couple.tex" 1683509917 1053 33331e77880ca0a99f62988c4095eea5 ""
+  "tables/tab03a-summary-stats.tex" 1683510060 2333 26d4459f462d847e2e2dfdb1cac8299d ""
+  "tables/tab03b-summary-stats.tex" 1683510163 4179 9731f43ceb9b5dc47c58e9494bfa927a ""
+  "tables/tab04-summary-stats.tex" 1683510526 3907 e10b54ecc52c85b53d0c16652197ead8 ""
+  "tables/tab05-regression.tex" 1683589307 1875 fbfe8111f49ac66a2bf1be684e4a78f2 ""
+  "tables/tab06-regression.tex" 1683589358 2444 6ba86054b210dff4e1a246350c551c7a ""
   "wptemp.cls" 1616974643 6562 8487b096b727969d9799a205b7dde2f1 ""
   (generated)
   "Hadah-last-names.aux"

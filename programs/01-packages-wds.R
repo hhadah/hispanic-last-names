@@ -26,7 +26,7 @@ pacman::p_load(tictoc, parallel, pbapply, future,
                gganimate, ggrepel, MetBrewer, fs,
                marginaleffects, gghighlight, #ggview,
                camcorder, rnaturalearth, rnaturalearthdata,
-               latex2exp, janitor)
+               latex2exp, janitor, extrafont)
 options("RStata.StataPath" = "/Applications/Stata/StataSE.app/Contents/MacOS/stata-se")
 options("RStata.StataVersion" = 17)
             
@@ -38,9 +38,11 @@ options("RStata.StataVersion" = 17)
 # scale_color_ipsum()
 font_add_google("Fira Sans", "firasans")
 font_add_google("Fira Code", "firasans")
+font_add_google("Quattrocento", "lmmodern")
 
 showtext_auto()
-
+loadfonts(device = "all")
+# font_import(pattern = "lmroman*") 
 showtext_opts(dpi = 300)
 camcorder::gg_record(
   dir = figures_wd,
@@ -51,7 +53,7 @@ camcorder::gg_record(
   dpi = 300
 )
 theme_customs <- function() {
-  theme_minimal(base_family = "IBM Plex Sans Condensed") +
+  theme_minimal(base_family = "LM Roman 10") +
     theme(panel.grid.minor = element_blank(),
           plot.background = element_rect(fill = "white", color = NA),
           plot.title = element_text(face = "bold"),
@@ -63,7 +65,7 @@ theme_customs <- function() {
 }
 
 theme_customs_map <- function() {
-  theme_minimal(base_family = "IBM Plex Sans Condensed") +
+  theme_minimal(base_family = "LM Roman 10") +
     theme(panel.grid.major = element_blank(), 
           panel.grid.minor = element_blank(),
           panel.background = element_blank(), 
@@ -79,11 +81,11 @@ theme_customs_map <- function() {
 }
 # Make labels use IBM Plex Sans by default
 update_geom_defaults("label", 
-                     list(family = "IBM Plex Sans Condensed"))
+                     list(family = "LM Roman 10"))
 update_geom_defaults(ggtext::GeomRichText, 
-                     list(family = "IBM Plex Sans Condensed"))
+                     list(family = "LM Roman 10"))
 update_geom_defaults("label_repel", 
-                     list(family = "IBM Plex Sans Condensed"))
+                     list(family = "LM Roman 10"))
 
 # Use the Johnson color palette
 clrs <- met.brewer("Johnson")
