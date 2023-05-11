@@ -39,6 +39,10 @@ ParentDummies <- c(#"WH:Hispanic_ID",
                    "uhrsworkly")
 ParentControls  <- c("EducationQuint", "IncomeQuint")
 
+IndividualData |> 
+  filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1)) |> 
+  group_by(Hispanic_ID, HW, WH) |>
+  summarise(mean(lninctot_1999, na.rm = TRUE))
 # By generation
 reg1 <- list(
   "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW*Hispanic_ID, vcov = ~statefip,
