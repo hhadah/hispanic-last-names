@@ -7,10 +7,6 @@
 ParentData     <- read_csv(file.path(datasets,"CPS_synth.csv")) |> 
   mutate(Tot_ed = HusbandEducation + WifeEducation)
 
-# Only Mexicans and Native Born
-ParentData <- ParentData |> 
-       filter(BirthPlaceMom %in% c("Mexico", "USA") & BirthPlaceDad %in% c("Mexico", "USA"))
-
 # Only Non-Mexicans
 `%notin%` <- Negate(`%in%`)
 ParentData <- ParentData |> 
@@ -365,7 +361,7 @@ knitr::kable(Table_rows, "html", align = "lcccccc",
              booktabs = T,
              escape = F,
        #       longtable = T, 
-             caption = "Summary statistics of synthetic parents by couple type \\label{tab:synth}") |>
+             caption = "Summary statistics of synthetic parents by couple type (Non-Mexican Hispanics) \\label{tab:syntnonmex}") |>
   kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", 
@@ -385,7 +381,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
        #       longtable = T, 
-             caption = "Summary statistics of synthetic parents by couple type \\label{tab:synth}") |>
+             caption = "Summary statistics of synthetic parents by couple type (Non-Mexican Hispanics) \\label{tab:syntnonmex}") |>
   kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", 
@@ -393,14 +389,14 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
               #   "repeat_header"
                 )) |> 
   footnote(number = c("Source: The 1960-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
-                      "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
+                      "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country other than Mexico. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
   column_spec(1, width = "5cm") |> 
-  save_kable(file.path(tables_wd,"tab03a-summary-stats.tex")) |> 
-  save_kable(file.path(thesis_tabs,"tab03a-summary-stats.tex"))  |> 
-  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03a-summary-stats.tex"))
+  save_kable(file.path(tables_wd,"tab03a-summary-stats-nonmex.tex")) |> 
+  save_kable(file.path(thesis_tabs,"tab03a-summary-stats-nonmex.tex"))  |> 
+  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03a-summary-stats-nonmex.tex"))
 
