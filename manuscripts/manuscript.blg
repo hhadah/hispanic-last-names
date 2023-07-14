@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+The style file: chicago-bib.bst
+Database file #1: bibliography.bib
+Repeated entry---line 2571 of file bibliography.bib
+ : @article{averettBetterWorseRelationship2008
+ :                                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2589 of file bibliography.bib
+ : @article{averettEconomicRealityBeauty1996
+ :                                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2617 of file bibliography.bib
+ : @article{beckerTheoryMarriagePart1973
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2634 of file bibliography.bib
+ : @article{beckerTheoryMarriagePart1974
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2650 of file bibliography.bib
+ : @book{beckerTreatiseFamily1993
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2713 of file bibliography.bib
+ : @article{browningCollectiveUnitaryModels2006
+ :                                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2833 of file bibliography.bib
+ : @article{chiapporiFatterAttractionAnthropometric2012
+ :                                                     ,
+I'm skipping whatever remains of this entry
+Warning--page numbers missing in antmanEthnicAttritionObserved2016a
+Warning--no number and no volume in antman2020ethnic
+Warning--no number and no volume in duncan2006hispanics
+You've used 33 entries,
+            2845 wiz_defined-function locations,
+            834 strings with 12349 characters,
+and the built_in function-call counts, 24207 in all, are:
+= -- 2032
+> -- 1981
+< -- 0
++ -- 620
+- -- 654
+* -- 2342
+:= -- 4426
+add.period$ -- 98
+call.type$ -- 33
+change.case$ -- 259
+chr.to.int$ -- 30
+cite$ -- 36
+duplicate$ -- 548
+empty$ -- 1310
+format.name$ -- 771
+if$ -- 4457
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 30
+newline$ -- 167
+num.names$ -- 324
+pop$ -- 168
+preamble$ -- 1
+purify$ -- 451
+quote$ -- 0
+skip$ -- 605
+stack$ -- 0
+substring$ -- 1326
+swap$ -- 161
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 638
+warning$ -- 3
+while$ -- 301
+width$ -- 0
+write$ -- 431
+(There were 7 error messages)
