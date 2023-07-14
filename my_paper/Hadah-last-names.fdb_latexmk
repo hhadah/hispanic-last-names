@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Hadah-last-names"] 1689181225 "Hadah-last-names.aux" "Hadah-last-names.bbl" "Hadah-last-names" 1689181227
+["bibtex Hadah-last-names"] 1689181225 "Hadah-last-names.aux" "Hadah-last-names.bbl" "Hadah-last-names" 1689316822
   "./chicago-bib.bst" 1616018038 37366 45205f43c7252fc042dda3578dbe7344 ""
-  "Hadah-last-names.aux" 1689181227 12801 a3035c9bdb11606373b76e1687853092 "pdflatex"
+  "Hadah-last-names.aux" 1689316821 12801 a3035c9bdb11606373b76e1687853092 "pdflatex"
   "HispanicDiscriminationMarriageMarket.bib" 1663709266 300403 6b7cd259117b627f4548e4fcfab9688a ""
   (generated)
   "Hadah-last-names.bbl"
   "Hadah-last-names.blg"
-["pdflatex"] 1689181225 "Hadah-last-names.tex" "Hadah-last-names.pdf" "Hadah-last-names" 1689181227
+["pdflatex"] 1689316820 "Hadah-last-names.tex" "Hadah-last-names.pdf" "Hadah-last-names" 1689316822
   "/Users/hhadah/Library/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1643922251 2796795 9b37e65f83922863af74fc947fc5804c ""
   "/Users/hhadah/Library/texmf/tex/latex/multicol.sty" 1084240224 25928 526edd03c609ff2cdc4805a41441008e ""
   "/Users/hhadah/Library/texmf/tex/latex/setspace.sty" 1130857036 22518 969fcbccb9feb6c080f52825bb5fe1e1 ""
@@ -267,10 +267,10 @@
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1621028613 40042 fe981136cbb5f3715ab1b0e46e3d3892 ""
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1643922253 4379201 718a59215bccc89d4f89ee72c554b0e8 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "Hadah-last-names.aux" 1689181227 12801 a3035c9bdb11606373b76e1687853092 "pdflatex"
+  "Hadah-last-names.aux" 1689316821 12801 a3035c9bdb11606373b76e1687853092 "pdflatex"
   "Hadah-last-names.bbl" 1689181225 11050 e634ff4823b393dcd355ae02b1d498b8 "bibtex Hadah-last-names"
-  "Hadah-last-names.out" 1689181227 2220 73fba7dbd99849aceafb0495ba642905 "pdflatex"
-  "Hadah-last-names.tex" 1689181223 30822 6b0cd0eda353a7eb439e16e1d0040ad3 ""
+  "Hadah-last-names.out" 1689316821 2220 73fba7dbd99849aceafb0495ba642905 "pdflatex"
+  "Hadah-last-names.tex" 1689316819 30904 09c511bf345b99ed6fbaae4d088b7e2e ""
   "PirChart2.png" 1683636870 58411 4bd885c0f00a1d866c94331a74416075 ""
   "interracialovertime.png" 1607465163 211989 66a48fc3048d39396ad462b1ccefebf9 ""
   "tables/tab01-observations-by-parents.tex" 1683589567 1095 1d6052dbeba7020e7daeaca09a657895 ""
