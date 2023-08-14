@@ -1,12 +1,13 @@
 # Fdb version 3
-["bibtex Hadah-last-names"] 1692023425 "Hadah-last-names.aux" "Hadah-last-names.bbl" "Hadah-last-names" 1692023427
+["bibtex Hadah-last-names"] 1692025531 "Hadah-last-names.aux" "Hadah-last-names.bbl" "Hadah-last-names" 1692025759
   "./chicago-bib.bst" 1616018038 37366 45205f43c7252fc042dda3578dbe7344 ""
-  "Hadah-last-names.aux" 1692023426 11963 aa3dc7b012435dcee8ae44b396cd4867 "pdflatex"
+  "Hadah-last-names.aux" 1692025759 11124 a198e2c0b3f7fdd59c0fe3590c40d824 "pdflatex"
   "HispanicDiscriminationMarriageMarket.bib" 1663709266 300403 6b7cd259117b627f4548e4fcfab9688a ""
   (generated)
   "Hadah-last-names.bbl"
   "Hadah-last-names.blg"
-["pdflatex"] 1692023425 "Hadah-last-names.tex" "Hadah-last-names.pdf" "Hadah-last-names" 1692023427
+["pdflatex"] 1692025757 "/Users/hhadah/Documents/GiT/hispanic-last-names/my_paper/Hadah-last-names.tex" "Hadah-last-names.pdf" "Hadah-last-names" 1692025759
+  "/Users/hhadah/Documents/GiT/hispanic-last-names/my_paper/Hadah-last-names.tex" 1692025757 31803 c24ee3a4b976932561135949c91d18ec ""
   "/Users/hhadah/Library/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1643922251 2796795 9b37e65f83922863af74fc947fc5804c ""
   "/Users/hhadah/Library/texmf/tex/latex/multicol.sty" 1084240224 25928 526edd03c609ff2cdc4805a41441008e ""
   "/Users/hhadah/Library/texmf/tex/latex/setspace.sty" 1130857036 22518 969fcbccb9feb6c080f52825bb5fe1e1 ""
@@ -267,15 +268,13 @@
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1621028613 40042 fe981136cbb5f3715ab1b0e46e3d3892 ""
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1643922253 4379201 718a59215bccc89d4f89ee72c554b0e8 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "Hadah-last-names.aux" 1692023426 11963 aa3dc7b012435dcee8ae44b396cd4867 "pdflatex"
-  "Hadah-last-names.bbl" 1692023425 11050 e634ff4823b393dcd355ae02b1d498b8 "bibtex Hadah-last-names"
-  "Hadah-last-names.out" 1692023426 2220 73fba7dbd99849aceafb0495ba642905 "pdflatex"
-  "Hadah-last-names.tex" 1692023417 31288 bb550603c60ba2e5c77546b1647a4808 ""
+  "Hadah-last-names.aux" 1692025759 11124 a198e2c0b3f7fdd59c0fe3590c40d824 "pdflatex"
+  "Hadah-last-names.bbl" 1692025531 11050 e634ff4823b393dcd355ae02b1d498b8 "bibtex Hadah-last-names"
+  "Hadah-last-names.out" 1692025759 2220 73fba7dbd99849aceafb0495ba642905 "pdflatex"
+  "Hadah-last-names.tex" 1692025757 31803 c24ee3a4b976932561135949c91d18ec ""
   "PirChart2.png" 1683636870 58411 4bd885c0f00a1d866c94331a74416075 ""
   "tables/tab01-observations-by-parents.tex" 1692023097 1095 1d6052dbeba7020e7daeaca09a657895 ""
   "tables/tab02-observations-by-couple.tex" 1692023097 1053 5a86e5403850520691bb4a0884c706ad ""
-  "tables/tab03a-summary-stats-mex.tex" 1692023097 2334 9d53b5002fdcf01bf7d765866e7f6fbc ""
-  "tables/tab03a-summary-stats-nonmex.tex" 1692023097 2380 8641c090775e823cb1d8f9aa2b8d18f9 ""
   "tables/tab03a-summary-stats.tex" 1692023097 2332 f7c95e1a7d6c13e1b53a27b3517cf7ea ""
   "tables/tab03b-summary-stats.tex" 1692023097 4179 c7c164c841f9f1b826a83c46b4200d8a ""
   "tables/tab04-summary-stats.tex" 1692023097 3907 185cdf56c353600813ef7e73d0d2c6ab ""

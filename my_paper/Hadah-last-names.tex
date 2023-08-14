@@ -15,6 +15,10 @@
 %% and
 %% https://www.jwe.cc/blog/
 
+% Redefine figure and table counters to use Arabic numerals
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+
 
 \let\estinput=\input % define a new input command so that we can still flatten the document
 
@@ -69,9 +73,10 @@
 
 \begin{document}
 
-\linespread{1}{\title{{\fontfamily{ptm}
-\selectfont{\Large{\MakeUppercase{The Impact of Hispanic Last Names and Identity on Labor Market Outcomes}}}}}}
-	\author{{\fontfamily{pbk}\selectfont\large{\textsc{Hussain Hadah}}\thanks{Department of Economics, Tulane University, 6823 St. Charles Ave., New Orleans, LA 70118, United States (e-mail: \email{hhadah@tulane.edu}).}}}
+\linespread{1}{\title{{\fontfamily{ptm}\selectfont{\Large{\MakeUppercase{The Impact of Hispanic Last Names and Identity on Labor Market Outcomes}}}}
+\thanks{I thank Professors Willa Friedman, Chinhui Juhn, Vikram Maheshri, and Yona Rubinstein for their support and advice. I also thank Aimee Chin, Steven Craig, German Cubas, Elaine Liu, Fan Wang, and the participants of the Applied Microeconomics Workshop at the University of Houston.}
+}}
+	\author{{\fontfamily{pbk}\selectfont\large{\textsc{Hussain Hadah}}\thanks{Department of Economics, Tulane University, 6823 St. Charles Ave., New Orleans, LA 70118, United States, (phone: +1-602-393-8077, e-mail: \email{hhadah@tulane.edu}). Competing interests: The author declares none.}}}
 	\date{\fontfamily{pbk}\selectfont\normalsize{\textsc{\today}}}
 	\maketitle
 
@@ -277,13 +282,13 @@ While the earnings gap between children of inter-ethnic parents with and without
 
 \input{tables/tab03a-summary-stats}
 
-\newpage
+% \newpage
 
-\input{tables/tab03a-summary-stats-mex}
+% \input{tables/tab03a-summary-stats-mex}
 
-\newpage
+% \newpage
 
-\input{tables/tab03a-summary-stats-nonmex}
+% \input{tables/tab03a-summary-stats-nonmex}
 
 \newpage
 
