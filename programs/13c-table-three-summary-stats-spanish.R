@@ -8,22 +8,16 @@ ParentData     <- read_csv(file.path(datasets,"CPS_synth.csv")) |>
   mutate(Tot_ed = HusbandEducation + WifeEducation)
 
 # Only Mexicans and Native Born
-# ParentData <- ParentData |> 
-#        filter(BirthPlaceMom %in% c("Mexico", "USA") & BirthPlaceDad %in% c("Mexico", "USA"))
-
-# Only Non-Mexicans
-# `%notin%` <- Negate(`%in%`)
-# ParentData <- ParentData |> 
-#        filter(BirthPlaceMom %notin% c("Mexico") & BirthPlaceDad %notin% c("Mexico"))
-
+ParentData <- ParentData |> 
+       filter(BirthPlaceMom %in% c("Spain", "USA") & BirthPlaceDad %in% c("Spain", "USA"))
 
 row1 <- c("Variables", 
           "\\specialcell{White \\\\ White \\\\ (WW) \\\\ (1)}",
-          "\\specialcell{White \\\\ Hispanic \\\\ (WH) \\\\ (2)}",
-          "\\specialcell{Hispanic \\\\ White \\\\ (HW) \\\\ (3)}",
-          "\\specialcell{Hispanic \\\\ Hispanic \\\\ (HH) \\\\ (4)}",
-          "\\specialcell{HH - WW \\\\ (5)}",
-          "\\specialcell{HW - WH \\\\ (6)}"
+          "\\specialcell{White \\\\ Spanish \\\\ (WS) \\\\ (2)}",
+          "\\specialcell{Spanish \\\\ White \\\\ (SW) \\\\ (3)}",
+          "\\specialcell{Spanish \\\\ Spanish \\\\ (SS) \\\\ (4)}",
+          "\\specialcell{SS - WW \\\\ (5)}",
+          "\\specialcell{SW - WS \\\\ (6)}"
           )
 dim(row1) <- c(1,7)
 
@@ -365,7 +359,7 @@ knitr::kable(Table_rows, "html", align = "lcccccc",
              booktabs = T,
              escape = F,
        #       longtable = T, 
-             caption = "Summary statistics of synthetic parents by couple type \\label{tab:synth}") |>
+             caption = "Summary statistics of synthetic parents by couple type (Spanish) \\label{tab:synthspain}") |>
   kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", 
@@ -385,7 +379,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
        #       longtable = T, 
-             caption = "Summary statistics of synthetic parents by couple type \\label{tab:synth}") |>
+             caption = "Summary statistics of synthetic parents by couple type (Spanish) \\label{tab:synthspain}") |>
   kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", 
@@ -393,14 +387,14 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
               #   "repeat_header"
                 )) |> 
   footnote(number = c("Source: The 1960-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
-                      "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
+                      "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Mexico. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
   column_spec(1, width = "5cm") |> 
-  save_kable(file.path(tables_wd,"tab03a-summary-stats.tex")) |> 
-  save_kable(file.path(thesis_tabs,"tab03a-summary-stats.tex"))  |> 
-  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03a-summary-stats.tex"))
+  save_kable(file.path(tables_wd,"tab03c-summary-stats-spain.tex")) |> 
+  save_kable(file.path(thesis_tabs,"tab03c-summary-stats-spain.tex"))  |> 
+  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03c-summary-stats-spain.tex"))
 

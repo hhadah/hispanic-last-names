@@ -27,7 +27,7 @@ pacman::p_load(tictoc, parallel, pbapply, future,
                marginaleffects, gghighlight, #ggview,
                camcorder, rnaturalearth, rnaturalearthdata,
                latex2exp, janitor, extrafont)
-options("RStata.StataPath" = "/Applications/Stata/StataSE.app/Contents/MacOS/stata-se")
+options("RStata.StataPath" = "/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp")
 options("RStata.StataVersion" = 17)
             
 # devtools::install_github("thomasp85/patchwork")
