@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  6 DEC 2023 14:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2022.2.3)  10 DEC 2023 18:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1583,32 +1583,28 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ) [1
 
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (12.31566pt too wide) in paragraph at lines 46--47
-\T1/ppl/m/n/12 mog-a-mous marriages--- i.e., White fathers-White moth-ers and H
-is-panic fathers-Hispanic
- []
-
-[3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
-Overfull \hbox (3.63097pt too wide) in paragraph at lines 167--167
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+ [4] [5]
+[6] [7] [8] [9] [10] [11] [12]
+Overfull \hbox (3.63097pt too wide) in paragraph at lines 169--169
 \T1/ppl/m/n/12 ter At-trac-tion: An-thro-po-met-ric and So-cioe-co-nomic Match-
 ing on the Mar-riage Mar-
  []
 
 
-Overfull \hbox (11.66031pt too wide) in paragraph at lines 167--167
+Overfull \hbox (11.66031pt too wide) in paragraph at lines 169--169
 \T1/ppl/m/n/12 dence of gen-er-a-tional progress for Mex-i-can Amer-i-cans.^^Q 
 \T1/ppl/m/it/12 Labour Eco-nomics \T1/ppl/m/n/12 62:101771. 
  []
 
 
-Overfull \hbox (3.51938pt too wide) in paragraph at lines 167--167
+Overfull \hbox (3.51938pt too wide) in paragraph at lines 169--169
 \T1/ppl/m/n/12 Im-pli-ca-tions for as-sess-ing the so-cioe-co-nomic in-te-gra-t
 ion of His-pan-ics and Asians.^^Q
  []
 
 
-Overfull \hbox (2.1205pt too wide) in paragraph at lines 167--167
+Overfull \hbox (2.1205pt too wide) in paragraph at lines 169--169
 [][]\T1/ppl/m/n/12 Rubinstein, Yona, and Dror Bren-ner. 2014. ^^P  Pride and pr
 ej-u-dice: Us-ing ethnic-sounding
  []
@@ -1617,7 +1613,7 @@ ej-u-dice: Us-ing ethnic-sounding
 <PirChart2.png, id=290, 480.79625pt x 320.19624pt>
 File: PirChart2.png Graphic file (type png)
 <use PirChart2.png>
-Package pdftex.def Info: PirChart2.png  used on input line 186.
+Package pdftex.def Info: PirChart2.png  used on input line 188.
 (pdftex.def)             Requested size: 452.9679pt x 301.6685pt.
  [14 <./PirChart2.png>] (./tables/tab01-observations-by-parents.tex)
 [15] (./tables/tab02-observations-by-couple.tex) [16]
@@ -1664,7 +1660,7 @@ texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/loca
 l/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Hadah-last-names-draft.pdf (30 pages, 191861 bytes).
+Output written on Hadah-last-names-draft.pdf (30 pages, 192514 bytes).
 PDF statistics:
  433 PDF objects out of 1000 (max. 8388607)
  360 compressed objects within 4 object streams
