@@ -1297,49 +1297,34 @@
     \field{year}{2008}
   \endentry
 
-  \entry{duncan2020new}{article}{}
-    \name{author}{4}{}{%
+  \entry{duncanIntermarriageIntergenerationalTransmission2011}{article}{}
+    \name{author}{2}{}{%
       {{hash=DB}{%
          family={Duncan},
          familyi={D\bibinitperiod},
-         given={Brian},
+         given={B.},
          giveni={B\bibinitperiod},
-      }}%
-      {{hash=GJ}{%
-         family={Grogger},
-         familyi={G\bibinitperiod},
-         given={Jeffrey},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=LAS}{%
-         family={Leon},
-         familyi={L\bibinitperiod},
-         given={Ana\bibnamedelima Sofia},
-         giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
       }}%
       {{hash=TSJ}{%
          family={Trejo},
          familyi={T\bibinitperiod},
-         given={Stephen\bibnamedelima J},
+         given={S.\bibnamedelima J.},
          giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Elsevier}%
-    }
-    \strng{namehash}{DB+1}
-    \strng{fullhash}{DBGJLASTSJ1}
+    \strng{namehash}{DBTSJ1}
+    \strng{fullhash}{DBTSJ1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelyear}{2020}
+    \field{labelyear}{2011}
     \field{labeldatesource}{}
     \field{sortinit}{D}
     \field{sortinithash}{D}
-    \field{pages}{101771}
-    \field{title}{New evidence of generational progress for Mexican Americans}
-    \field{volume}{62}
-    \field{journaltitle}{Labour Economics}
-    \field{year}{2020}
+    \field{title}{Intermarriage and the Intergenerational Transmission of
+  Ethnic Identity and Human {{Capital}} for {{Mexican Americans}}}
+    \field{volume}{29}
+    \field{journaltitle}{J Labor Econ}
+    \field{year}{2011}
   \endentry
 
   \entry{duncan2006hispanics}{article}{}
@@ -1380,41 +1365,6 @@
     \field{year}{2006}
   \endentry
 
-  \entry{duncan2017complexity}{article}{}
-    \name{author}{2}{}{%
-      {{hash=DB}{%
-         family={Duncan},
-         familyi={D\bibinitperiod},
-         given={Brian},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=TSJ}{%
-         family={Trejo},
-         familyi={T\bibinitperiod},
-         given={Stephen\bibnamedelima J},
-         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {SAGE Publications Sage CA: Los Angeles, CA}%
-    }
-    \strng{namehash}{DBTSJ1}
-    \strng{fullhash}{DBTSJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{labelyear}{2017}
-    \field{labeldatesource}{}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{number}{5}
-    \field{pages}{1146\bibrangedash 1175}
-    \field{title}{The complexity of immigrant generations: Implications for
-  assessing the socioeconomic integration of Hispanics and Asians}
-    \field{volume}{70}
-    \field{journaltitle}{ILR Review}
-    \field{year}{2017}
-  \endentry
-
   \entry{duncan2018identifying}{article}{}
     \name{author}{2}{}{%
       {{hash=DB}{%
@@ -1433,8 +1383,8 @@
     \list{publisher}{1}{%
       {SAGE Publications Sage CA: Los Angeles, CA}%
     }
-    \strng{namehash}{DBTSJ1}
-    \strng{fullhash}{DBTSJ1}
+    \strng{namehash}{DBTSJ2}
+    \strng{fullhash}{DBTSJ2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2018}
@@ -1467,8 +1417,8 @@
          giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
       }}%
     }
-    \strng{namehash}{DBTSJ1}
-    \strng{fullhash}{DBTSJ1}
+    \strng{namehash}{DBTSJ2}
+    \strng{fullhash}{DBTSJ2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{labelyear}{2018}
@@ -1601,6 +1551,76 @@
     \field{volume}{107}
     \field{journaltitle}{Workers and their wages}
     \field{year}{1991}
+  \endentry
+
+  \entry{kimball2009risk}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KMS}{%
+         family={Kimball},
+         familyi={K\bibinitperiod},
+         given={Miles\bibnamedelima S},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=SCR}{%
+         family={Sahm},
+         familyi={S\bibinitperiod},
+         given={Claudia\bibnamedelima R},
+         giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=SMD}{%
+         family={Shapiro},
+         familyi={S\bibinitperiod},
+         given={Matthew\bibnamedelima D},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Economic Association}%
+    }
+    \strng{namehash}{KMSSCRSMD1}
+    \strng{fullhash}{KMSSCRSMD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{2}
+    \field{pages}{363\bibrangedash 368}
+    \field{title}{Risk preferences in the PSID: Individual imputations and
+  family covariation}
+    \field{volume}{99}
+    \field{journaltitle}{American Economic Review}
+    \field{year}{2009}
+  \endentry
+
+  \entry{magruder2010intergenerational}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MJR}{%
+         family={Magruder},
+         familyi={M\bibinitperiod},
+         given={Jeremy\bibnamedelima R},
+         giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Economic Association}%
+    }
+    \strng{namehash}{MJR1}
+    \strng{fullhash}{MJR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{number}{1}
+    \field{pages}{62\bibrangedash 85}
+    \field{title}{Intergenerational networks, unemployment, and persistent
+  inequality in South Africa}
+    \field{volume}{2}
+    \field{journaltitle}{American Economic Journal: Applied Economics}
+    \field{year}{2010}
   \endentry
 
   \entry{rubinstein2014pride}{article}{}

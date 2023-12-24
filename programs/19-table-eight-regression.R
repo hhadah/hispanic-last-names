@@ -15,7 +15,7 @@ ParentDummies <- c("WH", "HW", "HH")
 reg1 <- list(
   "\\specialcell{(1) \\\\ Education}" = feols(Education ~ .[ParentDummies] | year + age, se = "iid",
                                                         data = IndividualData))
-  )
+
 
 # calculate means to add
 # as a row

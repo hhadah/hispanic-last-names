@@ -24,7 +24,11 @@ SyntheticParents  <- read.csv(file.path(datasets_git,"ParentData.csv")) |>
                "LAWife",           
                "HusbandEducation", 
                "WifeEducation",    
-               "Husband_ftotval",  
+               "Husband_ftotval",
+			   "Husband_inctot",
+			   "Husband_incwage",
+			   "Wife_inctot",
+			   "Wife_incwage",  
                "Fertility")
 
 CPS  <- read_dta(file.path(datasets,"BySexAnalysisData.dta"))|> 
@@ -93,6 +97,52 @@ MergedData  <- left_join(CPS,
 summary(MergedData$Husband_ftotval)
 summary(MergedData$HusbandEducation)
 summary(MergedData$WifeEducation)
+CrossTable(MergedData$Type)
 
+MergedData  |> 
+	    group_by(Type) |>
+    	summarise(
+              # Husband is foreign born
+              LAHusband             = weighted.mean(LAHusband, weights = Husband_wt, na.rm = TRUE),
+              # Wife is foreign born
+              LAWife                = weighted.mean(LAWife, weights = Wife_wt, na.rm = TRUE),
+              # Husband education
+              HusbandEducation      = weighted.mean(HusbandEducation, weights = Husband_wt, na.rm = TRUE),
+              # Wife education
+              WifeEducation         = weighted.mean(WifeEducation, weights = Wife_wt, na.rm = TRUE),
+			  # Husband hourly inctot
+              Husband_ftotval        = weighted.mean(Husband_ftotval, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourlt incwage
+              Husband_incwage       = weighted.mean(Husband_incwage, weights = Husband_wt, na.rm = TRUE),
+			  # Wife hourly inctot
+              Wife_inctot           = weighted.mean(Wife_inctot, weights = Wife_wt, na.rm = TRUE),
+			  # Wife hourlt incwage
+              Wife_incwage          = weighted.mean(Wife_incwage, na.rm = TRUE),
+              # Fertility
+              Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
+              )
+
+DATA  |> 
+	    group_by(CoupleType) |>
+    	summarise(
+              # Husband is foreign born
+              LAHusband             = weighted.mean(LAHusband, weights = Husband_wt, na.rm = TRUE),
+              # Wife is foreign born
+              LAWife                = weighted.mean(LAWife, weights = Wife_wt, na.rm = TRUE),
+              # Husband education
+              HusbandEducation      = weighted.mean(HusbandEducation, weights = Husband_wt, na.rm = TRUE),
+              # Wife education
+              WifeEducation         = weighted.mean(WifeEducation, weights = Wife_wt, na.rm = TRUE),
+			  # Husband hourly inctot
+              Husband_ftotval        = weighted.mean(Husband_ftotval, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourlt incwage
+            #   Husband_incwage       = weighted.mean(Husband_incwage, weights = Husband_wt, na.rm = TRUE),
+			#   # Wife hourly inctot
+            #   Wife_inctot           = weighted.mean(Wife_inctot, weights = Wife_wt, na.rm = TRUE),
+			#   # Wife hourlt incwage
+            #   Wife_incwage          = weighted.mean(Wife_incwage, na.rm = TRUE),
+              # Fertility
+              Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
+              )
 # save data
 write.csv(MergedData, file.path(datasets,"CPS_synth.csv"), row.names = FALSE)

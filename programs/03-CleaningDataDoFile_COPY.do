@@ -16,7 +16,7 @@ clear all
 #delimit;
 
 global wd 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets/";
-global raw_data 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/raw/";
+global raw_data 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/raw";
 
 
 /*
@@ -515,7 +515,6 @@ label define Wife_ed_ed_levell 	1 "High school dropout"
 						3 "Some college" 
 						4 "4 or more years of college";
 label values Wife_ed_level Wife_ed_ed_levell;
-
 #delimit cr
 
 /*
@@ -557,6 +556,7 @@ bysort wkswork1_pop_2: egen mean_wkswork1_pop = mean(wkswork1_pop)
 
 tabulate wkswork1_pop_2, summarize(mean_wkswork1_pop)
 tabulate wkswork1_mom_2, summarize(mean_wkswork1_mom)
+
 
 /*
 ********************************************************************************
@@ -613,9 +613,10 @@ replace FTFY_pop = 1 if PartTime_pop == 0 & mean_wkswork1_pop > 48
 ********************************************************************************
 * Total family income
 ********************************************************************************
-* ftotval in 1999's $:
+* ftotinc in 1999's $:
 */
 replace ftotinc_pop = . if ftotinc_pop >= 9999998
+replace ftotinc_mom = . if ftotinc_mom >= 9999998
 
 * Generate a local macro containing all unique years
 levelsof year, local(years)
@@ -632,22 +633,37 @@ foreach y of local years {
     replace ftotinc_pop = `max_ftotinc_pop' if ftotinc_pop == `orig_max_ftotinc_pop' & year == `y'
 }
 
-gen lnftotval_pop1999 = ln(cpi99 * ftotinc_pop) if FTFY_pop == 1
-gen lnftotval_mom1999 = ln(cpi99 * ftotinc_mom) if FTFY_mom == 1
+* Top code ftotinc_mom by year and print original and new maximum
+foreach y of local years {
+    * Find original maximum
+    qui sum ftotinc_mom if year == `y', detail
+    local orig_max_ftotinc_mom = r(max)
+    display "Year `y': Original Max ftotinc_mom is " `orig_max_ftotinc_mom'
+
+    * Calculate top-coded maximum and replace
+    local max_ftotinc_mom = `orig_max_ftotinc_mom' * 1.33
+    replace ftotinc_mom = `max_ftotinc_mom' if ftotinc_mom == `orig_max_ftotinc_mom' & year == `y'
+}
 
 
-gen Husband_ftotval = .
+gen lnftotinc_pop1999 = ln(cpi99 * ftotinc_pop) if FTFY_pop == 1
+gen lnftotinc_mom1999 = ln(cpi99 * ftotinc_mom) if FTFY_mom == 1
 
-replace Husband_ftotval = lnftotval_pop1999 if sex_pop == 1 & ftotinc_pop < 9999998
-replace Husband_ftotval = lnftotval_mom1999 if sex_mom == 1 & ftotinc_mom < 9999998
+gen Husband_ftotinc = .
+gen Wife_ftotinc = .
 
+replace Husband_ftotinc = lnftotinc_pop1999 if sex_pop == 1 & ftotinc_pop < 9999998
+replace Husband_ftotinc = lnftotinc_mom1999 if sex_mom == 1 & ftotinc_mom < 9999998
 
+replace Wife_ftotinc = lnftotinc_pop1999 if sex_pop == 2 & ftotinc_pop < 9999998
+replace Wife_ftotinc = lnftotinc_mom1999 if sex_mom == 2 & ftotinc_mom < 9999998
 /*
 ********************************************************************************
 * Total personal income
 ********************************************************************************
 * inctot in 1999's $:
 */
+
 * Deal with inctot_pop and inctot_mom outliers
 replace inctot_pop =. if inctot_pop >= 9999999
 replace inctot_mom =. if inctot_mom >= 9999999
@@ -693,6 +709,7 @@ replace Husband_inctot = lninctot_mom1999 if sex_mom == 1 & inctot_mom < 999998
 
 replace Wife_inctot = lninctot_pop1999 if sex_pop == 2 & inctot_pop < 999998
 replace Wife_inctot = lninctot_mom1999 if sex_mom == 2 & inctot_mom < 999998
+
 
 /*
 ********************************************************************************
@@ -828,7 +845,6 @@ by CoupleType: sum Wife_hourly_earnings_incwage Wife_log_hourly_earnings_incwage
 ********************************************************************************
 */
 #delimit;
-
 gen HusbandYOB = .;
 gen WifeYOB = .;
 
@@ -967,7 +983,7 @@ Keep main variables
 */
 #delimit;
 keep year hhwt HusbandEducation WifeEducation Husband_wt Wife_wt Fertility
-Husband_ftotval Husband_inctot Wife_inctot Husband_incwage 
+Husband_ftotinc Wife_ftotinc Husband_inctot Wife_inctot Husband_incwage 
 Wife_incwage cpi99 region stateicp statefip countyicp countyfip urban metro city
 HusbandAge WifeAge HusbandYOB WifeYOB LAHusband LAWife CoupleType Husband_ed_level 
 Wife_ed_level Wife_fbpl Husband_fbpl Hispanic_Husband Hispanic_Wife age year YOB
@@ -975,8 +991,8 @@ bpl bpl_mom bpl_pop fbpl fbpl_mom fbpl_pop mbpl mbpl_mom mbpl_pop bpld bpld_mom 
 Hus_hourly_earnings_inctot Hus_log_hourly_earnings_inctot 
 Wife_hourly_earnings_inctot Wife_log_hourly_earnings_inctot
 Hus_hourly_earnings_incwage Hus_log_hourly_earnings_incwage
-Wife_hourly_earnings_incwage Wife_log_hourly_earnings_incwage
-experience_dad experience_mom HusbandAge WifeAge;
+Wife_hourly_earnings_incwage Wife_log_hourly_earnings_incwage;
+
 
 /*
 Save full parent's data
@@ -1002,48 +1018,118 @@ tab Wife_ed_level, gen(ed_level_dummy_w);
 tab Husband_ed_level, gen(ed_level_dummy_h);
 
 sort CoupleType;
-by CoupleType: sum HusbandEducation WifeEducation  Husband_ftotval Husband_inctot Husband_incwage  Wife_inctot Wife_incwage Fertility;
+by CoupleType: sum HusbandEducation WifeEducation  Wife_ftotinc Husband_inctot Husband_incwage  Wife_inctot Wife_incwage Fertility;
+				   
+save "ParentDataFull.dta", replace;
 
-reg Fertility WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
+/*
+* Initialize BirthPlaceMom with a default value
 
-reg HusbandEducation  WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg WifeEducation   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg Husband_ftotval   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg Husband_inctot   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg Husband_incwage   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg Wife_inctot   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg Wife_incwage   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg HusbandAge   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg WifeAge   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg experience_dad   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
-reg experience_mom   WW WH HW HH, nocon;
-lincom HW - WH;
-lincom WW - HH;
+
+gen BirthPlaceMom = "";
+
+/*
+* Sequentially replace BirthPlaceMom based on conditions
+*/
+#delimit;
+
+replace BirthPlaceMom = "USA" if bpld_mom <= 12092;
+replace BirthPlaceMom = "Puerto Rico" if bpld_mom == 11000;
+replace BirthPlaceMom = "Argentina" if bpld_mom == 30005;
+replace BirthPlaceMom = "Bolivia" if bpld_mom == 30010;
+replace BirthPlaceMom = "Brazil" if bpld_mom == 30015;
+replace BirthPlaceMom = "Chile" if bpld_mom == 30020;
+replace BirthPlaceMom = "Colombia" if bpld_mom == 30025;
+replace BirthPlaceMom = "Dominican Republic" if bpld_mom == 26010;
+replace BirthPlaceMom = "Ecuador" if bpld_mom == 30030;
+replace BirthPlaceMom = "Costa Rica" if bpld_mom == 21020;
+replace BirthPlaceMom = "El Salvador" if bpld_mom == 21030;
+replace BirthPlaceMom = "Guatemala" if bpld_mom == 21040;
+replace BirthPlaceMom = "Honduras" if bpld_mom == 21050;
+replace BirthPlaceMom = "Cuba" if bpld_mom == 25000;
+replace BirthPlaceMom = "Mexico" if bpld_mom == 20000;
+replace BirthPlaceMom = "Nicaragua" if bpld_mom == 21060;
+replace BirthPlaceMom = "Panama" if bpld_mom == 21070;
+replace BirthPlaceMom = "Peru" if bpld_mom == 30050;
+replace BirthPlaceMom = "Uruguay" if bpld_mom == 30060;
+replace BirthPlaceMom = "Venezuela" if bpld_mom == 30065;
+replace BirthPlaceMom = "Spain" if bpld_mom == 43800;
+replace BirthPlaceMom = "Americas" if bpld_mom == 29900;
+replace BirthPlaceMom = "Central America" if bpld_mom == 21000;
+replace BirthPlaceMom = "South America" if bpld_mom == 30000;
+
+/*
+* Initialize BirthPlaceDad with a default value
+*/
+
+gen BirthPlaceDad = "";
+
+/*
+* Sequentially replace BirthPlaceDad based on conditions
+*/
+
+replace BirthPlaceDad = "USA" if bpld_pop <= 12092;
+replace BirthPlaceDad = "Puerto Rico" if bpld_pop == 11000;
+replace BirthPlaceDad = "Argentina" if bpld_pop == 30005;
+replace BirthPlaceDad = "Bolivia" if bpld_pop == 30010;
+replace BirthPlaceDad = "Brazil" if bpld_pop == 30015;
+replace BirthPlaceDad = "Chile" if bpld_pop == 30020;
+replace BirthPlaceDad = "Colombia" if bpld_pop == 30025;
+replace BirthPlaceDad = "Dominican Republic" if bpld_pop == 26010;
+replace BirthPlaceDad = "Ecuador" if bpld_pop == 30030;
+replace BirthPlaceDad = "Costa Rica" if bpld_pop == 21020;
+replace BirthPlaceDad = "El Salvador" if bpld_pop == 21030;
+replace BirthPlaceDad = "Guatemala" if bpld_pop == 21040;
+replace BirthPlaceDad = "Honduras" if bpld_pop == 21050;
+replace BirthPlaceDad = "Cuba" if bpld_pop == 25000;
+replace BirthPlaceDad = "Mexico" if bpld_pop == 20000;
+replace BirthPlaceDad = "Nicaragua" if bpld_pop == 21060;
+replace BirthPlaceDad = "Panama" if bpld_pop == 21070;
+replace BirthPlaceDad = "Peru" if bpld_pop == 30050;
+replace BirthPlaceDad = "Uruguay" if bpld_pop == 30060;
+replace BirthPlaceDad = "Venezuela" if bpld_pop == 30065;
+replace BirthPlaceDad = "Spain" if bpld_pop == 43800;
+replace BirthPlaceDad = "Americas" if bpld_pop == 29900;
+replace BirthPlaceDad = "Central America" if bpld_pop == 21000;
+replace BirthPlaceDad = "South America" if bpld_pop == 30000;
 
 sort CoupleType;
-by CoupleType: sum HusbandEducation WifeEducation 
-				   Husband_ftotval Husband_inctot Husband_incwage 
-				   Wife_inctot Wife_incwage Fertility;			  
-save "ParentDataFull.dta", replace;
+by CoupleType: sum HusbandEducation WifeEducation Husband_ftotinc Hus_log_hourly_earnings_incwage Wife_log_hourly_earnings_incwage Fertility;
+/*
+* Collapse data to mean values for each group
+*/
+#delimit;
+collapse 	  (mean) LAHusband_mean = LAHusband 
+              (mean) LAWife_mean = LAWife
+              (mean) HusbandEducation_mean = HusbandEducation 
+              (mean) WifeEducation_mean = WifeEducation 
+              (mean) Husband_ftotval_mean = Husband_ftotinc 
+              (mean) Husband_inctot_mean = Hus_log_hourly_earnings_inctot 
+              (mean) Husband_incwage_mean = Hus_log_hourly_earnings_incwage 
+              (mean) Wife_inctot_mean = Wife_log_hourly_earnings_inctot 
+              (mean) Wife_incwage_mean = Wife_log_hourly_earnings_incwage 
+              (mean) Fertility_mean = Fertility, by(YOB BirthPlaceMom BirthPlaceDad);
+#delimit;
+gen WW = 0;
+gen WH = 0;
+gen HW = 0;
+gen HH = 0;
+
+replace WW = 1 if LAHusband == 0 & LAWife == 0;
+replace WH = 1 if LAHusband == 0 & LAWife == 1;
+replace HW = 1 if LAHusband == 1 & LAWife == 0;
+replace HH = 1 if LAHusband == 1 & LAWife == 1;
+
+gen str CoupleType 		= "none";
+replace CoupleType 		= "White-White" 			if WW == 1;
+replace CoupleType 		= "White-Hispanic" 			if WH == 1;
+replace CoupleType 		= "Hispanic-White" 			if HW == 1;
+replace CoupleType 		= "Hispanic-Hispanic" 		if HH == 1;
+sort CoupleType;
+by CoupleType: sum HusbandEducation_mean WifeEducation_mean 
+				   Husband_ftotval_mean Husband_inctot_mean Husband_incwage_mean 
+				   Wife_inctot_mean Wife_incwage_mean Fertility_mean;
+
+save "ParentDataFull.dta", replace
+#delimit cr
+*/

@@ -55,6 +55,7 @@ DATA <- read_dta(file.path(datasets,"ParentDataFull.dta")) |>
 		   								 bpld_pop  == 21000  ~ "Cental America",
            								 bpld_pop  == 30000  ~ "South America"))
 CrossTable(DATA$BirthPlaceMom)
+write_dta(DATA, file.path(datasets,"ParentDataFull.dta"))
 # create variables for parents' outcomes
 
 DATA  |> 
@@ -68,8 +69,16 @@ DATA  |>
               HusbandEducation      = weighted.mean(HusbandEducation, weights = Husband_wt, na.rm = TRUE),
               # Wife education
               WifeEducation         = weighted.mean(WifeEducation, weights = Wife_wt, na.rm = TRUE),
-              # Husband income
+              # family income
               Husband_ftotval       = weighted.mean(Husband_ftotval, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourly inctot
+              Husband_inctot        = weighted.mean(Hus_log_hourly_earnings_inctot, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourly incwage
+              Husband_incwage       = weighted.mean(Hus_log_hourly_earnings_incwage, weights = Husband_wt, na.rm = TRUE),
+			  # Wife hourly inctot
+              Wife_inctot           = weighted.mean(Wife_log_hourly_earnings_inctot, weights = Wife_wt, na.rm = TRUE),
+			  # Wife hourly incwage
+              Wife_incwage          = weighted.mean(Wife_log_hourly_earnings_incwage, weights = Wife_wt, na.rm = TRUE),
               # Fertility
               Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
               )
@@ -88,24 +97,43 @@ ParentData  <-  DATA  |>
               WifeEducation         = weighted.mean(WifeEducation, weights = Wife_wt, na.rm = TRUE),
               # Husband income
               Husband_ftotval       = weighted.mean(Husband_ftotval, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourly inctot
+              Husband_inctot        = weighted.mean(Hus_log_hourly_earnings_inctot, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourly incwage
+              Husband_incwage       = weighted.mean(Hus_log_hourly_earnings_incwage, weights = Husband_wt, na.rm = TRUE),
+			  # Wife hourly inctot
+              Wife_inctot           = weighted.mean(Wife_log_hourly_earnings_inctot, weights = Wife_wt, na.rm = TRUE),
+			  # Wife hourly incwage
+              Wife_incwage          = weighted.mean(Wife_log_hourly_earnings_incwage, weights = Wife_wt, na.rm = TRUE),
               # Fertility
               Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
               )|>
 	na.omit()
 
-DATA  |> 
+ParentData  |> 
 	    group_by(CoupleType) |>
-		summarise(
+    	summarise(
+              # Husband is foreign born
+              LAHusband             = weighted.mean(LAHusband, weights = Husband_wt, na.rm = TRUE),
+              # Wife is foreign born
+              LAWife                = weighted.mean(LAWife, weights = Wife_wt, na.rm = TRUE),
               # Husband education
-              HusbandEducation      = mean(HusbandEducation, na.rm = TRUE),
+              HusbandEducation      = weighted.mean(HusbandEducation, weights = Husband_wt, na.rm = TRUE),
               # Wife education
-              WifeEducation         = mean(WifeEducation, na.rm = TRUE),
+              WifeEducation         = weighted.mean(WifeEducation, weights = Wife_wt, na.rm = TRUE),
               # Husband income
-              Husband_ftotval       = mean(Husband_ftotval, na.rm = TRUE),
+              Husband_ftotval       = weighted.mean(Husband_ftotval, weights = Husband_wt, na.rm = TRUE),
+			  # Husband hourly inctot
+              Husband_inctot        = mean(Husband_inctot, na.rm = TRUE),
+			  # Husband hourly incwage
+              Husband_incwage       = mean(Husband_incwage, na.rm = TRUE),
+			  # Wife hourly inctot
+              Wife_inctot           = mean(Wife_inctot, na.rm = TRUE),
+			  # Wife hourly incwage
+              Wife_incwage          = mean(Wife_incwage, na.rm = TRUE),
               # Fertility
-              Fertility             = mean(Fertility, na.rm = TRUE)
+              Fertility             = weighted.mean(Fertility, weights = Wife_wt, na.rm = TRUE)
               )
 
-table(ParentData$YOB)
 # save data
 write.csv(ParentData, file.path(datasets_git,"ParentData.csv"))

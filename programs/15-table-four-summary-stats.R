@@ -500,13 +500,13 @@ row14 <- c(
 dim(row14) <- c(1,7)
 ## Woman's log hourly earns
 Womanlninctot_1999 <- IndividualData |> 
-  filter(sex == 2) |> 
+  filter(sex == 2 & FullTime_ASEC == 1) |> 
   group_by(Type) |> 
   summarise(lninctot_1999Mean   = mean(lninctot_1999, na.rm = T),
             lninctot_1999SD = sd(lninctot_1999, na.rm = T))
 
 model <- lm(lninctot_1999 ~ 0 + WW + WH + HW + HH, 
-            data = IndividualData |> filter(sex == 2))
+            data = IndividualData |> filter(sex == 2 & FullTime_ASEC == 1))
 test1 <- tidy(glht(model, linfct = c("HH - WW = 0")))
 pvalues1 <- test1$std.error
 differences1 <- test1$estimate
@@ -574,7 +574,7 @@ Table_rows <- rbind(row1,  row6,   row7,  row8,
 Table_rows <-  Table_rows |> 
   row_to_names(row_number = 1)
 
-knitr::kable(Table_rows, "latex", align = "lcccccc",
+knitr::kable(Table_rows, "html", align = "lcccccc",
              booktabs = T,
              escape = F,
              longtable = T, 
@@ -588,6 +588,30 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 repeat_header_continued = "\\textit{(Continued on Next Page...)}") |> 
   footnote(number = c("Source: The 1960-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
                       "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  ) |> 
+  add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
+                     "Differences" = 2)) |> 
+  column_spec(1, width = "5cm") |> 
+  row_spec(c(1,4), bold = T) |> 
+  add_indent(c(2:3)) |>
+  add_indent(c(5:10))
+
+knitr::kable(Table_rows, "latex", align = "lcccccc",
+             booktabs = T,
+             escape = F,
+             longtable = T, 
+             caption = "Summary Statistics of Outcomes Using Parent's Place of Birth Only for Those That Self-Identify as Hispanic \\label{tab:c&p2}") %>%
+  kable_classic(full_width = F) |>
+  kable_styling(#bootstrap_options = c("hover", "condensed"), 
+                latex_options = c(#"scale_down", 
+                "HOLD_position",
+                "repeat_header"
+                ),
+                repeat_header_continued = "\\textit{(Continued on Next Page...)}") |> 
+  footnote(number = c("Source: The 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+                      "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. The summary statistics for White-Hispanic (WH), Hispanic-White (HW), and Hispanic-Hispanic (HH) are restricted to the sample of children that self-identify as Hispanic or Latino. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 

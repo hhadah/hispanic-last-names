@@ -4,7 +4,7 @@
 
 # date: January 19th, 2023
 
-ParentData     <- read_csv(file.path(datasets,"CPS_synth.csv")) |> 
+ParentData     <- read_dta(file.path(datasets,"ParentDataFull.dta")) |> 
   mutate(Tot_ed = HusbandEducation + WifeEducation)
 
 # Only Mexicans and Native Born

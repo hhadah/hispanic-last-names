@@ -4,7 +4,7 @@
 
 # date: January 19th, 2023
 
-ParentData     <- read_csv(file.path(datasets,"CPS_synth.csv")) |> 
+ParentData     <- read_dta(file.path(datasets,"ParentDataFull.dta")) |> 
   mutate(Tot_ed = HusbandEducation + WifeEducation)
 
 # Only Mexicans and Native Born
@@ -45,7 +45,7 @@ test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
 pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
-row3 <- c(
+row2 <- c(
   "Husband's education (Total Years)",
   paste0("\\specialcell{", 
          sprintf("%0.2f",round(HusbandEducation[4,2], digits = 2)),  
@@ -92,7 +92,7 @@ row3 <- c(
          ")}"
   )
 )
-dim(row3) <- c(1,7)
+dim(row2) <- c(1,7)
 
 ## Wife's Education
 WifeEducation <- ParentData |> 
@@ -110,7 +110,7 @@ test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
 pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
-row4 <- c(
+row3 <- c(
   "Wife's education (Total Years)",
   paste0("\\specialcell{", 
          sprintf("%0.2f",round(WifeEducation[4,2], digits = 2)),  
@@ -157,7 +157,7 @@ row4 <- c(
          ")}"
   )
 )
-dim(row4) <- c(1,7)
+dim(row3) <- c(1,7)
 
 ## Total Education
 TotalEducation <- ParentData |> 
@@ -175,7 +175,7 @@ test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
 pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
-row5 <- c(
+row4 <- c(
   "Total Household education (Total Years)",
   paste0("\\specialcell{", 
          sprintf("%0.2f",round(TotalEducation[4,2], digits = 2)),  
@@ -222,7 +222,7 @@ row5 <- c(
          ")}"
   )
 )
-dim(row5) <- c(1,7)
+dim(row4) <- c(1,7)
 
 ## Total Family Income
 TotalFamInc <- ParentData |> 
@@ -240,7 +240,7 @@ test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
 pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
-row6 <- c(
+row5 <- c(
   "Log Total Family Income",
   paste0("\\specialcell{", 
          sprintf("%0.2f",round(TotalFamInc[4,2], digits = 2)),  
@@ -287,9 +287,138 @@ row6 <- c(
          ")}"
   )
 )
+dim(row5) <- c(1,7)
+
+## Husband Hourly Income
+Husband_incwage <- ParentData |> 
+  group_by(CoupleType) |> 
+  summarise(incwageAvg   = mean(Hus_log_hourly_earnings_incwage, na.rm = T),
+            incwageSD    = sd(Hus_log_hourly_earnings_incwage, na.rm = T))
+
+model <- lm(Hus_log_hourly_earnings_incwage ~ 0 + WW + WH + HW + HH, 
+             data = ParentData)
+test1 <- tidy(glht(model, linfct = c("HH - WW = 0")))
+pvalues1 <- test1$std.error
+differences1 <- test1$estimate
+
+test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
+pvalues2 <- test2$std.error
+differences2 <- test2$estimate
+
+row6 <- c(
+  "Husband's Log Hourly Earnings",
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Husband_incwage[4,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Husband_incwage[4,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Husband_incwage[3,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Husband_incwage[3,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Husband_incwage[2,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Husband_incwage[2,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Husband_incwage[1,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Husband_incwage[1,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(differences1[[1]], digits = 2)),  
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(pvalues1[[1]], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(differences2[[1]], digits = 2)),  
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(pvalues2[[1]], digits = 2)), 
+         ")}"
+  )
+)
 dim(row6) <- c(1,7)
 
-## Fertility
+## Wife Hourly Income
+Wife_incwage <- ParentData |> 
+  group_by(CoupleType) |> 
+  summarise(incwageAvg   = mean(Wife_log_hourly_earnings_incwage, na.rm = T),
+            incwageSD    = sd(Wife_log_hourly_earnings_incwage, na.rm = T))
+
+model <- lm(Wife_log_hourly_earnings_incwage ~ 0 + WW + WH + HW + HH, 
+             data = ParentData)
+test1 <- tidy(glht(model, linfct = c("HH - WW = 0")))
+pvalues1 <- test1$std.error
+differences1 <- test1$estimate
+
+test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
+pvalues2 <- test2$std.error
+differences2 <- test2$estimate
+
+row7 <- c(
+  "Wife's Log Hourly Earnings",
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Wife_incwage[4,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Wife_incwage[4,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Wife_incwage[3,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Wife_incwage[3,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Wife_incwage[2,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Wife_incwage[2,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(Wife_incwage[1,2], digits = 2)),  
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(Wife_incwage[1,3], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(differences1[[1]], digits = 2)),  
+         symnum(pvalues1[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(pvalues1[[1]], digits = 2)), 
+         ")}"
+  ),
+  paste0("\\specialcell{", 
+         sprintf("%0.2f",round(differences2[[1]], digits = 2)),  
+         symnum(pvalues2[[1]], corr = FALSE, na = FALSE, cutpoints = c(0, 0.01, 0.05, 0.1), symbols = c("***", "**", "*")),
+         "\\\\",
+         "(",
+         sprintf("%0.2f",round(pvalues2[[1]], digits = 2)), 
+         ")}"
+  )
+)
+dim(row7) <- c(1,7)
+# Fertility
 FertilityAvg <- ParentData |> 
   group_by(CoupleType) |> 
   summarise(FertAvg   = mean(Fertility, na.rm = T),
@@ -305,7 +434,7 @@ test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
 pvalues2 <- test2$std.error
 differences2 <- test2$estimate
 
-row7 <- c(
+row8 <- c(
   "Fertility",
   paste0("\\specialcell{", 
          sprintf("%0.2f",round(FertilityAvg[4,2], digits = 2)),  
@@ -352,11 +481,12 @@ row7 <- c(
          ")}"
   )
 )
-dim(row7) <- c(1,7)
+dim(row8) <- c(1,7)
 
 
-Table_rows <- rbind(row1,  row3,  row4, 
-                    row5,  row6, row7)
+Table_rows <- rbind(row1,  row2,  row3,  row4,
+                    row5,  row6,  row7,  
+                    row8)
 
 Table_rows <-  Table_rows |> 
   row_to_names(row_number = 1)
@@ -372,7 +502,7 @@ knitr::kable(Table_rows, "html", align = "lcccccc",
                 "HOLD_position"
               #   "repeat_header"
                 )) |> 
-  footnote(number = c("Source: The 1960-2000 Census for synthetic parents, and 1994-2019 Current Population Surveys (CPS) for children's outcomes",
+  footnote(number = c("Source: The 1960-2000 Census.",
                       "The data is restricted to native-born United States citizens who are also White, between the ages of 25 and 40, and have kids. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
@@ -385,7 +515,7 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
        #       longtable = T, 
-             caption = "Summary statistics of synthetic parents by couple type \\label{tab:synth}") |>
+             caption = "Summary Statistics of Synthetic Parents by Couple Type \\label{tab:synth}") |>
   kable_classic(full_width = F) |>
   kable_styling(bootstrap_options = c("hover", "condensed"), 
                 latex_options = c("scale_down", 
@@ -401,6 +531,4 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                      "Differences" = 2)) |> 
   column_spec(1, width = "5cm") |> 
   save_kable(file.path(tables_wd,"tab03a-summary-stats.tex")) |> 
-  save_kable(file.path(thesis_tabs,"tab03a-summary-stats.tex"))  |> 
-  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab03a-summary-stats.tex"))
-
+  save_kable(file.path(thesis_tabs,"tab03a-summary-stats.tex"))

@@ -179,6 +179,3 @@ regression_tab %>%
 
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab05-regression.tex"))
-regression_tab %>%
-  save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab05-regression.tex"))
-

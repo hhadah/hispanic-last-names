@@ -99,6 +99,20 @@ Table_cols <- cbind(first_col, second_col,  third_col, fourth_col, fifth_col)
 Table_cols <-  Table_cols |> 
   row_to_names(row_number = 1)
 
+knitr::kable(Table_cols, "html", align = "lcccc",
+             booktabs = T,
+             escape = F,
+             caption = "Number of Children by Parental Type \\label{tab:mat1}") %>%
+  column_spec(1, bold = T) %>%
+  kable_classic(full_width = F) %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "HOLD_position")) |> 
+  footnote(number = c("Source: Current Population Surveys (CPS) 1994-2019",
+                      "The sample includes Whites, who are married, and are between the ages 25 and 40. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White if she/he was born in the United States."),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  ) |> 
+  add_header_above(c(" " = 1, "Perental Type" = 4))
 
 knitr::kable(Table_cols, "latex", align = "lcccc",
              booktabs = T,
@@ -119,57 +133,41 @@ knitr::kable(Table_cols, "latex", align = "lcccc",
   save_kable(file.path("/Users/hhadah/Documents/GiT/my_thesis/tables","tab01-observations-by-parents.tex"))
 
 
-# presentation table
-knitr::kable(Table_cols, "latex", align = "lcccc",
-             booktabs = T,
-             escape = F,
-             caption = "Number of Children by Parental Type \\label{tab:mat1}") %>%
-  column_spec(1, bold = T) %>%
-  kable_classic(full_width = F) %>%
-  kable_styling(bootstrap_options = c("hover", "condensed"), 
-                latex_options = c("scale_down", "hold_position")) |> 
-  footnote(number = c("Source: Current Population Surveys (CPS) 1994-2019",
-                      "The sample includes Whites, who are married, and are between the ages 18 and 65. Ethnicity of a person's parents are identified by the parent's place of birth. A parent is Hispanic if she/he was born in a Spanish-speaking country. A parent is White she/he was born in the United States."),
-           footnote_as_chunk = F, title_format = c("italic"),
-           escape = F, threeparttable = T
-  ) |> 
-  add_header_above(c(" " = 1, "Parental Type" = 4)) |> 
-  save_kable(file.path(dissertation_wd,"tables/tab01-observations-by-parents.tex"))
 
-# Pie chat
+# # Pie chat
 
-# Calculate total number of observations
-ALL <- nrow(DATA)
+# # Calculate total number of observations
+# ALL <- nrow(DATA)
 
-# Create dataframe with labels and values
-labels <- c("White-White", "Hispanic-White", "White-Hispanic", "Hispanic-Hispanic")
-values <- c(as.numeric(WW[1,1]), as.numeric(HW[1,1]), as.numeric(WH[1,1]), as.numeric(HH[1,1]))
-percentages <- round(values/ALL * 100, digits = 2)
+# # Create dataframe with labels and values
+# labels <- c("White-White", "Hispanic-White", "White-Hispanic", "Hispanic-Hispanic")
+# values <- c(as.numeric(WW[1,1]), as.numeric(HW[1,1]), as.numeric(WH[1,1]), as.numeric(HH[1,1]))
+# percentages <- round(values/ALL * 100, digits = 2)
 
-df <- data.frame(value = percentages,
-                 num = values,
-                 group = labels)
+# df <- data.frame(value = percentages,
+#                  num = values,
+#                  group = labels)
 
-df2 <- df %>% 
-  mutate(csum = rev(cumsum(rev(value))), 
-         pos = csum - value/2)
+# df2 <- df %>% 
+#   mutate(csum = rev(cumsum(rev(value))), 
+#          pos = csum - value/2)
 
-# Create pie chart with percentages and total number of observations
-ggplot(df, aes(x = "" , y = value, fill = fct_inorder(group))) +
-  geom_col(width = 1, color = 1) +
-  coord_polar(theta = "y") +
-  scale_fill_manual(values = cbbPalette[2:5]) +
-  labs(title = "Types of Parents", 
-       subtitle = paste0("Total observations: ", format(ALL, big.mark = ",")), 
-       fill = "Type of Parents") +
-  theme_void(base_family = "LM Roman 10") +
-  theme(text = element_text(family = "LM Roman 10")) +
-  geom_label_repel(data = df2,
-                   aes(y = pos, label = paste0(format(num, big.mark = ","), "(",value, "%)")),
-                   size = 2, nudge_x =0.9 , show.legend = FALSE,
-                  #  fill = "transparent",
-                   color = "black",
-                   segment.color = "transparent",
-                   segment.size = 0.5,
-                   segment.alpha = 0.7,
-                   radius = 1.2)
+# # Create pie chart with percentages and total number of observations
+# ggplot(df, aes(x = "" , y = value, fill = fct_inorder(group))) +
+#   geom_col(width = 1, color = 1) +
+#   coord_polar(theta = "y") +
+#   scale_fill_manual(values = cbbPalette[2:5]) +
+#   labs(title = "Types of Parents", 
+#        subtitle = paste0("Total observations: ", format(ALL, big.mark = ",")), 
+#        fill = "Type of Parents") +
+#   theme_void(base_family = "LM Roman 10") +
+#   theme(text = element_text(family = "LM Roman 10")) +
+#   geom_label_repel(data = df2,
+#                    aes(y = pos, label = paste0(format(num, big.mark = ","), "(",value, "%)")),
+#                    size = 2, nudge_x =0.9 , show.legend = FALSE,
+#                   #  fill = "transparent",
+#                    color = "black",
+#                    segment.color = "transparent",
+#                    segment.size = 0.5,
+#                    segment.alpha = 0.7,
+#                    radius = 1.2)

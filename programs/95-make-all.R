@@ -29,20 +29,20 @@ ACS_data  <- "/Users/hhadah/Documents/GiT/jmp-decomposition-replication/data/raw
 
 # main scripts
 source(file.path(programs,"01-packages-wds.r")) # set up package
-stata(file.path(programs,"02-ACS-Synt-Parents-DoFile.do")) # run ACS do file
-stata(file.path(programs,"03-CleaningDataDoFile.do")) # clean data
+# stata(file.path(programs,"02-ACS-Synt-Parents-DoFile.do")) # run ACS do file
+# stata(file.path(programs,"03-CleaningDataDoFile.do")) # clean data
 source(file.path(programs,"04-ACS-prep.r")) # prep data
-stata(file.path(programs,"05-CPS-Do-File.do")) # CPS Do File
-stata(file.path(programs,"06-CPS-DataCleanUpScript.do")) # CPS data cleaning
+# stata(file.path(programs,"05-CPS-Do-File.do")) # CPS Do File
+# stata(file.path(programs,"06-CPS-DataCleanUpScript.do")) # CPS data cleaning
 # stata(file.path(programs,"07-BySexAnalysis.do")) # by sex analysis
 # stata(file.path(programs,"08-CoupleAnalysis.do")) # couple analysis
 # stata(file.path(programs,"09-Regressions.do")) # regressions
 source(file.path(programs,"10-merge-cps-acs.r")) # merge cps and acs
 source(file.path(programs,"11-table-one-parent-types.R")) # table one
-source(file.path(programs,"12-table-two-parent-types.R")) # table two
+source(file.path(programs,"12-table-two-couple-types.R")) # table two
 source(file.path(programs,"13-table-three-summary-stats.R")) # table three
-# source(file.path(programs,"13a-table-three-summary-stats-mex.R")) # table three
-# source(file.path(programs,"13b-table-three-summary-stats-nonmex.R")) # table three
+source(file.path(programs,"13a-table-three-summary-stats-mex.R")) # table three
+source(file.path(programs,"13b-table-three-summary-stats-nonmex.R")) # table three
 source(file.path(programs,"14-table-three-summary-stats.R")) # table three
 source(file.path(programs,"15-table-four-summary-stats.R")) # table four
 source(file.path(programs,"16-table-five-regression.R")) # table five
