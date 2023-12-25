@@ -1,0 +1,307 @@
+\begin{thebibliography}{33}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Abramitzky et~al.(2020)Abramitzky, Boustan and
+  Eriksson}]{abramitzkyImmigrantsAssimilateMore2020a}
+\bibinfo{author}{Abramitzky, R.}, \bibinfo{author}{Boustan, L.},
+  \bibinfo{author}{Eriksson, K.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Do {{Immigrants Assimilate More Slowly Today Than}}
+  in the {{Past}}?}
+\newblock \bibinfo{journal}{American Economic Review: Insights}
+  \bibinfo{volume}{2}, \bibinfo{pages}{125--141}.
+\newblock \DOIprefix\doi{10.1257/aeri.20190079}.
+%Type = Article
+\bibitem[{Abramitzky et~al.(2014)Abramitzky, Boustan and
+  Eriksson}]{abramitzkyNationImmigrantsAssimilation2014}
+\bibinfo{author}{Abramitzky, R.}, \bibinfo{author}{Boustan, L.P.},
+  \bibinfo{author}{Eriksson, K.}, \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{A {{Nation}} of {{Immigrants}}: {{Assimilation}} and
+  {{Economic Outcomes}} in the {{Age}} of {{Mass Migration}}}.
+\newblock \bibinfo{journal}{Journal of Political Economy}
+  \bibinfo{volume}{122}, \bibinfo{pages}{467--506}.
+\newblock \DOIprefix\doi{10.1086/675805}.
+%Type = Misc
+\bibitem[{Abramitzky et~al.(2016)Abramitzky, Boustan and
+  Eriksson}]{abramitzkyCulturalAssimilationAge2016}
+\bibinfo{author}{Abramitzky, R.}, \bibinfo{author}{Boustan, L.P.},
+  \bibinfo{author}{Eriksson, K.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Cultural {{Assimilation}} during the {{Age}} of
+  {{Mass Migration}}}.
+\newblock \DOIprefix\doi{10.3386/w22381}.
+%Type = Article
+\bibitem[{Antman et~al.(2016a)Antman, Duncan and
+  Trejo}]{antmanEthnicAttritionObserved2016}
+\bibinfo{author}{Antman, F.}, \bibinfo{author}{Duncan, B.},
+  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2016}a.
+\newblock \bibinfo{title}{Ethnic {{Attrition}} and the {{Observed Health}} of
+  {{Later-Generation Mexican Americans}}}.
+\newblock \bibinfo{journal}{The American Economic Review}
+  \bibinfo{volume}{106}, \bibinfo{pages}{467--471}.
+%Type = Article
+\bibitem[{Antman et~al.(2016b)Antman, Duncan and
+  Trejo}]{antmanEthnicAttritionObserved2016a}
+\bibinfo{author}{Antman, F.}, \bibinfo{author}{Duncan, B.},
+  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2016}b.
+\newblock \bibinfo{title}{Ethnic attrition and the observed health of later
+  generation {{Mexican Americans}}}.
+\newblock \bibinfo{journal}{Am Econ Rev} \bibinfo{volume}{106}.
+%Type = Article
+\bibitem[{Antman et~al.(2020a)Antman, Duncan and Trejo}]{antman2020ethnic}
+\bibinfo{author}{Antman, F.M.}, \bibinfo{author}{Duncan, B.},
+  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2020}a.
+\newblock \bibinfo{title}{Ethnic attrition, assimilation, and the measured
+  health outcomes of mexican americans}.
+\newblock \bibinfo{journal}{Journal of Population Economics} ,
+  \bibinfo{pages}{1--24}.
+%Type = Article
+\bibitem[{Antman et~al.(2020b)Antman, Duncan and
+  Trejo}]{antmanEthnicAttritionAssimilation2020}
+\bibinfo{author}{Antman, F.M.}, \bibinfo{author}{Duncan, B.},
+  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2020}b.
+\newblock \bibinfo{title}{Ethnic attrition, assimilation, and the measured
+  health outcomes of {{Mexican Americans}}}.
+\newblock \bibinfo{journal}{Journal of Population Economics}
+  \bibinfo{volume}{33}, \bibinfo{pages}{1499--1522}.
+\newblock
+  \DOIprefix\doi{https://doi-org.ezproxy.lib.uh.edu/10.1007/s00148-020-00772-8}.
+%Type = Article
+\bibitem[{Averett and Korenman(1996)}]{averettEconomicRealityBeauty1996}
+\bibinfo{author}{Averett, S.}, \bibinfo{author}{Korenman, S.},
+  \bibinfo{year}{1996}.
+\newblock \bibinfo{title}{The {{Economic Reality}} of the {{Beauty Myth}}}.
+\newblock \bibinfo{journal}{The Journal of Human Resources}
+  \bibinfo{volume}{31}, \bibinfo{pages}{304--330}.
+\newblock \DOIprefix\doi{10.2307/146065}.
+%Type = Article
+\bibitem[{Averett et~al.(2008)Averett, Sikora and
+  Argys}]{averettBetterWorseRelationship2008}
+\bibinfo{author}{Averett, S.L.}, \bibinfo{author}{Sikora, A.},
+  \bibinfo{author}{Argys, L.M.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{For better or worse: Relationship status and body
+  mass index}.
+\newblock \bibinfo{journal}{Economics and Human Biology} \bibinfo{volume}{6},
+  \bibinfo{pages}{330--349}.
+\newblock \DOIprefix\doi{10.1016/j.ehb.2008.07.003}.
+%Type = Article
+\bibitem[{Bayer and Charles(2018)}]{bayer2018divergent}
+\bibinfo{author}{Bayer, P.}, \bibinfo{author}{Charles, K.K.},
+  \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Divergent paths: A new perspective on earnings
+  differences between black and white men since 1940}.
+\newblock \bibinfo{journal}{The Quarterly Journal of Economics}
+  \bibinfo{volume}{133}, \bibinfo{pages}{1459--1501}.
+%Type = Article
+\bibitem[{Becker(1973)}]{beckerTheoryMarriagePart1973}
+\bibinfo{author}{Becker, G.S.}, \bibinfo{year}{1973}.
+\newblock \bibinfo{title}{A {{Theory}} of {{Marriage}}: {{Part I}}}.
+\newblock \bibinfo{journal}{Journal of Political Economy} \bibinfo{volume}{81},
+  \bibinfo{pages}{813--846}.
+\newblock \DOIprefix\doi{10.1086/260084}.
+%Type = Article
+\bibitem[{Becker(1974)}]{beckerTheoryMarriagePart1974}
+\bibinfo{author}{Becker, G.S.}, \bibinfo{year}{1974}.
+\newblock \bibinfo{title}{A {{Theory}} of {{Marriage}}: {{Part II}}}.
+\newblock \bibinfo{journal}{Journal of Political Economy} \bibinfo{volume}{82},
+  \bibinfo{pages}{S11--S26}.
+\newblock \DOIprefix\doi{10.1086/260287}.
+%Type = Book
+\bibitem[{Becker(1993)}]{beckerTreatiseFamily1993}
+\bibinfo{author}{Becker, G.S.}, \bibinfo{year}{1993}.
+\newblock \bibinfo{title}{A {{Treatise}} on the {{Family}}}.
+\newblock \bibinfo{publisher}{{Harvard University Press}},
+  \bibinfo{address}{{Cambridge, UNITED STATES}}.
+%Type = Article
+\bibitem[{Bertrand and Mullainathan(2004)}]{bertrand2004emily}
+\bibinfo{author}{Bertrand, M.}, \bibinfo{author}{Mullainathan, S.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Are emily and greg more employable than lakisha and
+  jamal? a field experiment on labor market discrimination}.
+\newblock \bibinfo{journal}{American economic review} \bibinfo{volume}{94},
+  \bibinfo{pages}{991--1013}.
+%Type = Article
+\bibitem[{Browning et~al.(2006)Browning, Chiappori and
+  Lechene}]{browningCollectiveUnitaryModels2006}
+\bibinfo{author}{Browning, M.}, \bibinfo{author}{Chiappori, P.A.},
+  \bibinfo{author}{Lechene, V.}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Collective and {{Unitary Models}}: {{A
+  Clarification}}}.
+\newblock \bibinfo{journal}{Review of economics of the household}
+  \bibinfo{volume}{4}, \bibinfo{pages}{5--14}.
+\newblock \DOIprefix\doi{10.1007/s11150-005-6694-2}.
+%Type = Article
+\bibitem[{Card and Krueger(1992)}]{card1992school}
+\bibinfo{author}{Card, D.}, \bibinfo{author}{Krueger, A.B.},
+  \bibinfo{year}{1992}.
+\newblock \bibinfo{title}{School quality and black-white relative earnings: A
+  direct assessment}.
+\newblock \bibinfo{journal}{The quarterly journal of Economics}
+  \bibinfo{volume}{107}, \bibinfo{pages}{151--200}.
+%Type = Article
+\bibitem[{Charles and Guryan(2008)}]{charles2008prejudice}
+\bibinfo{author}{Charles, K.K.}, \bibinfo{author}{Guryan, J.},
+  \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{Prejudice and wages: an empirical assessment of
+  becker’s the economics of discrimination}.
+\newblock \bibinfo{journal}{Journal of political economy}
+  \bibinfo{volume}{116}, \bibinfo{pages}{773--809}.
+%Type = Article
+\bibitem[{Chetty et~al.(2017)Chetty, Grusky, Hell, Hendren, Manduca and
+  Narang}]{chettyFadingAmericanDream2017}
+\bibinfo{author}{Chetty, R.}, \bibinfo{author}{Grusky, D.},
+  \bibinfo{author}{Hell, M.}, \bibinfo{author}{Hendren, N.},
+  \bibinfo{author}{Manduca, R.}, \bibinfo{author}{Narang, J.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{The fading {{American}} dream: {{Trends}} in absolute
+  income mobility since 1940}.
+\newblock \bibinfo{journal}{Science} \bibinfo{volume}{356},
+  \bibinfo{pages}{398--406}.
+\newblock \DOIprefix\doi{10.1126/science.aal4617}.
+%Type = Article
+\bibitem[{Chetty et~al.(2016)Chetty, Hendren and
+  Katz}]{chettyEffectsExposureBetter2016}
+\bibinfo{author}{Chetty, R.}, \bibinfo{author}{Hendren, N.},
+  \bibinfo{author}{Katz, L.F.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{The {{Effects}} of {{Exposure}} to {{Better
+  Neighborhoods}} on {{Children}}: {{New Evidence}} from the {{Moving}} to
+  {{Opportunity Experiment}}}.
+\newblock \bibinfo{journal}{American Economic Review} \bibinfo{volume}{106},
+  \bibinfo{pages}{855--902}.
+\newblock \DOIprefix\doi{10.1257/aer.20150572}.
+%Type = Article
+\bibitem[{Chetty et~al.(2014a)Chetty, Hendren, Kline and
+  Saez}]{chettyWhereLandOpportunity2014}
+\bibinfo{author}{Chetty, R.}, \bibinfo{author}{Hendren, N.},
+  \bibinfo{author}{Kline, P.}, \bibinfo{author}{Saez, E.},
+  \bibinfo{year}{2014}a.
+\newblock \bibinfo{title}{Where is the land of {{Opportunity}}? {{The
+  Geography}} of {{Intergenerational Mobility}} in the {{United States}} *}.
+\newblock \bibinfo{journal}{The Quarterly Journal of Economics}
+  \bibinfo{volume}{129}, \bibinfo{pages}{1553--1623}.
+\newblock \DOIprefix\doi{10.1093/qje/qju022}.
+%Type = Article
+\bibitem[{Chetty et~al.(2014b)Chetty, Hendren, Kline, Saez and
+  Turner}]{chettyUnitedStatesStill2014}
+\bibinfo{author}{Chetty, R.}, \bibinfo{author}{Hendren, N.},
+  \bibinfo{author}{Kline, P.}, \bibinfo{author}{Saez, E.},
+  \bibinfo{author}{Turner, N.}, \bibinfo{year}{2014}b.
+\newblock \bibinfo{title}{Is the {{United States Still}} a {{Land}} of
+  {{Opportunity}}? {{Recent Trends}} in {{Intergenerational Mobility}}}.
+\newblock \bibinfo{journal}{American Economic Review} \bibinfo{volume}{104},
+  \bibinfo{pages}{141--147}.
+\newblock \DOIprefix\doi{10.1257/aer.104.5.141}.
+%Type = Article
+\bibitem[{Chiappori et~al.(2012)Chiappori, Oreffice and
+  {Quintana-Domeque}}]{chiapporiFatterAttractionAnthropometric2012}
+\bibinfo{author}{Chiappori, P.A.}, \bibinfo{author}{Oreffice, S.},
+  \bibinfo{author}{{Quintana-Domeque}, C.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Fatter {{Attraction}}: {{Anthropometric}} and
+  {{Socioeconomic Matching}} on the {{Marriage Market}}}.
+\newblock \bibinfo{journal}{Journal of Political Economy}
+  \bibinfo{volume}{120}, \bibinfo{pages}{659--695}.
+\newblock \DOIprefix\doi{10.1086/667941}.
+%Type = Article
+\bibitem[{D{\'a}vila and Mora(2008)}]{davilaChangesRelativeEarnings2008}
+\bibinfo{author}{D{\'a}vila, A.}, \bibinfo{author}{Mora, M.T.},
+  \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{Changes in the {{Relative Earnings Gap Between
+  Natives}} and {{Immigrants Along}} the {{U}}.s.-{{Mexico Border}}*}.
+\newblock \bibinfo{journal}{Journal of Regional Science} \bibinfo{volume}{48},
+  \bibinfo{pages}{525--545}.
+\newblock \DOIprefix\doi{10.1111/j.1467-9787.2008.00562.x}.
+%Type = Article
+\bibitem[{Duncan et~al.(2020)Duncan, Grogger, Leon and Trejo}]{duncan2020new}
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Grogger, J.},
+  \bibinfo{author}{Leon, A.S.}, \bibinfo{author}{Trejo, S.J.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{New evidence of generational progress for mexican
+  americans}.
+\newblock \bibinfo{journal}{Labour Economics} \bibinfo{volume}{62},
+  \bibinfo{pages}{101771}.
+%Type = Article
+\bibitem[{Duncan et~al.(2006)Duncan, Hotz and Trejo}]{duncan2006hispanics}
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Hotz, V.J.},
+  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Hispanics in the us labor market}.
+\newblock \bibinfo{journal}{Hispanics and the Future of America} ,
+  \bibinfo{pages}{228--290}.
+%Type = Article
+\bibitem[{Duncan and Trejo(2017)}]{duncan2017complexity}
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{The complexity of immigrant generations: Implications
+  for assessing the socioeconomic integration of hispanics and asians}.
+\newblock \bibinfo{journal}{ILR Review} \bibinfo{volume}{70},
+  \bibinfo{pages}{1146--1175}.
+%Type = Article
+\bibitem[{Duncan and Trejo(2018a)}]{duncan2018identifying}
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.},
+  \bibinfo{year}{2018}a.
+\newblock \bibinfo{title}{Identifying the later-generation descendants of us
+  immigrants: Issues arising from selective ethnic attrition}.
+\newblock \bibinfo{journal}{The ANNALS of the American Academy of Political and
+  Social Science} \bibinfo{volume}{677}, \bibinfo{pages}{131--138}.
+%Type = Techreport
+\bibitem[{Duncan and Trejo(2018b)}]{duncan2018socioeconomic}
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.},
+  \bibinfo{year}{2018}b.
+\newblock \bibinfo{title}{Socioeconomic integration of US immigrant groups over
+  the long term: the second generation and beyond}.
+\newblock \bibinfo{type}{Technical Report}. National Bureau of Economic
+  Research.
+%Type = Misc
+\bibitem[{Flood et~al.(2020)Flood, King, Rodgers, Ruggles and Warren}]{cps2019}
+\bibinfo{author}{Flood, S.}, \bibinfo{author}{King, M.},
+  \bibinfo{author}{Rodgers, R.}, \bibinfo{author}{Ruggles, S.},
+  \bibinfo{author}{Warren, J.R.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Integrated public use microdata series, current
+  population survey: Version 7.0 [dataset]}.
+\newblock \bibinfo{note}{Minneapolis, MN: IPUMS, 2020.
+  https://doi.org/10.18128/D030.V7.0}.
+%Type = Article
+\bibitem[{Fryer~Jr and Levitt(2004)}]{fryer2004causes}
+\bibinfo{author}{Fryer~Jr, R.G.}, \bibinfo{author}{Levitt, S.D.},
+  \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{The causes and consequences of distinctively black
+  names}.
+\newblock \bibinfo{journal}{The Quarterly Journal of Economics}
+  \bibinfo{volume}{119}, \bibinfo{pages}{767--805}.
+%Type = Article
+\bibitem[{Juhn et~al.(1991)Juhn, Murphy and Pierce}]{juhn1991accounting}
+\bibinfo{author}{Juhn, C.}, \bibinfo{author}{Murphy, K.M.},
+  \bibinfo{author}{Pierce, B.}, \bibinfo{year}{1991}.
+\newblock \bibinfo{title}{Accounting for the slowdown in black-white wage
+  convergence}.
+\newblock \bibinfo{journal}{Workers and their wages} \bibinfo{volume}{107},
+  \bibinfo{pages}{143}.
+%Type = Article
+\bibitem[{Rubinstein and Brenner(2014)}]{rubinstein2014pride}
+\bibinfo{author}{Rubinstein, Y.}, \bibinfo{author}{Brenner, D.},
+  \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Pride and prejudice: Using ethnic-sounding names and
+  inter-ethnic marriages to identify labour market discrimination}.
+\newblock \bibinfo{journal}{Review of Economic Studies} \bibinfo{volume}{81},
+  \bibinfo{pages}{389--425}.
+%Type = Misc
+\bibitem[{Ruggles et~al.(2020)Ruggles, Flood, Goeken, Pacas, Schouweiler and
+  Sobek}]{acs2019}
+\bibinfo{author}{Ruggles, S.}, \bibinfo{author}{Flood, S.},
+  \bibinfo{author}{Goeken, R.}, \bibinfo{author}{Pacas, J.},
+  \bibinfo{author}{Schouweiler, M.}, \bibinfo{author}{Sobek, M.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Integrated public use microdata series, american
+  community survey: Version 11.0 [dataset]}.
+\newblock \bibinfo{note}{Minneapolis, MN: IPUMS, 2020.
+  https://doi.org/10.18128/D010.V11.0}.
+
+\end{thebibliography}
