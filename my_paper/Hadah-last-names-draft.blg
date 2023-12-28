@@ -1,0 +1,94 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Hadah-last-names-draft.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Hadah-last-names-draft-blx.bib
+Database file #2: bib/bibliography.bib
+Repeated entry---line 2571 of file bib/bibliography.bib
+ : @article{averettBetterWorseRelationship2008
+ :                                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2589 of file bib/bibliography.bib
+ : @article{averettEconomicRealityBeauty1996
+ :                                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2617 of file bib/bibliography.bib
+ : @article{beckerTheoryMarriagePart1973
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2634 of file bib/bibliography.bib
+ : @article{beckerTheoryMarriagePart1974
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2650 of file bib/bibliography.bib
+ : @book{beckerTreatiseFamily1993
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2713 of file bib/bibliography.bib
+ : @article{browningCollectiveUnitaryModels2006
+ :                                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2833 of file bib/bibliography.bib
+ : @article{chiapporiFatterAttractionAnthropometric2012
+ :                                                     ,
+I'm skipping whatever remains of this entry
+Biblatex version: 3.16
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 35 entries,
+            6393 wiz_defined-function locations,
+            1500 strings with 34491 characters,
+and the built_in function-call counts, 266581 in all, are:
+= -- 19337
+> -- 5354
+< -- 1796
++ -- 6325
+- -- 2003
+* -- 20676
+:= -- 26814
+add.period$ -- 0
+call.type$ -- 35
+change.case$ -- 1111
+chr.to.int$ -- 116
+cite$ -- 68
+duplicate$ -- 26283
+empty$ -- 23623
+format.name$ -- 2781
+if$ -- 56037
+int.to.chr$ -- 0
+int.to.str$ -- 112
+missing$ -- 0
+newline$ -- 1482
+num.names$ -- 2234
+pop$ -- 13461
+preamble$ -- 1
+purify$ -- 1338
+quote$ -- 0
+skip$ -- 7273
+stack$ -- 0
+substring$ -- 33917
+swap$ -- 7180
+text.length$ -- 1144
+text.prefix$ -- 34
+top$ -- 1
+type$ -- 1173
+warning$ -- 0
+while$ -- 3424
+width$ -- 0
+write$ -- 1448
+(There were 7 error messages)
