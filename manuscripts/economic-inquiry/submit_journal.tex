@@ -6,21 +6,20 @@
 
 \begin{document}
 
-% SUBMISSION COVER
+SUBMISSION COVER
 \thispagestyle{empty}
 \begingroup
   \doublespacing
   \centering
-  \LARGE PAPER SUBMISSION TEMPLATE \\[0.25em]
-  \LARGE ECONOMIC INQUIRY \\[0.25em]
+  \LARGE Submision to the \\[0.25em]
+  \LARGE Economic Inquiry\\[0.25em]
   % \LARGE ACCEPTED MANUSCRIPT: MS2020XXX \\[1.0em]
 \endgroup
-This document and the associated contents in the zip-folder include the accepted version of manuscript:MS2020XXX for the Journal of ABC. We include:
+I am including in this document:
 \begin{enumerate}
-    \item A README.md file documenting folders and files in the zip folder.
     \item Title page information
     \begin{itemize}
-        \item Title and Authors
+        \item Title and Author
         \item Abstract
         \item Keywords
         \item Acknowledgment
@@ -32,7 +31,7 @@ This document and the associated contents in the zip-folder include the accepted
         \item Main manuscript figures
         \item Main manuscript tables
     \end{itemize}    
-    \item The online appendix, which is separately paged. It includes an online appendix title page, appendix A, appendix B, and references for citations in the appendix.
+    \item The online appendix, which is separately paged.
 \end{enumerate}
 \clearpage
 
@@ -45,13 +44,13 @@ This document and the associated contents in the zip-folder include the accepted
 \setcounter{page}{1}
 
 % Part I.a.1 Title
-\section*{TITLE AND AUTHORS}
-\subsection*{TITLE}
+\section*{Title and Author}
+\subsection*{Title}
 \begin{itemize}[label={}, leftmargin=*]
     \item Title: \textbf{\PAPERTITLE}
 \end{itemize}
 % Part I.a.2 Author info
-\subsection*{AUTHORS}
+\subsection*{Author}
 \begin{itemize}[label={}, leftmargin=*]
     \item List of authors:
     \begin{enumerate}
@@ -65,20 +64,21 @@ This document and the associated contents in the zip-folder include the accepted
 \clearpage 
 
 % Part I.b Abstract
+
 \doublespacing
-\section*{ABSTRACT}
+\section*{Abstract}
 \PAPERABSTRACT
 \clearpage 
 
 % Part I.c Keywords
 \doublespacing
-\section*{KEYWORDS}
+\section*{Keywords}
 \PAPERKEYWORDS
 \clearpage 
 
 % Part IV.d Acknowledgements
 \doublespacing
-\section*{ACKNOWLEDGMENT}
+\section*{Acknowledgment}
 \ACKNOWLEDGMENTS
 \clearpage 
 
@@ -90,7 +90,7 @@ This document and the associated contents in the zip-folder include the accepted
 \renewcommand*{\thefootnote}{\arabic{footnote}}
 \begingroup
   \centering
-  \Large MANUSCRIPT TEXT\\[1em]
+  \Large Manuscript Text\\[1em]
 \endgroup
 % Manuscript main text
 \input{manuscript_main}
@@ -98,6 +98,7 @@ This document and the associated contents in the zip-folder include the accepted
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Part III. Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \begingroup
 \setstretch{1.0}
 \setlength\bibitemsep{5.0pt}
@@ -122,19 +123,19 @@ This document and the associated contents in the zip-folder include the accepted
 
 % Title Page for Appendix
 % special footnote symbols
-% \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-% \begingroup
-% \doublespacing
-% \centering
-% \Large ONLINE APPENDIX \\[1.5em]
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\begingroup
+\doublespacing
+\centering
+\Large Online Appendix \\[1.5em]
 % \LARGE \PAPERTITLE \\[0.75em]
 % \large
 % \AUTHORHADAH\footnote[1]{\AUTHORHADAHINFO}\\[1.0em]
-% \endgroup
-% \clearpage
+\endgroup
+\clearpage
 
-% % Online appendix
-% \input{manuscript_online_appendix}
+% Online appendix
+\input{manuscript_online_appendix}
 
 % Appendix Bibliography
 \begingroup
