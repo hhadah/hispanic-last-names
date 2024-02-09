@@ -23,7 +23,7 @@ global raw_data 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hisp
 Open dataset
 */
 cd "$wd";
-use "$raw_data/usa_00053.dta";
+use "$raw_data/usa_00054.dta";
 
 /*
 keep 1980 census
@@ -934,6 +934,37 @@ gen Fertility =.;
 
 replace Fertility =chborn_mom if chborn_mom >= 1;
 replace Fertility =. if chborn_mom >= 14;
+
+/*
+********************************************************************************
+* spanname: create spanish last name variable
+********************************************************************************
+*/
+
+gen SpanishLastName = .;
+replace SpanishLastName = 1 if spanname == 2 & year == 1980;
+replace SpanishLastName = 0 if spanname == 1 & year == 1980;
+
+/*
+********************************************************************************
+* First, Second, Third Generation Variables
+********************************************************************************
+
+gen 		SpanishBP 				= .;
+replace 	SpanishBP				= 1			if bpl 		 > 99;
+replace 	SpanishBP				= 0			if bpl 		<= 99;
+
+gen FirstGen = 0;
+gen SecondGen = 0;
+gen ThirdGen = 0;
+
+replace FirstGen = 1 if SpanishBP== 1;
+
+replace SecondGen = 1 if WM== 1 | MW == 1;
+
+replace ThirdGen = 1 if Hispanic_Wife == 1 | Hispanic_Husband == 1;
+
+*/
 
 /*
 ********************************************************************************
