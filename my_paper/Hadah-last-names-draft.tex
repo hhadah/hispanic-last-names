@@ -64,7 +64,7 @@ I use the CPS data set to study the effect of having a Hispanic last name on a p
 
 \subsection{Children of the four parental types}
 
-I use the CPS for my primary analysis of the effect of having a Hispanic last name on earnings. I restrict my sample to Whites, United States-born citizens aged 25 to 40 and born between 1960 to 2000. Taking advantage of data on parents' place of birth, I divide the sample into four groups depending on their parent's ethnicity. Mothers or fathers are Hispanic if they were born in a Spanish-speaking country and Puerto Rico, and White if they were born in the United States.\footnote{The list of Spanish Speaking countries include: Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador, El Salvador, Guatemala, Equatorial Guinea, Honduras, Mexico, Nicaragua, Panama, Paraguay, Peru, Spain, Uruguay, Venezuela.} Therefore, an observation can be the product of four types of parents: 
+I use the CPS for my primary analysis of the effect of having a Hispanic last name on earnings. I restrict my sample to people that racially identified as White, United States-born citizens aged 25 to 40 and born between 1960 to 2000. Taking advantage of data on parents' place of birth, I divide the sample into four groups depending on their parent's ethnicity. Mothers or fathers are Hispanic if they were born in a Spanish-speaking country and Puerto Rico, and White if they were born in the United States.\footnote{The list of Spanish Speaking countries include: Argentina, Bolivia, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador, El Salvador, Guatemala, Equatorial Guinea, Honduras, Mexico, Nicaragua, Panama, Paraguay, Peru, Spain, Uruguay, Venezuela.} Therefore, an observation can be the product of four types of parents: 
 \begin{enumerate}
 \item White father and White mother (hereafter WW) 
 \item White father and Hispanic mother (hereafter WH)
@@ -74,22 +74,6 @@ I use the CPS for my primary analysis of the effect of having a Hispanic last na
 
 The distribution of the four types of children is presented Table \ref{tab:mat1}. The majority of the sample (96\%) is WW children. The second biggest group is HH, which constitutes 3\% of the sample. Inter-ethnic children, WH and HW, make up 1.35\% of the sample with 90,325 observations. Even though WH and HW are only 1.35\% of the sample, I have plenty of observations to carry out an analysis. The summary statistics for the children of the four types of marriages are presented in Table \ref{tab:c&p1}. Children of WW marriages (column 1) do better on every measure while children of HH parents (column 4) do worse than other children on every measure. Children of WH (column 2) and HW (column 3) marriages fall in between WW and HH children. Moreover, the summary statistics for those that also identify as Hispanic is reported in in Table \ref{tab:c&p2}.
 
-% On the one hand, WW children are more educated, with approximately 14 years of education for men and women. WW children have an unemployment rate of 4\% for men and women. They have log hourly earnings of 2.51 for men and 2.32 for women. Also, their annual log earnings are 10.29 for men and 9.43 for women.
-
-% On the other hand, children of HH marriages have an average of 12.9 and 13.24 years of education for men and women, respectively. HH men and women have an unemployment rate of 7\% and 6\%. Their annual log earnings are 10.01 and 9.53 for men and women, respectively. 
-
-% Inter-ethnic children, WH and HW, have lower educational attainment and income than WW children, but they are better than HH children. Also, WH and HW are comparable, unlike WW and HH children. These two groups are important to the analysis. Children of HW are going to be the treatment group. HW children have a Hispanic father with a Hispanic last names. At the same time, the WH children have White fathers with a non-Hispanic, or White, last names. Summary statistics of these two groups, Table \ref{tab:c&p1} columns (2) and (3) can show that they are different from the children of non-inter-ethnic marriages. 
-
-
-% WH children have an average of 13.58 and 13.79 years of education for men and women. The unemployment rate for men and women is 5\%. HW men and women obtained 13.22 and 13.42 years of schooling. Men's unemployment rate is 7\% and women's 6\%.
-
-% In panel C of Table \ref{tab:c&p1}, I present the rates at which members of each group self-identify as Hispanic. \footnote{Hispanic self-identification is observed when an individual notes that they are Hispanic on the CPS questionnaire} The vast majority of HH children, 96\% for men and 97\% for women, identify as Hispanic. There is considerable attrition in Hispanic identification of inter-ethnic children. Among WH children, 74\% of men and 78\% of women identify as Hispanic. Among HW children, 83\% of men and 82\% of women identify as Hispanic. These results align with the findings of a substantial body of literature that noted this attrition among children of immigrants, especially those coming from inter-ethnic marriages \autocite{duncan2017complexity, duncan2018identifying, duncan2020new, antman2020ethnic}. Finally, a small portion of WW children, 4\% of men and 5\% of women, identified as Hispanic. These 5\% of WW children are most likely third generation--- or higher--- children of immigrants. For my analysis, I dropped the WW observations who identify as Hispanic when I compare with non-Hispanic Whites.
-
-% In columns (5) and (6), I calculate the differences in means between HH-WW (column 5) and HW-WH (column 6). Overall, HH children do worse than WW children. HH has one year less of education compared to WW, and are 2 percentage points more likely to be unemployed. HH men earn 9\% less than WW men, and HH women make 2\% less than WW women. Therefore, these two groups, HH and WW, are different on many observable qualities.
-
-% The differentials between WH and HW are not as severe as the ones between HH and WW. HW children are still worse off than WH but are much better than HH. HW men attain 0.36 fewer years of education than WH men. HW women achieve 0.37 fewer years of schooling than WH women. HW children are 1 percentage points more likely to be unemployed. HW men earn 1\% less annual earnings as WH men, and HW women earn 3\% less. These differences show that HW and WH children are different from children of endogamous/homogamous marriages and, thus, are more comparable.
-
-% In Table \ref{tab:c&p2}, I present the summary statistics for the four types and limit the sample to those that only identify as Hispanic.\footnote{Limiting the sample to those who identify as Hispanic only affects WH, HW, and HH. Members of the WW group are not affected by this restriction.} The same pattern discussed above between HH--WW and HW--WH persists. The one difference is that those who identify as Hispanic do slightly worse.
  
 \subsection{Synthetic parents}
 
@@ -110,7 +94,7 @@ In this section I restrict the sample to WH and HW groups. Let $Y_{ist}$ be the 
 Y_{ist} = \beta_{1} HW_{ist} + X_{ist} \pi + \gamma_{t} + \lambda_s + \phi_{ist}
 \end{equation}
 
-$\beta_{1}$ is the coefficient of interest in this specification. $\beta_{1}$ represents the earnings gaps between children of inter-ethnic marriages who have a Spanish-sounding last name versus a White last name. 
+$\beta_{1}$ is the coefficient of interest in this specification. $\beta_{1}$ represents the earnings gaps between children of inter-ethnic marriages who have a Spanish-sounding last name versus a White last name.
 
 \subsection{Estimating the effect of identifying as Hispanic}
 
@@ -131,6 +115,9 @@ Two primary reasons underscore that this assumption. First, there is a significa
 The previous two threats to identification could be addressed by the selection of partners among inter-ethnic couples. The average White person exhibits better observable characteristics than the Average Hispanic. Consequently, if marriages were random, the White husband in an WH marriage would have better traits than wife, and the White wife in the HW marriage would have the stronger traits. The random matching coupled with the fact that parents are not perfect substitutes in the inter-generational transmission of human capital would render the identification invalid since the parental background will affect labor market outcomes. 
 
 Marriages, however, are not random. There is large body of empirical and theoretical work that indicates that marriages exhibits strong selection, or what is referred to as assortative matching, on traits \autocite{averettBetterWorseRelationship2008, averettEconomicRealityBeauty1996, beckerTheoryMarriagePart1973, beckerTheoryMarriagePart1974, beckerTreatiseFamily1993, browningCollectiveUnitaryModels2006, chiapporiFatterAttractionAnthropometric2012}. Also, \textcite{duncanIntermarriageIntergenerationalTransmission2011} shows a similar pattern of assortative matching among Mexicans in the United States. These papers suggest that inter-ethnic WH and HW marriages will, on average, consist of partners sharing similar characteristics. Consequently, the literature would predict that both WH and HW parents will be similar in all aspects that are relevant to a child's labor market outcomes. I will go over the empirical evidence from the data to show that this is actually the case.
+
+Another threat to identification could arise from measurement error in using the place of birth of parents in the CPS data as a proxy for a parent's ethnicity and last name. The CPS only asks about the place of birth of parents and not their ethnic or racial identity. Therefore, it is possible that a native-born father could be a second-generation or later immigrant from a Spanish-speaking country. However, this scenario is highly improbable. Most Hispanics from 1960 to 2000 were first-generation immigrants, and the number of second-generation or later was very small. This is supported by data from the 1960 to 2000 censuses (see Table \ref{tab:mat3}). Only 3\% of native-born Americans identified as Hispanic, indicating the small number of second-generation or later Hispanic immigrants in the sample. Therefore, the probability that an inter-ethnic child with a native-born father that is also a second generation+ Hispanic immigrant is very small.
+
 
 \section{From the Data: The Differences Between HW and WH Couples}\label{sec:hw-wh-couples-data}
 
@@ -212,6 +199,7 @@ While the earnings gap between children of inter-ethnic parents with and without
 
 \input{tables/tab01-observations-by-parents}
 
+
 \newpage
 
 \input{tables/tab03b-summary-stats}
@@ -224,9 +212,14 @@ While the earnings gap between children of inter-ethnic parents with and without
 
 \input{tables/tab02-observations-by-couple}
 
+
 \newpage
 
 \input{tables/tab03a-summary-stats}
+
+\newpage
+
+\input{tables/tab11-measurement-error}
 
 \newpage
 
