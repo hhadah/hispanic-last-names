@@ -1,0 +1,26 @@
+Referee report on “The Impact of Hispanic Last Names and Identity on Labor Market Outcomes”
+
+The paper investigates the influence of Hispanic last names on labor market outcomes, focusing on wage disparities among inter-ethnic children with one White and one Hispanic parent. The author employs data from the Integrated Public Use Microdata Series (IPUMS) and the Current Population Survey (CPS) to conduct the analysis. 
+
+The study compares two groups: White Father and Hispanic Mother (WH), and Hispanic Father and White Mother (HW). Both groups display remarkably similar characteristics. Fathers in WH households have an average of 11.82 years of education, while mothers have 10.71 years, resulting in a total household education of 22.68 years. In HW households, fathers have an average of 10.33 years of education, and mothers have 11.01 years, totaling 21.50 years of education. The log total family income for WH families is 10.65, slightly higher than the 10.60 for HW families. Fathers' log hourly earnings are 1.76 for WH and 1.72 for HW, while mothers' log hourly earnings are 1.73 for WH and 1.75 for HW. Fertility rates are also similar, with WH families having an average of 4.05 children compared to 4.28 children in HW families. These similarities indicate that both groups share comparable educational and economic profiles.  The main difference that the authors want to exploit in the paper is that only children born in a HM family have a Hispanic surname.
+
+The two main results are:
+
+First, individuals with Hispanic last names experience a notable wage gap compared to those with White last names. Specifically, males born to Hispanic fathers and White mothers (HW) earn 5 percentage points less than those born to White fathers and Hispanic mothers (WH).
+
+Second,  more than half of the earnings gaps could be explained by educational differences. When they control for education, the last name effect decreases to a statistically insignificant 1 percentage points earnings gap.
+
+Main Concern
+
+The primary findings suggest that individuals with Hispanic surnames earn less than those with white surnames, with the disparity largely attributable to educational differences.
+
+On the one hand, the result showing a higher job performance of a person with a Hispanic surname (earning 5 percentage points less than a person with a white surname) is very clean and interesting. But, on the other hand, this effect is reduced when controlling for educational attainment until it becomes statistically insignificant. In other words, the results seem to indicate that discrimination does not take place in the labour market but earlier in the educational period. 
+
+It is this last result that raises my doubts about the paper. There is ample literature explaining the channels through which discrimination in the labour market occurs. But how does discrimination occur in the educational system; in what sense can the order of surnames affect the educational performance of children?
+
+
+This result moves the paper from the field of the labour market to that of the education system. Therefore, the authors should pay much more attention to the academic literature on discrimination in the education system. At the same time, they should provide empirical evidence on educational performance according to ethnicity and, if possible, pay attention to inter-ethnic children.
+
+
+
+
