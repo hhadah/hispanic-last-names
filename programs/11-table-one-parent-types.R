@@ -56,7 +56,8 @@ first_col <- c(" ",
                       "\\\\",
                 "Share",
                       "}"
-))
+                      )
+                      )
 
 second_col <- c("\\specialcell{White Father \\\\ White Mother}",
                paste0("\\specialcell{", 

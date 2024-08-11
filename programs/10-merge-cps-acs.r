@@ -84,6 +84,7 @@ CPS  <- read_dta(file.path(datasets,"BySexAnalysisData.dta"))|>
 
 CrossTable(CPS$Type)
 summary(CPS$age)
+CrossTable(CPS$year)
 
 # merge the two datasets
 # by year of birth

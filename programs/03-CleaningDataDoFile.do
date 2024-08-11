@@ -16,14 +16,14 @@ clear all
 #delimit;
 
 global wd 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets/";
-global raw_data 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/raw/";
+global raw_data 	"/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/raw";
 
 
 /*
 Open dataset
 */
 cd "$wd";
-use "$raw_data/usa_00053.dta";
+use "$raw_data/usa_00054.dta";
 
 /*
 keep 1980 census

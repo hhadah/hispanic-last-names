@@ -1,22 +1,22 @@
 \begin{table}[!h]
-
+\centering\centering
 \caption{Hsiapnic–White Earnings Gap Using Hispanic Variable Only \label{tab:hispwhitegap}}
 \centering
-\resizebox{\linewidth}{!}{
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
 \begin{threeparttable}
 \begin{tabular}[t]{lcc}
 \toprule
   & \specialcell{(1) \\ Log annual earnings} & \specialcell{(2) \\  Log annual earnings}\\
 \midrule
 $Hispanic_{i}$ & \num{-0.22}*** & \num{-0.11}***\\
- & (\num{0.02}) & (\num{0.01})\\
+ & (\num{0.02}) & (\num{0.02})\\
 \midrule
-Observations & \num{137977} & \num{137977}\\
+Observations & \num{219090} & \num{219090}\\
 \textit{Controlling for:} &  & \\
 Hours Worked & X & X\\
 Year FE & X & X\\
 State FE & X & X\\
-Age & X & X\\
+State-Year FE & X & X\\
 Education &  & X\\
 \bottomrule
 \multicolumn{3}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\

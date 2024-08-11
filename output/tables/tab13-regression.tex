@@ -1,0 +1,37 @@
+\begin{table}[H]
+\centering\centering
+\caption{Effect of Having Hispanic Last Name \label{tab:lastname-ed-reg}}
+\centering
+\begin{threeparttable}
+\begin{tabular}[t]{lcccc}
+\toprule
+  & \specialcell{(1) \\ Years of \\ Education} & \specialcell{(2) \\ Highschool \\ Dropout} & \specialcell{(3) \\ Associate Degree} & \specialcell{(4) \\ Bachelor Degree}\\
+\midrule
+\addlinespace[0.5em]
+\multicolumn{5}{l}{\textit{Panel A: Full Sample}}\\
+\midrule \hspace{1em}$HW_{ist}$ & -0.20*** & 0.01 & -0.02*** & -0.03***\\
+\hspace{1em} & (0.05) & (0.01) & (0.01) & (0.01)\\
+\hspace{1em}Observations & 88377 & 90027 & 66927 & 90027\\
+\addlinespace[0.5em]
+\multicolumn{5}{l}{\textit{Panel B: Women}}\\
+\midrule \hspace{1em}$HW_{ist}$ & -0.25*** & 0.02 & -0.03*** & -0.04***\\
+\hspace{1em} & (0.06) & (0.01) & (0.01) & (0.01)\\
+\hspace{1em}Observations & 46516 & 47302 & 34334 & 47302\\
+\addlinespace[0.5em]
+\multicolumn{5}{l}{\textit{Panel C: Men}}\\
+\midrule \hspace{1em}$HW_{ist}$ & -0.16** & 0.00 & -0.02** & -0.02\\
+\hspace{1em} & (0.07) & (0.01) & (0.01) & (0.01)\\
+\hspace{1em}Full Sample's Mean & 13.48 & 0.43 & 0.15 & 0.26\\
+\hspace{1em}Observations & 41861 & 42725 & 32593 & 42725\\
+Women's Mean & 13.58 & 0.44 & 0.16 & 0.27\\
+Men's Mean & 13.38 & 0.43 & 0.14 & 0.24\\
+\bottomrule
+\multicolumn{5}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}
+\item[1] {\setstretch{1.0}\footnotesize{This table includes the estimation results of equation (\ref{eq:1a}). All regressions include state-year fixed effects.}}
+\item[2] {\setstretch{1.0}\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}
+\item[3] {\setstretch{1.0}\footnotesize{Standard errors are clustered on the state level.}}
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

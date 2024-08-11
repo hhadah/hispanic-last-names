@@ -35,13 +35,13 @@ reg1 <- list(
   "\\specialcell{(1) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ HW, vcov = ~statefip,
                                                             data = IndividualData |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age | year*statefip, vcov = ~statefip,
                                                             data = IndividualData |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls]  + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
@@ -51,21 +51,29 @@ reg1 <- list(
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
 dim(controling_for) <- c(1,5)
 
-parentalback <-  c("Parental Background", " ", " "," ", "X")
+age_cont <-  c("Age", " ", "X","X", "X")
+educ_cont <-  c("Education", " ", " ","X", "X")
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
 
+parentalback <-  c("Parental Background", " ", " "," ", "X")
 dim(parentalback) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
+age_cont <- as.data.frame(age_cont)
+educ_cont <- as.data.frame(educ_cont)
 parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
+  age_cont,
+  educ_cont,
   parentalback)
 
 attr(all_row, 'position') <- c(#7:8, 
-                              5, 10)
+                              5, 9:11)
 
 cm <- c("WH"          = "$WH_{ist}$",
         "HW"          = "$HW_{ist}$",
@@ -76,8 +84,9 @@ gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age FE", 0,
-  "FE: educ", "Education FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
   "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
@@ -112,7 +121,7 @@ regression_tab <- modelsummary(reg1, fmt = 2,
                                escape = F,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
-             title = "Effect of Having Hispanic Last Name \\label{tab:lastnamereg-weekearm}") %>%
+             title = "Effect of Having Hispanic Last Name (Log Weekly Earnings) \\label{tab:lastnamereg-weekearm}") %>%
   kable_styling(
                 latex_options = c("HOLD_position")
   ) %>%
@@ -134,6 +143,11 @@ regression_tab %>%
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab07-regression-weekearn.tex"))
 
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab07-regression-weekearn.tex"))
+
+
+
 #------------------------------------------------------------
 #------------------------------------------------------------
 # Mexican Hispanics
@@ -148,13 +162,13 @@ reg1 <- list(
   "\\specialcell{(1) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ HW, vcov = ~statefip,
                                                             data = Mexicans_USA |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age  | year*statefip, vcov = ~statefip,
                                                             data = Mexicans_USA |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = Mexicans_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = Mexicans_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
@@ -163,21 +177,29 @@ reg1 <- list(
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
 dim(controling_for) <- c(1,5)
 
-parentalback <-  c("Parental Background", " ", " "," ", "X")
+age_cont <-  c("Age", " ", "X","X", "X")
+educ_cont <-  c("Education", " ", " ","X", "X")
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
 
+parentalback <-  c("Parental Background", " ", " "," ", "X")
 dim(parentalback) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
+age_cont <- as.data.frame(age_cont)
+educ_cont <- as.data.frame(educ_cont)
 parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
+  age_cont,
+  educ_cont,
   parentalback)
 
 attr(all_row, 'position') <- c(#7:8, 
-                              5, 10)
+                              5, 9:11)
 
 cm <- c("WH"          = "$WH_{ist}$",
         "HW"          = "$HW_{ist}$",
@@ -188,8 +210,9 @@ gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age FE", 0,
-  "FE: educ", "Education FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
   "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
@@ -246,6 +269,9 @@ regression_tab %>%
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab08-regression-weekearn-mex.tex"))
 
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab08-regression-weekearn-mex.tex"))
+
 #------------------------------------------------------------
 #------------------------------------------------------------
 # Non-Mexican Hispanics and US Whites
@@ -261,13 +287,13 @@ reg1 <- list(
   "\\specialcell{(1) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ HW, vcov = ~statefip,
                                                             data = NonMexican_USA |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age  | year*statefip, vcov = ~statefip,
                                                             data = NonMexican_USA |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = NonMexican_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = NonMexican_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
@@ -277,21 +303,29 @@ reg1 <- list(
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
 dim(controling_for) <- c(1,5)
 
-parentalback <-  c("Parental Background", " ", " "," ", "X")
+age_cont <-  c("Age", " ", "X","X", "X")
+educ_cont <-  c("Education", " ", " ","X", "X")
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
 
+parentalback <-  c("Parental Background", " ", " "," ", "X")
 dim(parentalback) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
+age_cont <- as.data.frame(age_cont)
+educ_cont <- as.data.frame(educ_cont)
 parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
+  age_cont,
+  educ_cont,
   parentalback)
 
 attr(all_row, 'position') <- c(#7:8, 
-                              5, 10)
+                              5, 9:11)
 
 cm <- c("WH"          = "$WH_{ist}$",
         "HW"          = "$HW_{ist}$",
@@ -302,8 +336,9 @@ gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age FE", 0,
-  "FE: educ", "Education FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
   "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
@@ -360,6 +395,9 @@ regression_tab %>%
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab09-regression-weekearn-nonmex.tex"))
 
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab09-regression-weekearn-nonmex.tex"))
+
 #------------------------------------------------------------
 #------------------------------------------------------------
 # Cuban Hispanics
@@ -378,13 +416,13 @@ reg1 <- list(
   "\\specialcell{(1) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ HW, vcov = ~statefip,
                                                             data = Cuban_USA |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+  "\\specialcell{(2) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age  | year*statefip, vcov = ~statefip,
                                                             data = Cuban_USA |> 
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = Cuban_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = Cuban_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
@@ -393,21 +431,29 @@ reg1 <- list(
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
 dim(controling_for) <- c(1,5)
 
-parentalback <-  c("Parental Background", " ", " "," ", "X")
+age_cont <-  c("Age", " ", "X","X", "X")
+educ_cont <-  c("Education", " ", " ","X", "X")
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
 
+parentalback <-  c("Parental Background", " ", " "," ", "X")
 dim(parentalback) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
+age_cont <- as.data.frame(age_cont)
+educ_cont <- as.data.frame(educ_cont)
 parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
+  age_cont,
+  educ_cont,
   parentalback)
 
 attr(all_row, 'position') <- c(#7:8, 
-                              5, 10)
+                              5, 9:11)
 
 cm <- c("WH"          = "$WH_{ist}$",
         "HW"          = "$HW_{ist}$",
@@ -418,8 +464,9 @@ gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age FE", 0,
-  "FE: educ", "Education FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
   "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
@@ -475,4 +522,6 @@ regression_tab %>%
 
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab10-regression-weekearn-cuba.tex"))
-  
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab10-regression-weekearn-cuba.tex"))

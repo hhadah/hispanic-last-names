@@ -1,6 +1,6 @@
 \begin{table}[H]
 \centering\centering
-\caption{Effect of Having Hispanic Last Name (Log Annual Earnings) \label{tab:lastnamereg}}
+\caption{Effect of Having Hispanic Last Name \label{tab:lastnamereg}}
 \centering
 \begin{threeparttable}
 \begin{tabular}[t]{lccccc}
@@ -15,10 +15,10 @@ Constant & \num{10.42}*** & \num{9.46}*** &  &  & \\
 \textit{Controlling for:} &  &  &  &  & \\
 Hours Worked &  & X & X & X & X\\
 Age &  &  & X & X & X\\
-State FE &  &  & X & X & X\\
-Year FE &  &  & X & X & X\\
-State-Year FE &  &  & X & X & X\\
 Education &  &  &  & X & X\\
+NA & NA & NA & NA & NA & \vphantom{2} NA\\
+NA & NA & NA & NA & NA & \vphantom{1} NA\\
+NA & NA & NA & NA & NA & NA\\
 Parental Background &  &  &  &  & X\\
 Observations & \num{3621} & \num{3621} & \num{3621} & \num{3621} & \num{3621}\\
 \bottomrule
@@ -27,9 +27,7 @@ Observations & \num{3621} & \num{3621} & \num{3621} & \num{3621} & \num{3621}\\
 \begin{tablenotes}
 \item[1] {\setstretch{1.0}\footnotesize{This table includes the estimation results of equation (\ref{eq:1a}).}}
 \item[2] {\setstretch{1.0}\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}
-\item[3] {\setstretch{1.0}\footnotesize{The sample is restricted to men working full-time full-year and are wage and salary workers.}}
-\item[4] {\setstretch{1.0}\footnotesize{Column one has the regression results when controlling for hours worked, age, education, year and state fixed effects. Column two has the results after controlling for education.}}
-\item[5] {\setstretch{1.0}\footnotesize{Standard errors are clustered on the state level.}}
+\item[3] {\setstretch{1.0}\footnotesize{Standard errors are clustered on the state level.}}
 \end{tablenotes}
 \end{threeparttable}
 \end{table}

@@ -11,7 +11,7 @@ clear
 cls
 ********************************************************************************
 * Global directories
-global wd "C:\\Users\\hussa\\Dropbox\\Research\\My Research Data and Ideas\\hispanic-last-names\\data\\datasets"
+global wd "/Users/hhadah/Library/CloudStorage/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets"
 * set working dirrectory
 cd 		  "$wd"
 

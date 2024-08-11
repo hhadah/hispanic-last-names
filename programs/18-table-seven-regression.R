@@ -10,10 +10,10 @@ IndividualData <- read_dta(file.path(datasets,"BySexAnalysisData.dta")) |>
 
 # By generation
 reg1 <- list(
-  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly | year + age+ statefip, vcov = ~statefip,
+  "\\specialcell{(1) \\\\ Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly + age | year*statefip, vcov = ~statefip,
                                                         data = IndividualData |> 
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0)),
-  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly | year + age + educ+ statefip, vcov = ~statefip,
+  "\\specialcell{(2) \\\\  Log annual earnings}" = feols(lninctot_1999 ~ Hispanic_ID+  uhrsworkly + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0))
   
@@ -24,12 +24,16 @@ controling_for <-  c("\\textit{Controlling for:}", " ", "")
 dim(controling_for) <- c(1,3)
 
 hoursworked <-  c("Hours Worked", "X", "X")
+educ_cont   <-  c("Education", "", "X")
+
 dim(hoursworked) <- c(1,3)
+dim(educ_cont) <- c(1,3)
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
+educ_cont <- as.data.frame(educ_cont)
 
-all_row <- rbind(controling_for, hoursworked)
+all_row <- rbind(controling_for, hoursworked, educ_cont)
 attr(all_row, 'position') <- c(4:5)
 
 cm <- c("Hispanic_ID" = "$Hispanic_{i}$"
@@ -39,8 +43,9 @@ gm <- tibble::tribble(
   "nobs",      "Observations",             0,
   "FE: year", "Year FE", 0,
   "FE: statefip", "State FE", 0,
-  "FE: age", "Age", 0,
-  "FE: educ", "Education", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age", 0,
+  # "FE: educ", "Education", 0,
   "std.error.type", "Standard Errors", 0,
   #"r.squared", "R squared", 3
 )
@@ -89,9 +94,11 @@ regression_tab <- modelsummary(reg1, fmt = 2,
 
 regression_tab %>%
   save_kable(file.path(tables_wd,"tab07-regression.tex"))
-
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab07-regression.tex"))
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab07-regression.tex"))
+
 
 # dissertation table
 regression_tab <- modelsummary(reg1, fmt = 2,

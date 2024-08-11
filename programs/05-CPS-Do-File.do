@@ -17,129 +17,131 @@ quietly infix                       ///
   double  cpsid            22-35    ///
   byte    asecflag         36-36    ///
   byte    hflag            37-37    ///
-  double  asecwth          38-47    ///
-  double  asecwth04        48-55    ///
-  double  cpi99            56-59    ///
-  byte    region           60-61    ///
-  byte    statefip         62-63    ///
-  long    county           64-68    ///
-  byte    statecensus      69-70    ///
-  long    metfips          71-75    ///
-  byte    individcc        76-76    ///
-  double  hhincome         77-84    ///
-  int     faminc           85-87    ///
-  byte    pernum           88-89    ///
-  double  wtfinl           90-103   ///
-  double  cpsidp           104-117  ///
-  double  asecwt           118-127  ///
-  byte    age              128-129  ///
-  byte    sex              130-130  ///
-  int     race             131-133  ///
-  byte    marst            134-134  ///
-  byte    nchild           135-135  ///
-  long    bpl              136-140  ///
-  int     yrimmig          141-144  ///
-  byte    citizen          145-145  ///
-  long    mbpl             146-150  ///
-  long    fbpl             151-155  ///
-  byte    nativity         156-156  ///
-  int     hispan           157-159  ///
-  byte    empstat          160-161  ///
-  byte    labforce         162-162  ///
-  int     occ              163-166  ///
-  int     ind1990          167-169  ///
-  int     ind1950          170-172  ///
-  byte    classwkr         173-174  ///
-  int     uhrsworkt        175-177  ///
-  int     ahrsworkt        178-180  ///
-  byte    wkstat           181-182  ///
-  int     educ             183-185  ///
-  double  asecwt04         186-193  ///
-  double  earnwt           194-203  ///
-  int     occly            204-207  ///
-  int     indly            208-211  ///
-  byte    classwly         212-213  ///
-  byte    workly           214-215  ///
-  byte    wkswork1         216-217  ///
-  byte    wkswork2         218-218  ///
-  int     uhrsworkly       219-221  ///
-  byte    fullpart         222-222  ///
-  double  ftotval          223-232  ///
-  double  inctot           233-241  ///
-  double  incwage          242-249  ///
-  double  hourwage         250-254  ///
-  byte    paidhour         255-255  ///
-  double  earnweek         256-263  ///
-  int     uhrsworkorg      264-266  ///
-  byte    age_head         267-268  ///
-  byte    age_sp           269-270  ///
-  byte    sex_head         271-271  ///
-  byte    sex_sp           272-272  ///
-  int     race_head        273-275  ///
-  int     race_sp          276-278  ///
-  byte    marst_head       279-279  ///
-  byte    marst_sp         280-280  ///
-  byte    nchild_head      281-281  ///
-  byte    nchild_sp        282-282  ///
-  long    bpl_head         283-287  ///
-  long    bpl_sp           288-292  ///
-  byte    citizen_head     293-293  ///
-  byte    citizen_sp       294-294  ///
-  long    mbpl_head        295-299  ///
-  long    mbpl_sp          300-304  ///
-  long    fbpl_head        305-309  ///
-  long    fbpl_sp          310-314  ///
-  byte    nativity_head    315-315  ///
-  byte    nativity_sp      316-316  ///
-  int     hispan_head      317-319  ///
-  int     hispan_sp        320-322  ///
-  byte    empstat_head     323-324  ///
-  byte    empstat_sp       325-326  ///
-  byte    labforce_head    327-327  ///
-  byte    labforce_sp      328-328  ///
-  int     occ_head         329-332  ///
-  int     occ_sp           333-336  ///
-  int     ind1990_head     337-339  ///
-  int     ind1990_sp       340-342  ///
-  int     ind1950_head     343-345  ///
-  int     ind1950_sp       346-348  ///
-  byte    classwkr_head    349-350  ///
-  byte    classwkr_sp      351-352  ///
-  int     uhrsworkt_head   353-355  ///
-  int     uhrsworkt_sp     356-358  ///
-  int     ahrsworkt_head   359-361  ///
-  int     ahrsworkt_sp     362-364  ///
-  byte    wkstat_head      365-366  ///
-  byte    wkstat_sp        367-368  ///
-  int     educ_head        369-371  ///
-  int     educ_sp          372-374  ///
-  double  asecwt04_head    375-382  ///
-  double  asecwt04_sp      383-390  ///
-  double  earnwt_head      391-400  ///
-  double  earnwt_sp        401-410  ///
-  int     occly_head       411-414  ///
-  int     occly_sp         415-418  ///
-  int     indly_head       419-422  ///
-  int     indly_sp         423-426  ///
-  byte    workly_head      427-428  ///
-  byte    workly_sp        429-430  ///
-  byte    wkswork1_head    431-432  ///
-  byte    wkswork1_sp      433-434  ///
-  byte    wkswork2_head    435-435  ///
-  byte    wkswork2_sp      436-436  ///
-  int     uhrsworkly_head  437-439  ///
-  int     uhrsworkly_sp    440-442  ///
-  byte    fullpart_head    443-443  ///
-  byte    fullpart_sp      444-444  ///
-  double  ftotval_head     445-454  ///
-  double  ftotval_sp       455-464  ///
-  double  inctot_head      465-473  ///
-  double  inctot_sp        474-482  ///
-  double  incwage_head     483-490  ///
-  double  incwage_sp       491-498  ///
-  double  hourwage_head    499-503  ///
-  double  hourwage_sp      504-508  ///
-  using `"cps_00024.dat"'
+  double  asecwth          38-48    ///
+  double  asecwth04        49-56    ///
+  double  cpi99            57-60    ///
+  byte    region           61-62    ///
+  byte    statefip         63-64    ///
+  byte    statecensus      65-66    ///
+  long    county           67-71    ///
+  long    metfips          72-76    ///
+  byte    individcc        77-77    ///
+  double  hhincome         78-85    ///
+  int     faminc           86-88    ///
+  byte    pernum           89-90    ///
+  double  wtfinl           91-104   ///
+  double  cpsidp           105-118  ///
+  double  cpsidv           119-133  ///
+  double  asecwt           134-144  ///
+  byte    age              145-146  ///
+  byte    sex              147-147  ///
+  int     race             148-150  ///
+  byte    marst            151-151  ///
+  byte    nchild           152-152  ///
+  long    bpl              153-157  ///
+  int     yrimmig          158-161  ///
+  byte    citizen          162-162  ///
+  long    mbpl             163-167  ///
+  long    fbpl             168-172  ///
+  byte    nativity         173-173  ///
+  int     hispan           174-176  ///
+  byte    empstat          177-178  ///
+  byte    labforce         179-179  ///
+  int     occ              180-183  ///
+  int     ind1990          184-186  ///
+  int     occ1950          187-189  ///
+  int     ind1950          190-192  ///
+  byte    classwkr         193-194  ///
+  int     uhrsworkt        195-197  ///
+  int     ahrsworkt        198-200  ///
+  byte    wkstat           201-202  ///
+  int     educ             203-205  ///
+  double  asecwt04         206-213  ///
+  double  earnwt           214-223  ///
+  int     occly            224-227  ///
+  int     indly            228-231  ///
+  byte    classwly         232-233  ///
+  byte    workly           234-235  ///
+  byte    wkswork1         236-237  ///
+  byte    wkswork2         238-238  ///
+  int     uhrsworkly       239-241  ///
+  byte    fullpart         242-242  ///
+  double  ftotval          243-252  ///
+  double  inctot           253-261  ///
+  double  incwage          262-269  ///
+  double  hourwage         270-274  ///
+  byte    paidhour         275-275  ///
+  double  earnweek         276-283  ///
+  int     uhrsworkorg      284-286  ///
+  byte    age_head         287-288  ///
+  byte    age_sp           289-290  ///
+  byte    sex_head         291-291  ///
+  byte    sex_sp           292-292  ///
+  int     race_head        293-295  ///
+  int     race_sp          296-298  ///
+  byte    marst_head       299-299  ///
+  byte    marst_sp         300-300  ///
+  byte    nchild_head      301-301  ///
+  byte    nchild_sp        302-302  ///
+  long    bpl_head         303-307  ///
+  long    bpl_sp           308-312  ///
+  byte    citizen_head     313-313  ///
+  byte    citizen_sp       314-314  ///
+  long    mbpl_head        315-319  ///
+  long    mbpl_sp          320-324  ///
+  long    fbpl_head        325-329  ///
+  long    fbpl_sp          330-334  ///
+  byte    nativity_head    335-335  ///
+  byte    nativity_sp      336-336  ///
+  int     hispan_head      337-339  ///
+  int     hispan_sp        340-342  ///
+  byte    empstat_head     343-344  ///
+  byte    empstat_sp       345-346  ///
+  byte    labforce_head    347-347  ///
+  byte    labforce_sp      348-348  ///
+  int     occ_head         349-352  ///
+  int     occ_sp           353-356  ///
+  int     ind1990_head     357-359  ///
+  int     ind1990_sp       360-362  ///
+  int     ind1950_head     363-365  ///
+  int     ind1950_sp       366-368  ///
+  byte    classwkr_head    369-370  ///
+  byte    classwkr_sp      371-372  ///
+  int     uhrsworkt_head   373-375  ///
+  int     uhrsworkt_sp     376-378  ///
+  int     ahrsworkt_head   379-381  ///
+  int     ahrsworkt_sp     382-384  ///
+  byte    wkstat_head      385-386  ///
+  byte    wkstat_sp        387-388  ///
+  int     educ_head        389-391  ///
+  int     educ_sp          392-394  ///
+  double  asecwt04_head    395-402  ///
+  double  asecwt04_sp      403-410  ///
+  double  earnwt_head      411-420  ///
+  double  earnwt_sp        421-430  ///
+  int     occly_head       431-434  ///
+  int     occly_sp         435-438  ///
+  int     indly_head       439-442  ///
+  int     indly_sp         443-446  ///
+  byte    workly_head      447-448  ///
+  byte    workly_sp        449-450  ///
+  byte    wkswork1_head    451-452  ///
+  byte    wkswork1_sp      453-454  ///
+  byte    wkswork2_head    455-455  ///
+  byte    wkswork2_sp      456-456  ///
+  int     uhrsworkly_head  457-459  ///
+  int     uhrsworkly_sp    460-462  ///
+  byte    fullpart_head    463-463  ///
+  byte    fullpart_sp      464-464  ///
+  double  ftotval_head     465-474  ///
+  double  ftotval_sp       475-484  ///
+  double  inctot_head      485-493  ///
+  double  inctot_sp        494-502  ///
+  double  incwage_head     503-510  ///
+  double  incwage_sp       511-518  ///
+  double  hourwage_head    519-523  ///
+  double  hourwage_sp      524-528  ///
+  using `"cps_00063.dat"'
 
 replace hwtfinl         = hwtfinl         / 10000
 replace asecwth         = asecwth         / 10000
@@ -159,31 +161,32 @@ replace hourwage_head   = hourwage_head   / 100
 replace hourwage_sp     = hourwage_sp     / 100
 
 format hwtfinl         %10.4f
-format cpsid           %14.0g
-format asecwth         %10.4f
+format cpsid           %14.0f
+format asecwth         %11.4f
 format asecwth04       %8.2f
 format cpi99           %4.3f
-format hhincome        %8.0g
+format hhincome        %8.0f
 format wtfinl          %14.4f
-format cpsidp          %14.0g
-format asecwt          %10.4f
+format cpsidp          %14.0f
+format cpsidv          %15.0f
+format asecwt          %11.4f
 format asecwt04        %8.2f
 format earnwt          %10.4f
-format ftotval         %10.0g
-format inctot          %9.0g
-format incwage         %8.0g
+format ftotval         %10.0f
+format inctot          %9.0f
+format incwage         %8.0f
 format hourwage        %5.2f
 format earnweek        %8.2f
 format asecwt04_head   %8.2f
 format asecwt04_sp     %8.2f
 format earnwt_head     %10.4f
 format earnwt_sp       %10.4f
-format ftotval_head    %10.0g
-format ftotval_sp      %10.0g
-format inctot_head     %9.0g
-format inctot_sp       %9.0g
-format incwage_head    %8.0g
-format incwage_sp      %8.0g
+format ftotval_head    %10.0f
+format ftotval_sp      %10.0f
+format inctot_head     %9.0f
+format inctot_sp       %9.0f
+format incwage_head    %8.0f
+format incwage_sp      %8.0f
 format hourwage_head   %5.2f
 format hourwage_sp     %5.2f
 
@@ -199,15 +202,16 @@ label var asecwth04       `"Household weight 2004"'
 label var cpi99           `"CPI-U adjustment factor to 1999 dollars"'
 label var region          `"Region and division"'
 label var statefip        `"State (FIPS code)"'
-label var county          `"FIPS county code"'
 label var statecensus     `"State (Census code)"'
-label var metfips         `"Metropolitan area FIPS code"'
-label var individcc       `"Individual principal city"'
+label var county          `"County (FIPS code)"'
+label var metfips         `"Metropolitan area (FIPS code)"'
+label var individcc       `"Individual central/principal city"'
 label var hhincome        `"Total household income"'
 label var faminc          `"Family income of householder"'
 label var pernum          `"Person number in sample unit"'
 label var wtfinl          `"Final Basic Weight"'
 label var cpsidp          `"CPSID, person record"'
+label var cpsidv          `"Validated Longitudinal Identifier"'
 label var asecwt          `"Annual Social and Economic Supplement Weight"'
 label var age             `"Age"'
 label var sex             `"Sex"'
@@ -217,7 +221,7 @@ label var nchild          `"Number of own children in household"'
 label var bpl             `"Birthplace"'
 label var yrimmig         `"Year of immigration"'
 label var citizen         `"Citizenship status"'
-label var mbpl            `"Mother's birthplace"'
+label var mbpl            `"Mother's birthplace "'
 label var fbpl            `"Father's birthplace"'
 label var nativity        `"Foreign birthplace or parentage"'
 label var hispan          `"Hispanic origin"'
@@ -225,8 +229,9 @@ label var empstat         `"Employment status"'
 label var labforce        `"Labor force status"'
 label var occ             `"Occupation"'
 label var ind1990         `"Industry, 1990 basis"'
+label var occ1950         `"Occupation, 1950 basis"'
 label var ind1950         `"Industry, 1950 basis"'
-label var classwkr        `"Class of worker"'
+label var classwkr        `"Class of worker "'
 label var uhrsworkt       `"Hours usually worked per week at all jobs"'
 label var ahrsworkt       `"Hours worked last week"'
 label var wkstat          `"Full or part time status"'
@@ -262,8 +267,8 @@ label var bpl_head        `"Birthplace [of Location of householder]"'
 label var bpl_sp          `"Birthplace [of Person number of spouse (from programming)]"'
 label var citizen_head    `"Citizenship status [of Location of householder]"'
 label var citizen_sp      `"Citizenship status [of Person number of spouse (from programming)]"'
-label var mbpl_head       `"Mother's birthplace [of Location of householder]"'
-label var mbpl_sp         `"Mother's birthplace [of Person number of spouse (from programming)]"'
+label var mbpl_head       `"Mother's birthplace  [of Location of householder]"'
+label var mbpl_sp         `"Mother's birthplace  [of Person number of spouse (from programming)]"'
 label var fbpl_head       `"Father's birthplace [of Location of householder]"'
 label var fbpl_sp         `"Father's birthplace [of Person number of spouse (from programming)]"'
 label var nativity_head   `"Foreign birthplace or parentage [of Location of householder]"'
@@ -280,8 +285,8 @@ label var ind1990_head    `"Industry, 1990 basis [of Location of householder]"'
 label var ind1990_sp      `"Industry, 1990 basis [of Person number of spouse (from programming)]"'
 label var ind1950_head    `"Industry, 1950 basis [of Location of householder]"'
 label var ind1950_sp      `"Industry, 1950 basis [of Person number of spouse (from programming)]"'
-label var classwkr_head   `"Class of worker [of Location of householder]"'
-label var classwkr_sp     `"Class of worker [of Person number of spouse (from programming)]"'
+label var classwkr_head   `"Class of worker  [of Location of householder]"'
+label var classwkr_sp     `"Class of worker  [of Person number of spouse (from programming)]"'
 label var uhrsworkt_head  `"Hours usually worked per week at all jobs [of Location of householder]"'
 label var uhrsworkt_sp    `"Hours usually worked per week at all jobs [of Person number of spouse (from prog"'
 label var ahrsworkt_head  `"Hours worked last week [of Location of householder]"'
@@ -665,7 +670,7 @@ label define sex_lbl 9 `"NIU"', add
 label values sex sex_lbl
 
 label define race_lbl 100 `"White"'
-label define race_lbl 200 `"Black/Negro"', add
+label define race_lbl 200 `"Black"', add
 label define race_lbl 300 `"American Indian/Aleut/Eskimo"', add
 label define race_lbl 650 `"Asian or Pacific Islander"', add
 label define race_lbl 651 `"Asian only"', add
@@ -933,7 +938,9 @@ label define yrimmig_lbl 2017 `"2014-2017 (2019 CPS forward: 2016-2017)"', add
 label define yrimmig_lbl 2018 `"2016-2018"', add
 label define yrimmig_lbl 2019 `"2016-2019"', add
 label define yrimmig_lbl 2020 `"2018-2020"', add
-label define yrimmig_lbl 2021 `"2018-2021"', add
+label define yrimmig_lbl 2021 `"2018-2021 (2022 CPS forward: 2018-2019)"', add
+label define yrimmig_lbl 2022 `"2020-2022"', add
+label define yrimmig_lbl 2024 `"2022-2024"', add
 label values yrimmig yrimmig_lbl
 
 label define citizen_lbl 1 `"Born in U.S"'
@@ -1592,6 +1599,279 @@ label define ind1990_lbl 960 `"Military Reserves or National Guard"', add
 label define ind1990_lbl 998 `"Unknown"', add
 label values ind1990 ind1990_lbl
 
+label define occ1950_lbl 000 `"Accountants and auditors"'
+label define occ1950_lbl 001 `"Actors and actresses"', add
+label define occ1950_lbl 002 `"Airplane pilots and navigators"', add
+label define occ1950_lbl 003 `"Architects"', add
+label define occ1950_lbl 004 `"Artists and art teachers"', add
+label define occ1950_lbl 005 `"Athletes"', add
+label define occ1950_lbl 006 `"Authors"', add
+label define occ1950_lbl 007 `"Chemists"', add
+label define occ1950_lbl 008 `"Chiropractors"', add
+label define occ1950_lbl 009 `"Clergymen"', add
+label define occ1950_lbl 010 `"College presidents and deans"', add
+label define occ1950_lbl 012 `"Agricultural sciences"', add
+label define occ1950_lbl 013 `"Biological sciences"', add
+label define occ1950_lbl 014 `"Chemistry"', add
+label define occ1950_lbl 015 `"Economics"', add
+label define occ1950_lbl 016 `"Engineering"', add
+label define occ1950_lbl 017 `"Geology and geophysics"', add
+label define occ1950_lbl 018 `"Mathematics"', add
+label define occ1950_lbl 019 `"Medical sciences"', add
+label define occ1950_lbl 023 `"Physics"', add
+label define occ1950_lbl 024 `"Psychology"', add
+label define occ1950_lbl 025 `"Statistics"', add
+label define occ1950_lbl 026 `"Natural science (n.e.c.)"', add
+label define occ1950_lbl 027 `"Social sciences (n.e.c.)"', add
+label define occ1950_lbl 028 `"Nonscientific subjects"', add
+label define occ1950_lbl 029 `"Subject not specified"', add
+label define occ1950_lbl 031 `"Dancers and dancing teachers"', add
+label define occ1950_lbl 032 `"Dentists"', add
+label define occ1950_lbl 033 `"Designers"', add
+label define occ1950_lbl 034 `"Dieticians and nutritionists"', add
+label define occ1950_lbl 035 `"Draftsmen"', add
+label define occ1950_lbl 036 `"Editors and reporters"', add
+label define occ1950_lbl 041 `"Engineers, aeronautical"', add
+label define occ1950_lbl 042 `"Engineers, chemical"', add
+label define occ1950_lbl 043 `"Engineers, civil"', add
+label define occ1950_lbl 044 `"Engineers, electrical"', add
+label define occ1950_lbl 045 `"Engineers, industrial"', add
+label define occ1950_lbl 046 `"Engineers, mechanical"', add
+label define occ1950_lbl 047 `"Engineers, metallurgical, metallurgists"', add
+label define occ1950_lbl 048 `"Engineers, mining"', add
+label define occ1950_lbl 049 `"Engineers (n.e.c.)"', add
+label define occ1950_lbl 051 `"Entertainers (n.e.c.)"', add
+label define occ1950_lbl 052 `"Farm and home management advisors"', add
+label define occ1950_lbl 053 `"Foresters and conservationists"', add
+label define occ1950_lbl 054 `"Funeral directors and embalmers"', add
+label define occ1950_lbl 055 `"Lawyers and judges"', add
+label define occ1950_lbl 056 `"Librarians"', add
+label define occ1950_lbl 057 `"Musicians and music teachers"', add
+label define occ1950_lbl 058 `"Nurses, professional"', add
+label define occ1950_lbl 059 `"Nurses, student professional"', add
+label define occ1950_lbl 061 `"Agricultural scientists"', add
+label define occ1950_lbl 062 `"Biological scientists"', add
+label define occ1950_lbl 063 `"Geologists and geophysicists"', add
+label define occ1950_lbl 067 `"Mathematicians"', add
+label define occ1950_lbl 068 `"Physicists"', add
+label define occ1950_lbl 069 `"Miscellaneous natural scientists"', add
+label define occ1950_lbl 070 `"Optometrists"', add
+label define occ1950_lbl 071 `"Osteopaths"', add
+label define occ1950_lbl 072 `"Personnel and labor relations workers"', add
+label define occ1950_lbl 073 `"Pharmacists"', add
+label define occ1950_lbl 074 `"Photographers"', add
+label define occ1950_lbl 075 `"Physicians and surgeons"', add
+label define occ1950_lbl 076 `"Radio operators"', add
+label define occ1950_lbl 077 `"Recreation and group workers"', add
+label define occ1950_lbl 078 `"Religious workers"', add
+label define occ1950_lbl 079 `"Social and welfare workers, except group"', add
+label define occ1950_lbl 081 `"Economists"', add
+label define occ1950_lbl 082 `"Psychologists"', add
+label define occ1950_lbl 083 `"Statisticians and actuaries"', add
+label define occ1950_lbl 084 `"Miscellaneous social scientists"', add
+label define occ1950_lbl 091 `"Sports instructors and officials"', add
+label define occ1950_lbl 092 `"Surveyors"', add
+label define occ1950_lbl 093 `"Teachers (n.e.c.)"', add
+label define occ1950_lbl 094 `"Technicians, medical and dental"', add
+label define occ1950_lbl 095 `"Technicians, testing"', add
+label define occ1950_lbl 096 `"Technicians (n.e.c.)"', add
+label define occ1950_lbl 097 `"Therapists and healers (n.e.c.)"', add
+label define occ1950_lbl 098 `"Veterinarians"', add
+label define occ1950_lbl 099 `"Professional, technical and kindred workers (n.e.c.)"', add
+label define occ1950_lbl 100 `"Farmers (owners and tenants)"', add
+label define occ1950_lbl 123 `"Farm managers"', add
+label define occ1950_lbl 200 `"Buyers and department heads, store"', add
+label define occ1950_lbl 201 `"Buyers and shippers, farm products"', add
+label define occ1950_lbl 203 `"Conductors, railroad"', add
+label define occ1950_lbl 204 `"Credit men"', add
+label define occ1950_lbl 205 `"Floormen and floor managers, store"', add
+label define occ1950_lbl 210 `"Inspectors, public administration"', add
+label define occ1950_lbl 230 `"Managers and superintendents, building"', add
+label define occ1950_lbl 240 `"Officers, pilots, pursers and engineers, ship"', add
+label define occ1950_lbl 250 `"Officials and administrators (n.e.c.), public administration"', add
+label define occ1950_lbl 260 `"Officials, lodge, society, union, etc."', add
+label define occ1950_lbl 270 `"Postmasters"', add
+label define occ1950_lbl 280 `"Purchasing agents and buyers (n.e.c.)"', add
+label define occ1950_lbl 290 `"Managers, officials, and proprietors (n.e.c.)"', add
+label define occ1950_lbl 300 `"Agents (n.e.c.)"', add
+label define occ1950_lbl 301 `"Attendants and assistants, library"', add
+label define occ1950_lbl 302 `"Attendants, physicians and dentists office"', add
+label define occ1950_lbl 304 `"Baggagemen, transportation"', add
+label define occ1950_lbl 305 `"Bank tellers"', add
+label define occ1950_lbl 310 `"Bookkeepers"', add
+label define occ1950_lbl 320 `"Cashiers"', add
+label define occ1950_lbl 321 `"Collectors, bill and account"', add
+label define occ1950_lbl 322 `"Dispatchers and starters, vehicle"', add
+label define occ1950_lbl 325 `"Express messengers and railway mail clerks"', add
+label define occ1950_lbl 335 `"Mail carriers"', add
+label define occ1950_lbl 340 `"Messengers and office boys"', add
+label define occ1950_lbl 341 `"Office machine operators"', add
+label define occ1950_lbl 342 `"Shipping and receiving clerks"', add
+label define occ1950_lbl 350 `"Stenographers, typists, and secretaries"', add
+label define occ1950_lbl 360 `"Telegraph messengers"', add
+label define occ1950_lbl 365 `"Telegraph operators"', add
+label define occ1950_lbl 370 `"Telephone operators"', add
+label define occ1950_lbl 380 `"Ticket, station, and express agents"', add
+label define occ1950_lbl 390 `"Clerical and kindred workers (n.e.c.)"', add
+label define occ1950_lbl 400 `"Advertising agents and salesmen"', add
+label define occ1950_lbl 410 `"Auctioneers"', add
+label define occ1950_lbl 420 `"Demonstrators"', add
+label define occ1950_lbl 430 `"Hucksters and peddlers"', add
+label define occ1950_lbl 450 `"Insurance agents and brokers"', add
+label define occ1950_lbl 460 `"Newsboys"', add
+label define occ1950_lbl 470 `"Real estate agents and brokers"', add
+label define occ1950_lbl 480 `"Stock and bond salesmen"', add
+label define occ1950_lbl 490 `"Salesmen and sales clerks (n.e.c.)"', add
+label define occ1950_lbl 500 `"Bakers"', add
+label define occ1950_lbl 501 `"Blacksmiths"', add
+label define occ1950_lbl 502 `"Bookbinders"', add
+label define occ1950_lbl 503 `"Boilermakers"', add
+label define occ1950_lbl 504 `"Brickmasons, stonemasons, and tile setters"', add
+label define occ1950_lbl 505 `"Cabinetmakers"', add
+label define occ1950_lbl 510 `"Carpenters"', add
+label define occ1950_lbl 511 `"Cement and concrete finishers"', add
+label define occ1950_lbl 512 `"Compositors and typesetters"', add
+label define occ1950_lbl 513 `"Cranemen, derrickmen, and hoistmen"', add
+label define occ1950_lbl 514 `"Decorators and window dressers"', add
+label define occ1950_lbl 515 `"Electricians"', add
+label define occ1950_lbl 520 `"Electrotypers and stereotypers"', add
+label define occ1950_lbl 521 `"Engravers, except photoengravers"', add
+label define occ1950_lbl 522 `"Excavating, grading, and road machinery operators"', add
+label define occ1950_lbl 523 `"Foremen (n.e.c.)"', add
+label define occ1950_lbl 524 `"Forgemen and hammermen"', add
+label define occ1950_lbl 525 `"Furriers"', add
+label define occ1950_lbl 530 `"Glaziers"', add
+label define occ1950_lbl 531 `"Heat treaters, annealers, temperers"', add
+label define occ1950_lbl 532 `"Inspectors, scalers, and graders, log and lumber"', add
+label define occ1950_lbl 533 `"Inspectors (n.e.c.)"', add
+label define occ1950_lbl 534 `"Jewelers, watchmakers, goldsmiths, and silversmiths"', add
+label define occ1950_lbl 535 `"Job setters, metal"', add
+label define occ1950_lbl 540 `"Linemen and servicemen, telegraph, telephone, and power"', add
+label define occ1950_lbl 541 `"Locomotive engineers"', add
+label define occ1950_lbl 542 `"Locomotive firemen"', add
+label define occ1950_lbl 543 `"Loom fixers"', add
+label define occ1950_lbl 544 `"Machinists"', add
+label define occ1950_lbl 545 `"Mechanics and repairmen, airplane"', add
+label define occ1950_lbl 550 `"Mechanics and repairmen, automobile"', add
+label define occ1950_lbl 551 `"Mechanics and repairmen, office machine"', add
+label define occ1950_lbl 552 `"Mechanics and repairmen, radio and television"', add
+label define occ1950_lbl 553 `"Mechanics and repairmen, railroad and car shop"', add
+label define occ1950_lbl 554 `"Mechanics and repairmen (n.e.c.)"', add
+label define occ1950_lbl 555 `"Millers, grain, flour, feed, etc."', add
+label define occ1950_lbl 560 `"Millwrights"', add
+label define occ1950_lbl 561 `"Molders, metal"', add
+label define occ1950_lbl 562 `"Motion picture projectionists"', add
+label define occ1950_lbl 563 `"Opticians and lens grinders and polishers"', add
+label define occ1950_lbl 564 `"Painters, construction and maintenance"', add
+label define occ1950_lbl 565 `"Paperhangers"', add
+label define occ1950_lbl 570 `"Pattern and model makers, except paper"', add
+label define occ1950_lbl 571 `"Photoengravers and lithographers"', add
+label define occ1950_lbl 572 `"Piano and organ tuners and repairmen"', add
+label define occ1950_lbl 573 `"Plasterers"', add
+label define occ1950_lbl 574 `"Plumbers and pipe fitters"', add
+label define occ1950_lbl 575 `"Pressmen and plate printers, printing"', add
+label define occ1950_lbl 580 `"Rollers and roll hands, metal"', add
+label define occ1950_lbl 581 `"Roofers and slaters"', add
+label define occ1950_lbl 582 `"Shoemakers and repairers, except factory"', add
+label define occ1950_lbl 583 `"Stationary engineers"', add
+label define occ1950_lbl 584 `"Stone cutters and stone carvers"', add
+label define occ1950_lbl 585 `"Structural metal workers"', add
+label define occ1950_lbl 590 `"Tailors and tailoresses"', add
+label define occ1950_lbl 591 `"Tinsmiths, coppersmiths, and sheet metal workers"', add
+label define occ1950_lbl 592 `"Tool makers, and die makers and setters"', add
+label define occ1950_lbl 593 `"Upholsterers"', add
+label define occ1950_lbl 594 `"Craftsmen and kindred workers (n.e.c.)"', add
+label define occ1950_lbl 595 `"Members of the armed services"', add
+label define occ1950_lbl 600 `"Apprentice auto mechanics"', add
+label define occ1950_lbl 601 `"Apprentice bricklayers and masons"', add
+label define occ1950_lbl 602 `"Apprentice carpenters"', add
+label define occ1950_lbl 603 `"Apprentice electricians"', add
+label define occ1950_lbl 604 `"Apprentice machinists and toolmakers"', add
+label define occ1950_lbl 605 `"Apprentice mechanics, except auto"', add
+label define occ1950_lbl 610 `"Apprentice plumbers and pipe fitters"', add
+label define occ1950_lbl 611 `"Apprentices, building trades (n.e.c.)"', add
+label define occ1950_lbl 612 `"Apprentices, metalworking trades (n.e.c.)"', add
+label define occ1950_lbl 613 `"Apprentices, printing trades"', add
+label define occ1950_lbl 614 `"Apprentices, other specified trades"', add
+label define occ1950_lbl 615 `"Apprentices, trade not specified"', add
+label define occ1950_lbl 620 `"Asbestos and insulation workers"', add
+label define occ1950_lbl 621 `"Attendants, auto service and parking"', add
+label define occ1950_lbl 622 `"Blasters and powdermen"', add
+label define occ1950_lbl 623 `"Boatmen, canalmen, and lock keepers"', add
+label define occ1950_lbl 624 `"Brakemen, railroad"', add
+label define occ1950_lbl 625 `"Bus drivers"', add
+label define occ1950_lbl 630 `"Chainmen, rodmen, and axmen, surveying"', add
+label define occ1950_lbl 631 `"Conductors, bus and street railway"', add
+label define occ1950_lbl 632 `"Deliverymen and routemen"', add
+label define occ1950_lbl 633 `"Dressmakers and seamstresses, except factory"', add
+label define occ1950_lbl 634 `"Dyers"', add
+label define occ1950_lbl 635 `"Filers, grinders, and polishers, metal"', add
+label define occ1950_lbl 640 `"Fruit, nut, veg graders and packers, except factory"', add
+label define occ1950_lbl 641 `"Furnacemen, smeltermen and pourers"', add
+label define occ1950_lbl 642 `"Heaters, metal"', add
+label define occ1950_lbl 643 `"Laundry and dry cleaning operatives"', add
+label define occ1950_lbl 644 `"Meat cutters, except slaughter and packing house"', add
+label define occ1950_lbl 645 `"Milliners"', add
+label define occ1950_lbl 650 `"Mine operatives and laborers"', add
+label define occ1950_lbl 660 `"Motormen, mine, factory, logging camp, etc."', add
+label define occ1950_lbl 661 `"Motormen, street, subway, and elevated railway"', add
+label define occ1950_lbl 662 `"Oilers and greaser, except auto"', add
+label define occ1950_lbl 670 `"Painters, except construction or maintenance"', add
+label define occ1950_lbl 671 `"Photographic process workers"', add
+label define occ1950_lbl 672 `"Power station operators"', add
+label define occ1950_lbl 673 `"Sailors and deck hands"', add
+label define occ1950_lbl 674 `"Sawyers"', add
+label define occ1950_lbl 675 `"Spinners, textile"', add
+label define occ1950_lbl 680 `"Stationary firemen"', add
+label define occ1950_lbl 681 `"Switchmen, railroad"', add
+label define occ1950_lbl 682 `"Taxicab drivers and chauffers"', add
+label define occ1950_lbl 683 `"Truck and tractor drivers"', add
+label define occ1950_lbl 684 `"Weavers, textile"', add
+label define occ1950_lbl 685 `"Welders and flame cutters"', add
+label define occ1950_lbl 690 `"Operative and kindred workers (n.e.c.)"', add
+label define occ1950_lbl 700 `"Housekeepers, private household"', add
+label define occ1950_lbl 710 `"Laundressses, private household"', add
+label define occ1950_lbl 720 `"Private household workers (n.e.c.)"', add
+label define occ1950_lbl 730 `"Attendants, hospital and other institution"', add
+label define occ1950_lbl 731 `"Attendants, professional and personal service (n.e.c.)"', add
+label define occ1950_lbl 732 `"Attendants, recreation and amusement"', add
+label define occ1950_lbl 740 `"Barbers, beauticians, and manicurists"', add
+label define occ1950_lbl 750 `"Bartenders"', add
+label define occ1950_lbl 751 `"Bootblacks"', add
+label define occ1950_lbl 752 `"Boarding and lodging house keepers"', add
+label define occ1950_lbl 753 `"Charwomen and cleaners"', add
+label define occ1950_lbl 754 `"Cooks, except private household"', add
+label define occ1950_lbl 760 `"Counter and fountain workers"', add
+label define occ1950_lbl 761 `"Elevator operators"', add
+label define occ1950_lbl 762 `"Firemen, fire protection"', add
+label define occ1950_lbl 763 `"Guards, watchmen, and doorkeepers"', add
+label define occ1950_lbl 764 `"Housekeepers and stewards, except private household"', add
+label define occ1950_lbl 770 `"Janitors and sextons"', add
+label define occ1950_lbl 771 `"Marshals and constables"', add
+label define occ1950_lbl 772 `"Midwives"', add
+label define occ1950_lbl 773 `"Policemen and detectives"', add
+label define occ1950_lbl 780 `"Porters"', add
+label define occ1950_lbl 781 `"Practical nurses"', add
+label define occ1950_lbl 782 `"Sheriffs and bailiffs"', add
+label define occ1950_lbl 783 `"Ushers, recreation and amusement"', add
+label define occ1950_lbl 784 `"Waiters and waitresses"', add
+label define occ1950_lbl 785 `"Watchmen (crossing) and bridge tenders"', add
+label define occ1950_lbl 790 `"Service workers, except private household (n.e.c.)"', add
+label define occ1950_lbl 810 `"Farm foremen"', add
+label define occ1950_lbl 820 `"Farm laborers, wage workers"', add
+label define occ1950_lbl 830 `"Farm laborers, unpaid family workers"', add
+label define occ1950_lbl 840 `"Farm service laborers, self-employed"', add
+label define occ1950_lbl 910 `"Fishermen and oystermen"', add
+label define occ1950_lbl 920 `"Garage laborers and car washers and greasers"', add
+label define occ1950_lbl 930 `"Gardeners, except farm, and groundskeepers"', add
+label define occ1950_lbl 940 `"Longshoremen and stevedores"', add
+label define occ1950_lbl 950 `"Lumbermen, raftsmen, and woodchoppers"', add
+label define occ1950_lbl 960 `"Teamsters"', add
+label define occ1950_lbl 970 `"Laborers (n.e.c.)"', add
+label define occ1950_lbl 997 `"Unknown"', add
+label define occ1950_lbl 999 `"NIU"', add
+label values occ1950 occ1950_lbl
+
 label define ind1950_lbl 000 `"NIU"'
 label define ind1950_lbl 105 `"Agriculture"', add
 label define ind1950_lbl 116 `"Forestry"', add
@@ -1853,12 +2133,18 @@ label define fullpart_lbl 2 `"Part-time"', add
 label define fullpart_lbl 9 `"Unknown"', add
 label values fullpart fullpart_lbl
 
+label define hourwage_lbl 99999 `"NIU"'
+label values hourwage hourwage_lbl
+
 label define paidhour_lbl 0 `"NIU"'
 label define paidhour_lbl 1 `"No"', add
 label define paidhour_lbl 2 `"Yes"', add
 label define paidhour_lbl 6 `"Refused"', add
 label define paidhour_lbl 7 `"Don't Know"', add
 label values paidhour paidhour_lbl
+
+label define earnweek_lbl 00999999 `"NIU"'
+label values earnweek earnweek_lbl
 
 label define age_head_lbl 00 `"Under 1 year"'
 label define age_head_lbl 01 `"1"', add
@@ -2075,7 +2361,7 @@ label define sex_sp_lbl 9 `"NIU"', add
 label values sex_sp sex_sp_lbl
 
 label define race_head_lbl 100 `"White"'
-label define race_head_lbl 200 `"Black/Negro"', add
+label define race_head_lbl 200 `"Black"', add
 label define race_head_lbl 300 `"American Indian/Aleut/Eskimo"', add
 label define race_head_lbl 650 `"Asian or Pacific Islander"', add
 label define race_head_lbl 651 `"Asian only"', add
@@ -2106,7 +2392,7 @@ label define race_head_lbl 999 `"Blank"', add
 label values race_head race_head_lbl
 
 label define race_sp_lbl 100 `"White"'
-label define race_sp_lbl 200 `"Black/Negro"', add
+label define race_sp_lbl 200 `"Black"', add
 label define race_sp_lbl 300 `"American Indian/Aleut/Eskimo"', add
 label define race_sp_lbl 650 `"Asian or Pacific Islander"', add
 label define race_sp_lbl 651 `"Asian only"', add
@@ -4336,8 +4622,10 @@ label define fullpart_sp_lbl 2 `"Part-time"', add
 label define fullpart_sp_lbl 9 `"Unknown"', add
 label values fullpart_sp fullpart_sp_lbl
 
+label define hourwage_head_lbl 99999 `"NIU"'
+label values hourwage_head hourwage_head_lbl
 
-
-
+label define hourwage_sp_lbl 99999 `"NIU"'
+label values hourwage_sp hourwage_sp_lbl
 
 save "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets/FullData", replace

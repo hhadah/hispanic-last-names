@@ -51,13 +51,13 @@ reg1 <- list(
   "\\specialcell{(2) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] , vcov = ~statefip,
                                                         data = IndividualData |> 
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(3) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + statefip, vcov = ~statefip,
+  "\\specialcell{(3) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age | year*statefip, vcov = ~statefip,
                                                         data = IndividualData |> 
                                                           filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] | year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1) )),
-  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls]| year + age + educ + statefip, vcov = ~statefip,
+  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed == 0 & (HW == 1 | WH == 1) ))
   
@@ -130,20 +130,30 @@ dim(controling_for) <- c(1,6)
 hoursworked <-  c("Hours Worked", " ", "X","X", "X", "X")
 dim(hoursworked) <- c(1,6)
 
+age_cont <-  c("Age", " ", "","X", "X", "X")
+dim(age_cont) <- c(1,6)
+
+educ_cont <-  c("Education", " ", ""," ", "X", "X")
+dim(educ_cont) <- c(1,6)
+
 parentalback <-  c("Parental Background", " ", " ", " ", " ", "X")
 dim(parentalback) <- c(1,6)
 
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
+age_cont <- as.data.frame(age_cont)
+educ_cont <- as.data.frame(educ_cont)
 parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(differences_row, 
                 pvalue_row, 
                 controling_for, 
                 hoursworked,
+                age_cont,
+                educ_cont,
                 parentalback)
-attr(all_row, 'position') <- c(9:10, 11:12, 17)
+attr(all_row, 'position') <- c(9:10, 11:12, 16:18)
 
 cm <- c("WH:Hispanic_ID" = "$WH_{ist} \\times Hispanic_{ist}$",
         "HW:Hispanic_ID" = "$HW_{ist} \\times Hispanic_{ist}$",
@@ -159,8 +169,9 @@ gm <- tibble::tribble(
   ~raw,        ~clean,          ~fmt,
   "FE: statefip", "State FE", 0,
   "FE: year", "Year FE", 0,
-  "FE: age", "Age FE", 0,
-  "FE: educ", "Education FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
   "std.error.type", "Standard Errors", 0,
   "nobs",      "Observations",             0,
   #"r.squared", "R squared", 3
@@ -217,3 +228,6 @@ regression_tab %>%
 
 regression_tab %>%
   save_kable(file.path(thesis_tabs,"tab06-regression.tex"))
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab06-regression.tex"))

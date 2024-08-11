@@ -1,5 +1,5 @@
 \begin{table}[H]
-
+\centering\centering
 \caption{Effect of Having Hispanic Last Name: Hispanics with Cuban Ancestry  \label{tab:lastnamereg-weekearm-cub}}
 \centering
 \begin{threeparttable}
@@ -7,18 +7,19 @@
 \toprule
   & \specialcell{(1) \\ Log weekly \\ earnings} & \specialcell{(2) \\ Log weekly \\ earnings} & \specialcell{(3) \\  Log weekly \\ earnings} & \specialcell{(4) \\  Log weekly \\ earnings}\\
 \midrule
-$HW_{ist}$ & \num{-0.08}** & \num{-0.03} & \num{-0.01} & \num{-0.02}\\
- & (\num{0.04}) & (\num{0.04}) & (\num{0.04}) & (\num{0.04})\\
-Constant & \num{6.69}*** &  &  & \\
+$HW_{ist}$ & \num{-0.08}** & \num{-0.06} & \num{-0.02} & \num{-0.03}\\
+ & (\num{0.04}) & (\num{0.06}) & (\num{0.05}) & (\num{0.05})\\
+Constant & \num{6.68}*** &  &  & \\
  & (\num{0.05}) &  &  & \\
 \midrule
 \textit{Controlling for:} &  &  &  & \\
 State FE &  & X & X & X\\
 Year FE &  & X & X & X\\
-Age FE &  & X & X & X\\
-Education FE &  &  & X & X\\
+State-Year FE &  & X & X & X\\
+Age &  & X & X & X\\
+Education &  &  & X & X\\
 Parental Background &  &  &  & X\\
-Observations & \num{1182} & \num{1182} & \num{1182} & \num{1182}\\
+Observations & \num{1179} & \num{1179} & \num{1179} & \num{1179}\\
 \bottomrule
 \multicolumn{5}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
 \end{tabular}

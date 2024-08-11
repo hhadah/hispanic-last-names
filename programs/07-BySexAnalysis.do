@@ -131,6 +131,25 @@ replace Education = 18 if (educ  == 123)
 
 replace Education = 21 if (educ  == 124 | educ  == 125)
 
+gen hs_dropout = .
+replace hs_dropout = 0 if educ >= 70 & educ <= 125
+replace hs_dropout = 1 if educ < 70
+
+gen some_college = .
+replace some_college = 0 if educ <= 73
+replace hs_dropout = 1 if educ >=  80 & educ <= 110
+
+gen associate_degree = .
+replace associate_degree = 0 if educ <= 81
+replace associate_degree = 1 if educ == 90 | educ == 91 | educ == 92
+
+gen ba_degree = .
+replace ba_degree = 0 if educ <= 100
+replace ba_degree = 1 if educ >= 110 & educ <= 125
+
+gen professional_degree = .
+replace professional_degree = 0 if educ <= 122
+replace professional_degree = 1 if educ >= 123 & educ <= 125
 ********************************************************************************
 * Total family income: ftotval_head ftotval_sp (ASEC)
 ********************************************************************************
@@ -166,6 +185,112 @@ replace Self_employed = 0 if classwkr <= 28 & classwkr >= 20
 
 gen Self_employed_ASEC = 1 if classwly <= 14 & classwly >= 10
 replace Self_employed_ASEC = 0 if classwly <= 28 & classwly >= 20
+
+/*
+Clean occupations
+*/
+
+* Create occ1990 variable for 1992-2002 CPS data
+* Loop through years
+gen occ1990 = .
+forvalues y = 1994/2019 {
+    if `y' >= 1994 & `y' <= 2002 {
+        * 1992-2002 Classification Scheme
+        replace occ1990 = 1 if year == `y' & inrange(occ, 3, 22)
+        replace occ1990 = 2 if year == `y' & inrange(occ, 23, 37)
+        replace occ1990 = 3 if year == `y' & (inlist(occ, 64, 65, 229, 233) | inrange(occ, 66, 68))
+        replace occ1990 = 4 if year == `y' & (occ == 43 | inrange(occ, 44, 63))
+        replace occ1990 = 5 if year == `y' & (inrange(occ, 69, 83) | inlist(occ, 166, 169))
+        replace occ1990 = 6 if year == `y' & inlist(occ, 163, 174, 175, 176)
+        replace occ1990 = 7 if year == `y' & inlist(occ, 178, 234)
+        replace occ1990 = 8 if year == `y' & inrange(occ, 113, 165)
+        replace occ1990 = 9 if year == `y' & inrange(occ, 183, 199)
+        replace occ1990 = 10 if year == `y' & (inlist(occ, 84, 85, 86, 87, 88, 89, 95, 96, 97, 106) | ///
+                                               inrange(occ, 98, 106) | inlist(occ, 203, 204, 205, 206, 207, 208))
+        replace occ1990 = 11 if year == `y' & inrange(occ, 445, 447)
+        replace occ1990 = 12 if year == `y' & inrange(occ, 413, 427)
+        replace occ1990 = 13 if year == `y' & inrange(occ, 433, 444)
+        replace occ1990 = 14 if year == `y' & inrange(occ, 448, 455)
+        replace occ1990 = 15 if year == `y' & inrange(occ, 456, 469)
+        replace occ1990 = 16 if year == `y' & inrange(occ, 243, 285)
+        replace occ1990 = 17 if year == `y' & inrange(occ, 303, 389)
+        replace occ1990 = 18 if year == `y' & inrange(occ, 473, 499)
+        replace occ1990 = 19 if year == `y' & inrange(occ, 503, 617)
+        replace occ1990 = 20 if year == `y' & inrange(occ, 628, 699)
+        replace occ1990 = 21 if year == `y' & inrange(occ, 703, 799)
+        replace occ1990 = 22 if year == `y' & inrange(occ, 803, 889)
+        replace occ1990 = 23 if year == `y' & occ == 905
+    }
+    else if `y' >= 2003 & `y' <= 2010 {
+        * 2003-2010 Classification Scheme
+        replace occ1990 = 1 if year == `y' & inrange(occ, 10, 430)
+        replace occ1990 = 2 if year == `y' & inrange(occ, 500, 950)
+        replace occ1990 = 3 if year == `y' & inrange(occ, 1000, 1240)
+        replace occ1990 = 4 if year == `y' & inrange(occ, 1300, 1560)
+        replace occ1990 = 5 if year == `y' & inrange(occ, 1600, 1960)
+        replace occ1990 = 6 if year == `y' & inrange(occ, 2000, 2060)
+        replace occ1990 = 7 if year == `y' & inrange(occ, 2100, 2150)
+        replace occ1990 = 8 if year == `y' & inrange(occ, 2200, 2550)
+        replace occ1990 = 9 if year == `y' & inrange(occ, 2600, 2960)
+        replace occ1990 = 10 if year == `y' & inrange(occ, 3000, 3540)
+        replace occ1990 = 11 if year == `y' & inrange(occ, 3600, 3650)
+        replace occ1990 = 12 if year == `y' & inrange(occ, 3700, 3950)
+        replace occ1990 = 13 if year == `y' & inrange(occ, 4000, 4160)
+        replace occ1990 = 14 if year == `y' & inrange(occ, 4200, 4250)
+        replace occ1990 = 15 if year == `y' & inrange(occ, 4300, 4650)
+        replace occ1990 = 16 if year == `y' & inrange(occ, 4700, 4960)
+        replace occ1990 = 17 if year == `y' & inrange(occ, 5000, 5930)
+        replace occ1990 = 18 if year == `y' & inrange(occ, 6000, 6130)
+        replace occ1990 = 19 if year == `y' & inrange(occ, 6200, 6940)
+        replace occ1990 = 20 if year == `y' & inrange(occ, 7000, 7620)
+        replace occ1990 = 21 if year == `y' & inrange(occ, 7700, 8960)
+        replace occ1990 = 22 if year == `y' & inrange(occ, 9000, 9750)
+        replace occ1990 = 23 if year == `y' & occ == 9840
+    }
+    else if `y' >= 2011 & `y' <= 2019 {
+        * 2011-2019 Classification Scheme
+        replace occ1990 = 1 if year == `y' & (inrange(occ, 10, 430) | occ == 30)
+        replace occ1990 = 2 if year == `y' & inrange(occ, 500, 950)
+        replace occ1990 = 3 if year == `y' & inrange(occ, 1000, 1240)
+        replace occ1990 = 4 if year == `y' & inrange(occ, 1300, 1560)
+        replace occ1990 = 5 if year == `y' & inlist(occ, 1600, 1610, 1640, 1650, 1660, 1700, 1710, 1720, 1740, 1760)
+        replace occ1990 = 6 if year == `y' & inrange(occ, 2000, 2060)
+        replace occ1990 = 7 if year == `y' & inlist(occ, 2100, 2105, 2110, 2145, 2160)
+        replace occ1990 = 8 if year == `y' & inrange(occ, 2200, 2550)
+        replace occ1990 = 9 if year == `y' & inrange(occ, 2600, 2920)
+        replace occ1990 = 10 if year == `y' & (inrange(occ, 3000, 3540) | inlist(occ, 3255, 3256, 3257, 3258))
+        replace occ1990 = 11 if year == `y' & inrange(occ, 3600, 3655)
+        replace occ1990 = 12 if year == `y' & (inrange(occ, 3700, 3950) | occ == 3945)
+        replace occ1990 = 13 if year == `y' & inrange(occ, 4000, 4160)
+        replace occ1990 = 14 if year == `y' & inrange(occ, 4200, 4250)
+        replace occ1990 = 15 if year == `y' & (inrange(occ, 4300, 4650) | occ == 4465)
+        replace occ1990 = 16 if year == `y' & inrange(occ, 4700, 4965)
+        replace occ1990 = 17 if year == `y' & inrange(occ, 5000, 5940)
+        replace occ1990 = 18 if year == `y' & inrange(occ, 6005, 6130)
+        replace occ1990 = 19 if year == `y' & (inrange(occ, 6200, 6940) | occ == 6540)
+        replace occ1990 = 20 if year == `y' & (inrange(occ, 7000, 7630) | occ == 7440)
+        replace occ1990 = 21 if year == `y' & inrange(occ, 7700, 8965)
+        replace occ1990 = 22 if year == `y' & inrange(occ, 9000, 9750)
+        replace occ1990 = 23 if year == `y' & occ == 9840
+    }
+}
+
+label define occ1990_lbl 1 "Managers" 2 "Business and Financial Operations" ///
+    3 "Computer and Mathematical" 4 "Architecture and Engineering" ///
+    5 "Life, Physical, and Social Science" 6 "Community and Social Services" ///
+    7 "Legal" 8 "Education, Training, and Library" ///
+    9 "Arts, Design, Entertainment, Sports, and Media" ///
+    10 "Healthcare Practitioners and Technical" 11 "Healthcare Support" ///
+    12 "Protective Service" 13 "Food Preparation and Serving" ///
+    14 "Building and Grounds Cleaning and Maintenance" ///
+    15 "Personal Care and Service" 16 "Sales and Related" ///
+    17 "Office and Administrative Support" 18 "Farming, Fishing, and Forestry" ///
+    19 "Construction and Extraction" 20 "Installation, Maintenance, and Repair" ///
+    21 "Production" 22 "Transportation and Material Moving" 23 "Military"
+
+label values occ1990 occ1990_lbl
+
+
 /*
 ********************************************************************************
 * Race Variable for Blacks, Hispanics and Whites
@@ -469,7 +594,9 @@ global BySexVars 	"year serial month hwtfinl cpsid asecflag hflag asecwth asecwt
 					cohort Employed InLaborForce FullYear FullTime PartTime 
 					FullTime_ASEC PartTime_ASEC FTFY Education NonSelfEmpl
 					earnweek uhrsworkorg paidhour classwly classwkr 
-					Self_employed Self_employed_ASEC";
+					Self_employed Self_employed_ASEC occ occ1990
+					hs_dropout some_college associate_degree 
+					ba_degree professional_degree";
 keep $BySexVars;
 #delimit cr
 * generate control variables
