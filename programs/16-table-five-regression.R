@@ -48,47 +48,130 @@ reg1 <- list(
   
 )
 
-# feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls], vcov = ~statefip,
-#                                                             data = IndividualData |> 
-#                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
+reg2 <- list(
+  "\\specialcell{(1) \\\\ Unemployment}" = feols(1 - Employed ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Unemployment}" = feols(1 - Employed ~ HW + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\  Unemployment}" = feols(1 - Employed ~ HW + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Unemployment}" = feols(1 - Employed ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1)))
+  
+)
+reg2[[1]]
+reg2[[2]]
+reg2[[3]]
+reg2[[4]]
 
-# feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] | year + age + statefip, vcov = ~statefip,
-#                                                             data = IndividualData |> 
-#                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
+reg3 <- list(
+  "\\specialcell{(1) \\\\ In Labor Force}" = feols(InLaborForce ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ In Labor Force}" = feols(InLaborForce ~ HW + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\  In Labor Force}" = feols(InLaborForce ~ HW + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  In Labor Force}" = feols(InLaborForce ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1)))
+  
+)
+reg3[[1]]
+reg3[[2]]
+reg3[[3]]
+reg3[[4]]
 
-# calculate means to add
-# as a row
+reg4 <- list(
+  "\\specialcell{(1) \\\\ Full Year}" = feols(FullYear ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Full Year}" = feols(FullYear ~ HW + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\  Full Year}" = feols(FullYear ~ HW + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Full Year}" = feols(FullYear ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1)))
+  
+)
+reg4[[1]]
+reg4[[2]]
+reg4[[3]]
+reg4[[4]]
+
+reg5 <- list(
+  "\\specialcell{(1) \\\\ Full Time}" = feols(FullTime ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Full Time}" = feols(FullTime ~ HW + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\  Full Time}" = feols(FullTime ~ HW + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Full Time}" = feols(FullTime ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1)))
+  
+)
+reg5[[1]]
+reg5[[2]]
+reg5[[3]]
+reg5[[4]]
+
+reg6 <- list(
+  "\\specialcell{(1) \\\\ Self Employed}" = feols(Self_employed ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Self Employed}" = feols(Self_employed ~ HW + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\  Self Employed}" = feols(Self_employed ~ HW + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Self Employed}" = feols(Self_employed ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1)))
+  
+)
+reg6[[1]]
+reg6[[2]]
+reg6[[3]]
+reg6[[4]]
+
+reg7 <- list(
+  "\\specialcell{(1) \\\\ Full Time \\\\ Full Year}" = feols(FTFY ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Full Time \\\\ Full Year}" = feols(FTFY ~ HW + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\  Full Time \\\\ Full Year}" = feols(FTFY ~ HW + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Full Time \\\\ Full Year}" = feols(FTFY ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & (HW == 1 | WH == 1)))
+  
+)
+reg7[[1]]
+reg7[[2]]
+reg7[[3]]
+reg7[[4]]
 
 
-# test1 <- tidy(glht(reg1[[1]], linfct = c("HW - WH = 0")))
-# differences1 <- case_when(abs(test1$estimate/test1$std.error)   >= 2.58  ~ paste0(sprintf("%2.5s",round_tidy(test1$estimate, digits = 2)), "***"),
-#           abs(test1$estimate/test1$std.error)   <  2.58 & 
-#             abs(test1$estimate/test1$std.error) >= 1.96  ~ paste0(sprintf("%2.5s",round_tidy(test1$estimate, digits = 2)), "**"),
-#           abs(test1$estimate/test1$std.error)   <  1.96  &
-#             abs(test1$estimate/test1$std.error) >= 1.645 ~ paste0(sprintf("%2.5s",round_tidy(test1$estimate, digits = 2)), "*"),
-#           abs(test1$estimate/test1$std.error)   < 1.645  ~ round_tidy(test1$estimate, digits = 2)
-#           )
-
-# test2 <- tidy(glht(reg1[[2]], linfct = c("HW - WH = 0")))
-# differences2 <- case_when(abs(test2$estimate/test2$std.error)   >= 2.58  ~ paste0(sprintf("%2.5s",round_tidy(test2$estimate, digits = 2)), "***"),
-#                           abs(test2$estimate/test2$std.error)   <  2.58 & 
-#                             abs(test2$estimate/test2$std.error) >= 1.96  ~ paste0(sprintf("%2.5s",round_tidy(test2$estimate, digits = 2)), "**"),
-#                           abs(test2$estimate/test2$std.error)   <  1.96  &
-#                             abs(test2$estimate/test2$std.error) >= 1.645 ~ paste0(sprintf("%2.5s",round_tidy(test2$estimate, digits = 2)), "*"),
-#                           abs(test2$estimate/test2$std.error)   < 1.645  ~ round_tidy(test2$estimate, digits = 2)
-# )
-
-# differences_row <-  c('$HW_{i} - WH_{i}$', differences1, differences2)
-# dim(differences_row) <- c(1,3)
-
-# pvalue_row <-  c(' ', paste0("(", round(test1$std.error, digits = 2), ")"), paste0("(", round(test2$std.error, digits = 2), ")"))
-# dim(pvalue_row) <- c(1,3)
-
-# row_diff <- rbind(differences_row, pvalue_row)
-# colnames(row_diff)<-LETTERS[1:3]
-
-# row_diff <- as.data.frame(row_diff)
-# attr(row_diff, 'position') <- c(7:8)
+#--------------------------------------
+# Earnigns
+#--------------------------------------
 
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
 dim(controling_for) <- c(1,6)
@@ -191,3 +274,135 @@ regression_tab %>%
 
 regression_tab %>%
   save_kable(file.path(manuscript_wd,"tab05-regression.tex"))
+
+#--------------------------------------
+# Employment
+#--------------------------------------
+controling_for <-  c("\\textit{Controlling for:}", "", " ", "", "")
+dim(controling_for) <- c(1,5)
+
+age_cont      <-  c("Age", " ","X", "X", "X")
+educ_cont     <-  c("Education", " "," ", "X", "X")
+parentalback  <-  c("Parental Background", " "," ", " ", "X")
+# calculate mean for all sample
+IndividualData_mean <- IndividualData |> 
+  filter(HW == 1)
+all_sample <- c("\\specialcell{HW's Mean \\\\ Unemployment}", round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2), 
+                      round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2),
+                      round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2), 
+                      round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2))
+
+
+dim(all_sample) <- c(1,5)
+all_sample <- as.data.frame(all_sample)
+
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
+dim(parentalback) <- c(1,5)
+
+controling_for <- as.data.frame(controling_for)
+parentalback <- as.data.frame(parentalback)
+educ_cont <- as.data.frame(educ_cont)
+age_cont <- as.data.frame(age_cont)
+
+all_row <- rbind(
+  # differences_row, 
+  # pvalue_row, 
+  controling_for, 
+  age_cont,
+  educ_cont,
+  parentalback,
+  all_sample)
+
+attr(all_row, 'position') <- c(#7:8, 
+                              5:6, 10:12)
+
+cm <- c("WH"          = "$WH_{ist}$",
+        "HW"          = "$HW_{ist}$",
+        "HH"          = "$HH_{ist}$",
+        "(Intercept)" = "Constant"
+) 
+gm <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+  "FE: statefip", "State FE", 0,
+  "FE: year", "Year FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
+  "std.error.type", "Standard Errors", 0,
+  "nobs",      "Observations",             0,
+  #"r.squared", "R squared", 3
+)
+
+modelsummary(reg2, fmt = 2,  
+             coef_map = cm,
+             add_rows = all_row,
+             gof_map = gm,
+             escape = F,
+             #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+             stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+             title = "Effect of Having Hispanic Last Name on Employment \\label{tab:lastnamereg-emp}") %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) %>%
+  footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}",
+                      "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}",
+                      "\\\\footnotesize{The sample is restricted to prime-age men.}",
+                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}",
+                      "\\\\footnotesize{Standard errors are clustered on the state level.}"
+                      ),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  )
+
+regression_tab <- modelsummary(reg2, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+                               title = "Effect of Having Hispanic Last Name on Employment \\label{tab:lastnamereg-emp}") %>%
+  kable_styling(
+                latex_options = c("HOLD_position")
+  ) %>%
+  footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{The sample is restricted to prime-age men.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered on the state level.}}"
+                      ),
+  footnote_as_chunk = F, title_format = c("italic"),
+  escape = F, threeparttable = T
+  ) #|> 
+  #row_spec(8, hline_after = T)
+
+
+regression_tab %>%
+  save_kable(file.path(tables_wd,"tab14-emp-regression.tex"))
+
+regression_tab %>%
+  save_kable(file.path(thesis_tabs,"tab14-emp-regression.tex"))
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab14-emp-regression.tex"))
+
+#--------------------------------------
+# Labor Force Participation
+#--------------------------------------
+
+#--------------------------------------
+# Full Year
+#--------------------------------------
+
+#--------------------------------------
+# Full Time
+#--------------------------------------
+
+#--------------------------------------
+# Self Employed
+#--------------------------------------
+
+#--------------------------------------
+# Full Time Full Year
+#--------------------------------------

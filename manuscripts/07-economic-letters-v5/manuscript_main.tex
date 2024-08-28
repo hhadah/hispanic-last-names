@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+A large literature documents substantial earnings gaps across race and ethnicity \autocite{bayer2018divergent, charles2008prejudice, card1992school, fryer2004causes, rubinstein2014pride, bertrand2004emily, juhn1991accounting}. Hispanics constitute a large and growing portion of the population in the United States. As the number of Hispanics increases, determining whether ethnic discrimination affects their labor market outcomes becomes increasingly crucial \autocite{chettyUnitedStatesStill2014, chettyEffectsExposureBetter2016,chettyFadingAmericanDream2017,abramitzkyImmigrantsAssimilateMore2020a, abramitzkyNationImmigrantsAssimilation2014,abramitzkyCulturalAssimilationAge2016,chettyWhereLandOpportunity2014}. Thus, it is important to understand whether a person's ethnicity affects their labor market outcomes. Assimilation and mobility are crucial because they reflect how well Hispanics can integrate into society and move up the socioeconomic ladder.
+
+In this paper, I answer the following question. Does having a Hispanic last name affect education and labor market outcomes? Moreover, I aim to show that comparing Hispanic Whites to non-Hispanic Whites might create an artificially higher earnings gap since the two groups differ on many observable characteristics. \footnote{Observable characteristics refer to factors that can be measured and quantified, such as education level, work experience, and immigration status.} Others have attempted to compare how native-born White Hispanics fare to non-Hispanic Whites and foreign-born Hispanics. In \textcite{antman2020ethnic,antmanEthnicAttritionObserved2016,antmanEthnicAttritionObserved2016a,antmanEthnicAttritionAssimilation2020}, the authors compare the health and educational outcomes of Hispanic Whites to non-Hispanic Whites and native-born Hispanics to foreign-born Hispanics. They find gaps in education and health between Hispanics and Whites. They also find that native-born Hispanics are more likely than their foreign-born counterparts to report poor health. \textcite{davilaChangesRelativeEarnings2008} documents many gaps in labor market outcomes between Hispanics and Whites. They attribute a big part of this gap to differences in education, experience, immigration status, and regional differences. 
+
+The US population is growing in diversity. The proportion of non-Whites has increased by more than 10 percentage points from 13 percent in 1995 to 23 percent in 2019. The number of Hispanics has grown by 9 percentage points from 9 percent in 1995 to 16 percent in 2019.\footnote{The portion of non-Whites and Hispanics is calculated using the Current Population Survey (CPS).} Native-born White Hispanic men earn 21\% less than White men, although a substantial portion of the earnings gap is due to educational differences between Hispanics and Whites \autocite{duncan2006hispanics, duncan2018identifying, duncan2018socioeconomic}. Some of the earnings differences may also be due to discrimination which will have negative consequences. For example, discrimination against Hispanics can lead to reduced job opportunities, lower wages, and hinder assimilation. In this paper, I examine the role of having a Hispanic last name on labor market and educational outcomes outcomes. 
+
+Identifying discrimination is difficult because of factors that affect labor market outcomes that are unobservable to economists---such as unobserved skills and separating it from prejudice and stereotypes. One strategy used by researchers is audit or resume studies. \textcite{bertrand2004emily} conducted an audit study where identical resumes were sent to employers with White and Black-sounding names. This approach, however, has its drawbacks. Audit studies only observe callbacks, not wages. 
+
+This study utilizes a method developed by \textcite{rubinstein2014pride}. I compare children from inter-ethnic marriages. More precisely, I compare children of Hispanic fathers and White mothers (henceforth HW) to children of White fathers and Hispanic mothers (henceforth  WH). This approach stems from the fact that there is a strong selection among many characteristics, and thus, marriages are not random. Couples match on several observable characteristics like income, schooling, socio-economic background, etc. \autocite{averettBetterWorseRelationship2008, averettEconomicRealityBeauty1996, beckerTheoryMarriagePart1973, beckerTheoryMarriagePart1974, beckerTreatiseFamily1993, browningCollectiveUnitaryModels2006, chiapporiFatterAttractionAnthropometric2012}. Children of HW and WH marriages have more similar observable characteristics than children of endogamous/homogamous marriages--- i.e., White fathers-White mothers and Hispanic fathers-Hispanic mothers. Moreover, children from a Hispanic father and White mother household will have a Hispanic last name from their fathers, enabling the investigation of how ethnic signals, such as having a Hispanic last name, affect annual log earnings.
+
+The main identifying assumption of my empirical strategy depends on the assumption that people born to HW parents are similar to their WH peer in all observable---and unobservable---aspects and characteristics that are important in the labor market. Consequently, the only difference between the two groups is the variation in which group is more likely to have a Hispanic sounding last name. Children from mixed ethnic backgrounds may appear physically similar to those from single ethnicity backgrounds, but the influence of family dynamics and upbringing, crucial in developing skills and personal characteristics, varies with the pattern of mixed ethnic marriages. Particularly in a society where Hispanic ancestry is perceived negatively, it raises the question of what kind of White women would choose Hispanic men. Furthermore, even if such unions were formed randomly, children from White-Hispanic homes might benefit from more favorable family conditions than those from Hispanic-White homes, considering Whites generally have stronger socio-economic backgrounds than Hispanics. These factors introduce doubts regarding whether children from Hispanic-White families receive comparable familial support and influences, either genetically or environmentally, as those from White-Hispanic families.
+
+\section{Data}\label{sec:data}
+
+I use two datasets: the IPUMS Current Population Survey (CPS) Annual Social and Economic (ASEC) \autocite{cps2019} and the 1960 to 2000 US censuses \autocite{acs2019}.
+
+The CPS data (1994-2019) is used to study the effect of Hispanic last names on labor market outcomes. The census data is employed to construct synthetic parents using the method developed by \textcite{rubinstein2014pride}.
+
+\subsection{Children of the four parental types}
+
+The CPS sample is restricted to White, US-born citizens aged 25-40, born between 1960-2000. Parents are classified as Hispanic if born in a Spanish-speaking country or Puerto Rico, and White if US-born. Four parental types are identified: (1) White father and White mother (WW), (2) White father and Hispanic mother (WH), (3) Hispanic father and White mother (HW), and (4) Hispanic father and Hispanic mother (HH).
+
+Table \ref{tab:mat1} shows the distribution of these types. WW children comprise 96\% of the sample, HH 3\%, and inter-ethnic children (WH and HW) 1.35\%. Summary statistics for each group are presented in Table \ref{tab:c&p1}.
+
+\subsection{Synthetic parents}
+
+Using the 1960-2000 censuses, I constructed a dataset of synthetic parents, including married White men and women born between 1920-1975. Hispanic individuals are defined as White and born in a Spanish-speaking country, while Whites are native-born.
+
+Table \ref{tab:mat2} shows the distribution of couple types: WW (96\%), HH (2\%), WH (<1\%), and HW (1\%). Summary statistics for the parents are presented in Table \ref{tab:synth}.
+
+\section{Empirical Strategy}\label{sec:emp_model}
+
+In this section, I present two empirical strategies. The first empirical strategy estimates the effect of having a Hispanic last name on educational outcomes and earnings. 
+
+The difference in means between Hispanics and non-Hispanic Whites could result from discrimination. It can also be caused by differences in innate abilities, skills, and parental investments. While controlling for observable skill measures, I compare children of inter-ethnic marriages, HW and WH. WH and HW children are more similar in characteristics but provide employers, and the labor market, with different signals.\footnote{WH and HW children are both half White, half Hispanic.} WH children will have a non-Hispanic last name, while HW children will have a Hispanic last name. This is a method developed by \textcite{rubinstein2014pride}.
+
+\subsection{Estimating the effect of having a Hispanic last name}
+
+In this section I restrict the sample to WH and HW groups. Let $Y_{ist}$ be the outcome of interest for person $i$ in state $s$ at time $t$. $HW_{ist}$ is an indicator variables for the type of parents of person $i$ has. $X_{ist}$ is a vector of controls that includes age and numbers of hours worked, $\gamma_{st}$ are state-year fixed effects (FE), and $\phi_{ist}$ represents the error term. The equation for this strategy is written as follows:
+\begin{equation} \label{eq:1a}
+Y_{ist} = \beta_{1} HW_{ist} + X_{ist} \pi + \gamma_{st} + \phi_{ist}
+\end{equation}
+
+$\beta_{1}$ is the coefficient of interest in this specification. $\beta_{1}$ represents the gaps in outcomes between children of inter-ethnic marriages who have a Spanish-sounding last name versus a White last name. 
+
+\subsection{Threats to Identification}
+
+The central assumption of my estimation strategy is that individuals born to HW parents have comparable characteristics to their WH peers, particularly in areas crucial to the labor market. This assumption faces two main challenges. First, Selection in the marriage market: Given the potential societal penalties associated with Hispanic identity, the characteristics of White women who marry Hispanic men may be unique. Second, Differential parental influence: Fathers and mothers may impact human capital accumulation differently \autocite{kimball2009risk,magruder2010intergenerational}.
+
+These concerns are mitigated by assortative matching in marriages. A substantial body of literature indicates strong selection in marriages based on traits \autocite{averettBetterWorseRelationship2008, beckerTreatiseFamily1993,duncanIntermarriageIntergenerationalTransmission2011}. This suggests that inter-ethnic WH and HW marriages likely consist of partners with similar characteristics, supporting the comparability of their children in terms of labor market outcomes.
+
+A potential measurement error arises from using parents' birthplace in the CPS data as a proxy for ethnicity and last name. However, this concern is minimal as most Hispanics from 1960 to 2000 were first-generation immigrants. Census data shows only 3\% of native-born Americans identified as Hispanic (Table \ref{tab:mat3}), making it highly improbable for an inter-ethnic child to have a native-born, second-generation+ Hispanic father. Empirical evidence from the CPS and US Census will be used to evaluate these concerns and support the validity of the identification strategy.
+
+\section{From the Data: The Differences Between HW and WH Couples}\label{sec:hw-wh-couples-data}
+
+In this section, I examine the data to validate my empirical strategy, focusing on educational and economic outcomes for four ethnic groupings—White White (WW), White Hispanic (WH), Hispanic White (HW), and Hispanic Hispanic (HH)—as shown in Table \ref{tab:synth}. The data indicates marriage selection, with smaller differences between HW and WH children compared to the other groups, making them a more suitable comparison for analyzing labor market discrimination against Hispanics. Using the synthetic parents sample constructed from Census data, we observe that WW couples have the highest household education levels (24.95 years), while HH couples have the lowest (17.13 years). Inter-ethnic couples fall in between, with WH households totaling 22.68 years of schooling and HW households slightly behind at 21.50 years. Notably, HW wives are more educated than their WH peers, which could have implications for the educational attainment of HW children, as mothers play a crucial role in human capital accumulation.
+
+Regarding labor market outcomes, WW households have the highest log total family income (10.75), followed by WH (10.65), HW (10.60), and HH (10.42) households. The earnings gap between HW and WH men is marginal, with HW men earning 4\% less. However, HW women slightly out-earn WH women, with log hourly earnings of 1.75 and 1.73, respectively. This reversal in typical gender earning patterns suggests that HW women contribute more to their families' economic stability, potentially benefiting their children's development and future labor market prospects. Despite HW mothers' higher education and income levels, HW children complete, on average, 0.4 fewer years of education than their WH peers (Table \ref{tab:c&p1}), potentially pointing to discrimination or barriers in educational access for HW children.
+
+\section{Results}\label{sec:results}
+
+\subsection{Effect of Hispanic Last Name on Educational Outcomes}
+
+Analysis of White, U.S.-born Hispanics ages 25-40 (Table \ref{tab:lastname-ed-reg}) reveals that HW children receive 0.2 years less education than WH children. While there is no significant difference in high school dropout rates, HW children are 2 percentage points less likely to earn an associate degree and 3 percentage points less likely to earn a bachelor's degree. These gaps are larger for HW women in higher education. These disparities suggest potential barriers or discrimination in access to higher education for HW children, particularly women.
+
+\subsection{Effect on Labor Market Outcomes}
+
+Results from Tables \ref{tab:lastnamereg-emp} and \ref{tab:lastnamereg} indicate a 1 percentage point employment gap between HW and WH workers, and a 5 percentage point crude earnings gap. However, when controlling for education, the earnings gap reduces to a statistically insignificant 1 percentage point.
+
+\section{Conclusion}\label{sec:con1}
+
+This study examines discrimination against Hispanics in the U.S. labor market, focusing on the impact of Hispanic last names and identification on education and earnings. The research finds that inter-ethnic individuals with Spanish-sounding last names receive 0.2 years less education and are more likely to be unemployed. HW children earn 5 percentage points less than WH children, but this gap becomes statistically insignificant when controlling for education.
+
+These results align with existing literature on disparities in educational access \autocite{bergman2018education,gaddis2024racial}. While the earnings gap diminishes when controlling for education, this doesn't necessarily indicate an absence of discrimination, as education itself can be influenced by bias.
+
+Further research is needed to comprehensively understand the earnings gaps between Hispanics and Whites, particularly considering that mothers of HW children have higher education and earnings, which theoretically should lead to better outcomes for their children.

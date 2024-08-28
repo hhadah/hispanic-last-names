@@ -1,0 +1,30 @@
+\begin{table}[H]
+\centering
+\caption{Effect of Having Hispanic Last Name on Employment and Log Annual Earnings}
+\label{tab:lastnamereg}
+\begin{threeparttable}
+\begin{tabular}{lcccc}
+\toprule
+  & \specialcell{(3) \\ Log Annual \\ Earnings} & \specialcell{(4) \\ Log Annual \\ Earnings} & \specialcell{(2) \\ Unemployment} & \specialcell{(3) \\ Unemployment} \\
+\midrule
+$HW_{ist}$ & \num{-0.05}* & \num{-0.02} & \num{0.01}** & \num{0.01}* \\
+ & (\num{0.02}) & (\num{0.02}) & (\num{0.00}) & (\num{0.00}) \\
+Constant &  &  &  & \\
+ &  &  &  & \\
+\midrule
+\textit{Controlling for:} & & & & \\
+Education &  & X &  & X \\
+Observations & \num{3621} & \num{3621} & \num{38090} & \num{38090} \\
+\bottomrule
+\multicolumn{5}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}
+\item[1] {\setstretch{1.0}\footnotesize{This table includes the estimation results of equation (\ref{eq:1a}).}}
+\item[2] {\setstretch{1.0}\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}
+\item[3] {\setstretch{1.0}\footnotesize{The sample is restricted to prime-age men for unemployment and full-time full-year wage and salary workers for earnings.}}
+\item[4] {\setstretch{1.0}\footnotesize{I control for hours worked, age, and state-year fixed effects for earnings. I control for age, and state-year fixed effects for earnings.}}
+
+\item[5] {\setstretch{1.0}\footnotesize{Standard errors are clustered at the state level.}}
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
