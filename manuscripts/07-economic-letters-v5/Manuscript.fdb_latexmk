@@ -1,14 +1,13 @@
 # Fdb version 4
-["bibtex Hadah-Hispanic-Last-Names"] 1726503655.70831 "Hadah-Hispanic-Last-Names.aux" "Hadah-Hispanic-Last-Names.bbl" "Hadah-Hispanic-Last-Names" 1726503655.81109 2
+["bibtex Manuscript"] 1726505845.04581 "Manuscript.aux" "Manuscript.bbl" "Manuscript" 1726505846.22703 2
   "./bibliography.bib" 1724788603.74497 302917 8f8b40a6a0823334835c4b1d2970ba74 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/els-cas-templates/cas-model2-names.bst" 1715026628 31802 28b630660245c09f173aac55be552b29 ""
-  "Hadah-Hispanic-Last-Names.aux" 1726503655.3996 5066 34d94f36af6376e36649148ef678f536 "pdflatex"
+  "Manuscript.aux" 1726505845.96547 5058 4861913b5391765c89cd42f9cac05a30 "pdflatex"
   (generated)
-  "Hadah-Hispanic-Last-Names.bbl"
-  "Hadah-Hispanic-Last-Names.blg"
+  "Manuscript.bbl"
+  "Manuscript.blg"
   (rewritten before read)
-["pdflatex"] 1726503654.54 "/Users/hhadah/Documents/GiT/hispanic-last-names/manuscripts/07-economic-letters-v5/Hadah-Hispanic-Last-Names.tex" "Hadah-Hispanic-Last-Names.pdf" "Hadah-Hispanic-Last-Names" 1726503655.81119 0
-  "/Users/hhadah/Documents/GiT/hispanic-last-names/manuscripts/07-economic-letters-v5/Hadah-Hispanic-Last-Names.tex" 1726503398.03591 18385 bd754320e0a121f23ba1266e76530ccf ""
+["pdflatex"] 1726505845.14321 "Manuscript.tex" "Manuscript.pdf" "Manuscript" 1726505846.22715 0
   "/Users/hhadah/Library/texmf/tex/latex/setspace.sty" 1130857036 22518 969fcbccb9feb6c080f52825bb5fe1e1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc" 1388795362 7013 c55cc8669071ac14036c4a0c96c16202 ""
@@ -225,23 +224,23 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1723744972.31662 5473732 21589bc7d1bbb8fe26b8fcb33c5fdcfa ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1723779287 8239407 89284fef0c87384afe4403acdae0a2f8 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Hadah-Hispanic-Last-Names.abs" 1726503655.1792 840 3153bba7ea4443b72d1e50e1151fd930 "pdflatex"
-  "Hadah-Hispanic-Last-Names.aux" 1726503655.3996 5066 34d94f36af6376e36649148ef678f536 "pdflatex"
-  "Hadah-Hispanic-Last-Names.bbl" 1726503655.81023 7205 bb7bb4f15bb883dc0613ac9f79c2d922 "bibtex Hadah-Hispanic-Last-Names"
-  "Hadah-Hispanic-Last-Names.out" 1726503655.16275 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Hadah-Hispanic-Last-Names.tex" 1726503398.03591 18385 bd754320e0a121f23ba1266e76530ccf ""
+  "Manuscript.abs" 1726505845.76062 840 3153bba7ea4443b72d1e50e1151fd930 "pdflatex"
+  "Manuscript.aux" 1726505845.96547 5058 4861913b5391765c89cd42f9cac05a30 "pdflatex"
+  "Manuscript.bbl" 1726505845.14066 7307 1eee10a88c850600d95b0d99557a88be "bibtex Manuscript"
+  "Manuscript.out" 1726505845.74398 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Manuscript.tex" 1726504194.98391 18357 0895d6bc428be3652dbcfd110881a4b8 ""
   "cas-common.sty" 1692022139.88218 76635 d4990514e0ed138322c0de5cec4e4065 ""
   "cas-sc.cls" 1620771462 4409 f271eb20a758fc9ea5551304eb312def ""
-  "tables/tab13-regression.tex" 1723332144.12854 1857 4e91630cd68c08b1aa82a88815a8b746 ""
-  "tables/tab15-emp-earn-regression.tex" 1724713388.16415 1562 b36bbd9a9778a54816c6b27e7808131a ""
-  "tables/tab16-tab1-and-tab2.tex" 1725916329.96846 1554 a101490de35b5c461782177cd672e260 ""
-  "tables/tab17-all-sums.tex" 1725916371.23534 4465 a8584922fd456be61c137d4b750a0d80 ""
+  "tab13-regression.tex" 1723332144.12854 1857 4e91630cd68c08b1aa82a88815a8b746 ""
+  "tab15-emp-earn-regression.tex" 1724713388.16415 1562 b36bbd9a9778a54816c6b27e7808131a ""
+  "tab16-tab1-and-tab2.tex" 1725916180.56254 1550 1bbe5a109e78a47c12952ab26e221d83 ""
+  "tab17-all-sums.tex" 1725916188.57821 4461 a5c4254982e2c930bae222c1aa4e10aa ""
   "thumbnails/cas-email.jpeg" 1553081278 8764 ae276cc9956197082d008c18ae4cbb28 ""
   (generated)
-  "Hadah-Hispanic-Last-Names.abs"
-  "Hadah-Hispanic-Last-Names.aux"
-  "Hadah-Hispanic-Last-Names.log"
-  "Hadah-Hispanic-Last-Names.out"
-  "Hadah-Hispanic-Last-Names.pdf"
+  "Manuscript.abs"
+  "Manuscript.aux"
+  "Manuscript.log"
+  "Manuscript.out"
+  "Manuscript.pdf"
   (rewritten before read)
-  "Hadah-Hispanic-Last-Names.abs"
+  "Manuscript.abs"

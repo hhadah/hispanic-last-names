@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.15)  16 SEP 2024 11:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.15)  16 SEP 2024 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1036,7 +1036,11 @@ LaTeX Font Info:    Trying to load font information for T1+stix on input line 8
  (/usr/local/texlive/2024/texmf-dist/tex/latex/stix/t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 )
-No file Manuscript.aux.
+(./Manuscript.aux
+
+LaTeX Warning: Label `tab:combined' multiply defined.
+
+)
 \openout1 = `Manuscript.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
@@ -1060,7 +1064,7 @@ LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 83.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
 83.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/stix/ls1stix.fd
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/stix/ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
 LaTeX Font Info:    ... okay on input line 83.
@@ -1098,6 +1102,8 @@ e
 LaTeX Info: Command `\dddot' is already robust on input line 83.
 LaTeX Info: Command `\ddddot' is already robust on input line 83.
 Package hyperref Info: Link coloring ON on input line 83.
+
+(./Manuscript.out) (./Manuscript.out)
 \@outlinefile=\write4
 \openout4 = `Manuscript.out'.
 
@@ -1222,51 +1228,16 @@ Overfull \hbox (117.0831pt too wide) detected at line 125
  []
 
 (./Manuscript.abs)
-
-Package natbib Warning: Citation `duncan2006hispanics' on page 1 undefined on i
-nput line 133.
-
-
-Package natbib Warning: Citation `duncan2018identifying' on page 1 undefined on
- input line 133.
-
-
-Package natbib Warning: Citation `duncan2018socioeconomic' on page 1 undefined 
-on input line 133.
-
-
-Package natbib Warning: Citation `antman2020ethnic' on page 1 undefined on inpu
-t line 135.
-
-
-Package natbib Warning: Citation `davilaChangesRelativeEarnings2008' on page 1 
-undefined on input line 135.
-
-
-Package natbib Warning: Citation `bertrand2004emily' on page 1 undefined on inp
-ut line 137.
-
-
-Package natbib Warning: Citation `rubinstein2014pride' on page 1 undefined on i
-nput line 137.
-
-
-Package natbib Warning: Citation `averettBetterWorseRelationship2008' on page 1
- undefined on input line 137.
-
-
-Package natbib Warning: Citation `cps2019' on page 1 undefined on input line 14
-3.
-
-
-Package natbib Warning: Citation `acs2019' on page 1 undefined on input line 14
-3.
-
-
-Package natbib Warning: Citation `rubinstein2014pride' on page 1 undefined on i
-nput line 143.
-
-
+<thumbnails/cas-email.jpeg, id=7, 225.84375pt x 225.84375pt>
+File: thumbnails/cas-email.jpeg Graphic file (type jpg)
+<use thumbnails/cas-email.jpeg>
+Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 125.
+(pdftex.def)             Requested size: 7.99838pt x 8.0pt.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+25.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
 
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
 44.
@@ -1276,7 +1247,8 @@ File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2024/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc}{/usr/local/texlive
-/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./thumbnails/cas-em
+ail.jpeg>]
 
 LaTeX Warning: Reference `tab:combined-mat' on page 2 undefined on input line 1
 45.
@@ -1292,26 +1264,6 @@ LaTeX Warning: Reference `tab:combined-mat' on page 2 undefined on input line 1
 
 LaTeX Warning: Reference `tab:combined-sum' on page 2 undefined on input line 1
 45.
-
-
-Package natbib Warning: Citation `kimball2009risk' on page 2 undefined on input
- line 162.
-
-
-Package natbib Warning: Citation `magruder2010intergenerational' on page 2 unde
-fined on input line 162.
-
-
-Package natbib Warning: Citation `averettBetterWorseRelationship2008' on page 2
- undefined on input line 164.
-
-
-Package natbib Warning: Citation `beckerTreatiseFamily1993' on page 2 undefined
- on input line 164.
-
-
-Package natbib Warning: Citation `duncanIntermarriageIntergenerationalTransmiss
-ion2011' on page 2 undefined on input line 164.
 
 
 
@@ -1321,291 +1273,30 @@ LaTeX Warning: Reference `tab:combined-sum' on page 3 undefined on input line 1
 70.
 
 
-Package natbib Warning: Citation `kimball2009risk' on page 3 undefined on input
- line 170.
-
-
-Package natbib Warning: Citation `magruder2010intergenerational' on page 3 unde
-fined on input line 170.
-
-
 LaTeX Warning: Reference `tab:combined-sum' on page 3 undefined on input line 1
 72.
-
-
-LaTeX Warning: Reference `tab:lastname-ed-reg' on page 3 undefined on input lin
-e 176.
-
-
-LaTeX Warning: Reference `tab:lastnamereg' on page 3 undefined on input line 17
-8.
-
-
-Package natbib Warning: Citation `bergman2018education' on page 3 undefined on 
-input line 184.
-
-
-Package natbib Warning: Citation `gaddis2024racial' on page 3 undefined on inpu
-t line 184.
 
 
 
 [3]
 
-[4]
-No file Manuscript.bbl.
-(./tab16-tab1-and-tab2.tex)
+[4] (./Manuscript.bbl)
 
-[5] (./tab17-all-sums.tex
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T1/stix/m/n/9 Source:
- []
+[5
 
+] (./tab16-tab1-and-tab2.tex)
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 1950-2000
- []
+[6] (./tab17-all-sums.tex [7
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 Cen-sus
- []
 
+]
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 (syn-thetic
- []
+[8]) (./tab13-regression.tex)
 
+[9] (./tab15-emp-earn-regression.tex)
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 par-ents),
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 1994-2019
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 CPS
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 (chil-dren's
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T1/stix/m/n/9 Synthetic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 par-ents:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 native-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 born US
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 cit-i-zens,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 White,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 ages
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 25-40,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T1/stix/m/n/9 Children:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 native-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 born US
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 cit-i-zens,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 White,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 ages
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 25-40,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 1994-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 HW, HH
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 re-stricted
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 to self-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 identified
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 His-
- []
-
-
-Overfull \hbox (5.495pt too wide) in paragraph at lines 28--28
-\T1/stix/m/n/9 panic/Latino 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T1/stix/m/n/9 Parent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 eth-nic-ity
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 by
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 birth-place:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 Spanish-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 speaking
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 coun-try,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 White if
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]\T1/stix/m/n/9 Mean
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 (SD) or
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 Dif-fer-ence
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-\T1/stix/m/n/9 (SE). ***
- []
-
-
-Underfull \hbox (badness 6741) in paragraph at lines 28--28
-\T1/stix/m/n/9 p<0.05, *
- []
-
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 2 on input line 81.
-
-[6
-
-
-
-
-] [7]
-Overfull \vbox (123.75316pt too high) has occurred while \output is active []
-
-
-
-[8]) (./tab13-regression.tex
-
-LaTeX Warning: Reference `eq:1a' on page 9 undefined on input line 32.
-
-)
-
-[9] (./tab15-emp-earn-regression.tex
-
-LaTeX Warning: Reference `eq:1a' on page 10 undefined on input line 22.
-
-)
-
-Package natbib Warning: There were undefined citations.
-
-
-
-[10]
-
-Package longtable Warning: Table widths have changed. Rerun LaTeX.
-
-(./Manuscript.aux)
+[10] (./Manuscript.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1615,25 +1306,19 @@ L3 programming layer <2024-07-20>
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `Manuscript.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Manuscript.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `Manuscript.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32786 strings out of 473579
- 641568 string characters out of 5728228
- 1966957 words of memory out of 5000000
- 55127 multiletter control sequences out of 15000+600000
- 657494 words of font info for 158 fonts, out of 8000000 for 9000
+ 32913 strings out of 473579
+ 644932 string characters out of 5728228
+ 1965957 words of memory out of 5000000
+ 55224 multiletter control sequences out of 15000+600000
+ 655078 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,19n,94p,1749b,1140s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,19n,94p,1749b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -1657,12 +1342,13 @@ egular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi
 0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss08
 00.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss0900
 .pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx0900.p
-fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb>
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb>
-Output written on Manuscript.pdf (10 pages, 232731 bytes).
+fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb>
+Output written on Manuscript.pdf (10 pages, 280750 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
