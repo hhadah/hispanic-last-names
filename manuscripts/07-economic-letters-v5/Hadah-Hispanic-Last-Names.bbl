@@ -13,136 +13,85 @@
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 %Type = Article
 \bibitem[{Antman et~al.(2020)Antman, Duncan and Trejo}]{antman2020ethnic}
-\bibinfo{author}{Antman, F.M.}, \bibinfo{author}{Duncan, B.},
-  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Ethnic attrition, assimilation, and the measured
-  health outcomes of mexican americans}.
-\newblock \bibinfo{journal}{Journal of Population Economics} ,
-  \bibinfo{pages}{1--24}.
+\bibinfo{author}{Antman, F.M.}, \bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Ethnic attrition, assimilation, and the measured health outcomes of mexican americans}.
+\newblock \bibinfo{journal}{Journal of Population Economics} , \bibinfo{pages}{1--24}.
 %Type = Article
-\bibitem[{Averett et~al.(2008)Averett, Sikora and
-  Argys}]{averettBetterWorseRelationship2008}
-\bibinfo{author}{Averett, S.L.}, \bibinfo{author}{Sikora, A.},
-  \bibinfo{author}{Argys, L.M.}, \bibinfo{year}{2008}.
-\newblock \bibinfo{title}{For better or worse: Relationship status and body
-  mass index}.
-\newblock \bibinfo{journal}{Economics and Human Biology} \bibinfo{volume}{6},
-  \bibinfo{pages}{330--349}.
+\bibitem[{Averett et~al.(2008)Averett, Sikora and Argys}]{averettBetterWorseRelationship2008}
+\bibinfo{author}{Averett, S.L.}, \bibinfo{author}{Sikora, A.}, \bibinfo{author}{Argys, L.M.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{For better or worse: Relationship status and body mass index}.
+\newblock \bibinfo{journal}{Economics and Human Biology} \bibinfo{volume}{6}, \bibinfo{pages}{330--349}.
 \newblock \DOIprefix\doi{10.1016/j.ehb.2008.07.003}.
 %Type = Book
 \bibitem[{Becker(1993)}]{beckerTreatiseFamily1993}
 \bibinfo{author}{Becker, G.S.}, \bibinfo{year}{1993}.
 \newblock \bibinfo{title}{A {{Treatise}} on the {{Family}}}.
-\newblock \bibinfo{publisher}{{Harvard University Press}},
-  \bibinfo{address}{{Cambridge, UNITED STATES}}.
+\newblock \bibinfo{publisher}{{Harvard University Press}}, \bibinfo{address}{{Cambridge, UNITED STATES}}.
 %Type = Techreport
 \bibitem[{Bergman and McFarlin~Jr(2018)}]{bergman2018education}
-\bibinfo{author}{Bergman, P.}, \bibinfo{author}{McFarlin~Jr, I.},
-  \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{Education for all? A nationwide audit study of school
-  choice}.
-\newblock \bibinfo{type}{Technical Report}. National Bureau of Economic
-  Research.
+\bibinfo{author}{Bergman, P.}, \bibinfo{author}{McFarlin~Jr, I.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Education for all? A nationwide audit study of school choice}.
+\newblock \bibinfo{type}{Technical Report}. National Bureau of Economic Research.
 %Type = Article
 \bibitem[{Bertrand and Mullainathan(2004)}]{bertrand2004emily}
-\bibinfo{author}{Bertrand, M.}, \bibinfo{author}{Mullainathan, S.},
-  \bibinfo{year}{2004}.
-\newblock \bibinfo{title}{Are emily and greg more employable than lakisha and
-  jamal? a field experiment on labor market discrimination}.
-\newblock \bibinfo{journal}{American economic review} \bibinfo{volume}{94},
-  \bibinfo{pages}{991--1013}.
+\bibinfo{author}{Bertrand, M.}, \bibinfo{author}{Mullainathan, S.}, \bibinfo{year}{2004}.
+\newblock \bibinfo{title}{Are emily and greg more employable than lakisha and jamal? a field experiment on labor market discrimination}.
+\newblock \bibinfo{journal}{American economic review} \bibinfo{volume}{94}, \bibinfo{pages}{991--1013}.
 %Type = Article
 \bibitem[{D{\'a}vila and Mora(2008)}]{davilaChangesRelativeEarnings2008}
-\bibinfo{author}{D{\'a}vila, A.}, \bibinfo{author}{Mora, M.T.},
-  \bibinfo{year}{2008}.
-\newblock \bibinfo{title}{Changes in the {{Relative Earnings Gap Between
-  Natives}} and {{Immigrants Along}} the {{U}}.s.-{{Mexico Border}}*}.
-\newblock \bibinfo{journal}{Journal of Regional Science} \bibinfo{volume}{48},
-  \bibinfo{pages}{525--545}.
+\bibinfo{author}{D{\'a}vila, A.}, \bibinfo{author}{Mora, M.T.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{Changes in the {{Relative Earnings Gap Between Natives}} and {{Immigrants Along}} the {{U}}.s.-{{Mexico Border}}*}.
+\newblock \bibinfo{journal}{Journal of Regional Science} \bibinfo{volume}{48}, \bibinfo{pages}{525--545}.
 \newblock \DOIprefix\doi{10.1111/j.1467-9787.2008.00562.x}.
 %Type = Article
 \bibitem[{Duncan et~al.(2006)Duncan, Hotz and Trejo}]{duncan2006hispanics}
-\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Hotz, V.J.},
-  \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2006}.
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Hotz, V.J.}, \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2006}.
 \newblock \bibinfo{title}{Hispanics in the us labor market}.
-\newblock \bibinfo{journal}{Hispanics and the Future of America} ,
-  \bibinfo{pages}{228--290}.
+\newblock \bibinfo{journal}{Hispanics and the Future of America} , \bibinfo{pages}{228--290}.
 %Type = Article
-\bibitem[{Duncan and
-  Trejo(2011)}]{duncanIntermarriageIntergenerationalTransmission2011}
-\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.},
-  \bibinfo{year}{2011}.
-\newblock \bibinfo{title}{Intermarriage and the intergenerational transmission
-  of ethnic identity and human {{Capital}} for {{Mexican Americans}}}.
+\bibitem[{Duncan and Trejo(2011)}]{duncanIntermarriageIntergenerationalTransmission2011}
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Intermarriage and the intergenerational transmission of ethnic identity and human {{Capital}} for {{Mexican Americans}}}.
 \newblock \bibinfo{journal}{J Labor Econ} \bibinfo{volume}{29}.
 %Type = Article
 \bibitem[{Duncan and Trejo(2018a)}]{duncan2018identifying}
-\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.},
-  \bibinfo{year}{2018}a.
-\newblock \bibinfo{title}{Identifying the later-generation descendants of us
-  immigrants: Issues arising from selective ethnic attrition}.
-\newblock \bibinfo{journal}{The ANNALS of the American Academy of Political and
-  Social Science} \bibinfo{volume}{677}, \bibinfo{pages}{131--138}.
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2018}a.
+\newblock \bibinfo{title}{Identifying the later-generation descendants of us immigrants: Issues arising from selective ethnic attrition}.
+\newblock \bibinfo{journal}{The ANNALS of the American Academy of Political and Social Science} \bibinfo{volume}{677}, \bibinfo{pages}{131--138}.
 %Type = Techreport
 \bibitem[{Duncan and Trejo(2018b)}]{duncan2018socioeconomic}
-\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.},
-  \bibinfo{year}{2018}b.
-\newblock \bibinfo{title}{Socioeconomic integration of US immigrant groups over
-  the long term: the second generation and beyond}.
-\newblock \bibinfo{type}{Technical Report}. National Bureau of Economic
-  Research.
+\bibinfo{author}{Duncan, B.}, \bibinfo{author}{Trejo, S.J.}, \bibinfo{year}{2018}b.
+\newblock \bibinfo{title}{Socioeconomic integration of US immigrant groups over the long term: the second generation and beyond}.
+\newblock \bibinfo{type}{Technical Report}. National Bureau of Economic Research.
 %Type = Misc
 \bibitem[{Flood et~al.(2020)Flood, King, Rodgers, Ruggles and Warren}]{cps2019}
-\bibinfo{author}{Flood, S.}, \bibinfo{author}{King, M.},
-  \bibinfo{author}{Rodgers, R.}, \bibinfo{author}{Ruggles, S.},
-  \bibinfo{author}{Warren, J.R.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Integrated public use microdata series, current
-  population survey: Version 7.0 [dataset]}.
-\newblock \bibinfo{note}{Minneapolis, MN: IPUMS, 2020.
-  https://doi.org/10.18128/D030.V7.0}.
+\bibinfo{author}{Flood, S.}, \bibinfo{author}{King, M.}, \bibinfo{author}{Rodgers, R.}, \bibinfo{author}{Ruggles, S.}, \bibinfo{author}{Warren, J.R.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Integrated public use microdata series, current population survey: Version 7.0 [dataset]}.
+\newblock \bibinfo{note}{Minneapolis, MN: IPUMS, 2020. https://doi.org/10.18128/D030.V7.0}.
 %Type = Article
-\bibitem[{Gaddis et~al.(2024)Gaddis, Crabtree, Holbein and
-  Pfaff}]{gaddis2024racial}
-\bibinfo{author}{Gaddis, S.M.}, \bibinfo{author}{Crabtree, C.},
-  \bibinfo{author}{Holbein, J.B.}, \bibinfo{author}{Pfaff, S.},
-  \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Racial/ethnic discrimination and heterogeneity across
-  schools in the us public education system: A correspondence audit of
-  principals}.
+\bibitem[{Gaddis et~al.(2024)Gaddis, Crabtree, Holbein and Pfaff}]{gaddis2024racial}
+\bibinfo{author}{Gaddis, S.M.}, \bibinfo{author}{Crabtree, C.}, \bibinfo{author}{Holbein, J.B.}, \bibinfo{author}{Pfaff, S.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Racial/ethnic discrimination and heterogeneity across schools in the us public education system: A correspondence audit of principals}.
 \newblock \bibinfo{journal}{Available at SSRN 4725007} .
 %Type = Article
 \bibitem[{Kimball et~al.(2009)Kimball, Sahm and Shapiro}]{kimball2009risk}
-\bibinfo{author}{Kimball, M.S.}, \bibinfo{author}{Sahm, C.R.},
-  \bibinfo{author}{Shapiro, M.D.}, \bibinfo{year}{2009}.
-\newblock \bibinfo{title}{Risk preferences in the psid: Individual imputations
-  and family covariation}.
-\newblock \bibinfo{journal}{American Economic Review} \bibinfo{volume}{99},
-  \bibinfo{pages}{363--368}.
+\bibinfo{author}{Kimball, M.S.}, \bibinfo{author}{Sahm, C.R.}, \bibinfo{author}{Shapiro, M.D.}, \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{Risk preferences in the psid: Individual imputations and family covariation}.
+\newblock \bibinfo{journal}{American Economic Review} \bibinfo{volume}{99}, \bibinfo{pages}{363--368}.
 %Type = Article
 \bibitem[{Magruder(2010)}]{magruder2010intergenerational}
 \bibinfo{author}{Magruder, J.R.}, \bibinfo{year}{2010}.
-\newblock \bibinfo{title}{Intergenerational networks, unemployment, and
-  persistent inequality in south africa}.
-\newblock \bibinfo{journal}{American Economic Journal: Applied Economics}
-  \bibinfo{volume}{2}, \bibinfo{pages}{62--85}.
+\newblock \bibinfo{title}{Intergenerational networks, unemployment, and persistent inequality in south africa}.
+\newblock \bibinfo{journal}{American Economic Journal: Applied Economics} \bibinfo{volume}{2}, \bibinfo{pages}{62--85}.
 %Type = Article
 \bibitem[{Rubinstein and Brenner(2014)}]{rubinstein2014pride}
-\bibinfo{author}{Rubinstein, Y.}, \bibinfo{author}{Brenner, D.},
-  \bibinfo{year}{2014}.
-\newblock \bibinfo{title}{Pride and prejudice: Using ethnic-sounding names and
-  inter-ethnic marriages to identify labour market discrimination}.
-\newblock \bibinfo{journal}{Review of Economic Studies} \bibinfo{volume}{81},
-  \bibinfo{pages}{389--425}.
+\bibinfo{author}{Rubinstein, Y.}, \bibinfo{author}{Brenner, D.}, \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{Pride and prejudice: Using ethnic-sounding names and inter-ethnic marriages to identify labour market discrimination}.
+\newblock \bibinfo{journal}{Review of Economic Studies} \bibinfo{volume}{81}, \bibinfo{pages}{389--425}.
 %Type = Misc
-\bibitem[{Ruggles et~al.(2020)Ruggles, Flood, Goeken, Pacas, Schouweiler and
-  Sobek}]{acs2019}
-\bibinfo{author}{Ruggles, S.}, \bibinfo{author}{Flood, S.},
-  \bibinfo{author}{Goeken, R.}, \bibinfo{author}{Pacas, J.},
-  \bibinfo{author}{Schouweiler, M.}, \bibinfo{author}{Sobek, M.},
-  \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Integrated public use microdata series, american
-  community survey: Version 11.0 [dataset]}.
-\newblock \bibinfo{note}{Minneapolis, MN: IPUMS, 2020.
-  https://doi.org/10.18128/D010.V11.0}.
+\bibitem[{Ruggles et~al.(2020)Ruggles, Flood, Goeken, Pacas, Schouweiler and Sobek}]{acs2019}
+\bibinfo{author}{Ruggles, S.}, \bibinfo{author}{Flood, S.}, \bibinfo{author}{Goeken, R.}, \bibinfo{author}{Pacas, J.}, \bibinfo{author}{Schouweiler, M.}, \bibinfo{author}{Sobek, M.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Integrated public use microdata series, american community survey: Version 11.0 [dataset]}.
+\newblock \bibinfo{note}{Minneapolis, MN: IPUMS, 2020. https://doi.org/10.18128/D010.V11.0}.
 
 \end{thebibliography}
