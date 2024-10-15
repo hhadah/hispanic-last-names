@@ -8,7 +8,7 @@
 
 IndividualData <- read_csv(file.path(datasets,"CPS_synth.csv")) |> 
   mutate(Education = as.numeric(Education)) |> 
-  filter(WW == 1 | (WH == 1 & Hispanic_ID == 1) | (HW == 1 & Hispanic_ID == 1) | (HH == 1 & Hispanic_ID == 1))
+  filter(WW == 1 | (WH == 1) | (HW == 1) | (HH == 1))
 
 CrossTable(IndividualData$Type, IndividualData$Hispanic_ID)
 row1 <- c("Variables", 
@@ -1114,6 +1114,94 @@ row15 <- c(
 dim(row15) <- c(1,7)
 
 
+# Panel C
+# Hispanic Identity
+row26 <- c("Panel C: Children's Hispanic Identity ", " ", " ", " ", " ", " ", " ")
+dim(row26) <- c(1,7)
+
+## Man's Identity
+ManHispanic <- IndividualData |> 
+  filter(sex == 1) |> 
+  group_by(Type) |> 
+  summarise(HispanicMan   = mean(Hispanic_ID, na.rm = T),
+            HispanicSD = sd(Hispanic_ID, na.rm = T))
+
+model <- lm(Hispanic_ID ~ 0 + WW + WH + HW + HH, 
+             data = IndividualData |> filter(sex == 1))
+test1 <- tidy(glht(model, linfct = c("HH - WW = 0")))
+pvalues1 <- test1$std.error
+differences1 <- test1$estimate
+
+test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
+pvalues2 <- test2$std.error
+differences2 <- test2$estimate
+
+row27 <- c(
+  "Men",
+  paste0("\\specialcell{", 
+         round(ManHispanic[4,2], digits = 2),
+         "}"
+  ),
+  paste0("\\specialcell{", 
+         round(ManHispanic[3,2], digits = 2), 
+         "}"
+  ),
+  paste0("\\specialcell{", 
+         round(ManHispanic[2,2], digits = 2), 
+         "}"
+  ),
+  paste0("\\specialcell{", 
+         round(ManHispanic[1,2], digits = 2), 
+         "}"
+  ),
+  paste0(" "
+  ),
+  paste0(" "
+  )
+)
+
+dim(row27) <- c(1,7)
+## Womens's Identity
+WomenHispanic <- IndividualData |> 
+  filter(sex == 2) |> 
+  group_by(Type) |> 
+  summarise(HispanicWoman   = mean(Hispanic_ID, na.rm = T),
+            HispanicSD = sd(Hispanic_ID, na.rm = T))
+
+model <- lm(Hispanic_ID ~ 0 + WW + WH + HW + HH, 
+             data = IndividualData |> filter(sex == 2))
+test1 <- tidy(glht(model, linfct = c("HH - WW = 0")))
+pvalues1 <- test1$std.error
+differences1 <- test1$estimate
+
+test2 <- tidy(glht(model, linfct = c("HW - WH = 0")))
+pvalues2 <- test2$std.error
+differences2 <- test2$estimate
+
+row28 <- c(
+  "Women",
+  paste0("\\specialcell{", 
+         round(WomenHispanic[4,2], digits = 2),
+         "}"
+  ),
+  paste0("\\specialcell{", 
+         round(WomenHispanic[3,2], digits = 2), 
+         "}"
+  ),
+  paste0("\\specialcell{", 
+         round(WomenHispanic[2,2], digits = 2), 
+         "}"
+  ),
+  paste0("\\specialcell{", 
+         round(WomenHispanic[1,2], digits = 2), 
+         "}"
+  ),
+  paste0(" "
+  ),
+  paste0(" "
+  )
+)
+dim(row28) <- c(1,7)
 
 
 Table_rows <- rbind(row1,  row6,   row7,  row8,
@@ -1121,7 +1209,8 @@ Table_rows <- rbind(row1,  row6,   row7,  row8,
                     row20, row21,  row22, row23,
                     row24, row25,
                     row9,  row10,  row11, row12,
-                    row13, row14,  row15)
+                    row13, row14,  row15, row26,
+                    row27, row28)
 
 Table_rows <-  Table_rows |> 
   row_to_names(row_number = 1)
@@ -1146,15 +1235,16 @@ knitr::kable(Table_rows, "html", align = "lcccccc",
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
   column_spec(1, width = "5cm") |> 
-  row_spec(c(1,12), bold = T) |> 
+  row_spec(c(1,12, 19), bold = T) |> 
   add_indent(c(2:11)) |>
-  add_indent(c(13:18))
+  add_indent(c(13:18))|>
+  add_indent(c(20:21))
 
 knitr::kable(Table_rows, "latex", align = "lcccccc",
              booktabs = T,
              escape = F,
              longtable = T, 
-             caption = "Summary Statistics of Outcomes Using Parent's Place of Birth Only for Those That Self-Identify as Hispanic \\label{tab:c&p2}") %>%
+             caption = "Summary Statistics of Outcomes Using Parent's Place of Birth \\label{tab:c&p2}") %>%
   kable_classic(full_width = F) |>
   kable_styling(#bootstrap_options = c("hover", "condensed"), 
                 latex_options = c(#"scale_down", 
@@ -1163,16 +1253,18 @@ knitr::kable(Table_rows, "latex", align = "lcccccc",
                 ),
                 repeat_header_continued = "\\textit{(Continued on Next Page...)}") |> 
   footnote(number = c("Source: The 1994-2019 Current Population Surveys (CPS) for children's outcomes",
-                      "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. The summary statistics for White-Hispanic (WH), Hispanic-White (HW), and Hispanic-Hispanic (HH) are restricted to the sample of children that self-identify as Hispanic or Latino. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
+                      "The data is restricted to native-born United States citizens between 1994 and 2019 who are also White and between the ages of 25 and 40. I identify the ethnicity of a person's parents through the parent's place of birth. A parent is Hispanic if they were born in a Spanish-speaking country. A parent is White if they were born in the United States."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T
   ) |> 
   add_header_above(c(" " = 1, "Father's and Mother's Ethnicities" = 4,
                      "Differences" = 2)) |> 
   column_spec(1, width = "5cm") |> 
-  row_spec(c(1,12), bold = T) |> 
+  row_spec(c(1,12, 19), bold = T) |> 
   add_indent(c(2:11)) |>
-  add_indent(c(13:18)) |>
+  add_indent(c(13:18))|>
+  add_indent(c(20:21)) |> 
   landscape() |>
   save_kable(file.path(tables_wd,"tab04-summary-stats.tex")) %>% 
-  save_kable(file.path(thesis_tabs,"tab04-summary-stats.tex"))
+  save_kable(file.path(thesis_tabs,"tab04-summary-stats.tex")) |> 
+  save_kable(file.path(manuscript_wd,"tab04-summary-stats.tex"))
