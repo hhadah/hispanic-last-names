@@ -20,7 +20,7 @@ thesis_tabs  <- paste0(mdir_git,"/my_paper/tables")
 thesis_plots <- paste0(mdir_git,"/my_paper/figure") 
 add_health_data_dir <- "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/Identification_Paper/Data/Datasets"
 ACS_data  <- "/Users/hhadah/Documents/GiT/jmp-decomposition-replication/data/raw"
-manuscript_wd <- paste0(mdir_git,"/manuscripts/08-labor-research-v6") 
+manuscript_wd <- paste0(mdir_git,"/manuscripts/08-JERP-v6") 
 # pres_tabs <- paste0(mdir,"/presentations/jmp-presentation/tables")
 # pres_plots <- paste0(mdir,"/presentations/jmp-presentation/figures")
 

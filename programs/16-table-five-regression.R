@@ -28,6 +28,36 @@ IndividualData  <- IndividualData  |>
 ParentDummies <- c("HW", "uhrsworkly")
 
 ParentControls  <- c("IncomeQuint", "EducationQuint")
+
+IndividualData <- IndividualData |> 
+  mutate(
+    occupation = case_when(
+      occ1990 == 1 ~ "Managers",
+      occ1990 == 2 ~ "Business and Financial Operations",
+      occ1990 == 3 ~ "Computer and Mathematical",
+      occ1990 == 4 ~ "Architecture and Engineering",
+      occ1990 == 5 ~ "Life, Physical, and Social Science",
+      occ1990 == 6 ~ "Community and Social Services",
+      occ1990 == 7 ~ "Legal",
+      occ1990 == 8 ~ "Education, Training, and Library",
+      occ1990 == 9 ~ "Arts, Design, Entertainment, Sports, and Media",
+      occ1990 == 10 ~ "Healthcare Practitioners and Technical",
+      occ1990 == 11 ~ "Healthcare Support",
+      occ1990 == 12 ~ "Protective Service",
+      occ1990 == 13 ~ "Food Preparation and Serving",
+      occ1990 == 14 ~ "Building and Grounds Cleaning and Maintenance",
+      occ1990 == 15 ~ "Personal Care and Service",
+      occ1990 == 16 ~ "Sales and Related",
+      occ1990 == 17 ~ "Office and Administrative Support",
+      occ1990 == 18 ~ "Farming, Fishing, and Forestry",
+      occ1990 == 19 ~ "Construction and Extraction",
+      occ1990 == 20 ~ "Installation, Maintenance, and Repair",
+      occ1990 == 21 ~ "Production",
+      occ1990 == 22 ~ "Transportation and Material Moving",
+      occ1990 == 23 ~ "Military"
+    )
+  )
+
 # By generation
 reg1 <- list(
   "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW, vcov = ~statefip,
@@ -168,6 +198,24 @@ reg7[[2]]
 reg7[[3]]
 reg7[[4]]
 
+reg8 <- list(
+  "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies], vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age | year*statefip, vcov = ~statefip,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age| occupation + year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] + age | occupation + year*statefip, vcov = ~statefip,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
+  
+)
 
 #--------------------------------------
 # Earnigns
@@ -387,6 +435,108 @@ regression_tab %>%
 regression_tab %>%
   save_kable(file.path(manuscript_wd,"tab14-emp-regression.tex"))
 
+#--------------------------------------
+# Earnigns: with Occupation FE
+#--------------------------------------
+
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
+dim(controling_for) <- c(1,6)
+
+hoursworked   <-  c("Hours Worked", " ", "X","X", "X", "X")
+age_cont      <-  c("Age", " ", " ","X", "X", "X")
+parentalback  <-  c("Parental Background", " ", " "," ", " ", "X")
+
+dim(hoursworked) <- c(1,6)
+dim(age_cont) <- c(1,6)
+dim(parentalback) <- c(1,6)
+
+controling_for <- as.data.frame(controling_for)
+hoursworked <- as.data.frame(hoursworked)
+parentalback <- as.data.frame(parentalback)
+age_cont <- as.data.frame(age_cont)
+
+all_row <- rbind(
+  # differences_row, 
+  # pvalue_row, 
+  controling_for, 
+  hoursworked,
+  age_cont,
+  parentalback)
+
+attr(all_row, 'position') <- c(#7:8, 
+                              5:7, 12)
+
+cm <- c("WH"          = "$WH_{ist}$",
+        "HW"          = "$HW_{ist}$",
+        "HH"          = "$HH_{ist}$",
+        "(Intercept)" = "Constant"
+) 
+gm <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+  "FE: statefip", "State FE", 0,
+  "FE: year", "Year FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  "FE: occupation", "Occupation FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
+  "std.error.type", "Standard Errors", 0,
+  "nobs",      "Observations",             0,
+  #"r.squared", "R squared", 3
+)
+
+modelsummary(reg8, fmt = 2,  
+             coef_map = cm,
+             add_rows = all_row,
+             gof_map = gm,
+             escape = F,
+             #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+             stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+             title = "Effect of Having Hispanic Last Name \\label{tab:lastnamereg}") %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) %>%
+  footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}",
+                      "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}",
+                      "\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}",
+                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}",
+                      "\\\\footnotesize{Standard errors are clustered on the state level.}"
+                      ),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  )
+
+regression_tab <- modelsummary(reg8, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+                               title = "Effect of Having Hispanic Last Name (Log Annual Earnings) \\label{tab:lastnamereg}") %>%
+  kable_styling(
+                latex_options = c("HOLD_position")
+  ) %>%
+  footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{The sample is restricted to men working full-time full-year and are wage and salary workers.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, education, year and state fixed effects. Column two has the results after controlling for education.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered on the state level.}}"
+                      ),
+  footnote_as_chunk = F, title_format = c("italic"),
+  escape = F, threeparttable = T
+  ) #|> 
+  #row_spec(8, hline_after = T)
+
+
+regression_tab %>%
+  save_kable(file.path(tables_wd,"tab15-regression-occ-fe.tex"))
+
+regression_tab %>%
+  save_kable(file.path(thesis_tabs,"tab15-regression-occ-fe.tex"))
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab15-regression-occ-fe.tex"))
 #--------------------------------------
 # Labor Force Participation
 #--------------------------------------
