@@ -190,3 +190,256 @@ regression_tab %>%
 
 regression_tab %>%
   save_kable(file.path(manuscript_wd,"tab13-regression.tex"))
+
+#------------------------------------------------------------------------------------
+# Mexican Ancenstry
+#------------------------------------------------------------------------------------
+Mexicans_USA  <- IndividualData |> 
+    filter((HW == 1 | WH == 1) & BirthPlaceMom %in% c("Mexico", "USA") & BirthPlaceDad %in% c("Mexico", "USA"))
+
+regression <- list(
+  "Panel A: Full Sample" = list(
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA)
+  ),
+
+  "Panel B: Women" = list(
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2))
+  ),
+
+  "Panel C: Men" = list(
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1))
+  )
+)
+
+# calculate mean for all sample
+all_sample <- c("Full Sample's Mean", round(mean(Mexicans_USA$Education, na.rm=T), 2), 
+                      round(mean(Mexicans_USA$hs_dropout, na.rm=T), 2),
+                      round(mean(Mexicans_USA$associate_degree, na.rm=T), 2), 
+                      round(mean(Mexicans_USA$ba_degree, na.rm=T), 2))
+
+
+dim(all_sample) <- c(1,5)
+all_sample <- as.data.frame(all_sample)
+
+# calculate mean for women
+women_mean_sam <- Mexicans_USA |> filter(sex == 2)
+women_sample <- c("Women's Mean", round(mean(women_mean_sam$Education, na.rm=T), 2), 
+                      round(mean(women_mean_sam$hs_dropout, na.rm=T), 2),
+                      round(mean(women_mean_sam$associate_degree, na.rm=T), 2), 
+                      round(mean(women_mean_sam$ba_degree, na.rm=T), 2))
+
+
+dim(women_sample) <- c(1,5)
+women_sample <- as.data.frame(women_sample)
+
+# calculate mean for women
+men_mean_sam <- Mexicans_USA |> filter(sex == 1)
+men_sample <- c("Men's Mean", round(mean(men_mean_sam$Education, na.rm=T), 2), 
+                      round(mean(men_mean_sam$hs_dropout, na.rm=T), 2),
+                      round(mean(men_mean_sam$associate_degree, na.rm=T), 2), 
+                      round(mean(men_mean_sam$ba_degree, na.rm=T), 2))
+
+
+dim(men_sample) <- c(1,5)
+men_sample <- as.data.frame(men_sample)
+
+all_row <- rbind(
+  all_sample, women_sample, men_sample
+)
+
+cm <- c("WH"          = "$WH_{ist}$",
+        "HW"          = "$HW_{ist}$",
+        "HH"          = "$HH_{ist}$",
+        "(Intercept)" = "Constant"
+) 
+gm <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+#   "FE: statefip", "State FE", 0,
+#   "FE: year", "Year FE", 0,
+#   "FE: age", "Age FE", 0,
+#   "FE: year:statefip", "State-Year FE", 0,
+  "std.error.type", "Standard Errors", 0,
+  "nobs",      "Observations",             0,
+  #"r.squared", "R squared", 3
+)
+
+attr(all_row, 'position') <- c(9)
+modelsummary(regression, fmt = 2,  
+             coef_map = cm,
+             add_rows = all_row,
+             shape = "rbind",
+             gof_map = gm,
+             escape = F,
+             #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+             stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+             title = "Effect of Having Hispanic Last Name on Educational Outcomes\\label{tab:lastnamereg}") %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) %>%
+  footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}). All regressions include state-year fixed effects.}",
+                      "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}",
+                      "\\\\footnotesize{Standard errors are clustered on the state level.}"
+                      ),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  )
+
+regression_tab <- modelsummary(regression, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               shape = "rbind",
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+                               title = "Effect of Having Hispanic Last Name: Hispanics with Mexican Ancestry \\label{tab:lastname-ed-reg-mex}") %>%
+  kable_styling(
+                latex_options = c("HOLD_position")
+  ) %>%
+  footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}). All regressions include state-year fixed effects.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered on the state level.}}"
+                      ),
+  footnote_as_chunk = F, title_format = c("italic"),
+  escape = F, threeparttable = T
+  )
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab16-educ-mex-regression.tex"))
+
+#------------------------------------------------------------------------------------
+# non-Mexican Ancenstry
+#------------------------------------------------------------------------------------
+`%notin%` <- Negate(`%in%`)
+NonMexican_USA <-  IndividualData |> 
+    filter((HW == 1 | WH == 1) & BirthPlaceMom %notin% c("Mexico") & BirthPlaceDad %notin% c("Mexico"))
+
+regression <- list(
+  "Panel A: Full Sample" = list(
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA)
+  ),
+
+  "Panel B: Women" = list(
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2))
+  ),
+
+  "Panel C: Men" = list(
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1))
+  )
+)
+
+# calculate mean for all sample
+all_sample <- c("Full Sample's Mean", round(mean(NonMexican_USA$Education, na.rm=T), 2), 
+                      round(mean(NonMexican_USA$hs_dropout, na.rm=T), 2),
+                      round(mean(NonMexican_USA$associate_degree, na.rm=T), 2), 
+                      round(mean(NonMexican_USA$ba_degree, na.rm=T), 2))
+
+
+dim(all_sample) <- c(1,5)
+all_sample <- as.data.frame(all_sample)
+
+# calculate mean for women
+women_mean_sam <- NonMexican_USA |> filter(sex == 2)
+women_sample <- c("Women's Mean", round(mean(women_mean_sam$Education, na.rm=T), 2), 
+                      round(mean(women_mean_sam$hs_dropout, na.rm=T), 2),
+                      round(mean(women_mean_sam$associate_degree, na.rm=T), 2), 
+                      round(mean(women_mean_sam$ba_degree, na.rm=T), 2))
+
+
+dim(women_sample) <- c(1,5)
+women_sample <- as.data.frame(women_sample)
+
+# calculate mean for women
+men_mean_sam <- NonMexican_USA |> filter(sex == 1)
+men_sample <- c("Men's Mean", round(mean(men_mean_sam$Education, na.rm=T), 2), 
+                      round(mean(men_mean_sam$hs_dropout, na.rm=T), 2),
+                      round(mean(men_mean_sam$associate_degree, na.rm=T), 2), 
+                      round(mean(men_mean_sam$ba_degree, na.rm=T), 2))
+
+
+dim(men_sample) <- c(1,5)
+men_sample <- as.data.frame(men_sample)
+
+all_row <- rbind(
+  all_sample, women_sample, men_sample
+)
+
+cm <- c("WH"          = "$WH_{ist}$",
+        "HW"          = "$HW_{ist}$",
+        "HH"          = "$HH_{ist}$",
+        "(Intercept)" = "Constant"
+) 
+gm <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+#   "FE: statefip", "State FE", 0,
+#   "FE: year", "Year FE", 0,
+#   "FE: age", "Age FE", 0,
+#   "FE: year:statefip", "State-Year FE", 0,
+  "std.error.type", "Standard Errors", 0,
+  "nobs",      "Observations",             0,
+  #"r.squared", "R squared", 3
+)
+
+attr(all_row, 'position') <- c(9)
+modelsummary(regression, fmt = 2,  
+             coef_map = cm,
+             add_rows = all_row,
+             shape = "rbind",
+             gof_map = gm,
+             escape = F,
+             #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+             stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+             title = "Effect of Having Hispanic Last Name on Educational Outcomes\\label{tab:lastnamereg}") %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) %>%
+  footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}). All regressions include state-year fixed effects.}",
+                      "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}",
+                      "\\\\footnotesize{Standard errors are clustered on the state level.}"
+                      ),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  )
+
+regression_tab <- modelsummary(regression, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               shape = "rbind",
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+                               title = "Effect of Having Hispanic Last Name: Hispanics with non-Mexican Ancestry \\label{tab:lastname-ed-reg-nonmex}") %>%
+  kable_styling(
+                latex_options = c("HOLD_position")
+  ) %>%
+  footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}). All regressions include state-year fixed effects.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered on the state level.}}"
+                      ),
+  footnote_as_chunk = F, title_format = c("italic"),
+  escape = F, threeparttable = T
+  )
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab17-educ-nonmex-regression.tex"))

@@ -4,7 +4,43 @@
 % Citation comes loading other packages, so that footnotes follow biblatex-chicago style
 \input{preamble_citation}
 
+% Responses to Referees
+\usepackage{blindtext}
+\newcommand{\aptxspc}{1.8}
+\newcommand{\rrquote}{1.1}
+\newcommand{\rrxspc}{1.5}
+
 \begin{document}
+
+% SUBMISSION COVER
+\thispagestyle{empty}
+\begingroup
+  \doublespacing
+  \centering
+  \LARGE REVISE AND RESUBMIT\\[0.25em]
+  \LARGE JOURNAL OF ECONOMICS, RACE, AND POLICY \\[0.25em]
+  \LARGE SUBMISSION ID: 33481294-df2a-4cce-80ee-c20f2b9975ac \\[1.0em]
+\endgroup
+This document and the associated contents in the revise and resubmit version of manuscript 33481294-df2a-4cce-80ee-c20f2b9975ac for the Journal of Economics, Rac
+e, and Policy. I include:
+\begin{enumerate}
+    \item Title page information
+    \begin{itemize}
+        \item Title and Author
+        \item Abstract
+        \item Keywords
+        \item Acknowledgment
+    \end{itemize}
+    \item The manuscript
+    \begin{itemize}
+        \item Main manuscript text
+        \item Main manuscript references
+        \item Main manuscript figures
+        \item Main manuscript tables
+    \end{itemize}  
+    \item The online appendix, which is separately paged. It includes an online appendix title page, appendix A, appendix B, appendix C, and references for citations in the appendix.
+\end{enumerate}
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Part I. Title Page, Authors, Abstract, etc. 
@@ -105,6 +141,48 @@ The author declares that they have no conflicts of interest regarding the public
 % reset page numbers
 \pagenumbering{arabic}
 \setcounter{page}{1}
+\end{refsection}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % PART VI. Responses to Editor and Referees
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{refsection}
+% Reset section numbering
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+        \section{Responses to Editors and Referee} \label{r&r:responses}
+        \begin{spacing}{\rrxspc}
+        \end{spacing}
+
+    \newpage
+    
+    \section{Responses to Referee One}
+    \begin{spacing}{\rrquote}
+    \begin{quotation}
+    \textbf{R1: } 1. 
+    \end{quotation}
+    \end{spacing}
+    
+    \begin{spacing}{\rrxspc}
+    \end{spacing}
+    
+        
+    \clearpage
+    \pagebreak
+    \end{refsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PART VII. Online Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{refsection}
+% Reset section numbering
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}}
 
 % Title Page for Appendix
 % special footnote symbols
@@ -112,7 +190,7 @@ The author declares that they have no conflicts of interest regarding the public
 \begingroup
 \doublespacing
 \centering
-\Large Online Appendix \\[1.5em]
+\Large ONLINE APPENDIX \\[1.5em]
 \LARGE \PAPERTITLE \\[0.75em]
 \large
 \AUTHORHADAH\footnote[1]{\AUTHORHADAHINFO}\\[1.0em]
@@ -122,6 +200,8 @@ The author declares that they have no conflicts of interest regarding the public
 % Online appendix
 \input{manuscript_online_appendix}
 
+\newpage
+\pagebreak
 
 % Appendix Bibliography
 \begingroup
