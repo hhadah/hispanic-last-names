@@ -1772,6 +1772,49 @@
       \field{title}{Integrated Public Use Microdata Series, American Community Survey: Version 11.0 [dataset]}
       \field{year}{2020}
     \endentry
+    \entry{trejoWhyMexicanAmericans1997}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=a97c2de88e00743241d71e2e6d236672}{%
+           family={Trejo},
+           familyi={T\bibinitperiod},
+           given={Stephen\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {University of Chicago}%
+      }
+      \strng{namehash}{a97c2de88e00743241d71e2e6d236672}
+      \strng{fullhash}{a97c2de88e00743241d71e2e6d236672}
+      \strng{fullhashraw}{a97c2de88e00743241d71e2e6d236672}
+      \strng{bibnamehash}{a97c2de88e00743241d71e2e6d236672}
+      \strng{authorbibnamehash}{a97c2de88e00743241d71e2e6d236672}
+      \strng{authornamehash}{a97c2de88e00743241d71e2e6d236672}
+      \strng{authorfullhash}{a97c2de88e00743241d71e2e6d236672}
+      \strng{authorfullhashraw}{a97c2de88e00743241d71e2e6d236672}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{Using Current Population Survey data from November 1979 and 1989, I find that Mexican Americans earn low wages primarily because they possess less human capital than other workers, not because they receive smaller labor market rewards for their skills. Among third- and higher-generation men in 1989, Mexicans averaged 21 percent lower wages than non-Hispanic whites, which is roughly similar to the wage deficit for black. For Mexicans, more than three-quarters of the wage gap is attributable to their relative youth, English language deficiencies, and especially their lower educational attainment. By contrast, these variables explain less than a third of the black-white wage gap.}
+      \field{issn}{00223808}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{Why Do {{Mexican Americans}} Earn Low Wages?}
+      \field{volume}{105}
+      \field{year}{1997}
+      \field{pages}{1235}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1086/516391
+      \endverb
+      \verb{file}
+      \verb /Users/hhadah/Zotero/storage/59MKVH7I/Trejo - 1997 - Why do Mexican Americans earn low wages.pdf
+      \endverb
+      \keyw{Age,Education,Employment,Human capital,Mexican Americans,Second language acquisition,Wages}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

@@ -221,6 +221,20 @@ reg8 <- list(
 # Earnigns
 #--------------------------------------
 
+# calculate mean for all sample
+IndividualData_mean <- IndividualData |> 
+  filter(HW == 1)
+all_sample <- c("\\specialcell{HW's Mean \\\\ Unemployment}", 
+                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2),
+                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2),
+                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2), 
+                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2),
+                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2))
+
+
+dim(all_sample) <- c(1,6)
+all_sample <- as.data.frame(all_sample)
+
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
 dim(controling_for) <- c(1,6)
 
@@ -247,7 +261,8 @@ all_row <- rbind(
   hoursworked,
   age_cont,
   educ_cont,
-  parentalback)
+  parentalback,
+  all_sample)
 
 attr(all_row, 'position') <- c(#7:8, 
                               5:7, 11:12)

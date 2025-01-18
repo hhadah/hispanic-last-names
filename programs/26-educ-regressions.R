@@ -32,7 +32,7 @@ ParentControls  <- c("IncomeQuint", "EducationQuint")
 feols(Education ~ HW  , vcov = ~statefip, data = IndividualData)
 feols(Education ~ HW  | year + statefip, vcov = ~statefip, data = IndividualData)
 feols(Education ~ HW  +  age +.[ParentControls]  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+marginaleffects::avg_slopes(feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData))
 feols(Education ~ HW*year  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
 feols(Education ~ HW*year  + HW*statefip  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
 
@@ -87,41 +87,66 @@ regression <- list(
   )
 )
 
-# calculate mean for all sample
-all_sample <- c("Full Sample's Mean", round(mean(IndividualData$Education, na.rm=T), 2), 
-                      round(mean(IndividualData$hs_dropout, na.rm=T), 2),
-                      round(mean(IndividualData$associate_degree, na.rm=T), 2), 
-                      round(mean(IndividualData$ba_degree, na.rm=T), 2))
 
+IndividualData  <- IndividualData |> 
+  mutate(Female = case_when(
+    sex == 2 ~ 1,
+    sex == 1 ~ 0
+  ))
+IndividualData  <- IndividualData |> 
+  mutate(
+    Female = as.factor(Female)
+  )
 
-dim(all_sample) <- c(1,5)
-all_sample <- as.data.frame(all_sample)
+reg1 <- feols(Education ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(Education ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+pvalue_1 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
-# calculate mean for women
-women_mean_sam <- IndividualData |> filter(sex == 2)
-women_sample <- c("Women's Mean", round(mean(women_mean_sam$Education, na.rm=T), 2), 
-                      round(mean(women_mean_sam$hs_dropout, na.rm=T), 2),
-                      round(mean(women_mean_sam$associate_degree, na.rm=T), 2), 
-                      round(mean(women_mean_sam$ba_degree, na.rm=T), 2))
+reg2 <- feols(hs_dropout ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(hs_dropout ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+pvalue_2 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
+reg3 <- feols(associate_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(associate_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+pvalue_3 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
-dim(women_sample) <- c(1,5)
-women_sample <- as.data.frame(women_sample)
+reg4 <- feols(ba_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(ba_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+pvalue_4 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
-# calculate mean for women
-men_mean_sam <- IndividualData |> filter(sex == 1)
-men_sample <- c("Men's Mean", round(mean(men_mean_sam$Education, na.rm=T), 2), 
-                      round(mean(men_mean_sam$hs_dropout, na.rm=T), 2),
-                      round(mean(men_mean_sam$associate_degree, na.rm=T), 2), 
-                      round(mean(men_mean_sam$ba_degree, na.rm=T), 2))
+# Create the rows with proper structure first
+all_sample <- c("Full Sample's Mean",
+                sprintf("%.2f", round(mean(IndividualData$Education, na.rm = TRUE), 2)), 
+                sprintf("%.2f", round(mean(IndividualData$hs_dropout, na.rm = TRUE), 2)),
+                sprintf("%.2f", round(mean(IndividualData$associate_degree, na.rm = TRUE), 2)), 
+                sprintf("%.2f", round(mean(IndividualData$ba_degree, na.rm = TRUE), 2)))
 
+# Women's sample mean
+women_sample <- IndividualData |> filter(sex == 2)
+women_sample <- c("Women's Mean",
+                 sprintf("%.2f", round(mean(women_sample$Education, na.rm = TRUE), 2)), 
+                 sprintf("%.2f", round(mean(women_sample$hs_dropout, na.rm = TRUE), 2)),
+                 sprintf("%.2f", round(mean(women_sample$associate_degree, na.rm = TRUE), 2)), 
+                 sprintf("%.2f", round(mean(women_sample$ba_degree, na.rm = TRUE), 2)))
 
-dim(men_sample) <- c(1,5)
-men_sample <- as.data.frame(men_sample)
+# Men's sample mean
+men_sample <- IndividualData |> filter(sex == 1)
+men_sample <- c("Men's Mean",
+               sprintf("%.2f", round(mean(men_sample$Education, na.rm = TRUE), 2)), 
+               sprintf("%.2f", round(mean(men_sample$hs_dropout, na.rm = TRUE), 2)),
+               sprintf("%.2f", round(mean(men_sample$associate_degree, na.rm = TRUE), 2)), 
+               sprintf("%.2f", round(mean(men_sample$ba_degree, na.rm = TRUE), 2)))
 
-all_row <- rbind(
-  all_sample, women_sample, men_sample
-)
+# Convert p-values without the list() structure
+first_diff <- c("p-value test Women - Men", 
+                pvalue_1, pvalue_2, pvalue_3, pvalue_4)
+
+# Combine all rows into a matrix first
+all_row <- rbind(all_sample, women_sample, men_sample, first_diff)
+
+# Convert to data frame and set proper column names
+all_row <- as.data.frame(all_row)
+colnames(all_row) <- c("term", paste0("model", 1:4))
 
 cm <- c("WH"          = "$WH_{ist}$",
         "HW"          = "$HW_{ist}$",
