@@ -26,7 +26,7 @@ Keep cohorts the are 25 and 55 years away from 1970
 * keep year = 2010
 *keep if year == 2010
 * limit to observations 1994<year<2019
-drop if year < 1994 | year > 2019
+drop if year < 1993 | year > 2025
 ********************************************************************************
 * Race Variable for Blacks, Hispanics and Whites
 ********************************************************************************

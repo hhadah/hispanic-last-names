@@ -54,94 +54,96 @@ quietly infix                       ///
   byte    classwkr         193-194  ///
   int     uhrsworkt        195-197  ///
   int     ahrsworkt        198-200  ///
-  byte    wkstat           201-202  ///
-  int     educ             203-205  ///
-  double  asecwt04         206-213  ///
-  double  earnwt           214-223  ///
-  int     occly            224-227  ///
-  int     indly            228-231  ///
-  byte    classwly         232-233  ///
-  byte    workly           234-235  ///
-  byte    wkswork1         236-237  ///
-  byte    wkswork2         238-238  ///
-  int     uhrsworkly       239-241  ///
-  byte    fullpart         242-242  ///
-  double  ftotval          243-252  ///
-  double  inctot           253-261  ///
-  double  incwage          262-269  ///
-  double  hourwage         270-274  ///
-  byte    paidhour         275-275  ///
-  double  earnweek         276-283  ///
-  int     uhrsworkorg      284-286  ///
-  byte    age_head         287-288  ///
-  byte    age_sp           289-290  ///
-  byte    sex_head         291-291  ///
-  byte    sex_sp           292-292  ///
-  int     race_head        293-295  ///
-  int     race_sp          296-298  ///
-  byte    marst_head       299-299  ///
-  byte    marst_sp         300-300  ///
-  byte    nchild_head      301-301  ///
-  byte    nchild_sp        302-302  ///
-  long    bpl_head         303-307  ///
-  long    bpl_sp           308-312  ///
-  byte    citizen_head     313-313  ///
-  byte    citizen_sp       314-314  ///
-  long    mbpl_head        315-319  ///
-  long    mbpl_sp          320-324  ///
-  long    fbpl_head        325-329  ///
-  long    fbpl_sp          330-334  ///
-  byte    nativity_head    335-335  ///
-  byte    nativity_sp      336-336  ///
-  int     hispan_head      337-339  ///
-  int     hispan_sp        340-342  ///
-  byte    empstat_head     343-344  ///
-  byte    empstat_sp       345-346  ///
-  byte    labforce_head    347-347  ///
-  byte    labforce_sp      348-348  ///
-  int     occ_head         349-352  ///
-  int     occ_sp           353-356  ///
-  int     ind1990_head     357-359  ///
-  int     ind1990_sp       360-362  ///
-  int     ind1950_head     363-365  ///
-  int     ind1950_sp       366-368  ///
-  byte    classwkr_head    369-370  ///
-  byte    classwkr_sp      371-372  ///
-  int     uhrsworkt_head   373-375  ///
-  int     uhrsworkt_sp     376-378  ///
-  int     ahrsworkt_head   379-381  ///
-  int     ahrsworkt_sp     382-384  ///
-  byte    wkstat_head      385-386  ///
-  byte    wkstat_sp        387-388  ///
-  int     educ_head        389-391  ///
-  int     educ_sp          392-394  ///
-  double  asecwt04_head    395-402  ///
-  double  asecwt04_sp      403-410  ///
-  double  earnwt_head      411-420  ///
-  double  earnwt_sp        421-430  ///
-  int     occly_head       431-434  ///
-  int     occly_sp         435-438  ///
-  int     indly_head       439-442  ///
-  int     indly_sp         443-446  ///
-  byte    workly_head      447-448  ///
-  byte    workly_sp        449-450  ///
-  byte    wkswork1_head    451-452  ///
-  byte    wkswork1_sp      453-454  ///
-  byte    wkswork2_head    455-455  ///
-  byte    wkswork2_sp      456-456  ///
-  int     uhrsworkly_head  457-459  ///
-  int     uhrsworkly_sp    460-462  ///
-  byte    fullpart_head    463-463  ///
-  byte    fullpart_sp      464-464  ///
-  double  ftotval_head     465-474  ///
-  double  ftotval_sp       475-484  ///
-  double  inctot_head      485-493  ///
-  double  inctot_sp        494-502  ///
-  double  incwage_head     503-510  ///
-  double  incwage_sp       511-518  ///
-  double  hourwage_head    519-523  ///
-  double  hourwage_sp      524-528  ///
-  using `"cps_00063.dat"'
+  int     durunemp         201-203  ///
+  byte    whyunemp         204-204  ///
+  byte    wkstat           205-206  ///
+  int     educ             207-209  ///
+  double  asecwt04         210-217  ///
+  double  earnwt           218-227  ///
+  int     occly            228-231  ///
+  int     indly            232-235  ///
+  byte    classwly         236-237  ///
+  byte    workly           238-239  ///
+  byte    wkswork1         240-241  ///
+  byte    wkswork2         242-242  ///
+  int     uhrsworkly       243-245  ///
+  byte    fullpart         246-246  ///
+  double  ftotval          247-256  ///
+  double  inctot           257-265  ///
+  double  incwage          266-273  ///
+  double  hourwage         274-278  ///
+  byte    paidhour         279-279  ///
+  double  earnweek         280-287  ///
+  int     uhrsworkorg      288-290  ///
+  byte    age_head         291-292  ///
+  byte    age_sp           293-294  ///
+  byte    sex_head         295-295  ///
+  byte    sex_sp           296-296  ///
+  int     race_head        297-299  ///
+  int     race_sp          300-302  ///
+  byte    marst_head       303-303  ///
+  byte    marst_sp         304-304  ///
+  byte    nchild_head      305-305  ///
+  byte    nchild_sp        306-306  ///
+  long    bpl_head         307-311  ///
+  long    bpl_sp           312-316  ///
+  byte    citizen_head     317-317  ///
+  byte    citizen_sp       318-318  ///
+  long    mbpl_head        319-323  ///
+  long    mbpl_sp          324-328  ///
+  long    fbpl_head        329-333  ///
+  long    fbpl_sp          334-338  ///
+  byte    nativity_head    339-339  ///
+  byte    nativity_sp      340-340  ///
+  int     hispan_head      341-343  ///
+  int     hispan_sp        344-346  ///
+  byte    empstat_head     347-348  ///
+  byte    empstat_sp       349-350  ///
+  byte    labforce_head    351-351  ///
+  byte    labforce_sp      352-352  ///
+  int     occ_head         353-356  ///
+  int     occ_sp           357-360  ///
+  int     ind1990_head     361-363  ///
+  int     ind1990_sp       364-366  ///
+  int     ind1950_head     367-369  ///
+  int     ind1950_sp       370-372  ///
+  byte    classwkr_head    373-374  ///
+  byte    classwkr_sp      375-376  ///
+  int     uhrsworkt_head   377-379  ///
+  int     uhrsworkt_sp     380-382  ///
+  int     ahrsworkt_head   383-385  ///
+  int     ahrsworkt_sp     386-388  ///
+  byte    wkstat_head      389-390  ///
+  byte    wkstat_sp        391-392  ///
+  int     educ_head        393-395  ///
+  int     educ_sp          396-398  ///
+  double  asecwt04_head    399-406  ///
+  double  asecwt04_sp      407-414  ///
+  double  earnwt_head      415-424  ///
+  double  earnwt_sp        425-434  ///
+  int     occly_head       435-438  ///
+  int     occly_sp         439-442  ///
+  int     indly_head       443-446  ///
+  int     indly_sp         447-450  ///
+  byte    workly_head      451-452  ///
+  byte    workly_sp        453-454  ///
+  byte    wkswork1_head    455-456  ///
+  byte    wkswork1_sp      457-458  ///
+  byte    wkswork2_head    459-459  ///
+  byte    wkswork2_sp      460-460  ///
+  int     uhrsworkly_head  461-463  ///
+  int     uhrsworkly_sp    464-466  ///
+  byte    fullpart_head    467-467  ///
+  byte    fullpart_sp      468-468  ///
+  double  ftotval_head     469-478  ///
+  double  ftotval_sp       479-488  ///
+  double  inctot_head      489-497  ///
+  double  inctot_sp        498-506  ///
+  double  incwage_head     507-514  ///
+  double  incwage_sp       515-522  ///
+  double  hourwage_head    523-527  ///
+  double  hourwage_sp      528-532  ///
+  using `"cps_00067.dat"'
 
 replace hwtfinl         = hwtfinl         / 10000
 replace asecwth         = asecwth         / 10000
@@ -234,6 +236,8 @@ label var ind1950         `"Industry, 1950 basis"'
 label var classwkr        `"Class of worker "'
 label var uhrsworkt       `"Hours usually worked per week at all jobs"'
 label var ahrsworkt       `"Hours worked last week"'
+label var durunemp        `"Continuous weeks unemployed"'
+label var whyunemp        `"Reason for unemployment"'
 label var wkstat          `"Full or part time status"'
 label var educ            `"Educational attainment recode"'
 label var asecwt04        `"Person weight 2004"'
@@ -2042,6 +2046,15 @@ label values classwkr classwkr_lbl
 label define uhrsworkt_lbl 997 `"Hours vary"'
 label define uhrsworkt_lbl 999 `"NIU"', add
 label values uhrsworkt uhrsworkt_lbl
+
+label define whyunemp_lbl 0 `"NIU"'
+label define whyunemp_lbl 1 `"Job loser - on layoff"', add
+label define whyunemp_lbl 2 `"Other job loser"', add
+label define whyunemp_lbl 3 `"Temporary job ended"', add
+label define whyunemp_lbl 4 `"Job leaver"', add
+label define whyunemp_lbl 5 `"Re-entrant"', add
+label define whyunemp_lbl 6 `"New entrant"', add
+label values whyunemp whyunemp_lbl
 
 label define wkstat_lbl 10 `"Full-time schedules"'
 label define wkstat_lbl 11 `"Full-time hours (35+), usually full-time"', add
@@ -4627,5 +4640,7 @@ label values hourwage_head hourwage_head_lbl
 
 label define hourwage_sp_lbl 99999 `"NIU"'
 label values hourwage_sp hourwage_sp_lbl
+
+
 
 save "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/hispanic-last-names/data/datasets/FullData", replace
