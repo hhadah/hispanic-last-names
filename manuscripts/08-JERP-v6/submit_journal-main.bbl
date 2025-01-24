@@ -1968,5 +1968,189 @@
     \endentry
   \enddatalist
 \endrefsection
+
+\refsection{2}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{antmanEthnicAttritionObserved2016}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=027166a0a07b4166565e41ab9c7051d4}{%
+           family={Antman},
+           familyi={A\bibinitperiod},
+           given={Francisca},
+           giveni={F\bibinitperiod}}}%
+        {{hash=028bafcd91a81da51bc7eb575a2392ce}{%
+           family={Duncan},
+           familyi={D\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a97c2de88e00743241d71e2e6d236672}{%
+           family={Trejo},
+           familyi={T\bibinitperiod},
+           given={Stephen\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Economic Association}%
+      }
+      \strng{namehash}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{fullhash}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{fullhashraw}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{bibnamehash}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{authorbibnamehash}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{authornamehash}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{authorfullhash}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \strng{authorfullhashraw}{2aab7f6ac1c36fbcacd088f709a3bf79}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{The American Economic Review}
+      \field{number}{5}
+      \field{title}{Ethnic {{Attrition}} and the {{Observed Health}} of {{Later-Generation Mexican Americans}}}
+      \field{volume}{106}
+      \field{year}{2016}
+      \field{pages}{467\bibrangedash 471}
+      \range{pages}{5}
+      \verb{file}
+      \verb /Users/hhadah/Zotero/storage/LPLCGSCX/Antman et al. - 2016 - Ethnic Attrition and the Observed Health of Later-.pdf
+      \endverb
+    \endentry
+    \entry{antman2020ethnic}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1ef379f32668010fef7d487157e80a49}{%
+           family={Antman},
+           familyi={A\bibinitperiod},
+           given={Francisca\bibnamedelima M},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=028bafcd91a81da51bc7eb575a2392ce}{%
+           family={Duncan},
+           familyi={D\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a97c2de88e00743241d71e2e6d236672}{%
+           family={Trejo},
+           familyi={T\bibinitperiod},
+           given={Stephen\bibnamedelima J},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{fullhash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{fullhashraw}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{bibnamehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authorbibnamehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authornamehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authorfullhash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authorfullhashraw}{ccadbeea3e5f6c2f5922792a450064e1}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Journal of Population Economics}
+      \field{title}{Ethnic attrition, assimilation, and the measured health outcomes of Mexican Americans}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 24}
+      \range{pages}{24}
+    \endentry
+    \entry{antmanEthnicAttritionAssimilation2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1ef379f32668010fef7d487157e80a49}{%
+           family={Antman},
+           familyi={A\bibinitperiod},
+           given={Francisca\bibnamedelima M.},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=028bafcd91a81da51bc7eb575a2392ce}{%
+           family={Duncan},
+           familyi={D\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a97c2de88e00743241d71e2e6d236672}{%
+           family={Trejo},
+           familyi={T\bibinitperiod},
+           given={Stephen\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Heidelberg, Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature B.V.}%
+      }
+      \strng{namehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{fullhash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{fullhashraw}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{bibnamehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authorbibnamehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authornamehash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authorfullhash}{ccadbeea3e5f6c2f5922792a450064e1}
+      \strng{authorfullhashraw}{ccadbeea3e5f6c2f5922792a450064e1}
+      \field{extraname}{3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{abstract}{The literature on immigrant assimilation and intergenerational progress has sometimes reached surprising conclusions, such as the puzzle of immigrant advantage which finds that Hispanic immigrants sometimes have better health than US-born Hispanics. While numerous studies have attempted to explain these patterns, almost all studies rely on subjective measures of ethnic self-identification to identify immigrants' descendants. This can lead to bias due to ``ethnic attrition,'' which occurs whenever a US-born descendant of a Hispanic immigrant fails to self-identify as Hispanic. In this paper, we exploit information on parents' and grandparents' place of birth to show that Mexican ethnic attrition, operating through intermarriage, is sizable and positively selected on health, making subsequent generations of Mexican immigrants appear less healthy than they actually are. Consequently, conventional estimates of health disparities between Mexican Americans and non-Hispanic whites as well as those between Mexican Americans and recent Mexican immigrants have been significantly overstated.}
+      \field{issn}{09331433}
+      \field{journaltitle}{Journal of Population Economics}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4}
+      \field{title}{Ethnic Attrition, Assimilation, and the Measured Health Outcomes of {{Mexican Americans}}}
+      \field{volume}{33}
+      \field{year}{2020}
+      \field{pages}{1499\bibrangedash 1522}
+      \range{pages}{24}
+      \verb{doi}
+      \verb https://doi-org.ezproxy.lib.uh.edu/10.1007/s00148-020-00772-8
+      \endverb
+      \verb{file}
+      \verb /Users/hhadah/Zotero/storage/WNKC7FPZ/Antman et al. - 2020 - Ethnic attrition, assimilation, and the measured h.pdf
+      \endverb
+      \keyw{Assimilation,Attrition,Bias,Descendants,Grandparents,Health disparities,Health status,Hispanic Americans,Identity,Immigrants,Intermarriage,Mexican Americans,Noncitizens,Population Studies}
+    \endentry
+    \entry{hadah2024effect}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=091f3b21f21a72f28da7c6db491e1522}{%
+           family={Hadah},
+           familyi={H\bibinitperiod},
+           given={Hussain},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{fullhash}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{fullhashraw}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{bibnamehash}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{authorbibnamehash}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{authornamehash}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{authorfullhash}{091f3b21f21a72f28da7c6db491e1522}
+      \strng{authorfullhashraw}{091f3b21f21a72f28da7c6db491e1522}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{author}
+      \field{journaltitle}{Southern Economic Journal}
+      \field{title}{The effect of racial and ethnic attitudes on Hispanic identity in the United States}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
