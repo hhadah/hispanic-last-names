@@ -33,3 +33,20 @@ sortcites=true]{biblatex-chicago}
 	}
 }%
 
+% Add this to your preamble
+\DeclareCiteCommand{\citegroup}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \ifciteseen
+     {\iffieldundef{shorthand}
+        {\iffirstcitekey
+           {\setcounter{textcitetotal}{1}}
+           {\stepcounter{textcitetotal}%
+            \textcitedelim}%
+         \usebibmacro{textcite}}
+        {\usebibmacro{cite:shorthand}}}
+     {\usebibmacro{textcite}}}
+  {\ifbool{cbx:parens}
+     {\bibcloseparen\global\boolfalse{cbx:parens}}
+     {}}
+  {\usebibmacro{textcite:postnote}}
