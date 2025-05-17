@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.15)  13 MAY 2025 13:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.15)  16 MAY 2025 20:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,25 +1112,34 @@ l.12
 [7]
 
 [8]
+Overfull \hbox (3.59535pt too wide) in paragraph at lines 86--87
+[]\T1/ppl/m/n/10.95 Second, fa-thers and moth-ers in-flu-ence hu-man cap-i-tal ac-cu-mu-la-tion dif-fer-ently ([]Kim-
+ []
+
+
 
 [9]
-Overfull \hbox (3.17784pt too wide) in paragraph at lines 90--91
+
+[10]
+
+[11]
+Overfull \hbox (3.17784pt too wide) in paragraph at lines 111--112
 []\T1/ppl/m/n/10.95 The data re-veals that WW cou-ples have the high-est to-tal house-hold ed-u-ca-tion, amount-
  []
 
 
 
-[10]
-
-[11]
-
 [12]
 
 [13]
 
-[14])
+[14]
 
-[15]
+[15])
+
+[16]
+
+[17]
 Overfull \hbox (0.71536pt too wide) in paragraph at lines 62--62
 \T1/ppl/m/n/12 and the Ob-served Health of Later-Generation Mex-i-can Amer-i-cans.^^Q \T1/ppl/m/it/12 The Amer-
  []
@@ -1142,37 +1151,37 @@ Overfull \hbox (1.1856pt too wide) in paragraph at lines 62--62
 
 
 
-[16
+[18
 
 ]
 
-[17]
+[19]
 Overfull \hbox (48.01657pt too wide) in paragraph at lines 62--62
 [][]\T1/ppl/m/n/12 Gaddis, S Michael, Charles Crab-tree, John B Hol-bein, and Steven Pfaff. 2024. ^^P  Racial/Ethnic
  []
 
 
 
-[18]
+[20]
 Overfull \hbox (0.35428pt too wide) in paragraph at lines 62--62
 \T1/ppl/m/n/12 ance or Gate-keep-ing: An Au-dit Ex-am-i-na-tion of Racial Dis-crim-i-na-tion in Lead-
  []
 
 
 
-[19]
+[21]
 
-[20] (./manuscript_tab_fig.tex (./tab01-observations-by-parents.tex)
+[22] (./manuscript_tab_fig.tex (./tab01-observations-by-parents.tex)
 
-[21
+[23
 
-] (./tab04-summary-stats.tex [22
+] (./tab04-summary-stats.tex [24
 
-] [23]
+] [25]
 
-[24]) (./tab02-observations-by-couple.tex)
+[26]) (./tab02-observations-by-couple.tex)
 
-[25
+[27
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1209,36 +1218,36 @@ Overfull \hbox (0.35428pt too wide) in paragraph at lines 62--62
 
  (./tab03a-summary-stats.tex)
 
-[26
+[28
 
 ] (./tab11-measurement-error.tex)
 
-[27] (./tab13-regression.tex
+[29] (./tab13-regression.tex
 Overfull \hbox (76.65472pt too wide) in paragraph at lines 6--38
  [] 
  []
 
 )
 
-[28] (./tab14-emp-regression.tex
+[30] (./tab14-emp-regression.tex
 Overfull \hbox (85.8581pt too wide) in paragraph at lines 6--34
  [] 
  []
 
 )
 
-[29] (./tab05-regression.tex
+[31] (./tab05-regression.tex
 Overfull \hbox (66.79169pt too wide) in paragraph at lines 6--35
  [] 
  []
 
 )
 
-[30] (./tab03a-summary-stats-mex.tex)
+[32] (./tab03a-summary-stats-mex.tex)
 
-[31] (./tab03a-summary-stats-nonmex.tex)
+[33] (./tab03a-summary-stats-nonmex.tex)
 
-[32])
+[34])
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -1383,13 +1392,13 @@ Package logreq Info: Writing requests to 'submit_preprint.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41295 strings out of 473579
- 847899 string characters out of 5728228
- 2040374 words of memory out of 5000000
- 63335 multiletter control sequences out of 15000+600000
- 612247 words of font info for 167 fonts, out of 8000000 for 9000
+ 41304 strings out of 473579
+ 848041 string characters out of 5728228
+ 2040371 words of memory out of 5000000
+ 63342 multiletter control sequences out of 15000+600000
+ 612801 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,19n,98p,2781b,4041s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,19n,98p,2843b,4041s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
 
@@ -1397,10 +1406,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on submit_preprint.pdf (44 pages, 172471 bytes).
+Output written on submit_preprint.pdf (46 pages, 176623 bytes).
 PDF statistics:
- 575 PDF objects out of 1000 (max. 8388607)
- 511 compressed objects within 6 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 584 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 154 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
