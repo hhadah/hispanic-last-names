@@ -26,7 +26,7 @@ pacman::p_load(tictoc, parallel, pbapply, future,
                gganimate, ggrepel, MetBrewer, fs,
                marginaleffects, gghighlight, #ggview,
                camcorder, rnaturalearth, rnaturalearthdata,
-               latex2exp, janitor, extrafont)
+               latex2exp, janitor, extrafont, fwildclusterboot)
 options("RStata.StataPath" = "/Applications/Stata/StataMP.app/Contents/MacOS/stata-mp")
 options("RStata.StataVersion" = 17)
             

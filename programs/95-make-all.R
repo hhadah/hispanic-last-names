@@ -20,13 +20,19 @@ thesis_tabs  <- paste0(mdir_git,"/my_paper/tables")
 thesis_plots <- paste0(mdir_git,"/my_paper/figure") 
 add_health_data_dir <- "/Users/hhadah/Dropbox/Research/My Research Data and Ideas/Identification_Paper/Data/Datasets"
 ACS_data  <- "/Users/hhadah/Documents/GiT/jmp-decomposition-replication/data/raw"
-manuscript_wd <- paste0(mdir_git,"/manuscripts/08-JERP-v6") 
+manuscript_wd <- paste0(mdir_git,"/manuscripts/10-JERP-v3") 
 # pres_tabs <- paste0(mdir,"/presentations/jmp-presentation/tables")
 # pres_plots <- paste0(mdir,"/presentations/jmp-presentation/figures")
 
 # dissertation_wd <- paste0("/Users/hhadah/Documents/GiT/my_thesis/presentation/dissertation")
 ### run do files and scripts
 options(modelsummary_factory_latex = "kableExtra")
+# install_github("s3alfisc/fwildclusterboot")
+library(fwildclusterboot)
+
+set.seed(12345)
+dqrng::dqset.seed(12345)
+
 # main scripts
 source(file.path(programs,"01-packages-wds.r")) # set up package
 # stata(file.path(programs,"02-ACS-Synt-Parents-DoFile.do")) # run ACS do file
