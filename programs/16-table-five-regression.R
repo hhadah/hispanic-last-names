@@ -14,7 +14,9 @@ IndividualData <- read_csv(file.path(datasets,"CPS_synth.csv")) |>
                                     is.na(WifeEducation) ~ mean(WifeEducation, na.rm = TRUE)),
          Husband_ftotval = case_when(!is.na(Husband_ftotval) ~ Husband_ftotval,
                                        is.na(Husband_ftotval) ~ mean(Husband_ftotval, na.rm = TRUE)),
-                                )
+                                ) |> 
+  filter(year <= 2019)
+table(IndividualData$year)               
 # create a total education variable
 # and a income quintile variable
 # and education quintile variable
@@ -78,6 +80,7 @@ reg1 <- list(
   
 )
 
+CrossTable(IndividualData$BirthPlaceMom, IndividualData$BirthPlaceDad)
 reg2 <- list(
   "\\specialcell{(1) \\\\ Unemployment}" = feols(1 - Employed ~ HW, vcov = ~statefip,
                                                             data = IndividualData |> 
@@ -261,8 +264,8 @@ all_row <- rbind(
   hoursworked,
   age_cont,
   educ_cont,
-  parentalback,
-  all_sample)
+  parentalback
+  )
 
 attr(all_row, 'position') <- c(#7:8, 
                               5:7, 11:12)
@@ -571,3 +574,152 @@ regression_tab %>%
 #--------------------------------------
 # Full Time Full Year
 #--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+reg1 <- list(
+  "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW, vcov = ~serial,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(2) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies], vcov = ~serial,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(3) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age | year*statefip, vcov = ~serial,
+                                                            data = IndividualData |> 
+                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age + educ | year*statefip, vcov = ~serial,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
+  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] + age + educ | year*statefip, vcov = ~serial,
+                                                         data = IndividualData |> 
+                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
+  
+)
+
+#--------------------------------------
+# Earnigns
+#--------------------------------------
+
+# calculate mean for all sample
+
+dim(all_sample) <- c(1,6)
+all_sample <- as.data.frame(all_sample)
+
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
+dim(controling_for) <- c(1,6)
+
+hoursworked   <-  c("Hours Worked", " ", "X","X", "X", "X")
+age_cont      <-  c("Age", " ", " ","X", "X", "X")
+educ_cont     <-  c("Education", " ", " "," ", "X", "X")
+parentalback  <-  c("Parental Background", " ", " "," ", " ", "X")
+
+dim(hoursworked) <- c(1,6)
+dim(age_cont) <- c(1,6)
+dim(educ_cont) <- c(1,6)
+dim(parentalback) <- c(1,6)
+
+controling_for <- as.data.frame(controling_for)
+hoursworked <- as.data.frame(hoursworked)
+parentalback <- as.data.frame(parentalback)
+educ_cont <- as.data.frame(educ_cont)
+age_cont <- as.data.frame(age_cont)
+
+all_row <- rbind(
+  # differences_row, 
+  # pvalue_row, 
+  controling_for, 
+  hoursworked,
+  age_cont,
+  educ_cont,
+  parentalback
+  )
+
+attr(all_row, 'position') <- c(#7:8, 
+                              5:7, 11:12)
+
+cm <- c("WH"          = "$WH_{ist}$",
+        "HW"          = "$HW_{ist}$",
+        "HH"          = "$HH_{ist}$",
+        "(Intercept)" = "Constant"
+) 
+gm <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+  "FE: statefip", "State FE", 0,
+  "FE: year", "Year FE", 0,
+  "FE: year:statefip", "State-Year FE", 0,
+  # "FE: age", "Age FE", 0,
+  # "FE: educ", "Education FE", 0,
+  "std.error.type", "Standard Errors", 0,
+  "nobs",      "Observations",             0,
+  #"r.squared", "R squared", 3
+)
+
+modelsummary(reg1, fmt = 2,  
+             coef_map = cm,
+             add_rows = all_row,
+             gof_map = gm,
+             escape = F,
+             #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+             stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+             title = "Effect of Having Hispanic Last Name \\label{tab:lastnamereg}") %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), 
+                latex_options = c("scale_down", "hold_position")
+  ) %>%
+  footnote(number = c("\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}",
+                      "\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}",
+                      "\\\\footnotesize{The sample is restricted to men working full-time full-year and are waged and salaried workers.}",
+                      "\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, and fixed effects. Column two has the results after controlling for education.}",
+                      "\\\\footnotesize{Standard errors are clustered on the parental birth place level.}"
+                      ),
+           footnote_as_chunk = F, title_format = c("italic"),
+           escape = F, threeparttable = T
+  )
+
+regression_tab <- modelsummary(reg1, fmt = 2,
+                               output = "latex",
+                               coef_map = cm,
+                               add_rows = all_row,
+                               gof_map = gm,
+                               escape = F,
+                               #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
+                               stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
+                               title = "Effect of Having Hispanic Last Name (Log Annual Earnings) \\label{tab:lastnamereg}") %>%
+  kable_styling(
+                latex_options = c("HOLD_position")
+  ) %>%
+  footnote(number = c("{\\\\setstretch{1.0}\\\\footnotesize{This table includes the estimation results of equation (\\\\ref{eq:1a}).}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{HW is an indicator variable that is equal to 1 if a person is the child of a Hispanic-father and White-mother.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{The sample is restricted to men working full-time full-year and are wage and salary workers.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Column one has the regression results when controlling for hours worked, age, education, year and state fixed effects. Column two has the results after controlling for education.}}",
+                      "{\\\\setstretch{1.0}\\\\footnotesize{Standard errors are clustered at the mother's and father's birthplace level.}}"
+                      ),
+  footnote_as_chunk = F, title_format = c("italic"),
+  escape = F, threeparttable = T
+  ) #|> 
+  #row_spec(8, hline_after = T)
+
+
+regression_tab %>%
+  save_kable(file.path(tables_wd,"tab05-regression.tex"))
+
+regression_tab %>%
+  save_kable(file.path(thesis_tabs,"tab05-regression.tex"))
+
+regression_tab %>%
+  save_kable(file.path(manuscript_wd,"tab0000-regression-cluster.tex"))
