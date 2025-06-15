@@ -27,63 +27,62 @@ IndividualData  <- IndividualData  |>
           )
 ParentDummies <- c("HW", "uhrsworkly")
 
-ParentControls  <- c("IncomeQuint", "EducationQuint")
 # By generation
 feols(Education ~ HW  , vcov = ~statefip, data = IndividualData)
 feols(Education ~ HW  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(Education ~ HW  +  age +.[ParentControls]  | year + statefip, vcov = ~statefip, data = IndividualData)
-marginaleffects::avg_slopes(feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData))
-feols(Education ~ HW*year  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(Education ~ HW*year  + HW*statefip  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(Education ~ HW  +  age | year + statefip, vcov = ~statefip, data = IndividualData)
+marginaleffects::avg_slopes(feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData))
+feols(Education ~ HW*year  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(Education ~ HW*year  + HW*statefip  | year*statefip, vcov = ~statefip, data = IndividualData)
 
 feols(hs_dropout ~ HW  , vcov = ~statefip, data = IndividualData)
 feols(hs_dropout ~ HW  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(hs_dropout ~ HW*year  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(hs_dropout ~ HW*year  + HW*statefip  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(hs_dropout ~ HW  +  age | year + statefip, vcov = ~statefip, data = IndividualData)
+feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(hs_dropout ~ HW*year  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(hs_dropout ~ HW*year  + HW*statefip  | year*statefip, vcov = ~statefip, data = IndividualData)
 
 feols(associate_degree ~ HW  , vcov = ~statefip, data = IndividualData)
 feols(associate_degree ~ HW  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(associate_degree ~ HW  +  age +.[ParentControls]  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(associate_degree ~ HW*year  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(associate_degree ~ HW*year  + HW*statefip  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(associate_degree ~ HW  +  age | year + statefip, vcov = ~statefip, data = IndividualData)
+feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(associate_degree ~ HW*year  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(associate_degree ~ HW*year  + HW*statefip  | year*statefip, vcov = ~statefip, data = IndividualData)
 
 feols(ba_degree ~ HW  , vcov = ~statefip, data = IndividualData)
 feols(ba_degree ~ HW  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(ba_degree ~ HW  +  age +.[ParentControls]  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(ba_degree ~ HW*year  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(ba_degree ~ HW*year  + HW*statefip  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(ba_degree ~ HW  +  age | year + statefip, vcov = ~statefip, data = IndividualData)
+feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(ba_degree ~ HW*year  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(ba_degree ~ HW*year  + HW*statefip  | year*statefip, vcov = ~statefip, data = IndividualData)
 
 feols(professional_degree ~ HW  , vcov = ~statefip, data = IndividualData)
 feols(professional_degree ~ HW  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(professional_degree ~ HW  +  age +.[ParentControls]  | year + statefip, vcov = ~statefip, data = IndividualData)
-feols(professional_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(professional_degree ~ HW*year  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
-feols(professional_degree ~ HW*year  + HW*statefip  + .[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(professional_degree ~ HW  +  age | year + statefip, vcov = ~statefip, data = IndividualData)
+feols(professional_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(professional_degree ~ HW*year  | year*statefip, vcov = ~statefip, data = IndividualData)
+feols(professional_degree ~ HW*year  + HW*statefip  | year*statefip, vcov = ~statefip, data = IndividualData)
 
 regression <- list(
   "Panel A: Full Sample" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData)
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData)
   ),
 
   "Panel B: Women" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2)),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2)),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2)),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2))
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 2))
   ),
 
   "Panel C: Men" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1)),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1)),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1)),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1))
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(sex == 1))
   )
 )
 
@@ -98,20 +97,20 @@ IndividualData  <- IndividualData |>
     Female = as.factor(Female)
   )
 
-reg1 <- feols(Education ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
-test <- tidy(glht(feols(Education ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+reg1 <- feols(Education ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(Education ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
 pvalue_1 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
-reg2 <- feols(hs_dropout ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
-test <- tidy(glht(feols(hs_dropout ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+reg2 <- feols(hs_dropout ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(hs_dropout ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
 pvalue_2 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
-reg3 <- feols(associate_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
-test <- tidy(glht(feols(associate_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+reg3 <- feols(associate_degree ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(associate_degree ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
 pvalue_3 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
-reg4 <- feols(ba_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
-test <- tidy(glht(feols(ba_degree ~ HW:Female  +  age:Female +.[ParentControls]:Female  | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
+reg4 <- feols(ba_degree ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData  |> filter(Female == 1))
+test <- tidy(glht(feols(ba_degree ~ HW:Female  +  age:Female | year*statefip, vcov = ~statefip, data = IndividualData), linfct = c("HW:Female1 - HW:Female0 = 0")))
 pvalue_4 <- paste0("$p=$", sprintf("%.2f",round(test$adj.p.value[[1]], 2)))
 
 # Create the rows with proper structure first
@@ -194,7 +193,7 @@ regression_tab <- modelsummary(regression, fmt = 2,
                                escape = F,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
-                               title = "Effect of Having Hispanic Last Name \\label{tab:lastname-ed-reg}") %>%
+                               title = "Effect of Having Hispanic Last Name on Educational Outcomes\\label{tab:lastname-ed-reg}") %>%
   kable_styling(
                 latex_options = c("HOLD_position")
   ) %>%
@@ -224,24 +223,24 @@ Mexicans_USA  <- IndividualData |>
 
 regression <- list(
   "Panel A: Full Sample" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA)
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA)
   ),
 
   "Panel B: Women" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2))
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 2))
   ),
 
   "Panel C: Men" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1))
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = Mexicans_USA  |> filter(sex == 1))
   )
 )
 
@@ -327,7 +326,7 @@ regression_tab <- modelsummary(regression, fmt = 2,
                                escape = F,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
-                               title = "Effect of Having Hispanic Last Name: Hispanics with Mexican Ancestry \\label{tab:lastname-ed-reg-mex}") %>%
+                               title = "Effect of Having Hispanic Last Name on Educational Outcomes: Hispanics with Mexican Ancestry \\label{tab:lastname-ed-reg-mex}") %>%
   kable_styling(
                 latex_options = c("HOLD_position")
   ) %>%
@@ -351,24 +350,24 @@ NonMexican_USA <-  IndividualData |>
 
 regression <- list(
   "Panel A: Full Sample" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA)
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA)
   ),
 
   "Panel B: Women" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2))
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 2))
   ),
 
   "Panel C: Men" = list(
-  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
-  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
-  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
-  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age +.[ParentControls]  | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1))
+  "\\specialcell{(1) \\\\ Years of \\\\ Education}"  = feols(Education ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
+  "\\specialcell{(2) \\\\ High School \\\\ Dropout}"  = feols(hs_dropout ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
+  "\\specialcell{(3) \\\\ Associate Degree}"         = feols(associate_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1)),
+  "\\specialcell{(4) \\\\ Bachelor Degree}"          = feols(ba_degree ~ HW  +  age | year*statefip, vcov = ~statefip, data = NonMexican_USA  |> filter(sex == 1))
   )
 )
 
@@ -454,7 +453,7 @@ regression_tab <- modelsummary(regression, fmt = 2,
                                escape = F,
                                #gof_omit = 'DF|Deviance|R2|AIC|BIC|Log.Lik.|F|Std.Errors',
                                stars= c('***' = 0.01, '**' = 0.05, '*' = 0.1),
-                               title = "Effect of Having Hispanic Last Name: Hispanics with non-Mexican Ancestry \\label{tab:lastname-ed-reg-nonmex}") %>%
+                               title = "Effect of Having Hispanic Last Name on Educational Outcomes: Hispanics with non-Mexican Ancestry \\label{tab:lastname-ed-reg-nonmex}") %>%
   kable_styling(
                 latex_options = c("HOLD_position")
   ) %>%

@@ -30,8 +30,8 @@ options(modelsummary_factory_latex = "kableExtra")
 # install_github("s3alfisc/fwildclusterboot")
 library(fwildclusterboot)
 
-set.seed(12345)
-dqrng::dqset.seed(12345)
+set.seed(34345)
+dqrng::dqset.seed(123)
 
 # main scripts
 source(file.path(programs,"01-packages-wds.r")) # set up package

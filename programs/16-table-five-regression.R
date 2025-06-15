@@ -73,10 +73,10 @@ reg1 <- list(
                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
+  # "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+  #                                                        data = IndividualData |> 
+  #                                                          filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
   
 )
 
@@ -90,16 +90,15 @@ reg2 <- list(
                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Unemployment}" = feols(1 - Employed ~ HW + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Unemployment}" = feols(1 - Employed ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & (HW == 1 | WH == 1)))
+  # "\\specialcell{(4) \\\\  Unemployment}" = feols(1 - Employed ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
+  #                                                        data = IndividualData |> 
+  #                                                          filter(sex == 1 & (HW == 1 | WH == 1)))
   
 )
 reg2[[1]]
 reg2[[2]]
 reg2[[3]]
-reg2[[4]]
 
 reg3 <- list(
   "\\specialcell{(1) \\\\ In Labor Force}" = feols(InLaborForce ~ HW, vcov = ~statefip,
@@ -110,16 +109,12 @@ reg3 <- list(
                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  In Labor Force}" = feols(InLaborForce ~ HW + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  In Labor Force}" = feols(InLaborForce ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & (HW == 1 | WH == 1)))
   
 )
 reg3[[1]]
 reg3[[2]]
 reg3[[3]]
-reg3[[4]]
 
 reg4 <- list(
   "\\specialcell{(1) \\\\ Full Year}" = feols(FullYear ~ HW, vcov = ~statefip,
@@ -130,16 +125,12 @@ reg4 <- list(
                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Full Year}" = feols(FullYear ~ HW + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Full Year}" = feols(FullYear ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & (HW == 1 | WH == 1)))
   
 )
 reg4[[1]]
 reg4[[2]]
 reg4[[3]]
-reg4[[4]]
 
 reg5 <- list(
   "\\specialcell{(1) \\\\ Full Time}" = feols(FullTime ~ HW, vcov = ~statefip,
@@ -150,16 +141,12 @@ reg5 <- list(
                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Full Time}" = feols(FullTime ~ HW + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Full Time}" = feols(FullTime ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & (HW == 1 | WH == 1)))
   
 )
 reg5[[1]]
 reg5[[2]]
 reg5[[3]]
-reg5[[4]]
 
 reg6 <- list(
   "\\specialcell{(1) \\\\ Self Employed}" = feols(Self_employed ~ HW, vcov = ~statefip,
@@ -170,16 +157,12 @@ reg6 <- list(
                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Self Employed}" = feols(Self_employed ~ HW + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Self Employed}" = feols(Self_employed ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & (HW == 1 | WH == 1)))
   
 )
 reg6[[1]]
 reg6[[2]]
 reg6[[3]]
-reg6[[4]]
 
 reg7 <- list(
   "\\specialcell{(1) \\\\ Full Time \\\\ Full Year}" = feols(FTFY ~ HW, vcov = ~statefip,
@@ -190,16 +173,12 @@ reg7 <- list(
                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Full Time \\\\ Full Year}" = feols(FTFY ~ HW + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Full Time \\\\ Full Year}" = feols(FTFY ~ HW + .[ParentControls] + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & (HW == 1 | WH == 1)))
   
 )
 reg7[[1]]
 reg7[[2]]
 reg7[[3]]
-reg7[[4]]
 
 reg8 <- list(
   "\\specialcell{(1) \\\\ Log annual \\\\ earnings}" = feols(lninctot_1999 ~ HW, vcov = ~statefip,
@@ -213,11 +192,7 @@ reg8 <- list(
                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(4) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + age| occupation + year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(5) \\\\  Log annual \\\\ earnings}" = feols(lninctot_1999 ~ .[ParentDummies] + .[ParentControls] + age | occupation + year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
                                                            filter(sex == 1 & FTFY == 1 & Self_employed_ASEC == 0 & (HW == 1 | WH == 1)))
-  
 )
 
 #--------------------------------------
@@ -231,29 +206,26 @@ all_sample <- c("\\specialcell{HW's Mean \\\\ Unemployment}",
                       round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2),
                       round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2),
                       round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2), 
-                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2),
-                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2))
+                      round(mean(IndividualData_mean$lninctot_1999, na.rm=T), 2)
+                      )
 
 
-dim(all_sample) <- c(1,6)
+dim(all_sample) <- c(1,5)
 all_sample <- as.data.frame(all_sample)
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
-dim(controling_for) <- c(1,6)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
+dim(controling_for) <- c(1,5)
 
-hoursworked   <-  c("Hours Worked", " ", "X","X", "X", "X")
-age_cont      <-  c("Age", " ", " ","X", "X", "X")
-educ_cont     <-  c("Education", " ", " "," ", "X", "X")
-parentalback  <-  c("Parental Background", " ", " "," ", " ", "X")
+hoursworked   <-  c("Hours Worked", " ", "X","X", "X")
+age_cont      <-  c("Age", " ", " ","X", "X")
+educ_cont     <-  c("Education", " ", " "," ", "X")
 
-dim(hoursworked) <- c(1,6)
-dim(age_cont) <- c(1,6)
-dim(educ_cont) <- c(1,6)
-dim(parentalback) <- c(1,6)
+dim(hoursworked) <- c(1,5)
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
-parentalback <- as.data.frame(parentalback)
 educ_cont <- as.data.frame(educ_cont)
 age_cont <- as.data.frame(age_cont)
 
@@ -263,8 +235,7 @@ all_row <- rbind(
   controling_for, 
   hoursworked,
   age_cont,
-  educ_cont,
-  parentalback
+  educ_cont
   )
 
 attr(all_row, 'position') <- c(#7:8, 
@@ -344,30 +315,29 @@ regression_tab %>%
 #--------------------------------------
 # Employment
 #--------------------------------------
-controling_for <-  c("\\textit{Controlling for:}", "", " ", "", "")
-dim(controling_for) <- c(1,5)
+controling_for <-  c("\\textit{Controlling for:}", "", " ", "")
+dim(controling_for) <- c(1,4)
 
-age_cont      <-  c("Age", " ","X", "X", "X")
-educ_cont     <-  c("Education", " "," ", "X", "X")
-parentalback  <-  c("Parental Background", " "," ", " ", "X")
+age_cont      <-  c("Age", " ","X", "X")
+educ_cont     <-  c("Education", " "," ", "X")
+
 # calculate mean for all sample
 IndividualData_mean <- IndividualData |> 
   filter(HW == 1)
 all_sample <- c("\\specialcell{HW's Mean \\\\ Unemployment}", round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2), 
                       round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2),
-                      round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2), 
-                      round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2))
+                      round(mean(1 - IndividualData_mean$Employed, na.rm=T), 2)
+                      )
 
 
-dim(all_sample) <- c(1,5)
+dim(all_sample) <- c(1,4)
 all_sample <- as.data.frame(all_sample)
 
-dim(age_cont) <- c(1,5)
-dim(educ_cont) <- c(1,5)
-dim(parentalback) <- c(1,5)
+dim(age_cont) <- c(1,4)
+dim(educ_cont) <- c(1,4)
+
 
 controling_for <- as.data.frame(controling_for)
-parentalback <- as.data.frame(parentalback)
 educ_cont <- as.data.frame(educ_cont)
 age_cont <- as.data.frame(age_cont)
 
@@ -377,7 +347,6 @@ all_row <- rbind(
   controling_for, 
   age_cont,
   educ_cont,
-  parentalback,
   all_sample)
 
 attr(all_row, 'position') <- c(#7:8, 
@@ -457,20 +426,18 @@ regression_tab %>%
 # Earnigns: with Occupation FE
 #--------------------------------------
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
-dim(controling_for) <- c(1,6)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", " ")
+dim(controling_for) <- c(1,5)
 
-hoursworked   <-  c("Hours Worked", " ", "X","X", "X", "X")
-age_cont      <-  c("Age", " ", " ","X", "X", "X")
-parentalback  <-  c("Parental Background", " ", " "," ", " ", "X")
+hoursworked   <-  c("Hours Worked", " ", "X","X", "X")
+age_cont      <-  c("Age", " ", " ","X", "X")
 
-dim(hoursworked) <- c(1,6)
-dim(age_cont) <- c(1,6)
-dim(parentalback) <- c(1,6)
+dim(hoursworked) <- c(1,5)
+dim(age_cont) <- c(1,5)
+
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)
-parentalback <- as.data.frame(parentalback)
 age_cont <- as.data.frame(age_cont)
 
 all_row <- rbind(
@@ -478,8 +445,8 @@ all_row <- rbind(
   # pvalue_row, 
   controling_for, 
   hoursworked,
-  age_cont,
-  parentalback)
+  age_cont
+  )
 
 attr(all_row, 'position') <- c(#7:8, 
                               5:7, 12)
@@ -618,21 +585,21 @@ reg1 <- list(
 
 # calculate mean for all sample
 
-dim(all_sample) <- c(1,6)
+dim(all_sample) <- c(1,5)
 all_sample <- as.data.frame(all_sample)
 
 controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "", "")
-dim(controling_for) <- c(1,6)
+dim(controling_for) <- c(1,5)
 
 hoursworked   <-  c("Hours Worked", " ", "X","X", "X", "X")
 age_cont      <-  c("Age", " ", " ","X", "X", "X")
 educ_cont     <-  c("Education", " ", " "," ", "X", "X")
 parentalback  <-  c("Parental Background", " ", " "," ", " ", "X")
 
-dim(hoursworked) <- c(1,6)
-dim(age_cont) <- c(1,6)
-dim(educ_cont) <- c(1,6)
-dim(parentalback) <- c(1,6)
+dim(hoursworked) <- c(1,5)
+dim(age_cont) <- c(1,5)
+dim(educ_cont) <- c(1,5)
+dim(parentalback) <- c(1,5)
 
 controling_for <- as.data.frame(controling_for)
 hoursworked <- as.data.frame(hoursworked)

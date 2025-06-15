@@ -28,8 +28,6 @@ IndividualData  <- IndividualData  |>
           )
 ParentDummies <- c("HW")
 
-ParentControls  <- c("IncomeQuint", "EducationQuint")
-
 # By generation
 reg1 <- list(
   "\\specialcell{(1) \\\\ Log weekly \\\\ earnings}" = feols(logearnweek ~ HW, vcov = ~statefip,
@@ -40,37 +38,29 @@ reg1 <- list(
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ | year*statefip, vcov = ~statefip,
                                                          data = IndividualData |> 
-                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls]  + age + educ | year*statefip, vcov = ~statefip,
-                                                         data = IndividualData |> 
-                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
-  
+                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))  
 )
 
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
-dim(controling_for) <- c(1,5)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ")
+dim(controling_for) <- c(1,4)
 
-age_cont <-  c("Age", " ", "X","X", "X")
-educ_cont <-  c("Education", " ", " ","X", "X")
-dim(age_cont) <- c(1,5)
-dim(educ_cont) <- c(1,5)
-
-parentalback <-  c("Parental Background", " ", " "," ", "X")
-dim(parentalback) <- c(1,5)
+age_cont <-  c("Age", " ", "X","X")
+educ_cont <-  c("Education", " ", " ","X")
+dim(age_cont) <- c(1,4)
+dim(educ_cont) <- c(1,4)
 
 controling_for <- as.data.frame(controling_for)
 age_cont <- as.data.frame(age_cont)
 educ_cont <- as.data.frame(educ_cont)
-parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
   age_cont,
-  educ_cont,
-  parentalback)
+  educ_cont
+  )
 
 attr(all_row, 'position') <- c(#7:8, 
                               5, 9:11)
@@ -167,36 +157,27 @@ reg1 <- list(
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = Mexicans_USA |> 
-                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] + age + educ  | year*statefip, vcov = ~statefip,
-                                                         data = Mexicans_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
-  
 )
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
-dim(controling_for) <- c(1,5)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ")
+dim(controling_for) <- c(1,4)
 
-age_cont <-  c("Age", " ", "X","X", "X")
-educ_cont <-  c("Education", " ", " ","X", "X")
-dim(age_cont) <- c(1,5)
-dim(educ_cont) <- c(1,5)
-
-parentalback <-  c("Parental Background", " ", " "," ", "X")
-dim(parentalback) <- c(1,5)
+age_cont <-  c("Age", " ", "X","X")
+educ_cont <-  c("Education", " ", " ","X")
+dim(age_cont) <- c(1,4)
+dim(educ_cont) <- c(1,4)
 
 controling_for <- as.data.frame(controling_for)
 age_cont <- as.data.frame(age_cont)
 educ_cont <- as.data.frame(educ_cont)
-parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
   age_cont,
-  educ_cont,
-  parentalback)
+  educ_cont)
 
 attr(all_row, 'position') <- c(#7:8, 
                               5, 9:11)
@@ -292,24 +273,20 @@ reg1 <- list(
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = NonMexican_USA |> 
-                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] + age + educ  | year*statefip, vcov = ~statefip,
-                                                         data = NonMexican_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
-  
 )
 
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
-dim(controling_for) <- c(1,5)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ")
+dim(controling_for) <- c(1,4)
 
-age_cont <-  c("Age", " ", "X","X", "X")
-educ_cont <-  c("Education", " ", " ","X", "X")
-dim(age_cont) <- c(1,5)
-dim(educ_cont) <- c(1,5)
+age_cont <-  c("Age", " ", "X","X")
+educ_cont <-  c("Education", " ", " ","X")
+dim(age_cont) <- c(1,4)
+dim(educ_cont) <- c(1,4)
 
-parentalback <-  c("Parental Background", " ", " "," ", "X")
-dim(parentalback) <- c(1,5)
+parentalback <-  c("Parental Background", " ", " "," ")
+dim(parentalback) <- c(1,4)
 
 controling_for <- as.data.frame(controling_for)
 age_cont <- as.data.frame(age_cont)
@@ -421,36 +398,28 @@ reg1 <- list(
                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
   "\\specialcell{(3) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + age + educ  | year*statefip, vcov = ~statefip,
                                                          data = Cuban_USA |> 
-                                                           filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1))),
-  "\\specialcell{(4) \\\\  Log weekly \\\\ earnings}" = feols(logearnweek ~ .[ParentDummies] + .[ParentControls] + age + educ  | year*statefip, vcov = ~statefip,
-                                                         data = Cuban_USA |> 
                                                            filter(sex == 1 & FullTime == 1 & Self_employed == 0 & (HW == 1 | WH == 1)))
   
 )
 
-controling_for <-  c("\\textit{Controlling for:}", " ", "", " ", "")
-dim(controling_for) <- c(1,5)
+controling_for <-  c("\\textit{Controlling for:}", " ", "", " ")
+dim(controling_for) <- c(1,4)
 
-age_cont <-  c("Age", " ", "X","X", "X")
-educ_cont <-  c("Education", " ", " ","X", "X")
-dim(age_cont) <- c(1,5)
-dim(educ_cont) <- c(1,5)
-
-parentalback <-  c("Parental Background", " ", " "," ", "X")
-dim(parentalback) <- c(1,5)
+age_cont <-  c("Age", " ", "X","X")
+educ_cont <-  c("Education", " ", " ","X")
+dim(age_cont) <- c(1,4)
+dim(educ_cont) <- c(1,4)
 
 controling_for <- as.data.frame(controling_for)
 age_cont <- as.data.frame(age_cont)
 educ_cont <- as.data.frame(educ_cont)
-parentalback <- as.data.frame(parentalback)
 
 all_row <- rbind(
   # differences_row, 
   # pvalue_row, 
   controling_for, 
   age_cont,
-  educ_cont,
-  parentalback)
+  educ_cont)
 
 attr(all_row, 'position') <- c(#7:8, 
                               5, 9:11)
